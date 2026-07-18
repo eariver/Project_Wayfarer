@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+contact_links: []
+
+# Security上の問題は、秘密情報をPublic Issueへ投稿せず、Repository直下の
+# SECURITY.mdに記載された報告手順を使用してください。実在する外部連絡先が
+# 用意されるまではContact Linkを追加しません。

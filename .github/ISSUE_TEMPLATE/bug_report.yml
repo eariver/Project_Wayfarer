@@ -1,0 +1,101 @@
+name: Bug report
+description: Project WayfarerのConfig、Script、構成または文書に関する不具合を報告します。Security報告はSECURITY.mdを確認してください。
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        秘密情報、Log全文、World、JAR、Database実Dataまたは有償Contentを添付しないでください。
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: 概要
+      description: 発生している問題を簡潔に説明してください。
+    validations:
+      required: true
+
+  - type: dropdown
+    id: server
+    attributes:
+      label: 対象Server
+      options:
+        - Velocity
+        - Lobby
+        - Main
+        - Frontier
+        - Infrastructure
+        - Documentation / Other
+    validations:
+      required: true
+
+  - type: input
+    id: minecraft_version
+    attributes:
+      label: Minecraft Version
+      placeholder: "例: 26.2"
+    validations:
+      required: true
+
+  - type: input
+    id: server_build
+    attributes:
+      label: Paper／Velocity Build
+      placeholder: 製品名と正確なBuild番号
+    validations:
+      required: true
+
+  - type: input
+    id: java_version
+    attributes:
+      label: Java Version
+      placeholder: "例: 25.0.x"
+    validations:
+      required: true
+
+  - type: textarea
+    id: plugins
+    attributes:
+      label: Plugin名とVersion
+      description: 関連するPluginと正確なVersionを列挙してください。該当しない場合は「なし」と記載してください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 再現手順
+      description: 最小の再現手順を番号付きで記載してください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待結果
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の結果
+    validations:
+      required: true
+
+  - type: textarea
+    id: relevant_logs
+    attributes:
+      label: 関連Logの必要部分
+      description: 問題の前後に限定し、Password、Token、IP Address、UUIDなど必要のない情報を除去してください。
+      render: text
+
+  - type: checkboxes
+    id: sanitization
+    attributes:
+      label: 秘密情報の確認
+      options:
+        - label: 投稿内容からPassword、Token、Forwarding Secretその他の秘密情報を除去しました。
+          required: true

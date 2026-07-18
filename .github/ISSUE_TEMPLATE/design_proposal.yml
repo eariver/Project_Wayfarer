@@ -1,0 +1,82 @@
+name: Design proposal
+description: Project Wayfarerの設計変更を提案します。Security報告はSECURITY.mdを確認してください。
+title: "[Design]: "
+labels:
+  - design
+body:
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 提案内容
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 解決したい問題
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: 対象範囲
+      description: Config、Script、Infrastructure、Documentationなど、変更対象を列挙してください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: server_impact
+    attributes:
+      label: Main／Frontier／Lobbyへの影響
+      description: 各Serverへの影響を個別に記載してください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: data_boundary
+    attributes:
+      label: Data共有境界への影響
+      description: Inventory、Waymark、mcMMO、権限、Database、Redisなどへの影響を記載してください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 代替案
+      description: 検討した代替案と採用しない理由を記載してください。
+    validations:
+      required: true
+
+  - type: dropdown
+    id: adds_plugin
+    attributes:
+      label: Plugin追加の有無
+      options:
+        - なし
+        - あり
+        - 未定
+    validations:
+      required: true
+
+  - type: dropdown
+    id: requires_external_custom_plugin
+    attributes:
+      label: 外部独自Pluginが必要か
+      description: 必要な場合もSourceはこのリポジトリへ追加しません。
+      options:
+        - 不要
+        - 必要
+        - 未定
+    validations:
+      required: true
+
+  - type: textarea
+    id: migration_rollback
+    attributes:
+      label: 移行・Rollback案
+      description: 既存DataとConfigの移行、失敗時の復旧方法を記載してください。
+    validations:
+      required: true

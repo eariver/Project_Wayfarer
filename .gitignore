@@ -16,7 +16,6 @@ local/*.local.*
 
 # Server and Plugin binaries / paid content
 *.jar
-!gradle/wrapper/gradle-wrapper.jar
 *.zip
 *.7z
 *.rar
@@ -24,6 +23,7 @@ local/*.local.*
 *.tar.gz
 manual-downloads/
 licensed-content/
+paid-content/
 
 # Runtime server files
 servers/**/logs/

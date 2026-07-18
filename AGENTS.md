@@ -74,6 +74,11 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - Frontier entry world is simple and provides portals to installed Frontier content worlds.
 - Literal Twilight Forest Plugin support is not part of the plan.
 - LAB is a future component and must not be added to the initial startup set without an approved task.
+- This repository does not contain or develop custom Plugin source code.
+- Custom Plugins, if required, are developed and released from separate repositories.
+- This repository may contain only integration contracts, installation instructions, version constraints, and Config for external custom Plugins.
+- Do not create Gradle, Maven, Java, or Kotlin Plugin projects in this repository.
+- Do not add external Plugin repositories as Git submodules without explicit approval.
 
 ## 8. Config editing policy
 
