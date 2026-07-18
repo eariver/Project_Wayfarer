@@ -24,8 +24,12 @@ velocity:
       purpose: Network permission management
       source: https://luckperms.net/download
     - name: ViaVersion
+      version: "5.11.0"
+      channel: Release
+      placement: velocity-only
       purpose: Allow the 26.2 client to enter Frontier 1.21.11
-      source: https://modrinth.com/plugin/viaversion
+      source: https://hangar.papermc.io/ViaVersion/ViaVersion/versions/5.11.0
+      note: ViaBackwards is not required and remains forbidden.
     - name: TAB
       purpose: Global player list, header/footer, and server labels
       source: https://github.com/NEZNAMY/TAB/releases

@@ -13,6 +13,16 @@ runtime_selection:
     requested_version: "4.1.0"
     reported_version: "4.1.0-SNAPSHOT"
     build: git-9eb338bd-b8
+  viaversion:
+    version: "5.11.0"
+    channel: release
+    placement: velocity-only
+    sha256: 89DB76C8E3E674238F5EEE2BB7A9E9A2BEEBA0760BBD1B86494778E8A5A52F70
+    compatibility:
+      client: "26.2"
+      frontier_server: "1.21.11"
+      velocity_runtime: "4.1.0-SNAPSHOT build 8 (git-9eb338bd-b8)"
+      verified: 2026-07-19
   paper_26_2:
     build: 62
     commit: 75c0b48
@@ -58,7 +68,7 @@ servers:
     port: 25569
 
 network_policy:
-  viaversion: not-installed-required-on-velocity-before-frontier-exposure
+  viaversion: installed-on-velocity
   viabackwards: forbidden
   forwarding: velocity-modern
   initial_server: lobby

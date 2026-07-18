@@ -92,6 +92,7 @@ infrastructure/redis/data/
 # Generated local configuration containing secrets
 servers/lobby/config/paper-global.yml
 servers/main/config/paper-global.yml
+servers/frontier/config/paper-global.yml
 servers/**/plugins/LuckPerms/config.yml
 servers/**/plugins/LuckPerms/luckperms.conf
 servers/**/plugins/RedisEconomy/config.yml

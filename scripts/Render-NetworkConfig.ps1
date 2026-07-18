@@ -16,6 +16,11 @@ $targets = @(
         Template = 'servers/main/config/paper-global.yml.template'
         Output = 'servers/main/config/paper-global.yml'
     }
+    @{
+        Name = 'Frontier'
+        Template = 'servers/frontier/config/paper-global.yml.template'
+        Output = 'servers/frontier/config/paper-global.yml'
+    }
 )
 
 if (-not (Test-Path -LiteralPath $secretPath -PathType Leaf)) {

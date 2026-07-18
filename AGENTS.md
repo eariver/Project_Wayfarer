@@ -57,7 +57,7 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - Lobby and Main: Paper 26.2 / Java 25.
 - Frontier: Paper 1.21.11 / Java 21 until a later design revision changes it.
 - Proxy: Velocity 4.1.0 selected build / Java 25.
-- ViaVersion is not installed yet. It must be installed on Velocity before Frontier is exposed to Minecraft 26.2 clients.
+- ViaVersion 5.11.0 is installed on Velocity only and is verified for the selected Velocity 4.1.0-SNAPSHOT build.
 - ViaVersion must not be installed on Paper backends unless a later approved design explicitly requires it.
 - ViaBackwards must not be installed or referenced as a dependency.
 - All Paper backends bind to `127.0.0.2` and use Velocity modern forwarding.
