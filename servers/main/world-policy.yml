@@ -1,0 +1,65 @@
+persistent_worlds:
+  main:
+    environment: NORMAL
+    plugin_structures: true
+    structure_theme: overworld
+    dragon_scan: not_applicable
+  main_nether:
+    environment: NETHER
+    plugin_structures: true
+    structure_theme: nether
+    dragon_scan: not_applicable
+  main_end:
+    environment: THE_END
+    plugin_structures: true
+    structure_theme: end
+    scan_for_legacy_ender_dragon: true
+
+disposable_resource_worlds:
+  resource:
+    environment: NORMAL
+    plugin_structures: false
+    generation: vanilla-like
+    direct_gate_from_main: true
+    return_gate_to_main: true
+  resource_nether:
+    environment: NETHER
+    plugin_structures: false
+    generation: vanilla-like
+    direct_gate_from_main: true
+    return_gate_to_main: true
+  resource_end:
+    environment: THE_END
+    plugin_structures: false
+    generation: vanilla-like
+    direct_gate_from_main: true
+    return_gate_to_main: true
+    scan_for_legacy_ender_dragon: false
+    arrival_policy: verified-safe-outer-island
+    do_not_depend_on:
+      - dragon_exit_portal
+      - dragon_generated_end_gateway
+
+portal_policy:
+  cross_server_plugin: Advanced Portals
+  natural_dimension_pairs: Multiverse-NetherPortals
+  direct_gates:
+    - main_hub -> resource
+    - main_hub -> resource_nether
+    - main_hub -> resource_end
+    - main_hub <-> frontier_gate
+    - lobby -> main_hub
+
+safety:
+  never_reset:
+    - main
+    - main_nether
+    - main_end
+  reset_allowlist:
+    - resource
+    - resource_nether
+    - resource_end
+  post_reset_checks:
+    - direct_gate_destinations
+    - explicit_return_gates
+    - resource_end_has_no_ender_dragon

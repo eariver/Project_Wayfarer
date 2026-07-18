@@ -1,0 +1,126 @@
+# -----------------------------------------------------------------------------
+# Project Wayfarer - source/configuration repository
+# -----------------------------------------------------------------------------
+
+# Secrets and machine-local overrides
+.env
+.env.*
+!.env.example
+local/paths.psd1
+local/*.local.*
+**/forwarding.secret
+**/forwarding.secret.txt
+**/*secret*.local.*
+**/credentials/
+**/secrets/
+
+# Server and Plugin binaries / paid content
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+manual-downloads/
+licensed-content/
+
+# Runtime server files
+servers/**/logs/
+servers/**/crash-reports/
+servers/**/cache/
+servers/**/debug/
+servers/**/timings/
+servers/**/spark/
+servers/**/.cache/
+servers/**/plugins/.paper-remapped/
+servers/**/plugins/bStats/
+servers/**/plugins/update/
+servers/**/plugins/PluginMetrics/
+servers/**/usercache.json
+servers/**/whitelist.json
+servers/**/banned-*.json
+servers/**/ops.json
+servers/**/session.lock
+servers/**/eula.txt
+!servers/**/eula.txt.example
+
+# Runtime worlds - exact Project Wayfarer names
+# Keep these paths explicit so the server configuration directories themselves
+# (servers/lobby, servers/main, servers/frontier) are never ignored.
+servers/lobby/lobby/
+servers/main/main/
+servers/main/main_nether/
+servers/main/main_end/
+servers/main/resource/
+servers/main/resource_nether/
+servers/main/resource_end/
+servers/frontier/frontier_gate/
+servers/frontier/frontier_*/
+servers/lab/lab/
+servers/lab/lab_*/
+
+# Other default/generated worlds and world internals
+servers/**/world/
+servers/**/world_nether/
+servers/**/world_the_end/
+servers/**/level.dat
+servers/**/level.dat_old
+servers/**/uid.dat
+servers/**/region/
+servers/**/entities/
+servers/**/poi/
+servers/**/playerdata/
+servers/**/stats/
+servers/**/advancements/
+
+# Backups and exports
+backups/
+exports/
+*.schem.tmp
+*.mca.tmp
+
+# Database and Redis runtime volumes
+infrastructure/data/
+infrastructure/volumes/
+infrastructure/mariadb/data/
+infrastructure/redis/data/
+
+# Generated local configuration containing secrets
+servers/**/plugins/LuckPerms/config.yml
+servers/**/plugins/LuckPerms/luckperms.conf
+servers/**/plugins/RedisEconomy/config.yml
+servers/**/plugins/mcMMO/config.yml
+velocity/plugins/luckperms/config.yml
+
+# Resource-pack outputs
+resource-packs/**/build/
+resource-packs/**/dist/
+resource-packs/**/*.zip
+
+# Java / Kotlin / Gradle / Maven
+.gradle/
+**/build/
+**/out/
+**/target/
+*.class
+hs_err_pid*
+replay_pid*
+
+# IDE and OS
+.idea/
+.vscode/settings.json
+.vscode/*.local.json
+*.iml
+*.ipr
+*.iws
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary and editor files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~

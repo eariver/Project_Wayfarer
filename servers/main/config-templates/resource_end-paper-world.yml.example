@@ -1,0 +1,5 @@
+# Apply to the actual per-world Paper config generated for resource_end.
+# Confirm the exact generated path before editing.
+entities:
+  spawning:
+    scan-for-legacy-ender-dragon: false

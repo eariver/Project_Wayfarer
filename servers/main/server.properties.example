@@ -1,0 +1,20 @@
+# Copy to server.properties after the first boot or merge with the generated file.
+server-ip=127.0.0.2
+server-port=25567
+online-mode=false
+enforce-secure-profile=false
+level-name=main
+gamemode=survival
+force-gamemode=true
+difficulty=normal
+generate-structures=true
+view-distance=10
+simulation-distance=8
+spawn-protection=0
+allow-flight=true
+white-list=true
+enforce-whitelist=true
+enable-command-block=false
+enable-rcon=false
+enable-query=false
+motd=Project Wayfarer - Main

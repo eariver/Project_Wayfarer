@@ -1,0 +1,36 @@
+# Plugin Collection Checklist - Ver0.0.2
+
+詳細な進捗管理は同梱外のXLSX台帳を使用する。JARと有償コンテンツはGitへコミットしない。
+
+|分類|対象|名称|区分|配置先|公式URL|注意|
+|---|---|---|---|---|---|---|
+|Core|Velocity|Velocity|必須|velocity/|https://papermc.io/downloads/velocity|手動取得|
+|Core|Lobby/Main|Paper 26.2|必須|servers/lobby, servers/main|https://papermc.io/downloads/paper|Java 25|
+|Core|Frontier|Paper 1.21.11|必須|servers/frontier|https://papermc.io/downloads/paper|Java 21|
+|Proxy|Velocity|LuckPerms|必須|velocity/plugins|https://luckperms.net/download||
+|Proxy|Velocity|ViaVersion|必須|velocity/plugins|https://modrinth.com/plugin/viaversion|ViaBackwards禁止|
+|Proxy|Velocity|TAB|必須|velocity/plugins|https://github.com/NEZNAMY/TAB/releases||
+|Proxy|Velocity|VelocityScoreboardAPI|推奨|velocity/plugins|https://github.com/WiIIiam278/VelocityScoreboardAPI|TAB scoreboard使用時|
+|Portal|Velocity + All Paper|Advanced Portals|必須|各plugins|https://modrinth.com/plugin/advanced-portals|Proxy componentの配置方法を公式手順で確認|
+|Common|All Paper|LuckPerms|必須|各plugins|https://luckperms.net/download||
+|Common|All Paper|PlaceholderAPI|必須|各plugins|https://www.spigotmc.org/resources/placeholderapi.6245/||
+|Common|All Paper|TAB-Bridge|必須|各plugins|https://github.com/NEZNAMY/TAB-Bridge/releases||
+|Lobby|Lobby|WorldEdit|必須|servers/lobby/plugins|https://modrinth.com/plugin/worldedit||
+|Lobby|Lobby|WorldGuard|必須|servers/lobby/plugins|https://modrinth.com/plugin/worldguard|WorldEdit依存|
+|World|Main|Multiverse-Core|必須|servers/main/plugins|https://modrinth.com/plugin/multiverse-core||
+|World|Main|Multiverse-NetherPortals|必須|servers/main/plugins|https://modrinth.com/plugin/multiverse-netherportals||
+|Gameplay|Main + Frontier|mcMMO|必須|両plugins|https://mcmmo.org/|公式条件に従い取得|
+|Gameplay|Main|EvenMoreFish|必須|servers/main/plugins|https://modrinth.com/plugin/evenmorefish||
+|Economy|Main + Frontier|RedisEconomy|必須|両plugins|https://www.spigotmc.org/resources/105965/|Waymark provider|
+|Economy|Main + Frontier|VaultUnlocked|必須|両plugins|https://hangar.papermc.io/TNE/VaultUnlocked||
+|Economy|Main|EconomyShopGUI|必須|servers/main/plugins|https://www.curseforge.com/minecraft/bukkit-plugins/economyshopgui||
+|Structure|Main|BetterStructures|必須|servers/main/plugins|https://modrinth.com/plugin/betterstructures|Resource世界では無効|
+|Structure|Main|WorldEdit|必須|servers/main/plugins|https://modrinth.com/plugin/worldedit||
+|Adventure|Frontier|EliteMobs|必須|servers/frontier/plugins|https://modrinth.com/plugin/elitemobs|Content Packは別途|
+|World|Frontier|Multiverse-Core|必須|servers/frontier/plugins|https://modrinth.com/plugin/multiverse-core||
+|Conditional|Frontier|BetterStructures + WorldEdit|条件付き|servers/frontier/plugins|https://modrinth.com/plugin/betterstructures|選定Packが要求するときのみ|
+|Deferred|Velocity|Cross-server chat|選定中|未配置||PoC後に選定|
+|Forbidden|Velocity|ViaBackwards|禁止|配置しない|https://modrinth.com/plugin/viabackwards|意図的に不採用|
+|Deferred|Frontier|Aether-like content|PoC|未配置||初期必須ではない|
+|Forbidden|Frontier|Twilight Forest legacy plugin|不要|配置しない||現行対応がないため不採用|
+|Deferred|LAB|LAB plugins / MythicMobs|将来|未配置||LAB導入時に別途選定|

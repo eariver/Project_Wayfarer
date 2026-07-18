@@ -1,0 +1,53 @@
+document:
+  project: Project Wayfarer
+  version: 0.0.2
+  date: 2026-07-18
+
+minecraft:
+  client: "26.2"
+
+proxy:
+  software: Velocity
+  version_policy: latest-stable-compatible
+  java: 21
+  listen_port: 25565
+
+servers:
+  lobby:
+    software: Paper
+    minecraft: "26.2"
+    java: 25
+    port: 25566
+    level_name: lobby
+  main:
+    software: Paper
+    minecraft: "26.2"
+    java: 25
+    port: 25567
+    level_name: main
+  frontier:
+    software: Paper
+    minecraft: "1.21.11"
+    java: 21
+    port: 25568
+    level_name: frontier_gate
+  lab:
+    status: future
+    software: Paper
+    minecraft: TBD
+    java: TBD
+    port: 25569
+
+network_policy:
+  viaversion: enabled-on-velocity
+  viabackwards: forbidden
+  forwarding: velocity-modern
+  initial_server: lobby
+  failover_server: lobby
+
+
+currency:
+  display_name: Waymark
+  symbol: WM
+  internal_id: waymark
+  provider: RedisEconomy

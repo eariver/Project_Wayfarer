@@ -1,0 +1,137 @@
+# Project Wayfarer Ver0.0.2
+# Verify exact releases immediately before download.
+# JARs, paid plugins, and paid content are obtained manually from official sources.
+
+core_binaries:
+  - name: Velocity
+    target: velocity/
+    required: true
+    source: https://papermc.io/downloads/velocity
+  - name: Paper 26.2
+    target: servers/lobby/paper.jar and servers/main/paper.jar
+    required: true
+    java: 25
+    source: https://papermc.io/downloads/paper
+  - name: Paper 1.21.11
+    target: servers/frontier/paper.jar
+    required: true
+    java: 21
+    source: https://papermc.io/downloads/paper
+
+velocity:
+  required:
+    - name: LuckPerms
+      purpose: Network permission management
+      source: https://luckperms.net/download
+    - name: ViaVersion
+      purpose: Allow the 26.2 client to enter Frontier 1.21.11
+      source: https://modrinth.com/plugin/viaversion
+    - name: TAB
+      purpose: Global player list, header/footer, and server labels
+      source: https://github.com/NEZNAMY/TAB/releases
+    - name: Advanced Portals proxy component
+      purpose: Lobby/Main/Frontier physical server-switch portals
+      source: https://modrinth.com/plugin/advanced-portals
+      note: Follow the package documentation; the proxy component is distributed with the project files.
+  recommended:
+    - name: VelocityScoreboardAPI
+      purpose: TAB scoreboard-related features on Velocity
+      source: https://github.com/WiIIiam278/VelocityScoreboardAPI
+  optional:
+    - name: spark standalone
+      purpose: Velocity performance profiling
+      source: https://spark.lucko.me/download
+  provisional:
+    - name: Cross-server chat
+      purpose: Global chat with [LOBBY]/[MAIN]/[FRONTIER] origin tag
+      action: Do not collect until the PoC candidate is selected.
+  forbidden:
+    - name: ViaBackwards
+      reason: Old clients must not enter newer servers with incomplete item support.
+
+all_paper_backends:
+  required:
+    - name: LuckPerms
+      source: https://luckperms.net/download
+    - name: PlaceholderAPI
+      source: https://www.spigotmc.org/resources/placeholderapi.6245/
+    - name: TAB-Bridge
+      source: https://github.com/NEZNAMY/TAB-Bridge/releases
+    - name: Advanced Portals backend component
+      source: https://modrinth.com/plugin/advanced-portals
+  bundled:
+    - name: spark
+      note: Paper 1.21 and later bundles spark; a separate Paper JAR is not initially required.
+
+lobby:
+  required:
+    - name: WorldEdit
+      purpose: Build and maintain the simple Lobby
+      source: https://modrinth.com/plugin/worldedit
+    - name: WorldGuard
+      purpose: Protect the Lobby
+      source: https://modrinth.com/plugin/worldguard
+
+main:
+  required:
+    - name: Multiverse-Core
+      purpose: Manage the six Main/Resource worlds
+      source: https://modrinth.com/plugin/multiverse-core
+    - name: Multiverse-NetherPortals
+      purpose: Link the Main and Resource dimension families correctly
+      source: https://modrinth.com/plugin/multiverse-netherportals
+    - name: mcMMO
+      purpose: Activity-based shared leveling
+      source: https://mcmmo.org/
+      license_note: Obtain the official build under the author's current terms.
+    - name: EvenMoreFish
+      purpose: Custom fishing gameplay
+      source: https://modrinth.com/plugin/evenmorefish
+    - name: RedisEconomy
+      purpose: Main/Frontier shared Waymark balance
+      source: https://www.spigotmc.org/resources/105965/
+    - name: VaultUnlocked
+      purpose: Economy API bridge
+      source: https://hangar.papermc.io/TNE/VaultUnlocked
+    - name: EconomyShopGUI
+      purpose: Initial buy/sell shop
+      source: https://www.curseforge.com/minecraft/bukkit-plugins/economyshopgui
+    - name: BetterStructures
+      purpose: Dimension-specific structures in persistent Main worlds only
+      source: https://modrinth.com/plugin/betterstructures
+    - name: WorldEdit
+      purpose: BetterStructures authoring/installation dependency and administration
+      source: https://modrinth.com/plugin/worldedit
+
+frontier:
+  required:
+    - name: Multiverse-Core
+      purpose: Entry world and multiple Adventure worlds
+      source: https://modrinth.com/plugin/multiverse-core
+    - name: mcMMO
+      purpose: Shared progression with Main
+      source: https://mcmmo.org/
+    - name: RedisEconomy
+      purpose: Shared Waymark balance
+      source: https://www.spigotmc.org/resources/105965/
+    - name: VaultUnlocked
+      purpose: Economy API bridge
+      source: https://hangar.papermc.io/TNE/VaultUnlocked
+    - name: EliteMobs
+      purpose: Ready-made mobs, equipment, quests, and Adventure worlds
+      source: https://modrinth.com/plugin/elitemobs
+  conditional:
+    - name: BetterStructures
+      condition: Required by a selected Frontier content pack
+      source: https://modrinth.com/plugin/betterstructures
+    - name: WorldEdit
+      condition: Required by BetterStructures or content installation
+      source: https://modrinth.com/plugin/worldedit
+
+content_policy:
+  - Start with several ready-made themes requiring little customization.
+  - EliteMobs content is obtained from its official project/vendor channels.
+  - Main structures are selected separately for Overworld, Nether, and End.
+  - Do not collect a literal Twilight Forest plugin.
+  - Aether-like content remains a PoC candidate and is not an initial required download.
+  - MythicMobs and LAB-specific plugins are not part of the initial collection.

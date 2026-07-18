@@ -1,0 +1,36 @@
+services:
+  mariadb:
+    image: mariadb:11.8
+    container_name: wayfarer-mariadb
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MARIADB_WAYFARER_USER: ${MARIADB_WAYFARER_USER}
+      MARIADB_WAYFARER_PASSWORD: ${MARIADB_WAYFARER_PASSWORD}
+    ports:
+      - "127.0.0.2:${MARIADB_HOST_PORT:-3306}:3306"
+    volumes:
+      - ./data/mariadb:/var/lib/mysql
+      - ./init/01-init.sh:/docker-entrypoint-initdb.d/01-init.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "healthcheck.sh --connect --innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+
+  redis:
+    image: redis:8-alpine
+    container_name: wayfarer-redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD}"]
+    ports:
+      - "127.0.0.2:${REDIS_HOST_PORT:-6379}:6379"
+    volumes:
+      - ./data/redis:/data
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -a \"$$REDIS_PASSWORD\" ping | grep PONG"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD}

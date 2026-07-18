@@ -1,0 +1,4 @@
+# Keep the permanent Main End dragon fight enabled.
+entities:
+  spawning:
+    scan-for-legacy-ender-dragon: true

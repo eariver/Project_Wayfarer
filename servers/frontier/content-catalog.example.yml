@@ -1,0 +1,18 @@
+# Populate only after each content pack is downloaded legally and acceptance-tested.
+frontier_gate:
+  purpose: minimal portal hub
+  build_scope: simple
+
+themes:
+  - id: ruins
+    status: candidate
+    source: EliteMobs ready-made adventure/dungeon content
+    resource_pack: frontier-1.21.11
+  - id: forest
+    status: candidate
+    source: ready-made supported adventure content; not the discontinued Twilight Forest plugin
+    resource_pack: frontier-1.21.11
+  - id: sky
+    status: candidate-after-poc
+    source: supported floating-island/Aether-like map or generator
+    acceptance_gate: verify Paper 1.21.11, portal flow, loot, restart persistence and client 26.2 via ViaVersion
