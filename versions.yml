@@ -6,10 +6,29 @@ document:
 minecraft:
   client: "26.2"
 
+runtime_selection:
+  status: current-selected-builds-not-server-release
+  bare_first_boot_verified: 2026-07-19
+  velocity:
+    requested_version: "4.1.0"
+    reported_version: "4.1.0-SNAPSHOT"
+    build: git-9eb338bd-b8
+  paper_26_2:
+    build: 62
+    commit: 75c0b48
+    components:
+      - lobby
+      - main
+  paper_1_21_11:
+    build: 132
+    commit: c5eb079
+    components:
+      - frontier
+
 proxy:
   software: Velocity
   version_policy: latest-stable-compatible
-  java: 21
+  java: 25
   listen_port: 25565
 
 servers:

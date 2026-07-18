@@ -14,7 +14,7 @@ if (-not (Test-Path $PathsFile)) {
 $Paths = Import-PowerShellDataFile $PathsFile
 
 $components = @{
-    velocity = @{ Dir = 'velocity'; Jar = 'velocity.jar'; Java = $Paths.Java21; Memory = @('-Xms256M','-Xmx512M') }
+    velocity = @{ Dir = 'velocity'; Jar = 'velocity.jar'; Java = $Paths.Java25; Memory = @('-Xms256M','-Xmx512M') }
     lobby = @{ Dir = 'servers/lobby'; Jar = 'paper.jar'; Java = $Paths.Java25; Memory = @('-Xms512M','-Xmx2G') }
     main = @{ Dir = 'servers/main'; Jar = 'paper.jar'; Java = $Paths.Java25; Memory = @('-Xms2G','-Xmx6G') }
     frontier = @{ Dir = 'servers/frontier'; Jar = 'paper.jar'; Java = $Paths.Java21; Memory = @('-Xms2G','-Xmx6G') }
@@ -28,7 +28,11 @@ if (-not (Test-Path $jarPath)) { throw "Server JAR not found: $jarPath" }
 
 Push-Location $workDir
 try {
-    & $c.Java @($c.Memory) '-jar' $c.Jar '--nogui'
+    $launchArgs = @($c.Memory) + @('-jar', $c.Jar)
+    if ($Name -ne 'velocity') {
+        $launchArgs += '--nogui'
+    }
+    & $c.Java @launchArgs
 }
 finally {
     Pop-Location

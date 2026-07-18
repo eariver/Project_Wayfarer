@@ -26,6 +26,9 @@ licensed-content/
 paid-content/
 
 # Runtime server files
+velocity/logs/
+velocity/lang/
+velocity/plugins/bStats/
 servers/**/logs/
 servers/**/crash-reports/
 servers/**/cache/
