@@ -86,23 +86,27 @@ all_paper_backends:
 
 lobby:
   required:
+    - name: VoidGen
+      version: "2.3.8"
+      channel: Release
+      status: installed-and-verified
+      placement: servers/lobby/plugins
+      world: lobby
+      purpose: Generate the Lobby as a void world without unnecessary vanilla terrain.
+      source: https://modrinth.com/plugin/voidgen/version/2.3.8
+      safety_baseline:
+        platform: 17x17 stone at Y=63 with a gold center block
+        world_spawn: "0 64 0"
+        keep_inventory: true
+        respawn_radius: 0
+        nether: disabled
+        end: disabled
     - name: WorldEdit
       purpose: Build and maintain the simple Lobby
       source: https://modrinth.com/plugin/worldedit
     - name: WorldGuard
       purpose: Protect the Lobby
       source: https://modrinth.com/plugin/worldguard
-  deferred:
-    - name: VoidGen
-      version: unselected
-      status: deferred
-      purpose: Generate lobby as a void world and prevent unnecessary standard terrain generation.
-      safety_requirements:
-        - World deletion or regeneration requires a separate approved task with exact path verification.
-        - Create a temporary solid spawn platform before allowing client login.
-        - Set the world spawn to verified safe coordinates.
-        - Temporarily use keepInventory=true during validation and restore the designed value afterward.
-        - Do not expose Lobby through Velocity until fall, void death-loop, and item-loss checks pass.
 
 main:
   required:
@@ -143,6 +147,21 @@ main:
 
 frontier:
   required:
+    - name: VoidGen
+      version: "2.3.8"
+      channel: Release
+      status: installed-and-verified
+      placement: servers/frontier/plugins
+      world: frontier_gate
+      purpose: Generate the Frontier entry world as a void world without unnecessary vanilla terrain.
+      source: https://modrinth.com/plugin/voidgen/version/2.3.8
+      safety_baseline:
+        platform: 17x17 stone at Y=63 with a gold center block
+        world_spawn: "0 64 0"
+        keep_inventory: true
+        respawn_radius: 0
+        nether: disabled
+        end: disabled
     - name: Multiverse-Core
       purpose: Entry world and multiple Adventure worlds
       source: https://modrinth.com/plugin/multiverse-core
@@ -172,17 +191,6 @@ frontier:
     - name: WorldEdit
       condition: Required by BetterStructures or content installation
       source: https://modrinth.com/plugin/worldedit
-  deferred:
-    - name: VoidGen
-      version: unselected
-      status: deferred
-      purpose: Generate frontier_gate as a void entry world and prevent unnecessary standard terrain generation.
-      safety_requirements:
-        - World deletion or regeneration requires a separate approved task with exact path verification.
-        - Create a temporary solid spawn platform before allowing client login.
-        - Set the world spawn to verified safe coordinates.
-        - Temporarily use keepInventory=true during validation and restore the designed value afterward.
-        - Do not expose Frontier through Velocity until fall, void death-loop, and item-loss checks pass.
 
 content_policy:
   - Start with several ready-made themes requiring little customization.

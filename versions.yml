@@ -35,6 +35,18 @@ runtime_selection:
     database: wayfarer_luckperms
     messaging_service: sql
     verified: 2026-07-19
+  voidgen:
+    version: "2.3.8"
+    channel: release
+    placement:
+      - lobby
+      - frontier
+    worlds:
+      lobby: lobby
+      frontier: frontier_gate
+    sha256: FA4D882F0923AD1C2BB25B4BCA33920076976BFE08F9BE0C02BC8929302D92CC
+    source: https://modrinth.com/plugin/voidgen/version/2.3.8
+    verified: 2026-07-19
   paper_26_2:
     build: 62
     commit: 75c0b48

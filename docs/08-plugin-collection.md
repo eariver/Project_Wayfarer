@@ -17,6 +17,7 @@
 |Common|All Paper|TAB-Bridge|必須|各plugins|https://github.com/NEZNAMY/TAB-Bridge/releases||
 |Lobby|Lobby|WorldEdit|必須|servers/lobby/plugins|https://modrinth.com/plugin/worldedit||
 |Lobby|Lobby|WorldGuard|必須|servers/lobby/plugins|https://modrinth.com/plugin/worldguard|WorldEdit依存|
+|World|Lobby + Frontier|VoidGen 2.3.8|必須|servers/lobby/plugins, servers/frontier/plugins|https://modrinth.com/plugin/voidgen/version/2.3.8|Main/Velocityには配置しない|
 |World|Main|Multiverse-Core|必須|servers/main/plugins|https://modrinth.com/plugin/multiverse-core||
 |World|Main|Multiverse-NetherPortals|必須|servers/main/plugins|https://modrinth.com/plugin/multiverse-netherportals||
 |Gameplay|Main + Frontier|mcMMO|必須|両plugins|https://mcmmo.org/|公式条件に従い取得|

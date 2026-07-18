@@ -31,6 +31,19 @@ Resource worlds are disposable and may be excluded from long-term backups.
 
 Use `Reset-ResourceWorlds.ps1` only while Main is stopped. The script refuses to operate without an explicit confirmation switch and allowlisted world names.
 
+## Lobby and Frontier void worlds
+
+VoidGen 2.3.8 is installed only in `servers/lobby/plugins` and `servers/frontier/plugins`. It generates the `lobby` and `frontier_gate` entry worlds; Main must not use VoidGen.
+
+The current safety baseline is:
+
+- a 17x17 stone platform at Y=63 with a gold center block at `(0, 63, 0)`;
+- world spawn at `(0, 64, 0)`, with clear space above and void below the platform;
+- `keep_inventory=true` and respawn radius `0`;
+- Nether and End disabled on Lobby and Frontier only.
+
+Keep the platform until a separately verified permanent Lobby or Frontier gate structure replaces it. Before regenerating either world, stop all Minecraft components, resolve and report the exact source and backup paths, obtain explicit approval, and move the existing world to an ignored backup directory. Never delete the only backup. After regeneration, repeat the safe-spawn, fall/respawn, inventory-retention, distant-void, restart-persistence, network-switching, and direct-backend rejection tests before exposing the world through Velocity.
+
 ## Updates
 
 1. Check the target Minecraft/server/Plugin compatibility matrix.

@@ -9,6 +9,16 @@
 - [ ] ViaBackwards is absent from the repository and runtime.
 - [ ] Client 26.2 enters Frontier 1.21.11 through ViaVersion.
 
+## Verified void entry-world baseline (2026-07-19)
+
+- [x] VoidGen 2.3.8 loads on Lobby Paper 26.2 / Java 25 and Frontier Paper 1.21.11 / Java 21.
+- [x] VoidGen is absent from Main and Velocity.
+- [x] Lobby and Frontier spawn the player safely on the gold center block without falling or suffocating.
+- [x] The 17x17 safety platforms persist after a clean restart, with air below and no distant vanilla terrain.
+- [x] Lobby and Frontier preserve inventory after a void fall and respawn at the center platform.
+- [x] Main remains unchanged, server switching works in both directions, and direct backend connections remain rejected.
+- [x] Lobby and Frontier do not load Nether or End; Main retains its three configured dimensions.
+
 ## Permissions
 
 - [ ] LuckPerms changes propagate to all instances.

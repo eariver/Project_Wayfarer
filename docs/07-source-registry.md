@@ -1,4 +1,4 @@
-# Source Registry (checked 2026-07-18)
+# Source Registry (checked 2026-07-19)
 
 - Paper getting started / Java requirements: https://docs.papermc.io/paper/getting-started/
 - Velocity getting started: https://docs.papermc.io/velocity/getting-started/
@@ -19,5 +19,7 @@
 - BetterStructures: https://modrinth.com/plugin/betterstructures
 - EliteMobs: https://modrinth.com/plugin/elitemobs
 - WorldEdit: https://enginehub.org/worldedit
+- VoidGen 2.3.8 release: https://modrinth.com/plugin/voidgen/version/2.3.8
+- VoidGen world-generator setup: https://github.com/NicoNekoDev/VoidGen/blob/master/docs/tutorial.md
 
 Before downloading, verify the exact build's Minecraft version, Java version, platform, dependencies, license and release notes.

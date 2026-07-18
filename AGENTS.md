@@ -67,6 +67,12 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - No other permission plugin may be installed without an approved migration task.
 - All Paper backends bind to `127.0.0.2` and use Velocity modern forwarding.
 - Lobby is the initial connection and failover server.
+- VoidGen 2.3.8 is installed only on Lobby and Frontier; it must not be installed on Main or Velocity.
+- The Lobby `lobby` world and Frontier `frontier_gate` entry world are VoidGen void worlds. Main worlds remain unchanged.
+- Lobby and Frontier keep Nether and End disabled. Main keeps its designed Overworld, Nether, and End dimensions enabled.
+- Each void entry world has a 17x17 stone safety platform at Y=63, a gold center block at `(0, 63, 0)`, and world spawn at `(0, 64, 0)`.
+- Lobby and Frontier keep `keep_inventory=true` and respawn radius `0` while using the current void entry-world design.
+- Do not regenerate either void entry world without an approved task, an exact resolved-path check, and a verified backup outside the source world path.
 - Lobby shares no gameplay inventory, currency, mcMMO, or progression with Main/Frontier.
 - Main and Frontier normal inventories are independent.
 - Main and Frontier share only explicitly designed network data: initially Waymark and mcMMO.

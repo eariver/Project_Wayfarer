@@ -100,6 +100,8 @@ servers/**/plugins/LuckPerms/libs/
 servers/**/plugins/LuckPerms/translations/
 servers/**/plugins/LuckPerms/*.mv.db
 servers/**/plugins/LuckPerms/*.trace.db
+servers/lobby/plugins/VoidGen/settings.yml
+servers/frontier/plugins/VoidGen/settings.yml
 servers/**/plugins/RedisEconomy/config.yml
 servers/**/plugins/mcMMO/config.yml
 velocity/plugins/luckperms/config.yml
