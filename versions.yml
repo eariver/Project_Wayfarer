@@ -23,6 +23,18 @@ runtime_selection:
       frontier_server: "1.21.11"
       velocity_runtime: "4.1.0-SNAPSHOT build 8 (git-9eb338bd-b8)"
       verified: 2026-07-19
+  luckperms:
+    version: "5.5.60"
+    channel: release
+    placement:
+      - velocity
+      - lobby
+      - main
+      - frontier
+    storage: mariadb
+    database: wayfarer_luckperms
+    messaging_service: sql
+    verified: 2026-07-19
   paper_26_2:
     build: 62
     commit: 75c0b48

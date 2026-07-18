@@ -60,6 +60,11 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - ViaVersion 5.11.0 is installed on Velocity only and is verified for the selected Velocity 4.1.0-SNAPSHOT build.
 - ViaVersion must not be installed on Paper backends unless a later approved design explicitly requires it.
 - ViaBackwards must not be installed or referenced as a dependency.
+- LuckPerms 5.5.60 is installed on Velocity and all Paper backends.
+- All LuckPerms instances use the shared `wayfarer_luckperms` MariaDB database.
+- LuckPerms uses SQL messaging for network update propagation.
+- LuckPerms runtime configs containing database credentials must remain ignored and be rendered from sanitized templates.
+- No other permission plugin may be installed without an approved migration task.
 - All Paper backends bind to `127.0.0.2` and use Velocity modern forwarding.
 - Lobby is the initial connection and failover server.
 - Lobby shares no gameplay inventory, currency, mcMMO, or progression with Main/Frontier.

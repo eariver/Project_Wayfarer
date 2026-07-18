@@ -95,9 +95,19 @@ servers/main/config/paper-global.yml
 servers/frontier/config/paper-global.yml
 servers/**/plugins/LuckPerms/config.yml
 servers/**/plugins/LuckPerms/luckperms.conf
+servers/**/plugins/LuckPerms/contexts.json
+servers/**/plugins/LuckPerms/libs/
+servers/**/plugins/LuckPerms/translations/
+servers/**/plugins/LuckPerms/*.mv.db
+servers/**/plugins/LuckPerms/*.trace.db
 servers/**/plugins/RedisEconomy/config.yml
 servers/**/plugins/mcMMO/config.yml
 velocity/plugins/luckperms/config.yml
+velocity/plugins/luckperms/contexts.json
+velocity/plugins/luckperms/libs/
+velocity/plugins/luckperms/translations/
+velocity/plugins/luckperms/*.mv.db
+velocity/plugins/luckperms/*.trace.db
 
 # Resource-pack outputs
 resource-packs/**/build/
