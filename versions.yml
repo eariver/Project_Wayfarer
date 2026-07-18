@@ -58,7 +58,7 @@ servers:
     port: 25569
 
 network_policy:
-  viaversion: enabled-on-velocity
+  viaversion: not-installed-required-on-velocity-before-frontier-exposure
   viabackwards: forbidden
   forwarding: velocity-modern
   initial_server: lobby

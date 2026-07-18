@@ -56,8 +56,9 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - Client version: Minecraft 26.2.
 - Lobby and Main: Paper 26.2 / Java 25.
 - Frontier: Paper 1.21.11 / Java 21 until a later design revision changes it.
-- Proxy: Velocity / Java 21 or later.
-- ViaVersion is installed on Velocity.
+- Proxy: Velocity 4.1.0 selected build / Java 25.
+- ViaVersion is not installed yet. It must be installed on Velocity before Frontier is exposed to Minecraft 26.2 clients.
+- ViaVersion must not be installed on Paper backends unless a later approved design explicitly requires it.
 - ViaBackwards must not be installed or referenced as a dependency.
 - All Paper backends bind to `127.0.0.2` and use Velocity modern forwarding.
 - Lobby is the initial connection and failover server.
@@ -89,14 +90,33 @@ When a generated runtime Config contains secrets, maintain a sanitized `.templat
 
 Validate YAML, TOML, JSON, XML, PowerShell syntax, and Docker Compose syntax after editing where tooling is available.
 
-## 9. Git policy
+## 9. Git completion policy
 
-Do not commit automatically unless the task explicitly permits it. Never push unless the user explicitly requests a push.
+For tasks performed entirely inside this repository, Codex may commit and push
+completed changes without requesting an additional Git-only confirmation when
+all of the following conditions are satisfied:
 
-Before completion, report:
+- all task-specific acceptance criteria have passed;
+- required syntax, configuration, runtime, connection, and manual tests have
+  completed successfully;
+- any manual test explicitly assigned to the user has been confirmed by the
+  user during the current task;
+- no unresolved errors or material warnings remain;
+- no secrets, JAR files, worlds, logs, database data, paid content, or other
+  ignored runtime artifacts are staged;
+- the final diff contains only intentional changes;
+- the repository, current branch, and configured upstream have been verified.
 
+If any condition is not satisfied, Codex must not commit or push. It must report
+the problem and leave the working tree available for review.
+
+Codex must never force-push, amend an existing commit, create a tag, or create a
+release unless the task explicitly requires it.
+
+After a successful push, report:
+
+- commit SHA and commit message;
+- branch and remote;
 - changed files;
-- commands and validations performed;
-- unverified items;
-- manual actions required;
-- any external path or network access requested or used.
+- validations and manual tests performed;
+- any remaining manual action.
