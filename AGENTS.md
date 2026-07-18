@@ -79,6 +79,7 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - This repository may contain only integration contracts, installation instructions, version constraints, and Config for external custom Plugins.
 - Do not create Gradle, Maven, Java, or Kotlin Plugin projects in this repository.
 - Do not add external Plugin repositories as Git submodules without explicit approval.
+- Do not enable the Minecraft Management Server while using the public placeholder secret. Generate and inject a local secret before enabling it.
 
 ## 8. Config editing policy
 
