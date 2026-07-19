@@ -1,4 +1,4 @@
-# Architecture Summary - Ver.0.0.3
+# Architecture Summary - Ver.0.0.4
 
 ## Logical topology
 
@@ -28,6 +28,10 @@ mcMMO 2.3.000 runs only on Main and Frontier. Both use the same local Maven buil
 RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 run only on Main and Frontier. Both backends use the same Redis `waymark` cluster namespace but distinct client names, and expose the internal `vault` currency through Vault as Project Wayfarer's Waymark (`WM`). Runtime Redis credentials are rendered from tracked sanitized templates; Lobby and Velocity remain outside this economy boundary.
 
 EconomyShopGUI 7.1.1 Free runs only on Main. Its five fixed-price categories provide the initial Vanilla-material sell and building/supply buy loop through Vault; shop actions therefore update the shared RedisEconomy balance visible on Frontier without installing the shop there. Lobby, Frontier, and Velocity remain outside the shop boundary.
+
+## Planned V0.1.0 permission boundary
+
+Ver.0.0.4 specifies but does not implement five LuckPerms groups: permanent `default`, `wayfarer_builder_eligible`, and `wayfarer_admin_eligible`; temporary `wayfarer_builder` and `wayfarer_admin`. Eligibility carries normal gameplay rights plus self-only temporary role control, not the role's actual authority. Builder is a Paper-context allowlist for world work; Admin is temporary full access across Velocity and all Paper backends. OS processes, Docker, databases, backups, and restore stay outside Minecraft permissions and belong to the planned integrated PowerShell operations layer.
 
 ## Data boundaries
 
@@ -66,7 +70,29 @@ Paper's namespaced runtime keys are authoritative. The persistent family is `min
 
 ## Frontier
 
-`frontier_gate` is currently a protected Void entry world with a temporary safety platform. Planned portals will connect it to approved Adventure worlds/themes after their Plugins and content are installed. Frontier inventory remains local. Waymark balances are shared with Main, while Frontier reward sources and a cross-server shop remain future designs.
+`frontier_gate` is currently a protected Void entry world with a temporary safety platform. V0.1.0 requires one user-approved playable theme, but no theme has been selected or installed. The theme must support safe Gate entry and return through `frontier_gate`. Frontier inventory remains local and is used normally across the initial theme; mcMMO and Waymark balances remain shared with Main. Frontier WM rewards, achievements, Main-side rewards, theme-specific inventories, and initial equipment remain future designs.
+
+## Planned V0.1.0 Gate topology
+
+```text
+Lobby minimum hub
+  |-- Main spawn hub
+  `-- Frontier gate hub
+
+Main spawn hub
+  |-- Lobby
+  |-- Frontier gate hub
+  |-- resource --------> Main spawn hub
+  |-- resource_nether -> Main spawn hub
+  `-- resource_end ----> Main spawn hub
+
+Frontier gate hub
+  |-- Lobby
+  |-- Main spawn hub
+  `-- Playable theme <-> Frontier gate safe return
+```
+
+This diagram is a target, not current runtime state. Hub appearance, coordinates, orientation, structures, and safe arrival points are user-built inputs. Gate configuration and verification follow only after those inputs are fixed. Each disposable Resource reset must bootstrap its arrival, return structure, portal definition, optional protection, and safe spawn without changing persistent worlds. `resource_end` additionally requires a reproducible outer-island site independent of the Dragon exit portal and End gateways.
 
 ## Future components
 
@@ -77,3 +103,5 @@ Paper's namespaced runtime keys are authoritative. The persistent family is `min
 - Cross-server shop and additional Waymark reward sources
 - Tutorial and advanced AFK routing
 - Disposable creative LAB server
+
+Deferred design tradeoffs, including temporary-role cleanup, Resource bootstrap implementation, theme inventories, achievements, and Main teleporters, are tracked in [Deferred Design Items](11-deferred-design-items.md).

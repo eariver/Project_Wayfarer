@@ -129,7 +129,7 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - General-player EconomyShopGUI permissions are scoped to `server=main`. Bulk sell, editor, reload, give, update, debug, bypass, and wildcard administration permissions must not be granted.
 - EconomyShopGUI Config, Japanese language messages, section definitions, and shop definitions are tracked. Its JAR, cache, transaction/runtime data, generated backups, and archived vendor defaults remain ignored.
 - Do not reload or unload EconomyShopGUI, RedisEconomy, or VaultUnlocked through PlugManX; use a normal Main restart after shop Config changes.
-- Redis AOF storage is required in every 0.1.0-or-later cold backup. Do not adopt hot/warm backup Plugins, and copy the Redis volume filesystem only after the Redis container has stopped normally.
+- Redis AOF storage is required in the V0.1.0-or-later cold-backup baseline. Do not adopt hot/warm backup Plugins, and copy the Redis volume filesystem only after the Redis container has stopped normally.
 - mcMMO 2.3.000 is installed only on Main and Frontier. Lobby and Velocity must not load mcMMO.
 - Main and Frontier use the same locally built mcMMO JAR with SHA-256 `03ABEEB48E33733C14859B4CAC6DC1104D19F15E4E81D9EB6B79D666F0E8A1B9`.
 - Main and Frontier share mcMMO progression through the `wayfarer_mcmmo` MariaDB database and `mcmmo_` table prefix.
@@ -161,6 +161,14 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - PlugManX is a planned, unselected-version administration/development Plugin for Paper backends only; it is not installed and must not be placed on Velocity.
 - Normal operation uses full server restarts. Any future PlugManX reload permission is admin-only and allowlist-based after Plugin-specific unload/reload verification.
 - Do not enable the Minecraft Management Server while using the public placeholder secret. Generate and inject a local secret before enabling it.
+- The current formal document revision is Ver.0.0.4. It defines the completion conditions for the future `V0.1.0 Alpha`; it is not a server release, tag, or GitHub Release.
+- The Ver.0.0.4 permission model specifies permanent `default`, `wayfarer_builder_eligible`, and `wayfarer_admin_eligible` groups plus temporary `wayfarer_builder` and `wayfarer_admin` roles. This specification is not evidence that the new groups or permissions exist in the runtime database.
+- Eligibility groups must remain equivalent to `default` for gameplay and may authorize only self-service temporary add/remove of their matching role. Exact LuckPerms nodes must be verified from LuckPerms 5.5.60 metadata and official documentation during the approved implementation task; do not guess them in advance.
+- The planned Builder role is allowlist-based and the planned Admin role is full-access. Builder standard duration is 2 hours and Admin standard duration is 30 minutes, but neither duration is technically fixed in Ver.0.0.4. Permanent role grants and simultaneous temporary roles are not the intended operating model.
+- Builder shutdown is operational in Ver.0.0.4: return to Survival, move to a safe position if needed, remove the temporary Builder parent, and verify loss of Builder permissions. Expiry alone does not reset gamemode.
+- V0.1.0 requires one user-approved playable Frontier theme, but no theme is selected or installed by this specification. Frontier Waymark rewards, theme achievements, theme-specific inventories, and initial theme equipment remain deferred.
+- Lobby, Main, Frontier Gate, Resource return-gate structures, and the Resource End outer-island structure are not built or connected by Ver.0.0.4. The user determines their appearance, coordinates, orientation, and safe arrivals before Codex configures routing.
+- Every Resource-world reset design must restore a safe arrival, a return gate to the Main spawn hub, portal configuration, any required protection, and the Resource End outer-island safety structure without modifying persistent worlds.
 
 ## 9. Config editing policy
 
@@ -172,11 +180,25 @@ Validate YAML, TOML, JSON, XML, PowerShell syntax, and Docker Compose syntax aft
 
 ## 10. Integration verification policy
 
-For ordinary third-party Plugin integration, verify the exact version and platform, placement and dependencies, successful enablement, the main adopted Config, one representative smoke test, obvious regressions, and Git exclusion of binaries and runtime data. Do not expand routine tasks into exhaustive testing of every command, Config key, feature combination, or internal implementation.
+For an ordinary officially distributed third-party Plugin, verify only the scope directly owned by the integration task:
 
-Plugins that share a feature area, dependency chain, placement, data boundary, and client acceptance test may be introduced in one task. Keep destructive world work, database migrations, shared progression/economy, inventory synchronization, permissions/secrets, protocol conversion, portal/dimension routing, backups/restores, failover, and other irreversible work as separately approved, risk-focused tasks with detailed verification.
+1. exact version and platform;
+2. official distribution source;
+3. intended placement;
+4. required dependencies;
+5. successful enablement on the target runtime;
+6. successful loading of the main Project Wayfarer-created or modified Config;
+7. one representative adopted command or one GUI open;
+8. absence of an obvious startup-blocking ERROR, SEVERE, or Exception;
+9. Git exclusion of JARs, secrets, worlds, database data, logs, caches, and other runtime artifacts.
 
-Minor non-security configuration issues discovered during small-scale operation may be corrected in later focused commits. This does not relax validation for changes that can affect persistent data, security boundaries, or recoverability.
+Do not require exhaustive Plugin quality assurance, every command, every Config key, every feature combination, inventory-full/reconnect/double-processing edge-case coverage, Plugin-author internal behavior testing, unrelated existing-Plugin regression tests, or broad Lobby/Main/Frontier/Velocity regression tests for an ordinary integration. The normal completion threshold is that the Plugin enables, the adopted Config loads, and one representative function works.
+
+Use detailed, change-focused verification for locally built, source-modified, compatibility-patched, or Project-owned Plugins; observed defects; world lifecycle changes; database migrations; shared economy or progression foundation changes; cross-server inventory/item movement; permissions, secrets, connection paths, or security boundaries; protocol conversion; portal/dimension routing; backup/restore; failover; destructive or irreversible work; and tasks where the user explicitly requests detailed testing.
+
+Regression testing is required only when the change directly modifies an existing foundation, and must be limited to that foundation—for example ViaVersion client access, LuckPerms boundaries, RedisEconomy shared balances, mcMMO shared progression, Advanced Portals routing, or backup stop/save/restore behavior. Avoid expanding scope through the ambiguous phrase “obvious regression.”
+
+Plugins that share a feature area, dependency chain, placement, data boundary, and representative acceptance test may be introduced in one task. Minor non-security configuration issues discovered during small-scale operation may be corrected in a later focused commit.
 
 ## 11. User-input waiting policy
 

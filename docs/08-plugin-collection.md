@@ -1,4 +1,4 @@
-# Plugin Collection Checklist - Ver0.0.3
+# Plugin Collection Checklist - Ver0.0.4
 
 詳細な進捗管理は同梱外のXLSX台帳を使用する。JARと有償コンテンツはGitへコミットしない。
 

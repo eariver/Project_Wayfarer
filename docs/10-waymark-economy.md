@@ -117,7 +117,7 @@ The initial buy list intentionally excludes diamonds, emeralds, Netherite items,
 
 ## Permission boundary
 
-LuckPerms applies these nodes to the existing `default` group only in the `server=main` context.
+LuckPerms applies these nodes to the existing `default` group only in the `server=main` context. This is the current shop permission boundary. The Ver.0.0.4 Eligibility／Temporary Role model is a separate future Security Boundary implementation and does not change these Runtime nodes in the specification task.
 
 Allowed:
 
@@ -150,10 +150,15 @@ Change prices only through a reviewed Config change followed by YAML and Paper M
 
 Prices are intentionally conservative and may be adjusted after observing normal resource production, purchase demand, inflation, and progression pace. A future adjustment must continue to check direct buy/sell spreads and obvious crafting, smelting, and stonecutting arbitrage.
 
-Future work remains separately scoped:
+For V0.1.0, this Main Vanilla-material Shop remains Waymark's primary implemented use. The initial Frontier Theme does not grant WM, and V0.1.0 does not add Theme equipment purchases, Frontier utilities, teleporter fees, achievements, or Main-side achievement rewards.
+
+Future work remains separately scoped and is not a V0.1.0 Release Blocker:
 
 - Frontier-, EliteMobs-, EvenMoreFish-, and Quest-based Waymark rewards;
 - cross-server shops;
 - dynamic pricing, player shops, global stock, and automatic price adjustment.
+- WM-backed Theme equipment, Frontier utilities, Main teleporters, storage expansion, cosmetics, convenience features, and special/over-enchanted tools.
 
 Administrator commands may be used for bounded acceptance tests and recovery, but must not become the normal gameplay currency source. Test balances must be restored through RedisEconomy's supported administration command.
+
+Open tradeoffs and custom-Plugin candidates are tracked in [Deferred Design Items](11-deferred-design-items.md).

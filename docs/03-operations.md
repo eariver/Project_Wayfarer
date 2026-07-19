@@ -1,6 +1,6 @@
 # Operations
 
-The authoritative design, task-grouping rules and risk-based verification policy are defined in the [Ver.0.0.3 design guide](00-design-guide.md).
+The authoritative design, task-grouping rules and risk-based verification policy are defined in the [Ver.0.0.4 design guide](00-design-guide.md).
 
 ## Startup order
 
@@ -29,7 +29,7 @@ Back up at minimum:
 
 Resource worlds are disposable and may be excluded from long-term backups.
 
-Waymark balances are persistent Redis data. Do not copy `infrastructure/data/redis` while Redis is running and do not introduce a hot/warm backup Plugin. For a cold backup, disconnect all users, wait about 10 seconds for in-flight work to settle, stop all Paper servers normally, create the MariaDB dump, stop the Redis Container normally, confirm that its process has stopped, and only then copy the Redis AOF volume. Start Redis again only after the copy has completed. A 0.1.0-or-later baseline is incomplete without the Redis AOF volume, persistent worlds/Config, a manifest with SHA-256 values, and an isolated restore test.
+Waymark balances are persistent Redis data. Do not copy `infrastructure/data/redis` while Redis is running and do not introduce a hot/warm backup Plugin. For a cold backup, disconnect all users, wait about 10 seconds for in-flight work to settle, stop all Paper servers normally, create the MariaDB dump, stop the Redis Container normally, confirm that its process has stopped, and only then copy the Redis AOF volume. Start Redis again only after the copy has completed. The V0.1.0 Baseline is incomplete without MariaDB dumps, the Redis AOF volume, persistent worlds/Config, a manifest with SHA-256 values, and an isolated restore test.
 
 ## Resource reset
 
@@ -46,6 +46,8 @@ Every reset requires a new destination below the ignored repository `backups/` d
 ```
 
 The reset workflow has not yet received a destructive execution test. Do not run it during normal operation until a separately approved reset task validates unload, recreation, link restoration, and recovery from its backup.
+
+Before V0.1.0, the reset design must also bootstrap a safe arrival, a reproducible Return Gate structure to the Main spawn hub, Gate configuration, Spawn/Arrival placement, any required protection, and a return-route check. `resource_end` must restore a safe outer-island site without relying on the Dragon exit portal or End gateways. The Bootstrap implementation method is not selected; compare a user-authored WorldEdit Schematic, tracked structure Template, idempotent Script/Command procedure, or future external custom Plugin. Persistent worlds must remain rejected targets.
 
 ## Multiverse world management
 
@@ -82,9 +84,9 @@ Keep the platform until a separately verified permanent Lobby or Frontier gate s
 
 ## Plugin JAR acquisition
 
-Plugin executable artifacts are manually obtained by the user and placed in an ignored repository-local `manual-downloads/` staging directory. Verify each artifact's filename, internal metadata, version, platform, license, checksum, archive safety, and intended placement before copying it to a runtime `plugins/` directory. Then run an isolated startup test before network acceptance testing. Staging and runtime JARs remain outside Git, and Plugin auto-update or binary replacement stays disabled unless a separate task explicitly authorizes it.
+Plugin executable artifacts are manually obtained by the user and placed in an ignored repository-local `manual-downloads/` staging directory. Verify each artifact's filename, internal metadata, version, platform, license, checksum, archive readability, and intended placement before copying it to a runtime `plugins/` directory. Staging and runtime JARs remain outside Git, and Plugin auto-update or binary replacement stays disabled unless a separate task explicitly authorizes it.
 
-Plugins that share one feature area, dependency boundary, placement and smoke test may be introduced together. Ordinary third-party Plugin work focuses on Project Wayfarer integration; persistent data, security, protocol, world lifecycle, portal routing, backup/restore and failover work retains detailed risk-focused verification.
+For an ordinary official Plugin, start only the target Runtime as needed and confirm Enable, the adopted Project Config, one representative Command or GUI, and no startup-blocking error. Do not broaden that task into edge-case coverage, unrelated Plugin regression, or network-wide testing. Plugins that share one feature area, dependency boundary, placement and representative check may be introduced together. Local/source-modified Plugins, observed defects, persistent data, security, protocol, world lifecycle, portal routing, backup/restore and failover work retain change-focused detailed verification.
 
 ## Paper building administration and entry-world protection
 
@@ -92,7 +94,13 @@ WorldEdit 7.4.4 and WorldGuard 7.0.17 use the same verified Bukkit JARs on Lobby
 
 Main has the administration Plugins installed but currently has no Project Wayfarer protection Region or Global Region Flag. Normal Survival building remains available there, and `wayfarer_builder` receives no Main WorldEdit or WorldGuard permission. Add Main protection only after a separate World/Region design is approved.
 
-Do not use the WorldGuard `build` flag, because it bypasses normal membership-based build behavior and can interfere with non-player mechanisms. Permanent Builder membership requires a separate approved access decision. For testing, use a short-lived LuckPerms parent, verify Lobby/Frontier permission and Main isolation, and remove it immediately after the test rather than waiting for expiry.
+Do not use the WorldGuard `build` flag, because it bypasses normal membership-based build behavior and can interfere with non-player mechanisms. The current `wayfarer_builder` membership and Context are a verified baseline, not the completed Ver.0.0.4 role model. Eligibility groups, self-only Temporary Parent control, the expanded Builder Allowlist, and temporary Admin full access require a separate approved Security Boundary implementation task.
+
+## Planned temporary role operation
+
+The Ver.0.0.4 model is not implemented yet. When it is implemented, `wayfarer_builder_eligible` may add/remove only its own temporary `wayfarer_builder` parent, and `wayfarer_admin_eligible` may do the same only for `wayfarer_admin`. Builder uses 2 hours and Admin 30 minutes as standard values supplied with the temporary grant; they are not technically fixed. Eligibility itself remains `default`-equivalent and cannot grant permanent parents, affect other players, or assign arbitrary groups/permissions.
+
+At the end of Builder work: confirm saved state, return to Survival, move to a safe location if needed, self-remove the temporary Builder parent, and verify loss of Builder permissions. Natural expiry is only a safety net and does not reset Creative/Spectator state. Remove one temporary role before taking another. Admin full access ends with its temporary parent; Windows, Docker, database, cold-backup, restore, and stopped-server startup remain outside Minecraft permissions.
 
 ## TAB network display
 
@@ -122,9 +130,13 @@ A representative health check is to record a balance on Main, apply one small au
 
 EconomyShopGUI 7.1.1 Free runs only on Main and uses Vault with RedisEconomy as the active provider. The tracked adoption set is `plugins/EconomyShopGUI/config.yml`, `LanguageFiles/lang-jp.yml`, and the five files under each of `sections/` and `shops/`. Generated cache, transaction data, backups, other generated language files, and the archived `vendor-defaults-7.1.1/` tree remain ignored. Do not commit the JAR or restore Vendor defaults into the active section/shop directories.
 
-Price and product changes require YAML validation, Material validation against the selected Main Paper build, a check that every overlapping buy price exceeds its sell price, and a normal Main restart. Do not use EconomyShopGUI reload, PlugManX, or Redis key edits. After restart, verify the Plugin reports five sections, five shops, Vault/RedisEconomy integration, and no material startup error. Then perform one non-OP GUI transaction and confirm the resulting balance on Frontier. The complete fixed-price table and permission boundary are documented in [Waymark Economy](10-waymark-economy.md).
+Price and product changes require YAML validation, Material validation against the selected Main Paper build, a check that every overlapping buy price exceeds its sell price, and a normal Main restart. Do not use EconomyShopGUI reload, PlugManX, or Redis key edits. For an ordinary Config change, verify Enable, adopted section/shop loading, Vault/RedisEconomy integration, no startup-blocking error, and one `/shop` GUI open. Historical transaction and edge-case results remain in [Acceptance Tests](06-acceptance-tests.md) but are not the default standard for later routine shop edits. The complete fixed-price table and permission boundary are documented in [Waymark Economy](10-waymark-economy.md).
 
-The initial shop disables update checking, transaction logging, spawner integration, `/sellall`, Sell GUI, editor/reload, and shop-give commands. Admin commands must remain inaccessible to the default group. If a transaction subtracts funds without delivering an item, duplicates an item or balance change, rolls back after a switch/reconnect, or splits the account between Main and Frontier, stop gameplay and preserve logs before further testing.
+The initial shop disables update checking, transaction logging, spawner integration, `/sellall`, Sell GUI, editor/reload, and shop-give commands. Admin commands must remain inaccessible to the default group. If an actual defect appears—such as lost/duplicated items, balance rollback, or account split—treat that symptom as a reason for focused detailed investigation rather than pre-emptively repeating those cases for every ordinary change.
+
+## Planned integrated operations
+
+V0.1.0 requires a formal `Wayfarer.ps1` with Start, Stop, Restart, Status, and Backup actions. It must preserve the existing dependency order and cold-backup sequence, confirm user disconnection and process exit, create MariaDB dumps, stop Redis before AOF copy, copy persistent worlds/Config, record a manifest and SHA-256 values, manage incomplete generations, and support an isolated restore test. This script and the V0.1.0 Baseline Backup are not implemented by Ver.0.0.4.
 
 ## Incident response
 

@@ -1,6 +1,6 @@
 # Initial Installation Procedure
 
-This is an execution summary. Follow the repository's [formal Ver.0.0.3 design guide](00-design-guide.md) for the authoritative design and acceptance policy.
+This is an execution summary. Follow the repository's [formal Ver.0.0.4 design guide](00-design-guide.md) for the authoritative design and acceptance policy. Ver.0.0.4 defines the future V0.1.0 Alpha completion conditions; it does not itself authorize Runtime changes.
 
 ## Phase 0 - Prerequisites
 
@@ -53,21 +53,23 @@ Stop each component cleanly with `stop` before editing generated Config.
 5. Enable unexpected-disconnect failover.
 6. Install ViaVersion on Velocity. Do not install ViaBackwards.
 
-## Phase 5 - LuckPerms
+## Phase 5 - LuckPerms baseline and planned role model
 
 1. Install the correct LuckPerms platform build on Velocity and all backends.
 2. Configure all instances for the same MariaDB service.
 3. Assign unique server names: `velocity`, `lobby`, `main`, `frontier`.
 4. Use SQL messaging or another supported messaging service.
-5. Create minimal groups: `default`, `tester`, `admin`.
-6. Avoid relying on OP for normal operation.
+5. Keep normal operation independent of OP.
+6. Implement the Ver.0.0.4 five-group model only in a separately approved Security Boundary task: permanent `default`, `wayfarer_builder_eligible`, `wayfarer_admin_eligible`; temporary `wayfarer_builder`, `wayfarer_admin`.
+7. Verify exact LuckPerms 5.5.60 argument-based permission nodes before implementation; do not infer or pre-create them from this procedure.
+8. Limit each Eligibility group to self-only temporary add/remove of its matching Role. Builder uses an allowlist; Admin gets full Minecraft/Plugin authority only while the temporary parent is active.
 
 ## Phase 6 - Lobby
 
-1. Use a single protected Lobby world.
-2. Set Adventure mode, disable building and harmful mechanics.
-3. Add one physical or command-based gate to Main.
-4. Verify all initial joins and backend failures end at Lobby.
+1. Keep the existing protected Lobby entry world and safe platform until the user finishes the minimum Hub.
+2. The user builds and fixes the Main and Frontier Gate structures, coordinates, orientation, and arrival areas.
+3. In a later Gate Integration task, connect Lobby to Main's spawn hub and `frontier_gate` without guessing coordinates.
+4. Verify all initial joins and backend failures end at Lobby when the routes are implemented.
 
 ## Phase 7 - Main world foundation and planned expansion
 
@@ -77,28 +79,28 @@ Multiverse-Core 5.7.2 is installed on all Paper backends, while Multiverse-Nethe
 
 The Waymark base is installed: RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 run only on Main and Frontier. `Render-LocalConfigs.ps1` renders their ignored Redis credential Configs from tracked sanitized templates. EconomyShopGUI 7.1.1 Free is installed only on Main and uses RedisEconomy through Vault. Its tracked `config.yml`, Japanese language file, five section files, and five shop files define the fixed-price Alpha baseline; the JAR and generated runtime data remain ignored.
 
-The remaining expansion requires separately approved tasks:
+The remaining expansion requires separately approved tasks in this order:
 
-1. Install and configure EvenMoreFish without changing the verified Waymark data boundary or Main shop pricing.
-2. Install BetterStructures before exploring additional persistent-dimension chunks.
-3. Restrict BetterStructures to `main`, `main_nether`, `main_end` only.
-4. Apply Overworld, Nether and End-specific structure packs.
-5. Verify Resource worlds remain free of Plugin-added structures.
+1. Install BetterStructures and restrict it to `main`, `main_nether`, and `main_end`; keep every Resource dimension disabled.
+2. After all generation-affecting choices are final, approve and perform the destructive final generation of the three persistent Main dimensions with exact paths and backups.
+3. Install EvenMoreFish and perform only its normal Integration check plus a configuration-level mcMMO Fishing conflict review.
+4. The user builds the Main spawn hub and its Lobby, Frontier, and three Resource Gate structures.
+5. Configure safe initial Spawn/Respawn and the approved Gate routes after coordinates are fixed.
 
 ## Phase 8 - Shared mcMMO and planned Frontier expansion
 
 mcMMO 2.3.000 is installed only on Main and Frontier from the same local Maven build. Run `Render-LocalConfigs.ps1` after setting `.env`; this renders both ignored runtime Configs from sanitized templates. Both backends use `wayfarer_mcmmo` with the `mcmmo_` prefix. Do not install mcMMO on Lobby or Velocity, and do not reload it through PlugManX.
 
-The following Frontier content and reward integrations are not installed yet.
+The following Frontier work is not installed yet.
 
-1. Install the 1.21.11-compatible builds.
-2. Keep `frontier_gate` simple.
-3. Install EliteMobs and selected ready-made Adventure packs.
-4. Add multiple themes only after each passes a clean-server acceptance test.
-5. Configure a separate Frontier resource pack if required.
-6. Keep Main/Frontier inventories separate.
-7. Keep the verified shared Waymark balance boundary intact when adding reward sources; do not share normal inventories.
+1. Compare playable-theme candidates for Paper 1.21.11／Java 25 compatibility, distribution model, License, cost, dependencies, Resource Pack, world layout, and actual exploration/combat/dungeon/quest play.
+2. Obtain user approval and manually acquire the selected Theme and dependencies.
+3. Install exactly one initial playable Theme for V0.1.0 and keep `frontier_gate` as its simple protected entrance.
+4. Use the normal Frontier inventory and shared mcMMO. Do not add V0.1.0 WM rewards, achievements, Main-side rewards, theme-specific inventories, or initial equipment.
+5. The user builds the Frontier Gate minimum hub and theme Gate/return structures; Codex configures routing only after exact arrivals are approved.
 
-## Phase 9 - Acceptance
+Each Resource world also needs a post-reset Bootstrap design before V0.1.0: safe arrival, reproducible Return Gate to Main, Gate reconfiguration, Spawn/Arrival placement, optional protection, and persistent-world rejection. `resource_end` additionally requires a reproducible safe outer-island site independent of Dragon portals and End gateways.
 
-Run the checklist in `docs/06-acceptance-tests.md`. Back up the clean baseline before normal play.
+## Phase 9 - Acceptance and V0.1.0 completion
+
+Follow the ordered [Roadmap](09-roadmap.md), then run the release-blocker checklist in `docs/06-acceptance-tests.md`. CoreProtect, integrated Start／Stop／Restart／Status／Backup operations, a complete MariaDB／Redis／World／Config cold backup, and an isolated restore must succeed before the V0.1.0 Baseline is declared. Git Tag／GitHub Release adoption is decided only at that final milestone.
