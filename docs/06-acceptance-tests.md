@@ -59,11 +59,21 @@
 
 ## Main worlds
 
-- [ ] Main Overworld portal links to `main_nether` and `main_end` as designed.
-- [ ] Resource portal links to `resource_nether` and `resource_end` as designed.
+- [x] Multiverse-Core 5.7.2 loads on all Paper backends and is absent from Velocity; Lobby and Frontier register only their existing entry worlds.
+- [x] Multiverse-NetherPortals 5.0.5 loads only on Main and resolves its Multiverse-Core dependency.
+- [x] Main's three existing dimensions were registered without renaming, moving, copying, recreating, or changing their seeds/generators.
+- [x] `resource`, `resource_nether`, and `resource_end` were created under the Paper 26.2 namespaced storage structure with NORMAL, NETHER, and THE_END environments.
+- [x] Main Overworld portal links to `main_nether` and `main_end` in both directions as designed.
+- [x] Resource portal links to `resource_nether` and `resource_end` in both directions as designed.
+- [x] A Minecraft 26.2 client completed one Main Nether portal round trip and one Resource Nether portal round trip; temporary test portals/blocks were restored as part of the test procedure.
+- [x] `resource_end` keeps `scan-for-legacy-ender-dragon: false`, and repeated console entity queries before and after restart found no Ender Dragon.
+- [x] The client loaded all six Main worlds. The current `main_end` `/mvtp` spawn caused suffocation; the user explicitly accepted this pre-gameplay condition because the world is scheduled for regeneration and normal routing will not use `/mvtp` at that location.
+- [x] Lobby -> Main -> Frontier -> Lobby, TAB, ViaVersion, Lobby/Frontier protection, and Main normal building showed no regression.
+- [x] After a clean network stop/restart, all six registrations, eight directional links, and the Resource End override persisted; Main -> `resource` succeeded once.
+- [x] A verified pre-change backup is stored at ignored path `backups/pre-multiverse-20260719-173605` (374 files, 66.45 MiB).
 - [ ] Persistent dimensions generate appropriate additional structures in new chunks.
-- [ ] Resource dimensions contain no BetterStructures content.
-- [ ] Resource reset script cannot target Main worlds.
+- [x] Resource dimensions contain no BetterStructures content because BetterStructures is not installed.
+- [x] The Resource reset script uses exact runtime-path mappings and explicitly rejects Main, Lobby, Frontier, and persistent namespaced keys; its destructive workflow was not run in this task.
 
 ## Economy and progression
 

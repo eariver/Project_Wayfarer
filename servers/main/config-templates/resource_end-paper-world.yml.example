@@ -1,5 +1,7 @@
-# Apply to the actual per-world Paper config generated for resource_end.
-# Confirm the exact generated path before editing.
+# Apply before first load to:
+# servers/main/main/dimensions/minecraft/resource_end/paper-world.yml
+# Paper 26.2 namespaced world key: minecraft:resource_end
+_version: 31
 entities:
   spawning:
     scan-for-legacy-ender-dragon: false

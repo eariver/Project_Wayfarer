@@ -14,11 +14,12 @@ Main is the permanent home for building, farming, storage, fishing and general s
 
 ## 3. Resource worlds
 
-The planned `resource`, `resource_nether` and `resource_end` worlds are for destructive gathering after Multiverse integration.
+The installed `resource`, `resource_nether` and `resource_end` worlds are disposable gathering worlds managed by Multiverse.
 
 - They are designed for near-vanilla generation.
 - BetterStructures must remain disabled in them.
-- They will be disposable after introduction, so permanent construction does not belong there.
+- They are disposable, so permanent construction does not belong there.
+- Direct Main Hub gates and the Resource End outer-island arrival route are not installed yet; use only administrator-approved access until those routes are verified.
 
 ## 4. Frontier
 

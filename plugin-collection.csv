@@ -13,8 +13,8 @@ Common,All Paper,TAB-Bridge 6.2.2,導入・検証済み,各plugins,https://githu
 Common,All Paper,WorldEdit 7.4.4,導入・検証済み,各plugins,https://modrinth.com/plugin/worldedit/version/qNuPcliz,Velocity対象外・Java 25
 Common,All Paper,WorldGuard 7.0.17,導入・検証済み,各plugins,https://modrinth.com/plugin/worldguard,WorldEdit依存・Lobby／Frontier保護
 World,Lobby + Frontier,VoidGen 2.3.8,導入・検証済み,"servers/lobby/plugins, servers/frontier/plugins",https://modrinth.com/plugin/voidgen/version/2.3.8,Main／Velocity対象外
-World,Main,Multiverse-Core,計画・未導入,servers/main/plugins,https://modrinth.com/plugin/multiverse-core,NetherPortalsと一括検証
-World,Main,Multiverse-NetherPortals,計画・未導入,servers/main/plugins,https://modrinth.com/plugin/multiverse-netherportals,Multiverse-Core依存
+World,All Paper,Multiverse-Core 5.7.2,導入・検証済み,各Paper plugins,https://modrinth.com/plugin/multiverse-core,手動取得・Velocity対象外・Lobby／FrontierはEntry Worldのみ
+World,Main,Multiverse-NetherPortals 5.0.5,導入・検証済み,servers/main/plugins,https://modrinth.com/plugin/multiverse-netherportals,Multiverse-Core依存・2 Familyを明示Link
 Gameplay,Main + Frontier,mcMMO,計画・未導入,両plugins,https://mcmmo.org/,共有MariaDBを詳細検証
 Gameplay,Main,EvenMoreFish,計画・未導入,servers/main/plugins,https://modrinth.com/plugin/evenmorefish,
 Economy,Main + Frontier,RedisEconomy,計画・未導入,両plugins,https://www.spigotmc.org/resources/105965/,Waymark provider候補
@@ -22,7 +22,6 @@ Economy,Main + Frontier,VaultUnlocked,計画・未導入,両plugins,https://hang
 Economy,Main,EconomyShopGUI,計画・未導入,servers/main/plugins,https://www.curseforge.com/minecraft/bukkit-plugins/economyshopgui,Economy群と一括検証
 Structure,Main,BetterStructures,計画・未導入,servers/main/plugins,https://modrinth.com/plugin/betterstructures,Resource世界では無効
 Adventure,Frontier,EliteMobs,計画・未導入,servers/frontier/plugins,https://modrinth.com/plugin/elitemobs,Content Packは別途
-World,Frontier,Multiverse-Core,計画・未導入,servers/frontier/plugins,https://modrinth.com/plugin/multiverse-core,Adventure World導入時
 Conditional,Frontier,BetterStructures,条件付き・未導入,servers/frontier/plugins,https://modrinth.com/plugin/betterstructures,選定Packが要求するときのみ・WorldEdit導入済み
 Administration / Development,All Paper,PlugManX,計画・未導入,各Paper plugins,https://modrinth.com/plugin/plugmanx,Version未選定・手動取得・Admin-only・Velocity対象外
 Deferred,Velocity,Cross-server chat,選定中,未配置,,PoC後に選定

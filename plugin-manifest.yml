@@ -88,6 +88,64 @@ velocity:
 
 all_paper_backends:
   required:
+    - name: Multiverse-Core
+      version: "5.7.2"
+      channel: Release
+      platform: Bukkit
+      status: installed-and-verified
+      placement:
+        - lobby
+        - main
+        - frontier
+      runtime-java: 25
+      purpose: Manage each backend's existing worlds and Main's persistent/resource dimension families
+      source: https://modrinth.com/plugin/multiverse-core
+      jar: manual-acquisition
+      sha256: 574862AA3062AF53957FE845DE110A386F886445366836C8C63712E11D697400
+      world-registration:
+        lobby:
+          - runtime-key: minecraft:overworld
+            logical-name: lobby
+            multiverse-alias: ''
+            existing: true
+        main:
+          - runtime-key: minecraft:overworld
+            logical-name: main
+            multiverse-alias: ''
+            family: persistent
+            existing: true
+          - runtime-key: minecraft:the_nether
+            logical-name: main_nether
+            multiverse-alias: ''
+            family: persistent
+            existing: true
+          - runtime-key: minecraft:the_end
+            logical-name: main_end
+            multiverse-alias: main_end
+            family: persistent
+            existing: true
+          - runtime-key: minecraft:resource
+            logical-name: resource
+            multiverse-alias: ''
+            family: resource
+            existing: false
+          - runtime-key: minecraft:resource_nether
+            logical-name: resource_nether
+            multiverse-alias: ''
+            family: resource
+            existing: false
+          - runtime-key: minecraft:resource_end
+            logical-name: resource_end
+            multiverse-alias: ''
+            family: resource
+            existing: false
+        frontier:
+          - runtime-key: minecraft:overworld
+            logical-name: frontier_gate
+            multiverse-alias: ''
+            existing: true
+      excluded-placement:
+        - velocity
     - name: LuckPerms
       version: "5.5.60"
       channel: Release
@@ -199,14 +257,27 @@ lobby:
         end: disabled
 main:
   required:
-    - name: Multiverse-Core
-      status: planned-not-installed
-      purpose: Manage the six Main/Resource worlds
-      source: https://modrinth.com/plugin/multiverse-core
     - name: Multiverse-NetherPortals
-      status: planned-not-installed
+      version: "5.0.5"
+      channel: Release
+      platform: Bukkit
+      status: installed-and-verified
+      placement: main
       purpose: Link the Main and Resource dimension families correctly
       source: https://modrinth.com/plugin/multiverse-netherportals
+      jar: manual-acquisition
+      required-dependency: "Multiverse-Core 5.7.2"
+      sha256: 7D6364A2B474C2D3C4F8F8C5DCD469D9DE5A5F6F64C43DA39B648C3877AD077D
+      explicit-links:
+        - minecraft:overworld <-> minecraft:the_nether
+        - minecraft:overworld <-> minecraft:the_end
+        - minecraft:resource <-> minecraft:resource_nether
+        - minecraft:resource <-> minecraft:resource_end
+      family-crossing: forbidden
+      excluded-placement:
+        - velocity
+        - lobby
+        - frontier
     - name: mcMMO
       version: "2.3.000"
       purpose: Activity-based shared leveling
@@ -254,10 +325,6 @@ frontier:
         respawn_radius: 0
         nether: disabled
         end: disabled
-    - name: Multiverse-Core
-      status: planned-not-installed
-      purpose: Entry world and multiple Adventure worlds
-      source: https://modrinth.com/plugin/multiverse-core
     - name: mcMMO
       version: "2.3.000"
       purpose: Shared progression with Main

@@ -109,6 +109,29 @@ runtime_selection:
     expansion_acquisition: manual
     sha256: FDE03259F5AF6938F3C33EEB4D814000A1ADABF1D2304CE14970BE81F609A437
     verified: 2026-07-19
+  multiverse_core:
+    version: "5.7.2"
+    channel: release
+    platform: bukkit
+    placement:
+      - lobby
+      - main
+      - frontier
+    runtime_java: 25
+    acquisition: manual
+    sha256: 574862AA3062AF53957FE845DE110A386F886445366836C8C63712E11D697400
+    verified: 2026-07-19
+  multiverse_netherportals:
+    version: "5.0.5"
+    channel: release
+    platform: bukkit
+    placement:
+      - main
+    dependency: "Multiverse-Core 5.7.2"
+    runtime_java: 25
+    acquisition: manual
+    sha256: 7D6364A2B474C2D3C4F8F8C5DCD469D9DE5A5F6F64C43DA39B648C3877AD077D
+    verified: 2026-07-19
   paper_26_2:
     build: 62
     commit: 75c0b48

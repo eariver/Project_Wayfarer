@@ -21,6 +21,8 @@ WorldEdit 7.4.4 and WorldGuard 7.0.17 form a common administration layer on all 
 
 TAB 6.1.0 and VelocityScoreboardAPI 2.1.0 run only on Velocity. TAB-Bridge 6.2.2 and PlaceholderAPI 2.12.3 run on every Paper backend. This is a proxy installation, not a mixed installation.
 
+Multiverse-Core 5.7.2 runs on all Paper backends. Multiverse-NetherPortals 5.0.5 runs only on Main. Lobby and Frontier register only their existing entry worlds; Velocity has no Multiverse module.
+
 ## Data boundaries
 
 | Data | Lobby | Main | Frontier |
@@ -45,13 +47,15 @@ Persistent and buildable:
 - `main_nether`
 - `main_end`
 
-Planned disposable resource worlds, designed for near-vanilla generation without Plugin-added structures:
+Installed disposable resource worlds, designed for near-vanilla generation without Plugin-added structures:
 
 - `resource`
 - `resource_nether`
 - `resource_end`
 
 BetterStructures is not installed. When introduced, it is limited to the persistent trio with dimension-specific packs and remains disabled in Resource dimensions.
+
+Paper's namespaced runtime keys are authoritative. The persistent family is `minecraft:overworld` ↔ `minecraft:the_nether` / `minecraft:the_end`; the Resource family is `minecraft:resource` ↔ `minecraft:resource_nether` / `minecraft:resource_end`. `main_end` is the Multiverse alias for the existing `main_the_end` world. Explicit NetherPortals links exist in both directions within each family and never cross between families.
 
 ## Frontier
 

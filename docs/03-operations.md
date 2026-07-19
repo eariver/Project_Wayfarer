@@ -31,7 +31,30 @@ Resource worlds are disposable and may be excluded from long-term backups.
 
 ## Resource reset
 
-Use `Reset-ResourceWorlds.ps1` only while Main is stopped. The script refuses to operate without an explicit confirmation switch and allowlisted world names.
+Use `Reset-ResourceWorlds.ps1` only while Main is stopped. The exact allowlist is `resource`, `resource_nether`, and `resource_end`; `all` selects those three exact entries. Runtime storage resolves to `servers/main/main/dimensions/minecraft/<resource-key>`, not similarly named top-level directories.
+
+Every reset requires a new destination below the ignored repository `backups/` directory, the stopped-server assertion, and the exact confirmation text. The script verifies the backup's file count and byte total before deleting the source. It rejects persistent/entry names, the corresponding `minecraft:` persistent keys, Main-external targets, existing backup destinations, and equal or nested source/backup paths.
+
+```powershell
+.\scripts\Reset-ResourceWorlds.ps1 `
+  -World resource `
+  -MainServerIsStopped `
+  -BackupDirectory .\backups\resource-reset-YYYYMMDD-HHMMSS `
+  -ConfirmationText RESET-WAYFARER-RESOURCE
+```
+
+The reset workflow has not yet received a destructive execution test. Do not run it during normal operation until a separately approved reset task validates unload, recreation, link restoration, and recovery from its backup.
+
+## Multiverse world management
+
+Multiverse-Core 5.7.2 runs on Lobby, Main, and Frontier. Lobby and Frontier register only their existing entry worlds. Multiverse-NetherPortals 5.0.5 runs only on Main and stores explicit directional links for both sides of these pairs:
+
+- `minecraft:overworld` ↔ `minecraft:the_nether`
+- `minecraft:overworld` ↔ `minecraft:the_end`
+- `minecraft:resource` ↔ `minecraft:resource_nether`
+- `minecraft:resource` ↔ `minecraft:resource_end`
+
+Use the namespaced keys for runtime diagnosis. `main_end` is a logical Multiverse alias, not a filesystem path. World access enforcement, gamemode enforcement, and flight enforcement remain disabled so that Multiverse does not replace existing backend access or player-state behavior. World creation, import, property changes, `/mvtp`, and link administration remain console/administrator operations.
 
 ## Lobby and Frontier void worlds
 

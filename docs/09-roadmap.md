@@ -12,10 +12,11 @@
 - Void Lobby／Frontier Gateと仮設安全Platform
 - 全PaperのWorldEdit／WorldGuardとLobby／Frontier保護
 - TAB Proxy InstallationによるHeader／Footer表示
+- Multiverse-Coreによる全Paper World登録とMainのPersistent／Resource Family
+- Multiverse-NetherPortalsによるMain内2 Familyの明示的な双方向Link
 
 ## 次期候補
 
-- Multiverse-Core + Multiverse-NetherPortals
 - mcMMO + MariaDB共有
 - RedisEconomy + VaultUnlocked + EconomyShopGUI
 - Advanced PortalsのProxy／Backend一括Integration
@@ -26,6 +27,8 @@
 - PlugManXによるPaper管理・独自Plugin開発支援
 - 独自Plugin用の別RepositoryとRelease／配布Workflow
 - 将来の検証用LAB
+
+Resource World Resetの破壊的な実動作試験、Main Hubから各Resource Worldへの直接Gate、Advanced Portals、Resource Endの安全な外周島到着地点、およびResource WorldのRespawn／Bed運用方針は後続タスクです。
 
 PlugManXは独自Plugin開発の開始前または開始時に再検討します。Versionは未選定で、全Paper Backendだけを候補とし、Velocityは対象外です。
 

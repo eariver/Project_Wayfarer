@@ -69,18 +69,19 @@ Stop each component cleanly with `stop` before editing generated Config.
 3. Add one physical or command-based gate to Main.
 4. Verify all initial joins and backend failures end at Lobby.
 
-## Phase 7 - Planned Main expansion
+## Phase 7 - Main world foundation and planned expansion
 
-The following components are not installed yet and require separately approved tasks.
+Multiverse-Core 5.7.2 is installed on all Paper backends, while Multiverse-NetherPortals 5.0.5 is installed only on Main. The existing Main dimensions are registered without moving or renaming their data. Main now loads the persistent and Resource families through their Paper namespaced keys, and the Nether/End links are explicitly stored in both directions within each family.
 
-1. Install Multiverse-Core and Multiverse-NetherPortals.
-2. Create and link `main`, `main_nether`, `main_end`.
-3. Create and link `resource`, `resource_nether`, `resource_end`.
-4. Install mcMMO, RedisEconomy, VaultUnlocked, EconomyShopGUI and EvenMoreFish.
-5. Install BetterStructures before exploring persistent dimensions.
-6. Restrict BetterStructures to `main`, `main_nether`, `main_end` only.
-7. Apply Overworld, Nether and End-specific structure packs.
-8. Verify Resource worlds contain only vanilla structures.
+`resource_end` uses its actual Paper per-world Config at `servers/main/main/dimensions/minecraft/resource_end/paper-world.yml`, with legacy Ender Dragon scanning disabled. Do not change `paper-world-defaults.yml` or Main End for this policy.
+
+The remaining expansion requires separately approved tasks:
+
+1. Install mcMMO, RedisEconomy, VaultUnlocked, EconomyShopGUI and EvenMoreFish.
+2. Install BetterStructures before exploring additional persistent-dimension chunks.
+3. Restrict BetterStructures to `main`, `main_nether`, `main_end` only.
+4. Apply Overworld, Nether and End-specific structure packs.
+5. Verify Resource worlds remain free of Plugin-added structures.
 
 ## Phase 8 - Planned Frontier expansion
 

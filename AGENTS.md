@@ -123,6 +123,14 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - Planned network currency display name: `Waymark`; symbol: `WM`; internal identifier: `waymark`.
 - Main persistent dimensions: `main`, `main_nether`, `main_end`.
 - Disposable resource dimensions: `resource`, `resource_nether`, `resource_end`.
+- Multiverse-Core 5.7.2 is installed on all Paper backends and must not be installed on Velocity.
+- Multiverse-NetherPortals 5.0.5 is installed only on Main.
+- Lobby and Frontier currently register only their existing `lobby` and `frontier_gate` entry worlds.
+- Existing persistent worlds must not be renamed, moved, copied, or recreated to match logical aliases.
+- Main contains one persistent dimension family and one disposable Resource dimension family.
+- Explicit Multiverse-NetherPortals links must not cross the persistent and Resource families.
+- Only the Resource family may be targeted by reset operations.
+- Runtime namespaced world keys are authoritative; documentation aliases are not filesystem paths.
 - When introduced, BetterStructures must be enabled only in the persistent Main dimensions and disabled in all Resource dimensions.
 - The planned Main hub provides independent direct gates to `resource`, `resource_nether`, and `resource_end`; every Resource world requires an explicit return gate to Main.
 - `resource_end` must not spawn an Ender Dragon (`entities.spawning.scan-for-legacy-ender-dragon: false`). `main_end` keeps this setting enabled.
