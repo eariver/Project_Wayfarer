@@ -13,6 +13,7 @@
 - TAB-Bridge releases: https://github.com/NEZNAMY/TAB-Bridge/releases
 - VelocityScoreboardAPI: https://github.com/WiIIiam278/VelocityScoreboardAPI
 - PlaceholderAPI: https://www.spigotmc.org/resources/placeholderapi.6245/
+- PlugManX candidate (version unselected): https://modrinth.com/plugin/plugmanx
 - ViaVersion setup: https://viaversion.com/setup
 - Multiverse-Core: https://modrinth.com/plugin/multiverse-core
 - Multiverse-NetherPortals: https://modrinth.com/plugin/multiverse-netherportals

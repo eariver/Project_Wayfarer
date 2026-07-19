@@ -1,5 +1,7 @@
 # Operations
 
+The authoritative design, task-grouping rules and risk-based verification policy are defined in the [Ver.0.0.3 design guide](00-design-guide.md).
+
 ## Startup order
 
 1. MariaDB and Redis
@@ -22,7 +24,7 @@ Back up at minimum:
 - Frontier worlds and Plugin data
 - Plugin Config
 - MariaDB dump
-- RedisEconomy persistence/config according to its documented storage model
+- RedisEconomy persistence/config after its future installation, according to its documented storage model
 - resource-pack sources
 
 Resource worlds are disposable and may be excluded from long-term backups.
@@ -56,6 +58,8 @@ Keep the platform until a separately verified permanent Lobby or Frontier gate s
 ## Plugin JAR acquisition
 
 Plugin executable artifacts are manually obtained by the user and placed in an ignored repository-local `manual-downloads/` staging directory. Verify each artifact's filename, internal metadata, version, platform, license, checksum, archive safety, and intended placement before copying it to a runtime `plugins/` directory. Then run an isolated startup test before network acceptance testing. Staging and runtime JARs remain outside Git, and Plugin auto-update or binary replacement stays disabled unless a separate task explicitly authorizes it.
+
+Plugins that share one feature area, dependency boundary, placement and smoke test may be introduced together. Ordinary third-party Plugin work focuses on Project Wayfarer integration; persistent data, security, protocol, world lifecycle, portal routing, backup/restore and failover work retains detailed risk-focused verification.
 
 ## Paper building administration and entry-world protection
 

@@ -1,35 +1,35 @@
-# Plugin Collection Checklist - Ver0.0.2
+# Plugin Collection Checklist - Ver0.0.3
 
 詳細な進捗管理は同梱外のXLSX台帳を使用する。JARと有償コンテンツはGitへコミットしない。
 
 |分類|対象|名称|区分|配置先|公式URL|注意|
 |---|---|---|---|---|---|---|
-|Core|Velocity|Velocity|必須|velocity/|https://papermc.io/downloads/velocity|手動取得|
-|Core|Lobby/Main|Paper 26.2|必須|servers/lobby, servers/main|https://papermc.io/downloads/paper|Java 25|
-|Core|Frontier|Paper 1.21.11|必須|servers/frontier|https://papermc.io/downloads/paper|Java 25|
-|Proxy|Velocity|LuckPerms|必須|velocity/plugins|https://luckperms.net/download||
-|Proxy|Velocity|ViaVersion|必須|velocity/plugins|https://modrinth.com/plugin/viaversion|ViaBackwards禁止|
+|Core|Velocity|Velocity|導入・検証済み|velocity/|https://papermc.io/downloads/velocity|手動取得、Java 25|
+|Core|Lobby/Main|Paper 26.2|導入・検証済み|servers/lobby, servers/main|https://papermc.io/downloads/paper|Java 25|
+|Core|Frontier|Paper 1.21.11|導入・検証済み|servers/frontier|https://papermc.io/downloads/paper|Java 25|
+|Proxy|Velocity|LuckPerms 5.5.60|導入・検証済み|velocity/plugins|https://luckperms.net/download|共有MariaDB|
+|Proxy|Velocity|ViaVersion 5.11.0|導入・検証済み|velocity/plugins|https://modrinth.com/plugin/viaversion|ViaBackwards禁止|
 |Proxy|Velocity|TAB 6.1.0|導入・検証済み|velocity/plugins|https://github.com/NEZNAMY/TAB/releases|Proxy Installation、Paper配置禁止|
 |Proxy|Velocity|VelocityScoreboardAPI 2.1.0|導入・検証済み|velocity/plugins|https://github.com/WiIIiam278/VelocityScoreboardAPI|Paper配置禁止、Sidebar等は未使用|
-|Portal|Velocity + All Paper|Advanced Portals|必須|各plugins|https://modrinth.com/plugin/advanced-portals|Proxy componentの配置方法を公式手順で確認|
-|Common|All Paper|LuckPerms|必須|各plugins|https://luckperms.net/download||
+|Portal|Velocity + All Paper|Advanced Portals|計画・未導入|各plugins|https://modrinth.com/plugin/advanced-portals|Proxy／Backend Componentを一括検証|
+|Common|All Paper|LuckPerms 5.5.60|導入・検証済み|各plugins|https://luckperms.net/download|共有MariaDB|
 |Common|All Paper|PlaceholderAPI 2.12.3|導入・検証済み|各plugins|https://www.spigotmc.org/resources/placeholderapi.6245/|Velocity配置禁止、Expansion未導入・手動取得|
 |Common|All Paper|TAB-Bridge 6.2.2|導入・検証済み|各plugins|https://github.com/NEZNAMY/TAB-Bridge/releases|Velocity配置禁止|
 |Common|All Paper|WorldEdit 7.4.4|導入・検証済み|各plugins|https://modrinth.com/plugin/worldedit/version/qNuPcliz|同一JARを手動取得、Velocity禁止、Java 25|
 |Common|All Paper|WorldGuard 7.0.17|導入・検証済み|各plugins|https://modrinth.com/plugin/worldguard|WorldEdit 7.4.4依存、Velocity禁止|
-|World|Lobby + Frontier|VoidGen 2.3.8|必須|servers/lobby/plugins, servers/frontier/plugins|https://modrinth.com/plugin/voidgen/version/2.3.8|Main/Velocityには配置しない|
-|World|Main|Multiverse-Core|必須|servers/main/plugins|https://modrinth.com/plugin/multiverse-core||
-|World|Main|Multiverse-NetherPortals|必須|servers/main/plugins|https://modrinth.com/plugin/multiverse-netherportals||
-|Gameplay|Main + Frontier|mcMMO|必須|両plugins|https://mcmmo.org/|公式条件に従い取得|
-|Gameplay|Main|EvenMoreFish|必須|servers/main/plugins|https://modrinth.com/plugin/evenmorefish||
-|Economy|Main + Frontier|RedisEconomy|必須|両plugins|https://www.spigotmc.org/resources/105965/|Waymark provider|
-|Economy|Main + Frontier|VaultUnlocked|必須|両plugins|https://hangar.papermc.io/TNE/VaultUnlocked||
-|Economy|Main|EconomyShopGUI|必須|servers/main/plugins|https://www.curseforge.com/minecraft/bukkit-plugins/economyshopgui||
-|Structure|Main|BetterStructures|必須|servers/main/plugins|https://modrinth.com/plugin/betterstructures|Resource世界では無効|
-|Structure|Main|WorldEdit|必須|servers/main/plugins|https://modrinth.com/plugin/worldedit||
-|Adventure|Frontier|EliteMobs|必須|servers/frontier/plugins|https://modrinth.com/plugin/elitemobs|Content Packは別途|
-|World|Frontier|Multiverse-Core|必須|servers/frontier/plugins|https://modrinth.com/plugin/multiverse-core||
-|Conditional|Frontier|BetterStructures + WorldEdit|条件付き|servers/frontier/plugins|https://modrinth.com/plugin/betterstructures|選定Packが要求するときのみ|
+|World|Lobby + Frontier|VoidGen 2.3.8|導入・検証済み|servers/lobby/plugins, servers/frontier/plugins|https://modrinth.com/plugin/voidgen/version/2.3.8|Main/Velocityには配置しない|
+|World|Main|Multiverse-Core|計画・未導入|servers/main/plugins|https://modrinth.com/plugin/multiverse-core|NetherPortalsと一括検証|
+|World|Main|Multiverse-NetherPortals|計画・未導入|servers/main/plugins|https://modrinth.com/plugin/multiverse-netherportals|Multiverse-Core依存|
+|Gameplay|Main + Frontier|mcMMO|計画・未導入|両plugins|https://mcmmo.org/|共有MariaDBを詳細検証|
+|Gameplay|Main|EvenMoreFish|計画・未導入|servers/main/plugins|https://modrinth.com/plugin/evenmorefish||
+|Economy|Main + Frontier|RedisEconomy|計画・未導入|両plugins|https://www.spigotmc.org/resources/105965/|Waymark provider候補|
+|Economy|Main + Frontier|VaultUnlocked|計画・未導入|両plugins|https://hangar.papermc.io/TNE/VaultUnlocked|RedisEconomy依存境界で検証|
+|Economy|Main|EconomyShopGUI|計画・未導入|servers/main/plugins|https://www.curseforge.com/minecraft/bukkit-plugins/economyshopgui|Economy群と一括検証|
+|Structure|Main|BetterStructures|計画・未導入|servers/main/plugins|https://modrinth.com/plugin/betterstructures|Resource世界では無効|
+|Adventure|Frontier|EliteMobs|計画・未導入|servers/frontier/plugins|https://modrinth.com/plugin/elitemobs|Content Packは別途|
+|World|Frontier|Multiverse-Core|計画・未導入|servers/frontier/plugins|https://modrinth.com/plugin/multiverse-core|Adventure World導入時|
+|Conditional|Frontier|BetterStructures|条件付き・未導入|servers/frontier/plugins|https://modrinth.com/plugin/betterstructures|選定Packが要求するときのみ、WorldEditは導入済み|
+|Administration / Development|All Paper|PlugManX|計画・未導入|各Paper plugins|https://modrinth.com/plugin/plugmanx|Version未選定、手動取得、Admin-only、Velocity対象外|
 |Deferred|Velocity|Cross-server chat|選定中|未配置||PoC後に選定|
 |Forbidden|Velocity|ViaBackwards|禁止|配置しない|https://modrinth.com/plugin/viabackwards|意図的に不採用|
 |Deferred|Frontier|Aether-like content|PoC|未配置||初期必須ではない|

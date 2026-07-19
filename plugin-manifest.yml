@@ -1,4 +1,4 @@
-# Project Wayfarer Ver0.0.2
+# Project Wayfarer Ver0.0.3
 # Verify exact releases immediately before download.
 # JARs, paid plugins, and paid content are obtained manually from official sources.
 
@@ -70,6 +70,7 @@ velocity:
         - main
         - frontier
     - name: Advanced Portals proxy component
+      status: planned-not-installed
       purpose: Lobby/Main/Frontier physical server-switch portals
       source: https://modrinth.com/plugin/advanced-portals
       note: Follow the package documentation; the proxy component is distributed with the project files.
@@ -173,6 +174,7 @@ all_paper_backends:
       excluded-placement:
         - velocity
     - name: Advanced Portals backend component
+      status: planned-not-installed
       source: https://modrinth.com/plugin/advanced-portals
   bundled:
     - name: spark
@@ -198,9 +200,11 @@ lobby:
 main:
   required:
     - name: Multiverse-Core
+      status: planned-not-installed
       purpose: Manage the six Main/Resource worlds
       source: https://modrinth.com/plugin/multiverse-core
     - name: Multiverse-NetherPortals
+      status: planned-not-installed
       purpose: Link the Main and Resource dimension families correctly
       source: https://modrinth.com/plugin/multiverse-netherportals
     - name: mcMMO
@@ -214,18 +218,23 @@ main:
         - frontier
       note: Use the same untracked JAR on Main and Frontier; install later with shared MariaDB configuration.
     - name: EvenMoreFish
+      status: planned-not-installed
       purpose: Custom fishing gameplay
       source: https://modrinth.com/plugin/evenmorefish
     - name: RedisEconomy
+      status: planned-not-installed
       purpose: Main/Frontier shared Waymark balance
       source: https://www.spigotmc.org/resources/105965/
     - name: VaultUnlocked
+      status: planned-not-installed
       purpose: Economy API bridge
       source: https://hangar.papermc.io/TNE/VaultUnlocked
     - name: EconomyShopGUI
+      status: planned-not-installed
       purpose: Initial buy/sell shop
       source: https://www.curseforge.com/minecraft/bukkit-plugins/economyshopgui
     - name: BetterStructures
+      status: planned-not-installed
       purpose: Dimension-specific structures in persistent Main worlds only
       source: https://modrinth.com/plugin/betterstructures
 frontier:
@@ -246,6 +255,7 @@ frontier:
         nether: disabled
         end: disabled
     - name: Multiverse-Core
+      status: planned-not-installed
       purpose: Entry world and multiple Adventure worlds
       source: https://modrinth.com/plugin/multiverse-core
     - name: mcMMO
@@ -259,18 +269,40 @@ frontier:
         - frontier
       note: Use the same untracked JAR on Main and Frontier; install later with shared MariaDB configuration.
     - name: RedisEconomy
+      status: planned-not-installed
       purpose: Shared Waymark balance
       source: https://www.spigotmc.org/resources/105965/
     - name: VaultUnlocked
+      status: planned-not-installed
       purpose: Economy API bridge
       source: https://hangar.papermc.io/TNE/VaultUnlocked
     - name: EliteMobs
+      status: planned-not-installed
       purpose: Ready-made mobs, equipment, quests, and Adventure worlds
       source: https://modrinth.com/plugin/elitemobs
   conditional:
     - name: BetterStructures
+      status: planned-not-installed
       condition: Required by a selected Frontier content pack
       source: https://modrinth.com/plugin/betterstructures
+
+administration_development:
+  planned:
+    - name: PlugManX
+      version: unselected
+      status: planned-not-installed
+      platform: Bukkit/Paper
+      placement:
+        - lobby
+        - main
+        - frontier
+      excluded-placement:
+        - velocity
+      acquisition: manual
+      source: https://modrinth.com/plugin/plugmanx
+      purpose: Admin-only management and short development cycles for verified reload-safe custom Plugins
+      operational-policy: full-server-restart-default
+      reload-policy: allowlist-only-after-plugin-specific-poc
 
 content_policy:
   - Start with several ready-made themes requiring little customization.

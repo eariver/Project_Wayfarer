@@ -1,5 +1,13 @@
 # Acceptance Tests
 
+## Verification policy
+
+- Completed baselines remain recorded as verified facts.
+- Future ordinary third-party Plugin integrations focus on exact placement, dependencies, adopted Config, successful startup, one representative smoke test and obvious regressions.
+- Exhaustive command, Config-key and unused-feature testing is not required for routine integrations.
+- Detailed verification remains mandatory for persistent worlds/data, economy/shared progression, inventory synchronization, permissions/secrets, protocol conversion, portal/dimension routing, backup/restore, failover and irreversible changes.
+- Minor non-security display or Config issues found during small-scale operation may be corrected in a later focused Commit.
+
 ## Network and security
 
 - [ ] Client 26.2 connects to Velocity and enters Lobby.

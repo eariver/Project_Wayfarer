@@ -118,15 +118,16 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - Do not regenerate either void entry world without an approved task, an exact resolved-path check, and a verified backup outside the source world path.
 - Lobby shares no gameplay inventory, currency, mcMMO, or progression with Main/Frontier.
 - Main and Frontier normal inventories are independent.
-- Main and Frontier share only explicitly designed network data: initially Waymark and mcMMO.
-- Network currency display name: `Waymark`; symbol: `WM`; internal identifier: `waymark`.
+- Main and Frontier do not yet share economy or mcMMO runtime data.
+- Planned Main/Frontier shared network data is limited initially to Waymark and mcMMO.
+- Planned network currency display name: `Waymark`; symbol: `WM`; internal identifier: `waymark`.
 - Main persistent dimensions: `main`, `main_nether`, `main_end`.
 - Disposable resource dimensions: `resource`, `resource_nether`, `resource_end`.
-- BetterStructures is enabled only in the persistent Main dimensions and disabled in all Resource dimensions.
-- Main hub provides independent direct gates to `resource`, `resource_nether`, and `resource_end`; every Resource world has an explicit return gate to Main.
+- When introduced, BetterStructures must be enabled only in the persistent Main dimensions and disabled in all Resource dimensions.
+- The planned Main hub provides independent direct gates to `resource`, `resource_nether`, and `resource_end`; every Resource world requires an explicit return gate to Main.
 - `resource_end` must not spawn an Ender Dragon (`entities.spawning.scan-for-legacy-ender-dragon: false`). `main_end` keeps this setting enabled.
 - Resource End routing must not depend on the Dragon exit portal or End gateways; use a verified safe outer-island destination.
-- Frontier entry world is simple and provides portals to installed Frontier content worlds.
+- Frontier entry world remains simple and will provide portals only to approved, installed Frontier content worlds.
 - Literal Twilight Forest Plugin support is not part of the plan.
 - LAB is a future component and must not be added to the initial startup set without an approved task.
 - This repository does not contain or develop custom Plugin source code.
@@ -134,6 +135,8 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - This repository may contain only integration contracts, installation instructions, version constraints, and Config for external custom Plugins.
 - Do not create Gradle, Maven, Java, or Kotlin Plugin projects in this repository.
 - Do not add external Plugin repositories as Git submodules without explicit approval.
+- PlugManX is a planned, unselected-version administration/development Plugin for Paper backends only; it is not installed and must not be placed on Velocity.
+- Normal operation uses full server restarts. Any future PlugManX reload permission is admin-only and allowlist-based after Plugin-specific unload/reload verification.
 - Do not enable the Minecraft Management Server while using the public placeholder secret. Generate and inject a local secret before enabling it.
 
 ## 9. Config editing policy
@@ -144,7 +147,15 @@ When a generated runtime Config contains secrets, maintain a sanitized `.templat
 
 Validate YAML, TOML, JSON, XML, PowerShell syntax, and Docker Compose syntax after editing where tooling is available.
 
-## 10. Git completion policy
+## 10. Integration verification policy
+
+For ordinary third-party Plugin integration, verify the exact version and platform, placement and dependencies, successful enablement, the main adopted Config, one representative smoke test, obvious regressions, and Git exclusion of binaries and runtime data. Do not expand routine tasks into exhaustive testing of every command, Config key, feature combination, or internal implementation.
+
+Plugins that share a feature area, dependency chain, placement, data boundary, and client acceptance test may be introduced in one task. Keep destructive world work, database migrations, shared progression/economy, inventory synchronization, permissions/secrets, protocol conversion, portal/dimension routing, backups/restores, failover, and other irreversible work as separately approved, risk-focused tasks with detailed verification.
+
+Minor non-security configuration issues discovered during small-scale operation may be corrected in later focused commits. This does not relax validation for changes that can affect persistent data, security boundaries, or recoverability.
+
+## 11. Git completion policy
 
 For tasks performed entirely inside this repository, Codex may commit and push
 completed changes without requesting an additional Git-only confirmation when

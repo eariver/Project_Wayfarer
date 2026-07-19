@@ -1,4 +1,4 @@
-# Architecture Summary
+# Architecture Summary - Ver.0.0.3
 
 ## Logical topology
 
@@ -11,13 +11,15 @@ Velocity :25565
   |-- Main :25567 / Paper 26.2 / Java 25
   `-- Frontier :25568 / Paper 1.21.11 / Java 25
 
-MariaDB: LuckPerms, mcMMO, future network metadata
-Redis: RedisEconomy and optional chat transport
+MariaDB: LuckPerms in use; mcMMO/network databases reserved for future integrations
+Redis: infrastructure available; RedisEconomy and chat transport are not installed
 ```
 
 All backend servers bind to `127.0.0.2`. Velocity is the only player-facing endpoint. Modern forwarding is mandatory.
 
 WorldEdit 7.4.4 and WorldGuard 7.0.17 form a common administration layer on all Paper backends and are not installed on Velocity. Lobby and `frontier_gate` use protected Global Regions; Main currently has no protection Flags, Members, or Owners.
+
+TAB 6.1.0 and VelocityScoreboardAPI 2.1.0 run only on Velocity. TAB-Bridge 6.2.2 and PlaceholderAPI 2.12.3 run on every Paper backend. This is a proxy installation, not a mixed installation.
 
 ## Data boundaries
 
@@ -26,10 +28,12 @@ WorldEdit 7.4.4 and WorldGuard 7.0.17 form a common administration layer on all 
 | Normal inventory | Local only | Local only | Local only |
 | Ender chest / XP / health | Local only | Local only | Local only |
 | LuckPerms identity | Shared | Shared | Shared |
-| Global chat and TAB | Shared | Shared | Shared |
-| Waymark | Not used | Shared with Frontier | Shared with Main |
-| mcMMO | Not installed | Shared with Frontier | Shared with Main |
-| EvenMoreFish | No | Main only | No |
+| TAB | Network | Network | Network |
+| Global chat | Not installed | Not installed | Not installed |
+| Waymark | Not used | Planned with Frontier | Planned with Main |
+| mcMMO | Not installed | Planned with Frontier | Planned with Main |
+| WorldGuard | Whole entry world protected | Plugin only; no Project regions | Whole entry world protected |
+| EvenMoreFish | Not installed | Planned | Not installed |
 | Frontier achievements | Future | Future consumer | Future producer |
 | Transit vault | Future | Future | Future |
 
@@ -41,17 +45,17 @@ Persistent and buildable:
 - `main_nether`
 - `main_end`
 
-Disposable resource worlds, almost vanilla and without Plugin-added structures:
+Planned disposable resource worlds, designed for near-vanilla generation without Plugin-added structures:
 
 - `resource`
 - `resource_nether`
 - `resource_end`
 
-BetterStructures is enabled only for the persistent trio with dimension-specific packs.
+BetterStructures is not installed. When introduced, it is limited to the persistent trio with dimension-specific packs and remains disabled in Resource dimensions.
 
 ## Frontier
 
-`frontier_gate` is a simple portal hub. It connects to several ready-made Adventure worlds/themes. Frontier inventories and custom equipment remain local to Frontier in Ver.0.0.2. Frontier rewards Main through the shared Waymark balance.
+`frontier_gate` is currently a protected Void entry world with a temporary safety platform. Planned portals will connect it to approved Adventure worlds/themes after their Plugins and content are installed. Frontier inventory remains local. Waymark rewards are a future shared-economy design, not a current feature.
 
 ## Future components
 

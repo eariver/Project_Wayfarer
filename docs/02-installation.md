@@ -1,6 +1,6 @@
 # Initial Installation Procedure
 
-This is an execution summary. Follow the formal Ver.0.0.2 design document for full acceptance criteria.
+This is an execution summary. Follow the repository's [formal Ver.0.0.3 design guide](00-design-guide.md) for the authoritative design and acceptance policy.
 
 ## Phase 0 - Prerequisites
 
@@ -18,7 +18,7 @@ docker compose --env-file .env -f infrastructure/compose.yml up -d
 .\scripts\Test-Infrastructure.ps1
 ```
 
-The initialization script creates separate databases for LuckPerms, mcMMO and future network metadata.
+The initialization script creates separate databases for LuckPerms, future mcMMO sharing and future network metadata. Only the LuckPerms database is currently used by a Plugin.
 
 ## Phase 2 - Manually collect server JARs
 
@@ -29,7 +29,7 @@ Download from official sources and rename locally:
 - `servers/main/paper.jar`
 - `servers/frontier/paper.jar`
 
-Download Plugin JARs listed in `plugin-manifest.yml` and place them into each target `plugins/` directory. Do not commit JARs or paid content.
+The user obtains Plugin JARs from the official sources listed in `plugin-manifest.yml` and places them in an ignored task-specific directory under `manual-downloads/`. After Version, Platform, Metadata, SHA-256 and placement verification, Codex copies approved JARs to the target Runtime directories. Do not commit JARs or paid content.
 
 ## Phase 3 - Bare first boot
 
@@ -69,7 +69,9 @@ Stop each component cleanly with `stop` before editing generated Config.
 3. Add one physical or command-based gate to Main.
 4. Verify all initial joins and backend failures end at Lobby.
 
-## Phase 7 - Main
+## Phase 7 - Planned Main expansion
+
+The following components are not installed yet and require separately approved tasks.
 
 1. Install Multiverse-Core and Multiverse-NetherPortals.
 2. Create and link `main`, `main_nether`, `main_end`.
@@ -80,7 +82,9 @@ Stop each component cleanly with `stop` before editing generated Config.
 7. Apply Overworld, Nether and End-specific structure packs.
 8. Verify Resource worlds contain only vanilla structures.
 
-## Phase 8 - Frontier
+## Phase 8 - Planned Frontier expansion
+
+The following components and shared-data integrations are not installed yet.
 
 1. Install the 1.21.11-compatible builds.
 2. Keep `frontier_gate` simple.
@@ -88,7 +92,7 @@ Stop each component cleanly with `stop` before editing generated Config.
 4. Add multiple themes only after each passes a clean-server acceptance test.
 5. Configure a separate Frontier resource pack if required.
 6. Keep Main/Frontier inventories separate.
-7. Verify shared Waymark and mcMMO persistence.
+7. After their future installation, verify shared Waymark and mcMMO persistence using risk-focused data tests.
 
 ## Phase 9 - Acceptance
 

@@ -1,0 +1,156 @@
+# Project Wayfarer 設計・導入・運用ガイド Ver.0.0.3
+
+## 1. 文書の位置付け
+
+このファイルはProject Wayfarerリポジトリ内の正式な設計基準です。
+
+|区分|値|
+|---|---|
+|Document revision|Ver.0.0.3|
+|更新日|2026-07-19|
+|Runtime software versions|`versions.yml`と`plugin-manifest.yml`を正本とする|
+|Future server release|未決定|
+
+Ver.0.0.3は設計・導入・運用文書の改訂番号であり、稼働ServerのRelease番号ではありません。現段階ではGit TagおよびGitHub Releaseを作成しません。
+
+## 2. Projectの目的とScope
+
+Project Wayfarerは、ユーザー本人と関係者による小規模運用を想定したMinecraft Networkです。
+
+- Lobbyは初期接続、待機、案内および障害時のFailoverを担当する。
+- Mainは恒久生活、建築、保管および通常Survivalの拠点とする。
+- Frontierは既製Adventure Contentを扱う独立した環境とする。
+- LABは将来の検証用Componentとし、承認された導入タスクまで起動対象にしない。
+
+このリポジトリはConfig、設計、導入・運用Script、Version制約および外部PluginとのIntegration情報の正本です。独自PluginのSource、Build ProjectおよびRelease成果物は含めず、必要なPluginごとに別Repositoryで開発・Releaseします。
+
+## 3. 現在のNetwork構成
+
+```text
+Minecraft Client 26.2
+        |
+        v
+Velocity :25565 / Java 25
+  |-- Lobby :25566 / Paper 26.2 / Java 25
+  |-- Main :25567 / Paper 26.2 / Java 25
+  `-- Frontier :25568 / Paper 1.21.11 / Java 25
+```
+
+- 全Paper Backendは`127.0.0.2`へBindする。
+- Player向けEndpointはVelocityだけとする。
+- Velocity Modern Forwardingを使用する。
+- Lobbyを初期接続先およびFailover先とする。
+- ViaVersionはVelocityだけに配置する。
+- ViaBackwardsは導入および依存関係への追加を禁止する。
+
+## 4. Infrastructure
+
+Docker ComposeでMariaDB 11.8とRedis 8-alpineを管理します。
+
+|Database|用途|
+|---|---|
+|`wayfarer_luckperms`|導入済みLuckPerms共有Storage|
+|`wayfarer_mcmmo`|将来のmcMMO共有Storage用に予約|
+|`wayfarer_network`|将来のNetwork機能用に予約|
+
+Redisは将来のWaymarkおよび必要なNetwork連携向けに用意されていますが、RedisEconomyはまだ導入されていません。Password、Forwarding SecretおよびCredentialは`.env`とIgnored Runtime Configで管理し、追跡文書やGit差分へ含めません。
+
+## 5. 導入済み基盤
+
+### Velocity
+
+- Velocity 4.1.0-SNAPSHOT selected build 8 / Java 25
+- ViaVersion 5.11.0
+- LuckPerms 5.5.60
+- TAB 6.1.0
+- VelocityScoreboardAPI 2.1.0
+
+### 全Paper Backend
+
+- Java 25
+- LuckPerms 5.5.60
+- WorldEdit 7.4.4
+- WorldGuard 7.0.17
+- TAB-Bridge 6.2.2
+- PlaceholderAPI 2.12.3
+
+### LobbyとFrontier
+
+- VoidGen 2.3.8
+- `lobby`および`frontier_gate`はVoid World
+- NetherとEndは無効
+- Y=63に17x17の仮設Stone安全Platformと金の中心Block
+- Spawnは`(0, 64, 0)`
+- `keepInventory=true`、`spawnRadius=0`
+
+### WorldGuard
+
+Lobbyと`frontier_gate`は`__global__` Regionで`passthrough=deny`とし、`build` Flagは使用しません。`wayfarer_builder`だけが建築でき、WorldEdit／WorldGuard権限は`server=lobby`および`server=frontier` Contextに限定します。MainにはPluginを配置していますが、Project固有Region、Global Flag、MemberおよびOwnerはまだ設定していません。
+
+### TAB
+
+Proxy Installation方式を採用します。TAB本体とVelocityScoreboardAPIはVelocityだけに、TAB-BridgeとPlaceholderAPIは全Paper Backendだけに配置します。Headerは`Project Wayfarer`、Footerは現在のServer、Network Online人数およびPingです。Sidebar、Bossbar、Layout等は未使用です。PlaceholderAPI Expansionは未導入で、必要になった場合も手動取得方針に従います。
+
+## 6. Data Boundary
+
+|Data|Lobby|Main|Frontier|
+|---|---|---|---|
+|通常Inventory|Local|Local|Local|
+|Ender Chest／XP／Health|Local|Local|Local|
+|LuckPerms|Shared|Shared|Shared|
+|TAB|Network|Network|Network|
+|Waymark|使用しない|Frontierとの共有を計画|Mainとの共有を計画|
+|mcMMO|導入しない|Frontierとの共有を計画|Mainとの共有を計画|
+|WorldGuard|Entry World全体保護|Pluginのみ・保護未設定|Entry World全体保護|
+
+Waymark、mcMMO、RedisEconomy、Multiverse、Advanced Portals、BetterStructures、EvenMoreFish、EliteMobsおよびCross-server Chatは未導入です。計画上の共有境界を、導入済み機能として扱いません。
+
+## 7. Plugin取得・導入ポリシー
+
+1. ユーザーが公式SourceからPlugin JARを手動取得する。
+2. JARをIgnoredな`manual-downloads/`配下へ配置する。
+3. CodexがVersion、Platform、配置先、Metadata、通常のJARとしての読取可否およびSHA-256を確認する。
+4. Codexが承認済みJARを対象Runtime Directoryへコピーする。
+5. 正確なVersionを一度起動し、生成Configと公式文書を確認してから編集する。
+
+Codexは個別タスクの明示承認なしにJARをDownloadしません。JAR、World、Player Data、Database Data、Secret、LogおよびCacheはCommitしません。Pluginの自動Updateと自動JAR置換は原則無効とし、PlaceholderAPI Expansionにも同じ手動取得方針を適用します。
+
+## 8. Plugin導入タスクの単位
+
+同じ機能領域、依存関係、配置対象、Database／連携境界およびClient受入試験を共有するPlugin群は、一つの検証済みタスクとしてまとめて構いません。
+
+例：
+
+- Multiverse-Core + Multiverse-NetherPortals
+- RedisEconomy + VaultUnlocked + EconomyShopGUI
+- Advanced PortalsのProxy Component + Backend Components
+
+World削除・再生成、Database Migration、共有Progression／Economy、Permission／Security Boundary、Protocol変換、大規模Content Packなど、失敗時の影響や切り分けRiskが大きい作業は独立タスクとします。
+
+## 9. 検証粒度の標準
+
+通常の既成Plugin導入では、Plugin内部の網羅的な品質保証ではなくProject WayfarerへのIntegrationを確認します。
+
+1. VersionとPlatform
+2. 配置先と依存関係
+3. 対象RuntimeでのEnable
+4. 採用目的に関係する主要Config
+5. 代表的機能の一度のSmoke Test
+6. 既存構成の明らかなRegression有無
+7. JAR、Secret、World、Log等のGit除外
+
+全Command、全Config Key、全機能組合せ、同一操作の多数回反復およびPlugin内部実装の品質保証は通常不要です。軽微な設定不備は運用中に発見した時点で後続Commitにより修正できます。
+
+World、Player／Database Data、Economy、共有Progression、Inventory同期、Permission、Secret、接続経路、Protocol変換、Portal／Dimension Family、Backup／Restore、Failoverおよび不可逆な作業は詳細検証を維持します。
+
+## 10. PlugManX将来導入方針
+
+PlugManXはAdministration／Development用途のplanned Componentです。Versionは未選定で、Paper 26.2／Java 25とPaper 1.21.11／Java 25の双方に対応する安定版を導入タスク時に選定します。対象はLobby、Main、Frontierであり、Velocityには配置しません。取得は手動です。
+
+通常運用ではServer Restartを標準とし、PlugManXの全権限は管理者だけに付与します。LuckPerms、WorldEdit、WorldGuard、VoidGen、TAB-Bridge、PlaceholderAPI、Multiverse系、Economy Provider、Vault系、mcMMO、Library PluginおよびWorld／Database／Protocol／Permissionを管理するPluginは、原則としてReload／Unload対象にしません。
+
+独自Pluginは最初にTest用PluginでPoCし、Listener、Scheduler、Command／Brigadier、Bukkit Service、Database Connection、File Handle、Thread、Static ReferenceおよびCacheを`onDisable()`で確実に解放できることを確認したPluginだけをReload許可対象にします。Ver.0.0.3ではPlugManXを導入しません。
+
+## 11. Roadmapと関連文書
+
+今後の導入候補と依存関係は[Roadmap](09-roadmap.md)で管理します。導入済みVersionとHashは`versions.yml`、配置・取得・依存方針は`plugin-manifest.yml`、運用手順は[Operations](03-operations.md)、検証済み事実は[Acceptance Tests](06-acceptance-tests.md)を参照してください。
