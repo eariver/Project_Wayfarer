@@ -38,16 +38,41 @@ velocity:
       source: https://hangar.papermc.io/ViaVersion/ViaVersion/versions/5.11.0
       note: ViaBackwards is not required and remains forbidden.
     - name: TAB
+      version: "6.1.0"
+      channel: Release
+      platform: Velocity
+      status: installed-and-verified
+      placement: velocity-only
       purpose: Global player list, header/footer, and server labels
       source: https://github.com/NEZNAMY/TAB/releases
+      jar: manual-acquisition
+      sha256: 14FE9601CE09F2EFE8A395EF2359DBF109A3572AA1B0B140B99C04B1B391D397
+      installation: proxy
+      display:
+        header: Project Wayfarer
+        footer: server, network online players, and player ping
+      excluded-placement:
+        - lobby
+        - main
+        - frontier
+    - name: VelocityScoreboardAPI
+      version: "2.1.0"
+      channel: Release
+      platform: Velocity
+      status: installed-and-verified
+      placement: velocity-only
+      purpose: TAB scoreboard packet API on Velocity; baseline display uses header/footer only
+      source: https://github.com/WiIIiam278/VelocityScoreboardAPI
+      jar: manual-acquisition
+      sha256: DBF3FB5BF9B153880362EE7C471D211147D3800ED6FF1352D128EFDBE8AFF05A
+      excluded-placement:
+        - lobby
+        - main
+        - frontier
     - name: Advanced Portals proxy component
       purpose: Lobby/Main/Frontier physical server-switch portals
       source: https://modrinth.com/plugin/advanced-portals
       note: Follow the package documentation; the proxy component is distributed with the project files.
-  recommended:
-    - name: VelocityScoreboardAPI
-      purpose: TAB scoreboard-related features on Velocity
-      source: https://github.com/WiIIiam278/VelocityScoreboardAPI
   optional:
     - name: spark standalone
       purpose: Velocity performance profiling
@@ -115,9 +140,38 @@ all_paper_backends:
       excluded-placement:
         - velocity
     - name: PlaceholderAPI
+      version: "2.12.3"
+      channel: Release
+      platform: Bukkit
+      status: installed-and-verified
+      placement:
+        - lobby
+        - main
+        - frontier
       source: https://www.spigotmc.org/resources/placeholderapi.6245/
+      jar: manual-acquisition
+      sha256: FDE03259F5AF6938F3C33EEB4D814000A1ADABF1D2304CE14970BE81F609A437
+      expansions: none-installed
+      expansion-acquisition: manual-only
+      cloud-enabled: false
+      excluded-placement:
+        - velocity
     - name: TAB-Bridge
+      version: "6.2.2"
+      channel: Release
+      platform: Bukkit
+      status: installed-and-verified
+      placement:
+        - lobby
+        - main
+        - frontier
       source: https://github.com/NEZNAMY/TAB-Bridge/releases
+      purpose: Forward backend data and PlaceholderAPI values to proxy-installed TAB
+      jar: manual-acquisition
+      sha256: 0E5A8EABBBD5AC7FE6335AD2F7FDC2236FAFCF9A7840F18870F2538FFBEC47FF
+      installation: proxy-bridge
+      excluded-placement:
+        - velocity
     - name: Advanced Portals backend component
       source: https://modrinth.com/plugin/advanced-portals
   bundled:

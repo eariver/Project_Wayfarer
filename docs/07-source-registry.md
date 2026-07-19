@@ -8,6 +8,11 @@
 - LuckPerms network installation: https://luckperms.net/wiki/Network-Installation
 - LuckPerms storage types: https://luckperms.net/wiki/Storage-types
 - TAB installation: https://github.com/NEZNAMY/TAB/wiki/Installation
+- TAB placeholders: https://github.com/NEZNAMY/TAB/wiki/Placeholders
+- TAB releases: https://github.com/NEZNAMY/TAB/releases
+- TAB-Bridge releases: https://github.com/NEZNAMY/TAB-Bridge/releases
+- VelocityScoreboardAPI: https://github.com/WiIIiam278/VelocityScoreboardAPI
+- PlaceholderAPI: https://www.spigotmc.org/resources/placeholderapi.6245/
 - ViaVersion setup: https://viaversion.com/setup
 - Multiverse-Core: https://modrinth.com/plugin/multiverse-core
 - Multiverse-NetherPortals: https://modrinth.com/plugin/multiverse-netherportals

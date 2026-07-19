@@ -116,6 +116,8 @@ velocity/plugins/luckperms/libs/
 velocity/plugins/luckperms/translations/
 velocity/plugins/luckperms/*.mv.db
 velocity/plugins/luckperms/*.trace.db
+velocity/plugins/tab/playerdata.yml
+velocity/plugins/tab/skincache.yml
 
 # Resource-pack outputs
 resource-packs/**/build/

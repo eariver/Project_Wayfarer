@@ -65,6 +65,14 @@ Main has the administration Plugins installed but currently has no Project Wayfa
 
 Do not use the WorldGuard `build` flag, because it bypasses normal membership-based build behavior and can interfere with non-player mechanisms. Permanent Builder membership requires a separate approved access decision. For testing, use a short-lived LuckPerms parent, verify Lobby/Frontier permission and Main isolation, and remove it immediately after the test rather than waiting for expiry.
 
+## TAB network display
+
+TAB 6.1.0 and VelocityScoreboardAPI 2.1.0 run only on Velocity. Lobby, Main, and Frontier run TAB-Bridge 6.2.2 with PlaceholderAPI 2.12.3; do not install the TAB main Plugin on a backend or the bridge/API Plugins on Velocity. The tracked TAB Config under `velocity/plugins/tab/` is the display source of truth.
+
+The baseline enables only a `Project Wayfarer` header and a footer containing the current backend name, network online count, and player ping. After a Config or routing change, connect through Velocity and switch backends once to confirm that `%server%`, `%online%`, and `%ping%` resolve to values and that the footer follows the player. Sidebar, Bossbar, Layout, objectives, and custom prefix/suffix formatting remain disabled.
+
+PlaceholderAPI Cloud access is disabled and no Expansion is installed. When an Expansion becomes necessary, obtain it manually under the Plugin artifact acquisition policy, document its exact version and placement, and verify it in a separate change. Minor display issues found during operation may be corrected in a later focused Commit.
+
 ## Incident response
 
 - Backend crash: Velocity should fail over to Lobby.

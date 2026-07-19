@@ -70,6 +70,45 @@ runtime_selection:
     dependency: "WorldEdit 7.4.4"
     sha256: 3F14562509BF01E7680571B6F56932239157FF938F257C3226DF3B4088AE54F2
     verified: 2026-07-19
+  tab:
+    version: "6.1.0"
+    channel: release
+    platform: velocity
+    placement:
+      - velocity
+    installation: proxy
+    sha256: 14FE9601CE09F2EFE8A395EF2359DBF109A3572AA1B0B140B99C04B1B391D397
+    verified: 2026-07-19
+  velocity_scoreboard_api:
+    version: "2.1.0"
+    channel: release
+    platform: velocity
+    placement:
+      - velocity
+    sha256: DBF3FB5BF9B153880362EE7C471D211147D3800ED6FF1352D128EFDBE8AFF05A
+    verified: 2026-07-19
+  tab_bridge:
+    version: "6.2.2"
+    channel: release
+    platform: bukkit
+    placement:
+      - lobby
+      - main
+      - frontier
+    sha256: 0E5A8EABBBD5AC7FE6335AD2F7FDC2236FAFCF9A7840F18870F2538FFBEC47FF
+    verified: 2026-07-19
+  placeholder_api:
+    version: "2.12.3"
+    channel: release
+    platform: bukkit
+    placement:
+      - lobby
+      - main
+      - frontier
+    expansions: none
+    expansion_acquisition: manual
+    sha256: FDE03259F5AF6938F3C33EEB4D814000A1ADABF1D2304CE14970BE81F609A437
+    verified: 2026-07-19
   paper_26_2:
     build: 62
     commit: 75c0b48
@@ -104,7 +143,7 @@ servers:
   frontier:
     software: Paper
     minecraft: "1.21.11"
-    java: 21
+    java: 25
     port: 25568
     level_name: frontier_gate
   lab:

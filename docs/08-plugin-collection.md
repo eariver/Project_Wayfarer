@@ -9,12 +9,12 @@
 |Core|Frontier|Paper 1.21.11|必須|servers/frontier|https://papermc.io/downloads/paper|Java 25|
 |Proxy|Velocity|LuckPerms|必須|velocity/plugins|https://luckperms.net/download||
 |Proxy|Velocity|ViaVersion|必須|velocity/plugins|https://modrinth.com/plugin/viaversion|ViaBackwards禁止|
-|Proxy|Velocity|TAB|必須|velocity/plugins|https://github.com/NEZNAMY/TAB/releases||
-|Proxy|Velocity|VelocityScoreboardAPI|推奨|velocity/plugins|https://github.com/WiIIiam278/VelocityScoreboardAPI|TAB scoreboard使用時|
+|Proxy|Velocity|TAB 6.1.0|導入・検証済み|velocity/plugins|https://github.com/NEZNAMY/TAB/releases|Proxy Installation、Paper配置禁止|
+|Proxy|Velocity|VelocityScoreboardAPI 2.1.0|導入・検証済み|velocity/plugins|https://github.com/WiIIiam278/VelocityScoreboardAPI|Paper配置禁止、Sidebar等は未使用|
 |Portal|Velocity + All Paper|Advanced Portals|必須|各plugins|https://modrinth.com/plugin/advanced-portals|Proxy componentの配置方法を公式手順で確認|
 |Common|All Paper|LuckPerms|必須|各plugins|https://luckperms.net/download||
-|Common|All Paper|PlaceholderAPI|必須|各plugins|https://www.spigotmc.org/resources/placeholderapi.6245/||
-|Common|All Paper|TAB-Bridge|必須|各plugins|https://github.com/NEZNAMY/TAB-Bridge/releases||
+|Common|All Paper|PlaceholderAPI 2.12.3|導入・検証済み|各plugins|https://www.spigotmc.org/resources/placeholderapi.6245/|Velocity配置禁止、Expansion未導入・手動取得|
+|Common|All Paper|TAB-Bridge 6.2.2|導入・検証済み|各plugins|https://github.com/NEZNAMY/TAB-Bridge/releases|Velocity配置禁止|
 |Common|All Paper|WorldEdit 7.4.4|導入・検証済み|各plugins|https://modrinth.com/plugin/worldedit/version/qNuPcliz|同一JARを手動取得、Velocity禁止、Java 25|
 |Common|All Paper|WorldGuard 7.0.17|導入・検証済み|各plugins|https://modrinth.com/plugin/worldguard|WorldEdit 7.4.4依存、Velocity禁止|
 |World|Lobby + Frontier|VoidGen 2.3.8|必須|servers/lobby/plugins, servers/frontier/plugins|https://modrinth.com/plugin/voidgen/version/2.3.8|Main/Velocityには配置しない|

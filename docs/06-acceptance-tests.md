@@ -42,8 +42,12 @@
 ## Chat and TAB
 
 - [ ] Chat from each backend is visible everywhere with correct origin tag.
-- [ ] TAB lists players across all backends.
-- [ ] Backend placeholders update after switching servers.
+- [x] TAB 6.1.0 and VelocityScoreboardAPI 2.1.0 load only on Velocity; TAB-Bridge 6.2.2 and PlaceholderAPI 2.12.3 load on every Paper backend.
+- [x] The baseline displays only the `Project Wayfarer` header and the current server, network online count, and ping footer.
+- [x] A Minecraft 26.2 client completes Lobby -> Main -> Frontier -> Lobby without display duplication, disconnect, or protocol error.
+- [x] Lobby/Frontier protection, Main normal building, and the existing ViaVersion route show no regression during the display smoke test.
+- [x] After a clean network restart, the display persists and the server placeholder updates on a Lobby-to-Frontier switch.
+- [x] PlaceholderAPI Cloud access is disabled and no Expansion is installed.
 
 ## Main worlds
 

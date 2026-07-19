@@ -92,6 +92,14 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - LuckPerms uses SQL messaging for network update propagation.
 - LuckPerms runtime configs containing database credentials must remain ignored and be rendered from sanitized templates.
 - No other permission plugin may be installed without an approved migration task.
+- TAB 6.1.0 is installed only on Velocity.
+- VelocityScoreboardAPI 2.1.0 is installed only on Velocity.
+- TAB-Bridge 6.2.2 and PlaceholderAPI 2.12.3 are installed on all Paper backends.
+- TAB must not be installed on Paper backends.
+- TAB-Bridge and PlaceholderAPI must not be installed on Velocity.
+- Project Wayfarer uses TAB proxy installation, not mixed installation.
+- PlaceholderAPI expansions follow the manual Plugin artifact acquisition policy.
+- The baseline TAB display contains only the Project Wayfarer header and the server, online-player, and ping footer.
 - All Paper backends bind to `127.0.0.2` and use Velocity modern forwarding.
 - Lobby is the initial connection and failover server.
 - WorldEdit 7.4.4 and WorldGuard 7.0.17 are installed on all Paper backends and must not be installed on Velocity.
