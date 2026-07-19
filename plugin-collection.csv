@@ -19,7 +19,7 @@ Gameplay,Main + Frontier,mcMMO 2.3.000,導入・検証済み,両plugins,https://
 Gameplay,Main,EvenMoreFish,計画・未導入,servers/main/plugins,https://modrinth.com/plugin/evenmorefish,
 Economy,Main + Frontier,RedisEconomy 4.5.12-wayfarer.1,導入・検証済み,両plugins,https://www.spigotmc.org/resources/105965/,ユーザー提供互換Build・共有Redis Waymark・Lobby／Velocity対象外
 Economy,Main + Frontier,VaultUnlocked 2.20.2,導入・検証済み,両plugins,https://hangar.papermc.io/TNE/VaultUnlocked,RedisEconomy Vault Bridge・Lobby／Velocity対象外
-Economy,Main,EconomyShopGUI,計画・未導入,servers/main/plugins,https://www.curseforge.com/minecraft/bukkit-plugins/economyshopgui,商品・価格設計を後続で検証
+Economy,Main,EconomyShopGUI 7.1.1 Free,導入・検証済み,servers/main/plugins,https://www.spigotmc.org/resources/economyshopgui.69927/,固定価格5カテゴリ・62商品・Vault経由RedisEconomy・Lobby／Frontier／Velocity対象外
 Structure,Main,BetterStructures,計画・未導入,servers/main/plugins,https://modrinth.com/plugin/betterstructures,Resource世界では無効
 Adventure,Frontier,EliteMobs,計画・未導入,servers/frontier/plugins,https://modrinth.com/plugin/elitemobs,Content Packは別途
 Conditional,Frontier,BetterStructures,条件付き・未導入,servers/frontier/plugins,https://modrinth.com/plugin/betterstructures,選定Packが要求するときのみ・WorldEdit導入済み

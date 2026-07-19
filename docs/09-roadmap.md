@@ -16,10 +16,12 @@
 - Multiverse-NetherPortalsによるMain内2 Familyの明示的な双方向Link
 - mcMMO 2.3.000によるMain／Frontier共有MariaDB進行基盤
 - RedisEconomy 4.5.12-wayfarer.1／VaultUnlocked 2.20.2によるMain／Frontier共有Waymark基盤
+- EconomyShopGUI 7.1.1 FreeによるMain限定の初期Waymarkショップ（固定価格5カテゴリ・62商品）
 
 ## 次期候補
 
-- EconomyShopGUIの商品・価格設計とWaymark獲得源
+- Frontier固有、EliteMobs、EvenMoreFishおよびQuestのWaymark報酬
+- Cross-server Shop、Dynamic Pricing、Player Shop、Global Stockおよび価格自動調整
 - Advanced PortalsのProxy／Backend一括Integration
 - MainのBetterStructures
 - MainのEvenMoreFish

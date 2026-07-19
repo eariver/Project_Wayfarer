@@ -124,6 +124,11 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - RedisEconomy runtime Configs containing Redis credentials must remain ignored and be rendered from sanitized templates.
 - RedisEconomy must not be reloaded or unloaded through PlugManX; use a normal server restart.
 - A Waymark rollback, duplicate application, or loss is a blocking data-integrity failure.
+- EconomyShopGUI 7.1.1 Free is installed only on Main and uses Vault with RedisEconomy as its provider; it must not be installed on Velocity, Lobby, or Frontier.
+- The initial Main shop has five fixed-price categories (`sell_resources`, `sell_farming`, `sell_mob_drops`, `buy_building`, and `buy_supplies`) and 62 Vanilla-item entries. Dynamic pricing, global stock, player shops, tax, and automatic price adjustment remain disabled.
+- General-player EconomyShopGUI permissions are scoped to `server=main`. Bulk sell, editor, reload, give, update, debug, bypass, and wildcard administration permissions must not be granted.
+- EconomyShopGUI Config, Japanese language messages, section definitions, and shop definitions are tracked. Its JAR, cache, transaction/runtime data, generated backups, and archived vendor defaults remain ignored.
+- Do not reload or unload EconomyShopGUI, RedisEconomy, or VaultUnlocked through PlugManX; use a normal Main restart after shop Config changes.
 - Redis AOF storage is required in every 0.1.0-or-later cold backup. Do not adopt hot/warm backup Plugins, and copy the Redis volume filesystem only after the Redis container has stopped normally.
 - mcMMO 2.3.000 is installed only on Main and Frontier. Lobby and Velocity must not load mcMMO.
 - Main and Frontier use the same locally built mcMMO JAR with SHA-256 `03ABEEB48E33733C14859B4CAC6DC1104D19F15E4E81D9EB6B79D666F0E8A1B9`.

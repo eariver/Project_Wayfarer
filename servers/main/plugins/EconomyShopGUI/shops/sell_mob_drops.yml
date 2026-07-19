@@ -1,0 +1,25 @@
+pages:
+  page1:
+    gui-rows: 3
+    items:
+      bone:
+        material: BONE
+        sell: 0.03
+      rotten_flesh:
+        material: ROTTEN_FLESH
+        sell: 0.03
+      string:
+        material: STRING
+        sell: 0.04
+      gunpowder:
+        material: GUNPOWDER
+        sell: 0.08
+      ender_pearl:
+        material: ENDER_PEARL
+        sell: 0.20
+      blaze_rod:
+        material: BLAZE_ROD
+        sell: 0.35
+      shulker_shell:
+        material: SHULKER_SHELL
+        sell: 2.00

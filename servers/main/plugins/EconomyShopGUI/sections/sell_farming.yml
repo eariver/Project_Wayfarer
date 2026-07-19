@@ -1,0 +1,14 @@
+enable: true
+title: '&8農業品売却'
+slot: 12
+hidden: false
+sub-section: false
+economy: VAULT
+item:
+  material: WHEAT
+  displayname: '&a農業品売却'
+  lore:
+  - '&7通常の農作物をWaymarkへ交換します'
+fill-item:
+  material: GRAY_STAINED_GLASS_PANE
+  displayname: ' '

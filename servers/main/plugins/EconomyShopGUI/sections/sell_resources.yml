@@ -1,0 +1,14 @@
+enable: true
+title: '&8資源売却'
+slot: 10
+hidden: false
+sub-section: false
+economy: VAULT
+item:
+  material: COBBLESTONE
+  displayname: '&a資源売却'
+  lore:
+  - '&7採掘・伐採資源をWaymarkへ交換します'
+fill-item:
+  material: GRAY_STAINED_GLASS_PANE
+  displayname: ' '

@@ -118,6 +118,14 @@ Use full server restarts for RedisEconomy and Vault changes. Do not reload or un
 
 A representative health check is to record a balance on Main, apply one small authorized Console change, switch normally to Frontier, confirm the same value, apply a second change, switch back, and confirm the cumulative result. Restore the test balance with RedisEconomy's normal administration command; never edit or flush Redis keys directly.
 
+## Main Waymark shop
+
+EconomyShopGUI 7.1.1 Free runs only on Main and uses Vault with RedisEconomy as the active provider. The tracked adoption set is `plugins/EconomyShopGUI/config.yml`, `LanguageFiles/lang-jp.yml`, and the five files under each of `sections/` and `shops/`. Generated cache, transaction data, backups, other generated language files, and the archived `vendor-defaults-7.1.1/` tree remain ignored. Do not commit the JAR or restore Vendor defaults into the active section/shop directories.
+
+Price and product changes require YAML validation, Material validation against the selected Main Paper build, a check that every overlapping buy price exceeds its sell price, and a normal Main restart. Do not use EconomyShopGUI reload, PlugManX, or Redis key edits. After restart, verify the Plugin reports five sections, five shops, Vault/RedisEconomy integration, and no material startup error. Then perform one non-OP GUI transaction and confirm the resulting balance on Frontier. The complete fixed-price table and permission boundary are documented in [Waymark Economy](10-waymark-economy.md).
+
+The initial shop disables update checking, transaction logging, spawner integration, `/sellall`, Sell GUI, editor/reload, and shop-give commands. Admin commands must remain inaccessible to the default group. If a transaction subtracts funds without delivering an item, duplicates an item or balance change, rolls back after a switch/reconnect, or splits the account between Main and Frontier, stop gameplay and preserve logs before further testing.
+
 ## Incident response
 
 - Backend crash: Velocity should fail over to Lobby.

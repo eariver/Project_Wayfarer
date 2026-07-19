@@ -1,0 +1,70 @@
+pages:
+  page1:
+    gui-rows: 5
+    items:
+      dirt:
+        material: DIRT
+        sell: 0.01
+      cobblestone:
+        material: COBBLESTONE
+        sell: 0.02
+      cobbled_deepslate:
+        material: COBBLED_DEEPSLATE
+        sell: 0.03
+      sand:
+        material: SAND
+        sell: 0.04
+      gravel:
+        material: GRAVEL
+        sell: 0.03
+      oak_log:
+        material: OAK_LOG
+        sell: 0.08
+      spruce_log:
+        material: SPRUCE_LOG
+        sell: 0.08
+      birch_log:
+        material: BIRCH_LOG
+        sell: 0.08
+      jungle_log:
+        material: JUNGLE_LOG
+        sell: 0.08
+      acacia_log:
+        material: ACACIA_LOG
+        sell: 0.08
+      dark_oak_log:
+        material: DARK_OAK_LOG
+        sell: 0.08
+      mangrove_log:
+        material: MANGROVE_LOG
+        sell: 0.08
+      cherry_log:
+        material: CHERRY_LOG
+        sell: 0.08
+      pale_oak_log:
+        material: PALE_OAK_LOG
+        sell: 0.08
+      coal:
+        material: COAL
+        sell: 0.10
+      raw_copper:
+        material: RAW_COPPER
+        sell: 0.08
+      raw_iron:
+        material: RAW_IRON
+        sell: 0.25
+      raw_gold:
+        material: RAW_GOLD
+        sell: 0.50
+      redstone:
+        material: REDSTONE
+        sell: 0.04
+      lapis_lazuli:
+        material: LAPIS_LAZULI
+        sell: 0.05
+      diamond:
+        material: DIAMOND
+        sell: 4.00
+      nether_quartz:
+        material: QUARTZ
+        sell: 0.03

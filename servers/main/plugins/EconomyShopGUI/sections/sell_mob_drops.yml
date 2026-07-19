@@ -1,0 +1,14 @@
+enable: true
+title: '&8Mob素材売却'
+slot: 14
+hidden: false
+sub-section: false
+economy: VAULT
+item:
+  material: BONE
+  displayname: '&aMob素材売却'
+  lore:
+  - '&7Vanilla Mob素材をWaymarkへ交換します'
+fill-item:
+  material: GRAY_STAINED_GLASS_PANE
+  displayname: ' '

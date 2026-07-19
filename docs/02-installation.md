@@ -75,9 +75,11 @@ Multiverse-Core 5.7.2 is installed on all Paper backends, while Multiverse-Nethe
 
 `resource_end` uses its actual Paper per-world Config at `servers/main/main/dimensions/minecraft/resource_end/paper-world.yml`, with legacy Ender Dragon scanning disabled. Do not change `paper-world-defaults.yml` or Main End for this policy.
 
-The Waymark base is installed: RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 run only on Main and Frontier. `Render-LocalConfigs.ps1` renders their ignored Redis credential Configs from tracked sanitized templates. The remaining expansion requires separately approved tasks:
+The Waymark base is installed: RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 run only on Main and Frontier. `Render-LocalConfigs.ps1` renders their ignored Redis credential Configs from tracked sanitized templates. EconomyShopGUI 7.1.1 Free is installed only on Main and uses RedisEconomy through Vault. Its tracked `config.yml`, Japanese language file, five section files, and five shop files define the fixed-price Alpha baseline; the JAR and generated runtime data remain ignored.
 
-1. Install and configure EconomyShopGUI and EvenMoreFish without changing the verified Waymark data boundary.
+The remaining expansion requires separately approved tasks:
+
+1. Install and configure EvenMoreFish without changing the verified Waymark data boundary or Main shop pricing.
 2. Install BetterStructures before exploring additional persistent-dimension chunks.
 3. Restrict BetterStructures to `main`, `main_nether`, `main_end` only.
 4. Apply Overworld, Nether and End-specific structure packs.

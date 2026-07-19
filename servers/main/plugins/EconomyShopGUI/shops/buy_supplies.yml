@@ -1,0 +1,28 @@
+pages:
+  page1:
+    gui-rows: 3
+    items:
+      torch:
+        material: TORCH
+        buy: 0.08
+      lantern:
+        material: LANTERN
+        buy: 0.60
+      bread:
+        material: BREAD
+        buy: 0.30
+      bone_meal:
+        material: BONE_MEAL
+        buy: 0.10
+      redstone:
+        material: REDSTONE
+        buy: 0.25
+      coal:
+        material: COAL
+        buy: 0.50
+      iron_ingot:
+        material: IRON_INGOT
+        buy: 2.00
+      gold_ingot:
+        material: GOLD_INGOT
+        buy: 4.00

@@ -1,0 +1,22 @@
+pages:
+  page1:
+    gui-rows: 3
+    items:
+      wheat:
+        material: WHEAT
+        sell: 0.02
+      carrot:
+        material: CARROT
+        sell: 0.02
+      potato:
+        material: POTATO
+        sell: 0.02
+      beetroot:
+        material: BEETROOT
+        sell: 0.02
+      nether_wart:
+        material: NETHER_WART
+        sell: 0.02
+      sugar_cane:
+        material: SUGAR_CANE
+        sell: 0.03

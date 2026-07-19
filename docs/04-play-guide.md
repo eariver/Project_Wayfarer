@@ -10,7 +10,7 @@ Main is the permanent home for building, farming, storage, fishing and general s
 
 - Use `main`, `main_nether` and `main_end` for permanent construction.
 - mcMMO progression is shared with Frontier; normal inventory and vanilla player state remain local.
-- Waymark balance is shared with Frontier; shops and reward sources are not installed yet.
+- Waymark balance is shared with Frontier. Main provides a five-category fixed-price shop through `/shop`; see [Waymark Economy](10-waymark-economy.md).
 - BetterStructures and EvenMoreFish are planned but not installed.
 
 ## 3. Resource worlds
@@ -30,6 +30,7 @@ Frontier is currently a separate protected entry environment. Adventure worlds a
 - Items do not move between Main and Frontier.
 - mcMMO progression and Waymark balance are shared with Main.
 - Frontier does not yet provide an installed Waymark reward source.
+- EconomyShopGUI is not installed on Frontier; spend and sell through Main's `/shop`.
 - Any future Frontier-specific equipment must stay in Frontier.
 - Death initially follows vanilla rules.
 
@@ -46,4 +47,4 @@ Later revisions plan to add:
 - Frontier achievements and Main-side memorial rewards;
 - Frontier-local expanded storage;
 - lighter configurable death penalties;
-- custom shops and meta progression.
+- additional reward sources, cross-server shops and meta progression.

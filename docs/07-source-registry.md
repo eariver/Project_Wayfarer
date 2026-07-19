@@ -1,4 +1,4 @@
-# Source Registry (checked 2026-07-19)
+# Source Registry (checked 2026-07-20)
 
 - Paper getting started / Java requirements: https://docs.papermc.io/paper/getting-started/
 - Velocity getting started: https://docs.papermc.io/velocity/getting-started/
@@ -22,7 +22,12 @@
 - RedisEconomy upstream release: https://www.spigotmc.org/resources/105965/
 - RedisEconomy upstream source: https://github.com/Emibergo02/RedisEconomy
 - VaultUnlocked: https://hangar.papermc.io/TNE/VaultUnlocked
-- EconomyShopGUI: https://www.curseforge.com/minecraft/bukkit-plugins/economyshopgui
+- EconomyShopGUI official release page: https://www.spigotmc.org/resources/economyshopgui.69927/
+- EconomyShopGUI release history: https://www.spigotmc.org/resources/economyshopgui.69927/updates
+- EconomyShopGUI official Wiki: https://wiki.gpplugins.com/economyshopgui
+- EconomyShopGUI configuration: https://wiki.gpplugins.com/economyshopgui/file-configuration/config.yml
+- EconomyShopGUI section/shop formats: https://wiki.gpplugins.com/economyshopgui/file-configuration/sections.yml and https://wiki.gpplugins.com/economyshopgui/file-configuration/shops.yml
+- EconomyShopGUI permissions and commands: https://wiki.gpplugins.com/economyshopgui/basics/permission and https://wiki.gpplugins.com/economyshopgui/basics/commands
 - BetterStructures: https://modrinth.com/plugin/betterstructures
 - EliteMobs: https://modrinth.com/plugin/elitemobs
 - WorldEdit: https://enginehub.org/worldedit
@@ -38,3 +43,5 @@
 Before downloading, verify the exact build's Minecraft version, Java version, platform, dependencies, license and release notes.
 
 Project Wayfarer currently uses the user-supplied `RedisEconomy 4.5.12-wayfarer.1` compatibility build, not a binary downloaded from the upstream release URL. Its exact SHA-256 and compatibility investigation are recorded in `versions.yml` and [the investigation report](investigations/2026-07-19-rediseconomy-paper-26-2-message-compatibility.md).
+
+EconomyShopGUI 7.1.1 Free was manually supplied by the user and verified on Main Paper 26.2 / Java 25. Version 7.1.0 introduced Minecraft 26.2 support and 7.1.1 is the adopted follow-up release. The JAR was not downloaded or redistributed by Codex; exact metadata and SHA-256 are recorded in `versions.yml` and `plugin-manifest.yml`.

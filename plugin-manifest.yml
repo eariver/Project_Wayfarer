@@ -355,9 +355,51 @@ main:
         - velocity
         - lobby
     - name: EconomyShopGUI
-      status: planned-not-installed
-      purpose: Initial buy/sell shop
-      source: https://www.curseforge.com/minecraft/bukkit-plugins/economyshopgui
+      version: "7.1.1"
+      reported-version: "7.1.1"
+      edition: Free
+      channel: Release
+      platform: Bukkit/Paper
+      status: installed-and-verified
+      purpose: Main-only fixed-price Waymark buy/sell shop
+      source: https://www.spigotmc.org/resources/economyshopgui.69927/
+      documentation: https://wiki.gpplugins.com/economyshopgui
+      jar: manual-acquisition
+      jar-filename: EconomyShopGUI-7.1.1.jar
+      sha256: DB22CDC66538803CF0687F26F199D8CCBCF70588F197180F7D5CC91DA8D89290
+      required-dependencies: none
+      integration-dependencies:
+        - VaultUnlocked 2.20.2
+        - RedisEconomy 4.5.12-wayfarer.1
+      license: vendor-terms-no-license-file-in-jar
+      redistribution: jar-not-committed
+      placement:
+        - main
+      excluded-placement:
+        - velocity
+        - lobby
+        - frontier
+      economy-provider: Vault
+      vault-provider: RedisEconomy 4.5.12-wayfarer.1
+      currency-key: vault
+      display-name: Waymark
+      symbol: WM
+      categories:
+        - sell_resources
+        - sell_farming
+        - sell_mob_drops
+        - buy_building
+        - buy_supplies
+      product-count: 62
+      pricing: fixed-alpha-baseline
+      dynamic-pricing: disabled
+      global-stock: disabled
+      player-shop: disabled
+      bulk-sell: disabled
+      update-checking: disabled
+      spawner-provider: disabled
+      reload-policy: full-main-restart-only
+      verification: non-op-buy-sell-failure-capacity-cross-server-reconnect-and-restart
     - name: BetterStructures
       status: planned-not-installed
       purpose: Dimension-specific structures in persistent Main worlds only

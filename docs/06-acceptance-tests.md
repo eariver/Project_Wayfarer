@@ -96,7 +96,17 @@
 - [x] Lobby exposes no mcMMO command or display. Existing ViaVersion routing and backend switching showed no obvious regression during the shared-progression test.
 - [ ] EvenMoreFish catches, shop and journal work on Main 26.2.
 - [ ] mcMMO Fishing and EvenMoreFish do not duplicate or cancel intended rewards.
-- [ ] EconomyShopGUI buy/sell actions update the shared balance correctly.
+- [x] EconomyShopGUI 7.1.1 Free (`DB22CDC...D89290`) is installed only on Main; Lobby, Frontier, and Velocity contain no EconomyShopGUI JAR or bridge.
+- [x] Main Paper 26.2 / Java 25 loads five sections and five shops without Config, Material, ERROR, SEVERE, or Exception output; Vault selects RedisEconomy `4.5.12-wayfarer.1`.
+- [x] The fixed Alpha baseline contains 62 Vanilla entries: 35 sell-only and 27 buy-only. All 16 overlapping materials have buy price greater than sell price; no forbidden progression-skipping item, dynamic pricing, stock, player shop, or tax is enabled.
+- [x] A non-OP player opened all five categories. Item names, Japanese Waymark display, prices, and the added Beetroot 0.02／Nether Wart 0.02／Rotten Flesh 0.03／Cobbled Deepslate buy 0.18 entries were correct; no missing Material or blank product appeared.
+- [x] Default-group access is limited to `/shop` and the five categories in `server=main`; bulk-sell, sell GUI, editor, reload, give, item-index, update-notice, and wildcard administration permissions are explicitly denied in that Context.
+- [x] At 0 WM, an Oak Log purchase was rejected with feedback, no item delivery, and no negative balance.
+- [x] The representative transaction was applied exactly once: 10.00 -> buy one Oak Log for 0.40 -> 9.60 -> reconnect with the item and balance intact -> sell it for 0.08 -> 9.68. A missing-Diamond sell was rejected without changing the balance or other items.
+- [x] With all 33 empty inventory slots filled by 2,112 temporary Barrier items, a Dirt purchase was safely rejected without a Dirt item or balance loss. All temporary Barriers were then removed and the original inventory items remained intact.
+- [x] Frontier and returned Main both displayed 9.68 WM after the transaction, without account split, rollback, or duplicate application. Lobby/Frontier exposed no shop command.
+- [x] Lobby -> Main -> Frontier -> Lobby/Main routing, ViaVersion, TAB, Main building, mcMMO, PlaceholderAPI, and Lobby/Frontier WorldGuard protection showed no obvious regression.
+- [x] A final clean restart re-enabled EconomyShopGUI/RedisEconomy/Vault, preserved all five categories and prices, and exposed `/shop` only on Main. Main and Frontier both reported the cleaned 0 WM balance; the final shutdown disabled the Plugins normally and saved all dimensions without a material error.
 
 ## Frontier
 

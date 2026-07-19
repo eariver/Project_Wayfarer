@@ -1,0 +1,14 @@
+enable: true
+title: '&8建築資材'
+slot: 30
+hidden: false
+sub-section: false
+economy: VAULT
+item:
+  material: BRICKS
+  displayname: '&b建築資材'
+  lore:
+  - '&7建築用のVanilla Itemを購入します'
+fill-item:
+  material: GRAY_STAINED_GLASS_PANE
+  displayname: ' '

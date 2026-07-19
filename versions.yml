@@ -1,7 +1,7 @@
 document:
   project: Project Wayfarer
   version: 0.0.3
-  date: 2026-07-19
+  date: 2026-07-20
 
 minecraft:
   client: "26.2"
@@ -189,6 +189,40 @@ runtime_selection:
     integration: RedisEconomy Vault Legacy provider bridge
     sha256: BD9E7A31F1B2D31A591497174887EEA7AE7E632C6B179DA13E4F0AD732DE2DF7
     verified: 2026-07-19
+  economy_shop_gui:
+    version: "7.1.1"
+    reported_version: "7.1.1"
+    edition: free
+    channel: release
+    platform: bukkit-paper
+    minecraft: "26.2"
+    java: 25
+    placement:
+      - main
+    excluded_placement:
+      - velocity
+      - lobby
+      - frontier
+    acquisition: user-manual
+    jar_filename: EconomyShopGUI-7.1.1.jar
+    source: https://www.spigotmc.org/resources/economyshopgui.69927/
+    sha256: DB22CDC66538803CF0687F26F199D8CCBCF70588F197180F7D5CC91DA8D89290
+    economy_provider: vault
+    vault_provider: RedisEconomy 4.5.12-wayfarer.1
+    currency_key: vault
+    display_name: Waymark
+    symbol: WM
+    categories: 5
+    products: 62
+    sell_entries: 35
+    buy_entries: 27
+    pricing: fixed-alpha-baseline
+    update_checking: false
+    metrics: global-bstats-config-not-modified
+    transaction_logging: false
+    spawner_provider: disabled
+    license_file_in_jar: false
+    verified: 2026-07-20
   paper_26_2:
     build: 62
     commit: 75c0b48
@@ -252,3 +286,4 @@ currency:
     - main
     - frontier
   storage: redis-aof
+  main_shop: EconomyShopGUI 7.1.1 Free
