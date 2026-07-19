@@ -11,7 +11,7 @@
 
 ## Verified void entry-world baseline (2026-07-19)
 
-- [x] VoidGen 2.3.8 loads on Lobby Paper 26.2 / Java 25 and Frontier Paper 1.21.11 / Java 21.
+- [x] VoidGen 2.3.8 loads on Lobby Paper 26.2 / Java 25 and Frontier Paper 1.21.11 / Java 25.
 - [x] VoidGen is absent from Main and Velocity.
 - [x] Lobby and Frontier spawn the player safely on the gold center block without falling or suffocating.
 - [x] The 17x17 safety platforms persist after a clean restart, with air below and no distant vanilla terrain.
@@ -19,17 +19,19 @@
 - [x] Main remains unchanged, server switching works in both directions, and direct backend connections remain rejected.
 - [x] Lobby and Frontier do not load Nether or End; Main retains its three configured dimensions.
 
-## Verified Lobby building-protection baseline (2026-07-19)
+## Verified all-Paper WorldEdit/WorldGuard baseline (2026-07-19)
 
-- [x] WorldEdit 7.4.4 and WorldGuard 7.0.17 load on Lobby Paper 26.2 / Java 25 in dependency order.
-- [x] WorldEdit and WorldGuard are absent from Main, Frontier, and Velocity.
-- [x] The Lobby `__global__` region denies `passthrough`, contains only `g:wayfarer_builder`, and has no `build` flag.
-- [x] PvP, mob spawning, creeper/other explosions, TNT, fire spread, and lighter use are denied.
-- [x] `wayfarer_builder` receives `worldedit.*` and `worldguard.*` only in `server=lobby`.
-- [x] A non-OP, non-Builder player cannot break or place blocks before or after a clean restart.
-- [x] A temporary Builder can break and restore one block, perform and undo a one-block WorldEdit operation, and inspect the global region.
+- [x] WorldEdit 7.4.4 and WorldGuard 7.0.17 load in dependency order on Lobby, Main, and Frontier with Java 25.
+- [x] The same verified JAR and SHA-256 are used on all Paper backends; both Plugins are absent from Velocity.
+- [x] Lobby and `frontier_gate` deny `passthrough`, contain only `g:wayfarer_builder`, and have no `build` flag.
+- [x] Both protected entry worlds deny PvP, mob spawning, creeper/other explosions, TNT, fire spread, and lighter use.
+- [x] Main's Overworld, Nether, and End Global Regions have no Flags, Owners, or Members, and normal Survival building remains available.
+- [x] `wayfarer_builder` receives `worldedit.*` and `worldguard.*` only in `server=lobby` and `server=frontier`; Main remains excluded.
+- [x] A non-OP, non-Builder player cannot break or place blocks in Lobby/Frontier before or after a clean restart.
+- [x] A temporary Builder can build, perform and undo a one-block WorldEdit operation, and inspect the Frontier Global Region.
+- [x] Main rejects WorldEdit and WorldGuard administration commands for the same temporary Builder while allowing normal building.
 - [x] The temporary Builder parent is removed; no permanent test-user membership remains.
-- [x] Lobby safety markers, Main terrain/dimensions, Frontier Void World, and network switching remain unchanged.
+- [x] Lobby/Frontier safety markers, Main terrain/dimensions, ViaVersion switching, and network routing remain unchanged.
 
 ## Permissions
 

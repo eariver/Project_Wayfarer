@@ -104,6 +104,10 @@ servers/lobby/plugins/VoidGen/settings.yml
 servers/frontier/plugins/VoidGen/settings.yml
 servers/lobby/plugins/WorldEdit/.archive-unpack/
 servers/lobby/plugins/WorldEdit/sessions/
+servers/main/plugins/WorldEdit/.archive-unpack/
+servers/main/plugins/WorldEdit/sessions/
+servers/frontier/plugins/WorldEdit/.archive-unpack/
+servers/frontier/plugins/WorldEdit/sessions/
 servers/**/plugins/RedisEconomy/config.yml
 servers/**/plugins/mcMMO/config.yml
 velocity/plugins/luckperms/config.yml

@@ -4,7 +4,7 @@ This is an execution summary. Follow the formal Ver.0.0.2 design document for fu
 
 ## Phase 0 - Prerequisites
 
-1. Install Java 21 and Java 25.
+1. Install Java 25 for Velocity and all Paper backends.
 2. Install Git and VS Code with Codex.
 3. Install Docker Desktop if MariaDB/Redis will run through Compose.
 4. Clone this repository and open the repository root in VS Code.

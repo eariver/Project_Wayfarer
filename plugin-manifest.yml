@@ -15,7 +15,7 @@ core_binaries:
   - name: Paper 1.21.11
     target: servers/frontier/paper.jar
     required: true
-    java: 21
+    java: 25
     source: https://papermc.io/downloads/paper
 
 velocity:
@@ -74,6 +74,46 @@ all_paper_backends:
       database: wayfarer_luckperms
       messaging: sql
       policy: The only permission plugin; replacement requires an approved migration task.
+    - name: WorldEdit
+      version: "7.4.4"
+      reported-version: "7.4.4+7546-f9e033f"
+      channel: Release
+      platform: Bukkit
+      status: installed-and-verified
+      placement:
+        - lobby
+        - main
+        - frontier
+      runtime-java: 25
+      purpose: Common Paper world administration
+      jar: manual-acquisition
+      sha256: 44C97EE6C1DF9AFA127DF3C5A2C6A7108F826FB44AB7B255A7EC4250FEB89B9D
+      source: https://modrinth.com/plugin/worldedit/version/qNuPcliz
+      excluded-placement:
+        - velocity
+    - name: WorldGuard
+      version: "7.0.17"
+      reported-version: "7.0.17+2370-e42d8bc"
+      channel: Release
+      platform: Bukkit
+      status: installed-and-verified
+      placement:
+        - lobby
+        - main
+        - frontier
+      runtime-java: 25
+      purpose: Common Paper region management and entry-world protection
+      required-dependency: "WorldEdit 7.4.4"
+      builder-group: wayfarer_builder
+      region-policy:
+        lobby: protected-global
+        main: installed-no-project-regions
+        frontier: protected-global
+      jar: manual-acquisition
+      sha256: 3F14562509BF01E7680571B6F56932239157FF938F257C3226DF3B4088AE54F2
+      source: https://modrinth.com/plugin/worldguard/version/pI4UHLJL
+      excluded-placement:
+        - velocity
     - name: PlaceholderAPI
       source: https://www.spigotmc.org/resources/placeholderapi.6245/
     - name: TAB-Bridge
@@ -101,40 +141,6 @@ lobby:
         respawn_radius: 0
         nether: disabled
         end: disabled
-    - name: WorldEdit
-      version: "7.4.4"
-      reported-version: "7.4.4+7546-f9e033f"
-      channel: Release
-      platform: Bukkit
-      status: installed-and-verified
-      placement: lobby-only
-      purpose: Build and maintain the simple Lobby
-      jar: manual-acquisition
-      sha256: 44C97EE6C1DF9AFA127DF3C5A2C6A7108F826FB44AB7B255A7EC4250FEB89B9D
-      source: https://modrinth.com/plugin/worldedit
-      excluded-placement:
-        - velocity
-        - main
-        - frontier
-    - name: WorldGuard
-      version: "7.0.17"
-      reported-version: "7.0.17+2370-e42d8bc"
-      channel: Release
-      platform: Bukkit
-      status: installed-and-verified
-      placement: lobby-only
-      purpose: Protect the Lobby
-      required-dependency: "WorldEdit 7.4.4"
-      protection: "lobby __global__ region"
-      builder-group: wayfarer_builder
-      jar: manual-acquisition
-      sha256: 3F14562509BF01E7680571B6F56932239157FF938F257C3226DF3B4088AE54F2
-      source: https://modrinth.com/plugin/worldguard
-      excluded-placement:
-        - velocity
-        - main
-        - frontier
-
 main:
   required:
     - name: Multiverse-Core
@@ -168,10 +174,6 @@ main:
     - name: BetterStructures
       purpose: Dimension-specific structures in persistent Main worlds only
       source: https://modrinth.com/plugin/betterstructures
-    - name: WorldEdit
-      purpose: BetterStructures authoring/installation dependency and administration
-      source: https://modrinth.com/plugin/worldedit
-
 frontier:
   required:
     - name: VoidGen
@@ -215,9 +217,6 @@ frontier:
     - name: BetterStructures
       condition: Required by a selected Frontier content pack
       source: https://modrinth.com/plugin/betterstructures
-    - name: WorldEdit
-      condition: Required by BetterStructures or content installation
-      source: https://modrinth.com/plugin/worldedit
 
 content_policy:
   - Start with several ready-made themes requiring little customization.

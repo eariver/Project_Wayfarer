@@ -57,11 +57,13 @@ Keep the platform until a separately verified permanent Lobby or Frontier gate s
 
 Plugin executable artifacts are manually obtained by the user and placed in an ignored repository-local `manual-downloads/` staging directory. Verify each artifact's filename, internal metadata, version, platform, license, checksum, archive safety, and intended placement before copying it to a runtime `plugins/` directory. Then run an isolated startup test before network acceptance testing. Staging and runtime JARs remain outside Git, and Plugin auto-update or binary replacement stays disabled unless a separate task explicitly authorizes it.
 
-## Lobby building protection
+## Paper building administration and entry-world protection
 
-Lobby uses WorldEdit 7.4.4 and WorldGuard 7.0.17 only. The `lobby` world's `__global__` region denies `passthrough` and includes the LuckPerms group `wayfarer_builder` as its only member. That group receives `worldedit.*` and `worldguard.*` only in the `server=lobby` context. Do not use the WorldGuard `build` flag, because it bypasses normal membership-based build behavior and can interfere with non-player mechanisms.
+WorldEdit 7.4.4 and WorldGuard 7.0.17 use the same verified Bukkit JARs on Lobby, Main, and Frontier; neither Plugin is installed on Velocity. Lobby and `frontier_gate` protect their entire entry worlds with `__global__` regions that deny `passthrough` and include the LuckPerms group `wayfarer_builder` as their only member. The group receives `worldedit.*` and `worldguard.*` only in the `server=lobby` and `server=frontier` contexts.
 
-Permanent Builder membership requires a separate approved access decision. For testing, use a short-lived LuckPerms parent, verify Lobby-only permissions, and remove it immediately after the test rather than waiting for expiry. Keep WorldEdit and WorldGuard absent from Main, Frontier, and Velocity.
+Main has the administration Plugins installed but currently has no Project Wayfarer protection Region or Global Region Flag. Normal Survival building remains available there, and `wayfarer_builder` receives no Main WorldEdit or WorldGuard permission. Add Main protection only after a separate World/Region design is approved.
+
+Do not use the WorldGuard `build` flag, because it bypasses normal membership-based build behavior and can interfere with non-player mechanisms. Permanent Builder membership requires a separate approved access decision. For testing, use a short-lived LuckPerms parent, verify Lobby/Frontier permission and Main isolation, and remove it immediately after the test rather than waiting for expiry.
 
 ## Incident response
 

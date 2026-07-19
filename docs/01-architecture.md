@@ -9,13 +9,15 @@ Minecraft Client 26.2
 Velocity :25565
   |-- Lobby :25566 / Paper 26.2 / Java 25
   |-- Main :25567 / Paper 26.2 / Java 25
-  `-- Frontier :25568 / Paper 1.21.11 / Java 21
+  `-- Frontier :25568 / Paper 1.21.11 / Java 25
 
 MariaDB: LuckPerms, mcMMO, future network metadata
 Redis: RedisEconomy and optional chat transport
 ```
 
 All backend servers bind to `127.0.0.2`. Velocity is the only player-facing endpoint. Modern forwarding is mandatory.
+
+WorldEdit 7.4.4 and WorldGuard 7.0.17 form a common administration layer on all Paper backends and are not installed on Velocity. Lobby and `frontier_gate` use protected Global Regions; Main currently has no protection Flags, Members, or Owners.
 
 ## Data boundaries
 

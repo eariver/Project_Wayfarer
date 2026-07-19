@@ -17,7 +17,7 @@ $components = @{
     velocity = @{ Dir = 'velocity'; Jar = 'velocity.jar'; Java = $Paths.Java25; Memory = @('-Xms256M','-Xmx512M') }
     lobby = @{ Dir = 'servers/lobby'; Jar = 'paper.jar'; Java = $Paths.Java25; Memory = @('-Xms512M','-Xmx2G') }
     main = @{ Dir = 'servers/main'; Jar = 'paper.jar'; Java = $Paths.Java25; Memory = @('-Xms2G','-Xmx6G') }
-    frontier = @{ Dir = 'servers/frontier'; Jar = 'paper.jar'; Java = $Paths.Java21; Memory = @('-Xms2G','-Xmx6G') }
+    frontier = @{ Dir = 'servers/frontier'; Jar = 'paper.jar'; Java = $Paths.Java25; Memory = @('-Xms2G','-Xmx6G') }
 }
 
 $c = $components[$Name]

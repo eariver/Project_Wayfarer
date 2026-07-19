@@ -82,7 +82,7 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - Project name: Project Wayfarer.
 - Client version: Minecraft 26.2.
 - Lobby and Main: Paper 26.2 / Java 25.
-- Frontier: Paper 1.21.11 / Java 21 until a later design revision changes it.
+- Frontier: Paper 1.21.11 / Java 25.
 - Proxy: Velocity 4.1.0 selected build / Java 25.
 - ViaVersion 5.11.0 is installed on Velocity only and is verified for the selected Velocity 4.1.0-SNAPSHOT build.
 - ViaVersion must not be installed on Paper backends unless a later approved design explicitly requires it.
@@ -94,12 +94,13 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - No other permission plugin may be installed without an approved migration task.
 - All Paper backends bind to `127.0.0.2` and use Velocity modern forwarding.
 - Lobby is the initial connection and failover server.
-- WorldEdit 7.4.4 and WorldGuard 7.0.17 are installed only on Lobby.
-- Lobby is protected by the WorldGuard `__global__` region with `passthrough` denied.
-- The LuckPerms `wayfarer_builder` group is the WorldGuard member allowed to build in Lobby.
-- WorldEdit and WorldGuard permissions for `wayfarer_builder` are restricted to `server=lobby`.
-- Do not set the WorldGuard `build` flag on the Lobby global region.
-- Do not install WorldGuard on Main or Frontier without a separately approved protection design.
+- WorldEdit 7.4.4 and WorldGuard 7.0.17 are installed on all Paper backends and must not be installed on Velocity.
+- Lobby and `frontier_gate` are protected by their WorldGuard `__global__` regions with `passthrough` denied.
+- Main currently has no Project Wayfarer WorldGuard regions or global protection flags.
+- The LuckPerms `wayfarer_builder` group is the WorldGuard member allowed to build in protected entry worlds.
+- WorldEdit and WorldGuard permissions for `wayfarer_builder` are restricted to `server=lobby` and `server=frontier`.
+- Do not set the WorldGuard `build` flag on global regions.
+- Adding Main protection requires a separately approved region design.
 - Plugin executable artifacts follow the manual acquisition policy.
 - VoidGen 2.3.8 is installed only on Lobby and Frontier; it must not be installed on Main or Velocity.
 - The Lobby `lobby` world and Frontier `frontier_gate` entry world are VoidGen void worlds. Main worlds remain unchanged.

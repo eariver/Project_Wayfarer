@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|
 |Core|Velocity|Velocity|必須|velocity/|https://papermc.io/downloads/velocity|手動取得|
 |Core|Lobby/Main|Paper 26.2|必須|servers/lobby, servers/main|https://papermc.io/downloads/paper|Java 25|
-|Core|Frontier|Paper 1.21.11|必須|servers/frontier|https://papermc.io/downloads/paper|Java 21|
+|Core|Frontier|Paper 1.21.11|必須|servers/frontier|https://papermc.io/downloads/paper|Java 25|
 |Proxy|Velocity|LuckPerms|必須|velocity/plugins|https://luckperms.net/download||
 |Proxy|Velocity|ViaVersion|必須|velocity/plugins|https://modrinth.com/plugin/viaversion|ViaBackwards禁止|
 |Proxy|Velocity|TAB|必須|velocity/plugins|https://github.com/NEZNAMY/TAB/releases||
@@ -15,8 +15,8 @@
 |Common|All Paper|LuckPerms|必須|各plugins|https://luckperms.net/download||
 |Common|All Paper|PlaceholderAPI|必須|各plugins|https://www.spigotmc.org/resources/placeholderapi.6245/||
 |Common|All Paper|TAB-Bridge|必須|各plugins|https://github.com/NEZNAMY/TAB-Bridge/releases||
-|Lobby|Lobby|WorldEdit 7.4.4|導入・検証済み|servers/lobby/plugins|https://modrinth.com/plugin/worldedit|手動取得、Lobby限定|
-|Lobby|Lobby|WorldGuard 7.0.17|導入・検証済み|servers/lobby/plugins|https://modrinth.com/plugin/worldguard|WorldEdit 7.4.4依存、Lobby限定|
+|Common|All Paper|WorldEdit 7.4.4|導入・検証済み|各plugins|https://modrinth.com/plugin/worldedit/version/qNuPcliz|同一JARを手動取得、Velocity禁止、Java 25|
+|Common|All Paper|WorldGuard 7.0.17|導入・検証済み|各plugins|https://modrinth.com/plugin/worldguard|WorldEdit 7.4.4依存、Velocity禁止|
 |World|Lobby + Frontier|VoidGen 2.3.8|必須|servers/lobby/plugins, servers/frontier/plugins|https://modrinth.com/plugin/voidgen/version/2.3.8|Main/Velocityには配置しない|
 |World|Main|Multiverse-Core|必須|servers/main/plugins|https://modrinth.com/plugin/multiverse-core||
 |World|Main|Multiverse-NetherPortals|必須|servers/main/plugins|https://modrinth.com/plugin/multiverse-netherportals||

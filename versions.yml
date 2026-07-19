@@ -54,6 +54,8 @@ runtime_selection:
     platform: bukkit
     placement:
       - lobby
+      - main
+      - frontier
     sha256: 44C97EE6C1DF9AFA127DF3C5A2C6A7108F826FB44AB7B255A7EC4250FEB89B9D
     verified: 2026-07-19
   worldguard:
@@ -63,6 +65,8 @@ runtime_selection:
     platform: bukkit
     placement:
       - lobby
+      - main
+      - frontier
     dependency: "WorldEdit 7.4.4"
     sha256: 3F14562509BF01E7680571B6F56932239157FF938F257C3226DF3B4088AE54F2
     verified: 2026-07-19

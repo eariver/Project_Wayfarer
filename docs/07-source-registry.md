@@ -20,7 +20,9 @@
 - EliteMobs: https://modrinth.com/plugin/elitemobs
 - WorldEdit: https://enginehub.org/worldedit
 - WorldEdit source and GPLv3 license: https://github.com/EngineHub/WorldEdit
+- WorldEdit 7.4.4 Bukkit release (1.21.4-26.2): https://modrinth.com/plugin/worldedit/version/qNuPcliz
 - WorldGuard source and LGPLv3 license: https://github.com/EngineHub/WorldGuard
+- WorldGuard 7.0.17 Bukkit release: https://modrinth.com/plugin/worldguard/version/pI4UHLJL
 - WorldGuard global region design: https://worldguard.enginehub.org/en/latest/regions/global-region/
 - WorldGuard region commands: https://worldguard.enginehub.org/en/latest/regions/commands/
 - VoidGen 2.3.8 release: https://modrinth.com/plugin/voidgen/version/2.3.8
