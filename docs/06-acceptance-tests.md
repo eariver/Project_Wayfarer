@@ -77,8 +77,16 @@
 
 ## Economy and progression
 
-- [ ] RedisEconomy balance is identical on Main and Frontier.
-- [ ] Lobby does not expose or modify Waymark.
+> 正式版RedisEconomy 4.5.12のPaper 26.2 Message dispatch問題は、ユーザー提供の互換Build `4.5.12-wayfarer.1`で解消しました。原因、修正差分および再検証履歴は[Investigation Report](investigations/2026-07-19-rediseconomy-paper-26-2-message-compatibility.md)を参照してください。
+
+- [x] RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 enable on Main and Frontier; the same verified JARs are absent from Lobby and Velocity.
+- [x] RedisEconomy uses shared cluster `waymark`, distinct `main`／`frontier` client names, Vault currency `vault`, Waymark unit `WM`, starting balance 0, and ignored credential Configs rendered from sanitized templates.
+- [x] RedisEconomy balance is identical on Main and Frontier: 0 -> Main 100 -> Frontier 100 -> Frontier 75 -> Main 75 -> immediate switch 76, without rollback or duplicate addition.
+- [x] A player payment above the 75 WM balance was rejected without creating or crediting the test recipient.
+- [x] A clean Minecraft network restart and a stopped-server Redis Container restart preserved the 76 WM test balance; Vault and Redis reconnected normally.
+- [x] The temporary balance was returned to 0 with RedisEconomy's administration command and confirmed on both gameplay backends.
+- [x] Main and Frontier display balance and missing-player command feedback with the compatibility build; a Minecraft 26.2 client confirmed the Main/Frontier results and no material regression.
+- [x] Lobby does not expose or modify Waymark.
 - [x] mcMMO 2.3.000 enables on Main and Frontier from the same local Maven build and is absent from Lobby and Velocity.
 - [x] Main and Frontier use `wayfarer_mcmmo` with the `mcmmo_` prefix; runtime credentials remain ignored and render from sanitized templates.
 - [x] The test Profile loaded on both backends. Main Console changed Mining XP from 0 to 10, and Frontier displayed 10 after a normal Velocity switch.

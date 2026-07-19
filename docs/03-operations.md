@@ -24,10 +24,12 @@ Back up at minimum:
 - Frontier worlds and Plugin data
 - Plugin Config
 - MariaDB dump
-- RedisEconomy persistence/config after its future installation, according to its documented storage model
+- RedisEconomy Config templates and the stopped Redis AOF volume
 - resource-pack sources
 
 Resource worlds are disposable and may be excluded from long-term backups.
+
+Waymark balances are persistent Redis data. Do not copy `infrastructure/data/redis` while Redis is running and do not introduce a hot/warm backup Plugin. For a cold backup, disconnect all users, wait about 10 seconds for in-flight work to settle, stop all Paper servers normally, create the MariaDB dump, stop the Redis Container normally, confirm that its process has stopped, and only then copy the Redis AOF volume. Start Redis again only after the copy has completed. A 0.1.0-or-later baseline is incomplete without the Redis AOF volume, persistent worlds/Config, a manifest with SHA-256 values, and an isolated restore test.
 
 ## Resource reset
 
@@ -108,9 +110,18 @@ Use a normal server restart after mcMMO Config changes. Do not reload or unload 
 
 MariaDB backups must include `wayfarer_mcmmo`. A representative health check is to record one skill's Level/XP on Main, switch normally to Frontier, confirm the same value, make one small authorized change, return to Main, and confirm the value is cumulative. Repeating every Skill is unnecessary.
 
+## Waymark shared economy
+
+RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 run only on Main and Frontier. Both use Redis database 0 with shared `clusterId: waymark`, internal Vault currency key `vault`, and distinct client names `main`／`frontier`. The Project display is Waymark (`WM`) with starting balance 0. Run `scripts/Render-LocalConfigs.ps1` before startup to render ignored RedisEconomy Runtime Configs from tracked sanitized templates; never print or commit the Redis Password.
+
+Use full server restarts for RedisEconomy and Vault changes. Do not reload or unload RedisEconomy through PlugManX. Before planned shutdown, move or disconnect players and stop both gameplay backends normally. A balance rollback, duplicate transaction, missing balance, unexpected account split, or Redis persistence failure is a blocking data-integrity incident: stop gameplay, retain logs and a cold backup, and do not continue economy testing until the cause is resolved.
+
+A representative health check is to record a balance on Main, apply one small authorized Console change, switch normally to Frontier, confirm the same value, apply a second change, switch back, and confirm the cumulative result. Restore the test balance with RedisEconomy's normal administration command; never edit or flush Redis keys directly.
+
 ## Incident response
 
 - Backend crash: Velocity should fail over to Lobby.
 - Database unavailable: stop gameplay servers rather than accepting partially persisted progression.
+- Redis or Waymark unavailable: stop Main/Frontier rather than accepting missing, duplicated, or partially persisted balances.
 - Unknown custom item or Config mismatch: quarantine the change and restore the last compatible Plugin set.
 - Main world corruption: do not experiment on the only backup; restore to a separate test path first.

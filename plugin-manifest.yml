@@ -306,13 +306,54 @@ main:
       purpose: Custom fishing gameplay
       source: https://modrinth.com/plugin/evenmorefish
     - name: RedisEconomy
-      status: planned-not-installed
+      version: "4.5.12"
+      reported-version: "4.5.12-wayfarer.1"
+      distribution: user-supplied-wayfarer-compatibility-build
+      compatibility-patch: paper-native-command-sender-rich-message-dispatch
+      platform: Bukkit
+      status: installed-and-verified
       purpose: Main/Frontier shared Waymark balance
       source: https://www.spigotmc.org/resources/105965/
+      jar: manual-acquisition
+      sha256: AB00270CD970A909F54F6EE7C2C47151FB90DB0EA36FA6AB68AC59D939CFCA47
+      placement:
+        - main
+        - frontier
+      excluded-placement:
+        - velocity
+        - lobby
+      storage: shared-redis
+      currency-key: vault
+      project-currency-id: waymark
+      display-name: Waymark
+      symbol: WM
+      starting-balance: 0
+      server-ids:
+        main: main
+        frontier: frontier
+      runtime-identity-config-key: redis.clientName
+      normal-player-negative-balance: rejected-by-verified-operation
+      migration: disabled
+      credential-config: ignored-runtime-rendered-from-sanitized-template
+      persistence: redis-aof
+      reload-policy: full-server-restart-only
+      verification: bidirectional-balance-command-feedback-and-restart-persistence
     - name: VaultUnlocked
-      status: planned-not-installed
+      version: "2.20.2"
+      reported-version: "2.20.2"
+      platform: Bukkit
+      status: installed-and-verified
       purpose: Economy API bridge
       source: https://hangar.papermc.io/TNE/VaultUnlocked
+      jar: manual-acquisition
+      sha256: BD9E7A31F1B2D31A591497174887EEA7AE7E632C6B179DA13E4F0AD732DE2DF7
+      placement:
+        - main
+        - frontier
+      provider: RedisEconomy Vault Legacy Economy
+      excluded-placement:
+        - velocity
+        - lobby
     - name: EconomyShopGUI
       status: planned-not-installed
       purpose: Initial buy/sell shop
@@ -362,13 +403,54 @@ frontier:
       reload-policy: full-server-restart-only
       verification: bidirectional-mining-xp-and-restart-persistence
     - name: RedisEconomy
-      status: planned-not-installed
+      version: "4.5.12"
+      reported-version: "4.5.12-wayfarer.1"
+      distribution: user-supplied-wayfarer-compatibility-build
+      compatibility-patch: paper-native-command-sender-rich-message-dispatch
+      platform: Bukkit
+      status: installed-and-verified
       purpose: Shared Waymark balance
       source: https://www.spigotmc.org/resources/105965/
+      jar: manual-acquisition
+      sha256: AB00270CD970A909F54F6EE7C2C47151FB90DB0EA36FA6AB68AC59D939CFCA47
+      placement:
+        - main
+        - frontier
+      excluded-placement:
+        - velocity
+        - lobby
+      storage: shared-redis
+      currency-key: vault
+      project-currency-id: waymark
+      display-name: Waymark
+      symbol: WM
+      starting-balance: 0
+      server-ids:
+        main: main
+        frontier: frontier
+      runtime-identity-config-key: redis.clientName
+      normal-player-negative-balance: rejected-by-verified-operation
+      migration: disabled
+      credential-config: ignored-runtime-rendered-from-sanitized-template
+      persistence: redis-aof
+      reload-policy: full-server-restart-only
+      verification: bidirectional-balance-command-feedback-and-restart-persistence
     - name: VaultUnlocked
-      status: planned-not-installed
+      version: "2.20.2"
+      reported-version: "2.20.2"
+      platform: Bukkit
+      status: installed-and-verified
       purpose: Economy API bridge
       source: https://hangar.papermc.io/TNE/VaultUnlocked
+      jar: manual-acquisition
+      sha256: BD9E7A31F1B2D31A591497174887EEA7AE7E632C6B179DA13E4F0AD732DE2DF7
+      placement:
+        - main
+        - frontier
+      provider: RedisEconomy Vault Legacy Economy
+      excluded-placement:
+        - velocity
+        - lobby
     - name: EliteMobs
       status: planned-not-installed
       purpose: Ready-made mobs, equipment, quests, and Adventure worlds

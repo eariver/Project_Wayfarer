@@ -19,7 +19,8 @@
 - Multiverse-NetherPortals: https://modrinth.com/plugin/multiverse-netherportals
 - mcMMO source project: https://github.com/mcMMO-Dev/mcMMO
 - EvenMoreFish: https://modrinth.com/plugin/evenmorefish
-- RedisEconomy: https://www.spigotmc.org/resources/105965/
+- RedisEconomy upstream release: https://www.spigotmc.org/resources/105965/
+- RedisEconomy upstream source: https://github.com/Emibergo02/RedisEconomy
 - VaultUnlocked: https://hangar.papermc.io/TNE/VaultUnlocked
 - EconomyShopGUI: https://www.curseforge.com/minecraft/bukkit-plugins/economyshopgui
 - BetterStructures: https://modrinth.com/plugin/betterstructures
@@ -35,3 +36,5 @@
 - VoidGen world-generator setup: https://github.com/NicoNekoDev/VoidGen/blob/master/docs/tutorial.md
 
 Before downloading, verify the exact build's Minecraft version, Java version, platform, dependencies, license and release notes.
+
+Project Wayfarer currently uses the user-supplied `RedisEconomy 4.5.12-wayfarer.1` compatibility build, not a binary downloaded from the upstream release URL. Its exact SHA-256 and compatibility investigation are recorded in `versions.yml` and [the investigation report](investigations/2026-07-19-rediseconomy-paper-26-2-message-compatibility.md).

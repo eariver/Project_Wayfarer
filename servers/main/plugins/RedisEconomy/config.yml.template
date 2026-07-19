@@ -1,0 +1,51 @@
+# RedisEconomy 4.5.12-wayfarer.1 - Project Wayfarer Main
+# Generated from the exact Plugin version, then sanitized for Git.
+lang: en-US
+webEditorUrl: https://webui.advntr.dev/
+debug: false
+debugUpdateCache: false
+registerCallsVerbosity: 0
+callBlacklistRegex:
+- ^org\.bukkit.*
+- ^io\.papermc.*
+- ^dev\.unnm3d\.rediseconomy.*
+- ^com\.mojang.*
+migrationEnabled: false
+allowPercentagePayments: true
+redis:
+  host: 127.0.0.2
+  port: __WAYFARER_REDIS_PORT__
+  user: ''
+  password: '__WAYFARER_REDIS_PASSWORD__'
+  database: 0
+  timeout: 1000
+  clientName: main
+  ssl: false
+  poolSize: 10
+  tryAgainCount: 3
+# A shared clusterId is required for one Main/Frontier balance namespace.
+clusterId: waymark
+tab_complete_chars: 0
+tabOnlinePlayers: false
+defaultCurrencyName: vault
+payCooldown: 500
+minPayAmount: 0.01
+placeholderCacheUpdateInterval: 5000
+baltopPlaceholderAccounts: 100
+transactionExecutorThreads: 3
+currencies:
+- currencyName: vault
+  # 4.5.12 has no separate symbol key; Vault suffix fields carry the WM unit.
+  # Project display name "Waymark" is maintained in the manifest and docs.
+  currencySingle: WM
+  currencyPlural: WM
+  decimalFormat: '#,##0.## '
+  languageTag: ja-JP
+  startingBalance: 0.0
+  maxBalance: 1.0E14
+  payTax: 0.0
+  saveTransactions: true
+  transactionsTTL: -1
+  bankEnabled: false
+  taxOnlyPay: false
+  executorThreads: 3

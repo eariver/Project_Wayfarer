@@ -147,6 +147,48 @@ runtime_selection:
     table_prefix: mcmmo_
     sha256: 03ABEEB48E33733C14859B4CAC6DC1104D19F15E4E81D9EB6B79D666F0E8A1B9
     verified: 2026-07-19
+  rediseconomy:
+    upstream_version: "4.5.12"
+    reported_version: "4.5.12-wayfarer.1"
+    distribution: user-supplied-wayfarer-compatibility-build
+    compatibility_patch: paper-native-command-sender-rich-message-dispatch
+    platform: bukkit
+    placement:
+      - main
+      - frontier
+    excluded_placement:
+      - velocity
+      - lobby
+    storage: redis
+    redis_cluster_id: waymark
+    redis_client_names:
+      main: main
+      frontier: frontier
+    runtime_identity_config_key: redis.clientName
+    currency_key: vault
+    project_currency_id: waymark
+    display_name: Waymark
+    symbol: WM
+    starting_balance: 0
+    normal_player_negative_balance: rejected-by-verified-operation
+    migration: disabled
+    credential_config: ignored-runtime-rendered-from-sanitized-template
+    sha256: AB00270CD970A909F54F6EE7C2C47151FB90DB0EA36FA6AB68AC59D939CFCA47
+    verified: 2026-07-19
+  vault_unlocked:
+    version: "2.20.2"
+    reported_version: "2.20.2"
+    channel: release
+    platform: bukkit
+    placement:
+      - main
+      - frontier
+    excluded_placement:
+      - velocity
+      - lobby
+    integration: RedisEconomy Vault Legacy provider bridge
+    sha256: BD9E7A31F1B2D31A591497174887EEA7AE7E632C6B179DA13E4F0AD732DE2DF7
+    verified: 2026-07-19
   paper_26_2:
     build: 62
     commit: 75c0b48
@@ -200,8 +242,13 @@ network_policy:
 
 
 currency:
-  status: planned-not-installed
+  status: installed-and-verified
   display_name: Waymark
   symbol: WM
   internal_id: waymark
-  provider: RedisEconomy
+  provider: RedisEconomy 4.5.12-wayfarer.1
+  provider_currency_key: vault
+  placement:
+    - main
+    - frontier
+  storage: redis-aof

@@ -12,7 +12,7 @@ Velocity :25565
   `-- Frontier :25568 / Paper 1.21.11 / Java 25
 
 MariaDB: LuckPerms and Main/Frontier mcMMO sharing in use; network database reserved
-Redis: infrastructure available; RedisEconomy and chat transport are not installed
+Redis: Main/Frontier RedisEconomy Waymark sharing in use; chat transport is not installed
 ```
 
 All backend servers bind to `127.0.0.2`. Velocity is the only player-facing endpoint. Modern forwarding is mandatory.
@@ -25,6 +25,8 @@ Multiverse-Core 5.7.2 runs on all Paper backends. Multiverse-NetherPortals 5.0.5
 
 mcMMO 2.3.000 runs only on Main and Frontier. Both use the same local Maven build and the shared `wayfarer_mcmmo` MariaDB database with the `mcmmo_` table prefix. Runtime credentials are rendered from tracked sanitized templates; Lobby and Velocity remain outside this progression boundary.
 
+RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 run only on Main and Frontier. Both backends use the same Redis `waymark` cluster namespace but distinct client names, and expose the internal `vault` currency through Vault as Project Wayfarer's Waymark (`WM`). Runtime Redis credentials are rendered from tracked sanitized templates; Lobby and Velocity remain outside this economy boundary.
+
 ## Data boundaries
 
 | Data | Lobby | Main | Frontier |
@@ -34,7 +36,7 @@ mcMMO 2.3.000 runs only on Main and Frontier. Both use the same local Maven buil
 | LuckPerms identity | Shared | Shared | Shared |
 | TAB | Network | Network | Network |
 | Global chat | Not installed | Not installed | Not installed |
-| Waymark | Not used | Planned with Frontier | Planned with Main |
+| Waymark | Not used | Shared with Frontier | Shared with Main |
 | mcMMO | Not installed | Shared with Frontier | Shared with Main |
 | WorldGuard | Whole entry world protected | Plugin only; no Project regions | Whole entry world protected |
 | EvenMoreFish | Not installed | Planned | Not installed |
@@ -61,7 +63,7 @@ Paper's namespaced runtime keys are authoritative. The persistent family is `min
 
 ## Frontier
 
-`frontier_gate` is currently a protected Void entry world with a temporary safety platform. Planned portals will connect it to approved Adventure worlds/themes after their Plugins and content are installed. Frontier inventory remains local. Waymark rewards are a future shared-economy design, not a current feature.
+`frontier_gate` is currently a protected Void entry world with a temporary safety platform. Planned portals will connect it to approved Adventure worlds/themes after their Plugins and content are installed. Frontier inventory remains local. Waymark balances are shared with Main, while reward sources remain a future design.
 
 ## Future components
 

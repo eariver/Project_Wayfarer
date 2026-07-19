@@ -118,14 +118,19 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - Do not regenerate either void entry world without an approved task, an exact resolved-path check, and a verified backup outside the source world path.
 - Lobby shares no gameplay inventory, currency, mcMMO, or progression with Main/Frontier.
 - Main and Frontier normal inventories are independent.
-- Main and Frontier do not yet share economy data; Waymark remains planned.
+- RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 are installed only on Main and Frontier; Lobby and Velocity must not load either Plugin.
+- Main and Frontier share Waymark balances through the existing Redis 8 service and use distinct Redis client names `main` and `frontier` in the same `waymark` cluster namespace.
+- The RedisEconomy Vault currency key is `vault`; the Project logical identifier is `waymark`, the display name is `Waymark`, and the symbol is `WM`.
+- RedisEconomy runtime Configs containing Redis credentials must remain ignored and be rendered from sanitized templates.
+- RedisEconomy must not be reloaded or unloaded through PlugManX; use a normal server restart.
+- A Waymark rollback, duplicate application, or loss is a blocking data-integrity failure.
+- Redis AOF storage is required in every 0.1.0-or-later cold backup. Do not adopt hot/warm backup Plugins, and copy the Redis volume filesystem only after the Redis container has stopped normally.
 - mcMMO 2.3.000 is installed only on Main and Frontier. Lobby and Velocity must not load mcMMO.
 - Main and Frontier use the same locally built mcMMO JAR with SHA-256 `03ABEEB48E33733C14859B4CAC6DC1104D19F15E4E81D9EB6B79D666F0E8A1B9`.
 - Main and Frontier share mcMMO progression through the `wayfarer_mcmmo` MariaDB database and `mcmmo_` table prefix.
 - mcMMO runtime Configs containing credentials must remain ignored and be rendered from sanitized templates.
 - mcMMO must not be reloaded or unloaded through PlugManX; use a normal server restart.
 - Player progression rollback or stale-profile overwrite during server switching is a blocking data-integrity failure.
-- Planned network currency display name: `Waymark`; symbol: `WM`; internal identifier: `waymark`.
 - Main persistent dimensions: `main`, `main_nether`, `main_end`.
 - Disposable resource dimensions: `resource`, `resource_nether`, `resource_end`.
 - Multiverse-Core 5.7.2 is installed on all Paper backends and must not be installed on Velocity.

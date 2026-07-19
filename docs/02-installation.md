@@ -18,7 +18,7 @@ docker compose --env-file .env -f infrastructure/compose.yml up -d
 .\scripts\Test-Infrastructure.ps1
 ```
 
-The initialization script creates separate databases for LuckPerms, mcMMO sharing and future network metadata. LuckPerms and mcMMO currently use their respective MariaDB databases.
+The initialization script creates separate databases for LuckPerms, mcMMO sharing and future network metadata. LuckPerms and mcMMO use MariaDB; RedisEconomy uses the AOF-enabled Redis service for shared Waymark balances.
 
 ## Phase 2 - Manually collect server JARs
 
@@ -75,9 +75,9 @@ Multiverse-Core 5.7.2 is installed on all Paper backends, while Multiverse-Nethe
 
 `resource_end` uses its actual Paper per-world Config at `servers/main/main/dimensions/minecraft/resource_end/paper-world.yml`, with legacy Ender Dragon scanning disabled. Do not change `paper-world-defaults.yml` or Main End for this policy.
 
-The remaining expansion requires separately approved tasks:
+The Waymark base is installed: RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 run only on Main and Frontier. `Render-LocalConfigs.ps1` renders their ignored Redis credential Configs from tracked sanitized templates. The remaining expansion requires separately approved tasks:
 
-1. Install RedisEconomy, VaultUnlocked, EconomyShopGUI and EvenMoreFish.
+1. Install and configure EconomyShopGUI and EvenMoreFish without changing the verified Waymark data boundary.
 2. Install BetterStructures before exploring additional persistent-dimension chunks.
 3. Restrict BetterStructures to `main`, `main_nether`, `main_end` only.
 4. Apply Overworld, Nether and End-specific structure packs.
@@ -87,7 +87,7 @@ The remaining expansion requires separately approved tasks:
 
 mcMMO 2.3.000 is installed only on Main and Frontier from the same local Maven build. Run `Render-LocalConfigs.ps1` after setting `.env`; this renders both ignored runtime Configs from sanitized templates. Both backends use `wayfarer_mcmmo` with the `mcmmo_` prefix. Do not install mcMMO on Lobby or Velocity, and do not reload it through PlugManX.
 
-The following Frontier content and economy integrations are not installed yet.
+The following Frontier content and reward integrations are not installed yet.
 
 1. Install the 1.21.11-compatible builds.
 2. Keep `frontier_gate` simple.
@@ -95,7 +95,7 @@ The following Frontier content and economy integrations are not installed yet.
 4. Add multiple themes only after each passes a clean-server acceptance test.
 5. Configure a separate Frontier resource pack if required.
 6. Keep Main/Frontier inventories separate.
-7. After its future installation, verify shared Waymark persistence using risk-focused data tests; mcMMO persistence is already verified.
+7. Keep the verified shared Waymark balance boundary intact when adding reward sources; do not share normal inventories.
 
 ## Phase 9 - Acceptance
 
