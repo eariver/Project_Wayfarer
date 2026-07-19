@@ -20,7 +20,7 @@
 |World|Lobby + Frontier|VoidGen 2.3.8|導入・検証済み|servers/lobby/plugins, servers/frontier/plugins|https://modrinth.com/plugin/voidgen/version/2.3.8|Main/Velocityには配置しない|
 |World|All Paper|Multiverse-Core 5.7.2|導入・検証済み|各Paper plugins|https://modrinth.com/plugin/multiverse-core|手動取得、Velocity対象外、Lobby／FrontierはEntry Worldのみ|
 |World|Main|Multiverse-NetherPortals 5.0.5|導入・検証済み|servers/main/plugins|https://modrinth.com/plugin/multiverse-netherportals|Multiverse-Core依存、2 Familyを明示Link|
-|Gameplay|Main + Frontier|mcMMO|計画・未導入|両plugins|https://mcmmo.org/|共有MariaDBを詳細検証|
+|Gameplay|Main + Frontier|mcMMO 2.3.000|導入・検証済み|両plugins|https://github.com/mcMMO-Dev/mcMMO|Local Maven Build、同一JAR、共有MariaDB、Lobby／Velocity対象外|
 |Gameplay|Main|EvenMoreFish|計画・未導入|servers/main/plugins|https://modrinth.com/plugin/evenmorefish||
 |Economy|Main + Frontier|RedisEconomy|計画・未導入|両plugins|https://www.spigotmc.org/resources/105965/|Waymark provider候補|
 |Economy|Main + Frontier|VaultUnlocked|計画・未導入|両plugins|https://hangar.papermc.io/TNE/VaultUnlocked|RedisEconomy依存境界で検証|

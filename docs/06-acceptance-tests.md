@@ -79,8 +79,13 @@
 
 - [ ] RedisEconomy balance is identical on Main and Frontier.
 - [ ] Lobby does not expose or modify Waymark.
-- [ ] mcMMO progression earned on Main appears on Frontier after a server switch and vice versa.
-- [ ] Rapid switching does not lose the most recent mcMMO progress.
+- [x] mcMMO 2.3.000 enables on Main and Frontier from the same local Maven build and is absent from Lobby and Velocity.
+- [x] Main and Frontier use `wayfarer_mcmmo` with the `mcmmo_` prefix; runtime credentials remain ignored and render from sanitized templates.
+- [x] The test Profile loaded on both backends. Main Console changed Mining XP from 0 to 10, and Frontier displayed 10 after a normal Velocity switch.
+- [x] Frontier Console then added 7 Mining XP, and Main displayed the cumulative 17 after switching back.
+- [x] The shared database stored Mining Level 0 / XP 17 without rollback, stale-profile overwrite, or duplicate addition during the immediate switches.
+- [x] After a clean network stop/restart, both Main and Frontier displayed Mining Level 0 / XP 17, with no mcMMO database or Profile load/save error.
+- [x] Lobby exposes no mcMMO command or display. Existing ViaVersion routing and backend switching showed no obvious regression during the shared-progression test.
 - [ ] EvenMoreFish catches, shop and journal work on Main 26.2.
 - [ ] mcMMO Fishing and EvenMoreFish do not duplicate or cancel intended rewards.
 - [ ] EconomyShopGUI buy/sell actions update the shared balance correctly.

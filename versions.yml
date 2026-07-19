@@ -132,6 +132,21 @@ runtime_selection:
     acquisition: manual
     sha256: 7D6364A2B474C2D3C4F8F8C5DCD469D9DE5A5F6F64C43DA39B648C3877AD077D
     verified: 2026-07-19
+  mcmmo:
+    base_version: "2.3.000"
+    reported_version: "2.3.000"
+    distribution: local-maven-build
+    source_project: mcMMO-Dev/mcMMO
+    source_commit: unknown-not-embedded
+    platform: bukkit
+    placement:
+      - main
+      - frontier
+    storage: mariadb
+    database: wayfarer_mcmmo
+    table_prefix: mcmmo_
+    sha256: 03ABEEB48E33733C14859B4CAC6DC1104D19F15E4E81D9EB6B79D666F0E8A1B9
+    verified: 2026-07-19
   paper_26_2:
     build: 62
     commit: 75c0b48

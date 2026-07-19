@@ -280,14 +280,27 @@ main:
         - frontier
     - name: mcMMO
       version: "2.3.000"
+      reported-version: "2.3.000"
+      platform: Bukkit
       purpose: Activity-based shared leveling
       source: https://github.com/mcMMO-Dev/mcMMO
       distribution: local-maven-build
-      status: jar-obtained-not-placed
+      source-commit: unknown-not-embedded
+      status: installed-and-verified
       placement:
         - main
         - frontier
-      note: Use the same untracked JAR on Main and Frontier; install later with shared MariaDB configuration.
+      excluded-placement:
+        - velocity
+        - lobby
+      jar: manual-local-maven-build
+      sha256: 03ABEEB48E33733C14859B4CAC6DC1104D19F15E4E81D9EB6B79D666F0E8A1B9
+      storage: shared-mariadb
+      database: wayfarer_mcmmo
+      table-prefix: mcmmo_
+      credential-config: ignored-runtime-rendered-from-sanitized-template
+      reload-policy: full-server-restart-only
+      verification: bidirectional-mining-xp-and-restart-persistence
     - name: EvenMoreFish
       status: planned-not-installed
       purpose: Custom fishing gameplay
@@ -327,14 +340,27 @@ frontier:
         end: disabled
     - name: mcMMO
       version: "2.3.000"
+      reported-version: "2.3.000"
+      platform: Bukkit
       purpose: Shared progression with Main
       source: https://github.com/mcMMO-Dev/mcMMO
       distribution: local-maven-build
-      status: jar-obtained-not-placed
+      source-commit: unknown-not-embedded
+      status: installed-and-verified
       placement:
         - main
         - frontier
-      note: Use the same untracked JAR on Main and Frontier; install later with shared MariaDB configuration.
+      excluded-placement:
+        - velocity
+        - lobby
+      jar: manual-local-maven-build
+      sha256: 03ABEEB48E33733C14859B4CAC6DC1104D19F15E4E81D9EB6B79D666F0E8A1B9
+      storage: shared-mariadb
+      database: wayfarer_mcmmo
+      table-prefix: mcmmo_
+      credential-config: ignored-runtime-rendered-from-sanitized-template
+      reload-policy: full-server-restart-only
+      verification: bidirectional-mining-xp-and-restart-persistence
     - name: RedisEconomy
       status: planned-not-installed
       purpose: Shared Waymark balance

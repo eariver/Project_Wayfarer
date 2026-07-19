@@ -17,7 +17,7 @@
 - ViaVersion setup: https://viaversion.com/setup
 - Multiverse-Core: https://modrinth.com/plugin/multiverse-core
 - Multiverse-NetherPortals: https://modrinth.com/plugin/multiverse-netherportals
-- mcMMO: https://mcmmo.org/
+- mcMMO source project: https://github.com/mcMMO-Dev/mcMMO
 - EvenMoreFish: https://modrinth.com/plugin/evenmorefish
 - RedisEconomy: https://www.spigotmc.org/resources/105965/
 - VaultUnlocked: https://hangar.papermc.io/TNE/VaultUnlocked

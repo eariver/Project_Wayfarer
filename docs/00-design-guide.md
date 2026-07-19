@@ -50,7 +50,7 @@ Docker ComposeでMariaDB 11.8とRedis 8-alpineを管理します。
 |Database|用途|
 |---|---|
 |`wayfarer_luckperms`|導入済みLuckPerms共有Storage|
-|`wayfarer_mcmmo`|将来のmcMMO共有Storage用に予約|
+|`wayfarer_mcmmo`|導入済みmcMMOのMain／Frontier共有Storage|
 |`wayfarer_network`|将来のNetwork機能用に予約|
 
 Redisは将来のWaymarkおよび必要なNetwork連携向けに用意されていますが、RedisEconomyはまだ導入されていません。Password、Forwarding SecretおよびCredentialは`.env`とIgnored Runtime Configで管理し、追跡文書やGit差分へ含めません。
@@ -98,6 +98,12 @@ Multiverse-Core 5.7.2は全Paper Backendだけに配置します。LobbyとFront
 
 Paper 26.2の実Runtime Keyは`minecraft:overworld`、`minecraft:the_nether`、`minecraft:the_end`、`minecraft:resource`、`minecraft:resource_nether`、`minecraft:resource_end`です。論理名は実World名または文書上の名称として扱い、名前が異なるMain EndだけMultiverse Alias `main_end`を設定します。これらはDirectory名ではありません。既存Worldを論理名へ合わせてRename、Move、Copyまたは再生成しません。
 
+### mcMMO
+
+mcMMO 2.3.000はMainとFrontierだけに配置し、同一のLocal Maven Build JARを使用します。進行はMariaDB Database `wayfarer_mcmmo`とTable Prefix `mcmmo_`で共有します。LobbyとVelocityには配置せず、通常Inventory、Vanilla XP、Health等のBackend固有Dataは共有しません。
+
+Credentialを含むRuntime `config.yml`はGit Ignore対象とし、Main／FrontierそれぞれのSanitized `config.yml.template`から`Render-mcMMOConfig.ps1`で生成します。mcMMOのScoreboardはTABとの競合を避けるため無効です。Server切替時のRollbackまたは古いProfileによる上書きはData Integrity障害として扱い、PlugManXでReload／Unloadせず正常再起動します。
+
 ## 6. Data Boundary
 
 |Data|Lobby|Main|Frontier|
@@ -107,10 +113,10 @@ Paper 26.2の実Runtime Keyは`minecraft:overworld`、`minecraft:the_nether`、`
 |LuckPerms|Shared|Shared|Shared|
 |TAB|Network|Network|Network|
 |Waymark|使用しない|Frontierとの共有を計画|Mainとの共有を計画|
-|mcMMO|導入しない|Frontierとの共有を計画|Mainとの共有を計画|
+|mcMMO|導入しない|Frontierと共有|Mainと共有|
 |WorldGuard|Entry World全体保護|Pluginのみ・保護未設定|Entry World全体保護|
 
-Waymark、mcMMO、RedisEconomy、Advanced Portals、BetterStructures、EvenMoreFish、EliteMobsおよびCross-server Chatは未導入です。計画上の共有境界を、導入済み機能として扱いません。
+Waymark、RedisEconomy、Advanced Portals、BetterStructures、EvenMoreFish、EliteMobsおよびCross-server Chatは未導入です。mcMMO共有進行だけが導入済みであり、他の計画上の共有境界を導入済み機能として扱いません。
 
 ## 7. Plugin取得・導入ポリシー
 

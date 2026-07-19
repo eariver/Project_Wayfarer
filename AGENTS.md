@@ -118,8 +118,13 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - Do not regenerate either void entry world without an approved task, an exact resolved-path check, and a verified backup outside the source world path.
 - Lobby shares no gameplay inventory, currency, mcMMO, or progression with Main/Frontier.
 - Main and Frontier normal inventories are independent.
-- Main and Frontier do not yet share economy or mcMMO runtime data.
-- Planned Main/Frontier shared network data is limited initially to Waymark and mcMMO.
+- Main and Frontier do not yet share economy data; Waymark remains planned.
+- mcMMO 2.3.000 is installed only on Main and Frontier. Lobby and Velocity must not load mcMMO.
+- Main and Frontier use the same locally built mcMMO JAR with SHA-256 `03ABEEB48E33733C14859B4CAC6DC1104D19F15E4E81D9EB6B79D666F0E8A1B9`.
+- Main and Frontier share mcMMO progression through the `wayfarer_mcmmo` MariaDB database and `mcmmo_` table prefix.
+- mcMMO runtime Configs containing credentials must remain ignored and be rendered from sanitized templates.
+- mcMMO must not be reloaded or unloaded through PlugManX; use a normal server restart.
+- Player progression rollback or stale-profile overwrite during server switching is a blocking data-integrity failure.
 - Planned network currency display name: `Waymark`; symbol: `WM`; internal identifier: `waymark`.
 - Main persistent dimensions: `main`, `main_nether`, `main_end`.
 - Disposable resource dimensions: `resource`, `resource_nether`, `resource_end`.
@@ -163,7 +168,26 @@ Plugins that share a feature area, dependency chain, placement, data boundary, a
 
 Minor non-security configuration issues discovered during small-scale operation may be corrected in later focused commits. This does not relax validation for changes that can affect persistent data, security boundaries, or recoverability.
 
-## 11. Git completion policy
+## 11. User-input waiting policy
+
+When a task requires manual in-game action or confirmation from the user, server processes may remain running independently, but Codex must stop active execution and clearly enter a user-input waiting state.
+
+A running server process is not a reason to remain in a thinking or executing status. Do not block on an interactive console, continuous log tail, sleep loop, or foreground process while waiting for the user.
+
+Before waiting:
+
+- state the exact requested user action;
+- state the expected result or information to report;
+- leave servers in a safe independently running state;
+- stop active execution.
+
+After the user responds:
+
+- verify that required server processes are still running;
+- inspect relevant logs since the wait began;
+- resume the task from the recorded checkpoint.
+
+## 12. Git completion policy
 
 For tasks performed entirely inside this repository, Codex may commit and push
 completed changes without requesting an additional Git-only confirmation when

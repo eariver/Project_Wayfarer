@@ -9,8 +9,8 @@ Every login begins in Lobby. Lobby is not part of the planned economy or charact
 Main is the permanent home for building, farming, storage, fishing and general survival exploration.
 
 - Use `main`, `main_nether` and `main_end` for permanent construction.
-- BetterStructures, mcMMO, EvenMoreFish and the Waymark economy are planned but not installed.
-- Until those integrations are completed, Main provides ordinary Paper Survival behavior and local progression.
+- mcMMO progression is shared with Frontier; normal inventory and vanilla player state remain local.
+- BetterStructures, EvenMoreFish and the Waymark economy are planned but not installed.
 
 ## 3. Resource worlds
 
@@ -27,7 +27,7 @@ Frontier is currently a separate protected entry environment. Adventure worlds a
 
 - Frontier uses a separate local inventory.
 - Items do not move between Main and Frontier.
-- Waymark and mcMMO sharing are future integrations.
+- mcMMO progression is shared with Main; Waymark remains a future integration.
 - Frontier may produce Waymark after the shared economy is installed and verified.
 - Any future Frontier-specific equipment must stay in Frontier.
 - Death initially follows vanilla rules.

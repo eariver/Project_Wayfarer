@@ -14,10 +14,10 @@
 - TAB Proxy InstallationによるHeader／Footer表示
 - Multiverse-Coreによる全Paper World登録とMainのPersistent／Resource Family
 - Multiverse-NetherPortalsによるMain内2 Familyの明示的な双方向Link
+- mcMMO 2.3.000によるMain／Frontier共有MariaDB進行基盤
 
 ## 次期候補
 
-- mcMMO + MariaDB共有
 - RedisEconomy + VaultUnlocked + EconomyShopGUI
 - Advanced PortalsのProxy／Backend一括Integration
 - MainのBetterStructures

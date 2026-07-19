@@ -100,6 +100,14 @@ The baseline enables only a `Project Wayfarer` header and a footer containing th
 
 PlaceholderAPI Cloud access is disabled and no Expansion is installed. When an Expansion becomes necessary, obtain it manually under the Plugin artifact acquisition policy, document its exact version and placement, and verify it in a separate change. Minor display issues found during operation may be corrected in a later focused Commit.
 
+## mcMMO shared progression
+
+mcMMO 2.3.000 runs only on Main and Frontier. Both backends use the same locally built JAR and the shared MariaDB Database `wayfarer_mcmmo` with Table Prefix `mcmmo_`; Lobby and Velocity must not load it. Before startup, run `scripts/Render-LocalConfigs.ps1` to render each ignored Runtime `plugins/mcMMO/config.yml` from its tracked sanitized Template. Never print or commit the rendered credentials.
+
+Use a normal server restart after mcMMO Config changes. Do not reload or unload mcMMO through PlugManX. During planned shutdown, move or disconnect players first and stop both gameplay backends normally so active Profiles are saved. A value rollback, duplicate addition, stale Profile overwrite, Profile load/save error, or database outage is a blocking data-integrity incident: stop gameplay, retain logs and a database backup, and do not continue progression testing until the cause is resolved.
+
+MariaDB backups must include `wayfarer_mcmmo`. A representative health check is to record one skill's Level/XP on Main, switch normally to Frontier, confirm the same value, make one small authorized change, return to Main, and confirm the value is cumulative. Repeating every Skill is unnecessary.
+
 ## Incident response
 
 - Backend crash: Velocity should fail over to Lobby.

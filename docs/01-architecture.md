@@ -11,7 +11,7 @@ Velocity :25565
   |-- Main :25567 / Paper 26.2 / Java 25
   `-- Frontier :25568 / Paper 1.21.11 / Java 25
 
-MariaDB: LuckPerms in use; mcMMO/network databases reserved for future integrations
+MariaDB: LuckPerms and Main/Frontier mcMMO sharing in use; network database reserved
 Redis: infrastructure available; RedisEconomy and chat transport are not installed
 ```
 
@@ -23,6 +23,8 @@ TAB 6.1.0 and VelocityScoreboardAPI 2.1.0 run only on Velocity. TAB-Bridge 6.2.2
 
 Multiverse-Core 5.7.2 runs on all Paper backends. Multiverse-NetherPortals 5.0.5 runs only on Main. Lobby and Frontier register only their existing entry worlds; Velocity has no Multiverse module.
 
+mcMMO 2.3.000 runs only on Main and Frontier. Both use the same local Maven build and the shared `wayfarer_mcmmo` MariaDB database with the `mcmmo_` table prefix. Runtime credentials are rendered from tracked sanitized templates; Lobby and Velocity remain outside this progression boundary.
+
 ## Data boundaries
 
 | Data | Lobby | Main | Frontier |
@@ -33,7 +35,7 @@ Multiverse-Core 5.7.2 runs on all Paper backends. Multiverse-NetherPortals 5.0.5
 | TAB | Network | Network | Network |
 | Global chat | Not installed | Not installed | Not installed |
 | Waymark | Not used | Planned with Frontier | Planned with Main |
-| mcMMO | Not installed | Planned with Frontier | Planned with Main |
+| mcMMO | Not installed | Shared with Frontier | Shared with Main |
 | WorldGuard | Whole entry world protected | Plugin only; no Project regions | Whole entry world protected |
 | EvenMoreFish | Not installed | Planned | Not installed |
 | Frontier achievements | Future | Future consumer | Future producer |
