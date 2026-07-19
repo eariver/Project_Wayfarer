@@ -102,6 +102,8 @@ servers/**/plugins/LuckPerms/*.mv.db
 servers/**/plugins/LuckPerms/*.trace.db
 servers/lobby/plugins/VoidGen/settings.yml
 servers/frontier/plugins/VoidGen/settings.yml
+servers/lobby/plugins/WorldEdit/.archive-unpack/
+servers/lobby/plugins/WorldEdit/sessions/
 servers/**/plugins/RedisEconomy/config.yml
 servers/**/plugins/mcMMO/config.yml
 velocity/plugins/luckperms/config.yml

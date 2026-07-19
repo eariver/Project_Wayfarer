@@ -47,6 +47,25 @@ runtime_selection:
     sha256: FA4D882F0923AD1C2BB25B4BCA33920076976BFE08F9BE0C02BC8929302D92CC
     source: https://modrinth.com/plugin/voidgen/version/2.3.8
     verified: 2026-07-19
+  worldedit:
+    version: "7.4.4"
+    reported_version: "7.4.4+7546-f9e033f"
+    channel: release
+    platform: bukkit
+    placement:
+      - lobby
+    sha256: 44C97EE6C1DF9AFA127DF3C5A2C6A7108F826FB44AB7B255A7EC4250FEB89B9D
+    verified: 2026-07-19
+  worldguard:
+    version: "7.0.17"
+    reported_version: "7.0.17+2370-e42d8bc"
+    channel: release
+    platform: bukkit
+    placement:
+      - lobby
+    dependency: "WorldEdit 7.4.4"
+    sha256: 3F14562509BF01E7680571B6F56932239157FF938F257C3226DF3B4088AE54F2
+    verified: 2026-07-19
   paper_26_2:
     build: 62
     commit: 75c0b48

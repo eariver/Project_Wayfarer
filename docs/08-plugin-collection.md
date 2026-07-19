@@ -15,8 +15,8 @@
 |Common|All Paper|LuckPerms|必須|各plugins|https://luckperms.net/download||
 |Common|All Paper|PlaceholderAPI|必須|各plugins|https://www.spigotmc.org/resources/placeholderapi.6245/||
 |Common|All Paper|TAB-Bridge|必須|各plugins|https://github.com/NEZNAMY/TAB-Bridge/releases||
-|Lobby|Lobby|WorldEdit|必須|servers/lobby/plugins|https://modrinth.com/plugin/worldedit||
-|Lobby|Lobby|WorldGuard|必須|servers/lobby/plugins|https://modrinth.com/plugin/worldguard|WorldEdit依存|
+|Lobby|Lobby|WorldEdit 7.4.4|導入・検証済み|servers/lobby/plugins|https://modrinth.com/plugin/worldedit|手動取得、Lobby限定|
+|Lobby|Lobby|WorldGuard 7.0.17|導入・検証済み|servers/lobby/plugins|https://modrinth.com/plugin/worldguard|WorldEdit 7.4.4依存、Lobby限定|
 |World|Lobby + Frontier|VoidGen 2.3.8|必須|servers/lobby/plugins, servers/frontier/plugins|https://modrinth.com/plugin/voidgen/version/2.3.8|Main/Velocityには配置しない|
 |World|Main|Multiverse-Core|必須|servers/main/plugins|https://modrinth.com/plugin/multiverse-core||
 |World|Main|Multiverse-NetherPortals|必須|servers/main/plugins|https://modrinth.com/plugin/multiverse-netherportals||

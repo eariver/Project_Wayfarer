@@ -19,6 +19,10 @@
 - BetterStructures: https://modrinth.com/plugin/betterstructures
 - EliteMobs: https://modrinth.com/plugin/elitemobs
 - WorldEdit: https://enginehub.org/worldedit
+- WorldEdit source and GPLv3 license: https://github.com/EngineHub/WorldEdit
+- WorldGuard source and LGPLv3 license: https://github.com/EngineHub/WorldGuard
+- WorldGuard global region design: https://worldguard.enginehub.org/en/latest/regions/global-region/
+- WorldGuard region commands: https://worldguard.enginehub.org/en/latest/regions/commands/
 - VoidGen 2.3.8 release: https://modrinth.com/plugin/voidgen/version/2.3.8
 - VoidGen world-generator setup: https://github.com/NicoNekoDev/VoidGen/blob/master/docs/tutorial.md
 

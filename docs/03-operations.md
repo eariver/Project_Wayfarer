@@ -53,6 +53,16 @@ Keep the platform until a separately verified permanent Lobby or Frontier gate s
 5. Run acceptance tests.
 6. Never downgrade TAB Config or a world without a supported rollback plan.
 
+## Plugin JAR acquisition
+
+Plugin executable artifacts are manually obtained by the user and placed in an ignored repository-local `manual-downloads/` staging directory. Verify each artifact's filename, internal metadata, version, platform, license, checksum, archive safety, and intended placement before copying it to a runtime `plugins/` directory. Then run an isolated startup test before network acceptance testing. Staging and runtime JARs remain outside Git, and Plugin auto-update or binary replacement stays disabled unless a separate task explicitly authorizes it.
+
+## Lobby building protection
+
+Lobby uses WorldEdit 7.4.4 and WorldGuard 7.0.17 only. The `lobby` world's `__global__` region denies `passthrough` and includes the LuckPerms group `wayfarer_builder` as its only member. That group receives `worldedit.*` and `worldguard.*` only in the `server=lobby` context. Do not use the WorldGuard `build` flag, because it bypasses normal membership-based build behavior and can interfere with non-player mechanisms.
+
+Permanent Builder membership requires a separate approved access decision. For testing, use a short-lived LuckPerms parent, verify Lobby-only permissions, and remove it immediately after the test rather than waiting for expiry. Keep WorldEdit and WorldGuard absent from Main, Frontier, and Velocity.
+
 ## Incident response
 
 - Backend crash: Velocity should fail over to Lobby.

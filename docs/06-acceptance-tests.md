@@ -19,6 +19,18 @@
 - [x] Main remains unchanged, server switching works in both directions, and direct backend connections remain rejected.
 - [x] Lobby and Frontier do not load Nether or End; Main retains its three configured dimensions.
 
+## Verified Lobby building-protection baseline (2026-07-19)
+
+- [x] WorldEdit 7.4.4 and WorldGuard 7.0.17 load on Lobby Paper 26.2 / Java 25 in dependency order.
+- [x] WorldEdit and WorldGuard are absent from Main, Frontier, and Velocity.
+- [x] The Lobby `__global__` region denies `passthrough`, contains only `g:wayfarer_builder`, and has no `build` flag.
+- [x] PvP, mob spawning, creeper/other explosions, TNT, fire spread, and lighter use are denied.
+- [x] `wayfarer_builder` receives `worldedit.*` and `worldguard.*` only in `server=lobby`.
+- [x] A non-OP, non-Builder player cannot break or place blocks before or after a clean restart.
+- [x] A temporary Builder can break and restore one block, perform and undo a one-block WorldEdit operation, and inspect the global region.
+- [x] The temporary Builder parent is removed; no permanent test-user membership remains.
+- [x] Lobby safety markers, Main terrain/dimensions, Frontier Void World, and network switching remain unchanged.
+
 ## Permissions
 
 - [ ] LuckPerms changes propagate to all instances.

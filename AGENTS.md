@@ -36,13 +36,40 @@ Network access may be used when necessary to resolve dependencies or consult off
 
 Prefer official PaperMC, Plugin-author, Modrinth, Hangar, GitHub release, or vendor pages.
 
-## 5. Secrets and licensed files
+## 5. Plugin binary acquisition policy
+
+Codex must not download Plugin JARs, paid content, server binaries, or other
+executable artifacts unless the current task explicitly authorizes automatic
+download of that exact artifact.
+
+The default workflow is:
+
+1. the user obtains the artifact manually;
+2. the user places it in an ignored repository-local staging directory;
+3. Codex verifies the filename, version metadata, checksum, license, platform,
+   and intended placement;
+4. Codex copies the approved artifact to the required runtime directories.
+
+Permission to research or verify a Plugin version is not permission to download
+its JAR.
+
+Permission to install, configure, test, or update documentation for a Plugin is
+not permission to obtain or replace its JAR.
+
+Codex must not enable Plugin auto-update or automatic binary replacement unless
+an approved task explicitly requires it.
+
+If a required artifact is missing, ambiguous, duplicated, corrupted, or the
+wrong platform/version, stop and report the problem. Do not obtain a replacement
+automatically.
+
+## 6. Secrets and licensed files
 
 Never commit passwords, tokens, forwarding secrets, private keys, paid Plugin files, paid content packs, or personal credentials.
 
 Use `.env`, ignored local Config files, and `*.example` / `*.template` files. Do not copy secrets into logs or completion reports.
 
-## 6. Destructive operations
+## 7. Destructive operations
 
 Do not delete or overwrite persistent Main worlds, player data, database data, backups, secrets, or paid content unless the task explicitly requires it.
 
@@ -50,7 +77,7 @@ Resource-world reset operations must use the designated script and explicit conf
 
 Before deleting any world directory, report the exact resolved path and confirm that it matches an allowlisted disposable world.
 
-## 7. Project invariants
+## 8. Project invariants
 
 - Project name: Project Wayfarer.
 - Client version: Minecraft 26.2.
@@ -67,6 +94,13 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - No other permission plugin may be installed without an approved migration task.
 - All Paper backends bind to `127.0.0.2` and use Velocity modern forwarding.
 - Lobby is the initial connection and failover server.
+- WorldEdit 7.4.4 and WorldGuard 7.0.17 are installed only on Lobby.
+- Lobby is protected by the WorldGuard `__global__` region with `passthrough` denied.
+- The LuckPerms `wayfarer_builder` group is the WorldGuard member allowed to build in Lobby.
+- WorldEdit and WorldGuard permissions for `wayfarer_builder` are restricted to `server=lobby`.
+- Do not set the WorldGuard `build` flag on the Lobby global region.
+- Do not install WorldGuard on Main or Frontier without a separately approved protection design.
+- Plugin executable artifacts follow the manual acquisition policy.
 - VoidGen 2.3.8 is installed only on Lobby and Frontier; it must not be installed on Main or Velocity.
 - The Lobby `lobby` world and Frontier `frontier_gate` entry world are VoidGen void worlds. Main worlds remain unchanged.
 - Lobby and Frontier keep Nether and End disabled. Main keeps its designed Overworld, Nether, and End dimensions enabled.
@@ -93,7 +127,7 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - Do not add external Plugin repositories as Git submodules without explicit approval.
 - Do not enable the Minecraft Management Server while using the public placeholder secret. Generate and inject a local secret before enabling it.
 
-## 8. Config editing policy
+## 9. Config editing policy
 
 For third-party Plugins, do not invent configuration keys. First run the exact Plugin version once, inspect the generated Config and official documentation, then edit the generated file.
 
@@ -101,7 +135,7 @@ When a generated runtime Config contains secrets, maintain a sanitized `.templat
 
 Validate YAML, TOML, JSON, XML, PowerShell syntax, and Docker Compose syntax after editing where tooling is available.
 
-## 9. Git completion policy
+## 10. Git completion policy
 
 For tasks performed entirely inside this repository, Codex may commit and push
 completed changes without requesting an additional Git-only confirmation when

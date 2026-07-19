@@ -102,11 +102,38 @@ lobby:
         nether: disabled
         end: disabled
     - name: WorldEdit
+      version: "7.4.4"
+      reported-version: "7.4.4+7546-f9e033f"
+      channel: Release
+      platform: Bukkit
+      status: installed-and-verified
+      placement: lobby-only
       purpose: Build and maintain the simple Lobby
+      jar: manual-acquisition
+      sha256: 44C97EE6C1DF9AFA127DF3C5A2C6A7108F826FB44AB7B255A7EC4250FEB89B9D
       source: https://modrinth.com/plugin/worldedit
+      excluded-placement:
+        - velocity
+        - main
+        - frontier
     - name: WorldGuard
+      version: "7.0.17"
+      reported-version: "7.0.17+2370-e42d8bc"
+      channel: Release
+      platform: Bukkit
+      status: installed-and-verified
+      placement: lobby-only
       purpose: Protect the Lobby
+      required-dependency: "WorldEdit 7.4.4"
+      protection: "lobby __global__ region"
+      builder-group: wayfarer_builder
+      jar: manual-acquisition
+      sha256: 3F14562509BF01E7680571B6F56932239157FF938F257C3226DF3B4088AE54F2
       source: https://modrinth.com/plugin/worldguard
+      excluded-placement:
+        - velocity
+        - main
+        - frontier
 
 main:
   required:
