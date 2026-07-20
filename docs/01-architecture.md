@@ -70,6 +70,8 @@ BetterStructures 2.6.3 is installed only on Main with the free `103 Default Stru
 
 Paper's namespaced runtime keys are authoritative. The persistent family is `minecraft:overworld` ↔ `minecraft:the_nether` / `minecraft:the_end`; the Resource family is `minecraft:resource` ↔ `minecraft:resource_nether` / `minecraft:resource_end`. `main_end` is the Multiverse alias for the existing `main_the_end` world. Explicit NetherPortals links exist in both directions within each family and never cross between families.
 
+Phase 3 generated the persistent family on 2026-07-21 with seed `164225356311935743`. Its physical paths are `servers/main/main/dimensions/minecraft/overworld`, `the_nether`, and `the_end`; the three Resource directories remain alongside them under the same Main container. The approved spawn coordinates are Overworld `(320, 70, 128)`, Nether `(20.5, 60, -19.5)`, and End `(100.5, 49, 0.5)`. See [Main World Baseline](13-main-world-baseline.md) for identities, preservation evidence, and rollback.
+
 ## Frontier
 
 `frontier_gate` is currently a protected Void entry world with a temporary safety platform. V0.1.0 requires one user-approved playable theme, but no theme has been selected or installed. The theme must support safe Gate entry and return through `frontier_gate`. Frontier inventory remains local and is used normally across the initial theme; mcMMO and Waymark balances remain shared with Main. Frontier WM rewards, achievements, Main-side rewards, theme-specific inventories, and initial equipment remain future designs.

@@ -2,6 +2,8 @@
 
 This is an execution summary. Follow the repository's [formal Ver.0.0.4 design guide](00-design-guide.md) for the authoritative design and acceptance policy. Ver.0.0.4 defines the future V0.1.0 Alpha completion conditions; it does not itself authorize Runtime changes.
 
+The destructive Phase 3 generation has already completed. Do not repeat the bare-generation procedure or replace Main world data from this installation summary; use [Main World Baseline](13-main-world-baseline.md) for the current persistent seed, storage paths, spawn coordinates, and local rollback evidence.
+
 ## Phase 0 - Prerequisites
 
 1. Install Java 25 for Velocity and all Paper backends.

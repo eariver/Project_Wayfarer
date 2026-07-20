@@ -297,6 +297,23 @@ servers:
     java: 25
     port: 25567
     level_name: main
+    world_baseline:
+      status: phase-3-final-generation-complete
+      generation_date: 2026-07-21
+      seed: "164225356311935743"
+      player_data_policy: complete-vanilla-reset-external-databases-preserved
+      betterstructures_spawn_protection_radius: 100
+      bukkit_worlds:
+        overworld: main
+        nether: main_nether
+        end: main_the_end
+      multiverse_end_alias: main_end
+      spawn:
+        overworld: "320 70 128"
+        nether: "20.5 60 -19.5"
+        end: "100.5 49 0.5"
+      resource_family: preserved-and-hash-verified
+      backup_manifest_sha256: 50B0F6244223DA68B752407BBE89127E0CE49645F7673A5FF929EE9C5B8A3C9D
   frontier:
     software: Paper
     minecraft: "1.21.11"

@@ -14,7 +14,7 @@ Main is the permanent home for building, farming, storage, fishing and general s
 - mcMMO progression is shared with Frontier; normal inventory and vanilla player state remain local.
 - Waymark balance is shared with Frontier. Main provides a five-category fixed-price shop through `/shop`; see [Waymark Economy](10-waymark-economy.md).
 - BetterStructures 2.6.3 is installed with the vanilla-like `103 Default Structures` pack; structures appear only when Persistent Main generates new chunks. EvenMoreFish remains planned.
-- The permanent spawn Hub, normal Respawn location, Lobby/Frontier Return Gates, and three Resource Gates are V0.1.0 targets, not current features.
+- The final natural Main spawn and bedless respawn baseline is the approved Savanna location around `(320, 70, 128)`. The permanent spawn Hub, Lobby/Frontier Return Gates, and three Resource Gates are V0.1.0 targets and are not built yet.
 
 ## 3. Resource worlds
 

@@ -136,7 +136,10 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - mcMMO runtime Configs containing credentials must remain ignored and be rendered from sanitized templates.
 - mcMMO must not be reloaded or unloaded through PlugManX; use a normal server restart.
 - Player progression rollback or stale-profile overwrite during server switching is a blocking data-integrity failure.
-- Main persistent dimensions: `main`, `main_nether`, `main_end`.
+- Main persistent dimensions are the Bukkit worlds `main`, `main_nether`, and `main_the_end`; `main_end` is only the Multiverse alias for `main_the_end`.
+- Phase 3 final Main generation completed on 2026-07-21 with seed `164225356311935743`. Persistent storage is `servers/main/main/dimensions/minecraft/{overworld,the_nether,the_end}` and must not be regenerated outside a separately approved destructive task.
+- The approved Main spawn baseline is Overworld `(320, 70, 128)`, Nether administrative spawn `(20.5, 60, -19.5)`, and End administrative spawn `(100.5, 49, 0.5)` on the default obsidian platform. The Main spawn Hub and all Gate structures remain unbuilt.
+- The verified ignored local rollback backup is `backups/main-final-generation-20260721-001501/`, with manifest SHA-256 `50B0F6244223DA68B752407BBE89127E0CE49645F7673A5FF929EE9C5B8A3C9D`. It is not stored in Git and must not be assumed present in another clone.
 - Disposable resource dimensions: `resource`, `resource_nether`, `resource_end`.
 - Multiverse-Core 5.7.2 is installed on all Paper backends and must not be installed on Velocity.
 - Multiverse-NetherPortals 5.0.5 is installed only on Main.
@@ -149,7 +152,7 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - BetterStructures 2.6.3 is installed only on Main with WorldEdit 7.4.4 as its hard dependency. It must not be installed on Velocity, Lobby, or Frontier unless a later approved Frontier content design explicitly changes that scope.
 - Only the free `103 Default Structures` content pack version 5 is installed. Plugin and content artifacts are manually acquired and remain ignored; automatic Plugin download is disabled.
 - BetterStructures is enabled only for the actual Bukkit worlds `main`, `main_nether`, and `main_the_end`. It is explicitly disabled for `resource`, `resource_nether`, and `resource_end`, and unknown new worlds default to disabled.
-- BetterStructures places structures only in newly generated chunks. The default `spawnProtectionRadius: 100` is preserved and must be reviewed before the separately approved destructive Phase 3 final Main generation.
+- BetterStructures places structures only in newly generated chunks. The default `spawnProtectionRadius: 100` was explicitly retained for the completed Phase 3 generation baseline.
 - The planned Main hub provides independent direct gates to `resource`, `resource_nether`, and `resource_end`; every Resource world requires an explicit return gate to Main.
 - `resource_end` must not spawn an Ender Dragon (`entities.spawning.scan-for-legacy-ender-dragon: false`). `main_end` keeps this setting enabled.
 - Resource End routing must not depend on the Dragon exit portal or End gateways; use a verified safe outer-island destination.

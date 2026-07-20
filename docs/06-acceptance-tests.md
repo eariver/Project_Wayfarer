@@ -58,7 +58,7 @@ Phase 1B incomplete:
 ### Main and gameplay
 
 - [x] BetterStructures 2.6.3 and `103 Default Structures` version 5 are enabled only in Bukkit worlds `main`, `main_nether`, and `main_the_end`; every Resource world and unknown new world is disabled.
-- [ ] Final persistent Main generation completes under an approved destructive task with exact paths, backups, and safe Spawn.
+- [x] Final persistent Main generation completed under an approved destructive task with exact paths, verified backup and manifest, final seed, preserved Resource family, and safe Overworld/Nether/End spawns.
 - [ ] EvenMoreFish enables with its adopted Config and one representative function; configuration has no explicit mcMMO Fishing conflict.
 - [ ] CoreProtect enables after final Main generation and provides its representative lookup/rollback-administration function.
 
@@ -174,3 +174,13 @@ The following records preserve work already performed under earlier tasks. Their
 - [x] A CIRCLE pregeneration centered on Main Chunk `(64, 64)` with radius 256 and no World Border change generated 264 new Chunks. `betterstructures_well_grassy` naturally appeared in `main` Chunk `(76, 58)` and remained after restart.
 - [x] A representative previously ungenerated Resource Overworld Chunk was loaded while Resource remained disabled; no BetterStructures notification or placement/paste event appeared. Resource Nether and End were verified disabled in Config.
 - [x] The official Pack's legacy `minecraft:bed` block-entity keys produce non-blocking DataFixer ERROR-level messages on load. BetterStructures completes initialization and the adopted structure/restart tests pass; no other startup ERROR, SEVERE, or Exception occurred.
+
+### Phase 3 final persistent Main generation (2026-07-21)
+
+- [x] The user approved the exact destructive scope, resolved paths, retained seed, complete Vanilla player-data reset, BetterStructures radius 100, and verified rollback backup before world movement.
+- [x] The ignored backup contains 177 payload files and a complete SHA-256 list; its manifest digest is `50B0F6244223DA68B752407BBE89127E0CE49645F7673A5FF929EE9C5B8A3C9D`.
+- [x] Paper 26.2 build 62 under 64-bit Java 25 generated `main`, `main_nether`, and `main_the_end` with seed `164225356311935743` and new non-conflicting world UUIDs.
+- [x] Resource UUIDs and seeds remained unchanged, Region counts remained `8 / 4 / 4`, every Resource Region-file SHA-256 matched the backup, and BetterStructures remained disabled there.
+- [x] The approved Savanna Overworld spawn and bedless respawn were safe; the selected Nether and default-platform End administrative spawns passed focused safety and travel tests.
+- [x] A clean full-network restart reloaded all worlds, Multiverse links, and BetterStructures scope. Velocity-to-Main arrival reached the approved spawn, and the network then stopped normally.
+- [x] Rollback remains possible from the verified ignored local backup. World, player, backup, Region, log, cache, and JAR data remain outside Git.

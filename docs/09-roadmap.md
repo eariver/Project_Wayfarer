@@ -15,6 +15,8 @@ Ver.0.0.4 is a design revision, not a Server Release. The first target Release i
 - mcMMO 2.3.000 shared Main／Frontier progression
 - RedisEconomy `4.5.12-wayfarer.1`／VaultUnlocked 2.20.2 shared Waymark balance
 - EconomyShopGUI 7.1.1 Free Main-only fixed-price shop
+- BetterStructures 2.6.3 and `103 Default Structures` version 5 restricted to persistent Main dimensions
+- Phase 3 final persistent Main generation with preserved Resource dimensions and approved safe spawns
 
 These baselines retain their historical verification records. They do not imply completion of the Phase 1B final Builder allowlist, planned Hubs, Gates, Frontier Theme, operations Script, or V0.1.0 Backup.
 
@@ -51,7 +53,7 @@ Phase 1A completed its focused Security Boundary verification on 2026-07-20.
 - [ ] Keep WorldGuard Region／Velocity／LuckPerms／economy／player-punishment／server-stop authority, destructive World lifecycle operations, wildcards, reload/debug/internal actions, and other prohibited administration excluded
 - [ ] Repeat focused Builder elevation, work, Survival cleanup, demotion, and denial tests
 
-Phase 1B remains a V0.1.0 Release Blocker and must complete before Builder-led Hub／Gate／Theme connection work. It did not block the independent BetterStructures integration and does not block a future separately approved Phase 3 generation task.
+Phase 1B remains a V0.1.0 Release Blocker and must complete before Builder-led Hub／Gate／Theme connection work. It did not block the independently approved BetterStructures integration or Phase 3 generation.
 
 ### Phase 2 - Main world-generation features
 
@@ -60,15 +62,15 @@ Phase 1B remains a V0.1.0 Release Blocker and must complete before Builder-led H
 - [x] Keep `resource`, `resource_nether`, `resource_end`, and unknown new worlds disabled
 - [x] Confirm natural `betterstructures_well_grassy` generation, representative Resource exclusion, and restart persistence
 
-Phase 2 completed on 2026-07-20. The next generation task is Phase 3. It is destructive and requires a separate instruction, exact resolved-path and backup checks, and explicit approval. Recheck the retained BetterStructures spawn protection radius of 100 blocks before generation.
+Phase 2 completed on 2026-07-20. Its retained BetterStructures spawn protection radius of 100 blocks was reviewed and approved during Phase 3.
 
 ### Phase 3 - Final persistent Main generation
 
-- [ ] Approve exact paths, backups, generation conditions, and Spawn safety
-- [ ] Finalize `main`, `main_nether`, and `main_end` only after generation-affecting Plugins are selected
-- [ ] Preserve Resource and entry worlds outside the destructive scope
+- [x] Approve exact paths, backup, generation conditions, player-data reset policy, and Spawn safety
+- [x] Finalize `main`, `main_nether`, and actual Bukkit End world `main_the_end` on seed `164225356311935743`
+- [x] Preserve the Resource family outside the destructive scope and verify UUID, seed, and Region data
 
-This is destructive work and requires an independently approved, path-checked task.
+Phase 3 completed on 2026-07-21. The verified baseline and local rollback evidence are recorded in [Main World Baseline](13-main-world-baseline.md). Repeating generation remains destructive and requires a new independently approved, path-checked task. Phase 4 is next; Phase 1B remains incomplete.
 
 ### Phase 4 - Main lightweight gameplay
 

@@ -448,6 +448,25 @@ main:
         redistribution: not-committed
         enabled-world-family: persistent-main-only
       verification: version-command-natural-well-resource-exclusion-and-clean-restart
+      phase-3-generation-baseline:
+        status: complete
+        date: 2026-07-21
+        seed: "164225356311935743"
+        player-data-policy: complete-vanilla-reset-external-databases-preserved
+        persistent-bukkit-worlds:
+          - main
+          - main_nether
+          - main_the_end
+        persistent-storage:
+          - servers/main/main/dimensions/minecraft/overworld
+          - servers/main/main/dimensions/minecraft/the_nether
+          - servers/main/main/dimensions/minecraft/the_end
+        spawn:
+          overworld: "320 70 128"
+          nether: "20.5 60 -19.5"
+          end: "100.5 49 0.5"
+        resource-preservation: uuid-seed-and-region-sha256-verified
+        backup-manifest-sha256: 50B0F6244223DA68B752407BBE89127E0CE49645F7673A5FF929EE9C5B8A3C9D
 frontier:
   required:
     - name: VoidGen

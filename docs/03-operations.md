@@ -83,9 +83,15 @@ Use the namespaced keys for runtime diagnosis. `main_end` is a logical Multivers
 
 BetterStructures 2.6.3 runs only on Main and depends on WorldEdit 7.4.4. Its tracked Config is limited to `plugins/BetterStructures/config.yml` and `ValidWorlds.yml`; the JAR, Imports, extracted `103 Default Structures` Schematics, generated content assets, Resource Pack output, cache, update and session data remain ignored. Content and Plugin binaries are manually acquired, `nightbreak.autoDownloadPluginUpdates` stays `false`, and the unused EliteMobs Region integration stays disabled.
 
-The actual Bukkit allowlist is `main`, `main_nether`, and `main_the_end`. `resource`, `resource_nether`, and `resource_end` are explicitly `false`, and `New worlds spawn structures` is `false`. Do not use the Multiverse alias `main_end` in this Config. BetterStructures affects only newly generated chunks; do not delete Region files or broaden pregeneration to test it. Normal Config/content changes require a clean Main restart, not PlugManX or server `/reload`. The retained default spawn protection radius is 100 blocks and must be reviewed before Phase 3 final Main generation.
+The actual Bukkit allowlist is `main`, `main_nether`, and `main_the_end`. `resource`, `resource_nether`, and `resource_end` are explicitly `false`, and `New worlds spawn structures` is `false`. Do not use the Multiverse alias `main_end` in this Config. BetterStructures affects only newly generated chunks; do not delete Region files or broaden pregeneration to test it. Normal Config/content changes require a clean Main restart, not PlugManX or server `/reload`. The retained default spawn protection radius of 100 blocks was approved and used for Phase 3 final Main generation.
 
 The official version-5 content emits non-blocking DataFixer messages for legacy `minecraft:bed` block-entity keys on Minecraft 26.2. BetterStructures still completes initialization, and representative natural generation plus restart persistence passed. Recheck this upstream-content warning when either Plugin or Pack changes; do not edit the official Schematics in place.
+
+## Main persistent world baseline
+
+Phase 3 completed on 2026-07-21 with seed `164225356311935743`. Normal Main spawn is `(320, 70, 128)`; the Multiverse administrative spawns are `(20.5, 60, -19.5)` in Nether and `(100.5, 49, 0.5)` in End. The persistent worlds live below `servers/main/main/dimensions/minecraft/{overworld,the_nether,the_end}`. Do not treat the alias `main_end` as a path.
+
+The pre-generation rollback copy is the ignored local directory `backups/main-final-generation-20260721-001501/`. Confirm its manifest and payload hashes before relying on it, and never assume it is available from GitHub. Any rollback or later regeneration requires a new explicitly approved destructive task, all Minecraft components stopped, exact resolved paths, Resource-family preservation checks, and a verified backup. See [Main World Baseline](13-main-world-baseline.md).
 
 ## Lobby and Frontier void worlds
 
