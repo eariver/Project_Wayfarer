@@ -29,9 +29,11 @@ RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 run only on Main and F
 
 EconomyShopGUI 7.1.1 Free runs only on Main. Its five fixed-price categories provide the initial Vanilla-material sell and building/supply buy loop through Vault; shop actions therefore update the shared RedisEconomy balance visible on Frontier without installing the shop there. Lobby, Frontier, and Velocity remain outside the shop boundary.
 
-## Planned V0.1.0 permission boundary
+## Current permission boundary and Phase 1B
 
-Ver.0.0.4 specifies five persistent LuckPerms group definitions: `default`, `wayfarer_builder_eligible`, `wayfarer_admin_eligible`, `wayfarer_builder`, and `wayfarer_admin`. Only a Player's Parent membership in either Role Group is temporary. `default` and the existing `wayfarer_builder` are audited and reused; missing groups are created only after conflict checks. Eligibility carries normal gameplay rights plus self-only temporary parent control, not the Role's authority. Builder is an explicit Paper allowlist: WorldEdit, gamemode, teleport, and Multiverse-Core span Lobby/Main/Frontier, while Multiverse-NetherPortals is Main-only. WorldGuard administration and destructive World lifecycle operations stay excluded. Admin authority spans Velocity and all Paper backends only while the Player's temporary parent is active. OS processes, Docker, databases, backups, and restore stay outside Minecraft permissions and belong to the planned integrated PowerShell operations layer.
+Phase 1A implements five persistent LuckPerms group definitions: `default`, `wayfarer_builder_eligible`, `wayfarer_admin_eligible`, `wayfarer_builder`, and `wayfarer_admin`. Only a Player's Parent membership in either Role Group is temporary. `default` and the existing `wayfarer_builder` were reused; Eligibility carries normal gameplay rights plus matching self-only temporary parent control through Velocity, not the Role's authority. `wayfarer_admin` provides global full access while its temporary Parent is active, and all Paper backends remain OP-free.
+
+The current Builder is an empty Role container that inherits only `default`. Its existing Lobby／Frontier WorldGuard Region membership permits protected-entry building, but the former WorldEdit／WorldGuard administration wildcards have been removed. Phase 1B will define the explicit Paper command allowlist after Advanced Portals, the playable Frontier Theme, and Builder Hub／Gate work are known. OS processes, Docker, databases, backups, and restore remain outside Minecraft permissions and belong to the planned integrated PowerShell operations layer. See [Permission Model](12-permission-model.md).
 
 ## Data boundaries
 

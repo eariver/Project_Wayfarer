@@ -53,19 +53,18 @@ Stop each component cleanly with `stop` before editing generated Config.
 5. Enable unexpected-disconnect failover.
 6. Install ViaVersion on Velocity. Do not install ViaBackwards.
 
-## Phase 5 - LuckPerms baseline and planned role model
+## Phase 5 - LuckPerms baseline and implemented Phase 1A
 
 1. Install the correct LuckPerms platform build on Velocity and all backends.
 2. Configure all instances for the same MariaDB service.
 3. Assign unique server names: `velocity`, `lobby`, `main`, `frontier`.
 4. Use SQL messaging or another supported messaging service.
-5. Keep normal operation independent of OP.
-6. Implement the Ver.0.0.4 model only in a separately approved Security Boundary task. All five Group definitions are persistent; only Player Parent membership in `wayfarer_builder` or `wayfarer_admin` is temporary.
-7. Audit and reuse `default` and the existing `wayfarer_builder`. Do not delete/recreate `wayfarer_builder`, make it a Primary Group, or break its Lobby／Frontier WorldGuard Region Member references. Audit and remove its current WorldGuard administration nodes while preserving membership-based building.
-8. After conflict checks, create `wayfarer_builder_eligible`, `wayfarer_admin_eligible`, and `wayfarer_admin` only when absent. Audit rather than replace any pre-existing Group.
-9. Verify exact LuckPerms 5.5.60 argument-based permission nodes before implementation; do not infer or pre-create them from this procedure.
-10. Limit each Eligibility group to self-only temporary add/remove of its matching Role. Builder uses an explicit allowlist; Admin gets full Minecraft/Plugin authority only while the Player's temporary parent is active.
-11. Scope Builder WorldEdit, gamemode, teleport, and Multiverse-Core to Lobby／Main／Frontier, and Multiverse-NetherPortals to Main only. Exclude WorldGuard Region management, Advanced Portals unless later approved, Velocity, LuckPerms, economy, player punishment, server stop, wildcard, reload/debug/internal actions, and destructive World lifecycle commands.
+5. Set `argument-based-command-permissions: true` on all four instances. Set `enable-ops: false`, `auto-op: false`, and `commands-allow-op: false` on Paper only.
+6. Phase 1A has already implemented and verified the five persistent Group definitions, matching self-only temporary Role control through Velocity, Admin full access, and OP-independent operation. Use [Permission Model](12-permission-model.md) as the exact node and recovery source of truth; do not blindly recreate Groups or permissions.
+7. Preserve the reused `default` and `wayfarer_builder`. Do not delete/recreate `wayfarer_builder`, make it a Primary Group, or break its Lobby／Frontier WorldGuard Region Member references.
+8. Keep the current Builder Role container limited to `group.default`. The former WorldEdit／WorldGuard administration wildcards are removed; membership-based protected-entry building remains.
+9. Assign Eligibility only to an explicitly approved Player. Player membership in `wayfarer_builder` or `wayfarer_admin` must be temporary; do not use permanent Role Parents or OP.
+10. Phase 1B will add the final command-focused Builder allowlist only after the Advanced Portals permissions, playable Frontier Theme, and Builder Hub／Gate work are known. Until then, do not pre-grant WorldEdit, gamemode, teleport, Multiverse, WorldGuard administration, Velocity, LuckPerms, economy, player punishment, server stop, wildcard, reload/debug/internal, or destructive World lifecycle authority.
 
 ## Phase 6 - Lobby
 

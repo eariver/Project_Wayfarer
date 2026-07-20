@@ -77,7 +77,7 @@ Multiverse-Core 5.7.2 runs on Lobby, Main, and Frontier. Lobby and Frontier regi
 - `minecraft:resource` ↔ `minecraft:resource_nether`
 - `minecraft:resource` ↔ `minecraft:resource_end`
 
-Use the namespaced keys for runtime diagnosis. `main_end` is a logical Multiverse alias, not a filesystem path. World access enforcement, gamemode enforcement, and flight enforcement remain disabled so that Multiverse does not replace existing backend access or player-state behavior. Until Phase 1, existing Console/Admin procedures remain provisional. The final Builder Allowlist may include World information, travel, safe Spawn operations, individual World properties, and Main-only NetherPortals link/unlink/inspection; World creation and destructive import/unload/deletion/clone/regeneration/purge, plus reload/debug/internal operations, remain Admin-only.
+Use the namespaced keys for runtime diagnosis. `main_end` is a logical Multiverse alias, not a filesystem path. World access enforcement, gamemode enforcement, and flight enforcement remain disabled so that Multiverse does not replace existing backend access or player-state behavior. Phase 1A Admin operation is available, but Builder has no Multiverse authority until Phase 1B. The final Builder Allowlist may include World information, travel, safe Spawn operations, individual World properties, and Main-only NetherPortals link/unlink/inspection; World creation and destructive import/unload/deletion/clone/regeneration/purge, plus reload/debug/internal operations, remain Admin-only.
 
 ## Lobby and Frontier void worlds
 
@@ -109,19 +109,28 @@ For an ordinary official Plugin, start only the target Runtime as needed and con
 
 ## Paper building administration and entry-world protection
 
-WorldEdit 7.4.4 and WorldGuard 7.0.17 use the same verified Bukkit JARs on Lobby, Main, and Frontier; neither Plugin is installed on Velocity. Lobby and `frontier_gate` protect their entire entry worlds with `__global__` regions that deny `passthrough` and include the LuckPerms group `wayfarer_builder` as their only member. The group receives `worldedit.*` and `worldguard.*` only in the `server=lobby` and `server=frontier` contexts.
+WorldEdit 7.4.4 and WorldGuard 7.0.17 use the same verified Bukkit JARs on Lobby, Main, and Frontier; neither Plugin is installed on Velocity. Lobby and `frontier_gate` protect their entire entry worlds with `__global__` regions that deny `passthrough` and include the LuckPerms group `wayfarer_builder` as their only member. Phase 1A removed the former `worldedit.*` and `worldguard.*` administration nodes; the Group now inherits only `default`.
 
 Main has the administration Plugins installed but currently has no Project Wayfarer protection Region or Global Region Flag. Normal Survival building remains available there, and `wayfarer_builder` receives no Main WorldEdit or WorldGuard permission. Add Main protection only after a separate World/Region design is approved.
 
-Do not use the WorldGuard `build` flag, because it bypasses normal membership-based build behavior and can interfere with non-player mechanisms. The existing `wayfarer_builder` Group and Region membership are a verified baseline and must be reused, not deleted or recreated. Its current `worldguard.*` administration permissions are not part of the final Builder Allowlist and must be safely removed during Phase 1 without removing the Global Region Member reference. Eligibility groups, self-only Temporary Parent control, the expanded Builder Allowlist, and Admin full access during temporary Player membership require a separate approved Security Boundary implementation task.
+Do not use the WorldGuard `build` flag, because it bypasses normal membership-based build behavior and can interfere with non-player mechanisms. The existing `wayfarer_builder` Group and Region membership are a verified baseline and must be reused, not deleted or recreated. Membership-based one-block building and immediate denial after Parent removal were verified without WorldGuard administration. The expanded Builder Allowlist remains Phase 1B work.
 
-## Planned temporary Player membership
+## Temporary Player membership
 
-The final Ver.0.0.4 model is not implemented yet. All five Group definitions are persistent. `default` and existing `wayfarer_builder` are audited and reused; missing Eligibility/Admin Groups are created only after conflict checks. When implemented, `wayfarer_builder_eligible` may add/remove only its own `wayfarer_builder` Parent with a temporary duration, and `wayfarer_admin_eligible` may do the same only for `wayfarer_admin`. Builder membership uses 2 hours and Admin membership 30 minutes as standard values supplied with the temporary grant; they are not technically fixed. Eligibility itself remains `default`-equivalent and cannot grant permanent parents, affect other players, or assign arbitrary groups/permissions.
+Phase 1A is implemented. All five Group definitions are persistent, while Player membership in `wayfarer_builder`／`wayfarer_admin` is temporary. `wayfarer_builder_eligible` may add/remove only its own Builder Parent, and `wayfarer_admin_eligible` may do the same only for Admin, through Velocity `/lpv`. Builder membership uses 2 hours and Admin membership 30 minutes as standard values supplied with the temporary grant; they are not technically fixed. Eligibility remains `default`-equivalent and cannot grant permanent Parents, affect other Players, assign arbitrary Groups/permissions, or use Paper `/lp` administration.
 
-Builder WorldEdit, Creative／Survival／Spectator, teleport, and Multiverse-Core access covers Lobby, Main, and Frontier; Multiverse-NetherPortals covers Main only. Phase 1 must derive an explicit command Allowlist from the adopted versions. WorldGuard Region administration, Advanced Portals administration, Velocity, LuckPerms, economy, player punishment, server stop, wildcards, destructive World lifecycle operations, Plugin/Config reload, and debug/internal administration remain excluded.
+```text
+/lpv user <player> parent addtemp wayfarer_builder 2h deny
+/lpv user <player> parent removetemp wayfarer_builder
+/lpv user <player> parent addtemp wayfarer_admin 30m deny
+/lpv user <player> parent removetemp wayfarer_admin
+```
+
+The current Builder Role container has no WorldEdit, Creative／Survival／Spectator, teleport, or Multiverse command permission. Phase 1B will derive an explicit allowlist from the adopted versions after the actual Hub／Gate／Theme work is known. WorldGuard Region administration, unapproved Advanced Portals administration, Velocity, LuckPerms, economy, player punishment, server stop, wildcards, destructive World lifecycle operations, Plugin/Config reload, and debug/internal administration remain excluded.
 
 At the end of Builder work: confirm saved state, return to Survival, move to a safe location if needed, self-remove the Temporary Builder Parent, and verify loss of Builder permissions. Natural expiry is only a safety net and does not reset Creative/Spectator state. Remove one Role's Temporary Parent before joining the other. Admin full access ends when the Temporary Admin Parent is removed or expires; Windows, Docker, database, cold-backup, restore, and stopped-server startup remain outside Minecraft permissions.
+
+Exact Eligibility nodes, assignment, bootstrap, recovery, rollback, Specific Deny policy, and acceptance evidence are in [Permission Model](12-permission-model.md). Server Console is reserved for bootstrap, permission-lockout recovery, and incident diagnosis.
 
 ## TAB network display
 

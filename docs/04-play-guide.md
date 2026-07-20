@@ -1,6 +1,6 @@
 # Play Guide - Ver.0.0.4
 
-This guide separates the current playable state from the future V0.1.0 Alpha target. Ver.0.0.4 does not mean that planned Hubs, Gates, permissions, or Frontier content are already available.
+This guide separates the current playable state from the future V0.1.0 Alpha target. Permission Phase 1A is available, but Ver.0.0.4 does not mean that planned Hubs, Gates, the final Builder allowlist, or Frontier content are already available.
 
 ## 1. Entering the network
 
@@ -58,6 +58,8 @@ Later revisions plan to add:
 
 The user manually builds and approves the Lobby minimum Hub, Main spawn Hub, Frontier Gate Hub, Gate structures, Resource Return structure, and Resource End outer-island structure. Codex configures the exact Gate routes, Spawn/Arrival settings, and required protection only after the user supplies confirmed worlds, coordinates, orientation, and safe destinations. No structure is generated or replaced from this specification alone.
 
-## 8. Planned temporary Role membership
+## 8. Temporary Role membership
 
-The final five-group Ver.0.0.4 LuckPerms model is not implemented yet. Its Group definitions are persistent; after the separate implementation, eligible Players temporarily add themselves as a Parent member of Builder or Admin rather than holding permanent Role membership. Existing `wayfarer_builder` is audited and reused. Builder's normal membership duration is 2 hours and Admin's is 30 minutes. A Builder must return to Survival and remove the temporary Parent after work; expiry does not automatically clean up gamemode.
+The five-group Phase 1A LuckPerms foundation is implemented. Group definitions and Eligibility are persistent; eligible Players temporarily add themselves as a Parent member of Builder or Admin through Velocity `/lpv` rather than holding permanent Role membership or OP. Builder's normal membership duration is 2 hours and Admin's is 30 minutes. Remove one Role before adding the other.
+
+The current Builder is only a Role container and WorldGuard member for protected-entry building. Its WorldEdit, gamemode, teleport, Multiverse, and other final allowlist permissions remain Phase 1B work. After future Builder work, return to Survival and remove the temporary Parent; expiry does not automatically clean up gamemode. See [Permission Model](12-permission-model.md).

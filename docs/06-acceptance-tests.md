@@ -28,24 +28,32 @@ Regression testing is limited to a foundation directly modified by the change. E
 
 - [x] Velocity Modern Forwarding, local-only Paper binding, Lobby initial route/failover, and ViaVersion Frontier access have verified implementation records.
 - [x] LuckPerms uses shared MariaDB and SQL messaging across Velocity and all Paper backends.
+- [x] Permission Phase 1A implements the five persistent Groups, self-only temporary Role foundation, Admin full access, OP removal, and the empty Builder Role container while preserving WorldGuard membership.
 - [x] Lobby and Frontier Gate have protected Void entry-world safety baselines.
 - [x] WorldEdit/WorldGuard, TAB proxy installation, Multiverse world registration, and Main dimension-family links have verified baselines.
 - [x] mcMMO shared Main/Frontier progression and RedisEconomy shared Waymark balances have verified persistence tests.
 - [x] EconomyShopGUI 7.1.1 Free provides the verified Main-only fixed-price shop.
 
-These items describe current baselines only. They do not mark the Ver.0.0.4 permission model, Hubs, Gates, Frontier Theme, integrated operations, or V0.1.0 Backup as implemented.
+These items describe current baselines only. They do not mark the Phase 1B final Builder allowlist, Hubs, Gates, Frontier Theme, integrated operations, or V0.1.0 Backup as implemented.
 
 ## 3. V0.1.0 Release Blockers
 
 ### Permission model
 
-- [ ] All five Group definitions are persistent. Existing `default` and `wayfarer_builder` are audited and reused without delete/recreate; missing Eligibility/Admin Groups are created only after conflict checks.
-- [ ] The existing `wayfarer_builder` WorldGuard Global Region Member references remain intact while its WorldGuard administration permissions are removed.
-- [ ] Each Eligibility group can affect only its own Player and matching Role Parent; permanent Role membership, other players, arbitrary groups, and arbitrary permissions are denied.
-- [ ] Builder WorldEdit, gamemode, teleport, and Multiverse-Core access is correctly scoped to Lobby/Main/Frontier; Multiverse-NetherPortals is Main-only.
-- [ ] Builder is denied WorldGuard Region and Velocity administration, LuckPerms/economy/player-punishment/server-stop authority, unrestricted wildcards, destructive World lifecycle operations, and reload/debug/internal administration.
-- [ ] Full Minecraft/Plugin authority exists only while the Player's temporary Admin Parent is active.
-- [ ] Builder and Admin grant/removal, expiry, self-demotion, and Builder Survival cleanup are documented and minimally verified.
+Phase 1A complete:
+
+- [x] All five Group definitions are persistent. Existing `default` and `wayfarer_builder` were audited and reused without delete/recreate or Primary Group use; missing Eligibility/Admin Groups were created after conflict checks.
+- [x] The existing `wayfarer_builder` WorldGuard Global Region Member references remain intact while its former WorldEdit／WorldGuard administration wildcards are removed.
+- [x] Eligibility uses exact LuckPerms 5.5.60 self-only, matching-Role, temporary-only argument permissions through Velocity; permanent Role membership, other Players, arbitrary Groups, arbitrary permissions, and Paper-side management are denied.
+- [x] Full Minecraft／Plugin authority exists only while the Player's temporary Admin Parent is active and does not depend on OP.
+- [x] Temporary add/remove, natural expiry, cross-instance propagation, denial after demotion, restart persistence, and Cleanup were verified.
+- [x] The current Builder Role container permits protected-entry building only through WorldGuard membership and denies management commands; building is denied immediately after removal.
+
+Phase 1B incomplete:
+
+- [ ] Builder WorldEdit, gamemode, teleport, and Multiverse-Core access is scoped to the approved Lobby／Main／Frontier commands; Multiverse-NetherPortals is Main-only.
+- [ ] Builder Phase 1B keeps WorldGuard Region and Velocity administration, LuckPerms/economy/player-punishment/server-stop authority, unrestricted wildcards, destructive World lifecycle operations, and reload/debug/internal administration excluded.
+- [ ] Builder Survival cleanup is repeated after the Phase 1B gamemode allowlist exists.
 
 ### Main and gameplay
 
@@ -148,3 +156,12 @@ The following records preserve work already performed under earlier tasks. Their
 - [x] Main-only placement, five sections/shops, 62 fixed Vanilla entries, Vault/RedisEconomy integration, Japanese display, non-OP category access, and administrative denial were confirmed.
 - [x] Historical detailed cases confirmed 0 WM rejection, one 10.00 -> 9.60 purchase, reconnect, 9.60 -> 9.68 sale, missing-item rejection, full-inventory rejection, Frontier balance visibility, final cleanup to 0 WM, and clean restart/shutdown.
 - [x] Those edge cases are historical evidence and are not required for every future ordinary EconomyShopGUI Config or version integration unless a relevant defect or foundation change occurs.
+
+### Permission Phase 1A (2026-07-20)
+
+- [x] LuckPerms 5.5.60 loaded on Velocity and all Paper backends with shared MariaDB／SQL messaging, argument-based command permissions, unique server Contexts, and OP disabled on Paper.
+- [x] Five persistent Group definitions were present; `default` and `wayfarer_builder` were reused, and no Player retained a permanent Builder／Admin Parent or non-default Primary Group.
+- [x] Admin Eligibility allowed only matching self temporary elevation/removal; permanent, wrong-Role, arbitrary-Group, other-Player, permission-mutation, Group-administration, and Editor attempts were denied.
+- [x] Temporary Admin provided representative Velocity, Paper, Vanilla, LuckPerms, WorldGuard, Multiverse, and EconomyShopGUI authority, then lost it immediately on removal. A short temporary grant also expired naturally.
+- [x] Temporary Builder allowed a restored one-block protected-entry edit while WorldEdit, WorldGuard administration, Multiverse, gamemode, teleport, LuckPerms, and Velocity administration were denied; building was denied after removal.
+- [x] A clean network restart preserved Eligibility and Group definitions, left Temporary Roles and OP empty, reloaded all four LuckPerms instances without startup errors, and retained self-elevation／demotion behavior.

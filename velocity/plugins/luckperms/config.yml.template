@@ -340,7 +340,7 @@ primary-group-calculation: parents-by-weight
 # - The nature of the checks are documented on the wiki under "Argument based command permissions".
 # - Argument based permissions are *not* static, unlike the 'base' permissions, and will depend upon
 #   the arguments given within the command.
-argument-based-command-permissions: false
+argument-based-command-permissions: true
 
 # If the plugin should check whether senders are a member of a given group before they're able to
 # edit the groups data or add/remove other users to/from it.

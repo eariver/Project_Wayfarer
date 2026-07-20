@@ -341,7 +341,7 @@ primary-group-calculation: parents-by-weight
 # - The nature of the checks are documented on the wiki under "Argument based command permissions".
 # - Argument based permissions are *not* static, unlike the 'base' permissions, and will depend upon
 #   the arguments given within the command.
-argument-based-command-permissions: false
+argument-based-command-permissions: true
 
 # If the plugin should check whether senders are a member of a given group before they're able to
 # edit the groups data or add/remove other users to/from it.
@@ -618,7 +618,7 @@ group-weight:
 # - When set to 'false', all players will be de-opped, and the /op and /deop commands will be
 #   disabled. Note that vanilla features like the spawn-protection require an operator on the
 #   server to work.
-enable-ops: true
+enable-ops: false
 
 # Enables or disables a special permission based system in LuckPerms for controlling OP status.
 #
@@ -634,7 +634,7 @@ auto-op: false
 # Defines if "opped" players should be able to use all LuckPerms commands by default.
 #
 # - Set to false to only allow users who have the permissions access to the commands
-commands-allow-op: true
+commands-allow-op: false
 
 # +----------------------------------------------------------------------------------------------+ #
 # | Vault integration settings                                                                   | #

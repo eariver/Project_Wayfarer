@@ -7,6 +7,7 @@ Ver.0.0.4 is a design revision, not a Server Release. The first target Release i
 - Bare First Boot, Velocity Modern Forwarding, backend access control, Lobby initial routing and failover
 - ViaVersion 5.11.0 on Velocity for a Minecraft 26.2 Client entering Frontier 1.21.11
 - LuckPerms shared MariaDB foundation
+- Permission Phase 1A: five persistent Groups, self-only temporary Role foundation, Admin full access, OP removal, and Builder Role container
 - Void Lobby／Frontier Gate safety platforms and current WorldGuard protection
 - WorldEdit／WorldGuard on all Paper backends
 - TAB proxy installation and backend bridges
@@ -15,7 +16,7 @@ Ver.0.0.4 is a design revision, not a Server Release. The first target Release i
 - RedisEconomy `4.5.12-wayfarer.1`／VaultUnlocked 2.20.2 shared Waymark balance
 - EconomyShopGUI 7.1.1 Free Main-only fixed-price shop
 
-These baselines retain their historical verification records. They do not imply completion of the planned Hubs, Gates, permissions, Frontier Theme, operations Script, or V0.1.0 Backup.
+These baselines retain their historical verification records. They do not imply completion of the Phase 1B final Builder allowlist, planned Hubs, Gates, Frontier Theme, operations Script, or V0.1.0 Backup.
 
 ## Recommended phases to V0.1.0
 
@@ -27,19 +28,30 @@ These baselines retain their historical verification records. They do not imply 
 - [x] V0.1.0 completion conditions and non-Blockers separated
 - [x] Deferred custom-Plugin/design items recorded
 
-### Phase 1 - Permission model implementation
+### Phase 1A - Permission foundation and temporary Admin
 
-- [ ] Treat all five Group definitions as persistent; only Player Parent membership in Builder/Admin is temporary
-- [ ] Audit and reuse `default` and existing `wayfarer_builder` without delete/recreate or Primary Group use
-- [ ] Preserve existing Lobby／Frontier WorldGuard Region Member references while removing Builder's WorldGuard administration nodes
-- [ ] Create `wayfarer_builder_eligible`, `wayfarer_admin_eligible`, and `wayfarer_admin` only when absent after conflict checks; otherwise audit them in place
-- [ ] Restrict each Eligibility group to self-only temporary add/remove of its matching Role Parent
-- [ ] Scope Builder WorldEdit, gamemode, teleport, and Multiverse-Core to Lobby／Main／Frontier; scope Multiverse-NetherPortals to Main
-- [ ] Deny Builder WorldGuard Region/Velocity administration, destructive World lifecycle operations, wildcards, reload/debug/internal actions, and other prohibited administration areas
-- [ ] Give full Minecraft/Plugin authority only during a Player's temporary Admin Parent membership
-- [ ] Document and minimally verify the Security Boundary, including denial of permanent/other-player/arbitrary grants
+- [x] Treat all five Group definitions as persistent; only Player Parent membership in Builder/Admin is temporary
+- [x] Audit and reuse `default` and existing `wayfarer_builder` without delete/recreate or Primary Group use
+- [x] Preserve existing Lobby／Frontier WorldGuard Region Member references while removing Builder's former WorldEdit／WorldGuard administration wildcards
+- [x] Create `wayfarer_builder_eligible`, `wayfarer_admin_eligible`, and `wayfarer_admin` after conflict checks
+- [x] Restrict Eligibility to matching self-only temporary Role add/remove through Velocity
+- [x] Give full Minecraft／Plugin authority only during a Player's temporary Admin Parent membership and remove OP dependency
+- [x] Verify denial, expiry, demotion, Builder Role container, restart persistence, and Cleanup
+- [x] Document exact nodes, operation, bootstrap, recovery, and rollback in [Permission Model](12-permission-model.md)
 
-This phase changes a Security Boundary and therefore requires detailed verification limited to the affected permissions and role transitions. Exact nodes must come from LuckPerms 5.5.60 and adopted Plugin metadata, not this Roadmap.
+Phase 1A completed its focused Security Boundary verification on 2026-07-20.
+
+### Phase 1B - Final Builder allowlist
+
+- [ ] Confirm Advanced Portals version and permission model
+- [ ] Select the first playable Frontier Theme and its required management commands
+- [ ] Confirm the exact Builder-owned Hub／Gate／Theme connection work
+- [ ] Scope approved Builder WorldEdit, gamemode, teleport, and Multiverse-Core commands to Lobby／Main／Frontier
+- [ ] Scope approved Multiverse-NetherPortals commands to Main only
+- [ ] Keep WorldGuard Region／Velocity／LuckPerms／economy／player-punishment／server-stop authority, destructive World lifecycle operations, wildcards, reload/debug/internal actions, and other prohibited administration excluded
+- [ ] Repeat focused Builder elevation, work, Survival cleanup, demotion, and denial tests
+
+Phase 1B remains a V0.1.0 Release Blocker and must complete before Builder-led Hub／Gate／Theme connection work. It does not block the next independent feature task, BetterStructures.
 
 ### Phase 2 - Main world-generation features
 
@@ -147,7 +159,7 @@ CoreProtect does not replace the cold backup.
 
 ## V0.1.0 Release Blockers
 
-- Ver.0.0.4 permission model implementation
+- Phase 1B final Builder allowlist
 - BetterStructures restricted to persistent Main dimensions
 - Final generation of `main`, `main_nether`, and `main_end`
 - EvenMoreFish

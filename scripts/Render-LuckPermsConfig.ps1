@@ -163,6 +163,16 @@ foreach ($target in $targets) {
     if ($rendered -notmatch "(?m)^server:\s*$([regex]::Escape($target.Context))\s*$") {
         throw "$($target.Name) LuckPerms server context validation failed."
     }
+    if ([regex]::Matches($rendered, '(?m)^argument-based-command-permissions:\s*true\s*$').Count -ne 1) {
+        throw "$($target.Name) LuckPerms argument-based command permission validation failed."
+    }
+    if ($target.Context -ne 'velocity') {
+        foreach ($setting in @('enable-ops', 'auto-op', 'commands-allow-op')) {
+            if ([regex]::Matches($rendered, "(?m)^$([regex]::Escape($setting)):\s*false\s*$").Count -ne 1) {
+                throw "$($target.Name) LuckPerms $setting validation failed."
+            }
+        }
+    }
 
     $renderPlans.Add([pscustomobject]@{
         Name = $target.Name
