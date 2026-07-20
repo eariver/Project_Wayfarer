@@ -14,7 +14,26 @@ The provided `Start-All.ps1` follows this order. It opens separate processes and
 
 ## Shutdown
 
-Use each server console's `stop` command. Shut down Velocity last for planned maintenance, or transfer players to Lobby first when maintaining Main/Frontier.
+V0.1.0 normal operation does not treat Server Consoles as a daily administration UI. Responsibility is divided as follows:
+
+- running Minecraft／Plugin／Player／World administration: in-game commands while the Player has a Temporary Admin parent;
+- network Start／Stop／Restart／Status／Backup: the planned `Wayfarer.ps1`;
+- Windows processes, Docker, MariaDB, Redis, cold backup, restore, and unresponsive-process recovery: PowerShell／OS operations;
+- Server Console: exceptional bootstrap, lost-permission recovery, and incident diagnosis.
+
+Because `Wayfarer.ps1` is not implemented in Ver.0.0.4, existing manual Scripts or Console commands may be used provisionally. They are not the formal V0.1.0 operating interface.
+
+The planned V0.1.0 shutdown sequence is:
+
+1. Reject new connections.
+2. Display the reason to connected users and disconnect them.
+3. Stop Velocity.
+4. Wait about 10 seconds for in-flight switching and save requests to settle.
+5. Issue `save-all flush` or its equivalent to each Paper backend.
+6. Stop Main, Frontier, and Lobby normally, in that order.
+7. Confirm that the target Java processes have exited.
+
+The approximate wait is not a data-integrity guarantee. Paper's normal save/stop, process-exit confirmation, and normal database/Redis handling are authoritative.
 
 ## Backups
 
@@ -29,7 +48,7 @@ Back up at minimum:
 
 Resource worlds are disposable and may be excluded from long-term backups.
 
-Waymark balances are persistent Redis data. Do not copy `infrastructure/data/redis` while Redis is running and do not introduce a hot/warm backup Plugin. For a cold backup, disconnect all users, wait about 10 seconds for in-flight work to settle, stop all Paper servers normally, create the MariaDB dump, stop the Redis Container normally, confirm that its process has stopped, and only then copy the Redis AOF volume. Start Redis again only after the copy has completed. The V0.1.0 Baseline is incomplete without MariaDB dumps, the Redis AOF volume, persistent worlds/Config, a manifest with SHA-256 values, and an isolated restore test.
+Waymark balances are persistent Redis data. Do not copy `infrastructure/data/redis` while Redis is running and do not introduce a hot/warm backup Plugin. A cold backup continues after shutdown step 7: create the MariaDB dump; stop Redis normally; confirm its process has stopped; copy the stopped Redis AOF volume; copy persistent Worlds, Frontier content, Config, and other approved data; then create the Manifest/SHA-256 record and finalize the `.incomplete` generation only after validation. Decide whether to stop or restart remaining Infrastructure after capture. Start Redis again only after the copy has completed. The V0.1.0 Baseline is incomplete without MariaDB dumps, the Redis AOF volume, persistent Worlds/Config, a manifest with SHA-256 values, and an isolated restore test.
 
 ## Resource reset
 
@@ -58,7 +77,7 @@ Multiverse-Core 5.7.2 runs on Lobby, Main, and Frontier. Lobby and Frontier regi
 - `minecraft:resource` ↔ `minecraft:resource_nether`
 - `minecraft:resource` ↔ `minecraft:resource_end`
 
-Use the namespaced keys for runtime diagnosis. `main_end` is a logical Multiverse alias, not a filesystem path. World access enforcement, gamemode enforcement, and flight enforcement remain disabled so that Multiverse does not replace existing backend access or player-state behavior. World creation, import, property changes, `/mvtp`, and link administration remain console/administrator operations.
+Use the namespaced keys for runtime diagnosis. `main_end` is a logical Multiverse alias, not a filesystem path. World access enforcement, gamemode enforcement, and flight enforcement remain disabled so that Multiverse does not replace existing backend access or player-state behavior. Until Phase 1, existing Console/Admin procedures remain provisional. The final Builder Allowlist may include World information, travel, safe Spawn operations, individual World properties, and Main-only NetherPortals link/unlink/inspection; World creation and destructive import/unload/deletion/clone/regeneration/purge, plus reload/debug/internal operations, remain Admin-only.
 
 ## Lobby and Frontier void worlds
 
@@ -94,13 +113,15 @@ WorldEdit 7.4.4 and WorldGuard 7.0.17 use the same verified Bukkit JARs on Lobby
 
 Main has the administration Plugins installed but currently has no Project Wayfarer protection Region or Global Region Flag. Normal Survival building remains available there, and `wayfarer_builder` receives no Main WorldEdit or WorldGuard permission. Add Main protection only after a separate World/Region design is approved.
 
-Do not use the WorldGuard `build` flag, because it bypasses normal membership-based build behavior and can interfere with non-player mechanisms. The current `wayfarer_builder` membership and Context are a verified baseline, not the completed Ver.0.0.4 role model. Eligibility groups, self-only Temporary Parent control, the expanded Builder Allowlist, and temporary Admin full access require a separate approved Security Boundary implementation task.
+Do not use the WorldGuard `build` flag, because it bypasses normal membership-based build behavior and can interfere with non-player mechanisms. The existing `wayfarer_builder` Group and Region membership are a verified baseline and must be reused, not deleted or recreated. Its current `worldguard.*` administration permissions are not part of the final Builder Allowlist and must be safely removed during Phase 1 without removing the Global Region Member reference. Eligibility groups, self-only Temporary Parent control, the expanded Builder Allowlist, and Admin full access during temporary Player membership require a separate approved Security Boundary implementation task.
 
-## Planned temporary role operation
+## Planned temporary Player membership
 
-The Ver.0.0.4 model is not implemented yet. When it is implemented, `wayfarer_builder_eligible` may add/remove only its own temporary `wayfarer_builder` parent, and `wayfarer_admin_eligible` may do the same only for `wayfarer_admin`. Builder uses 2 hours and Admin 30 minutes as standard values supplied with the temporary grant; they are not technically fixed. Eligibility itself remains `default`-equivalent and cannot grant permanent parents, affect other players, or assign arbitrary groups/permissions.
+The final Ver.0.0.4 model is not implemented yet. All five Group definitions are persistent. `default` and existing `wayfarer_builder` are audited and reused; missing Eligibility/Admin Groups are created only after conflict checks. When implemented, `wayfarer_builder_eligible` may add/remove only its own `wayfarer_builder` Parent with a temporary duration, and `wayfarer_admin_eligible` may do the same only for `wayfarer_admin`. Builder membership uses 2 hours and Admin membership 30 minutes as standard values supplied with the temporary grant; they are not technically fixed. Eligibility itself remains `default`-equivalent and cannot grant permanent parents, affect other players, or assign arbitrary groups/permissions.
 
-At the end of Builder work: confirm saved state, return to Survival, move to a safe location if needed, self-remove the temporary Builder parent, and verify loss of Builder permissions. Natural expiry is only a safety net and does not reset Creative/Spectator state. Remove one temporary role before taking another. Admin full access ends with its temporary parent; Windows, Docker, database, cold-backup, restore, and stopped-server startup remain outside Minecraft permissions.
+Builder WorldEdit, Creative／Survival／Spectator, teleport, and Multiverse-Core access covers Lobby, Main, and Frontier; Multiverse-NetherPortals covers Main only. Phase 1 must derive an explicit command Allowlist from the adopted versions. WorldGuard Region administration, Advanced Portals administration, Velocity, LuckPerms, economy, player punishment, server stop, wildcards, destructive World lifecycle operations, Plugin/Config reload, and debug/internal administration remain excluded.
+
+At the end of Builder work: confirm saved state, return to Survival, move to a safe location if needed, self-remove the Temporary Builder Parent, and verify loss of Builder permissions. Natural expiry is only a safety net and does not reset Creative/Spectator state. Remove one Role's Temporary Parent before joining the other. Admin full access ends when the Temporary Admin Parent is removed or expires; Windows, Docker, database, cold-backup, restore, and stopped-server startup remain outside Minecraft permissions.
 
 ## TAB network display
 
@@ -124,7 +145,7 @@ RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 run only on Main and F
 
 Use full server restarts for RedisEconomy and Vault changes. Do not reload or unload RedisEconomy through PlugManX. Before planned shutdown, move or disconnect players and stop both gameplay backends normally. A balance rollback, duplicate transaction, missing balance, unexpected account split, or Redis persistence failure is a blocking data-integrity incident: stop gameplay, retain logs and a cold backup, and do not continue economy testing until the cause is resolved.
 
-A representative health check is to record a balance on Main, apply one small authorized Console change, switch normally to Frontier, confirm the same value, apply a second change, switch back, and confirm the cumulative result. Restore the test balance with RedisEconomy's normal administration command; never edit or flush Redis keys directly.
+A representative health check is to record a balance on Main, apply one small authorized RedisEconomy administration change through Temporary Admin membership, switch normally to Frontier, confirm the same value, apply a second change, switch back, and confirm the cumulative result. Use Console only for exceptional recovery when in-game authority is unavailable. Restore the test balance with RedisEconomy's normal administration command; never edit or flush Redis keys directly.
 
 ## Main Waymark shop
 
@@ -136,7 +157,7 @@ The initial shop disables update checking, transaction logging, spawner integrat
 
 ## Planned integrated operations
 
-V0.1.0 requires a formal `Wayfarer.ps1` with Start, Stop, Restart, Status, and Backup actions. It must preserve the existing dependency order and cold-backup sequence, confirm user disconnection and process exit, create MariaDB dumps, stop Redis before AOF copy, copy persistent worlds/Config, record a manifest and SHA-256 values, manage incomplete generations, and support an isolated restore test. This script and the V0.1.0 Baseline Backup are not implemented by Ver.0.0.4.
+V0.1.0 requires a formal `Wayfarer.ps1` with Start, Stop, Restart, Status, and Backup actions. It must implement the shutdown order above, preserve startup dependency order, confirm user disconnection and process exit, create MariaDB dumps only after Minecraft shutdown, stop Redis before AOF copy, copy persistent Worlds/Frontier content/Config, record a Manifest and SHA-256 values, manage incomplete generations, and support an isolated restore test. Temporary Admin membership provides Console-equivalent authority only inside a running Runtime; stopped-server startup, post-stop restart, Docker Compose, MariaDB dump, Redis stop/AOF copy, cold backup, restore, and forced recovery remain Script/OS responsibilities. This Script and the V0.1.0 Baseline Backup are not implemented by Ver.0.0.4.
 
 ## Incident response
 

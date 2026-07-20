@@ -60,9 +60,12 @@ Stop each component cleanly with `stop` before editing generated Config.
 3. Assign unique server names: `velocity`, `lobby`, `main`, `frontier`.
 4. Use SQL messaging or another supported messaging service.
 5. Keep normal operation independent of OP.
-6. Implement the Ver.0.0.4 five-group model only in a separately approved Security Boundary task: permanent `default`, `wayfarer_builder_eligible`, `wayfarer_admin_eligible`; temporary `wayfarer_builder`, `wayfarer_admin`.
-7. Verify exact LuckPerms 5.5.60 argument-based permission nodes before implementation; do not infer or pre-create them from this procedure.
-8. Limit each Eligibility group to self-only temporary add/remove of its matching Role. Builder uses an allowlist; Admin gets full Minecraft/Plugin authority only while the temporary parent is active.
+6. Implement the Ver.0.0.4 model only in a separately approved Security Boundary task. All five Group definitions are persistent; only Player Parent membership in `wayfarer_builder` or `wayfarer_admin` is temporary.
+7. Audit and reuse `default` and the existing `wayfarer_builder`. Do not delete/recreate `wayfarer_builder`, make it a Primary Group, or break its Lobby／Frontier WorldGuard Region Member references. Audit and remove its current WorldGuard administration nodes while preserving membership-based building.
+8. After conflict checks, create `wayfarer_builder_eligible`, `wayfarer_admin_eligible`, and `wayfarer_admin` only when absent. Audit rather than replace any pre-existing Group.
+9. Verify exact LuckPerms 5.5.60 argument-based permission nodes before implementation; do not infer or pre-create them from this procedure.
+10. Limit each Eligibility group to self-only temporary add/remove of its matching Role. Builder uses an explicit allowlist; Admin gets full Minecraft/Plugin authority only while the Player's temporary parent is active.
+11. Scope Builder WorldEdit, gamemode, teleport, and Multiverse-Core to Lobby／Main／Frontier, and Multiverse-NetherPortals to Main only. Exclude WorldGuard Region management, Advanced Portals unless later approved, Velocity, LuckPerms, economy, player punishment, server stop, wildcard, reload/debug/internal actions, and destructive World lifecycle commands.
 
 ## Phase 6 - Lobby
 

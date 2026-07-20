@@ -29,10 +29,14 @@ These baselines retain their historical verification records. They do not imply 
 
 ### Phase 1 - Permission model implementation
 
-- [ ] Create permanent Eligibility groups and temporary Builder/Admin groups after conflict checks
-- [ ] Restrict each Eligibility group to self-only temporary add/remove of its matching Role
-- [ ] Implement the Builder Allowlist in appropriate Paper `server` Contexts
-- [ ] Give full Minecraft/Plugin authority only to temporary Admin
+- [ ] Treat all five Group definitions as persistent; only Player Parent membership in Builder/Admin is temporary
+- [ ] Audit and reuse `default` and existing `wayfarer_builder` without delete/recreate or Primary Group use
+- [ ] Preserve existing Lobby／Frontier WorldGuard Region Member references while removing Builder's WorldGuard administration nodes
+- [ ] Create `wayfarer_builder_eligible`, `wayfarer_admin_eligible`, and `wayfarer_admin` only when absent after conflict checks; otherwise audit them in place
+- [ ] Restrict each Eligibility group to self-only temporary add/remove of its matching Role Parent
+- [ ] Scope Builder WorldEdit, gamemode, teleport, and Multiverse-Core to Lobby／Main／Frontier; scope Multiverse-NetherPortals to Main
+- [ ] Deny Builder WorldGuard Region/Velocity administration, destructive World lifecycle operations, wildcards, reload/debug/internal actions, and other prohibited administration areas
+- [ ] Give full Minecraft/Plugin authority only during a Player's temporary Admin Parent membership
 - [ ] Document and minimally verify the Security Boundary, including denial of permanent/other-player/arbitrary grants
 
 This phase changes a Security Boundary and therefore requires detailed verification limited to the affected permissions and role transitions. Exact nodes must come from LuckPerms 5.5.60 and adopted Plugin metadata, not this Roadmap.
@@ -117,7 +121,10 @@ CoreProtect does not replace the cold backup.
 ### Phase 10 - Integrated operations Script
 
 - [ ] Implement formal `Wayfarer.ps1` actions: Start, Stop, Restart, Status, Backup
-- [ ] Preserve dependency order, user-disconnect handling, normal stop, process checks, and incomplete-generation safety
+- [ ] On planned shutdown: reject new connections, notify/disconnect users, stop Velocity, settle about 10 seconds, flush Paper, stop Main／Frontier／Lobby, and confirm Java exit
+- [ ] Treat the wait only as a settling interval; rely on normal save/stop, process checks, and database/Redis handling for integrity
+- [ ] Keep Console exceptional and use Temporary Admin membership for normal running-Runtime administration
+- [ ] Preserve startup dependency order and incomplete-generation safety
 - [ ] Keep OS/Docker/Database operations outside Minecraft permissions
 
 ### Phase 11 - Cold backup and isolated restore

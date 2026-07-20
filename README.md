@@ -113,6 +113,6 @@ Ver.0.0.4は設計・導入・運用文書の改訂番号であり、稼働Serve
 - The planned Main hub has independent direct gates to all three Resource worlds.
 - Planned `resource_end` has no Ender Dragon and uses a verified outer-island arrival/return gate.
 - Manual Plugin collection is tracked in [Plugin Collection](docs/08-plugin-collection.md), `plugin-collection.csv`, and the separate XLSX artifact.
-- V0.1.0前に、`default`、2つのEligibility Group、Temporaryな`wayfarer_builder`／`wayfarer_admin`からなる権限モデルを後続タスクで実装する。Ver.0.0.4では仕様のみを確定し、Runtime Groupは変更しない。
+- V0.1.0前に、`default`、2つのEligibility Group、`wayfarer_builder`／`wayfarer_admin`という5つの恒久Group定義と、PlayerからRole GroupへのTemporary Parent所属からなる権限モデルを後続タスクで実装する。既存`default`／`wayfarer_builder`は監査・再利用し、Ver.0.0.4ではRuntime Groupを変更しない。
 - Lobby／Main／FrontierのHub外観とGate構造はユーザーが手作業で確定し、Codexは確定座標に基づく接続・設定・保護を後続タスクで行う。
 - V0.1.0ではFrontierへ未選定のPlayable Themeを1つ導入するが、WM報酬、Theme実績、Theme別Inventoryおよび複数ThemeはRelease Blockerにしない。

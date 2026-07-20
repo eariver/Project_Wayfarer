@@ -58,6 +58,6 @@ Later revisions plan to add:
 
 The user manually builds and approves the Lobby minimum Hub, Main spawn Hub, Frontier Gate Hub, Gate structures, Resource Return structure, and Resource End outer-island structure. Codex configures the exact Gate routes, Spawn/Arrival settings, and required protection only after the user supplies confirmed worlds, coordinates, orientation, and safe destinations. No structure is generated or replaced from this specification alone.
 
-## 8. Planned temporary roles
+## 8. Planned temporary Role membership
 
-The five-group Ver.0.0.4 LuckPerms model is not implemented yet. After its separate implementation, eligible players will temporarily self-activate Builder or Admin rather than holding permanent authority. Builder's normal duration is 2 hours and Admin's is 30 minutes. A Builder must return to Survival and self-remove the temporary role after work; expiry does not automatically clean up gamemode.
+The final five-group Ver.0.0.4 LuckPerms model is not implemented yet. Its Group definitions are persistent; after the separate implementation, eligible Players temporarily add themselves as a Parent member of Builder or Admin rather than holding permanent Role membership. Existing `wayfarer_builder` is audited and reused. Builder's normal membership duration is 2 hours and Admin's is 30 minutes. A Builder must return to Survival and remove the temporary Parent after work; expiry does not automatically clean up gamemode.

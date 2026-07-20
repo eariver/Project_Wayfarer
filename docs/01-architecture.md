@@ -31,7 +31,7 @@ EconomyShopGUI 7.1.1 Free runs only on Main. Its five fixed-price categories pro
 
 ## Planned V0.1.0 permission boundary
 
-Ver.0.0.4 specifies but does not implement five LuckPerms groups: permanent `default`, `wayfarer_builder_eligible`, and `wayfarer_admin_eligible`; temporary `wayfarer_builder` and `wayfarer_admin`. Eligibility carries normal gameplay rights plus self-only temporary role control, not the role's actual authority. Builder is a Paper-context allowlist for world work; Admin is temporary full access across Velocity and all Paper backends. OS processes, Docker, databases, backups, and restore stay outside Minecraft permissions and belong to the planned integrated PowerShell operations layer.
+Ver.0.0.4 specifies five persistent LuckPerms group definitions: `default`, `wayfarer_builder_eligible`, `wayfarer_admin_eligible`, `wayfarer_builder`, and `wayfarer_admin`. Only a Player's Parent membership in either Role Group is temporary. `default` and the existing `wayfarer_builder` are audited and reused; missing groups are created only after conflict checks. Eligibility carries normal gameplay rights plus self-only temporary parent control, not the Role's authority. Builder is an explicit Paper allowlist: WorldEdit, gamemode, teleport, and Multiverse-Core span Lobby/Main/Frontier, while Multiverse-NetherPortals is Main-only. WorldGuard administration and destructive World lifecycle operations stay excluded. Admin authority spans Velocity and all Paper backends only while the Player's temporary parent is active. OS processes, Docker, databases, backups, and restore stay outside Minecraft permissions and belong to the planned integrated PowerShell operations layer.
 
 ## Data boundaries
 

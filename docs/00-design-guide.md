@@ -173,23 +173,29 @@ World削除・再生成、Database Migration、共有Progression／Economy、Per
 
 ## 10. Ver.0.0.4権限モデル
 
-この節はV0.1.0前に実装する仕様です。本RevisionではLuckPerms Runtime Database、Player ParentおよびPermissionを変更していません。正確なNodeはLuckPerms 5.5.60と各PluginのMetadata／公式文書を実装時に確認し、推測で固定しません。
+この節はV0.1.0前に完成させる仕様です。本RevisionではLuckPerms Runtime Database、Player ParentおよびPermissionを変更していません。正確なNodeはLuckPerms 5.5.60と各PluginのMetadata／公式文書を実装時に確認し、推測で固定しません。
 
-|Group|存続|目的|
-|---|---|---|
-|`default`|恒久|通常プレイヤー|
-|`wayfarer_builder_eligible`|恒久|`default`相当＋自分をBuilderへ一時昇格できる資格|
-|`wayfarer_admin_eligible`|恒久|`default`相当＋自分をAdminへ一時昇格できる資格|
-|`wayfarer_builder`|一時|World建築・設定作業|
-|`wayfarer_admin`|一時|Network全体の管理作業|
+|Group|Group definition|Player membership|目的|
+|---|---|---|---|
+|`default`|恒久|恒久／通常|通常プレイヤー|
+|`wayfarer_builder_eligible`|恒久|恒久Eligibility|`default`相当＋自分をBuilderへ一時昇格できる資格|
+|`wayfarer_admin_eligible`|恒久|恒久Eligibility|`default`相当＋自分をAdminへ一時昇格できる資格|
+|`wayfarer_builder`|恒久Role定義|Temporary Parent|World建築・設定作業|
+|`wayfarer_admin`|恒久Role定義|Temporary Parent|Network全体の管理作業|
 
 Eligibility Groupは独立して複数人へ付与でき、両方の資格保持も許可します。ただしGameplay権限は`default`相当で、恒久的な実Role、他人の昇格、任意Group／Permission操作は許可しません。自分自身に対する対応RoleのTemporary Parent追加・解除だけをArgument-based Command Permissions等のLuckPerms正式機能で制限します。
 
-Builderは2時間、Adminは30分を標準運用値としますが、Ver.0.0.4では技術的に固定しません。実行時に期限を指定し、作業終了時は期限前でも自己降格します。永続Parent追加と他人へのRole操作はEligibilityから実行できない設計にします。複数の一時Role同時保持は推奨しません。
+`default`と`wayfarer_builder`は既にRuntimeへ存在します。Phase 1では両Groupを監査・再利用し、`wayfarer_builder`を削除、同名再作成またはPrimary Group化しません。Lobby／`frontier_gate`のWorldGuard Global Region Member参照も維持します。現在のPermission Nodeを監査し、既存`worldguard.*`等の管理Permissionは最終Allowlistに含めず安全に除去します。Region MemberであることとWorldGuard管理Command権限は別の境界です。
 
-`wayfarer_admin`はVelocity、全Paper、Vanilla管理、導入済みPlugin、LuckPerms、Economy、World、PlayerおよびServer停止Commandを含む全権限方式です。全権限はEligibilityではなく一時Adminだけに与えます。一方、停止済みServerの起動、Windows Process、Docker、Database、Cold Backup／Restoreおよび応答不能Serverの復旧はMinecraft Permissionで代替せず、将来の統合PowerShellが担当します。
+`wayfarer_builder_eligible`、`wayfarer_admin_eligible`および`wayfarer_admin`は競合確認後、未存在の場合だけ作成します。既に存在する場合は削除・置換せず内容を監査します。Role Group定義自体は恒久であり、一時なのはPlayerから`wayfarer_builder`／`wayfarer_admin`へのParent所属です。
 
-`wayfarer_builder`はAllowlist方式です。WorldEdit、Multiverse-Core、Multiverse-NetherPortals、作業対象へのTeleport、Creative／Survival／Spectator切替および建築に必要なVanilla操作だけを、適切なPaper `server` Contextで許可します。LuckPerms／Economy／Kick／Ban／Whitelist／Server停止／Plugin操作／Backup／Restore／Wildcard／WorldGuard Region／Advanced Portals／将来Plugin管理およびVelocity管理は許可しません。追加領域は必要になった時点で個別承認します。
+Builder所属は2時間、Admin所属は30分を標準運用値としますが、Ver.0.0.4では技術的に固定しません。実行時に期限を指定し、作業終了時は期限前でも自己降格します。永続Parent追加と他人へのRole操作はEligibilityから実行できない設計にします。複数RoleへのTemporary Parent所属は同時に保持しない運用とします。
+
+`wayfarer_admin`はVelocity、全Paper、Vanilla管理、導入済みPlugin、LuckPerms、Economy、World、PlayerおよびServer停止Commandを含む全権限方式です。全権限はEligibilityではなく、PlayerがAdmin RoleへTemporary Parent所属している間だけ与えます。一方、停止済みServerの起動、Windows Process、Docker、Database、Cold Backup／Restoreおよび応答不能Serverの復旧はMinecraft Permissionで代替せず、将来の統合PowerShellが担当します。
+
+`wayfarer_builder`は明示Allowlist方式です。WorldEdit、Creative／Survival／Spectator切替およびTeleportはLobby／Main／Frontier、Multiverse-Coreは全Paper Backend、Multiverse-NetherPortalsはMainだけを対象にします。Multiverseの採用Versionと実CommandをPhase 1で確認し、World情報、World間移動、Spawn関連の安全な操作、個別World Property、およびNetherPortalsのLink／Unlink／確認など、Hub／Gate／World設定に必要な操作だけを列挙します。
+
+BuilderにはWorldGuard Region管理、Advanced Portals管理、Velocity管理、LuckPerms、Economy、Player処分、Server停止、Plugin／Config Reload、Debug／Internal管理またはWildcardを付与しません。World削除、Clone、再生成、Data PurgeおよびImport／Unload等のData Lifecycle操作はAdminだけに残します。Advanced Portals管理は導入時に別途検討します。実Permission Node一覧はPhase 1で確定します。
 
 Builder作業終了時は、保存状態を確認し、Survivalへ戻し、必要なら安全地点へ移動し、Temporary Parentを自己解除して権限消失を確認します。期限切れだけではCreative／Spectator状態が戻らないため、これはV0.1.0でも必要な運用手順です。
 

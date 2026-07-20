@@ -39,10 +39,12 @@ These items describe current baselines only. They do not mark the Ver.0.0.4 perm
 
 ### Permission model
 
-- [ ] `default`, `wayfarer_builder_eligible`, `wayfarer_admin_eligible`, temporary `wayfarer_builder`, and temporary `wayfarer_admin` are implemented without name conflicts.
-- [ ] Each Eligibility group can affect only itself and its matching temporary Role; permanent parents, other players, arbitrary groups, and arbitrary permissions are denied.
-- [ ] Builder Allowlist covers only approved world-work functions in appropriate Paper Contexts; prohibited administration areas and Velocity management remain denied.
-- [ ] Full Minecraft/Plugin authority exists only while the temporary Admin parent is active.
+- [ ] All five Group definitions are persistent. Existing `default` and `wayfarer_builder` are audited and reused without delete/recreate; missing Eligibility/Admin Groups are created only after conflict checks.
+- [ ] The existing `wayfarer_builder` WorldGuard Global Region Member references remain intact while its WorldGuard administration permissions are removed.
+- [ ] Each Eligibility group can affect only its own Player and matching Role Parent; permanent Role membership, other players, arbitrary groups, and arbitrary permissions are denied.
+- [ ] Builder WorldEdit, gamemode, teleport, and Multiverse-Core access is correctly scoped to Lobby/Main/Frontier; Multiverse-NetherPortals is Main-only.
+- [ ] Builder is denied WorldGuard Region and Velocity administration, LuckPerms/economy/player-punishment/server-stop authority, unrestricted wildcards, destructive World lifecycle operations, and reload/debug/internal administration.
+- [ ] Full Minecraft/Plugin authority exists only while the Player's temporary Admin Parent is active.
 - [ ] Builder and Admin grant/removal, expiry, self-demotion, and Builder Survival cleanup are documented and minimally verified.
 
 ### Main and gameplay
@@ -74,7 +76,7 @@ These items describe current baselines only. They do not mark the Ver.0.0.4 perm
 
 ### Operations and recoverability
 
-- [ ] `Wayfarer.ps1` implements Start, Stop, Restart, Status, and Backup with the approved dependency and stop order.
+- [ ] `Wayfarer.ps1` implements Start, Stop, Restart, Status, and Backup; planned shutdown rejects new connections, disconnects users, stops Velocity, settles in-flight work, flushes/stops Main／Frontier／Lobby, and confirms Java process exit.
 - [ ] Cold Backup includes MariaDB dumps, stopped Redis AOF, persistent Worlds, Config, Manifest/SHA-256, and incomplete-generation safety.
 - [ ] The Backup restores successfully to an isolated target.
 - [ ] A verified V0.1.0 Baseline Backup and exact Release commit are selected; known limitations and the Tag/Release decision are recorded.
@@ -94,7 +96,7 @@ These items describe current baselines only. They do not mark the Ver.0.0.4 perm
 
 ## 5. Detailed risk-focused test expectations
 
-- Permission implementation: verify self-only argument restrictions, denial cases, Context scope, temporary expiry/removal, and absence of unintended authority.
+- Permission implementation: verify persistent Group reuse, self-only temporary Parent restrictions, denial cases, Context scope, expiry/removal, and absence of unintended authority.
 - Persistent World generation: verify exact resolved paths, verified backup, selected generator conditions, safe Spawn, and out-of-scope world preservation.
 - Shared Economy/Progression change: verify the changed data path across only the affected backends and persistence boundary.
 - Portal/Dimension Routing: verify only every added/changed directed route, safe arrival, return path, and prohibited family crossing.
