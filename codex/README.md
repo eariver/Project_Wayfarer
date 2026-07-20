@@ -28,6 +28,8 @@
 | [Phase 1A Permission Foundation](Project_Wayfarer_Phase1A_Permission_Foundation_Implementation.md) | 完了。Phase 1BのBuilder最終Allowlistは未完了 | 2026-07-20 | [Permission Model](../docs/12-permission-model.md) | そのままの再実行禁止 |
 | [Phase 2 BetterStructures Integration](Project_Wayfarer_Phase2_BetterStructures_Integration.md) | 完了 | 2026-07-20 | [Design Guide](../docs/00-design-guide.md#main-structure生成)、[Acceptance Tests](../docs/06-acceptance-tests.md#betterstructures-263-2026-07-20) | そのままの再実行禁止。Phase 3以前の暫定World条件は失効 |
 | [Phase 3 Main Persistent World Final Generation](Project_Wayfarer_Phase3_Main_Persistent_World_Final_Generation.md) | 完了 | 2026-07-21 | [Main World Baseline](../docs/13-main-world-baseline.md) | 破壊的処理を含むため再実行禁止 |
+| [Ver.0.0.5 Documentation Update](Project_Wayfarer_Ver0.0.5_Documentation_Update.md) | 完了 | 2026-07-21 | [Design Guide](../docs/00-design-guide.md)、[Roadmap](../docs/09-roadmap.md)、[Acceptance Tests](../docs/06-acceptance-tests.md) | そのままの再実行禁止 |
+| [V0.2.x Custom Plugin Concept](Project_Wayfarer_V0.2x_Custom_Plugin_Concept.md) | 構想草案。未着手／設計保留、V0.1.0 Scope外 | 2026-07-21 | 現行正本なし。将来の承認済み正式設計を優先 | 実行Taskではない |
 | [Task Template](TASK_TEMPLATE.md) | 作業指示書Template。実行Taskではない | 対象外（2026-07-18保存） | 本Fileと現行正本文書 | TemplateをTaskとして実行禁止 |
 
 保存済み指示書はすべて現行仕様の正本ではなく、新しい作業では上記優先順位による再評価が必要です。

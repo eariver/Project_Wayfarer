@@ -117,7 +117,7 @@ The initial buy list intentionally excludes diamonds, emeralds, Netherite items,
 
 ## Permission boundary
 
-LuckPerms applies these nodes to the existing `default` group only in the `server=main` context. This is the current shop permission boundary. The Ver.0.0.4 Eligibility／Temporary Role model is a separate future Security Boundary implementation and does not change these Runtime nodes in the specification task.
+LuckPerms applies these nodes to the existing `default` group only in the `server=main` context. This is the current shop permission boundary. Phase 1A has implemented the Ver.0.0.5 Eligibility／Temporary Role security boundary, but it does not broaden these default shop nodes; the Admin Role receives full access only while its Temporary Parent is active, and the Builder Role receives no EconomyShopGUI administration.
 
 Allowed:
 

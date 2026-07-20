@@ -1,6 +1,6 @@
 # Operations
 
-The authoritative design, task-grouping rules and risk-based verification policy are defined in the [Ver.0.0.4 design guide](00-design-guide.md).
+The authoritative design, task-grouping rules and risk-based verification policy are defined in the [Ver.0.0.5 design guide](00-design-guide.md).
 
 ## Startup order
 
@@ -21,7 +21,7 @@ V0.1.0 normal operation does not treat Server Consoles as a daily administration
 - Windows processes, Docker, MariaDB, Redis, cold backup, restore, and unresponsive-process recovery: PowerShell／OS operations;
 - Server Console: exceptional bootstrap, lost-permission recovery, and incident diagnosis.
 
-Because `Wayfarer.ps1` is not implemented in Ver.0.0.4, existing manual Scripts or Console commands may be used provisionally. They are not the formal V0.1.0 operating interface.
+Because `Wayfarer.ps1` is not implemented in Ver.0.0.5, existing manual Scripts or Console commands may be used provisionally. They are not the formal V0.1.0 operating interface.
 
 The planned V0.1.0 shutdown sequence is:
 
@@ -92,6 +92,14 @@ The official version-5 content emits non-blocking DataFixer messages for legacy 
 Phase 3 completed on 2026-07-21 with seed `164225356311935743`. Normal Main spawn is `(320, 70, 128)`; the Multiverse administrative spawns are `(20.5, 60, -19.5)` in Nether and `(100.5, 49, 0.5)` in End. The persistent worlds live below `servers/main/main/dimensions/minecraft/{overworld,the_nether,the_end}`. Do not treat the alias `main_end` as a path.
 
 The pre-generation rollback copy is the ignored local directory `backups/main-final-generation-20260721-001501/`. Confirm its manifest and payload hashes before relying on it, and never assume it is available from GitHub. Any rollback or later regeneration requires a new explicitly approved destructive task, all Minecraft components stopped, exact resolved paths, Resource-family preservation checks, and a verified backup. See [Main World Baseline](13-main-world-baseline.md).
+
+## Planned Main Spawn protection
+
+Main has no Project WorldGuard Region yet. Keep `spawn-protection=16` while the user builds the initial Hub. After the Hub footprint and equipment positions are substantially complete, a separate task must approve the exact `main_spawn_hub` boundary and any focused child regions before applying them.
+
+Use normal WorldGuard membership protection: general Players cannot place or break, `wayfarer_builder` is a Region Member, and Temporary Admin manages the Region. Do not set the `build` flag. `use allow` may cover approved public controls, but do not grant broad `interact allow` or `chest-access allow`; isolate exceptional equipment in the smallest practical higher-priority child Region. Verify the exact WorldGuard 7.0.17 environmental flag names at implementation time. Only after the Region, public interaction, and Builder membership tests pass may a separate task change Vanilla `spawn-protection` to 0.
+
+CoreProtect should be installed before substantial Hub/Gate construction begins so later investigation includes that work. It is not currently installed, remains Admin-only for rollback, and cannot replace cold backup.
 
 ## Lobby and Frontier void worlds
 
@@ -180,7 +188,7 @@ The initial shop disables update checking, transaction logging, spawner integrat
 
 ## Planned integrated operations
 
-V0.1.0 requires a formal `Wayfarer.ps1` with Start, Stop, Restart, Status, and Backup actions. It must implement the shutdown order above, preserve startup dependency order, confirm user disconnection and process exit, create MariaDB dumps only after Minecraft shutdown, stop Redis before AOF copy, copy persistent Worlds/Frontier content/Config, record a Manifest and SHA-256 values, manage incomplete generations, and support an isolated restore test. Temporary Admin membership provides Console-equivalent authority only inside a running Runtime; stopped-server startup, post-stop restart, Docker Compose, MariaDB dump, Redis stop/AOF copy, cold backup, restore, and forced recovery remain Script/OS responsibilities. This Script and the V0.1.0 Baseline Backup are not implemented by Ver.0.0.4.
+V0.1.0 requires a formal `Wayfarer.ps1` with Start, Stop, Restart, Status, and Backup actions. It must implement the shutdown order above, preserve startup dependency order, confirm user disconnection and process exit, create MariaDB dumps only after Minecraft shutdown, stop Redis before AOF copy, copy persistent Worlds/Frontier content/Config, record a Manifest and SHA-256 values, manage incomplete generations, and support an isolated restore test. Temporary Admin membership provides Console-equivalent authority only inside a running Runtime; stopped-server startup, post-stop restart, Docker Compose, MariaDB dump, Redis stop/AOF copy, cold backup, restore, and forced recovery remain Script/OS responsibilities. This Script and the V0.1.0 Baseline Backup are not implemented by Ver.0.0.5.
 
 ## Incident response
 

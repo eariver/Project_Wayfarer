@@ -1,6 +1,6 @@
-# Project Wayfarer Roadmap - Ver.0.0.4
+# Project Wayfarer Roadmap - Ver.0.0.5
 
-Ver.0.0.4 is a design revision, not a Server Release. The first target Release is `V0.1.0 Alpha`, which remains incomplete. This Roadmap defines the recommended implementation order and separates Release Blockers from deferred features. Every implementation phase requires a separately approved task.
+Ver.0.0.5 is a design revision, not a Server Release. The first target Release is `V0.1.0 Alpha`, which remains incomplete. This Roadmap defines the dependency-based implementation order and separates Release Blockers from deferred features. Every implementation phase requires a separately approved task.
 
 ## Completed baselines
 
@@ -20,15 +20,36 @@ Ver.0.0.4 is a design revision, not a Server Release. The first target Release i
 
 These baselines retain their historical verification records. They do not imply completion of the Phase 1B final Builder allowlist, planned Hubs, Gates, Frontier Theme, operations Script, or V0.1.0 Backup.
 
+## Dependency-based execution order from the current baseline
+
+| Order | Work | Dependency and outcome |
+| ---: | --- | --- |
+| 1 | EvenMoreFish | Next implementation task; Main-only ordinary integration |
+| 2 | CoreProtect | Introduce before substantial Hub/Gate construction so new Block history is captured; not a cold-backup replacement |
+| 3 | Playable Frontier Theme | Select and install one approved Paper 1.21.11／Java 25 Theme |
+| 4 | Advanced Portals | Select the exact version, placement, commands, and Permission boundary |
+| 5 | Builder Phase 1B | Build the allowlist only from the selected Portal/Theme and confirmed Builder-owned work |
+| 6 | User Hub/Gate construction | User fixes appearance, footprint, equipment, coordinates, orientation, and safe arrivals |
+| 7 | Main Spawn protection | After substantial initial Hub completion, approve and apply the exact WorldGuard Region and focused child Regions |
+| 8 | Portal Routing | Configure and verify only approved routes after structures and destinations are fixed |
+| 9 | Resource Reset Bootstrap | Restore arrivals, Return Gates, protection, and Resource End outer-island safety reproducibly |
+| 10 | Integrated operations | Implement `Wayfarer.ps1` Start／Stop／Restart／Status／Backup |
+| 11 | Cold Backup／Isolated Restore | Validate the complete data set and recovery path |
+| 12 | V0.1.0 Baseline | Confirm every Blocker before any Release declaration |
+
+Phase identifiers below preserve project history, but this dependency table controls practical execution priority. In particular, CoreProtect Phase 9 is intentionally brought forward before Phase 6 construction, and Phase 1B is not executed until the Theme and Advanced Portals boundary are known.
+
 ## Recommended phases to V0.1.0
 
-### Phase 0 - Ver.0.0.4 specification
+### Phase 0 - Ver.0.0.5 specification
 
 - [x] Formal design revision updated
 - [x] Ordinary-Plugin verification scope narrowed
 - [x] Five-group permission model specified
 - [x] V0.1.0 completion conditions and non-Blockers separated
 - [x] Deferred custom-Plugin/design items recorded
+- [x] Phase 3 baseline integrated and Main Spawn protection designed without applying a Region
+- [x] CoreProtect construction-history dependency and V0.2.x concept scope recorded
 
 ### Phase 1A - Permission foundation and temporary Admin
 
@@ -53,7 +74,7 @@ Phase 1A completed its focused Security Boundary verification on 2026-07-20.
 - [ ] Keep WorldGuard Region／Velocity／LuckPerms／economy／player-punishment／server-stop authority, destructive World lifecycle operations, wildcards, reload/debug/internal actions, and other prohibited administration excluded
 - [ ] Repeat focused Builder elevation, work, Survival cleanup, demotion, and denial tests
 
-Phase 1B remains a V0.1.0 Release Blocker and must complete before Builder-led Hub／Gate／Theme connection work. It did not block the independently approved BetterStructures integration or Phase 3 generation.
+Phase 1B remains a V0.1.0 Release Blocker and must complete before Builder-led Hub／Gate／Theme connection work. Execute it only after one playable Theme is selected, the Advanced Portals version and permissions are verified, and the exact Builder-owned work is known. It did not block the independently approved BetterStructures integration or Phase 3 generation.
 
 ### Phase 2 - Main world-generation features
 
@@ -93,6 +114,8 @@ A World Generator alone is not assumed to satisfy the playable-theme requirement
 
 ### Phase 6 - User-built Hubs and Gate structures
 
+CoreProtect Phase 9 must be completed before substantial construction begins. Builder-led work additionally requires Phase 1B; user planning and initial manual work do not authorize Codex to infer structures or routes.
+
 The user manually builds and approves:
 
 - [ ] Lobby minimum Hub, Main Gate, and Frontier Gate
@@ -103,7 +126,11 @@ The user manually builds and approves:
 
 Codex does not infer or generate appearance, coordinates, orientation, or destinations without explicit user input.
 
+Main Spawn protection is designed but not implemented. After the user has substantially completed the initial Main Hub footprint and equipment layout, a separate task must approve the exact `main_spawn_hub` WorldGuard boundary. Use membership-based construction protection without a `build` flag, allow only approved public `use`, isolate broader interaction in focused child Regions, verify environmental flags, and only then consider changing Vanilla `spawn-protection` from 16 to 0.
+
 ### Phase 7 - Advanced Portals and Gate integration
+
+Before Phase 1B, select the Advanced Portals version and verify Velocity/Paper placement, portal create/edit/delete, destination/server transfer, reload/debug, Builder-safe operations, and Admin-only operations. Do not configure production routes until the user-built structures and safe destinations are fixed.
 
 - [ ] Lobby -> Main spawn Hub
 - [ ] Lobby -> Frontier Gate
@@ -128,11 +155,13 @@ The implementation may use a user-authored Schematic, tracked Template, PowerShe
 
 ### Phase 9 - CoreProtect
 
-- [ ] Install after final persistent Main generation
+- [ ] Install after Phase 4 EvenMoreFish and before substantial Hub/Gate construction
+- [ ] Select exact Paper placement and database policy in the approved integration task
 - [ ] Adopt it for investigation and partial rollback
+- [ ] Keep rollback administration Admin-only; do not grant it to Builder
 - [ ] Perform only normal Plugin Integration verification
 
-CoreProtect does not replace the cold backup.
+CoreProtect records history only after installation and does not replace the cold backup.
 
 ### Phase 10 - Integrated operations Script
 
@@ -165,12 +194,13 @@ CoreProtect does not replace the cold backup.
 
 - Phase 1B final Builder allowlist
 - BetterStructures restricted to persistent Main dimensions (Phase 2 complete)
-- Final generation of `main`, `main_nether`, and `main_end`
+- Final generation of `main`, `main_nether`, and actual Bukkit End world `main_the_end` (Phase 3 complete)
 - EvenMoreFish
 - One playable Frontier Theme
 - Lobby minimum Hub
 - Main initial Spawn Hub
 - Frontier Gate minimum Hub
+- Main Spawn WorldGuard protection after substantial initial Hub construction
 - All Phase 7 required Gate routes
 - Resource Return Gate Bootstrap design and procedure
 - Resource End safe outer-island arrival and return
@@ -193,6 +223,7 @@ CoreProtect does not replace the cold backup.
 - Multiple playable Themes
 - PlugManX
 - Custom Plugin repository
+- V0.2.x custom-Plugin concept draft and growth-tool proposal
 - LAB
 
 Accepted compromises and future solution candidates are detailed in [Deferred Design Items](11-deferred-design-items.md).

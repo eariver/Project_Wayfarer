@@ -1,6 +1,6 @@
-# Play Guide - Ver.0.0.4
+# Play Guide - Ver.0.0.5
 
-This guide separates the current playable state from the future V0.1.0 Alpha target. Permission Phase 1A is available, but Ver.0.0.4 does not mean that planned Hubs, Gates, the final Builder allowlist, or Frontier content are already available.
+This guide separates the current playable state from the future V0.1.0 Alpha target. Permission Phase 1A and the final Main terrain baseline are available, but Ver.0.0.5 does not mean that planned Hubs, Gates, Main Spawn protection, the final Builder allowlist, CoreProtect, or Frontier content are already available.
 
 ## 1. Entering the network
 
@@ -15,6 +15,7 @@ Main is the permanent home for building, farming, storage, fishing and general s
 - Waymark balance is shared with Frontier. Main provides a five-category fixed-price shop through `/shop`; see [Waymark Economy](10-waymark-economy.md).
 - BetterStructures 2.6.3 is installed with the vanilla-like `103 Default Structures` pack; structures appear only when Persistent Main generates new chunks. EvenMoreFish remains planned.
 - The final natural Main spawn and bedless respawn baseline is the approved Savanna location around `(320, 70, 128)`. The permanent spawn Hub, Lobby/Frontier Return Gates, and three Resource Gates are V0.1.0 targets and are not built yet.
+- Main Spawn does not yet have a Project WorldGuard Region. The user may continue initial Hub construction under the current Vanilla spawn protection; public protection is applied only after the Hub footprint is substantially complete and its exact boundary is approved.
 
 ## 3. Resource worlds
 
@@ -56,7 +57,7 @@ Later revisions plan to add:
 
 ## 7. Building responsibility for V0.1.0
 
-The user manually builds and approves the Lobby minimum Hub, Main spawn Hub, Frontier Gate Hub, Gate structures, Resource Return structure, and Resource End outer-island structure. Codex configures the exact Gate routes, Spawn/Arrival settings, and required protection only after the user supplies confirmed worlds, coordinates, orientation, and safe destinations. No structure is generated or replaced from this specification alone.
+The user manually builds and approves the Lobby minimum Hub, Main spawn Hub, Frontier Gate Hub, Gate structures, Resource Return structure, and Resource End outer-island structure. CoreProtect should be introduced before substantial Hub/Gate building begins. Codex configures the exact Gate routes, Spawn/Arrival settings, and required protection only after the user supplies confirmed worlds, coordinates, orientation, and safe destinations. Main Spawn WorldGuard protection follows substantial initial Hub completion under its own approved task. No structure is generated or replaced from this specification alone.
 
 ## 8. Temporary Role membership
 

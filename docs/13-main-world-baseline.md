@@ -1,6 +1,6 @@
 # Main World Baseline
 
-Project Wayfarer Ver.0.0.4 Roadmap Phase 3 was completed on 2026-07-21. This document is the production generation baseline for Main's persistent dimension family; it is not a server release or permission to regenerate the worlds.
+Project Wayfarer Ver.0.0.4 Roadmap Phase 3 was completed on 2026-07-21, and Ver.0.0.5 adopts this measured baseline unchanged. This document is the production generation baseline for Main's persistent dimension family; it is not a server release or permission to regenerate the worlds.
 
 ## Runtime and generation policy
 
@@ -66,5 +66,7 @@ Rollback requires stopping player access and every Minecraft component, moving t
 The official BetterStructures pack still emits non-blocking DataFixer ERROR-level messages for legacy `minecraft:bed` block-entity keys. BetterStructures completes initialization and structure generation remains functional; see [BetterStructures legacy bed investigation](investigations/2026-07-20-betterstructures-legacy-bed-datafixer-message.md).
 
 Phase 3 created the persistent terrain baseline and safe spawn coordinates only. The Main spawn Hub, Lobby and Frontier gates, three Resource gates, Resource return structures, and Resource End outer-island safety structure are not built or connected. Builder Phase 1B also remains incomplete and must precede Builder-led Hub/Gate/Theme connection work.
+
+Main Spawn WorldGuard protection is designed but not applied. The user first completes the initial Hub footprint; a later approved task then defines the exact Region and focused equipment child regions. Vanilla `spawn-protection=16` remains until that WorldGuard boundary and Builder-member behavior are verified.
 
 The next Roadmap task is Phase 4: EvenMoreFish integration.

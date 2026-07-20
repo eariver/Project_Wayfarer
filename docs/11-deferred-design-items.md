@@ -1,6 +1,6 @@
-# Deferred Design Items - Ver.0.0.4
+# Deferred Design Items - Ver.0.0.5
 
-This document is the source of truth for Project Wayfarer features that a custom Plugin could improve, but which Ver.0.0.4 deliberately leaves to operations, existing Plugins, or later design. “V0.1.0 impact” distinguishes an accepted Alpha compromise from a Release Blocker.
+This document is the source of truth for Project Wayfarer features that Ver.0.0.5 deliberately leaves to operations, existing Plugins, or later design. “V0.1.0 impact” distinguishes an accepted Alpha compromise from a Release Blocker.
 
 ## Permission elevation
 
@@ -41,6 +41,21 @@ Phase 1A implemented all five persistent LuckPerms Group definitions. The tempor
 | Main Hubと各地を結ぶTeleport Systemがない | 徒歩、Vanilla移動、将来の公共Gateを使用 | 非Blocker | 無償／WM消費、Unlock、Cooldown、個人／公共Waypoint、安全地点検証 | 高度な個人Waypointには候補 | Main拠点が広がった時 |
 | WMを消費する高度なUtilityがない | 初期Waymark Shopを主要な利用先とする | 非Blocker | Teleport、Storage拡張、Convenience、Cosmetic | 機能ごとに判断 | Waymark供給量の観測後 |
 | Over-enchanted Tool等の特殊商品がない | バニラに近いMain進行を優先 | 非Blocker | Plugin／外部独自PluginのItem契約と保守的価格 | Custom Itemなら必要になる可能性 | V0.1.0運用データ取得後 |
+
+## Main Spawn protection
+
+Main Spawn protection is designed but not implemented. The user first completes the initial Hub footprint and equipment layout; a separate approved task then fixes the exact WorldGuard Region and child-region boundaries.
+
+| 課題 | 現在の方針 | V0.1.0影響 | 解決候補 | 再検討時期 |
+|---|---|---|---|---|
+| Main Spawn保護Region未設定 | ユーザーが初期Hubを概ね整備するまでWorldGuard Regionを作らない | **Blocker**。公開前に保護が必要 | `main_spawn_hub` Membership保護、`use allow`、設備別の限定子Region | Hub整備完了後 |
+| Vanilla Spawn Protectionとの二重管理 | 現在`spawn-protection=16`を維持 | Region実装までは許容 | WorldGuardの一般／Builder／Admin境界を検証後、別タスクで0へ統一 | Main Spawn保護タスク |
+
+The outer Region must not use a `build` flag or broad `interact allow`／`chest-access allow`. Environmental deny flags and any child Region are candidates until their exact WorldGuard 7.0.17 names, equipment scope, priority, and acceptance tests are approved.
+
+## V0.2.x custom-Plugin concept
+
+The growth-tool and multi-module ideas in `codex/Project_Wayfarer_V0.2x_Custom_Plugin_Concept.md` are a reference draft only. They remain V0.1.0 non-Blockers, implementation has not started, and any adoption requires a new approved formal design, external Repository scope, data ownership, migration, artifact, and verification task. The current Over-enchanted Tool row above remains the operative V0.1.0 decision.
 
 ## Review rule
 

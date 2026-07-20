@@ -1,7 +1,9 @@
 document:
   project: Project Wayfarer
-  version: 0.0.4
-  date: 2026-07-20
+  version: 0.0.5
+  date: 2026-07-21
+  target_server_release: V0.1.0 Alpha
+  target_release_status: incomplete
 
 minecraft:
   client: "26.2"

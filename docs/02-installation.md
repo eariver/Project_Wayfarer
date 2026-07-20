@@ -1,6 +1,6 @@
 # Initial Installation Procedure
 
-This is an execution summary. Follow the repository's [formal Ver.0.0.4 design guide](00-design-guide.md) for the authoritative design and acceptance policy. Ver.0.0.4 defines the future V0.1.0 Alpha completion conditions; it does not itself authorize Runtime changes.
+This is an execution summary. Follow the repository's [formal Ver.0.0.5 design guide](00-design-guide.md) for the authoritative design and acceptance policy. Ver.0.0.5 defines the future V0.1.0 Alpha completion conditions; it does not itself authorize Runtime changes.
 
 The destructive Phase 3 generation has already completed. Do not repeat the bare-generation procedure or replace Main world data from this installation summary; use [Main World Baseline](13-main-world-baseline.md) for the current persistent seed, storage paths, spawn coordinates, and local rollback evidence.
 
@@ -85,12 +85,15 @@ The Waymark base is installed: RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocke
 
 BetterStructures 2.6.3 and the manually imported free `103 Default Structures` pack are installed. Tracked `config.yml` and `ValidWorlds.yml` keep automatic Plugin download off, unknown worlds off, Persistent Main enabled by actual Bukkit name, and every Resource dimension disabled. JAR, import ZIP, extracted Schematic, generated content assets, and cache remain ignored.
 
-The remaining expansion requires separately approved tasks in this order:
+Phase 3 has already finalized the three persistent dimensions and approved safe spawn coordinates; do not repeat generation. Remaining expansion uses separately approved tasks in this order:
 
-1. After all generation-affecting choices are final, approve and perform the destructive final generation of the three persistent Main dimensions with exact paths and backups. Recheck BetterStructures `spawnProtectionRadius: 100` first.
-2. Install EvenMoreFish and perform only its normal Integration check plus a configuration-level mcMMO Fishing conflict review.
-3. The user builds the Main spawn hub and its Lobby, Frontier, and three Resource Gate structures.
-4. Configure safe initial Spawn/Respawn and the approved Gate routes after coordinates are fixed.
+1. Install EvenMoreFish and perform only its normal Integration check plus a configuration-level mcMMO Fishing conflict review.
+2. Install CoreProtect before substantial Hub/Gate construction; keep rollback Admin-only and select its backend/database policy in that task.
+3. Select and install one playable Frontier Theme, then select Advanced Portals and inspect its exact permissions.
+4. Complete Builder Phase 1B from the known Theme, portal operations, and Builder-owned work.
+5. The user builds the Main spawn Hub and its Lobby, Frontier, and three Resource Gate structures.
+6. After the initial Hub is substantially complete, approve and apply the exact Main Spawn WorldGuard region; keep `spawn-protection=16` until the Region and Builder behavior pass verification.
+7. Configure only the approved Gate routes after coordinates and safe arrivals are fixed.
 
 ## Phase 8 - Shared mcMMO and planned Frontier expansion
 
@@ -108,4 +111,4 @@ Each Resource world also needs a post-reset Bootstrap design before V0.1.0: safe
 
 ## Phase 9 - Acceptance and V0.1.0 completion
 
-Follow the ordered [Roadmap](09-roadmap.md), then run the release-blocker checklist in `docs/06-acceptance-tests.md`. CoreProtect, integrated Start／Stop／Restart／Status／Backup operations, a complete MariaDB／Redis／World／Config cold backup, and an isolated restore must succeed before the V0.1.0 Baseline is declared. Git Tag／GitHub Release adoption is decided only at that final milestone.
+Follow the ordered [Roadmap](09-roadmap.md), then run the release-blocker checklist in `docs/06-acceptance-tests.md`. CoreProtect, Main Spawn protection, integrated Start／Stop／Restart／Status／Backup operations, a complete MariaDB／Redis／World／Config cold backup, and an isolated restore must succeed before the V0.1.0 Baseline is declared. Git Tag／GitHub Release adoption is decided only at that final milestone.

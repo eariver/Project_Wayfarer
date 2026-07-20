@@ -1,4 +1,4 @@
-# Project Wayfarer Ver0.0.4
+# Project Wayfarer Ver.0.0.5
 # Verify exact releases immediately before download.
 # JARs, paid plugins, and paid content are obtained manually from official sources.
 
@@ -17,6 +17,17 @@ core_binaries:
     required: true
     java: 25
     source: https://papermc.io/downloads/paper
+
+planned_unplaced:
+  - name: CoreProtect
+    version: unselected
+    status: planned-not-installed
+    purpose: Record block history for investigation and Admin-only partial rollback before substantial Hub/Gate construction
+    placement: separate-approved-task
+    database-policy: separate-approved-task
+    administration: admin-only-no-builder-rollback
+    cold-backup-replacement: false
+    jar: manual-acquisition-after-version-selection
 
 velocity:
   required:

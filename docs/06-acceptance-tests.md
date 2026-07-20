@@ -1,4 +1,4 @@
-# Acceptance Tests - Ver.0.0.4
+# Acceptance Tests - Ver.0.0.5
 
 ## 1. Verification policy
 
@@ -61,6 +61,8 @@ Phase 1B incomplete:
 - [x] Final persistent Main generation completed under an approved destructive task with exact paths, verified backup and manifest, final seed, preserved Resource family, and safe Overworld/Nether/End spawns.
 - [ ] EvenMoreFish enables with its adopted Config and one representative function; configuration has no explicit mcMMO Fishing conflict.
 - [ ] CoreProtect enables after final Main generation and provides its representative lookup/rollback-administration function.
+- [ ] After the user substantially completes the initial Hub, an approved exact Main Spawn WorldGuard Region denies general building, permits only intended public use, preserves Builder member building without Region administration, and persists after restart.
+- [ ] Vanilla `spawn-protection` remains 16 until the Main Spawn Region passes acceptance; a separately approved change to 0 then avoids double protection without weakening the Region boundary.
 
 ### Frontier and Hubs
 
@@ -101,6 +103,8 @@ Phase 1B incomplete:
 - [ ] Special or over-enchanted items retain meaningful normal Survival progression.
 - [ ] Multiple playable Themes have explicit routing and data boundaries.
 - [ ] PlugManX, a custom Plugin repository, or LAB is introduced only under its own approved task.
+
+The V0.2.x custom-Plugin document under `codex/` is only a deferred concept draft. It is outside V0.1.0 acceptance and does not satisfy any implementation checkbox.
 
 ## 5. Detailed risk-focused test expectations
 

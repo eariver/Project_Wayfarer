@@ -1,4 +1,4 @@
-# Permission Model - Ver.0.0.4
+# Permission Model - Ver.0.0.5
 
 This document is the source of truth for the Project Wayfarer LuckPerms permission model. Phase 1A was implemented and verified on 2026-07-20. Phase 1B, the final Builder allowlist, remains a V0.1.0 Release Blocker.
 

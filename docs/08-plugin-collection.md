@@ -1,4 +1,4 @@
-# Plugin Collection Checklist - Ver0.0.4
+# Plugin Collection Checklist - Ver.0.0.5
 
 詳細な進捗管理は同梱外のXLSX台帳を使用する。JARと有償コンテンツはGitへコミットしない。
 
@@ -28,6 +28,7 @@
 |Structure|Main|BetterStructures 2.6.3|導入・検証済み|servers/main/plugins|https://modrinth.com/plugin/betterstructures|103 Default Structuresのみ、Persistent Main Family限定、Resource全世界と未知Worldは無効、手動取得|
 |Adventure|Frontier|EliteMobs|計画・未導入|servers/frontier/plugins|https://modrinth.com/plugin/elitemobs|Content Packは別途|
 |Conditional|Frontier|BetterStructures|条件付き・未導入|servers/frontier/plugins|https://modrinth.com/plugin/betterstructures|選定Packが要求するときのみ、WorldEditは導入済み|
+|Administration|未定|CoreProtect|計画・未導入|別タスクで確定||EvenMoreFish後・Hub／Gate本格建築前、RollbackはAdmin-only、Cold Backup代替不可|
 |Administration / Development|All Paper|PlugManX|計画・未導入|各Paper plugins|https://modrinth.com/plugin/plugmanx|Version未選定、手動取得、Admin-only、Velocity対象外|
 |Deferred|Velocity|Cross-server chat|選定中|未配置||PoC後に選定|
 |Forbidden|Velocity|ViaBackwards|禁止|配置しない|https://modrinth.com/plugin/viabackwards|意図的に不採用|

@@ -1,4 +1,4 @@
-# Architecture Summary - Ver.0.0.4
+# Architecture Summary - Ver.0.0.5
 
 ## Logical topology
 
@@ -17,7 +17,7 @@ Redis: Main/Frontier RedisEconomy Waymark sharing in use; chat transport is not 
 
 All backend servers bind to `127.0.0.2`. Velocity is the only player-facing endpoint. Modern forwarding is mandatory.
 
-WorldEdit 7.4.4 and WorldGuard 7.0.17 form a common administration layer on all Paper backends and are not installed on Velocity. Lobby and `frontier_gate` use protected Global Regions; Main currently has no protection Flags, Members, or Owners.
+WorldEdit 7.4.4 and WorldGuard 7.0.17 form a common administration layer on all Paper backends and are not installed on Velocity. Lobby and `frontier_gate` use protected Global Regions; Main currently has no protection Flags, Members, or Owners. Main Spawn protection is designed but remains unimplemented until the user substantially completes the Hub and approves an exact `main_spawn_hub` boundary. Vanilla `spawn-protection=16` remains in force until that later WorldGuard integration is verified.
 
 TAB 6.1.0 and VelocityScoreboardAPI 2.1.0 run only on Velocity. TAB-Bridge 6.2.2 and PlaceholderAPI 2.12.3 run on every Paper backend. This is a proxy installation, not a mixed installation.
 
@@ -47,7 +47,7 @@ The current Builder is an empty Role container that inherits only `default`. Its
 | Waymark | Not used | Shared with Frontier | Shared with Main |
 | Waymark shop | Not installed | EconomyShopGUI 7.1.1 | Not installed |
 | mcMMO | Not installed | Shared with Frontier | Shared with Main |
-| WorldGuard | Whole entry world protected | Plugin only; no Project regions | Whole entry world protected |
+| WorldGuard | Whole entry world protected | Plugin only; Spawn protection designed but not applied | Whole entry world protected |
 | EvenMoreFish | Not installed | Planned | Not installed |
 | Frontier achievements | Future | Future consumer | Future producer |
 | Transit vault | Future | Future | Future |
@@ -98,6 +98,8 @@ Frontier gate hub
 
 This diagram is a target, not current runtime state. Hub appearance, coordinates, orientation, structures, and safe arrival points are user-built inputs. Gate configuration and verification follow only after those inputs are fixed. Each disposable Resource reset must bootstrap its arrival, return structure, portal definition, optional protection, and safe spawn without changing persistent worlds. `resource_end` additionally requires a reproducible outer-island site independent of the Dragon exit portal and End gateways.
 
+CoreProtect is intentionally scheduled after EvenMoreFish but before substantial Hub/Gate construction so construction history exists from the start. It is not installed, its placement and database policy are not selected, rollback remains Admin-only, and it does not replace cold backup. After the user substantially completes the Main Hub, a separate task applies the approved WorldGuard membership region and focused child regions before routing is opened.
+
 ## Future components
 
 - Cross-server transit vault for allowlisted common items
@@ -109,3 +111,5 @@ This diagram is a target, not current runtime state. Hub appearance, coordinates
 - Disposable creative LAB server
 
 Deferred design tradeoffs, including temporary-role cleanup, Resource bootstrap implementation, theme inventories, achievements, and Main teleporters, are tracked in [Deferred Design Items](11-deferred-design-items.md).
+
+The V0.2.x custom-Plugin concept stored under `codex/` is a non-authoritative draft. It is outside V0.1.0 scope and does not authorize source, repository, schema, migration, or artifact work.
