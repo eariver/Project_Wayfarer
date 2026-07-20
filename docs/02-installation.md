@@ -81,13 +81,14 @@ Multiverse-Core 5.7.2 is installed on all Paper backends, while Multiverse-Nethe
 
 The Waymark base is installed: RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 run only on Main and Frontier. `Render-LocalConfigs.ps1` renders their ignored Redis credential Configs from tracked sanitized templates. EconomyShopGUI 7.1.1 Free is installed only on Main and uses RedisEconomy through Vault. Its tracked `config.yml`, Japanese language file, five section files, and five shop files define the fixed-price Alpha baseline; the JAR and generated runtime data remain ignored.
 
+BetterStructures 2.6.3 and the manually imported free `103 Default Structures` pack are installed. Tracked `config.yml` and `ValidWorlds.yml` keep automatic Plugin download off, unknown worlds off, Persistent Main enabled by actual Bukkit name, and every Resource dimension disabled. JAR, import ZIP, extracted Schematic, generated content assets, and cache remain ignored.
+
 The remaining expansion requires separately approved tasks in this order:
 
-1. Install BetterStructures and restrict it to `main`, `main_nether`, and `main_end`; keep every Resource dimension disabled.
-2. After all generation-affecting choices are final, approve and perform the destructive final generation of the three persistent Main dimensions with exact paths and backups.
-3. Install EvenMoreFish and perform only its normal Integration check plus a configuration-level mcMMO Fishing conflict review.
-4. The user builds the Main spawn hub and its Lobby, Frontier, and three Resource Gate structures.
-5. Configure safe initial Spawn/Respawn and the approved Gate routes after coordinates are fixed.
+1. After all generation-affecting choices are final, approve and perform the destructive final generation of the three persistent Main dimensions with exact paths and backups. Recheck BetterStructures `spawnProtectionRadius: 100` first.
+2. Install EvenMoreFish and perform only its normal Integration check plus a configuration-level mcMMO Fishing conflict review.
+3. The user builds the Main spawn hub and its Lobby, Frontier, and three Resource Gate structures.
+4. Configure safe initial Spawn/Respawn and the approved Gate routes after coordinates are fixed.
 
 ## Phase 8 - Shared mcMMO and planned Frontier expansion
 

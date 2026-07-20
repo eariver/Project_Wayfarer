@@ -51,14 +51,16 @@ Phase 1A completed its focused Security Boundary verification on 2026-07-20.
 - [ ] Keep WorldGuard Region／Velocity／LuckPerms／economy／player-punishment／server-stop authority, destructive World lifecycle operations, wildcards, reload/debug/internal actions, and other prohibited administration excluded
 - [ ] Repeat focused Builder elevation, work, Survival cleanup, demotion, and denial tests
 
-Phase 1B remains a V0.1.0 Release Blocker and must complete before Builder-led Hub／Gate／Theme connection work. It does not block the next independent feature task, BetterStructures.
+Phase 1B remains a V0.1.0 Release Blocker and must complete before Builder-led Hub／Gate／Theme connection work. It did not block the independent BetterStructures integration and does not block a future separately approved Phase 3 generation task.
 
 ### Phase 2 - Main world-generation features
 
-- [ ] Install BetterStructures as an ordinary Plugin integration
-- [ ] Enable it only in `main`, `main_nether`, and `main_end`
-- [ ] Keep `resource`, `resource_nether`, and `resource_end` disabled
-- [ ] Confirm one representative new persistent chunk and one Resource exclusion
+- [x] Install BetterStructures 2.6.3 with only the free `103 Default Structures` pack
+- [x] Enable it only in actual Bukkit worlds `main`, `main_nether`, and `main_the_end`
+- [x] Keep `resource`, `resource_nether`, `resource_end`, and unknown new worlds disabled
+- [x] Confirm natural `betterstructures_well_grassy` generation, representative Resource exclusion, and restart persistence
+
+Phase 2 completed on 2026-07-20. The next generation task is Phase 3. It is destructive and requires a separate instruction, exact resolved-path and backup checks, and explicit approval. Recheck the retained BetterStructures spawn protection radius of 100 blocks before generation.
 
 ### Phase 3 - Final persistent Main generation
 
@@ -160,7 +162,7 @@ CoreProtect does not replace the cold backup.
 ## V0.1.0 Release Blockers
 
 - Phase 1B final Builder allowlist
-- BetterStructures restricted to persistent Main dimensions
+- BetterStructures restricted to persistent Main dimensions (Phase 2 complete)
 - Final generation of `main`, `main_nether`, and `main_end`
 - EvenMoreFish
 - One playable Frontier Theme

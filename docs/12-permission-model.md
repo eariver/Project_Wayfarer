@@ -188,4 +188,4 @@ Phase 1B remains incomplete and blocks V0.1.0. It must:
 - keep WorldGuard Region administration, Velocity, LuckPerms, economy, player punishment, server stop, reload/debug/internal operations, destructive World lifecycle commands, and unrestricted wildcards excluded;
 - repeat only the affected Builder security-boundary tests.
 
-The next feature task remains BetterStructures. Phase 1B is scheduled before Builder-led Hub／Gate／Theme connection work, not necessarily before unrelated feature integrations.
+BetterStructures Phase 2 is complete without changing Builder permissions. Phase 1B remains scheduled before Builder-led Hub／Gate／Theme connection work and does not block a future separately approved destructive Phase 3 Main generation task.

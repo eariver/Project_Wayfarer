@@ -79,6 +79,14 @@ Multiverse-Core 5.7.2 runs on Lobby, Main, and Frontier. Lobby and Frontier regi
 
 Use the namespaced keys for runtime diagnosis. `main_end` is a logical Multiverse alias, not a filesystem path. World access enforcement, gamemode enforcement, and flight enforcement remain disabled so that Multiverse does not replace existing backend access or player-state behavior. Phase 1A Admin operation is available, but Builder has no Multiverse authority until Phase 1B. The final Builder Allowlist may include World information, travel, safe Spawn operations, individual World properties, and Main-only NetherPortals link/unlink/inspection; World creation and destructive import/unload/deletion/clone/regeneration/purge, plus reload/debug/internal operations, remain Admin-only.
 
+## BetterStructures
+
+BetterStructures 2.6.3 runs only on Main and depends on WorldEdit 7.4.4. Its tracked Config is limited to `plugins/BetterStructures/config.yml` and `ValidWorlds.yml`; the JAR, Imports, extracted `103 Default Structures` Schematics, generated content assets, Resource Pack output, cache, update and session data remain ignored. Content and Plugin binaries are manually acquired, `nightbreak.autoDownloadPluginUpdates` stays `false`, and the unused EliteMobs Region integration stays disabled.
+
+The actual Bukkit allowlist is `main`, `main_nether`, and `main_the_end`. `resource`, `resource_nether`, and `resource_end` are explicitly `false`, and `New worlds spawn structures` is `false`. Do not use the Multiverse alias `main_end` in this Config. BetterStructures affects only newly generated chunks; do not delete Region files or broaden pregeneration to test it. Normal Config/content changes require a clean Main restart, not PlugManX or server `/reload`. The retained default spawn protection radius is 100 blocks and must be reviewed before Phase 3 final Main generation.
+
+The official version-5 content emits non-blocking DataFixer messages for legacy `minecraft:bed` block-entity keys on Minecraft 26.2. BetterStructures still completes initialization, and representative natural generation plus restart persistence passed. Recheck this upstream-content warning when either Plugin or Pack changes; do not edit the official Schematics in place.
+
 ## Lobby and Frontier void worlds
 
 VoidGen 2.3.8 is installed only in `servers/lobby/plugins` and `servers/frontier/plugins`. It generates the `lobby` and `frontier_gate` entry worlds; Main must not use VoidGen.

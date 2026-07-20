@@ -25,7 +25,7 @@
 |Economy|Main + Frontier|RedisEconomy 4.5.12-wayfarer.1|導入・検証済み|両plugins|https://www.spigotmc.org/resources/105965/|ユーザー提供互換Build、共有Redis Waymark、Lobby／Velocity対象外|
 |Economy|Main + Frontier|VaultUnlocked 2.20.2|導入・検証済み|両plugins|https://hangar.papermc.io/TNE/VaultUnlocked|RedisEconomy Vault Bridge、Lobby／Velocity対象外|
 |Economy|Main|EconomyShopGUI 7.1.1 Free|導入・検証済み|servers/main/plugins|https://www.spigotmc.org/resources/economyshopgui.69927/|固定価格5カテゴリ・62商品、Vault経由RedisEconomy、Lobby／Frontier／Velocity対象外|
-|Structure|Main|BetterStructures|計画・未導入|servers/main/plugins|https://modrinth.com/plugin/betterstructures|Resource世界では無効|
+|Structure|Main|BetterStructures 2.6.3|導入・検証済み|servers/main/plugins|https://modrinth.com/plugin/betterstructures|103 Default Structuresのみ、Persistent Main Family限定、Resource全世界と未知Worldは無効、手動取得|
 |Adventure|Frontier|EliteMobs|計画・未導入|servers/frontier/plugins|https://modrinth.com/plugin/elitemobs|Content Packは別途|
 |Conditional|Frontier|BetterStructures|条件付き・未導入|servers/frontier/plugins|https://modrinth.com/plugin/betterstructures|選定Packが要求するときのみ、WorldEditは導入済み|
 |Administration / Development|All Paper|PlugManX|計画・未導入|各Paper plugins|https://modrinth.com/plugin/plugmanx|Version未選定、手動取得、Admin-only、Velocity対象外|

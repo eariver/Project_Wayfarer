@@ -57,7 +57,7 @@ Phase 1B incomplete:
 
 ### Main and gameplay
 
-- [ ] BetterStructures is enabled only in `main`, `main_nether`, and `main_end`, and one representative Resource dimension remains excluded.
+- [x] BetterStructures 2.6.3 and `103 Default Structures` version 5 are enabled only in Bukkit worlds `main`, `main_nether`, and `main_the_end`; every Resource world and unknown new world is disabled.
 - [ ] Final persistent Main generation completes under an approved destructive task with exact paths, backups, and safe Spawn.
 - [ ] EvenMoreFish enables with its adopted Config and one representative function; configuration has no explicit mcMMO Fishing conflict.
 - [ ] CoreProtect enables after final Main generation and provides its representative lookup/rollback-administration function.
@@ -165,3 +165,12 @@ The following records preserve work already performed under earlier tasks. Their
 - [x] Temporary Admin provided representative Velocity, Paper, Vanilla, LuckPerms, WorldGuard, Multiverse, and EconomyShopGUI authority, then lost it immediately on removal. A short temporary grant also expired naturally.
 - [x] Temporary Builder allowed a restored one-block protected-entry edit while WorldEdit, WorldGuard administration, Multiverse, gamemode, teleport, LuckPerms, and Velocity administration were denied; building was denied after removal.
 - [x] A clean network restart preserved Eligibility and Group definitions, left Temporary Roles and OP empty, reloaded all four LuckPerms instances without startup errors, and retained self-elevation／demotion behavior.
+
+### BetterStructures 2.6.3 (2026-07-20)
+
+- [x] The official LGPL-3.0-only Paper release loaded only on Main with WorldEdit 7.4.4; `/betterstructures version` reported 2.6.3 after a clean restart.
+- [x] The manually imported free `103 Default Structures` version-5 archive installed exactly 103 Schematics; JAR, ZIP, extracted content, Worlds, Logs, and Cache remain ignored.
+- [x] `ValidWorlds.yml` enables actual Bukkit worlds `main`, `main_nether`, and `main_the_end`, disables all three Resource worlds, and defaults unknown new worlds to disabled. Automatic Plugin download is disabled.
+- [x] A CIRCLE pregeneration centered on Main Chunk `(64, 64)` with radius 256 and no World Border change generated 264 new Chunks. `betterstructures_well_grassy` naturally appeared in `main` Chunk `(76, 58)` and remained after restart.
+- [x] A representative previously ungenerated Resource Overworld Chunk was loaded while Resource remained disabled; no BetterStructures notification or placement/paste event appeared. Resource Nether and End were verified disabled in Config.
+- [x] The official Pack's legacy `minecraft:bed` block-entity keys produce non-blocking DataFixer ERROR-level messages on load. BetterStructures completes initialization and the adopted structure/restart tests pass; no other startup ERROR, SEVERE, or Exception occurred.

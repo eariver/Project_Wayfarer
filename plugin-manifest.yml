@@ -401,9 +401,53 @@ main:
       reload-policy: full-main-restart-only
       verification: non-op-buy-sell-failure-capacity-cross-server-reconnect-and-restart
     - name: BetterStructures
-      status: planned-not-installed
-      purpose: Dimension-specific structures in persistent Main worlds only
+      version: "2.6.3"
+      reported-version: "2.6.3"
+      channel: Release
+      platform: Bukkit/Paper
+      minecraft-compatibility:
+        - "26.2"
+      java-runtime: 25
+      status: installed-and-verified
+      purpose: Vanilla-like structures in persistent Main worlds only
       source: https://modrinth.com/plugin/betterstructures
+      license: LGPL-3.0-only
+      jar: manual-acquisition
+      jar-filename: BetterStructures.jar
+      sha256: AA63FEF786CD55663BFF832BBD60C01C55C6E3A18603201C6D48FBA025782038
+      required-dependency: "WorldEdit 7.4.4"
+      placement:
+        - main
+      excluded-placement:
+        - velocity
+        - lobby
+        - frontier
+      auto-plugin-download: disabled
+      update-checking: enabled-notification-only
+      elite-mobs-region-protection: disabled
+      reload-policy: full-main-restart-only
+      bukkit-world-scope:
+        enabled:
+          - main
+          - main_nether
+          - main_the_end
+        disabled:
+          - resource
+          - resource_nether
+          - resource_end
+        unknown-new-worlds: disabled
+      spawn-protection-radius: 100
+      content:
+        name: 103 Default Structures
+        edition: Free
+        version: 5
+        source: https://nightbreak.io/plugin/betterstructures/
+        archive-filename: bs-default-builds-default-structures.zip
+        sha256: 118D873FDF87BF94EA6CA3036897B10790F5D73E62F8387E75C1AB6A4A360FE0
+        runtime-import: manual-zip-import
+        redistribution: not-committed
+        enabled-world-family: persistent-main-only
+      verification: version-command-natural-well-resource-exclusion-and-clean-restart
 frontier:
   required:
     - name: VoidGen

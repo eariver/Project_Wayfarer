@@ -1,0 +1,8 @@
+New worlds spawn structures: false
+Valid worlds:
+  main: true
+  main_nether: true
+  main_the_end: true
+  resource: false
+  resource_end: false
+  resource_nether: false

@@ -146,7 +146,10 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - Explicit Multiverse-NetherPortals links must not cross the persistent and Resource families.
 - Only the Resource family may be targeted by reset operations.
 - Runtime namespaced world keys are authoritative; documentation aliases are not filesystem paths.
-- When introduced, BetterStructures must be enabled only in the persistent Main dimensions and disabled in all Resource dimensions.
+- BetterStructures 2.6.3 is installed only on Main with WorldEdit 7.4.4 as its hard dependency. It must not be installed on Velocity, Lobby, or Frontier unless a later approved Frontier content design explicitly changes that scope.
+- Only the free `103 Default Structures` content pack version 5 is installed. Plugin and content artifacts are manually acquired and remain ignored; automatic Plugin download is disabled.
+- BetterStructures is enabled only for the actual Bukkit worlds `main`, `main_nether`, and `main_the_end`. It is explicitly disabled for `resource`, `resource_nether`, and `resource_end`, and unknown new worlds default to disabled.
+- BetterStructures places structures only in newly generated chunks. The default `spawnProtectionRadius: 100` is preserved and must be reviewed before the separately approved destructive Phase 3 final Main generation.
 - The planned Main hub provides independent direct gates to `resource`, `resource_nether`, and `resource_end`; every Resource world requires an explicit return gate to Main.
 - `resource_end` must not spawn an Ender Dragon (`entities.spawning.scan-for-legacy-ender-dragon: false`). `main_end` keeps this setting enabled.
 - Resource End routing must not depend on the Dragon exit portal or End gateways; use a verified safe outer-island destination.

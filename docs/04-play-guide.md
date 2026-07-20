@@ -13,7 +13,7 @@ Main is the permanent home for building, farming, storage, fishing and general s
 - Use `main`, `main_nether` and `main_end` for permanent construction.
 - mcMMO progression is shared with Frontier; normal inventory and vanilla player state remain local.
 - Waymark balance is shared with Frontier. Main provides a five-category fixed-price shop through `/shop`; see [Waymark Economy](10-waymark-economy.md).
-- BetterStructures and EvenMoreFish are planned but not installed.
+- BetterStructures 2.6.3 is installed with the vanilla-like `103 Default Structures` pack; structures appear only when Persistent Main generates new chunks. EvenMoreFish remains planned.
 - The permanent spawn Hub, normal Respawn location, Lobby/Frontier Return Gates, and three Resource Gates are V0.1.0 targets, not current features.
 
 ## 3. Resource worlds
@@ -21,7 +21,7 @@ Main is the permanent home for building, farming, storage, fishing and general s
 The installed `resource`, `resource_nether` and `resource_end` worlds are disposable gathering worlds managed by Multiverse.
 
 - They are designed for near-vanilla generation.
-- BetterStructures must remain disabled in them.
+- BetterStructures is explicitly disabled in all three Resource worlds, including newly generated Resource chunks.
 - They are disposable, so permanent construction does not belong there.
 - Direct Main Hub gates and the Resource End outer-island arrival route are not installed yet; use only administrator-approved access until those routes are verified.
 - Every future reset must restore a safe arrival and Main Return Gate. `resource_end` also needs a reproducible safe outer-island site independent of Dragon portals.

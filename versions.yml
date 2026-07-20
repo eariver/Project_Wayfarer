@@ -223,6 +223,49 @@ runtime_selection:
     spawner_provider: disabled
     license_file_in_jar: false
     verified: 2026-07-20
+  betterstructures:
+    version: "2.6.3"
+    reported_version: "2.6.3"
+    channel: release
+    platform: bukkit-paper
+    minecraft: "26.2"
+    java: 25
+    placement:
+      - main
+    excluded_placement:
+      - velocity
+      - lobby
+      - frontier
+    acquisition: user-manual
+    jar_filename: BetterStructures.jar
+    source: https://modrinth.com/plugin/betterstructures
+    license: LGPL-3.0-only
+    sha256: AA63FEF786CD55663BFF832BBD60C01C55C6E3A18603201C6D48FBA025782038
+    dependency: "WorldEdit 7.4.4"
+    auto_plugin_download: false
+    elite_mobs_region_protection: false
+    reload_policy: full-main-restart-only
+    world_scope:
+      enabled:
+        - main
+        - main_nether
+        - main_the_end
+      disabled:
+        - resource
+        - resource_nether
+        - resource_end
+      new_world_default: false
+    spawn_protection_radius: 100
+    content:
+      name: 103 Default Structures
+      edition: free
+      version: 5
+      source: https://nightbreak.io/plugin/betterstructures/
+      archive_filename: bs-default-builds-default-structures.zip
+      sha256: 118D873FDF87BF94EA6CA3036897B10790F5D73E62F8387E75C1AB6A4A360FE0
+      acquisition: user-manual-import
+      redistribution: not-committed
+    verified: 2026-07-20
   paper_26_2:
     build: 62
     commit: 75c0b48

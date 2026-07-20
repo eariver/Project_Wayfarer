@@ -29,6 +29,7 @@
 - EconomyShopGUI section/shop formats: https://wiki.gpplugins.com/economyshopgui/file-configuration/sections.yml and https://wiki.gpplugins.com/economyshopgui/file-configuration/shops.yml
 - EconomyShopGUI permissions and commands: https://wiki.gpplugins.com/economyshopgui/basics/permission and https://wiki.gpplugins.com/economyshopgui/basics/commands
 - BetterStructures: https://modrinth.com/plugin/betterstructures
+- BetterStructures official content: https://nightbreak.io/plugin/betterstructures/
 - EliteMobs: https://modrinth.com/plugin/elitemobs
 - WorldEdit: https://enginehub.org/worldedit
 - WorldEdit source and GPLv3 license: https://github.com/EngineHub/WorldEdit

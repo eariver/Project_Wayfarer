@@ -66,7 +66,7 @@ Installed disposable resource worlds, designed for near-vanilla generation witho
 - `resource_nether`
 - `resource_end`
 
-BetterStructures is not installed. When introduced, it is limited to the persistent trio with dimension-specific packs and remains disabled in Resource dimensions.
+BetterStructures 2.6.3 is installed only on Main with the free `103 Default Structures` pack. Its Bukkit-world allowlist is `main`, `main_nether`, and the actual End world name `main_the_end`; all three Resource worlds and unknown new worlds are disabled. Structures appear only in newly generated chunks. Frontier retains only a conditional, not-installed BetterStructures entry.
 
 Paper's namespaced runtime keys are authoritative. The persistent family is `minecraft:overworld` ↔ `minecraft:the_nether` / `minecraft:the_end`; the Resource family is `minecraft:resource` ↔ `minecraft:resource_nether` / `minecraft:resource_end`. `main_end` is the Multiverse alias for the existing `main_the_end` world. Explicit NetherPortals links exist in both directions within each family and never cross between families.
 
