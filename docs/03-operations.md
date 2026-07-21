@@ -170,6 +170,12 @@ Use a normal server restart after mcMMO Config changes. Do not reload or unload 
 
 MariaDB backups must include `wayfarer_mcmmo`. A representative health check is to record one skill's Level/XP on Main, switch normally to Frontier, confirm the same value, make one small authorized change, return to Main, and confirm the value is cumulative. Repeating every Skill is unnecessary.
 
+## EvenMoreFish
+
+EvenMoreFish 2.4.3 runs only on Main and stores Journal／Statistics in MariaDB `wayfarer_evenmorefish` with table prefix `emf_`. Before startup, run `scripts/Render-LocalConfigs.ps1`; this renders ignored `plugins/EvenMoreFish/config.yml` from the tracked sanitized template. Never print or commit credentials, and include this database in cold backups.
+
+Normal operation keeps Custom Fish limited to `main` and `resource`, all economy providers and competitions disabled, and mcMMO duplicate loot disabled. Use `/emf`, Journal, or one natural catch as a representative health check. Config or locale changes require a normal full Main restart; do not reload/unload the Plugin or use Flyway clean/repair/drop as routine recovery.
+
 ## Waymark shared economy
 
 RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 run only on Main and Frontier. Both use Redis database 0 with shared `clusterId: waymark`, internal Vault currency key `vault`, and distinct client names `main`／`frontier`. The Project display is Waymark (`WM`) with starting balance 0. Run `scripts/Render-LocalConfigs.ps1` before startup to render ignored RedisEconomy Runtime Configs from tracked sanitized templates; never print or commit the Redis Password.

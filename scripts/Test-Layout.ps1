@@ -9,8 +9,15 @@ $required = @(
     'AGENTS.md','.gitignore','.env.example','versions.yml','plugin-manifest.yml',
     'velocity','servers/lobby','servers/main','servers/frontier','infrastructure','docs',
     'scripts/Render-mcMMOConfig.ps1',
+    'scripts/Render-EvenMoreFishConfig.ps1',
     'servers/main/plugins/mcMMO/config.yml.template',
-    'servers/frontier/plugins/mcMMO/config.yml.template'
+    'servers/frontier/plugins/mcMMO/config.yml.template',
+    'servers/main/plugins/EvenMoreFish/config.yml.template',
+    'servers/main/plugins/EvenMoreFish/messages.yml',
+    'servers/main/plugins/EvenMoreFish/gui/main.yml',
+    'servers/main/plugins/EvenMoreFish/competitions/main.yml',
+    'servers/main/plugins/EvenMoreFish/competitions/sunday.yml',
+    'servers/main/plugins/EvenMoreFish/competitions/weekend.yml'
 )
 foreach ($relative in $required) {
     if (-not (Test-Path (Join-Path $Root $relative))) { $errors.Add("Missing: $relative") }
@@ -76,6 +83,86 @@ foreach ($relative in @('servers/lobby/plugins', 'velocity/plugins')) {
     $unexpected = Get-ChildItem -LiteralPath $path -File -ErrorAction SilentlyContinue |
         Where-Object { $_.Name -match '(?i)^mcmmo.*\.jar$' }
     if ($unexpected) { $errors.Add("mcMMO must not be placed in $relative.") }
+}
+
+$emfTemplateRelative = 'servers/main/plugins/EvenMoreFish/config.yml.template'
+$emfTemplatePath = Join-Path $Root $emfTemplateRelative
+if (Test-Path -LiteralPath $emfTemplatePath -PathType Leaf) {
+    $content = [IO.File]::ReadAllText($emfTemplatePath)
+    foreach ($token in @(
+        '__WAYFARER_EMF_DB_USER__',
+        '__WAYFARER_EMF_DB_PASSWORD__',
+        '__WAYFARER_MARIADB_PORT__'
+    )) {
+        $count = [regex]::Matches($content, [regex]::Escape($token)).Count
+        if ($count -ne 1) { $errors.Add("Expected one $token in $emfTemplateRelative; found $count.") }
+    }
+    foreach ($requiredSetting in @(
+        'locale: ja',
+        '  only-fish: true',
+        '  database: wayfarer_evenmorefish',
+        '  table-prefix: emf_',
+        'disable-mcmmo-loot: true'
+    )) {
+        if (-not $content.Contains($requiredSetting)) {
+            $errors.Add("EvenMoreFish policy is missing from $emfTemplateRelative`: $requiredSetting")
+        }
+    }
+    if ($content -notmatch '(?m)^database:\r?\n  enabled: true\r?$' -or
+        $content -notmatch '(?m)^  type: mysql\r?$' -or
+        $content -notmatch '(?m)^  address: ''127\.0\.0\.2:__WAYFARER_MARIADB_PORT__''\r?$') {
+        $errors.Add('EvenMoreFish MariaDB selection is invalid.')
+    }
+    if ($content -notmatch '(?ms)^economy:\r?\n.*?^  vault:\r?\n    enabled: false\r?\n.*?^  playerpoints:\r?\n    enabled: false\r?\n.*?^  griefprevention:\r?\n    enabled: false\r?$') {
+        $errors.Add('EvenMoreFish economy policy is invalid.')
+    }
+    if ($content -notmatch '(?ms)^allowed-worlds:\r?\n- main\r?\n- resource\r?$') {
+        $errors.Add('EvenMoreFish allowed-world policy is invalid.')
+    }
+    if ($content -notmatch '(?ms)^dimension-fishing:\r?\n.*?^  lava:\r?\n    enabled: false\r?\n.*?^  void:\r?\n    enabled: false\r?$') {
+        $errors.Add('EvenMoreFish dimension-fishing policy is invalid.')
+    }
+
+    & git -C $Root check-ignore -q --no-index -- 'servers/main/plugins/EvenMoreFish/config.yml'
+    if ($LASTEXITCODE -ne 0) { $errors.Add('EvenMoreFish runtime Config is not ignored.') }
+}
+
+foreach ($relative in @(
+    'servers/main/plugins/EvenMoreFish/competitions/main.yml',
+    'servers/main/plugins/EvenMoreFish/competitions/sunday.yml',
+    'servers/main/plugins/EvenMoreFish/competitions/weekend.yml'
+)) {
+    $path = Join-Path $Root $relative
+    if ((Test-Path -LiteralPath $path -PathType Leaf) -and
+        ([IO.File]::ReadAllText($path) -notmatch '(?m)^disabled: true\r?$')) {
+        $errors.Add("EvenMoreFish competition is not disabled: $relative")
+    }
+}
+
+$emfGuiPath = Join-Path $Root 'servers/main/plugins/EvenMoreFish/gui/main.yml'
+if (Test-Path -LiteralPath $emfGuiPath -PathType Leaf) {
+    $emfGui = [IO.File]::ReadAllText($emfGuiPath)
+    if ($emfGui -match '(?m)^open-shop:|click-action: open-shop') {
+        $errors.Add('EvenMoreFish main GUI exposes the disabled fish shop.')
+    }
+}
+
+$expectedEmfHash = '0F131FE8F7EC68DF2C14D09D2A4E39B9E481257F106A12B06B5BD6513B30BC05'
+$emfJarRelative = 'servers/main/plugins/EvenMoreFish-2.4.3.jar'
+$emfJarPath = Join-Path $Root $emfJarRelative
+if (Test-Path -LiteralPath $emfJarPath -PathType Leaf) {
+    if ((Get-FileHash -LiteralPath $emfJarPath -Algorithm SHA256).Hash -ne $expectedEmfHash) {
+        $errors.Add('Unexpected EvenMoreFish JAR hash on Main.')
+    }
+    & git -C $Root check-ignore -q --no-index -- $emfJarRelative
+    if ($LASTEXITCODE -ne 0) { $errors.Add('EvenMoreFish JAR is not ignored.') }
+}
+
+foreach ($relative in @('velocity/plugins', 'servers/lobby/plugins', 'servers/frontier/plugins')) {
+    $path = Join-Path $Root $relative
+    $unexpected = Get-ChildItem -LiteralPath $path -File -ErrorAction SilentlyContinue |
+        Where-Object { $_.Name -match '(?i)^EvenMoreFish.*\.jar$' }
+    if ($unexpected) { $errors.Add("EvenMoreFish must not be placed in $relative.") }
 }
 
 if ($errors.Count -gt 0) {

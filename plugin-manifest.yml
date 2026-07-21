@@ -313,9 +313,49 @@ main:
       reload-policy: full-server-restart-only
       verification: bidirectional-mining-xp-and-restart-persistence
     - name: EvenMoreFish
-      status: planned-not-installed
-      purpose: Custom fishing gameplay
-      source: https://modrinth.com/plugin/evenmorefish
+      version: "2.4.3"
+      reported-version: "2.4.3"
+      channel: release
+      platform: Bukkit/Paper
+      minecraft: "26.2"
+      minimum-java: 21
+      runtime-java: 25
+      status: installed-and-verified
+      purpose: Main-only Custom fishing and persistent journal/statistics
+      source: https://modrinth.com/plugin/evenmorefish/version/uf95yrYv
+      license: MIT
+      jar: manual-acquisition
+      jar-filename: EvenMoreFish-2.4.3.jar
+      sha256: 0F131FE8F7EC68DF2C14D09D2A4E39B9E481257F106A12B06B5BD6513B30BC05
+      placement:
+        - main
+      excluded-placement:
+        - velocity
+        - lobby
+        - frontier
+      locale: ja
+      allowed-worlds:
+        - main
+        - resource
+      excluded-worlds:
+        - main_nether
+        - main_the_end
+        - resource_nether
+        - resource_end
+        - unknown
+      economy: disabled
+      competitions: disabled
+      hunting: disabled
+      lava-void-fishing: disabled
+      storage: dedicated-mariadb
+      database: wayfarer_evenmorefish
+      table-prefix: emf_
+      credential-config: ignored-runtime-rendered-from-sanitized-template
+      mcmmo-loot: disabled
+      mcmmo-fishing-xp: preserved
+      permission-context: server=main
+      reload-policy: full-main-restart-only
+      verification: natural-catch-mcmmo-xp-waymark-unchanged-journal-restart
     - name: RedisEconomy
       version: "4.5.12"
       reported-version: "4.5.12-wayfarer.1"

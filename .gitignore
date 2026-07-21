@@ -8,6 +8,7 @@
 !.env.example
 local/paths.psd1
 local/*.local.*
+local/runtime/
 **/forwarding.secret
 **/forwarding.secret.txt
 **/*secret*.local.*
@@ -32,6 +33,7 @@ velocity/plugins/bStats/
 servers/**/logs/
 servers/**/crash-reports/
 servers/**/cache/
+servers/**/libraries/
 servers/**/debug/
 servers/**/timings/
 servers/**/spark/
@@ -121,6 +123,20 @@ servers/main/plugins/EconomyShopGUI/LanguageFiles/*.yml
 servers/main/plugins/BetterStructures/*
 !servers/main/plugins/BetterStructures/config.yml
 !servers/main/plugins/BetterStructures/ValidWorlds.yml
+# EvenMoreFish keeps its credential-bearing main config local. Track only the
+# sanitized template and the small Project-adopted policy files.
+servers/main/plugins/EvenMoreFish/config.yml
+servers/main/plugins/EvenMoreFish/addons/
+servers/main/plugins/EvenMoreFish/baits/
+servers/main/plugins/EvenMoreFish/gui-fillers.yml
+servers/main/plugins/EvenMoreFish/gui/*
+!servers/main/plugins/EvenMoreFish/gui/main.yml
+servers/main/plugins/EvenMoreFish/rarities/
+servers/main/plugins/EvenMoreFish/rods/
+servers/main/plugins/EvenMoreFish/competitions/_example.yml
+servers/main/plugins/EvenMoreFish/data/
+servers/main/plugins/EvenMoreFish/*.db
+servers/main/plugins/EvenMoreFish/*.sqlite*
 # BetterStructures 2.6.3 also writes a generated root-level mirror.
 servers/main/config.yml
 servers/**/plugins/mcMMO/config.yml

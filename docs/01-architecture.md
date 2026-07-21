@@ -11,7 +11,7 @@ Velocity :25565
   |-- Main :25567 / Paper 26.2 / Java 25
   `-- Frontier :25568 / Paper 1.21.11 / Java 25
 
-MariaDB: LuckPerms and Main/Frontier mcMMO sharing in use; network database reserved
+MariaDB: LuckPerms, Main/Frontier mcMMO sharing, and Main-only EvenMoreFish storage in use; network database reserved
 Redis: Main/Frontier RedisEconomy Waymark sharing in use; chat transport is not installed
 ```
 
@@ -24,6 +24,8 @@ TAB 6.1.0 and VelocityScoreboardAPI 2.1.0 run only on Velocity. TAB-Bridge 6.2.2
 Multiverse-Core 5.7.2 runs on all Paper backends. Multiverse-NetherPortals 5.0.5 runs only on Main. Lobby and Frontier register only their existing entry worlds; Velocity has no Multiverse module.
 
 mcMMO 2.3.000 runs only on Main and Frontier. Both use the same local Maven build and the shared `wayfarer_mcmmo` MariaDB database with the `mcmmo_` table prefix. Runtime credentials are rendered from tracked sanitized templates; Lobby and Velocity remain outside this progression boundary.
+
+EvenMoreFish 2.4.3 runs only on Main. It enables Custom Fish in `main` and `resource`, stores journal/statistics in dedicated MariaDB database `wayfarer_evenmorefish` with prefix `emf_`, and excludes every other backend and world. Its economy and competitions are disabled, while mcMMO Fishing XP remains active without duplicate mcMMO loot.
 
 RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 run only on Main and Frontier. Both backends use the same Redis `waymark` cluster namespace but distinct client names, and expose the internal `vault` currency through Vault as Project Wayfarer's Waymark (`WM`). Runtime Redis credentials are rendered from tracked sanitized templates; Lobby and Velocity remain outside this economy boundary.
 
@@ -48,7 +50,7 @@ The current Builder is an empty Role container that inherits only `default`. Its
 | Waymark shop | Not installed | EconomyShopGUI 7.1.1 | Not installed |
 | mcMMO | Not installed | Shared with Frontier | Shared with Main |
 | WorldGuard | Whole entry world protected | Plugin only; Spawn protection designed but not applied | Whole entry world protected |
-| EvenMoreFish | Not installed | Planned | Not installed |
+| EvenMoreFish | Not installed | Installed in `main`／`resource` | Not installed |
 | Frontier achievements | Future | Future consumer | Future producer |
 | Transit vault | Future | Future | Future |
 
@@ -98,7 +100,7 @@ Frontier gate hub
 
 This diagram is a target, not current runtime state. Hub appearance, coordinates, orientation, structures, and safe arrival points are user-built inputs. Gate configuration and verification follow only after those inputs are fixed. Each disposable Resource reset must bootstrap its arrival, return structure, portal definition, optional protection, and safe spawn without changing persistent worlds. `resource_end` additionally requires a reproducible outer-island site independent of the Dragon exit portal and End gateways.
 
-CoreProtect is intentionally scheduled after EvenMoreFish but before substantial Hub/Gate construction so construction history exists from the start. It is not installed, its placement and database policy are not selected, rollback remains Admin-only, and it does not replace cold backup. After the user substantially completes the Main Hub, a separate task applies the approved WorldGuard membership region and focused child regions before routing is opened.
+CoreProtect is the next integration and is intentionally scheduled before substantial Hub/Gate construction so construction history exists from the start. It is not installed, its placement and database policy are not selected, rollback remains Admin-only, and it does not replace cold backup. After the user substantially completes the Main Hub, a separate task applies the approved WorldGuard membership region and focused child regions before routing is opened.
 
 ## Future components
 

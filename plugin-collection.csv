@@ -16,14 +16,14 @@ World,Lobby + Frontier,VoidGen 2.3.8,導入・検証済み,"servers/lobby/plugin
 World,All Paper,Multiverse-Core 5.7.2,導入・検証済み,各Paper plugins,https://modrinth.com/plugin/multiverse-core,手動取得・Velocity対象外・Lobby／FrontierはEntry Worldのみ
 World,Main,Multiverse-NetherPortals 5.0.5,導入・検証済み,servers/main/plugins,https://modrinth.com/plugin/multiverse-netherportals,Multiverse-Core依存・2 Familyを明示Link
 Gameplay,Main + Frontier,mcMMO 2.3.000,導入・検証済み,両plugins,https://github.com/mcMMO-Dev/mcMMO,Local Maven Build・同一JAR・共有MariaDB・Lobby／Velocity対象外
-Gameplay,Main,EvenMoreFish,計画・未導入,servers/main/plugins,https://modrinth.com/plugin/evenmorefish,
+Gameplay,Main,EvenMoreFish 2.4.3,導入・検証済み,servers/main/plugins,https://modrinth.com/plugin/evenmorefish/version/uf95yrYv,手動取得・main／resource限定・専用MariaDB・Economy／Competition無効
 Economy,Main + Frontier,RedisEconomy 4.5.12-wayfarer.1,導入・検証済み,両plugins,https://www.spigotmc.org/resources/105965/,ユーザー提供互換Build・共有Redis Waymark・Lobby／Velocity対象外
 Economy,Main + Frontier,VaultUnlocked 2.20.2,導入・検証済み,両plugins,https://hangar.papermc.io/TNE/VaultUnlocked,RedisEconomy Vault Bridge・Lobby／Velocity対象外
 Economy,Main,EconomyShopGUI 7.1.1 Free,導入・検証済み,servers/main/plugins,https://www.spigotmc.org/resources/economyshopgui.69927/,固定価格5カテゴリ・62商品・Vault経由RedisEconomy・Lobby／Frontier／Velocity対象外
 Structure,Main,BetterStructures 2.6.3,導入・検証済み,servers/main/plugins,https://modrinth.com/plugin/betterstructures,103 Default Structuresのみ・Persistent Main Family限定・Resource全世界と未知Worldは無効・手動取得
 Adventure,Frontier,EliteMobs,計画・未導入,servers/frontier/plugins,https://modrinth.com/plugin/elitemobs,Content Packは別途
 Conditional,Frontier,BetterStructures,条件付き・未導入,servers/frontier/plugins,https://modrinth.com/plugin/betterstructures,選定Packが要求するときのみ・WorldEdit導入済み
-Administration,未定,CoreProtect,計画・未導入,別タスクで確定,,EvenMoreFish後・Hub／Gate本格建築前・RollbackはAdmin-only・Cold Backup代替不可
+Administration,未定,CoreProtect,計画・未導入,別タスクで確定,,次Task・Hub／Gate本格建築前・RollbackはAdmin-only・Cold Backup代替不可
 Administration / Development,All Paper,PlugManX,計画・未導入,各Paper plugins,https://modrinth.com/plugin/plugmanx,Version未選定・手動取得・Admin-only・Velocity対象外
 Deferred,Velocity,Cross-server chat,選定中,未配置,,PoC後に選定
 Forbidden,Velocity,ViaBackwards,禁止,配置しない,https://modrinth.com/plugin/viabackwards,意図的に不採用

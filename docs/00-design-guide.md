@@ -51,6 +51,7 @@ Docker ComposeでMariaDB 11.8とRedis 8-alpineを管理します。
 |---|---|
 |`wayfarer_luckperms`|導入済みLuckPerms共有Storage|
 |`wayfarer_mcmmo`|導入済みmcMMOのMain／Frontier共有Storage|
+|`wayfarer_evenmorefish`|導入済みEvenMoreFishのMain限定Journal／統計Storage（`emf_` Prefix）|
 |`wayfarer_network`|将来のNetwork機能用に予約|
 
 RedisはMain／FrontierのWaymark共有残高に使用し、AOFを有効にしています。RedisEconomyのPasswordを含むRuntime ConfigはSanitized TemplateからRenderします。Password、Forwarding SecretおよびCredentialは`.env`とIgnored Runtime Configで管理し、追跡文書やGit差分へ含めません。
@@ -124,6 +125,12 @@ mcMMO 2.3.000はMainとFrontierだけに配置し、同一のLocal Maven Build J
 
 Credentialを含むRuntime `config.yml`はGit Ignore対象とし、Main／FrontierそれぞれのSanitized `config.yml.template`から`Render-mcMMOConfig.ps1`で生成します。mcMMOのScoreboardはTABとの競合を避けるため無効です。Server切替時のRollbackまたは古いProfileによる上書きはData Integrity障害として扱い、PlugManXでReload／Unloadせず正常再起動します。
 
+### EvenMoreFish
+
+EvenMoreFish 2.4.3はMainだけに配置し、実Bukkit World `main`と`resource`だけでCustom Fishを有効にします。`only-fish: true`によりVanilla Treasure／Junkを維持し、Fish Entity Hunt、Lava／Void Fishing、Competition、Shop／Sellallおよび全Economy Providerは無効です。Journal／統計は専用MariaDB `wayfarer_evenmorefish`の`emf_` Tableへ保存し、Credentialを含むRuntime ConfigはSanitized TemplateからRenderします。
+
+mcMMO側の追加Lootは無効にして重複Itemを防ぎますが、通常のmcMMO Fishing XPは維持します。一般Player権限はMain ContextのJournal、Bait適用、Fishing／Catch Message Toggleだけに限定し、Config変更時はMainを正常再起動します。
+
 ### Waymark
 
 RedisEconomy `4.5.12-wayfarer.1`とVaultUnlocked 2.20.2はMain／Frontierだけに配置します。Project上の論理識別名は`waymark`、表示名はWaymark、単位はWM、RedisEconomyのVault Currency Keyは`vault`です。初期残高は0で、両Backendは共有`clusterId: waymark`と別々のRedis Client Name `main`／`frontier`を使用します。
@@ -153,9 +160,10 @@ Phase 3 Main最終生成は2026-07-21に完了しています。3つのPersisten
 |Waymark|使用しない|Frontierと共有|Mainと共有|
 |Waymark Shop|導入しない|EconomyShopGUI 7.1.1|導入しない|
 |mcMMO|導入しない|Frontierと共有|Mainと共有|
+|EvenMoreFish|導入しない|`main`／`resource`限定|導入しない|
 |WorldGuard|Entry World全体保護|Pluginのみ。Spawn保護は設計済み・未実装|Entry World全体保護|
 
-Waymark共有残高、Main初期Waymarkショップ、mcMMO共有進行およびMain限定BetterStructures基盤は導入済みです。Advanced Portals、EvenMoreFish、EliteMobs、Frontier／Quest等のWaymark報酬およびCross-server Chatは未導入であり、計画上の機能を導入済みとして扱いません。
+Waymark共有残高、Main初期Waymarkショップ、mcMMO共有進行、Main限定BetterStructuresおよびEvenMoreFish基盤は導入済みです。Advanced Portals、EliteMobs、Frontier／Quest／FishingのWaymark報酬およびCross-server Chatは未導入であり、計画上の機能を導入済みとして扱いません。
 
 ## 7. Plugin取得・導入ポリシー
 
@@ -257,4 +265,4 @@ V0.2.x以降の独自Plugin構想は`codex/Project_Wayfarer_V0.2x_Custom_Plugin_
 
 ## 14. Roadmapと関連文書
 
-V0.1.0までの実施順とBlockerは[Roadmap](09-roadmap.md)で管理します。現時点の次作業はEvenMoreFishで、その後にCoreProtectをHub／Gate本格建築より前へ導入します。Playable Frontier ThemeとAdvanced PortalsのVersion／Permission、Builder担当作業を確定してからPhase 1Bを実施し、ユーザー建築、Main Spawn保護、Routing、Resource Bootstrap、統合運用、Cold Backup／隔離Restore、V0.1.0 Baselineの順に進めます。導入済みVersionとHashは`versions.yml`、配置・取得・依存方針は`plugin-manifest.yml`、運用手順は[Operations](03-operations.md)、検証済み事実と未達Blockerは[Acceptance Tests](06-acceptance-tests.md)、将来課題は[Deferred Design Items](11-deferred-design-items.md)を参照してください。
+V0.1.0までの実施順とBlockerは[Roadmap](09-roadmap.md)で管理します。Phase 4 EvenMoreFishは完了し、現時点の次作業はCoreProtectです。これをHub／Gate本格建築より前へ導入し、Playable Frontier ThemeとAdvanced PortalsのVersion／Permission、Builder担当作業を確定してからPhase 1Bを実施します。その後、ユーザー建築、Main Spawn保護、Routing、Resource Bootstrap、統合運用、Cold Backup／隔離Restore、V0.1.0 Baselineの順に進めます。導入済みVersionとHashは`versions.yml`、配置・取得・依存方針は`plugin-manifest.yml`、運用手順は[Operations](03-operations.md)、検証済み事実と未達Blockerは[Acceptance Tests](06-acceptance-tests.md)、将来課題は[Deferred Design Items](11-deferred-design-items.md)を参照してください。

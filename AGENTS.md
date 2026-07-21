@@ -139,6 +139,11 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - mcMMO runtime Configs containing credentials must remain ignored and be rendered from sanitized templates.
 - mcMMO must not be reloaded or unloaded through PlugManX; use a normal server restart.
 - Player progression rollback or stale-profile overwrite during server switching is a blocking data-integrity failure.
+- EvenMoreFish 2.4.3 is installed only on Main from the manually acquired release JAR with SHA-256 `0F131FE8F7EC68DF2C14D09D2A4E39B9E481257F106A12B06B5BD6513B30BC05`. Velocity, Lobby, and Frontier must not load it.
+- EvenMoreFish custom catches are enabled only in actual Bukkit worlds `main` and `resource`; Nether, End, and unknown worlds remain excluded. Fish hunting, lava/void fishing, competitions, Shop/Sellall, and every economy provider remain disabled.
+- EvenMoreFish journal/statistics use the dedicated MariaDB database `wayfarer_evenmorefish` and `emf_` table prefix. Its credential-bearing Runtime Config remains ignored and is rendered from a sanitized template.
+- EvenMoreFish preserves mcMMO Fishing XP while disabling duplicate mcMMO loot. Config changes require a normal full Main restart; do not reload or unload it through PlugManX.
+- General-player EvenMoreFish permissions are limited to `emf.applybaits`, `emf.journal`, `emf.toggle.fishing`, and `emf.toggle.catchmessage` in `server=main`; do not grant `emf.user`, broad `emf.toggle`, economy, competition, or administration nodes.
 - Main persistent dimensions are the Bukkit worlds `main`, `main_nether`, and `main_the_end`; `main_end` is only the Multiverse alias for `main_the_end`.
 - Phase 3 final Main generation completed on 2026-07-21 with seed `164225356311935743`. Persistent storage is `servers/main/main/dimensions/minecraft/{overworld,the_nether,the_end}` and must not be regenerated outside a separately approved destructive task.
 - The approved Main spawn baseline is Overworld `(320, 70, 128)`, Nether administrative spawn `(20.5, 60, -19.5)`, and End administrative spawn `(100.5, 49, 0.5)` on the default obsidian platform. The Main spawn Hub and all Gate structures remain unbuilt.

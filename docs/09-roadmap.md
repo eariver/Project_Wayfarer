@@ -17,6 +17,7 @@ Ver.0.0.5 is a design revision, not a Server Release. The first target Release i
 - EconomyShopGUI 7.1.1 Free Main-only fixed-price shop
 - BetterStructures 2.6.3 and `103 Default Structures` version 5 restricted to persistent Main dimensions
 - Phase 3 final persistent Main generation with preserved Resource dimensions and approved safe spawns
+- EvenMoreFish 2.4.3 Main-only Custom Fishing with dedicated MariaDB persistence and mcMMO coexistence
 
 These baselines retain their historical verification records. They do not imply completion of the Phase 1B final Builder allowlist, planned Hubs, Gates, Frontier Theme, operations Script, or V0.1.0 Backup.
 
@@ -24,18 +25,17 @@ These baselines retain their historical verification records. They do not imply 
 
 | Order | Work | Dependency and outcome |
 | ---: | --- | --- |
-| 1 | EvenMoreFish | Next implementation task; Main-only ordinary integration |
-| 2 | CoreProtect | Introduce before substantial Hub/Gate construction so new Block history is captured; not a cold-backup replacement |
-| 3 | Playable Frontier Theme | Select and install one approved Paper 1.21.11／Java 25 Theme |
-| 4 | Advanced Portals | Select the exact version, placement, commands, and Permission boundary |
-| 5 | Builder Phase 1B | Build the allowlist only from the selected Portal/Theme and confirmed Builder-owned work |
-| 6 | User Hub/Gate construction | User fixes appearance, footprint, equipment, coordinates, orientation, and safe arrivals |
-| 7 | Main Spawn protection | After substantial initial Hub completion, approve and apply the exact WorldGuard Region and focused child Regions |
-| 8 | Portal Routing | Configure and verify only approved routes after structures and destinations are fixed |
-| 9 | Resource Reset Bootstrap | Restore arrivals, Return Gates, protection, and Resource End outer-island safety reproducibly |
-| 10 | Integrated operations | Implement `Wayfarer.ps1` Start／Stop／Restart／Status／Backup |
-| 11 | Cold Backup／Isolated Restore | Validate the complete data set and recovery path |
-| 12 | V0.1.0 Baseline | Confirm every Blocker before any Release declaration |
+| 1 | CoreProtect | Next implementation task; introduce before substantial Hub/Gate construction so new Block history is captured; not a cold-backup replacement |
+| 2 | Playable Frontier Theme | Select and install one approved Paper 1.21.11／Java 25 Theme |
+| 3 | Advanced Portals | Select the exact version, placement, commands, and Permission boundary |
+| 4 | Builder Phase 1B | Build the allowlist only from the selected Portal/Theme and confirmed Builder-owned work |
+| 5 | User Hub/Gate construction | User fixes appearance, footprint, equipment, coordinates, orientation, and safe arrivals |
+| 6 | Main Spawn protection | After substantial initial Hub completion, approve and apply the exact WorldGuard Region and focused child Regions |
+| 7 | Portal Routing | Configure and verify only approved routes after structures and destinations are fixed |
+| 8 | Resource Reset Bootstrap | Restore arrivals, Return Gates, protection, and Resource End outer-island safety reproducibly |
+| 9 | Integrated operations | Implement `Wayfarer.ps1` Start／Stop／Restart／Status／Backup |
+| 10 | Cold Backup／Isolated Restore | Validate the complete data set and recovery path |
+| 11 | V0.1.0 Baseline | Confirm every Blocker before any Release declaration |
 
 Phase identifiers below preserve project history, but this dependency table controls practical execution priority. In particular, CoreProtect Phase 9 is intentionally brought forward before Phase 6 construction, and Phase 1B is not executed until the Theme and Advanced Portals boundary are known.
 
@@ -91,16 +91,16 @@ Phase 2 completed on 2026-07-20. Its retained BetterStructures spawn protection 
 - [x] Finalize `main`, `main_nether`, and actual Bukkit End world `main_the_end` on seed `164225356311935743`
 - [x] Preserve the Resource family outside the destructive scope and verify UUID, seed, and Region data
 
-Phase 3 completed on 2026-07-21. The verified baseline and local rollback evidence are recorded in [Main World Baseline](13-main-world-baseline.md). Repeating generation remains destructive and requires a new independently approved, path-checked task. Phase 4 is next; Phase 1B remains incomplete.
+Phase 3 completed on 2026-07-21. The verified baseline and local rollback evidence are recorded in [Main World Baseline](13-main-world-baseline.md). Repeating generation remains destructive and requires a new independently approved, path-checked task. Phase 4 is complete; CoreProtect is next and Phase 1B remains incomplete.
 
 ### Phase 4 - Main lightweight gameplay
 
-- [ ] Install EvenMoreFish
-- [ ] Load the adopted Config
-- [ ] Run one representative Command or catch
-- [ ] Check the configuration for an explicit mcMMO Fishing conflict
+- [x] Install EvenMoreFish 2.4.3 only on Main
+- [x] Load the adopted Japanese Config with `main`／`resource` scope, dedicated MariaDB, Economy/Competition disabled
+- [x] Complete one natural catch, Journal persistence, permission boundary, and clean restart check
+- [x] Preserve mcMMO Fishing XP while disabling duplicate mcMMO loot and leaving Waymark unchanged
 
-Do not turn this ordinary Plugin integration into exhaustive catch, command, reward, or unrelated regression testing.
+Phase 4 completed on 2026-07-21. Do not turn future ordinary Config/version maintenance into exhaustive catch, command, reward, or unrelated regression testing unless an observed defect changes the risk.
 
 ### Phase 5 - Select and install one playable Frontier Theme
 
@@ -155,7 +155,7 @@ The implementation may use a user-authored Schematic, tracked Template, PowerShe
 
 ### Phase 9 - CoreProtect
 
-- [ ] Install after Phase 4 EvenMoreFish and before substantial Hub/Gate construction
+- [ ] Install next, after completed Phase 4 EvenMoreFish and before substantial Hub/Gate construction
 - [ ] Select exact Paper placement and database policy in the approved integration task
 - [ ] Adopt it for investigation and partial rollback
 - [ ] Keep rollback administration Admin-only; do not grant it to Builder
@@ -195,7 +195,7 @@ CoreProtect records history only after installation and does not replace the col
 - Phase 1B final Builder allowlist
 - BetterStructures restricted to persistent Main dimensions (Phase 2 complete)
 - Final generation of `main`, `main_nether`, and actual Bukkit End world `main_the_end` (Phase 3 complete)
-- EvenMoreFish
+- EvenMoreFish (Phase 4 complete)
 - One playable Frontier Theme
 - Lobby minimum Hub
 - Main initial Spawn Hub

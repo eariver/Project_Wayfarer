@@ -34,6 +34,17 @@ Phase 1A implemented all five persistent LuckPerms Group definitions. The tempor
 | Main側実績報酬受取がない | 報酬導線を公開しない | 非Blocker | 一度だけ受取可能なNetwork報酬Service | Cross-server整合性には有力候補 | Theme実績設計と同時 |
 | Frontier Gate Utilityがない | 最低限のHub、案内、往復GateだけをV0.1.0対象とする | 非Blocker | Storage、回復、Buff、Theme選択、WM Shop、実績表示 | 多くは既成Pluginでも可能 | Playable Theme運用後 |
 
+## EvenMoreFish balance
+
+| 課題 | 現在の妥協策 | V0.1.0への影響 | 将来の解決候補 | 独自Pluginが必要か | 再検討時期 |
+|---|---|---|---|---|---|
+| FishのWaymark価格／報酬がない | EvenMoreFish Economy、Shop、Sellallを無効のまま運用 | 非Blocker。意図しないWM Faucetを防ぐ | 実Catch量を観測した固定価格または別の承認済み報酬設計 | 原則不要 | V0.1.0運用量の観測後 |
+| Competitionを実施しない | Scheduled／Manual Competitionをすべて無効化 | 非Blocker | 小規模運用に必要になった場合だけ報酬を含め再設計 | 不要 | 参加人数増加時 |
+| AFK Fishing統合方針が未確定 | EvenMoreFish側AFK保護を有効化せず、mcMMOの現行挙動を変更しない | 非Blocker | 実際の濫用が生じた場合に両Pluginの競合をFocused Test | 不要 | 運用上の問題発生時 |
+| Bait購入手段がない | CatchしたBaitの適用だけ許可し、購入は提供しない | 非Blocker | Waymark供給量とBait価値を評価した限定Shop | 不要 | Economy再設計時 |
+
+Custom Fishingの現行World Scopeは`main`／`resource`だけです。Nether、End、Unknown Worldへの拡張はConfig変更とFocused Testを伴う後続課題です。
+
 ## Main
 
 | 課題 | 現在の妥協策 | V0.1.0への影響 | 将来の解決候補 | 独自Pluginが必要か | 再検討時期 |

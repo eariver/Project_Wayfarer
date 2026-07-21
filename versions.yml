@@ -149,6 +149,50 @@ runtime_selection:
     table_prefix: mcmmo_
     sha256: 03ABEEB48E33733C14859B4CAC6DC1104D19F15E4E81D9EB6B79D666F0E8A1B9
     verified: 2026-07-19
+  evenmorefish:
+    version: "2.4.3"
+    reported_version: "2.4.3"
+    channel: release
+    platform: bukkit-paper
+    minecraft: "26.2"
+    minimum_java: 21
+    runtime_java: 25
+    placement:
+      - main
+    excluded_placement:
+      - velocity
+      - lobby
+      - frontier
+    acquisition: user-manual
+    jar_filename: EvenMoreFish-2.4.3.jar
+    source: https://modrinth.com/plugin/evenmorefish/version/uf95yrYv
+    license: MIT
+    sha256: 0F131FE8F7EC68DF2C14D09D2A4E39B9E481257F106A12B06B5BD6513B30BC05
+    locale: ja
+    allowed_worlds:
+      - main
+      - resource
+    excluded_dimensions:
+      - main_nether
+      - main_the_end
+      - resource_nether
+      - resource_end
+      - unknown
+    catch: enabled
+    only_fish: true
+    hunt: disabled
+    dimension_fishing: disabled
+    competitions: disabled
+    economy: disabled
+    storage: mariadb
+    database: wayfarer_evenmorefish
+    table_prefix: emf_
+    credential_config: ignored-runtime-rendered-from-sanitized-template
+    mcmmo_loot: disabled
+    mcmmo_fishing_xp: preserved
+    permission_context: server=main
+    reload_policy: full-main-restart-only
+    verified: 2026-07-21
   rediseconomy:
     upstream_version: "4.5.12"
     reported_version: "4.5.12-wayfarer.1"

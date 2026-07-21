@@ -87,15 +87,16 @@ BetterStructures 2.6.3 and the manually imported free `103 Default Structures` p
 
 Phase 3 has already finalized the three persistent dimensions and approved safe spawn coordinates; do not repeat generation. Remaining expansion uses separately approved tasks in this order:
 
-1. Install EvenMoreFish and perform only its normal Integration check plus a configuration-level mcMMO Fishing conflict review.
-2. Install CoreProtect before substantial Hub/Gate construction; keep rollback Admin-only and select its backend/database policy in that task.
-3. Select and install one playable Frontier Theme, then select Advanced Portals and inspect its exact permissions.
-4. Complete Builder Phase 1B from the known Theme, portal operations, and Builder-owned work.
-5. The user builds the Main spawn Hub and its Lobby, Frontier, and three Resource Gate structures.
-6. After the initial Hub is substantially complete, approve and apply the exact Main Spawn WorldGuard region; keep `spawn-protection=16` until the Region and Builder behavior pass verification.
-7. Configure only the approved Gate routes after coordinates and safe arrivals are fixed.
+1. Install CoreProtect before substantial Hub/Gate construction; keep rollback Admin-only and select its backend/database policy in that task.
+2. Select and install one playable Frontier Theme, then select Advanced Portals and inspect its exact permissions.
+3. Complete Builder Phase 1B from the known Theme, portal operations, and Builder-owned work.
+4. The user builds the Main spawn Hub and its Lobby, Frontier, and three Resource Gate structures.
+5. After the initial Hub is substantially complete, approve and apply the exact Main Spawn WorldGuard region; keep `spawn-protection=16` until the Region and Builder behavior pass verification.
+6. Configure only the approved Gate routes after coordinates and safe arrivals are fixed.
 
 ## Phase 8 - Shared mcMMO and planned Frontier expansion
+
+EvenMoreFish 2.4.3 is installed only on Main from a manually acquired JAR. Set `MARIADB_EVENMOREFISH_USER` and `MARIADB_EVENMOREFISH_PASSWORD` in ignored `.env`, provision the dedicated `wayfarer_evenmorefish` database through the existing Compose initialization contract, and run `scripts/Render-LocalConfigs.ps1` before startup. Never place the JAR on Velocity, Lobby, or Frontier, and never commit the rendered credential Config. Changes require a normal full Main restart.
 
 mcMMO 2.3.000 is installed only on Main and Frontier from the same local Maven build. Run `Render-LocalConfigs.ps1` after setting `.env`; this renders both ignored runtime Configs from sanitized templates. Both backends use `wayfarer_mcmmo` with the `mcmmo_` prefix. Do not install mcMMO on Lobby or Velocity, and do not reload it through PlugManX.
 

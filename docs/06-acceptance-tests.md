@@ -59,7 +59,7 @@ Phase 1B incomplete:
 
 - [x] BetterStructures 2.6.3 and `103 Default Structures` version 5 are enabled only in Bukkit worlds `main`, `main_nether`, and `main_the_end`; every Resource world and unknown new world is disabled.
 - [x] Final persistent Main generation completed under an approved destructive task with exact paths, verified backup and manifest, final seed, preserved Resource family, and safe Overworld/Nether/End spawns.
-- [ ] EvenMoreFish enables with its adopted Config and one representative function; configuration has no explicit mcMMO Fishing conflict.
+- [x] EvenMoreFish enables with its adopted Config and one representative function; configuration has no explicit mcMMO Fishing conflict.
 - [ ] CoreProtect enables after final Main generation and provides its representative lookup/rollback-administration function.
 - [ ] After the user substantially completes the initial Hub, an approved exact Main Spawn WorldGuard Region denies general building, permits only intended public use, preserves Builder member building without Region administration, and persists after restart.
 - [ ] Vanilla `spawn-protection` remains 16 until the Main Spawn Region passes acceptance; a separately approved change to 0 then avoids double protection without weakening the Region boundary.
@@ -188,3 +188,13 @@ The following records preserve work already performed under earlier tasks. Their
 - [x] The approved Savanna Overworld spawn and bedless respawn were safe; the selected Nether and default-platform End administrative spawns passed focused safety and travel tests.
 - [x] A clean full-network restart reloaded all worlds, Multiverse links, and BetterStructures scope. Velocity-to-Main arrival reached the approved spawn, and the network then stopped normally.
 - [x] Rollback remains possible from the verified ignored local backup. World, player, backup, Region, log, cache, and JAR data remain outside Git.
+
+### EvenMoreFish 2.4.3 (2026-07-21)
+
+- [x] The stable MIT Paper release was manually acquired, verified at SHA-256 `0F131FE8F7EC68DF2C14D09D2A4E39B9E481257F106A12B06B5BD6513B30BC05`, and installed only on Main.
+- [x] Japanese Config loaded with 5 rarities, 72 fish, 6 baits, 1 rod, and zero competitions. Only actual worlds `main` and `resource` are allowed; representative excluded world `main_the_end` is absent from the allowlist.
+- [x] One natural catch produced exactly one Custom Fish, increased mcMMO Fishing XP from 0 to 151 without duplicate loot, and left Waymark unchanged at 0.
+- [x] The representative catch was retained only as a normal test item and was not sold or converted into Waymark.
+- [x] Dedicated MariaDB `wayfarer_evenmorefish` initialized only `emf_` tables. Journal/statistics persisted through a clean full-network restart without exposing credentials or row contents.
+- [x] General-player Main-context Journal, bait application, and two adopted toggles worked while Shop, Sellall, competition, and administration remained denied. Temporary Admin reported version 2.4.3 and was removed afterward.
+- [x] The GUI retained no Shop after restart. The bundled NBT-API Paper-build warning and Flyway MariaDB verified-range warning are recorded as non-blocking because the affected representative item/database paths passed.
