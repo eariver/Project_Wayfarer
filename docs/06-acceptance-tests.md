@@ -198,3 +198,13 @@ The following records preserve work already performed under earlier tasks. Their
 - [x] Dedicated MariaDB `wayfarer_evenmorefish` initialized only `emf_` tables. Journal/statistics persisted through a clean full-network restart without exposing credentials or row contents.
 - [x] General-player Main-context Journal, bait application, and two adopted toggles worked while Shop, Sellall, competition, and administration remained denied. Temporary Admin reported version 2.4.3 and was removed afterward.
 - [x] The GUI retained no Shop after restart. The bundled NBT-API Paper-build warning and Flyway MariaDB verified-range warning are recorded as non-blocking because the affected representative item/database paths passed.
+
+### Waymark 100x scale and EvenMoreFish Fish Shop (2026-07-22)
+
+- [x] All 62 EconomyShopGUI prices across five unchanged categories were exactly 100x their prior values; product keys, Materials, directions, GUI rows, and buy/sell spreads were unchanged. YAML and representative GUI prices passed without an EconomyShopGUI transaction.
+- [x] EvenMoreFish hooked into Vault through RedisEconomy/VaultUnlocked with multiplier 1.0. PlayerPoints, Claim Blocks, competitions, Hunt, Lava／Void Fishing, and direct MONEY rewards remained disabled.
+- [x] Tracked worth multipliers are Junk 0.0, Common 1.0, Rare 0.5, Epic 0.3, and Legendary 0.2. Coinfish retained its identity but lost its direct-money requirement, interaction, and lore.
+- [x] The Main menu Fish Shop and `/emf shop` opened for a normal player, while `/emf sellall` and administration remained denied through the Main-only permission boundary.
+- [x] One previously caught Common Lemon Shark was sold and consumed. Exact post-sale balance was not an acceptance assertion; only the resulting test increment was restored through the supported RedisEconomy administration command.
+- [x] Main restarted normally with EvenMoreFish 2.4.3, EconomyShopGUI 7.1.1, Vault/RedisEconomy, MariaDB, mcMMO, and zero competitions healthy. Existing documented NBT-API, Flyway, and BetterStructures content warnings remained non-blocking.
+- [x] No global balance migration, player-state reset, Redis-key edit, Player data change, JAR change, or V0.1.0 release declaration occurred.

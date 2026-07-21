@@ -174,7 +174,7 @@ MariaDB backups must include `wayfarer_mcmmo`. A representative health check is 
 
 EvenMoreFish 2.4.3 runs only on Main and stores Journal／Statistics in MariaDB `wayfarer_evenmorefish` with table prefix `emf_`. Before startup, run `scripts/Render-LocalConfigs.ps1`; this renders ignored `plugins/EvenMoreFish/config.yml` from the tracked sanitized template. Never print or commit credentials, and include this database in cold backups.
 
-Normal operation keeps Custom Fish limited to `main` and `resource`, all economy providers and competitions disabled, and mcMMO duplicate loot disabled. Use `/emf`, Journal, or one natural catch as a representative health check. Config or locale changes require a normal full Main restart; do not reload/unload the Plugin or use Flyway clean/repair/drop as routine recovery.
+Normal operation keeps Custom Fish limited to `main` and `resource`, Vault enabled only for Fish Shop sales, all other economy providers and competitions disabled, and mcMMO duplicate loot disabled. The five tracked Rarity files are the price-policy source; direct MONEY rewards must remain absent. Use `/emf shop` and one fish sale as the representative economy check, restore only the resulting test balance through RedisEconomy's supported administration command, and never use Redis key edits. Config or locale changes require a normal full Main restart; do not reload/unload the Plugin or use Flyway clean/repair/drop as routine recovery.
 
 ## Waymark shared economy
 
@@ -188,9 +188,13 @@ A representative health check is to record a balance on Main, apply one small au
 
 EconomyShopGUI 7.1.1 Free runs only on Main and uses Vault with RedisEconomy as the active provider. The tracked adoption set is `plugins/EconomyShopGUI/config.yml`, `LanguageFiles/lang-jp.yml`, and the five files under each of `sections/` and `shops/`. Generated cache, transaction data, backups, other generated language files, and the archived `vendor-defaults-7.1.1/` tree remain ignored. Do not commit the JAR or restore Vendor defaults into the active section/shop directories.
 
-Price and product changes require YAML validation, Material validation against the selected Main Paper build, a check that every overlapping buy price exceeds its sell price, and a normal Main restart. Do not use EconomyShopGUI reload, PlugManX, or Redis key edits. For an ordinary Config change, verify Enable, adopted section/shop loading, Vault/RedisEconomy integration, no startup-blocking error, and one `/shop` GUI open. Historical transaction and edge-case results remain in [Acceptance Tests](06-acceptance-tests.md) but are not the default standard for later routine shop edits. The complete fixed-price table and permission boundary are documented in [Waymark Economy](10-waymark-economy.md).
+Price and product changes require YAML validation, Material validation against the selected Main Paper build, a check that every overlapping buy price exceeds its sell price, and a normal Main restart. The current 100x nominal baseline changes no product, category, direction, or spread and performs no balance migration. Do not use EconomyShopGUI reload, PlugManX, or Redis key edits. For an ordinary Config change, verify Enable, adopted section/shop loading, Vault/RedisEconomy integration, no startup-blocking error, and one `/shop` GUI open. Historical transaction and edge-case results remain in [Acceptance Tests](06-acceptance-tests.md) but are not the default standard for later routine shop edits. The complete fixed-price table and permission boundary are documented in [Waymark Economy](10-waymark-economy.md).
 
 The initial shop disables update checking, transaction logging, spawner integration, `/sellall`, Sell GUI, editor/reload, and shop-give commands. Admin commands must remain inaccessible to the default group. If an actual defect appears—such as lost/duplicated items, balance rollback, or account split—treat that symptom as a reason for focused detailed investigation rather than pre-emptively repeating those cases for every ordinary change.
+
+## V0.1.0 pre-release reset
+
+Do not reset balances or Player state during ordinary integration. After all Gameplay／Portal／Hub／Permission／Backup tests, a separate destructive task must reject connections, stop the network, take a pre-reset backup, reset all Waymark through a supported RedisEconomy mechanism, and reset the explicitly approved Main Vanilla state before the final baseline backup. The minimum planned Vanilla scope is inventory, armor/offhand, XP level/total/progress, and advancements; every additional state remains undecided until that task. Direct Redis key editing is forbidden.
 
 ## Planned integrated operations
 

@@ -26,16 +26,18 @@ These baselines retain their historical verification records. They do not imply 
 | Order | Work | Dependency and outcome |
 | ---: | --- | --- |
 | 1 | CoreProtect | Next implementation task; introduce before substantial Hub/Gate construction so new Block history is captured; not a cold-backup replacement |
-| 2 | Playable Frontier Theme | Select and install one approved Paper 1.21.11／Java 25 Theme |
-| 3 | Advanced Portals | Select the exact version, placement, commands, and Permission boundary |
-| 4 | Builder Phase 1B | Build the allowlist only from the selected Portal/Theme and confirmed Builder-owned work |
-| 5 | User Hub/Gate construction | User fixes appearance, footprint, equipment, coordinates, orientation, and safe arrivals |
-| 6 | Main Spawn protection | After substantial initial Hub completion, approve and apply the exact WorldGuard Region and focused child Regions |
-| 7 | Portal Routing | Configure and verify only approved routes after structures and destinations are fixed |
-| 8 | Resource Reset Bootstrap | Restore arrivals, Return Gates, protection, and Resource End outer-island safety reproducibly |
-| 9 | Integrated operations | Implement `Wayfarer.ps1` Start／Stop／Restart／Status／Backup |
-| 10 | Cold Backup／Isolated Restore | Validate the complete data set and recovery path |
-| 11 | V0.1.0 Baseline | Confirm every Blocker before any Release declaration |
+| 2 | Persistent Nether／End Structure Expansion | Phase 2B: assess complementary dimension-focused content after the existing `103 Default Structures` baseline; approve before acquisition or world changes |
+| 3 | Playable Frontier Theme | Select and install one approved Paper 1.21.11／Java 25 Theme |
+| 4 | Advanced Portals | Select the exact version, placement, commands, and Permission boundary |
+| 5 | Builder Phase 1B | Build the allowlist only from the selected Portal/Theme and confirmed Builder-owned work |
+| 6 | User Hub/Gate construction | User fixes appearance, footprint, equipment, coordinates, orientation, and safe arrivals |
+| 7 | Main Spawn protection | After substantial initial Hub completion, approve and apply the exact WorldGuard Region and focused child Regions |
+| 8 | Portal Routing | Configure and verify only approved routes after structures and destinations are fixed |
+| 9 | Resource Reset Bootstrap | Restore arrivals, Return Gates, protection, and Resource End outer-island safety reproducibly |
+| 10 | Integrated operations | Implement `Wayfarer.ps1` Start／Stop／Restart／Status／Backup |
+| 11 | Cold Backup／Isolated Restore | Validate the complete data set and recovery path |
+| 12 | V0.1.0 Pre-release Player State Reset | Separately approve and reset all Waymark plus the exact Vanilla player-state scope after every functional test and before the final baseline backup |
+| 13 | V0.1.0 Baseline | Create the post-reset baseline backup and confirm every Blocker before any Release declaration |
 
 Phase identifiers below preserve project history, but this dependency table controls practical execution priority. In particular, CoreProtect Phase 9 is intentionally brought forward before Phase 6 construction, and Phase 1B is not executed until the Theme and Advanced Portals boundary are known.
 
@@ -85,6 +87,17 @@ Phase 1B remains a V0.1.0 Release Blocker and must complete before Builder-led H
 
 Phase 2 completed on 2026-07-20. Its retained BetterStructures spawn protection radius of 100 blocks was reviewed and approved during Phase 3.
 
+### Phase 2B - Persistent Nether／End structure expansion
+
+- [ ] Compare compatible, trustworthy dimension-focused content for BetterStructures 2.6.3／Paper 26.2／Java 25, including license, cost, dependencies, overlap, IDs, loot, frequency, and biome/dimension conditions.
+- [ ] Treat the existing `103 Default Structures` pack as an active baseline that already adds some Nether／End structures; select only complementary Vanilla-fitting content if it adds enough value.
+- [ ] Obtain explicit user approval and manual artifacts only after comparison; do not automatically switch to another Plugin, Datapack, premium pack, custom mobs/items, or resource-pack content.
+- [ ] Keep `main_nether` and `main_the_end` new chunks as the only intended scope, with Resource worlds and unknown worlds disabled.
+- [ ] Preserve seed, UUID, existing chunks, Vanilla structures, portals, and spawns; do not regenerate, trim, delete Region files, or paste retroactively.
+- [ ] Verify one representative fresh-chunk structure per dimension without broad exploration or frequency inflation.
+
+Phase 2B is planning-only in the current change and is a V0.1.0 Blocker. If no appropriate complementary pack exists, retain the blocker and report the candidate gap rather than weakening the world boundary.
+
 ### Phase 3 - Final persistent Main generation
 
 - [x] Approve exact paths, backup, generation conditions, player-data reset policy, and Spawn safety
@@ -99,6 +112,9 @@ Phase 3 completed on 2026-07-21. The verified baseline and local rollback eviden
 - [x] Load the adopted Japanese Config with `main`／`resource` scope, dedicated MariaDB, Economy/Competition disabled
 - [x] Complete one natural catch, Journal persistence, permission boundary, and clean restart check
 - [x] Preserve mcMMO Fishing XP while disabling duplicate mcMMO loot and leaving Waymark unchanged
+- [x] Scale all 62 EconomyShopGUI prices exactly 100x without changing products, categories, directions, or spreads
+- [x] Enable the Vault Fish Shop with tracked Rarity values, remove direct MONEY rewards, and grant only `emf.shop` in Main Context
+- [x] Verify one Common fish sale, item consumption, denied Sellall/Admin, and test-balance cleanup
 
 Phase 4 completed on 2026-07-21. Do not turn future ordinary Config/version maintenance into exhaustive catch, command, reward, or unrelated regression testing unless an observed defect changes the risk.
 
@@ -182,6 +198,16 @@ CoreProtect records history only after installation and does not replace the col
 - [ ] Create manifest and SHA-256 records with `.incomplete` generation handling
 - [ ] Restore to an isolated target and verify it
 
+### V0.1.0 Pre-release Player State Reset
+
+- [ ] Use a separate destructive task after all Gameplay／Portal／Hub／Permission／Backup tests and immediately before the final baseline backup.
+- [ ] Reject connections, stop the network normally, and take pre-reset Redis／World／player-data backups with exact paths and non-committed UUID scope.
+- [ ] Reset every Waymark balance through an approved RedisEconomy mechanism, never direct Redis key editing.
+- [ ] Reset Main inventory, armor/offhand, Vanilla XP level/total/progress, and advancements; explicitly approve every additional state such as Ender Chest, position, mcMMO, or EvenMoreFish Journal before touching it.
+- [ ] Verify representative zero balance, empty inventory, zero XP, and initial advancement state, then create the final post-reset baseline backup.
+
+This reset has not been executed and must not be brought forward.
+
 ### Phase 12 - V0.1.0 Baseline
 
 - [ ] Confirm all Release Blockers
@@ -196,6 +222,7 @@ CoreProtect records history only after installation and does not replace the col
 - BetterStructures restricted to persistent Main dimensions (Phase 2 complete)
 - Final generation of `main`, `main_nether`, and actual Bukkit End world `main_the_end` (Phase 3 complete)
 - EvenMoreFish (Phase 4 complete)
+- Persistent Main Nether／End additional-structure pack selection and integration (Phase 2B)
 - One playable Frontier Theme
 - Lobby minimum Hub
 - Main initial Spawn Hub
@@ -208,6 +235,7 @@ CoreProtect records history only after installation and does not replace the col
 - Integrated Start／Stop／Restart／Status／Backup Script
 - MariaDB／Redis／World／Config cold backup
 - Isolated restore test
+- V0.1.0 pre-release Waymark／Vanilla player-state reset
 - Verified V0.1.0 Baseline Backup
 
 ## Not V0.1.0 Release Blockers

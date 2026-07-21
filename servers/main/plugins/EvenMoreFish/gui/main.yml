@@ -4,7 +4,7 @@ title: <#006F86>EvenMoreFish - Main Menu
 layout:
 - '126515621'
 - 23     32
-- 4 t   h 4
+- 4 t s h 4
 - 4  j b  4
 - 23     32
 - 1265x5621
@@ -22,6 +22,18 @@ fish-toggle:
     - ''
   character: t
   click-action: fish-toggle
+
+open-shop:
+  item:
+    material: gold_ingot
+    displayname: <gold>» 魚を売却
+    lore:
+    - ''
+    - <gray>釣った魚を売却して
+    - <gray>Waymarkを獲得します。
+    - ''
+  character: s
+  click-action: open-shop
 
 help-button:
   item:

@@ -67,6 +67,8 @@ The official BetterStructures pack still emits non-blocking DataFixer ERROR-leve
 
 Phase 3 created the persistent terrain baseline and safe spawn coordinates only. The Main spawn Hub, Lobby and Frontier gates, three Resource gates, Resource return structures, and Resource End outer-island safety structure are not built or connected. Builder Phase 1B also remains incomplete and must precede Builder-led Hub/Gate/Theme connection work.
 
+The active `103 Default Structures` pack already contributes some structures to newly generated `main_nether` and `main_the_end` chunks. Planned Phase 2B evaluates complementary Nether／End-focused content after CoreProtect; it does not describe either dimension as empty. No pack has been selected or imported, and this plan does not authorize regeneration, trimming, Region deletion, retroactive paste, seed/UUID changes, or any Resource-family change.
+
 Main Spawn WorldGuard protection is designed but not applied. The user first completes the initial Hub footprint; a later approved task then defines the exact Region and focused equipment child regions. Vanilla `spawn-protection=16` remains until that WorldGuard boundary and Builder-member behavior are verified.
 
-The next Roadmap task is Phase 4: EvenMoreFish integration.
+Phase 4 EvenMoreFish and the 100x Waymark nominal price revision are complete. The next Roadmap task is CoreProtect; Phase 2B follows it before the playable Frontier Theme selection.

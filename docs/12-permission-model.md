@@ -28,7 +28,7 @@ Phase 1B starts before Builder-led Hub／Gate／Theme connection work, after the
 
 | Group | Definition | Player membership | Current authority |
 |---|---|---|---|
-| `default` | Persistent | Normal persistent membership | Normal gameplay and the six approved Main shop permissions |
+| `default` | Persistent | Normal persistent membership | Normal gameplay, six EconomyShopGUI category nodes, and `emf.shop` in Main Context |
 | `wayfarer_builder_eligible` | Persistent | Persistent Eligibility | `default` plus self-only temporary Builder add/remove through Velocity |
 | `wayfarer_admin_eligible` | Persistent | Persistent Eligibility | `default` plus self-only temporary Admin add/remove through Velocity |
 | `wayfarer_builder` | Persistent Role container | Temporary Parent only | `default`; protected-entry building through existing WorldGuard membership |
@@ -119,7 +119,7 @@ Until Phase 1B, Builder has no WorldEdit, WorldGuard administration, Multiverse,
 
 `wayfarer_admin` receives global `* = true` and inherits `default`. The Runtime verified representative Velocity, Paper, Vanilla, LuckPerms, WorldGuard, Multiverse, and EconomyShopGUI permissions without OP.
 
-The former `default` EconomyShopGUI administration `false` nodes were removed. Normal-player denial remains fail-closed because those administration nodes are not granted. The six approved Main shop nodes remain explicitly true for `default` in `server=main`.
+The former `default` EconomyShopGUI administration `false` nodes were removed. Normal-player denial remains fail-closed because those administration nodes are not granted. The six approved EconomyShopGUI nodes and `emf.shop` remain explicitly true for `default` in `server=main`. `emf.sellall`, `emf.admin`, economy administration, and debug authority are not granted globally or in another backend Context.
 
 The following Main-context Admin nodes remain explicitly true in addition to the global wildcard, preventing Plugin-specific resolution from weakening Admin full access:
 

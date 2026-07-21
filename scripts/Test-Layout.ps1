@@ -17,7 +17,12 @@ $required = @(
     'servers/main/plugins/EvenMoreFish/gui/main.yml',
     'servers/main/plugins/EvenMoreFish/competitions/main.yml',
     'servers/main/plugins/EvenMoreFish/competitions/sunday.yml',
-    'servers/main/plugins/EvenMoreFish/competitions/weekend.yml'
+    'servers/main/plugins/EvenMoreFish/competitions/weekend.yml',
+    'servers/main/plugins/EvenMoreFish/rarities/junk.yml',
+    'servers/main/plugins/EvenMoreFish/rarities/common.yml',
+    'servers/main/plugins/EvenMoreFish/rarities/rare.yml',
+    'servers/main/plugins/EvenMoreFish/rarities/epic.yml',
+    'servers/main/plugins/EvenMoreFish/rarities/legendary.yml'
 )
 foreach ($relative in $required) {
     if (-not (Test-Path (Join-Path $Root $relative))) { $errors.Add("Missing: $relative") }
@@ -113,7 +118,7 @@ if (Test-Path -LiteralPath $emfTemplatePath -PathType Leaf) {
         $content -notmatch '(?m)^  address: ''127\.0\.0\.2:__WAYFARER_MARIADB_PORT__''\r?$') {
         $errors.Add('EvenMoreFish MariaDB selection is invalid.')
     }
-    if ($content -notmatch '(?ms)^economy:\r?\n.*?^  vault:\r?\n    enabled: false\r?\n.*?^  playerpoints:\r?\n    enabled: false\r?\n.*?^  griefprevention:\r?\n    enabled: false\r?$') {
+    if ($content -notmatch '(?ms)^economy:\r?\n.*?^  vault:\r?\n    enabled: true\r?\n    multiplier: 1\.0\r?\n.*?^  playerpoints:\r?\n    enabled: false\r?\n.*?^  griefprevention:\r?\n    enabled: false\r?$') {
         $errors.Add('EvenMoreFish economy policy is invalid.')
     }
     if ($content -notmatch '(?ms)^allowed-worlds:\r?\n- main\r?\n- resource\r?$') {
@@ -142,8 +147,28 @@ foreach ($relative in @(
 $emfGuiPath = Join-Path $Root 'servers/main/plugins/EvenMoreFish/gui/main.yml'
 if (Test-Path -LiteralPath $emfGuiPath -PathType Leaf) {
     $emfGui = [IO.File]::ReadAllText($emfGuiPath)
-    if ($emfGui -match '(?m)^open-shop:|click-action: open-shop') {
-        $errors.Add('EvenMoreFish main GUI exposes the disabled fish shop.')
+    if ($emfGui -notmatch '(?m)^open-shop:' -or $emfGui -notmatch '(?m)^  click-action: open-shop$') {
+        $errors.Add('EvenMoreFish main GUI does not expose the adopted fish shop.')
+    }
+}
+
+$emfRarityWorth = [ordered]@{
+    'junk.yml' = '0.0'
+    'common.yml' = '1.0'
+    'rare.yml' = '0.5'
+    'epic.yml' = '0.3'
+    'legendary.yml' = '0.2'
+}
+foreach ($entry in $emfRarityWorth.GetEnumerator()) {
+    $path = Join-Path $Root "servers/main/plugins/EvenMoreFish/rarities/$($entry.Key)"
+    if (Test-Path -LiteralPath $path -PathType Leaf) {
+        $rarity = [IO.File]::ReadAllText($path)
+        if ($rarity -notmatch "(?m)^worth-multiplier: $([regex]::Escape($entry.Value))\r?$") {
+            $errors.Add("Unexpected EvenMoreFish worth multiplier: $($entry.Key)")
+        }
+        if ($rarity -match '(?i)\bMONEY\b') {
+            $errors.Add("Direct MONEY reward remains in adopted EvenMoreFish rarity: $($entry.Key)")
+        }
     }
 }
 

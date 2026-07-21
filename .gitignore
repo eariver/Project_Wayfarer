@@ -131,7 +131,12 @@ servers/main/plugins/EvenMoreFish/baits/
 servers/main/plugins/EvenMoreFish/gui-fillers.yml
 servers/main/plugins/EvenMoreFish/gui/*
 !servers/main/plugins/EvenMoreFish/gui/main.yml
-servers/main/plugins/EvenMoreFish/rarities/
+servers/main/plugins/EvenMoreFish/rarities/*
+!servers/main/plugins/EvenMoreFish/rarities/junk.yml
+!servers/main/plugins/EvenMoreFish/rarities/common.yml
+!servers/main/plugins/EvenMoreFish/rarities/rare.yml
+!servers/main/plugins/EvenMoreFish/rarities/epic.yml
+!servers/main/plugins/EvenMoreFish/rarities/legendary.yml
 servers/main/plugins/EvenMoreFish/rods/
 servers/main/plugins/EvenMoreFish/competitions/_example.yml
 servers/main/plugins/EvenMoreFish/data/

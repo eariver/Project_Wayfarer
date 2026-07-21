@@ -127,9 +127,9 @@ Credentialを含むRuntime `config.yml`はGit Ignore対象とし、Main／Fronti
 
 ### EvenMoreFish
 
-EvenMoreFish 2.4.3はMainだけに配置し、実Bukkit World `main`と`resource`だけでCustom Fishを有効にします。`only-fish: true`によりVanilla Treasure／Junkを維持し、Fish Entity Hunt、Lava／Void Fishing、Competition、Shop／Sellallおよび全Economy Providerは無効です。Journal／統計は専用MariaDB `wayfarer_evenmorefish`の`emf_` Tableへ保存し、Credentialを含むRuntime ConfigはSanitized TemplateからRenderします。
+EvenMoreFish 2.4.3はMainだけに配置し、実Bukkit World `main`と`resource`だけでCustom Fishを有効にします。`only-fish: true`によりVanilla Treasure／Junkを維持し、Fish Entity Hunt、Lava／Void Fishing、Competition、Fish購入およびSellallは無効です。VaultはRedisEconomy／VaultUnlocked経由の魚売却だけに使用し、直接MONEY Rewardは無効です。Journal／統計は専用MariaDB `wayfarer_evenmorefish`の`emf_` Tableへ保存し、Credentialを含むRuntime ConfigはSanitized TemplateからRenderします。
 
-mcMMO側の追加Lootは無効にして重複Itemを防ぎますが、通常のmcMMO Fishing XPは維持します。一般Player権限はMain ContextのJournal、Bait適用、Fishing／Catch Message Toggleだけに限定し、Config変更時はMainを正常再起動します。
+mcMMO側の追加Lootは無効にして重複Itemを防ぎますが、通常のmcMMO Fishing XPは維持します。売却倍率はJunk 0.0、Common 1.0、Rare 0.5、Epic 0.3、Legendary 0.2です。一般Player権限はMain ContextのJournal、Bait適用、Fishing／Catch Message Toggleと`emf.shop`だけに限定し、Config変更時はMainを正常再起動します。
 
 ### Waymark
 
@@ -139,13 +139,15 @@ Passwordを含むRuntime ConfigはGit Ignore対象とし、BackendごとのSanit
 
 ### Main Waymarkショップ
 
-EconomyShopGUI 7.1.1 FreeはMainだけに配置し、Vault経由でRedisEconomyの`vault`通貨を使用します。初期ショップは資源売却、農業品売却、Mob素材売却、建築資材、生活用品の5カテゴリ、合計62商品です。価格は1個あたり0.01 WM単位までの固定Alpha Baselineとし、同じ商品の購入価格を売却価格より必ず高くします。
+EconomyShopGUI 7.1.1 FreeはMainだけに配置し、Vault経由でRedisEconomyの`vault`通貨を使用します。ショップは資源売却、農業品売却、Mob素材売却、建築資材、生活用品の5カテゴリ、合計62商品です。既存の相対価値と売買差を保った100倍名目価格Baselineを採用し、標準Vanilla商品の最小価格は1 WM、同じ商品の購入価格は売却価格より必ず高くします。既存残高Migrationは行っていません。
 
 一般プレイヤーには`server=main` Contextでショップ閲覧と5カテゴリの利用権限だけを付与します。一括売却、編集、Reload、Give、Update、Debug、BypassおよびWildcard管理権限は付与しません。Dynamic Pricing、Global Stock、Player Shop、税および自動価格調整は未使用です。Config変更後はMainを正常再起動し、EconomyShopGUI、RedisEconomyおよびVaultUnlockedをReload／Unloadしません。価格の正本は[Waymark Economy](10-waymark-economy.md)です。
 
 ### Main Structure生成
 
 BetterStructures 2.6.3はMainだけに導入し、公式無料Pack `103 Default Structures` version 5だけを使用します。Bukkit実World名`main`、`main_nether`、`main_the_end`の新規Chunkだけを生成対象とし、`resource`、`resource_nether`、`resource_end`および未知の新規Worldは無効です。Plugin JARとContent ZIP／展開済みSchematicは手動取得・Git非追跡で、自動Plugin Downloadは無効です。既定の`spawnProtectionRadius: 100`はユーザー承認のうえ維持しました。
+
+このPackはPersistent Nether／Endにも一部構造物を追加済みです。Phase 2Bでは、それを空のDimensionとして扱うのではなく、Vanillaに馴染むDimension重点Contentで補完する必要性と候補をCoreProtect後に評価します。Pack選定・取得・Import・World変更は未着手で、Resource Family無効、新規Chunk限定、既存Persistent World非再生成を維持します。
 
 Phase 3 Main最終生成は2026-07-21に完了しています。3つのPersistent DimensionはSeed `164225356311935743`で生成し、Overworld Spawn `(320, 70, 128)`、Nether管理Spawn `(20.5, 60, -19.5)`、End管理Spawn `(100.5, 49, 0.5)`を安全確認済みです。Resource FamilyはUUID、SeedおよびRegion Dataを保持しました。正確なWorld名、Storage Path、World UUID、BackupおよびRollback条件は[Main World Baseline](13-main-world-baseline.md)を正本とします。Hub／Gate構造は未実装です。
 
@@ -163,7 +165,7 @@ Phase 3 Main最終生成は2026-07-21に完了しています。3つのPersisten
 |EvenMoreFish|導入しない|`main`／`resource`限定|導入しない|
 |WorldGuard|Entry World全体保護|Pluginのみ。Spawn保護は設計済み・未実装|Entry World全体保護|
 
-Waymark共有残高、Main初期Waymarkショップ、mcMMO共有進行、Main限定BetterStructuresおよびEvenMoreFish基盤は導入済みです。Advanced Portals、EliteMobs、Frontier／Quest／FishingのWaymark報酬およびCross-server Chatは未導入であり、計画上の機能を導入済みとして扱いません。
+Waymark共有残高、MainのVanilla固定価格ショップ、EvenMoreFish魚売却、mcMMO共有進行およびMain限定BetterStructures基盤は導入済みです。Advanced Portals、EliteMobs、Frontier／QuestのWaymark報酬およびCross-server Chatは未導入であり、計画上の機能を導入済みとして扱いません。
 
 ## 7. Plugin取得・導入ポリシー
 
@@ -265,4 +267,4 @@ V0.2.x以降の独自Plugin構想は`codex/Project_Wayfarer_V0.2x_Custom_Plugin_
 
 ## 14. Roadmapと関連文書
 
-V0.1.0までの実施順とBlockerは[Roadmap](09-roadmap.md)で管理します。Phase 4 EvenMoreFishは完了し、現時点の次作業はCoreProtectです。これをHub／Gate本格建築より前へ導入し、Playable Frontier ThemeとAdvanced PortalsのVersion／Permission、Builder担当作業を確定してからPhase 1Bを実施します。その後、ユーザー建築、Main Spawn保護、Routing、Resource Bootstrap、統合運用、Cold Backup／隔離Restore、V0.1.0 Baselineの順に進めます。導入済みVersionとHashは`versions.yml`、配置・取得・依存方針は`plugin-manifest.yml`、運用手順は[Operations](03-operations.md)、検証済み事実と未達Blockerは[Acceptance Tests](06-acceptance-tests.md)、将来課題は[Deferred Design Items](11-deferred-design-items.md)を参照してください。
+V0.1.0までの実施順とBlockerは[Roadmap](09-roadmap.md)で管理します。現時点の次作業はCoreProtect、その後はPhase 2B Persistent Nether／End Structure Expansionの候補評価です。Playable Frontier ThemeとAdvanced Portals、Phase 1B、ユーザー建築、Main Spawn保護、Routing、Resource Bootstrap、統合運用、Cold Backup／隔離Restoreへ進み、最後に別途承認された破壊的Player State Resetを実施してからV0.1.0 Baseline Backupを作成します。導入済みVersionとHashは`versions.yml`、配置・取得・依存方針は`plugin-manifest.yml`、運用手順は[Operations](03-operations.md)、検証済み事実と未達Blockerは[Acceptance Tests](06-acceptance-tests.md)、将来課題は[Deferred Design Items](11-deferred-design-items.md)を参照してください。

@@ -38,12 +38,17 @@ Phase 1A implemented all five persistent LuckPerms Group definitions. The tempor
 
 | 課題 | 現在の妥協策 | V0.1.0への影響 | 将来の解決候補 | 独自Pluginが必要か | 再検討時期 |
 |---|---|---|---|---|---|
-| FishのWaymark価格／報酬がない | EvenMoreFish Economy、Shop、Sellallを無効のまま運用 | 非Blocker。意図しないWM Faucetを防ぐ | 実Catch量を観測した固定価格または別の承認済み報酬設計 | 原則不要 | V0.1.0運用量の観測後 |
+| Fish購入機能がない | `/emf shop`はCatch済みFishの売却専用とし、Server販売を行わない | 非Blocker | 需要と入手経路を観測した別の承認済みShop | 原則不要 | V0.1.0運用量の観測後 |
 | Competitionを実施しない | Scheduled／Manual Competitionをすべて無効化 | 非Blocker | 小規模運用に必要になった場合だけ報酬を含め再設計 | 不要 | 参加人数増加時 |
 | AFK Fishing統合方針が未確定 | EvenMoreFish側AFK保護を有効化せず、mcMMOの現行挙動を変更しない | 非Blocker | 実際の濫用が生じた場合に両Pluginの競合をFocused Test | 不要 | 運用上の問題発生時 |
 | Bait購入手段がない | CatchしたBaitの適用だけ許可し、購入は提供しない | 非Blocker | Waymark供給量とBait価値を評価した限定Shop | 不要 | Economy再設計時 |
+| DynamicなFish価格調整がない | Size×固定Rarity倍率×Vault 1.0を使用 | 非Blocker | Catch量とインフレを観測後に固定倍率を再審査 | 不要 | V0.1.0運用量の観測後 |
 
 Custom Fishingの現行World Scopeは`main`／`resource`だけです。Nether、End、Unknown Worldへの拡張はConfig変更とFocused Testを伴う後続課題です。
+
+## V0.1.0 pre-release reset scope
+
+All Waymark balances, Main inventory, armor/offhand, Vanilla XP, and advancements are the minimum separately approved reset scope immediately before the final baseline backup. Ender Chest, health/hunger, position, bed spawn, statistics, recipe book, Lobby/Frontier Player data, mcMMO, EvenMoreFish Journal, LuckPerms history, transaction history, and Resource-world positions remain undecided. None has been reset by the price-scale task.
 
 ## Main
 

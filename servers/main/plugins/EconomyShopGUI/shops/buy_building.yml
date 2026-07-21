@@ -4,58 +4,58 @@ pages:
     items:
       dirt:
         material: DIRT
-        buy: 0.08
+        buy: 8.00
       cobblestone:
         material: COBBLESTONE
-        buy: 0.12
+        buy: 12.00
       cobbled_deepslate:
         material: COBBLED_DEEPSLATE
-        buy: 0.18
+        buy: 18.00
       sand:
         material: SAND
-        buy: 0.25
+        buy: 25.00
       gravel:
         material: GRAVEL
-        buy: 0.20
+        buy: 20.00
       oak_log:
         material: OAK_LOG
-        buy: 0.40
+        buy: 40.00
       spruce_log:
         material: SPRUCE_LOG
-        buy: 0.40
+        buy: 40.00
       birch_log:
         material: BIRCH_LOG
-        buy: 0.40
+        buy: 40.00
       jungle_log:
         material: JUNGLE_LOG
-        buy: 0.40
+        buy: 40.00
       acacia_log:
         material: ACACIA_LOG
-        buy: 0.40
+        buy: 40.00
       dark_oak_log:
         material: DARK_OAK_LOG
-        buy: 0.40
+        buy: 40.00
       mangrove_log:
         material: MANGROVE_LOG
-        buy: 0.40
+        buy: 40.00
       cherry_log:
         material: CHERRY_LOG
-        buy: 0.40
+        buy: 40.00
       pale_oak_log:
         material: PALE_OAK_LOG
-        buy: 0.40
+        buy: 40.00
       stone_bricks:
         material: STONE_BRICKS
-        buy: 0.20
+        buy: 20.00
       glass:
         material: GLASS
-        buy: 0.30
+        buy: 30.00
       bricks:
         material: BRICKS
-        buy: 0.35
+        buy: 35.00
       terracotta:
         material: TERRACOTTA
-        buy: 0.40
+        buy: 40.00
       white_wool:
         material: WHITE_WOOL
-        buy: 0.50
+        buy: 50.00

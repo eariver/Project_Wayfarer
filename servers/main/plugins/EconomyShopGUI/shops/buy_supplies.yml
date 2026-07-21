@@ -4,25 +4,25 @@ pages:
     items:
       torch:
         material: TORCH
-        buy: 0.08
+        buy: 8.00
       lantern:
         material: LANTERN
-        buy: 0.60
+        buy: 60.00
       bread:
         material: BREAD
-        buy: 0.30
+        buy: 30.00
       bone_meal:
         material: BONE_MEAL
-        buy: 0.10
+        buy: 10.00
       redstone:
         material: REDSTONE
-        buy: 0.25
+        buy: 25.00
       coal:
         material: COAL
-        buy: 0.50
+        buy: 50.00
       iron_ingot:
         material: IRON_INGOT
-        buy: 2.00
+        buy: 200.00
       gold_ingot:
         material: GOLD_INGOT
-        buy: 4.00
+        buy: 400.00

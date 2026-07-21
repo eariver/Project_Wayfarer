@@ -28,6 +28,25 @@ planned_unplaced:
     administration: admin-only-no-builder-rollback
     cold-backup-replacement: false
     jar: manual-acquisition-after-version-selection
+  - name: Persistent Nether/End Structure Expansion
+    phase: 2B
+    status: planned-not-selected-or-installed
+    purpose: Complement the existing 103 Default Structures Nether/End baseline with approved dimension-focused content
+    order: after-coreprotect-before-playable-frontier-theme
+    preferred-integration: BetterStructures-compatible-content-pack
+    allowed-worlds:
+      - main_nether
+      - main_the_end
+    excluded-worlds:
+      - resource
+      - resource_nether
+      - resource_end
+      - unknown
+      - lobby
+      - frontier_gate
+      - frontier-theme-worlds
+    acquisition: separate-comparison-user-approval-and-manual-acquisition
+    persistent-world-regeneration: forbidden
 
 velocity:
   required:
@@ -343,7 +362,19 @@ main:
         - resource_nether
         - resource_end
         - unknown
-      economy: disabled
+      economy: vault-enabled
+      vault-provider: RedisEconomy 4.5.12-wayfarer.1 through VaultUnlocked 2.20.2
+      vault-multiplier: 1.0
+      shop: enabled
+      sellall: disabled
+      fish-purchase: unsupported-not-implemented
+      rarity-worth:
+        junk: 0.0
+        common: 1.0
+        rare: 0.5
+        epic: 0.3
+        legendary: 0.2
+      direct-money-rewards: disabled
       competitions: disabled
       hunting: disabled
       lava-void-fishing: disabled
@@ -354,8 +385,9 @@ main:
       mcmmo-loot: disabled
       mcmmo-fishing-xp: preserved
       permission-context: server=main
+      player-permission: emf.shop
       reload-policy: full-main-restart-only
-      verification: natural-catch-mcmmo-xp-waymark-unchanged-journal-restart
+      verification: one-common-fish-sale-no-exact-balance-assertion-and-test-balance-cleanup
     - name: RedisEconomy
       version: "4.5.12"
       reported-version: "4.5.12-wayfarer.1"
@@ -442,7 +474,10 @@ main:
         - buy_building
         - buy_supplies
       product-count: 62
-      pricing: fixed-alpha-baseline
+      pricing: fixed-alpha-baseline-x100
+      minimum-standard-vanilla-price: 1 WM
+      transaction-verification: config-and-gui-only-no-live-trade
+      pricing-verified: 2026-07-22
       dynamic-pricing: disabled
       global-stock: disabled
       player-shop: disabled

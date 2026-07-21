@@ -4,22 +4,22 @@ pages:
     items:
       bone:
         material: BONE
-        sell: 0.03
+        sell: 3.00
       rotten_flesh:
         material: ROTTEN_FLESH
-        sell: 0.03
+        sell: 3.00
       string:
         material: STRING
-        sell: 0.04
+        sell: 4.00
       gunpowder:
         material: GUNPOWDER
-        sell: 0.08
+        sell: 8.00
       ender_pearl:
         material: ENDER_PEARL
-        sell: 0.20
+        sell: 20.00
       blaze_rod:
         material: BLAZE_ROD
-        sell: 0.35
+        sell: 35.00
       shulker_shell:
         material: SHULKER_SHELL
-        sell: 2.00
+        sell: 200.00

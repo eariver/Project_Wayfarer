@@ -12,9 +12,9 @@ Main is the permanent home for building, farming, storage, fishing and general s
 
 - Use `main`, `main_nether` and `main_end` for permanent construction.
 - mcMMO progression is shared with Frontier; normal inventory and vanilla player state remain local.
-- Waymark balance is shared with Frontier. Main provides a five-category fixed-price shop through `/shop`; see [Waymark Economy](10-waymark-economy.md).
+- Waymark balance is shared with Frontier. Main provides a five-category, 62-item fixed-price shop through `/shop`; its nominal prices are the reviewed 100x baseline. See [Waymark Economy](10-waymark-economy.md).
 - BetterStructures 2.6.3 is installed with the vanilla-like `103 Default Structures` pack; structures appear only when Persistent Main generates new chunks.
-- EvenMoreFish 2.4.3 supplies Custom Fish in `main` and `resource`. Use `/emf` for the minimal menu and `/emf journal` for catches; bait application and fishing/catch-message toggles are available. Its Shop, Sellall, competitions, and Waymark rewards are disabled.
+- EvenMoreFish 2.4.3 supplies Custom Fish in `main` and `resource`. Use `/emf` for the menu, `/emf journal` for catches, and `/emf shop` to sell caught fish for WM. Value varies by fish size and Rarity; Junk cannot be sold. This is not a fish-purchase shop, and `/emf sellall`, competitions, and direct catch/interact WM rewards remain disabled.
 - The final natural Main spawn and bedless respawn baseline is the approved Savanna location around `(320, 70, 128)`. The permanent spawn Hub, Lobby/Frontier Return Gates, and three Resource Gates are V0.1.0 targets and are not built yet.
 - Main Spawn does not yet have a Project WorldGuard Region. The user may continue initial Hub construction under the current Vanilla spawn protection; public protection is applied only after the Hub footprint is substantially complete and its exact boundary is approved.
 

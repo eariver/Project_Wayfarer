@@ -183,7 +183,19 @@ runtime_selection:
     hunt: disabled
     dimension_fishing: disabled
     competitions: disabled
-    economy: disabled
+    economy: vault-enabled
+    vault_provider: RedisEconomy 4.5.12-wayfarer.1 through VaultUnlocked 2.20.2
+    vault_multiplier: 1.0
+    shop: enabled
+    sellall: disabled
+    fish_purchase: unsupported-not-implemented
+    rarity_worth:
+      junk: 0.0
+      common: 1.0
+      rare: 0.5
+      epic: 0.3
+      legendary: 0.2
+    direct_money_rewards: disabled
     storage: mariadb
     database: wayfarer_evenmorefish
     table_prefix: emf_
@@ -191,8 +203,10 @@ runtime_selection:
     mcmmo_loot: disabled
     mcmmo_fishing_xp: preserved
     permission_context: server=main
+    player_permission: emf.shop
     reload_policy: full-main-restart-only
-    verified: 2026-07-21
+    sale_verification: one-common-fish-sale-no-exact-balance-assertion
+    verified: 2026-07-22
   rediseconomy:
     upstream_version: "4.5.12"
     reported_version: "4.5.12-wayfarer.1"
@@ -262,7 +276,10 @@ runtime_selection:
     products: 62
     sell_entries: 35
     buy_entries: 27
-    pricing: fixed-alpha-baseline
+    pricing: fixed-alpha-baseline-x100
+    minimum_standard_vanilla_price: 1 WM
+    transaction_verification: config-and-gui-only-no-live-trade
+    pricing_verified: 2026-07-22
     update_checking: false
     metrics: global-bstats-config-not-modified
     transaction_logging: false

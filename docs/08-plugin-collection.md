@@ -21,11 +21,12 @@
 |World|All Paper|Multiverse-Core 5.7.2|導入・検証済み|各Paper plugins|https://modrinth.com/plugin/multiverse-core|手動取得、Velocity対象外、Lobby／FrontierはEntry Worldのみ|
 |World|Main|Multiverse-NetherPortals 5.0.5|導入・検証済み|servers/main/plugins|https://modrinth.com/plugin/multiverse-netherportals|Multiverse-Core依存、2 Familyを明示Link|
 |Gameplay|Main + Frontier|mcMMO 2.3.000|導入・検証済み|両plugins|https://github.com/mcMMO-Dev/mcMMO|Local Maven Build、同一JAR、共有MariaDB、Lobby／Velocity対象外|
-|Gameplay|Main|EvenMoreFish 2.4.3|導入・検証済み|servers/main/plugins|https://modrinth.com/plugin/evenmorefish/version/uf95yrYv|手動取得、`main`／`resource`限定、専用MariaDB、Economy／Competition無効|
+|Gameplay|Main|EvenMoreFish 2.4.3|導入・検証済み|servers/main/plugins|https://modrinth.com/plugin/evenmorefish/version/uf95yrYv|手動取得、`main`／`resource`限定、Vault魚売却、専用MariaDB、Competition／直接MONEY無効|
 |Economy|Main + Frontier|RedisEconomy 4.5.12-wayfarer.1|導入・検証済み|両plugins|https://www.spigotmc.org/resources/105965/|ユーザー提供互換Build、共有Redis Waymark、Lobby／Velocity対象外|
 |Economy|Main + Frontier|VaultUnlocked 2.20.2|導入・検証済み|両plugins|https://hangar.papermc.io/TNE/VaultUnlocked|RedisEconomy Vault Bridge、Lobby／Velocity対象外|
-|Economy|Main|EconomyShopGUI 7.1.1 Free|導入・検証済み|servers/main/plugins|https://www.spigotmc.org/resources/economyshopgui.69927/|固定価格5カテゴリ・62商品、Vault経由RedisEconomy、Lobby／Frontier／Velocity対象外|
+|Economy|Main|EconomyShopGUI 7.1.1 Free|導入・検証済み|servers/main/plugins|https://www.spigotmc.org/resources/economyshopgui.69927/|100倍名目固定価格、5カテゴリ・62商品、Vault経由RedisEconomy、Lobby／Frontier／Velocity対象外|
 |Structure|Main|BetterStructures 2.6.3|導入・検証済み|servers/main/plugins|https://modrinth.com/plugin/betterstructures|103 Default Structuresのみ、Persistent Main Family限定、Resource全世界と未知Worldは無効、手動取得|
+|Structure|Main Nether + End|Persistent Nether／End Structure Expansion|計画・未選定|別タスクで確定||Phase 2B、既存103 Default Structuresを補完、CoreProtect後、Resource Family無効維持|
 |Adventure|Frontier|EliteMobs|計画・未導入|servers/frontier/plugins|https://modrinth.com/plugin/elitemobs|Content Packは別途|
 |Conditional|Frontier|BetterStructures|条件付き・未導入|servers/frontier/plugins|https://modrinth.com/plugin/betterstructures|選定Packが要求するときのみ、WorldEditは導入済み|
 |Administration|未定|CoreProtect|計画・未導入|別タスクで確定||次Task・Hub／Gate本格建築前、RollbackはAdmin-only、Cold Backup代替不可|

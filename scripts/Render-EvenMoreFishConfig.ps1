@@ -152,8 +152,8 @@ foreach ($requiredSetting in @(
         throw "EvenMoreFish policy validation failed: $requiredSetting"
     }
 }
-if ($rendered -notmatch '(?ms)^economy:\r?\n.*?^  vault:\r?\n    enabled: false\r?\n.*?^  playerpoints:\r?\n    enabled: false\r?\n.*?^  griefprevention:\r?\n    enabled: false\r?$') {
-    throw 'EvenMoreFish economy-disable validation failed.'
+if ($rendered -notmatch '(?ms)^economy:\r?\n.*?^  vault:\r?\n    enabled: true\r?\n    multiplier: 1\.0\r?\n.*?^  playerpoints:\r?\n    enabled: false\r?\n.*?^  griefprevention:\r?\n    enabled: false\r?$') {
+    throw 'EvenMoreFish economy policy validation failed.'
 }
 if ($rendered -notmatch '(?ms)^dimension-fishing:\r?\n.*?^  lava:\r?\n    enabled: false\r?\n.*?^  void:\r?\n    enabled: false\r?$') {
     throw 'EvenMoreFish dimension-fishing validation failed.'
