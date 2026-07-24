@@ -20,11 +20,16 @@ Gameplay,Main,EvenMoreFish 2.4.3,導入・検証済み,servers/main/plugins,http
 Economy,Main + Frontier,RedisEconomy 4.5.12-wayfarer.1,導入・検証済み,両plugins,https://www.spigotmc.org/resources/105965/,ユーザー提供互換Build・共有Redis Waymark・Lobby／Velocity対象外
 Economy,Main + Frontier,VaultUnlocked 2.20.2,導入・検証済み,両plugins,https://hangar.papermc.io/TNE/VaultUnlocked,RedisEconomy Vault Bridge・Lobby／Velocity対象外
 Economy,Main,EconomyShopGUI 7.1.1 Free,導入・検証済み,servers/main/plugins,https://www.spigotmc.org/resources/economyshopgui.69927/,100倍名目固定価格・5カテゴリ・62商品・Vault経由RedisEconomy・Lobby／Frontier／Velocity対象外
-Structure,Main,BetterStructures 2.6.3,導入・検証済み,servers/main/plugins,https://modrinth.com/plugin/betterstructures,103 Default Structuresのみ・Persistent Main Family限定・Resource全世界と未知Worldは無効・手動取得
-Structure,Main Nether + End,Persistent Nether／End Structure Expansion,計画・未選定,別タスクで確定,,Phase 2B・既存103 Default Structuresを補完・CoreProtect後・Resource Family無効維持
+Structure,Main,BetterStructures 2.6.3,導入・検証済み,servers/main/plugins,https://modrinth.com/plugin/betterstructures,現在は103 Default Structuresのみ・Persistent Main Family限定・Resource全世界と未知Worldは無効
+Structure,Main Persistent Family,Main 5-Pack Content Expansion,正式Scope・未導入,別タスクで確定,,5 Pack＋Prop＋FMM＋ResourcePackManagerを全Load確認後に再生成・Resource Family除外
 Adventure,Frontier,EliteMobs,計画・未導入,servers/frontier/plugins,https://modrinth.com/plugin/elitemobs,Content Packは別途
-Conditional,Frontier,BetterStructures,条件付き・未導入,servers/frontier/plugins,https://modrinth.com/plugin/betterstructures,選定Packが要求するときのみ・WorldEdit導入済み
-Administration,未定,CoreProtect,計画・未導入,別タスクで確定,,次Task・Hub／Gate本格建築前・RollbackはAdmin-only・Cold Backup代替不可
+Structure,Frontier Ruined,BetterStructures,正式Scope・未導入,servers/frontier/plugins,https://modrinth.com/plugin/betterstructures,Ruined Frontier三次元・EliteMobs連携・Artifactは別タスクでLock
+World / State,Frontier,Multiverse-Inventories,正式Scope・未導入,servers/frontier/plugins,,neutral／worlds_beyond／guild・通常Player State正本
+World Generator,Frontier Worlds Beyond,Iris Engine／Pack,正式Scope・未導入,別タスクで確定,,三次元・PEACEFUL・Seed／Border／World ID／License／HashをLock
+Model / Pack,Main + Frontier,ResourcePackManager,正式Scope・未導入,各Backendで別Pack,,Version／Hosting／Hash／切替／失敗時挙動／RollbackをLock
+External Custom,Network,Wayfarer_Core,正式Scope・未開発,別Repository,,V0.1.0 Blocker・本RepositoryへSourceを置かない
+External Custom,Frontier,Wayfarer_Frontier,正式Scope・未開発,別Repository,,V0.1.0 Blocker・MVI通常Inventoryを再実装しない
+Administration,Main + Frontier,CoreProtect,計画・未導入,別タスクで確定,,新Main Baseline後・Hub／Gate本格建築前・RollbackはAdmin-only・Cold Backup代替不可
 Administration / Development,All Paper,PlugManX,計画・未導入,各Paper plugins,https://modrinth.com/plugin/plugmanx,Version未選定・手動取得・Admin-only・Velocity対象外
 Deferred,Velocity,Cross-server chat,選定中,未配置,,PoC後に選定
 Forbidden,Velocity,ViaBackwards,禁止,配置しない,https://modrinth.com/plugin/viabackwards,意図的に不採用

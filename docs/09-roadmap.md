@@ -1,257 +1,281 @@
-# Project Wayfarer Roadmap - Ver.0.0.5
+# Project Wayfarer Roadmap - Ver.0.0.6
 
-Ver.0.0.5 is a design revision, not a Server Release. The first target Release is `V0.1.0 Alpha`, which remains incomplete. This Roadmap defines the dependency-based implementation order and separates Release Blockers from deferred features. Every implementation phase requires a separately approved task.
+Ver.0.0.6 is a design revision, not a Server Release. The first target Release is `V0.1.0 Alpha`, which remains incomplete. This Roadmap defines the dependency order and separates verified current baselines from planned Release Blockers. Every implementation phase requires a separately assigned task.
 
 ## Completed baselines
 
 - Bare First Boot, Velocity Modern Forwarding, backend access control, Lobby initial routing and failover
 - ViaVersion 5.11.0 on Velocity for a Minecraft 26.2 Client entering Frontier 1.21.11
-- LuckPerms shared MariaDB foundation
-- Permission Phase 1A: five persistent Groups, self-only temporary Role foundation, Admin full access, OP removal, and Builder Role container
+- LuckPerms shared MariaDB foundation and Permission Phase 1A
 - Void Lobby／Frontier Gate safety platforms and current WorldGuard protection
 - WorldEdit／WorldGuard on all Paper backends
 - TAB proxy installation and backend bridges
-- Multiverse registration of persistent and Resource families and explicit family-local links
+- Multiverse registration of current Main Persistent／Resource families and explicit family-local links
 - mcMMO 2.3.000 shared Main／Frontier progression
 - RedisEconomy `4.5.12-wayfarer.1`／VaultUnlocked 2.20.2 shared Waymark balance
 - EconomyShopGUI 7.1.1 Free Main-only fixed-price shop
-- BetterStructures 2.6.3 and `103 Default Structures` version 5 restricted to persistent Main dimensions
-- Phase 3 final persistent Main generation with preserved Resource dimensions and approved safe spawns
-- EvenMoreFish 2.4.3 Main-only Custom Fishing with dedicated MariaDB persistence and mcMMO coexistence
+- BetterStructures 2.6.3 and `103 Default Structures` version 5 restricted to current Persistent Main dimensions
+- 2026-07-21 Main persistent generation baseline with approved safe spawns and preserved Resource family
+- EvenMoreFish 2.4.3 Main-only Custom Fishing and Vault Fish Shop
 
-These baselines retain their historical verification records. They do not imply completion of the Phase 1B final Builder allowlist, planned Hubs, Gates, Frontier Theme, operations Script, or V0.1.0 Backup.
+These historical baselines remain verified. Ver.0.0.6 authorizes a future Main Content expansion and destructive regeneration plan, but it does not supersede the current Main baseline until the new generation, acceptance, and backup tasks finish.
 
-## Dependency-based execution order from the current baseline
+## Dependency-based execution order
 
 | Order | Work | Dependency and outcome |
 | ---: | --- | --- |
-| 1 | CoreProtect | Next implementation task; introduce before substantial Hub/Gate construction so new Block history is captured; not a cold-backup replacement |
-| 2 | Persistent Nether／End Structure Expansion | Phase 2B: assess complementary dimension-focused content after the existing `103 Default Structures` baseline; approve before acquisition or world changes |
-| 3 | Playable Frontier Theme | Select and install one approved Paper 1.21.11／Java 25 Theme |
-| 4 | Advanced Portals | Select the exact version, placement, commands, and Permission boundary |
-| 5 | Builder Phase 1B | Build the allowlist only from the selected Portal/Theme and confirmed Builder-owned work |
-| 6 | User Hub/Gate construction | User fixes appearance, footprint, equipment, coordinates, orientation, and safe arrivals |
-| 7 | Main Spawn protection | After substantial initial Hub completion, approve and apply the exact WorldGuard Region and focused child Regions |
-| 8 | Portal Routing | Configure and verify only approved routes after structures and destinations are fixed |
-| 9 | Resource Reset Bootstrap | Restore arrivals, Return Gates, protection, and Resource End outer-island safety reproducibly |
-| 10 | Integrated operations | Implement `Wayfarer.ps1` Start／Stop／Restart／Status／Backup |
-| 11 | Cold Backup／Isolated Restore | Validate the complete data set and recovery path |
-| 12 | V0.1.0 Pre-release Player State Reset | Separately approve and reset all Waymark plus the exact Vanilla player-state scope after every functional test and before the final baseline backup |
-| 13 | V0.1.0 Baseline | Create the post-reset baseline backup and confirm every Blocker before any Release declaration |
+| 1 | Ver.0.0.6 formal documentation | Adopt the approved Main／Frontier scope without changing Runtime |
+| 2 | Main BetterStructures Artifact／Content／Resource Pack Preflight | Verify exact versions, licenses, sources, hashes, dependencies, model IDs, Pack delivery, and World scope |
+| 3 | Main full Content Import and load confirmation | Install the five approved packs plus Prop／FreeMinecraftModels／ResourcePackManager working set and confirm every dependency before World generation |
+| 4 | Main Persistent Family regeneration | Under a separately approved destructive task, regenerate only `main`, `main_nether`, and `main_the_end` after Content load succeeds |
+| 5 | Main generation acceptance | Verify representative structures, Resource-family exclusion, Portal family, safe spawns, and Main Resource Pack delivery |
+| 6 | Main Weight／Content tuning and new baseline | Apply approved tuning, finalize identities and backup, then update the Main baseline source of truth |
+| 7 | CoreProtect | Introduce after the new Main baseline and before substantial Hub／Gate construction; not a cold-backup replacement |
+| 8 | Frontier lock | Lock Plugin versions, artifacts, World IDs, Gate method, Resource Packs, persistence, licenses, and exact Runtime boundaries |
+| 9 | Wayfarer_Core | Approve formal design, create a separate Repository, develop／release, and integrate the V0.1.0 shared foundation |
+| 10 | Wayfarer_Frontier | Approve formal design, create a separate Repository, develop／release, and integrate the V0.1.0 Frontier functions |
+| 11 | Frontier shared foundation | Integrate MVI, Multiverse-NetherPortals, WorldEdit／WorldGuard／CoreProtect, ResourcePackManager, Frontier Pack, Beyond Gate, and Guild Gate |
+| 12 | EM Adapter necessity decision | Prove whether static MVI registration or strict Regex is sufficient before authorizing an Adapter |
+| 13 | Ruined Frontier alpha | Implement and verify the approved Guild／Primis／three-dimension BetterStructures＋EliteMobs scope |
+| 14 | Worlds Beyond MVP | Implement and verify the approved Iris／Traversal／Waystone／WM Shop scope |
+| 15 | Frontier two-Theme integration | Verify MVI separation, full item isolation, Pack switching, routes, restart, reconnect, and persistence across both Themes |
+| 16 | Final Gate and Permission lock | Select Advanced Portals or the approved Gate method and lock exact Player／Builder／Admin permissions |
+| 17 | Builder Phase 1B | Build the explicit allowlist from the final Plugin, Theme, Gate, and construction operations |
+| 18 | User Hub／Gate construction | User fixes appearance, footprint, equipment, coordinates, orientation, and safe arrivals |
+| 19 | Main Spawn protection | Apply and verify the exact WorldGuard Region after substantial Hub completion |
+| 20 | Portal Routing completion | Configure and verify every approved Lobby／Main／Frontier／Theme／Resource route |
+| 21 | Resource Reset Bootstrap | Restore Resource arrivals, Return Gates, protection, and Resource End outer-island safety reproducibly |
+| 22 | Integrated operations | Implement `Wayfarer.ps1` Start／Stop／Restart／Status／Backup |
+| 23 | Cold Backup／Isolated Restore | Validate the complete Main, Frontier, MariaDB, Redis, World, Content, Config, and custom-Plugin data recovery path |
+| 24 | V0.1.0 Pre-release Player State Reset | Separately approve and reset Waymark and the exact Player State scope after functional testing |
+| 25 | V0.1.0 Baseline | Create the post-reset baseline backup and confirm every Blocker before any Release declaration |
 
-Phase identifiers below preserve project history, but this dependency table controls practical execution priority. In particular, CoreProtect Phase 9 is intentionally brought forward before Phase 6 construction, and Phase 1B is not executed until the Theme and Advanced Portals boundary are known.
+The table controls practical priority. In particular, Main Content must load before regeneration; CoreProtect follows the new Main baseline; both Frontier Themes and the Gate boundary precede Builder Phase 1B.
 
-## Recommended phases to V0.1.0
+## Phase details
 
-### Phase 0 - Ver.0.0.5 specification
+### Phase 0 - Ver.0.0.6 formal scope
 
-- [x] Formal design revision updated
-- [x] Ordinary-Plugin verification scope narrowed
-- [x] Five-group permission model specified
-- [x] V0.1.0 completion conditions and non-Blockers separated
-- [x] Deferred custom-Plugin/design items recorded
-- [x] Phase 3 baseline integrated and Main Spawn protection designed without applying a Region
-- [x] CoreProtect construction-history dependency and V0.2.x concept scope recorded
+- [x] Promote the approved Main five-Pack expansion and regeneration plan into current documentation
+- [x] Make both Ruined Frontier and Worlds Beyond V0.1.0 Release Blockers
+- [x] Adopt the MVI, custom-Plugin, complete item-isolation, and Resource Pack responsibility boundaries
+- [x] Preserve Concepts as non-authoritative detailed design input
+- [x] Preserve current Runtime and Main baseline until separately assigned implementation tasks pass
 
-### Phase 1A - Permission foundation and temporary Admin
+### Phase 1A - Permission foundation
 
-- [x] Treat all five Group definitions as persistent; only Player Parent membership in Builder/Admin is temporary
-- [x] Audit and reuse `default` and existing `wayfarer_builder` without delete/recreate or Primary Group use
-- [x] Preserve existing Lobby／Frontier WorldGuard Region Member references while removing Builder's former WorldEdit／WorldGuard administration wildcards
-- [x] Create `wayfarer_builder_eligible`, `wayfarer_admin_eligible`, and `wayfarer_admin` after conflict checks
-- [x] Restrict Eligibility to matching self-only temporary Role add/remove through Velocity
-- [x] Give full Minecraft／Plugin authority only during a Player's temporary Admin Parent membership and remove OP dependency
-- [x] Verify denial, expiry, demotion, Builder Role container, restart persistence, and Cleanup
-- [x] Document exact nodes, operation, bootstrap, recovery, and rollback in [Permission Model](12-permission-model.md)
-
-Phase 1A completed its focused Security Boundary verification on 2026-07-20.
+Phase 1A completed on 2026-07-20. Five persistent Group definitions, self-only Temporary Roles, Admin full access, OP-independent operation, the existing Builder Region membership, and the empty Builder command container remain verified.
 
 ### Phase 1B - Final Builder allowlist
 
-- [ ] Confirm Advanced Portals version and permission model
-- [ ] Select the first playable Frontier Theme and its required management commands
-- [ ] Confirm the exact Builder-owned Hub／Gate／Theme connection work
-- [ ] Scope approved Builder WorldEdit, gamemode, teleport, and Multiverse-Core commands to Lobby／Main／Frontier
-- [ ] Scope approved Multiverse-NetherPortals commands to Main only
-- [ ] Keep WorldGuard Region／Velocity／LuckPerms／economy／player-punishment／server-stop authority, destructive World lifecycle operations, wildcards, reload/debug/internal actions, and other prohibited administration excluded
-- [ ] Repeat focused Builder elevation, work, Survival cleanup, demotion, and denial tests
+- [ ] Lock the adopted Gate／Portal Plugin version and exact permissions
+- [ ] Lock Ruined Frontier, Worlds Beyond, MVI, ResourcePackManager, EliteMobs, and custom-Plugin administration boundaries
+- [ ] Confirm exact Builder-owned Hub／Gate work
+- [ ] Allowlist only required WorldEdit, gamemode, teleport, Multiverse, and Gate operations
+- [ ] Exclude MVI group management, Resource Pack publishing／rollback, EliteMobs internals, Database, economy, custom-Plugin administration, WorldGuard Region administration, Velocity, LuckPerms, player punishment, server stop, destructive World lifecycle, reload／debug internals, and wildcards
+- [ ] Repeat focused elevation, work, Survival cleanup, demotion, and denial tests
 
-Phase 1B remains a V0.1.0 Release Blocker and must complete before Builder-led Hub／Gate／Theme connection work. Execute it only after one playable Theme is selected, the Advanced Portals version and permissions are verified, and the exact Builder-owned work is known. It did not block the independently approved BetterStructures integration or Phase 3 generation.
+Phase 1B remains a Release Blocker and starts only at dependency order 17.
 
-### Phase 2 - Main world-generation features
+### Phase 2 - Current Main BetterStructures baseline
 
-- [x] Install BetterStructures 2.6.3 with only the free `103 Default Structures` pack
-- [x] Enable it only in actual Bukkit worlds `main`, `main_nether`, and `main_the_end`
-- [x] Keep `resource`, `resource_nether`, `resource_end`, and unknown new worlds disabled
-- [x] Confirm natural `betterstructures_well_grassy` generation, representative Resource exclusion, and restart persistence
+The 2026-07-20 integration of BetterStructures 2.6.3 with `103 Default Structures` version 5 remains historical verified evidence. It is not the final Ver.0.0.6 Main Content scope.
 
-Phase 2 completed on 2026-07-20. Its retained BetterStructures spawn protection radius of 100 blocks was reviewed and approved during Phase 3.
+### Phase 2B - Main Persistent Family Content expansion and regeneration
 
-### Phase 2B - Persistent Nether／End structure expansion
+The formal target applies to:
 
-- [ ] Compare compatible, trustworthy dimension-focused content for BetterStructures 2.6.3／Paper 26.2／Java 25, including license, cost, dependencies, overlap, IDs, loot, frequency, and biome/dimension conditions.
-- [ ] Treat the existing `103 Default Structures` pack as an active baseline that already adds some Nether／End structures; select only complementary Vanilla-fitting content if it adds enough value.
-- [ ] Obtain explicit user approval and manual artifacts only after comparison; do not automatically switch to another Plugin, Datapack, premium pack, custom mobs/items, or resource-pack content.
-- [ ] Keep `main_nether` and `main_the_end` new chunks as the only intended scope, with Resource worlds and unknown worlds disabled.
-- [ ] Preserve seed, UUID, existing chunks, Vanilla structures, portals, and spawns; do not regenerate, trim, delete Region files, or paste retroactively.
-- [ ] Verify one representative fresh-chunk structure per dimension without broad exploration or frequency inflation.
+```text
+main
+main_nether
+main_the_end
+```
 
-Phase 2B is planning-only in the current change and is a V0.1.0 Blocker. If no appropriate complementary pack exists, retain the blocker and report the candidate gap rather than weakening the world boundary.
+The approved planned Content set is:
 
-### Phase 3 - Final persistent Main generation
+- `103 Default Structures` version 5;
+- `Exploration Pack` version 6;
+- `Caves and Lost Civilizations Free` version 2;
+- `Adventure Pack` internal version 1;
+- `Echoes of the Past` version 3;
+- BetterStructures Prop Pack;
+- FreeMinecraftModels;
+- ResourcePackManager.
 
-- [x] Approve exact paths, backup, generation conditions, player-data reset policy, and Spawn safety
-- [x] Finalize `main`, `main_nether`, and actual Bukkit End world `main_the_end` on seed `164225356311935743`
-- [x] Preserve the Resource family outside the destructive scope and verify UUID, seed, and Region data
+Artifact versions above are design targets. The implementation task must verify actual versions, sources, licenses, hashes, compatibility, dependency order, Structure selection, Weight, Model／Prop IDs, and generated Pack before recording Runtime versions.
 
-Phase 3 completed on 2026-07-21. The verified baseline and local rollback evidence are recorded in [Main World Baseline](13-main-world-baseline.md). Repeating generation remains destructive and requires a new independently approved, path-checked task. Phase 4 is complete; CoreProtect is next and Phase 1B remains incomplete.
+Required order:
+
+```text
+Artifact verification
+→ Runtime working copy
+→ Structure-selection Config
+→ Prop／Model ID normalization
+→ all approved Plugin／Content import
+→ World allowlist, Content load, and Resource Pack preflight
+→ healthy load confirmation
+→ separately approved Main Persistent Family regeneration
+→ generation／Portal／Spawn／Pack／Resource-exclusion acceptance
+→ approved tuning
+→ new baseline and backup
+```
+
+Do not generate the Worlds before Content load. Keep `resource`, `resource_nether`, `resource_end`, and unknown Worlds disabled. Regeneration must not include the Resource family and requires exact paths, rollback evidence, explicit user confirmation, normal shutdown, and focused destructive verification.
+
+### Phase 3 - Current and future Main baselines
+
+The 2026-07-21 baseline in [Main World Baseline](13-main-world-baseline.md) remains the current Runtime source of truth. It is replaced only after Phase 2B generation, acceptance, tuning, identity capture, and backup complete. The current Worlds, Seed, UUIDs, spawns, and rollback backup must not be altered by documentation work.
 
 ### Phase 4 - Main lightweight gameplay
 
-- [x] Install EvenMoreFish 2.4.3 only on Main
-- [x] Load the adopted Japanese Config with `main`／`resource` scope, dedicated MariaDB, Economy/Competition disabled
-- [x] Complete one natural catch, Journal persistence, permission boundary, and clean restart check
-- [x] Preserve mcMMO Fishing XP while disabling duplicate mcMMO loot and leaving Waymark unchanged
-- [x] Scale all 62 EconomyShopGUI prices exactly 100x without changing products, categories, directions, or spreads
-- [x] Enable the Vault Fish Shop with tracked Rarity values, remove direct MONEY rewards, and grant only `emf.shop` in Main Context
-- [x] Verify one Common fish sale, item consumption, denied Sellall/Admin, and test-balance cleanup
+EvenMoreFish, the Main fixed-price shop, and the 100x nominal Waymark scale remain verified. This revision changes neither the current prices nor Runtime Config.
 
-Phase 4 completed on 2026-07-21. Do not turn future ordinary Config/version maintenance into exhaustive catch, command, reward, or unrelated regression testing unless an observed defect changes the risk.
+### Phase 5 - Frontier V0.1.0
 
-### Phase 5 - Select and install one playable Frontier Theme
+The formal scope is [Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md). Both Ruined Frontier alpha and Worlds Beyond MVP are required.
 
-- [ ] Compare candidates for Paper 1.21.11／Java 25, installation, License, cost, dependencies, Resource Pack, worlds, and actual play
-- [ ] Obtain user approval and manually acquire the selected artifacts
-- [ ] Install one Theme and confirm its representative entrance/start
-- [ ] Use normal Frontier inventory and shared mcMMO
-- [ ] Keep WM rewards, achievements, Main rewards, Theme inventory, and initial equipment disabled for V0.1.0
+#### Frontier shared foundation
 
-A World Generator alone is not assumed to satisfy the playable-theme requirement.
+- [ ] Lock every Plugin／Content Artifact, license, hash, World ID, Gate method, Resource Pack, and persistence boundary
+- [ ] Integrate Multiverse-Inventories with `neutral`, `worlds_beyond`, and `guild`
+- [ ] Integrate Frontier Multiverse-NetherPortals, WorldEdit, WorldGuard, CoreProtect, and ResourcePackManager
+- [ ] Produce and deliver a Frontier-only integrated Pack
+- [ ] Integrate separately released Wayfarer_Core and Wayfarer_Frontier
+- [ ] Build and verify Beyond and Guild Gate routes
 
-### Phase 6 - User-built Hubs and Gate structures
+#### EM Adapter necessity decision
 
-CoreProtect Phase 9 must be completed before substantial construction begins. Builder-led work additionally requires Phase 1B; user planning and initial manual work do not authorize Codex to infer structures or routes.
+- [ ] Lock EliteMobs version, Content packages, Blueprint names, Instance naming, lifecycle, concurrency, restart, and reconnect behavior
+- [ ] Test static MVI registration first
+- [ ] Test a strict approved-Blueprint Regex second
+- [ ] Authorize an Adapter only if both approaches are insufficient
+
+#### Ruined Frontier alpha
+
+- [ ] Adventurer's Guild and Primis
+- [ ] `frontier_bs`, `frontier_bs_nether`, and `frontier_bs_the_end` after exact ID lock
+- [ ] BetterStructures and EliteMobs enabled across the three Theme dimensions
+- [ ] approved five-pack／Prop／Shrine／Dungeoneering Content
+- [ ] BetterHealthBar3 adoption test
+- [ ] representative Sign, Shrine, Boss, Loot, Guild, Portal, MVI, Pack, and safe-return acceptance
+
+#### Worlds Beyond MVP
+
+- [ ] Iris Overworld, Nether, and End after exact Engine／Pack／Seed／World ID lock
+- [ ] PEACEFUL and persistent-World operation
+- [ ] MVI `worlds_beyond` group and family-local Portal links
+- [ ] Traversal Loadout, Elytra, LeafGrapple, Launchpad
+- [ ] Frontier WM Shop, Waystone, Discovery GUI, and Teleport GUI
+- [ ] Pack, persistence, MVI, routing, and safe-return acceptance
+
+### Phase 6 - User-built Hubs and Gates
+
+CoreProtect must be installed after the new Main baseline and before substantial construction. Builder-led work additionally requires Phase 1B.
 
 The user manually builds and approves:
 
-- [ ] Lobby minimum Hub, Main Gate, and Frontier Gate
-- [ ] Main initial Spawn Hub, Lobby Return, Frontier Gate, and three Resource Gates
-- [ ] Frontier Gate minimum Hub, Theme Gate, and Theme Return destination
-- [ ] Return Gate structure for each Resource world
-- [ ] Safe Resource End outer-island structure
+- [ ] Lobby minimum Hub and Main／Frontier Gates
+- [ ] Main initial Spawn Hub and Lobby／Frontier／three Resource Gates
+- [ ] Frontier Gate Hub, Beyond Gate, Guild Gate, and both safe return destinations
+- [ ] each Resource Return Gate
+- [ ] Resource End safe outer-island structure
 
-Codex does not infer or generate appearance, coordinates, orientation, or destinations without explicit user input.
+Codex does not infer appearance, coordinates, orientation, or destinations.
 
-Main Spawn protection is designed but not implemented. After the user has substantially completed the initial Main Hub footprint and equipment layout, a separate task must approve the exact `main_spawn_hub` WorldGuard boundary. Use membership-based construction protection without a `build` flag, allow only approved public `use`, isolate broader interaction in focused child Regions, verify environmental flags, and only then consider changing Vanilla `spawn-protection` from 16 to 0.
+### Phase 7 - Gate integration and Main Spawn protection
 
-### Phase 7 - Advanced Portals and Gate integration
-
-Before Phase 1B, select the Advanced Portals version and verify Velocity/Paper placement, portal create/edit/delete, destination/server transfer, reload/debug, Builder-safe operations, and Admin-only operations. Do not configure production routes until the user-built structures and safe destinations are fixed.
-
-- [ ] Lobby -> Main spawn Hub
-- [ ] Lobby -> Frontier Gate
-- [ ] Main -> Lobby and Frontier Gate
-- [ ] Main -> `resource`, `resource_nether`, and `resource_end`
-- [ ] Each Resource world -> Main spawn Hub
-- [ ] Frontier Gate -> playable Theme
-- [ ] Playable Theme -> Frontier Gate safe return
-
-Portal/Dimension Routing requires detailed verification of only the routes changed by the task.
+- [ ] Lock Advanced Portals or another approved Gate method and its exact permission model
+- [ ] Configure only user-approved routes and safe arrivals
+- [ ] Preserve MVI switching and family-local dimension routing
+- [ ] Apply the exact `main_spawn_hub` WorldGuard membership boundary after substantial initial construction
+- [ ] Keep Vanilla `spawn-protection=16` until the Region and Builder behavior pass
 
 ### Phase 8 - Resource reset bootstrap
 
-- [ ] Safe arrival and Spawn/Arrival placement for all Resource worlds
-- [ ] Reproducible Return Gate structure and Gate reconfiguration
-- [ ] Optional protection reapplication where approved
-- [ ] Resource End safe outer-island reconstruction
-- [ ] Idempotent procedure and exact runtime paths
-- [ ] Explicit persistent-world rejection
-
-The implementation may use a user-authored Schematic, tracked Template, PowerShell/Command procedure, external custom Plugin, or an approved combination. Destructive reset execution remains separately approved.
+- [ ] Restore a safe arrival and Spawn／Arrival setting for every Resource World
+- [ ] Restore a reproducible Return Gate and Gate Config
+- [ ] Restore approved protection
+- [ ] Restore the Resource End outer-island site
+- [ ] Use an idempotent procedure with exact paths and explicit persistent-World rejection
 
 ### Phase 9 - CoreProtect
 
-- [ ] Install next, after completed Phase 4 EvenMoreFish and before substantial Hub/Gate construction
-- [ ] Select exact Paper placement and database policy in the approved integration task
-- [ ] Adopt it for investigation and partial rollback
-- [ ] Keep rollback administration Admin-only; do not grant it to Builder
-- [ ] Perform only normal Plugin Integration verification
+- [ ] Install after the new Main baseline and before substantial Hub／Gate construction
+- [ ] Lock exact placement and database policy
+- [ ] Keep lookup／rollback administration Admin-only
+- [ ] Include Main and Frontier persistence and backup ownership in the operational design
 
-CoreProtect records history only after installation and does not replace the cold backup.
+CoreProtect records only changes after installation and never replaces cold backup.
 
-### Phase 10 - Integrated operations Script
+### Phase 10 - Integrated operations
 
-- [ ] Implement formal `Wayfarer.ps1` actions: Start, Stop, Restart, Status, Backup
-- [ ] On planned shutdown: reject new connections, notify/disconnect users, stop Velocity, settle about 10 seconds, flush Paper, stop Main／Frontier／Lobby, and confirm Java exit
-- [ ] Treat the wait only as a settling interval; rely on normal save/stop, process checks, and database/Redis handling for integrity
-- [ ] Keep Console exceptional and use Temporary Admin membership for normal running-Runtime administration
-- [ ] Preserve startup dependency order and incomplete-generation safety
-- [ ] Keep OS/Docker/Database operations outside Minecraft permissions
+- [ ] Implement `Wayfarer.ps1` Start, Stop, Restart, Status, and Backup
+- [ ] Preserve the approved shutdown／flush／process-exit order
+- [ ] Add all Frontier Worlds, Content, Packs, and custom-Plugin data owners
+- [ ] Keep OS, Docker, MariaDB, Redis, backup, restore, and forced recovery outside Minecraft permissions
 
 ### Phase 11 - Cold backup and isolated restore
 
-- [ ] Disconnect all users and wait about 10 seconds for in-flight work
-- [ ] Stop all Paper components normally and confirm Java process exit
-- [ ] Dump MariaDB
-- [ ] Stop Redis normally and copy its AOF volume
-- [ ] Copy persistent worlds and Config
-- [ ] Create manifest and SHA-256 records with `.incomplete` generation handling
-- [ ] Restore to an isolated target and verify it
+- [ ] Dump MariaDB after normal Minecraft shutdown
+- [ ] Stop Redis and copy its AOF
+- [ ] Copy persistent Main／Frontier Worlds, Config, Content, Pack inputs, and approved custom-Plugin data
+- [ ] Record a manifest and SHA-256 with incomplete-generation safety
+- [ ] Restore to an isolated target and verify every authoritative data owner
 
 ### V0.1.0 Pre-release Player State Reset
 
-- [ ] Use a separate destructive task after all Gameplay／Portal／Hub／Permission／Backup tests and immediately before the final baseline backup.
-- [ ] Reject connections, stop the network normally, and take pre-reset Redis／World／player-data backups with exact paths and non-committed UUID scope.
-- [ ] Reset every Waymark balance through an approved RedisEconomy mechanism, never direct Redis key editing.
-- [ ] Reset Main inventory, armor/offhand, Vanilla XP level/total/progress, and advancements; explicitly approve every additional state such as Ender Chest, position, mcMMO, or EvenMoreFish Journal before touching it.
-- [ ] Verify representative zero balance, empty inventory, zero XP, and initial advancement state, then create the final post-reset baseline backup.
+- [ ] Use a separate destructive task after all Gameplay／Portal／Hub／Permission／Backup tests
+- [ ] Back up exact Redis, World, and Player State scope before reset
+- [ ] Reset Waymark through a supported RedisEconomy mechanism, never direct Redis key editing
+- [ ] Reset the approved Main and Frontier／MVI Player State without violating authoritative ownership
+- [ ] Verify zero／initial representative state and create the final post-reset baseline backup
 
 This reset has not been executed and must not be brought forward.
 
 ### Phase 12 - V0.1.0 Baseline
 
-- [ ] Confirm all Release Blockers
+- [ ] Confirm every Release Blocker
 - [ ] Create and verify the Baseline Backup
 - [ ] Select the exact Release commit and record known limitations
 - [ ] Decide Git Tag／GitHub Release adoption
-- [ ] Declare `V0.1.0 Alpha` only after all preceding checks pass
+- [ ] Declare `V0.1.0 Alpha` only after all checks pass
 
 ## V0.1.0 Release Blockers
 
+- Main five-Pack／Prop／FreeMinecraftModels／ResourcePackManager preflight and import
+- destructive Main Persistent Family regeneration after Content load
+- Main generation acceptance, tuning, new baseline, and backup
+- CoreProtect after the new Main baseline
+- Frontier shared foundation
+- Multiverse-Inventories and all three groups
+- ResourcePackManager, separate Main／Frontier Packs, and backend-switch delivery
+- Wayfarer_Core and Wayfarer_Frontier from separate Repositories
+- EM Adapter necessity decision
+- Ruined Frontier alpha
+- Worlds Beyond MVP
+- both Themes' MVI separation and complete Main／Frontier item isolation
+- both Theme Portal families and safe returns to Frontier Lobby
+- Lobby, Main, and Frontier Hubs／Gates
 - Phase 1B final Builder allowlist
-- BetterStructures restricted to persistent Main dimensions (Phase 2 complete)
-- Final generation of `main`, `main_nether`, and actual Bukkit End world `main_the_end` (Phase 3 complete)
-- EvenMoreFish (Phase 4 complete)
-- Persistent Main Nether／End additional-structure pack selection and integration (Phase 2B)
-- One playable Frontier Theme
-- Lobby minimum Hub
-- Main initial Spawn Hub
-- Frontier Gate minimum Hub
-- Main Spawn WorldGuard protection after substantial initial Hub construction
-- All Phase 7 required Gate routes
-- Resource Return Gate Bootstrap design and procedure
-- Resource End safe outer-island arrival and return
-- CoreProtect
-- Integrated Start／Stop／Restart／Status／Backup Script
-- MariaDB／Redis／World／Config cold backup
-- Isolated restore test
-- V0.1.0 pre-release Waymark／Vanilla player-state reset
-- Verified V0.1.0 Baseline Backup
+- Main Spawn WorldGuard protection
+- complete Portal Routing
+- Resource Reset Bootstrap and Resource End safety
+- integrated operations
+- Frontier-inclusive cold backup and isolated restore
+- V0.1.0 pre-release Player State reset
+- verified V0.1.0 Baseline Backup
 
 ## Not V0.1.0 Release Blockers
 
-- Cross-server Chat or Shop
+- cross-server Chat
 - Dynamic Pricing, Player Shop, Global Stock, or automatic price adjustment
-- Frontier WM rewards
-- Theme achievements or Main-side achievement rewards
-- Theme-specific inventories, initial equipment, or WM equipment purchases
+- item-based achievement rewards
+- additional Themes beyond Ruined Frontier and Worlds Beyond
+- optional／premium Frontier Content outside the approved alpha／MVP
+- Ruined Frontier WM reward rollout and final balance
+- an EM Adapter when static MVI registration or strict Regex is sufficient
 - Main teleport system
-- Frontier Gate utilities
-- Over-enchanted/special tools
-- Multiple playable Themes
 - PlugManX
-- Custom Plugin repository
-- V0.2.x custom-Plugin concept draft and growth-tool proposal
 - LAB
 
-Accepted compromises and future solution candidates are detailed in [Deferred Design Items](11-deferred-design-items.md).
+Accepted compromises and later candidates are tracked in [Deferred Design Items](11-deferred-design-items.md). Detailed Frontier authority and boundaries are in [Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md).

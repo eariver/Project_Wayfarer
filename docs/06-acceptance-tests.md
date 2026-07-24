@@ -1,4 +1,4 @@
-# Acceptance Tests - Ver.0.0.5
+# Acceptance Tests - Ver.0.0.6
 
 ## 1. Verification policy
 
@@ -34,7 +34,7 @@ Regression testing is limited to a foundation directly modified by the change. E
 - [x] mcMMO shared Main/Frontier progression and RedisEconomy shared Waymark balances have verified persistence tests.
 - [x] EconomyShopGUI 7.1.1 Free provides the verified Main-only fixed-price shop.
 
-These items describe current baselines only. They do not mark the Phase 1B final Builder allowlist, Hubs, Gates, Frontier Theme, integrated operations, or V0.1.0 Backup as implemented.
+These items describe current baselines only. They do not mark the replacement Main generation, Phase 1B, Hubs, Gates, either Frontier Theme, MVI, ResourcePackManager, custom Plugins, integrated operations, or V0.1.0 Backup as implemented.
 
 ## 3. V0.1.0 Release Blockers
 
@@ -58,24 +58,56 @@ Phase 1B incomplete:
 ### Main and gameplay
 
 - [x] BetterStructures 2.6.3 and `103 Default Structures` version 5 are enabled only in Bukkit worlds `main`, `main_nether`, and `main_the_end`; every Resource world and unknown new world is disabled.
-- [x] Final persistent Main generation completed under an approved destructive task with exact paths, verified backup and manifest, final seed, preserved Resource family, and safe Overworld/Nether/End spawns.
+- [x] The 2026-07-21 current persistent Main baseline completed under an approved destructive task with exact paths, verified backup and manifest, recorded seed, preserved Resource family, and safe Overworld/Nether/End spawns.
 - [x] EvenMoreFish enables with its adopted Config and one representative function; configuration has no explicit mcMMO Fishing conflict.
-- [ ] CoreProtect enables after final Main generation and provides its representative lookup/rollback-administration function.
+- [ ] Before replacement generation, all five adopted Structure packs, BetterStructures Prop Pack, FreeMinecraftModels, and ResourcePackManager are verified, imported, and loaded with the approved Main World allowlist and Pack preflight.
+- [ ] The current Main baseline and rollback backup remain verified and recoverable immediately before replacement generation.
+- [ ] A separately approved destructive task regenerates only `main`, `main_nether`, and `main_the_end` after Content load, retaining verified rollback evidence and excluding the Resource family.
+- [ ] Representative adopted Structures generate across Main Overworld／Nether／End; BetterStructures does not generate in any Resource dimension.
+- [ ] Persistent and Resource Portal families remain separate and functional, all three Main spawns are safe, and the Main Resource Pack is delivered.
+- [ ] Approved Weight／Content tuning, World identities, backup, and the replacement Main baseline are finalized.
+- [ ] CoreProtect enables after the replacement Main baseline and provides representative lookup/rollback administration before substantial Hub／Gate construction.
 - [ ] After the user substantially completes the initial Hub, an approved exact Main Spawn WorldGuard Region denies general building, permits only intended public use, preserves Builder member building without Region administration, and persists after restart.
 - [ ] Vanilla `spawn-protection` remains 16 until the Main Spawn Region passes acceptance; a separately approved change to 0 then avoids double protection without weakening the Region boundary.
 
-### Frontier and Hubs
+### Frontier shared foundation
 
-- [ ] One user-approved playable Theme runs on Frontier Paper 1.21.11／Java 25 and exposes a representative entrance/start.
+- [ ] Exact Frontier Plugin／Content versions, licenses, hashes, World IDs, Gate method, Pack composition, persistence, and dependency order are locked.
+- [ ] MVI implements `neutral`, `worlds_beyond`, and `guild`, switches the approved Player State without loss／duplication／stale overwrite, and survives restart, disconnect, and reconnect.
+- [ ] Main, Frontier Lobby, Worlds Beyond, and Ruined Frontier exchange no Inventory, Armor, Offhand, Ender Chest, Vanilla or custom Item, XP, Health, or Food.
+- [ ] Waymark and mcMMO retain only their approved shared behavior without becoming an item-transfer path.
+- [ ] ResourcePackManager delivers separate Main and Frontier Packs and switches correctly across Main／Frontier backend movement and reconnect.
+- [ ] Wayfarer_Core and Wayfarer_Frontier load from separately released artifacts and satisfy their Database／API／Permission／audit contracts without storing normal Inventory.
+- [ ] Beyond and Guild Gates arrive safely, each Theme has a family-local Portal boundary, and both return safely to Frontier Lobby.
 - [ ] Lobby minimum Hub, Main spawn Hub, and Frontier Gate minimum Hub are manually built and approved by the user.
-- [ ] The Theme uses normal Frontier inventory and shared mcMMO; V0.1.0 WM rewards, achievements, Main rewards, Theme inventory, and initial equipment remain absent.
+
+### Ruined Frontier alpha
+
+- [ ] Adventurer's Guild, Primis, and the three approved Ruined Frontier dimensions load with the locked World IDs.
+- [ ] BetterStructures and EliteMobs are active in all three Ruined Frontier dimensions, with representative natural Structure generation and no cross-Theme generation.
+- [ ] Representative EliteMobs Sign, Free Elite Shrine, Dungeoneering module, Boss identity, and Loot behavior work without item leakage.
+- [ ] Guild and verified Instance Worlds use the correct MVI profile; restart／reconnect and Instance lifecycle do not lose or duplicate Player State.
+- [ ] The independent EM Adapter review records whether static registration, strict Regex, or an Adapter is required; an Adapter is not assumed.
+- [ ] The Frontier Resource Pack renders required BetterStructures／EliteMobs／FreeMinecraftModels assets; BetterHealthBar3 passes or is explicitly rejected by its adoption test.
+- [ ] CoreProtect records representative Ruined Frontier block changes under the approved administration boundary.
+
+### Worlds Beyond MVP
+
+- [ ] The locked Iris Overworld, Nether, and End load as persistent Worlds at PEACEFUL with the approved Seed and World Border.
+- [ ] All three Worlds use the `worlds_beyond` MVI group and family-local Portal links.
+- [ ] Traversal Loadout, Elytra, the adopted LeafGrapple integration, and Launchpad work without duplication or use outside the approved Theme.
+- [ ] Frontier WM Shop transactions use the formal Waymark adapter and preserve idempotency／audit without accepting Theme items as cross-boundary value.
+- [ ] Waystone placement／lifecycle, Discovery GUI, and Teleport GUI operate within safe destinations and Permission limits.
+- [ ] Persistence, Resource Pack delivery, MVI separation, restart／reconnect, and safe Frontier Lobby return pass.
 
 ### Required Gate routes
 
 - [ ] Lobby -> Main spawn Hub and Lobby -> Frontier Gate.
 - [ ] Main -> Lobby, Main -> Frontier Gate, and Main -> each of `resource`, `resource_nether`, `resource_end`.
 - [ ] Each Resource world -> Main spawn Hub.
-- [ ] Frontier Gate -> playable Theme and playable Theme -> safe Frontier Gate return.
+- [ ] Frontier Gate -> Worlds Beyond and Worlds Beyond -> safe Frontier Gate return.
+- [ ] Frontier Gate -> Ruined Frontier and Ruined Frontier -> safe Frontier Gate return.
+- [ ] Worlds Beyond and Ruined Frontier each retain family-local Nether／End routes without unintended crossing.
 - [ ] Changed routes use approved exact coordinates, safe arrivals, and only their intended source/destination worlds.
 
 ### Resource reset bootstrap
@@ -87,7 +119,7 @@ Phase 1B incomplete:
 ### Operations and recoverability
 
 - [ ] `Wayfarer.ps1` implements Start, Stop, Restart, Status, and Backup; planned shutdown rejects new connections, disconnects users, stops Velocity, settles in-flight work, flushes/stops Main／Frontier／Lobby, and confirms Java process exit.
-- [ ] Cold Backup includes MariaDB dumps, stopped Redis AOF, persistent Worlds, Config, Manifest/SHA-256, and incomplete-generation safety.
+- [ ] Cold Backup includes MariaDB dumps, stopped Redis AOF, persistent Main／Frontier Worlds, MVI Profiles, custom-Plugin data, approved Content／Pack inputs, Config, Manifest/SHA-256, and incomplete-generation safety.
 - [ ] The Backup restores successfully to an isolated target.
 - [ ] A verified V0.1.0 Baseline Backup and exact Release commit are selected; known limitations and the Tag/Release decision are recorded.
 
@@ -95,21 +127,23 @@ Phase 1B incomplete:
 
 - [ ] Cross-server Chat displays an approved origin format.
 - [ ] Cross-server Shop, Dynamic Pricing, Player Shop, Global Stock, or automatic price adjustment has a separately approved economy design.
-- [ ] Frontier WM rewards and Theme achievements avoid duplicate/replay rewards and preserve history.
-- [ ] Main-side achievement rewards are claim-once and survive Theme removal.
-- [ ] Theme-specific inventories and initial equipment prevent item loss/duplication across boundaries.
-- [ ] WM Theme equipment purchases and Frontier Gate utilities preserve the Main/Frontier economy boundary.
+- [ ] Optional Ruined Frontier WM rewards avoid duplicate/replay rewards and use the formal adapter.
+- [ ] Future item-independent Theme achievements and rewards are claim-once and survive Theme removal.
+- [ ] Optional WM Theme-equipment design does not create an item-transfer or conversion path across backend／MVI boundaries.
 - [ ] Main teleporters validate safe destinations and any cost/Unlock/Cooldown policy.
 - [ ] Special or over-enchanted items retain meaningful normal Survival progression.
-- [ ] Multiple playable Themes have explicit routing and data boundaries.
-- [ ] PlugManX, a custom Plugin repository, or LAB is introduced only under its own approved task.
+- [ ] Any Theme beyond Ruined Frontier and Worlds Beyond has explicit routing and data boundaries.
+- [ ] PlugManX, any custom Plugin Repository beyond the required Wayfarer_Core／Wayfarer_Frontier Repositories, or LAB is introduced only under its own approved task.
 
-The V0.2.x custom-Plugin document under `codex/` is only a deferred concept draft. It is outside V0.1.0 acceptance and does not satisfy any implementation checkbox.
+The V0.2.x custom-Plugin document under `codex/` remains non-authoritative for proposals not explicitly promoted into Ver.0.0.6. It does not satisfy Wayfarer_Core／Wayfarer_Frontier implementation checkboxes or authorize Repository／Artifact creation.
 
 ## 5. Detailed risk-focused test expectations
 
 - Permission implementation: verify persistent Group reuse, self-only temporary Parent restrictions, denial cases, Context scope, expiry/removal, and absence of unintended authority.
 - Persistent World generation: verify exact resolved paths, verified backup, selected generator conditions, safe Spawn, and out-of-scope world preservation.
+- MVI／Inventory boundary: verify every affected Gate, Portal, Respawn, teleport, restart, disconnect／reconnect, Instance lifecycle, and complete item non-transfer boundary.
+- Project-owned Plugin: verify Source／Release provenance, schema migrations, idempotency, audit, API／Permission contracts, failure recovery, and detailed changed-function behavior.
+- Resource Pack distribution: verify build inputs, hash, Hosting, Client acceptance／refusal／failure, backend switching, cache update, conflicts, and rollback.
 - Shared Economy/Progression change: verify the changed data path across only the affected backends and persistence boundary.
 - Portal/Dimension Routing: verify only every added/changed directed route, safe arrival, return path, and prohibited family crossing.
 - Resource Reset: verify allowlist, exact paths, backup, recreation, Bootstrap idempotency, persistent-world rejection, and recovery.

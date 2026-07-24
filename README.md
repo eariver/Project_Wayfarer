@@ -4,7 +4,7 @@ Minecraftの恒久生活拠点 **Main** と、既製Adventureコンテンツを�
 
 このリポジトリは、設定・承認済み設計・導入手順・運用Scriptおよび外部拡張Pluginとの接続仕様を構成管理するための正本です。正式仕様と分離した非正本のConcept、調査および設計候補も履歴として管理します。独自PluginのSourceは含めず、必要になった場合はPluginごとの別リポジトリで開発・Releaseします。
 
-## Ver.0.0.5の構成
+## Ver.0.0.6の構成
 
 - Minecraft Client: 26.2
 - Velocity: 4.1.0選定Build（Runtime表記: 4.1.0-SNAPSHOT、Java 25）
@@ -27,10 +27,11 @@ Minecraftの恒久生活拠点 **Main** と、既製Adventureコンテンツを�
 - Main恒久World Baseline: 2026-07-21にSeed `164225356311935743`で3 Dimensionを最終生成し、Resource Familyを保持したまま安全Spawnを確定
 - Main／Frontier: 通常Inventoryは分離し、Waymark残高とmcMMO進行だけを共有
 - Lobby: TAB・権限以外のゲーム進行をMain／Frontierと共有しない
+- V0.1.0計画: Main五Pack構成と再生成、Ruined Frontier／Worlds Beyond、MVI、Wayfarer_Core／Wayfarer_Frontier、Main／Frontier別Resource Pack（すべて未実装）
 
 ## 最初に読む文書
 
-1. [正式設計・導入・運用ガイド Ver.0.0.5](docs/00-design-guide.md)
+1. [正式設計・導入・運用ガイド Ver.0.0.6](docs/00-design-guide.md)
 2. [Architecture](docs/01-architecture.md)
 3. [Installation](docs/02-installation.md)
 4. [Operations](docs/03-operations.md)
@@ -41,9 +42,10 @@ Minecraftの恒久生活拠点 **Main** と、既製Adventureコンテンツを�
 9. [Deferred Design Items](docs/11-deferred-design-items.md)
 10. [Permission Model](docs/12-permission-model.md)
 11. [Main World Baseline](docs/13-main-world-baseline.md)
-12. [Codex Task Instruction Archive](codex/README.md)
-13. [Investigation Reports](docs/investigations/README.md)
-14. [Concepts and design candidates](concepts/README.md)
+12. [Frontier V0.1.0 Scope](docs/14-frontier-v0.1.0-scope.md)
+13. [Codex Task Instruction Archive](codex/README.md)
+14. [Investigation Reports](docs/investigations/README.md)
+15. [Concepts and design candidates](concepts/README.md)
 
 今後はRepository内の正式ガイドを設計基準とし、Runtime Versionは`versions.yml`と`plugin-manifest.yml`で管理します。
 
@@ -111,9 +113,9 @@ Project Wayfarerは、Mojang Studios、Microsoft、PaperMCまたは各Plugin作�
 
 ## Versioning
 
-Ver.0.0.5は設計・導入・運用文書の改訂番号であり、稼働ServerのRelease番号ではありません。最初の目標Server Releaseは`V0.1.0 Alpha`ですが、現時点では未達です。Baseline Backupと隔離Restoreを含むRelease Blockerを完了した時点で、Git TagおよびGitHub Releaseを採用するか最終決定します。
+Ver.0.0.6は設計・導入・運用文書の改訂番号であり、稼働ServerのRelease番号ではありません。最初の目標Server Releaseは`V0.1.0 Alpha`ですが、現時点では未達です。Main再生成、Frontier両Theme、統合運用、Baseline Backupおよび隔離Restoreを含むRelease Blockerを完了した時点で、Git TagおよびGitHub Releaseを採用するか最終決定します。
 
-## Ver.0.0.5 decisions
+## Ver.0.0.6 decisions
 
 - Velocityと全Paper BackendをJava 25へ統一する。
 - LobbyとFrontier GateはVoid Worldとし、仮設安全Platformを維持する。
@@ -134,8 +136,13 @@ Ver.0.0.5は設計・導入・運用文書の改訂番号であり、稼働Serve
 - Planned `resource_end` has no Ender Dragon and uses a verified outer-island arrival/return gate.
 - Manual Plugin collection is tracked in [Plugin Collection](docs/08-plugin-collection.md), `plugin-collection.csv`, and the separate XLSX artifact.
 - 権限Phase 1Aとして、`default`、2つのEligibility Group、`wayfarer_builder`／`wayfarer_admin`の5つの恒久Group定義と、PlayerからRole Groupへの自己限定Temporary Parent所属を実装済み。既存`default`／`wayfarer_builder`は再利用し、AdminはOPではなく一時Roleで全権限を得る。Builderの最終AllowlistはPhase 1Bとして未実装。
+- Mainの次BetterStructures Scopeは5 Pack、Prop Pack、FreeMinecraftModelsおよびResourcePackManagerとする。全Contentの正常Load後、別途承認された破壊的タスクでPersistent Main Familyだけを再生成し、Resource Familyは除外する。現在のMain Baselineは新Baseline確定まで有効。
+- V0.1.0ではRuined Frontier alphaとWorlds Beyond MVPの両方を実装・統合・受入試験する。
+- Frontierの通常Player StateはMultiverse-Inventoriesの`neutral`、`worlds_beyond`、`guild` Groupを正本とし、Wayfarer_FrontierでInventory保存を再実装しない。
+- Main／Frontier間ではVanilla Itemを含む全Item、Inventory、Armor、Offhand、Ender ChestおよびVanilla Player Stateを移送しない。共有成果はWaymark、mcMMOおよび別途承認されるItem非依存実績／報酬だけとする。
+- Wayfarer_CoreとWayfarer_FrontierはV0.1.0 Blockerとして別Repositoryで開発し、本RepositoryにはIntegration Contract、Config、Version／Hashおよび運用・受入文書だけを置く。
+- ResourcePackManagerをMain／Frontier別Packの配信基盤として計画し、Version、Hosting、Hash、切替、競合およびRollbackを実装前にLockする。
 - Lobby／Main／FrontierのHub外観とGate構造はユーザーが手作業で確定し、Codexは確定座標に基づく接続・設定・保護を後続タスクで行う。
-- V0.1.0ではFrontierへ未選定のPlayable Themeを1つ導入するが、WM報酬、Theme実績、Theme別Inventoryおよび複数ThemeはRelease Blockerにしない。
 - Main Spawn保護は設計済み・未実装とし、ユーザーが初期Hubを概ね整備した後にWorldGuard RegionのExact範囲を別タスクで承認する。それまではVanilla `spawn-protection=16`を維持する。
-- CoreProtectはHub／Gateの本格建築前に導入する。Block履歴と部分Rollbackを担当するが、Cold Backupの代替にはしない。
-- V0.2.x以降の独自Plugin構想は、一般Concept運用を導入する以前の歴史的例外として[Codex Task Instruction Archive](codex/README.md)内に参考草案を保存する。Fileは現位置を維持し、V0.1.0の実装対象・Release Blocker・開発開始承認ではない。
+- CoreProtectは新しいMain Baseline確定後、Hub／Gateの本格建築前に導入する。Block履歴と部分Rollbackを担当するが、Cold Backupの代替にはしない。
+- V0.2.x以降の独自Plugin構想は、一般Concept運用を導入する以前の歴史的例外として[Codex Task Instruction Archive](codex/README.md)内に参考草案を保存する。Fileは現位置を維持し、Ver.0.0.6へ明示的に昇格したWayfarer_Core／Wayfarer_Frontier Scope以外について、V0.1.0の実装対象・Release Blocker・開発開始承認にはしない。

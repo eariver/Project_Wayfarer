@@ -4,7 +4,9 @@
 
 Waymark (`WM`) is Project Wayfarer's shared network balance for Main and Frontier. RedisEconomy `4.5.12-wayfarer.1` stores the balance in Redis, VaultUnlocked 2.20.2 exposes it through Vault, EconomyShopGUI 7.1.1 Free provides the Vanilla-item shop, and EvenMoreFish 2.4.3 provides fish sales only on Main.
 
-Frontier shares the balance but does not load EconomyShopGUI or provide an installed reward source. Lobby does not participate in Waymark. Normal inventories remain local to each backend, so a shop purchase changes only Main inventory while the resulting balance is visible on Frontier.
+Frontier shares the balance but does not load EconomyShopGUI or currently provide an installed reward source. Lobby does not participate in Waymark. Normal Player State remains isolated by backend and, in the planned Frontier architecture, by MVI Group. A shop purchase changes only Main inventory while the resulting balance is visible on Frontier.
+
+Waymark is the primary item-independent reward and value-transfer path between Main and Frontier. It is not an item-transfer mechanism. Main and Frontier do not share or move Inventory, Armor, Offhand, Ender Chest, Vanilla or custom Items, Vanilla XP, Health, Food, Theme equipment, EliteMobs loot, Quest items, or materials. mcMMO is a separate shared network progression and is not an economy reward.
 
 The initial shop is a conservative Alpha baseline:
 
@@ -137,7 +139,7 @@ EvenMoreFish performs its own display/rounding. `/emf sellall`, fish purchase, B
 
 ## Permission boundary
 
-LuckPerms applies these nodes to the existing `default` group only in the `server=main` context. This is the current shop permission boundary. Phase 1A has implemented the Ver.0.0.5 Eligibility／Temporary Role security boundary, but it does not broaden these default shop nodes; the Admin Role receives full access only while its Temporary Parent is active, and the Builder Role receives no EconomyShopGUI administration.
+LuckPerms applies these nodes to the existing `default` group only in the `server=main` context. This is the current shop permission boundary. Phase 1A has implemented the Ver.0.0.6 Eligibility／Temporary Role security boundary, but it does not broaden these default shop nodes; the Admin Role receives full access only while its Temporary Parent is active, and the Builder Role receives no EconomyShopGUI administration.
 
 Allowed:
 
@@ -173,15 +175,21 @@ Change prices only through a reviewed Config change followed by YAML and Paper M
 
 Prices are intentionally conservative and may be adjusted after observing normal resource production, purchase demand, inflation, and progression pace. A future adjustment must continue to check direct buy/sell spreads and obvious crafting, smelting, and stonecutting arbitrage.
 
-For V0.1.0, the Main Vanilla-material Shop and EvenMoreFish fish sales are the implemented Waymark sources/uses. The initial Frontier Theme does not grant WM, and V0.1.0 does not add Theme equipment purchases, Frontier utilities, teleporter fees, achievements, or Main-side achievement rewards.
+For V0.1.0, the Main Vanilla-material Shop and EvenMoreFish fish sales remain the implemented Waymark sources/uses. Worlds Beyond adds an initial Frontier WM Shop as a planned V0.1.0 use. Its exact catalog, prices, transaction idempotency, and acceptance are locked during Wayfarer_Frontier implementation.
 
-Future work remains separately scoped and is not a V0.1.0 Release Blocker:
+Ruined Frontier Boss／Quest WM rewards remain a later balance lock and are not enabled by this document. Theme equipment is not converted to WM and no initial WM sale path may be used to move Theme items across a backend or MVI boundary.
 
-- Frontier-, EliteMobs-, and Quest-based Waymark rewards;
+Wayfarer custom Plugins must use Vault or the formally approved Waymark Service Adapter. They must not edit RedisEconomy keys or internal Redis data directly. Transaction IDs, idempotency, audit, and recovery behavior are part of the Wayfarer_Core contract.
+
+Future work remains separately scoped:
+
+- Ruined Frontier-, EliteMobs-, and Quest-based Waymark reward rollout and balance;
 - fish purchase, Bait purchase, and competition economy;
 - cross-server shops;
 - dynamic pricing, player shops, global stock, and automatic price adjustment.
-- WM-backed Theme equipment, Frontier utilities, Main teleporters, storage expansion, cosmetics, convenience features, and special/over-enchanted tools.
+- WM-backed Theme equipment, Main teleporters, storage expansion, cosmetics, convenience features, and special/over-enchanted tools.
+
+Future achievement rewards are item-independent by default. Candidates include titles, Permissions, GUI／ranking displays, achievement records, cosmetic unlocks, Waymark, and non-item feature unlocks. An item reward or transfer requires a separate formal boundary and is not part of V0.1.0.
 
 Administrator commands may be used for bounded acceptance tests and recovery, but must not become the normal gameplay currency source. Test balances must be restored through RedisEconomy's supported administration command.
 

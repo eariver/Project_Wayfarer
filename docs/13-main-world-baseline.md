@@ -1,6 +1,6 @@
 # Main World Baseline
 
-Project Wayfarer Ver.0.0.4 Roadmap Phase 3 was completed on 2026-07-21, and Ver.0.0.5 adopts this measured baseline unchanged. This document is the production generation baseline for Main's persistent dimension family; it is not a server release or permission to regenerate the worlds.
+Project Wayfarer Ver.0.0.4 Roadmap Phase 3 was completed on 2026-07-21, and Ver.0.0.6 continues to use this measured baseline as the current Runtime source of truth. This document remains the production generation baseline for Main's persistent dimension family until a separately approved replacement generation, acceptance, tuning, backup, and baseline-update task completes. It is not a server release or permission to regenerate the worlds.
 
 ## Runtime and generation policy
 
@@ -67,8 +67,12 @@ The official BetterStructures pack still emits non-blocking DataFixer ERROR-leve
 
 Phase 3 created the persistent terrain baseline and safe spawn coordinates only. The Main spawn Hub, Lobby and Frontier gates, three Resource gates, Resource return structures, and Resource End outer-island safety structure are not built or connected. Builder Phase 1B also remains incomplete and must precede Builder-led Hub/Gate/Theme connection work.
 
-The active `103 Default Structures` pack already contributes some structures to newly generated `main_nether` and `main_the_end` chunks. Planned Phase 2B evaluates complementary Nether／End-focused content after CoreProtect; it does not describe either dimension as empty. No pack has been selected or imported, and this plan does not authorize regeneration, trimming, Region deletion, retroactive paste, seed/UUID changes, or any Resource-family change.
+Ver.0.0.6 approves a planned Main BetterStructures expansion across `main`, `main_nether`, and `main_the_end`: five selected Structure packs, BetterStructures Prop Pack, FreeMinecraftModels, ResourcePackManager, and a replacement persistent-family generation after every adopted Content dependency loads successfully. Actual Artifact versions, licenses, sources, hashes, compatibility, Structure selection, Weight, Prop／Model IDs, and Pack delivery remain implementation locks.
+
+That approval does not supersede this baseline or authorize immediate World changes. Do not delete, trim, regenerate, rename, paste into, or alter the Seed／UUID of the current persistent family outside the dedicated destructive task. The complete Resource family remains outside the replacement-generation scope and must retain BetterStructures exclusion.
+
+After Content preflight and healthy load confirmation, the destructive task must preserve exact rollback evidence, regenerate only the persistent family, verify representative natural generation, Portal links, safe Spawn, Main Resource Pack delivery, and Resource-family exclusion, then apply approved tuning. Only after the new identities and verified backup are recorded may this document be replaced with the new baseline.
 
 Main Spawn WorldGuard protection is designed but not applied. The user first completes the initial Hub footprint; a later approved task then defines the exact Region and focused equipment child regions. Vanilla `spawn-protection=16` remains until that WorldGuard boundary and Builder-member behavior are verified.
 
-Phase 4 EvenMoreFish and the 100x Waymark nominal price revision are complete. The next Roadmap task is CoreProtect; Phase 2B follows it before the playable Frontier Theme selection.
+Phase 4 EvenMoreFish and the 100x Waymark nominal price revision are complete. The next implementation stage is Main BetterStructures Artifact／Content／Resource Pack Preflight. CoreProtect follows the verified replacement Main baseline and precedes substantial Hub／Gate construction.

@@ -1,6 +1,6 @@
-# Deferred Design Items - Ver.0.0.5
+# Deferred Design Items - Ver.0.0.6
 
-This document is the source of truth for Project Wayfarer features that Ver.0.0.5 deliberately leaves to operations, existing Plugins, or later design. “V0.1.0 impact” distinguishes an accepted Alpha compromise from a Release Blocker.
+This document is the source of truth for Project Wayfarer features that Ver.0.0.6 deliberately leaves to operations, existing Plugins, or later design. “V0.1.0 impact” distinguishes an accepted Alpha compromise from a Release Blocker.
 
 ## Permission elevation
 
@@ -13,7 +13,7 @@ Phase 1A implemented all five persistent LuckPerms Group definitions. The tempor
 | 複数RoleへのTemporary Parent所属を技術的に禁止しない | 現在のTemporary Parentを自己解除してから別Roleへ所属する運用 | 非Blocker | Parent所属の状態機械と排他制御 | 厳密な強制には必要 | 複数管理者運用を開始する前 |
 | Builder期限切れ時にCreative／Spectatorを自動Cleanupしない | 作業終了時にSurvivalへ戻し、安全地点へ移動してから自己降格する | 非Blocker。ただし手順遵守が必要 | Parent失効Eventを監視する管理Plugin | 自動化には必要 | 降格忘れまたは状態残留が発生した時 |
 | 専用の監査UI／Role履歴表示がない | LuckPermsの履歴とServer Logを必要時に確認 | 非Blocker | 昇格理由、操作者、期限、降格結果を記録する管理UI | 高度な監査には必要 | 運用人数増加または監査要件発生時 |
-| Builder最終Allowlistが未実装 | Phase 1Aでは保護Entry WorldのRegion Member建築だけを維持し、管理Commandを付与しない | **Blocker**。BuilderによるHub／Gate／Theme接続作業前にPhase 1Bが必要 | 採用Versionと実作業から作る明示的Command Allowlist | 不要 | Advanced Portals、Playable Theme、Builder担当作業の確定後 |
+| Builder最終Allowlistが未実装 | Phase 1Aでは保護Entry WorldのRegion Member建築だけを維持し、管理Commandを付与しない | **Blocker**。BuilderによるHub／Gate／Theme接続作業前にPhase 1Bが必要 | 採用Versionと実作業から作る明示的Command Allowlist | 不要 | 両Frontier Theme、Gate方式、MVI、Resource PackおよびBuilder担当作業の確定後 |
 
 ## Resource reset bootstrap
 
@@ -27,12 +27,14 @@ Phase 1A implemented all five persistent LuckPerms Group definitions. The tempor
 
 | 課題 | 現在の妥協策 | V0.1.0への影響 | 将来の解決候補 | 独自Pluginが必要か | 再検討時期 |
 |---|---|---|---|---|---|
-| Theme別Inventoryがない | V0.1.0は通常のFrontier Inventoryを使用し、Theme固有ItemをMainへ持ち出す仕組みを設けない | 非Blocker | Theme ID別Inventory保存、境界移動時のAtomic切替 | 安全な実装には有力候補 | 2つ目のTheme検討前 |
-| Theme初回装備配布がない | 選定Themeの標準導線または通常Inventoryで開始 | 非Blocker | Theme別Loadoutと一度限り配布状態 | 高度な制御には候補 | 初期Themeの難易度調整後 |
-| WMによるTheme装備購入がない | V0.1.0ではFrontier WM報酬・装備Shopを作らない | 非Blocker | Waymark連携装備Shop、Theme別Allowlist | Custom Itemなら候補 | Frontier Economy設計時 |
-| Theme実績Databaseがない | V0.1.0では実績を記録しない | 非Blocker | Theme ID／Achievement ID／UUID／進捗／達成日時／受取状態を保存し、Theme削除後も履歴を維持する契約 | 実績統合には必要になる可能性 | 初期Theme評価後 |
-| Main側実績報酬受取がない | 報酬導線を公開しない | 非Blocker | 一度だけ受取可能なNetwork報酬Service | Cross-server整合性には有力候補 | Theme実績設計と同時 |
-| Frontier Gate Utilityがない | 最低限のHub、案内、往復GateだけをV0.1.0対象とする | 非Blocker | Storage、回復、Buff、Theme選択、WM Shop、実績表示 | 多くは既成Pluginでも可能 | Playable Theme運用後 |
+| MVI正式Versionと共有Player Stateが未Lock | Concept上の`neutral`／`worlds_beyond`／`guild`境界だけを正本化し、Runtime Configを作らない | **Blocker**。通常Player Stateの正本と移動経路試験が必要 | 採用MVI VersionのGroup／Share Config | 原則不要 | Frontier共通基盤Task |
+| EM InstanceのMVI方式が未確定 | 静的登録、厳密Regex、必要時Adapterの順で評価 | **Blocker**。Adapter必要性判断が必要 | MVI Config、必要性が立証された場合だけWayfarer_Frontier Adapter | 条件付き | EliteMobs Artifact／Instance命名確認後 |
+| Worlds Beyond Traversal詳細が未Lock | Elytra、LeafGrapple、Loadout、Launchpadを正式Scopeとし、Artifact／Item契約は未実装 | **Blocker** | Wayfarer_Frontier＋採用LeafGrapple Adapter | 必要 | Worlds Beyond実装Task |
+| Ruined Frontier WM報酬Balanceが未Lock | 初期alphaはBoss／Quest報酬を自動導入しない | 非Blocker。Theme本体はBlocker | Vault／Waymark Adapter経由の冪等Reward | 必要 | 実プレイBalance評価後 |
+| Theme装備のWM売却変換がない | Theme ItemをWMへ変換せず、Item境界を維持 | 非Blocker | 独立したAllowlist／価格／監査設計 | 必要性を再評価 | Frontier Economy再設計時 |
+| Item非依存実績が未実装 | V0.1.0共有候補をTitle、Permission、GUI、Record、Cosmetic、WM等へ限定 | 非Blocker | Wayfarer_Core／Frontierの実績Contract | 将来候補 | 両Theme安定後 |
+| Main側実績報酬受取がない | 報酬導線を公開しない | 非Blocker | 一度だけ受取可能なItem非依存Network報酬Service | Cross-server整合性には有力候補 | Theme実績設計と同時 |
+| 追加Frontier Gate Utilityがない | Beyond／Guild Gateと安全帰還を優先 | 非Blocker | Storage、回復、Buff、実績表示 | 多くは既成Pluginでも可能 | 両Theme運用後 |
 
 ## EvenMoreFish balance
 
@@ -48,7 +50,7 @@ Custom Fishingの現行World Scopeは`main`／`resource`だけです。Nether、
 
 ## V0.1.0 pre-release reset scope
 
-All Waymark balances, Main inventory, armor/offhand, Vanilla XP, and advancements are the minimum separately approved reset scope immediately before the final baseline backup. Ender Chest, health/hunger, position, bed spawn, statistics, recipe book, Lobby/Frontier Player data, mcMMO, EvenMoreFish Journal, LuckPerms history, transaction history, and Resource-world positions remain undecided. None has been reset by the price-scale task.
+All Waymark balances, Main inventory, armor/offhand, Vanilla XP, and advancements remain the minimum separately approved reset scope immediately before the final baseline backup. Frontier／MVI Profiles, Theme Loadout state, custom-Plugin records, Ender Chest, health/hunger, position, bed spawn, statistics, recipe book, mcMMO, EvenMoreFish Journal, LuckPerms history, transaction history, and Resource-world positions require an exact owner-aware decision before reset. None is reset by this documentation revision.
 
 ## Main
 
@@ -69,10 +71,10 @@ Main Spawn protection is designed but not implemented. The user first completes 
 
 The outer Region must not use a `build` flag or broad `interact allow`／`chest-access allow`. Environmental deny flags and any child Region are candidates until their exact WorldGuard 7.0.17 names, equipment scope, priority, and acceptance tests are approved.
 
-## V0.2.x custom-Plugin concept
+## Historical V0.2.x custom-Plugin concept
 
-The growth-tool and multi-module ideas in `codex/Project_Wayfarer_V0.2x_Custom_Plugin_Concept.md` are a reference draft only. They remain V0.1.0 non-Blockers, implementation has not started, and any adoption requires a new approved formal design, external Repository scope, data ownership, migration, artifact, and verification task. The current Over-enchanted Tool row above remains the operative V0.1.0 decision.
+The growth-tool and other proposals in `codex/Project_Wayfarer_V0.2x_Custom_Plugin_Concept.md` remain a reference draft unless explicitly promoted into current formal documentation. Ver.0.0.6 separately promotes Wayfarer_Core and Wayfarer_Frontier responsibilities as V0.1.0 Blockers, but the historical Concept itself does not authorize their Repository creation, development, migration, or artifact work. Every such action still requires a dedicated approved design and task.
 
 ## Review rule
 
-Deferred items do not become implemented merely because they are documented here. Every adoption requires a separately approved task with its own data boundary, artifact policy, implementation scope, and proportionate verification. Resource Bootstrap items remain V0.1.0 Blockers; the other entries are accepted Alpha limitations unless the Roadmap is explicitly revised.
+Deferred items do not become implemented merely because they are documented here. Every adoption requires a separately approved task with its own data boundary, artifact policy, implementation scope, and proportionate verification. Rows explicitly marked Blocker and Resource Bootstrap remain V0.1.0 Blockers; other entries are accepted Alpha limitations unless the Roadmap is formally revised.

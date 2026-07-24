@@ -51,34 +51,14 @@ Version範囲を推測せず、実際に確認した組み合わせを記録し�
 
 外部拡張Pluginが未導入または互換性未確認の場合、対象機能は無効として扱います。Main、Frontier、Lobbyの基本的な起動、接続および通常Inventoryの分離を未導入の外部拡張へ依存させません。Waymark共有残高とmcMMO共有進行は導入済みですが、独自Plugin Sourceではなく外部PluginのIntegrationとして扱います。GUI、Command、Portalまたは権限から未実装機能へ到達できない構成にします。
 
-## 8. 未実装の外部拡張候補
+## 8. V0.1.0外部拡張Scope
 
-次の機能は概念設計上の候補であり、現時点では実装されていません。
+Wayfarer_CoreとWayfarer_FrontierはV0.1.0 Blockerですが、まだ開発・導入されていません。両Pluginは専用の正式設計、別Repository作成、実装、Releaseおよび本RepositoryへのIntegration Taskを必要とします。
 
-### 越境保管庫
+Wayfarer_CoreはDatabase／Migration、Waymark Adapter、Transaction／Idempotency、Audit、Player／Item Identity、Redis Coordination、Cross-server MessageおよびPermission Contract基盤を担当します。
 
-- MainとFrontierの間で明示的な共有GUIを提供する。
-- Waymarkや実績でSlotを解放する。
-- Vanilla／共通Itemだけを初期許可し、互換性のないPDC、Custom Model Dataおよび危険なContainerを拒否する。
-- MariaDB Lock、冪等なTransaction ID、監査Logおよび未完了処理のRecoveryを要求する。
+Wayfarer_FrontierはWorlds Beyond Traversal Loadout、Theme固有Item Identity、Launchpad、Waystone／GUI、Frontier WM Shop、Inspect／Reconcile、および必要性が確認された場合だけEliteMobs–MVI Adapterを担当します。通常Inventory保存、MVI Profile切替、物理Gate、EliteMobsまたはBetterStructures本体機能を再実装しません。
 
-### 遠征装備
+MainとFrontierの間ではVanilla Itemを含む全Item移送を禁止します。旧来の越境保管庫、遠征装備およびItem型実績報酬案は現行Scopeではありません。Network共有候補はWaymark、mcMMOおよび別途承認されるItem非依存の実績／報酬だけです。
 
-- Main由来で認証された装備だけをFrontierへ持ち出し、Mainへ戻せるようにする。
-- Network内で一意なItem IDとLifecycle Stateを持たせる。
-- MainとFrontierで同一のRuntime PluginおよびItem定義を要求する。
-- 非対応の変更は拒否または隔離する。
-
-### 実績共有
-
-- Frontier側でNetwork実績を記録する。
-- Main側は実績を参照し、記念Item、Recipe、施設またはUnlockへ反映する。
-- 互換性のないFrontier Itemを直接転送しない。
-
-### その他の候補
-
-- Frontier内のField BagおよびCamp Storage
-- 条件付き商品Tableと監査機能を持つShop
-- Tutorial、AFK判定、Lobbyへの安全な転送、計画Maintenance時のDrain
-
-これらを採用する際は、API、Data所有権、認可、監査、障害回復およびSecurity境界を別途設計し、独立した外部リポジトリで実装・Releaseします。
+将来のItem非依存実績、Frontier内Storage、条件付きShop、Tutorial、AFK判定、安全転送およびMaintenance Drainを採用する場合も、API、Data所有権、認可、監査、障害回復およびSecurity境界を別途設計します。

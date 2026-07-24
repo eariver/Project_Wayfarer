@@ -1,6 +1,6 @@
 # Initial Installation Procedure
 
-This is an execution summary. Follow the repository's [formal Ver.0.0.5 design guide](00-design-guide.md) for the authoritative design and acceptance policy. Ver.0.0.5 defines the future V0.1.0 Alpha completion conditions; it does not itself authorize Runtime changes.
+This is an execution summary. Follow the repository's [formal Ver.0.0.6 design guide](00-design-guide.md) for the authoritative design and acceptance policy. Ver.0.0.6 defines the future V0.1.0 Alpha completion conditions; it does not itself authorize Runtime changes.
 
 The destructive Phase 3 generation has already completed. Do not repeat the bare-generation procedure or replace Main world data from this installation summary; use [Main World Baseline](13-main-world-baseline.md) for the current persistent seed, storage paths, spawn coordinates, and local rollback evidence.
 
@@ -85,14 +85,14 @@ The Waymark base is installed: RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocke
 
 BetterStructures 2.6.3 and the manually imported free `103 Default Structures` pack are installed. Tracked `config.yml` and `ValidWorlds.yml` keep automatic Plugin download off, unknown worlds off, Persistent Main enabled by actual Bukkit name, and every Resource dimension disabled. JAR, import ZIP, extracted Schematic, generated content assets, and cache remain ignored.
 
-Phase 3 has already finalized the three persistent dimensions and approved safe spawn coordinates; do not repeat generation. Remaining expansion uses separately approved tasks in this order:
+Phase 3 finalized the current persistent dimensions and approved safe spawn coordinates. Ver.0.0.6 retains that baseline until a separately approved replacement generation finishes. Remaining Main expansion uses separate tasks in this order:
 
-1. Install CoreProtect before substantial Hub/Gate construction; keep rollback Admin-only and select its backend/database policy in that task.
-2. Select and install one playable Frontier Theme, then select Advanced Portals and inspect its exact permissions.
-3. Complete Builder Phase 1B from the known Theme, portal operations, and Builder-owned work.
-4. The user builds the Main spawn Hub and its Lobby, Frontier, and three Resource Gate structures.
-5. After the initial Hub is substantially complete, approve and apply the exact Main Spawn WorldGuard region; keep `spawn-protection=16` until the Region and Builder behavior pass verification.
-6. Configure only the approved Gate routes after coordinates and safe arrivals are fixed.
+1. Verify the five approved Structure packs, BetterStructures Prop Pack, FreeMinecraftModels, ResourcePackManager, licenses, hashes, dependencies, World scope, Model IDs, and Main Pack delivery.
+2. Import the complete approved working set and confirm every Plugin／Content dependency loads before World generation.
+3. Under an independently approved destructive task, regenerate only `main`, `main_nether`, and `main_the_end`; preserve the complete Resource family.
+4. Verify natural generation, Portals, safe Spawns, Main Resource Pack, Resource exclusion, approved tuning, identities, and backup before replacing the current baseline.
+5. Install CoreProtect after the new baseline and before substantial Hub／Gate construction.
+6. Continue with Frontier, Builder Phase 1B, user construction, protection, and Gate routing in the [Roadmap](09-roadmap.md) order.
 
 ## Phase 8 - Shared mcMMO and planned Frontier expansion
 
@@ -100,13 +100,15 @@ EvenMoreFish 2.4.3 is installed only on Main from a manually acquired JAR. Set `
 
 mcMMO 2.3.000 is installed only on Main and Frontier from the same local Maven build. Run `Render-LocalConfigs.ps1` after setting `.env`; this renders both ignored runtime Configs from sanitized templates. Both backends use `wayfarer_mcmmo` with the `mcmmo_` prefix. Do not install mcMMO on Lobby or Velocity, and do not reload it through PlugManX.
 
-The following Frontier work is not installed yet.
+The following Frontier work is approved for V0.1.0 but not installed:
 
-1. Compare playable-theme candidates for Paper 1.21.11／Java 25 compatibility, distribution model, License, cost, dependencies, Resource Pack, world layout, and actual exploration/combat/dungeon/quest play.
-2. Obtain user approval and manually acquire the selected Theme and dependencies.
-3. Install exactly one initial playable Theme for V0.1.0 and keep `frontier_gate` as its simple protected entrance.
-4. Use the normal Frontier inventory and shared mcMMO. Do not add V0.1.0 WM rewards, achievements, Main-side rewards, theme-specific inventories, or initial equipment.
-5. The user builds the Frontier Gate minimum hub and theme Gate/return structures; Codex configures routing only after exact arrivals are approved.
+1. Lock exact Plugin／Content versions, licenses, hashes, World IDs, Gate method, Pack, persistence, and dependencies.
+2. Design, create separate Repositories for, develop, release, and integrate Wayfarer_Core and Wayfarer_Frontier under dedicated tasks.
+3. Install the shared foundation, including MVI `neutral`／`worlds_beyond`／`guild`, Frontier ResourcePackManager, and the Beyond／Guild Gate boundary.
+4. Determine whether EliteMobs Instances can use MVI static registration or strict Regex before authorizing an Adapter.
+5. Implement and verify both Ruined Frontier alpha and Worlds Beyond MVP.
+6. Keep all Main／Frontier and cross-MVI-group Items and normal Player State isolated; share only Waymark, mcMMO, and separately approved item-independent outcomes.
+7. The user builds the Frontier Gate Hub and both Theme Gate／return structures; Codex configures routing only after exact arrivals are approved.
 
 Each Resource world also needs a post-reset Bootstrap design before V0.1.0: safe arrival, reproducible Return Gate to Main, Gate reconfiguration, Spawn/Arrival placement, optional protection, and persistent-world rejection. `resource_end` additionally requires a reproducible safe outer-island site independent of Dragon portals and End gateways.
 

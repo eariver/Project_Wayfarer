@@ -1,4 +1,4 @@
-# Troubleshooting - Ver.0.0.5
+# Troubleshooting - Ver.0.0.6
 
 This document records focused operational checks. Do not expose secrets, download replacement JARs automatically, or use database-destructive commands as routine recovery.
 

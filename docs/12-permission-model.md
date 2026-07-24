@@ -1,4 +1,4 @@
-# Permission Model - Ver.0.0.5
+# Permission Model - Ver.0.0.6
 
 This document is the source of truth for the Project Wayfarer LuckPerms permission model. Phase 1A was implemented and verified on 2026-07-20. Phase 1B, the final Builder allowlist, remains a V0.1.0 Release Blocker.
 
@@ -22,7 +22,7 @@ Phase 1B is not implemented:
 - Advanced Portals commands;
 - Frontier Theme-specific administration.
 
-Phase 1B starts before Builder-led Hub／Gate／Theme connection work, after the adopted Advanced Portals permissions, playable Frontier Theme, and exact Builder work are known. It must use a command-focused allowlist and must not restore broad wildcards.
+Phase 1B starts before Builder-led Hub／Gate／Theme connection work, after Ruined Frontier, Worlds Beyond, MVI, ResourcePackManager, EliteMobs, Wayfarer custom Plugins, the adopted Gate／Portal permissions, and exact Builder work are known. It must use a command-focused allowlist and must not restore broad wildcards.
 
 ## 2. Persistent Groups and temporary membership
 
@@ -183,9 +183,24 @@ Phase 1B remains incomplete and blocks V0.1.0. It must:
 
 - derive exact permissions from the adopted Plugin versions and actual Builder work;
 - scope WorldEdit, gamemode, teleport, and Multiverse-Core to the required Paper backends;
-- scope Multiverse-NetherPortals to Main only;
-- decide Advanced Portals and Frontier Theme administration separately;
-- keep WorldGuard Region administration, Velocity, LuckPerms, economy, player punishment, server stop, reload/debug/internal operations, destructive World lifecycle commands, and unrestricted wildcards excluded;
+- scope Multiverse-NetherPortals and adopted Gate operations only to explicitly approved Worlds and work;
+- decide Frontier Theme, MVI, ResourcePackManager, EliteMobs, Wayfarer custom-Plugin, and Gate administration separately;
+- keep MVI Group／Profile management, Resource Pack build／publish／rollback, EliteMobs internals and teleport shortcuts, Database, economy, custom-Plugin administration, WorldGuard Region administration, Velocity, LuckPerms, player punishment, server stop, reload/debug/internal operations, destructive World lifecycle commands, and unrestricted wildcards excluded;
 - repeat only the affected Builder security-boundary tests.
 
-BetterStructures Phase 2 is complete without changing Builder permissions. Phase 1B remains scheduled before Builder-led Hub／Gate／Theme connection work and does not block a future separately approved destructive Phase 3 Main generation task.
+The current BetterStructures baseline is complete without changing Builder permissions. Phase 1B remains scheduled before Builder-led Hub／Gate／Theme connection work and does not authorize the separately approved destructive Main regeneration plan.
+
+## 11. Planned Frontier permission boundary
+
+This section defines future responsibility only; no Runtime Permission has been added by Ver.0.0.6.
+
+- MVI Group, Profile, recovery, import, and administration operations are Admin-only.
+- ResourcePackManager generation, Hosting, publish, reload, cache, rollback, and internal administration are Admin-only.
+- Wayfarer_Core／Wayfarer_Frontier administration, inspection, reconciliation, migration, and audit operations are Admin-only.
+- EliteMobs administrative and teleport shortcuts, including direct Guild access, are denied to General Players unless a later exact-version task proves and approves a narrower gameplay node.
+- General Players do not receive Multiverse administrative teleport.
+- Builder does not receive MVI Group management, Resource Pack management, EliteMobs internals, Database, economy, custom-Plugin administration, or unrestricted wildcards.
+- Gate traversal is locked against the exact adopted Gate／Portal implementation; documentation does not invent a Permission node before that Version is verified.
+- Administration remains OP-independent through Temporary Admin membership.
+
+Phase 1B begins only after both Theme scopes, Gate and Portal methods, Plugin versions, actual Commands, and Builder-owned work are fixed. Exact node names must come from the verified Runtime versions rather than Concept examples.
