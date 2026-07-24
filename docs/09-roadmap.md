@@ -69,7 +69,7 @@ Phase 1A completed on 2026-07-20. Five persistent Group definitions, self-only T
 ### Phase 1B - Final Builder allowlist
 
 - [ ] Lock the adopted Gate／Portal Plugin version and exact permissions
-- [ ] Lock Ruined Frontier, Worlds Beyond, MVI, ResourcePackManager, EliteMobs, and custom-Plugin administration boundaries
+- [ ] Lock Ruined Frontier, Worlds Beyond, MVI, ResourcePackManager, EliteMobs, Wayfarer_Core, and Wayfarer_Frontier administration boundaries
 - [ ] Confirm exact Builder-owned Hub／Gate work
 - [ ] Allowlist only required WorldEdit, gamemode, teleport, Multiverse, and Gate operations
 - [ ] Exclude MVI group management, Resource Pack publishing／rollback, EliteMobs internals, Database, economy, custom-Plugin administration, WorldGuard Region administration, Velocity, LuckPerms, player punishment, server stop, destructive World lifecycle, reload／debug internals, and wildcards
@@ -155,7 +155,8 @@ The formal scope is [Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md). Both R
 - [ ] Adventurer's Guild and Primis
 - [ ] `frontier_bs`, `frontier_bs_nether`, and `frontier_bs_the_end` after exact ID lock
 - [ ] BetterStructures and EliteMobs enabled across the three Theme dimensions
-- [ ] approved five-pack／Prop／Shrine／Dungeoneering Content
+- [ ] Exploration Pack, Caves and Lost Civilizations Free, Echoes of the Past, Adventure Pack, BetterStructures Prop Pack, Free Elite Shrines, and Dungeoneering Modules Free
+- [ ] Keep the full `103 Default Structures` pack disabled by default; require a separate formal design and task for any individual Structure adoption
 - [ ] BetterHealthBar3 adoption test
 - [ ] representative Sign, Shrine, Boss, Loot, Guild, Portal, MVI, Pack, and safe-return acceptance
 
@@ -192,6 +193,7 @@ Codex does not infer appearance, coordinates, orientation, or destinations.
 
 ### Phase 8 - Resource reset bootstrap
 
+- [ ] Restrict routine reset scripts and normal reset operations to `resource`, `resource_nether`, and `resource_end`; explicitly reject the Persistent Main family
 - [ ] Restore a safe arrival and Spawn／Arrival setting for every Resource World
 - [ ] Restore a reproducible Return Gate and Gate Config
 - [ ] Restore approved protection

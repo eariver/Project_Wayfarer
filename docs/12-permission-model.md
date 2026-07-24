@@ -22,7 +22,7 @@ Phase 1B is not implemented:
 - Advanced Portals commands;
 - Frontier Theme-specific administration.
 
-Phase 1B starts before Builder-led Hub／Gate／Theme connection work, after Ruined Frontier, Worlds Beyond, MVI, ResourcePackManager, EliteMobs, Wayfarer custom Plugins, the adopted Gate／Portal permissions, and exact Builder work are known. It must use a command-focused allowlist and must not restore broad wildcards.
+Phase 1B starts before Builder-led Hub／Gate／Theme connection work, only after Ruined Frontier, Worlds Beyond, Multiverse-Inventories, ResourcePackManager, EliteMobs, Wayfarer_Core, Wayfarer_Frontier, the adopted Gate／Portal permissions, and exact Builder-owned Hub／Gate／Theme connection work are known. It must use a command-focused allowlist and must not restore broad wildcards.
 
 ## 2. Persistent Groups and temporary membership
 
@@ -184,7 +184,7 @@ Phase 1B remains incomplete and blocks V0.1.0. It must:
 - derive exact permissions from the adopted Plugin versions and actual Builder work;
 - scope WorldEdit, gamemode, teleport, and Multiverse-Core to the required Paper backends;
 - scope Multiverse-NetherPortals and adopted Gate operations only to explicitly approved Worlds and work;
-- decide Frontier Theme, MVI, ResourcePackManager, EliteMobs, Wayfarer custom-Plugin, and Gate administration separately;
+- decide Ruined Frontier, Worlds Beyond, MVI, ResourcePackManager, EliteMobs, Wayfarer_Core, Wayfarer_Frontier, and Gate administration separately;
 - keep MVI Group／Profile management, Resource Pack build／publish／rollback, EliteMobs internals and teleport shortcuts, Database, economy, custom-Plugin administration, WorldGuard Region administration, Velocity, LuckPerms, player punishment, server stop, reload/debug/internal operations, destructive World lifecycle commands, and unrestricted wildcards excluded;
 - repeat only the affected Builder security-boundary tests.
 
@@ -203,4 +203,4 @@ This section defines future responsibility only; no Runtime Permission has been 
 - Gate traversal is locked against the exact adopted Gate／Portal implementation; documentation does not invent a Permission node before that Version is verified.
 - Administration remains OP-independent through Temporary Admin membership.
 
-Phase 1B begins only after both Theme scopes, Gate and Portal methods, Plugin versions, actual Commands, and Builder-owned work are fixed. Exact node names must come from the verified Runtime versions rather than Concept examples.
+Phase 1B begins only after Ruined Frontier, Worlds Beyond, Multiverse-Inventories, ResourcePackManager, EliteMobs, Wayfarer_Core, Wayfarer_Frontier, the Gate／Portal methods, adopted Plugin versions and actual Commands, and the exact Builder-owned Hub／Gate／Theme connection work are fixed. Exact node names must come from the verified Runtime versions rather than Concept examples.

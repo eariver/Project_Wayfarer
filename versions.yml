@@ -1,7 +1,7 @@
 document:
   project: Project Wayfarer
-  version: 0.0.5
-  date: 2026-07-21
+  version: 0.0.6
+  date: 2026-07-25
   target_server_release: V0.1.0 Alpha
   target_release_status: incomplete
 

@@ -135,9 +135,11 @@ The V0.1.0 Ruined Frontier alpha includes:
 - BetterStructures and EliteMobs in all three Ruined Frontier dimensions;
 - FreeMinecraftModels and ResourcePackManager;
 - a BetterHealthBar3 adoption test;
-- `103 Default Structures`, `Exploration Pack`, `Caves and Lost Civilizations Free`, `Echoes of the Past`, and `Adventure Pack`;
+- `Exploration Pack`, `Caves and Lost Civilizations Free`, `Echoes of the Past`, and `Adventure Pack`;
 - BetterStructures Prop Pack;
 - Free Elite Shrines and Dungeoneering Modules Free.
+
+The full `103 Default Structures` pack is disabled in Ruined Frontier by default. Main already provides that Content, and enabling the whole pack would dilute Ruined Frontier's high-difficulty, large-Structure, and EliteMobs-integrated selection. A later design may adopt individual Structures such as a Waypoint or Graveyard only through a separate formal decision and assigned task; this initial scope is not a five-Pack.
 
 The initial conceptual World IDs are:
 
@@ -239,7 +241,7 @@ The following are Admin-only:
 - EliteMobs internal administration and teleport shortcuts;
 - Database, economy-administration, and destructive World operations.
 
-General Players do not receive Multiverse teleport or EliteMobs administrative shortcuts. Builder Phase 1B uses an explicit allowlist after both Themes, the Gate／Portal implementation, and exact adopted Plugin Permissions are known. It does not grant MVI group administration, Resource Pack administration, EliteMobs internals, Database or economy administration, custom-Plugin administration, unrestricted wildcards, or OP.
+General Players do not receive Multiverse teleport or EliteMobs administrative shortcuts. Builder Phase 1B uses an explicit allowlist only after Ruined Frontier, Worlds Beyond, Multiverse-Inventories, ResourcePackManager, EliteMobs, Wayfarer_Core, Wayfarer_Frontier, the adopted Gate／Portal implementation, and the exact Builder-owned Hub／Gate／Theme connection work are known. It does not grant MVI group administration, Resource Pack administration, EliteMobs internals, Database or economy administration, custom-Plugin administration, unrestricted wildcards, or OP.
 
 Exact Permission nodes are not asserted before the selected Plugin versions are verified.
 

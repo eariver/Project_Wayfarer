@@ -66,7 +66,7 @@ Stop each component cleanly with `stop` before editing generated Config.
 7. Preserve the reused `default` and `wayfarer_builder`. Do not delete/recreate `wayfarer_builder`, make it a Primary Group, or break its Lobby／Frontier WorldGuard Region Member references.
 8. Keep the current Builder Role container limited to `group.default`. The former WorldEdit／WorldGuard administration wildcards are removed; membership-based protected-entry building remains.
 9. Assign Eligibility only to an explicitly approved Player. Player membership in `wayfarer_builder` or `wayfarer_admin` must be temporary; do not use permanent Role Parents or OP.
-10. Phase 1B will add the final command-focused Builder allowlist only after the Advanced Portals permissions, playable Frontier Theme, and Builder Hub／Gate work are known. Until then, do not pre-grant WorldEdit, gamemode, teleport, Multiverse, WorldGuard administration, Velocity, LuckPerms, economy, player punishment, server stop, wildcard, reload/debug/internal, or destructive World lifecycle authority.
+10. Phase 1B will add the final command-focused Builder allowlist only after Ruined Frontier, Worlds Beyond, Multiverse-Inventories, ResourcePackManager, EliteMobs, Wayfarer_Core, Wayfarer_Frontier, the adopted Gate／Portal permission model, and the exact Builder-owned Hub／Gate／Theme connection work are known. Until then, do not pre-grant WorldEdit, gamemode, teleport, Multiverse, WorldGuard administration, Velocity, LuckPerms, economy, player punishment, server stop, wildcard, reload/debug/internal, or destructive World lifecycle authority.
 
 ## Phase 6 - Lobby
 
@@ -83,7 +83,7 @@ Multiverse-Core 5.7.2 is installed on all Paper backends, while Multiverse-Nethe
 
 The Waymark base is installed: RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 run only on Main and Frontier. `Render-LocalConfigs.ps1` renders their ignored Redis credential Configs from tracked sanitized templates. EconomyShopGUI 7.1.1 Free is installed only on Main and uses RedisEconomy through Vault. Its tracked `config.yml`, Japanese language file, five section files, and five shop files define the fixed-price Alpha baseline; the JAR and generated runtime data remain ignored.
 
-BetterStructures 2.6.3 and the manually imported free `103 Default Structures` pack are installed. Tracked `config.yml` and `ValidWorlds.yml` keep automatic Plugin download off, unknown worlds off, Persistent Main enabled by actual Bukkit name, and every Resource dimension disabled. JAR, import ZIP, extracted Schematic, generated content assets, and cache remain ignored.
+BetterStructures 2.6.3 and the manually imported free `103 Default Structures` pack are currently installed only on Main. Tracked `config.yml` and `ValidWorlds.yml` keep automatic Plugin download off, unknown worlds off, Persistent Main enabled by actual Bukkit name, and every Resource dimension disabled. JAR, import ZIP, extracted Schematic, generated content assets, and cache remain ignored. The V0.1.0 Ruined Frontier scope requires a separate Frontier installation and verification task.
 
 Phase 3 finalized the current persistent dimensions and approved safe spawn coordinates. Ver.0.0.6 retains that baseline until a separately approved replacement generation finishes. Remaining Main expansion uses separate tasks in this order:
 
@@ -109,6 +109,8 @@ The following Frontier work is approved for V0.1.0 but not installed:
 5. Implement and verify both Ruined Frontier alpha and Worlds Beyond MVP.
 6. Keep all Main／Frontier and cross-MVI-group Items and normal Player State isolated; share only Waymark, mcMMO, and separately approved item-independent outcomes.
 7. The user builds the Frontier Gate Hub and both Theme Gate／return structures; Codex configures routing only after exact arrivals are approved.
+
+Ruined Frontier's initial BetterStructures Content is `Exploration Pack`, `Caves and Lost Civilizations Free`, `Echoes of the Past`, `Adventure Pack`, BetterStructures Prop Pack, Free Elite Shrines, and Dungeoneering Modules Free. Keep the full `103 Default Structures` pack disabled there by default; Main already provides it, and enabling it would dilute the high-difficulty pool. Any later individual Structure adoption requires a separate formal design and task.
 
 Each Resource world also needs a post-reset Bootstrap design before V0.1.0: safe arrival, reproducible Return Gate to Main, Gate reconfiguration, Spawn/Arrival placement, optional protection, and persistent-world rejection. `resource_end` additionally requires a reproducible safe outer-island site independent of Dragon portals and End gateways.
 

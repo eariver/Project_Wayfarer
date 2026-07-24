@@ -22,7 +22,7 @@ Minecraftの恒久生活拠点 **Main** と、既製Adventureコンテンツを�
 - mcMMO 2.3.000: Main／Frontierへ同一Local Maven Buildを配置し、MariaDBで進行を共有
 - RedisEconomy 4.5.12-wayfarer.1／VaultUnlocked 2.20.2: Main／FrontierでRedis 8上のWaymark残高を共有
 - EconomyShopGUI 7.1.1 Free: Main限定の固定価格Waymarkショップ（5カテゴリ・62商品、100倍名目価格Baseline）
-- BetterStructures 2.6.3: Main限定、無料の103 Default StructuresだけをPersistent Main Familyの新規Chunkへ生成
+- BetterStructures 2.6.3: 現在はMainだけに導入済みで、無料の103 Default StructuresだけをPersistent Main Familyの新規Chunkへ生成
 - EvenMoreFish 2.4.3: Main限定のCustom Fishing。`main`／`resource`で魚売却Shopを提供し、専用MariaDBへJournal／統計を保存
 - Main恒久World Baseline: 2026-07-21にSeed `164225356311935743`で3 Dimensionを最終生成し、Resource Familyを保持したまま安全Spawnを確定
 - Main／Frontier: 通常Inventoryは分離し、Waymark残高とmcMMO進行だけを共有
@@ -127,7 +127,7 @@ Ver.0.0.6は設計・導入・運用文書の改訂番号であり、稼働Serve
 - mcMMOはMain／Frontierだけで共有MariaDBを使用し、Runtime ConfigはSanitized TemplateからRenderする。
 - Waymark（WM）はMain／Frontierだけで共有し、RedisEconomy Runtime ConfigはSanitized TemplateからRenderする。
 - EconomyShopGUIはMainだけに配置し、Vault経由でRedisEconomyを使用する。初期ショップは固定価格とし、一括売却・Dynamic Pricing・Global Stock・Player Shopを一般開放しない。
-- BetterStructuresはMainだけに配置し、`main`、`main_nether`、実Bukkit名`main_the_end`だけを有効化する。Resource Familyと未知の新規Worldは無効とし、Content Artifactは手動取得・Git非追跡とする。
+- BetterStructuresは現在Mainだけに配置済みで、`main`、`main_nether`、実Bukkit名`main_the_end`だけを有効化している。Resource Familyと未知の新規Worldは無効とし、Content Artifactは手動取得・Git非追跡とする。V0.1.0のRuined Frontierには、別途Version・配置・依存関係を検証したFrontier用BetterStructuresを導入する計画である。
 - EvenMoreFishはMainだけに配置し、`main`／`resource`だけでCustom FishとVault経由の魚売却を有効化する。Fish購入、Sellall、直接MONEY報酬、Competition、Hunt、Lava／Void Fishingは無効とし、Credentialを含むRuntime ConfigはTemplateからRenderする。
 - Redis AOFは正式な永続Dataとして、Container停止後のCold Backup対象にする。
 - PlugManXは将来のPaper管理・独自Plugin開発支援候補とし、Version選定と導入は後続タスクで行う。
@@ -137,7 +137,7 @@ Ver.0.0.6は設計・導入・運用文書の改訂番号であり、稼働Serve
 - Manual Plugin collection is tracked in [Plugin Collection](docs/08-plugin-collection.md), `plugin-collection.csv`, and the separate XLSX artifact.
 - 権限Phase 1Aとして、`default`、2つのEligibility Group、`wayfarer_builder`／`wayfarer_admin`の5つの恒久Group定義と、PlayerからRole Groupへの自己限定Temporary Parent所属を実装済み。既存`default`／`wayfarer_builder`は再利用し、AdminはOPではなく一時Roleで全権限を得る。Builderの最終AllowlistはPhase 1Bとして未実装。
 - Mainの次BetterStructures Scopeは5 Pack、Prop Pack、FreeMinecraftModelsおよびResourcePackManagerとする。全Contentの正常Load後、別途承認された破壊的タスクでPersistent Main Familyだけを再生成し、Resource Familyは除外する。現在のMain Baselineは新Baseline確定まで有効。
-- V0.1.0ではRuined Frontier alphaとWorlds Beyond MVPの両方を実装・統合・受入試験する。
+- V0.1.0ではRuined Frontier alphaとWorlds Beyond MVPの両方を実装・統合・受入試験する。Ruined Frontierの初期BetterStructures ScopeはMain五Packとは異なり、103 Default Structures全体を原則無効として、Exploration／Caves／Echoes／Adventure、Prop Pack、Free Elite Shrines、Dungeoneering Modules Freeを採用する。
 - Frontierの通常Player StateはMultiverse-Inventoriesの`neutral`、`worlds_beyond`、`guild` Groupを正本とし、Wayfarer_FrontierでInventory保存を再実装しない。
 - Main／Frontier間ではVanilla Itemを含む全Item、Inventory、Armor、Offhand、Ender ChestおよびVanilla Player Stateを移送しない。共有成果はWaymark、mcMMOおよび別途承認されるItem非依存実績／報酬だけとする。
 - Wayfarer_CoreとWayfarer_FrontierはV0.1.0 Blockerとして別Repositoryで開発し、本RepositoryにはIntegration Contract、Config、Version／Hashおよび運用・受入文書だけを置く。

@@ -62,7 +62,7 @@ Phase 1B incomplete:
 - [x] EvenMoreFish enables with its adopted Config and one representative function; configuration has no explicit mcMMO Fishing conflict.
 - [ ] Before replacement generation, all five adopted Structure packs, BetterStructures Prop Pack, FreeMinecraftModels, and ResourcePackManager are verified, imported, and loaded with the approved Main World allowlist and Pack preflight.
 - [ ] The current Main baseline and rollback backup remain verified and recoverable immediately before replacement generation.
-- [ ] A separately approved destructive task regenerates only `main`, `main_nether`, and `main_the_end` after Content load, retaining verified rollback evidence and excluding the Resource family.
+- [ ] A separately and explicitly assigned one-time Ver.0.0.6 destructive task regenerates only `main`, `main_nether`, and `main_the_end` after Content load, with exact resolved paths, normal shutdown, explicit user approval, and verified backup／rollback evidence; the Resource family remains excluded.
 - [ ] Representative adopted Structures generate across Main Overworld／Nether／End; BetterStructures does not generate in any Resource dimension.
 - [ ] Persistent and Resource Portal families remain separate and functional, all three Main spawns are safe, and the Main Resource Pack is delivered.
 - [ ] Approved Weight／Content tuning, World identities, backup, and the replacement Main baseline are finalized.
@@ -84,6 +84,8 @@ Phase 1B incomplete:
 ### Ruined Frontier alpha
 
 - [ ] Adventurer's Guild, Primis, and the three approved Ruined Frontier dimensions load with the locked World IDs.
+- [ ] The initial Ruined Content set consists of Exploration Pack, Caves and Lost Civilizations Free, Echoes of the Past, Adventure Pack, BetterStructures Prop Pack, Free Elite Shrines, and Dungeoneering Modules Free.
+- [ ] The full `103 Default Structures` pack remains disabled in Ruined Frontier; any approved individual Structure is separately selected and documented without enabling the whole pack.
 - [ ] BetterStructures and EliteMobs are active in all three Ruined Frontier dimensions, with representative natural Structure generation and no cross-Theme generation.
 - [ ] Representative EliteMobs Sign, Free Elite Shrine, Dungeoneering module, Boss identity, and Loot behavior work without item leakage.
 - [ ] Guild and verified Instance Worlds use the correct MVI profile; restart／reconnect and Instance lifecycle do not lose or duplicate Player State.
@@ -112,6 +114,7 @@ Phase 1B incomplete:
 
 ### Resource reset bootstrap
 
+- [ ] Routine Resource reset scripts accept only `resource`, `resource_nether`, and `resource_end`, and reject all three Persistent Main worlds.
 - [ ] All Resource worlds have a reproducible safe arrival, Return Gate structure, Gate configuration, Spawn/Arrival setting, and optional approved protection.
 - [ ] `resource_end` has a reproducible safe outer-island arrival/return independent of Dragon portals and End gateways.
 - [ ] The procedure is idempotent, uses exact Runtime paths, and rejects every persistent/entry world.
