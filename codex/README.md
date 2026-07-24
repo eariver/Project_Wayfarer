@@ -13,11 +13,21 @@
 5. `plugin-manifest.yml`
 6. `docs/06-acceptance-tests.md`
 7. `docs/09-roadmap.md`
-8. `codex/`内の歴史的指示書
+8. ユーザーが現在Sessionで明示的に割り当てたCodex Task
+9. `codex/`内の完了済み／歴史的指示書
+10. `concepts/`内の参考資料
 
 新しいタスクを開始するときは、必ず最新`main`、現在のRuntime、最新の正式文書および既存変更を確認し、古い指示書との差異があれば現行仕様を優先します。
 
 指示書に記載されたVersion、Path、Permission、Plugin状態、試験条件および未実装事項は、その後のCommitで変更されている可能性があります。
+
+## Conceptと実行承認の境界
+
+`concepts/`は非正本の参考資料であり、Codex Taskではありません。割り当て済みTaskはConceptを設計入力として参照できますが、Task本文が明示的に採用した範囲だけを実装できます。Conceptから要求を推測してTask Scopeを拡張しません。
+
+Conceptと`AGENTS.md`、現行正本、Manifest、Runtimeまたは割り当て済みTaskが矛盾する場合は、解決を推測せず停止して報告します。Conceptを参照したことだけを理由に、正式文書、RoadmapまたはRuntimeを更新しません。
+
+`codex/`に指示書が存在するだけでは実行承認になりません。ユーザーが現在のSessionで特定Taskを明示的に割り当てる必要があります。完了済みTaskはそのまま再実行せず、未実施Taskも現在の前提と現行仕様を確認してから扱います。
 
 ## 実行履歴
 
@@ -31,6 +41,7 @@
 | [Ver.0.0.5 Documentation Update](Project_Wayfarer_Ver0.0.5_Documentation_Update.md) | 完了 | 2026-07-21 | [Design Guide](../docs/00-design-guide.md)、[Roadmap](../docs/09-roadmap.md)、[Acceptance Tests](../docs/06-acceptance-tests.md) | そのままの再実行禁止 |
 | [Phase 4 EvenMoreFish Integration](Project_Wayfarer_Phase4_EvenMoreFish_Integration.md) | 完了（実装Commit: `b77d3be4746a464261f64336c0e668041257eae0`） | 2026-07-21 | [Design Guide](../docs/00-design-guide.md#evenmorefish)、[Acceptance Tests](../docs/06-acceptance-tests.md#evenmorefish-243-2026-07-21)、[Troubleshooting](../docs/05-troubleshooting.md#evenmorefish) | そのままの再実行禁止。Version／Config更新時は現行仕様で再評価 |
 | [Waymark Price Scale and EvenMoreFish Shop](Project_Wayfarer_Waymark_Price_Scale_and_EvenMoreFish_Shop.md) | 完了（実装Commit: `967cf664dd96cdbb6b3b75f3da0497e4674fb816`） | 2026-07-22 | [Waymark Economy](../docs/10-waymark-economy.md)、[Roadmap](../docs/09-roadmap.md)、[Acceptance Tests](../docs/06-acceptance-tests.md#waymark-100x-scale-and-evenmorefish-fish-shop-2026-07-22) | そのままの再実行禁止。価格／Reset／Phase 2Bは現行正本で再評価 |
+| [Concepts Governance and Repository Integration](Project_Wayfarer_Concepts_Governance_and_Repository_Integration.md) | 完了（実装Commit: `PENDING`） | 2026-07-24 | `AGENTS.md`、[Concepts](../concepts/README.md)、本Archive | そのままの再実行禁止。Conceptは非正本 |
 | [V0.2.x Custom Plugin Concept](Project_Wayfarer_V0.2x_Custom_Plugin_Concept.md) | 構想草案。未着手／設計保留、V0.1.0 Scope外 | 2026-07-21 | 現行正本なし。将来の承認済み正式設計を優先 | 実行Taskではない |
 | [Task Template](TASK_TEMPLATE.md) | 作業指示書Template。実行Taskではない | 対象外（2026-07-18保存） | 本Fileと現行正本文書 | TemplateをTaskとして実行禁止 |
 

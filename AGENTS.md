@@ -193,7 +193,48 @@ Before deleting any world directory, report the exact resolved path and confirm 
 - Normal in-game Runtime administration uses temporary Player membership in `wayfarer_admin`. The planned `Wayfarer.ps1` owns network Start/Stop/Restart/Status/Backup; PowerShell/OS operations own Windows processes, Docker, MariaDB, Redis, cold backup, restore, and unresponsive-process recovery. Server consoles are exceptional tools for bootstrap, lost-permission recovery, and incident diagnosis, not the normal V0.1.0 administration UI.
 - The planned V0.1.0 shutdown order is: reject new connections; notify and disconnect users; stop Velocity; wait about 10 seconds for in-flight switching/save requests to settle; issue `save-all flush` or its equivalent to Paper; stop Main, Frontier, then Lobby normally; and confirm Java process exit. The wait is not a data-integrity guarantee. A cold backup then dumps MariaDB, stops Redis, copies the stopped Redis AOF and persistent worlds/content/Config, and finalizes a manifest/SHA-256 generation only after validation.
 
-## 9. Config editing policy
+## 9. Concept and task document boundary
+
+The `concepts/` directory contains research notes, comparisons, design
+alternatives, discussion handoffs, superseded drafts, and other
+non-authoritative planning material. Files under `concepts/` may be read when
+relevant for background, rationale, candidate requirements, and unresolved
+decisions. They are not implementation instructions or current sources of
+truth.
+
+A concept document does not authorize implementation, repository changes,
+Plugin or content acquisition, Runtime operations, world lifecycle changes,
+database migrations, permission changes, Roadmap completion, release-scope
+changes, creation of another repository, creation of software artifacts,
+Commit, Push, or destructive operations.
+
+Executable work must be explicitly assigned by the user and described by a
+specific task instruction under `codex/`. The presence of a file under
+`codex/` is not by itself authorization to execute it. The user must identify
+or clearly assign that task for the current session.
+
+An assigned `codex/` task may cite files under `concepts/` as design input.
+Only the scope explicitly adopted by the assigned task may be implemented.
+Do not infer additional requirements from a concept or automatically update
+current source-of-truth documents after reading one.
+
+When a concept conflicts with `AGENTS.md`, current source-of-truth documents,
+manifests, Runtime state, or the assigned task, do not infer a resolution.
+Stop and report the conflict. Concept documents remain non-authoritative until
+approved conclusions are incorporated into current source-of-truth
+documentation or into a separately assigned Codex task.
+
+Directories matching `concepts/**/old/` are archives for superseded or
+historical concepts. Do not treat their contents as current candidates or
+requirements unless a current concept or assigned task explicitly cites them.
+Do not mechanically select the highest Version number as the current
+candidate; consult the `README.md` index in the relevant concept directory.
+
+The user may manually Commit and Push concept documents. A concepts-only
+Commit does not represent a Runtime change, implementation approval, Roadmap
+completion, or release-scope approval.
+
+## 10. Config editing policy
 
 For third-party Plugins, do not invent configuration keys. First run the exact Plugin version once, inspect the generated Config and official documentation, then edit the generated file.
 
@@ -201,7 +242,7 @@ When a generated runtime Config contains secrets, maintain a sanitized `.templat
 
 Validate YAML, TOML, JSON, XML, PowerShell syntax, and Docker Compose syntax after editing where tooling is available.
 
-## 10. Integration verification policy
+## 11. Integration verification policy
 
 For an ordinary officially distributed third-party Plugin, verify only the scope directly owned by the integration task:
 
@@ -223,7 +264,7 @@ Regression testing is required only when the change directly modifies an existin
 
 Plugins that share a feature area, dependency chain, placement, data boundary, and representative acceptance test may be introduced in one task. Minor non-security configuration issues discovered during small-scale operation may be corrected in a later focused commit.
 
-## 11. User-input waiting policy
+## 12. User-input waiting policy
 
 When a task requires manual in-game action or confirmation from the user, server processes may remain running independently, but Codex must stop active execution and clearly enter a user-input waiting state.
 
@@ -242,7 +283,7 @@ After the user responds:
 - inspect relevant logs since the wait began;
 - resume the task from the recorded checkpoint.
 
-## 12. Git completion policy
+## 13. Git completion policy
 
 For tasks performed entirely inside this repository, Codex may commit and push
 completed changes without requesting an additional Git-only confirmation when

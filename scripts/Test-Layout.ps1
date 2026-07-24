@@ -28,6 +28,19 @@ foreach ($relative in $required) {
     if (-not (Test-Path (Join-Path $Root $relative))) { $errors.Add("Missing: $relative") }
 }
 
+$conceptIndexes = @(
+    'concepts/README.md',
+    'concepts/main/README.md',
+    'concepts/main/old/README.md',
+    'concepts/frontier/README.md',
+    'concepts/frontier/old/README.md'
+)
+foreach ($relative in $conceptIndexes) {
+    if (-not (Test-Path -LiteralPath (Join-Path $Root $relative) -PathType Leaf)) {
+        $errors.Add("Missing concept index file: $relative")
+    }
+}
+
 $forbidden = Get-ChildItem -Path $Root -Recurse -File -ErrorAction SilentlyContinue |
     Where-Object { $_.Name -match 'ViaBackwards' }
 if ($forbidden) { $errors.Add('ViaBackwards reference or file found: ' + ($forbidden.FullName -join ', ')) }
