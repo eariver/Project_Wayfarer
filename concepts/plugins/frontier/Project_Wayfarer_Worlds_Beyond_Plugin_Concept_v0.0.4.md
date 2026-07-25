@@ -3,7 +3,7 @@
 > **状態:** Under Review  
 > **保存先:** Project Wayfarer Repository `concepts/plugins/frontier/`  
 > **関連Concept:** `../Project_Wayfarer_Plugin_Concept_v0.0.3.md`  
-> **関連Theme Concept:** `concepts/frontier/Worlds_Beyond_Specification_V0.0.6.md`（Frontier検討チャットで同期改訂）  
+> **関連Theme Concept:** `concepts/frontier/Worlds_Beyond_Specification_V0.0.6.md`
 > **対象Runtime:** Frontier  
 > **想定Runtime Plugin:** `Wayfarer_Frontier`  
 > **実装状態:** 未着手
@@ -118,12 +118,12 @@ themes:
 
 `frontier_iris`への初回入場時だけ支給する。
 
-| Item | 種別 | 初期仕様 |
-|---|---|---|
-| Elytra | 恒久 | 1、Unbreakable、Soulbound |
-| Grappling Hook | 恒久 | 1、LeafGrapple正規Item、耐久無効、Soulbound |
-| Navigation Item | 恒久 | 1、GUI入口、Soulbound |
-| Launchpad | 消耗品 | 初回のみ2個、各設置後3回使用 |
+| Item            | 種別   | 初期仕様                                    |
+| --------------- | ------ | ------------------------------------------- |
+| Elytra          | 恒久   | 1、Unbreakable、Soulbound                   |
+| Grappling Hook  | 恒久   | 1、LeafGrapple正規Item、耐久無効、Soulbound |
+| Navigation Item | 恒久   | 1、GUI入口、Soulbound                       |
+| Launchpad       | 消耗品 | 初回のみ2個、各設置後3回使用                |
 
 恒久Traversal Loadout:
 
@@ -269,17 +269,17 @@ Launchpadは、Playerが現地へ設置してElytra射出に使う、安価で�
 
 Project Wayfarer現行Worlds Beyond Conceptの初期Baselineを継承する。
 
-| Parameter | Initial Value |
-|---|---:|
-| Shop Price | 30 WM |
-| Amount per purchase | 1 |
-| Initial free amount | 2 |
-| Max successful uses | 3 |
-| Expiration | 30 days |
-| Horizontal velocity | 2.5 |
-| Vertical velocity | 1.2 |
-| Use cooldown | 2 seconds |
-| Auto deploy Elytra | true |
+| Parameter             | Initial Value |
+| --------------------- | ------------: |
+| Shop Price            |         30 WM |
+| Amount per purchase   |             1 |
+| Initial free amount   |             2 |
+| Max successful uses   |             3 |
+| Expiration            |       30 days |
+| Horizontal velocity   |           2.5 |
+| Vertical velocity     |           1.2 |
+| Use cooldown          |     2 seconds |
+| Auto deploy Elytra    |          true |
 | Max active per player | 0（上限なし） |
 
 すべてConfig化し、Playtestで調整する。
@@ -508,11 +508,11 @@ Waystone RecordとTeleport Destinationは`frontier_iris`に限定する。Nether
 
 初期販売候補:
 
-| Item | Initial Price |
-|---|---:|
-| Launchpad | 30 WM |
-| Flight Duration 3 Firework Rocket | 200 WM |
-| Waystone Placement Tool | 600 WM |
+| Item                              | Initial Price |
+| --------------------------------- | ------------: |
+| Launchpad                         |         30 WM |
+| Flight Duration 3 Firework Rocket |        200 WM |
+| Waystone Placement Tool           |        600 WM |
 
 要件:
 
@@ -768,7 +768,6 @@ Status: Synchronized
 ## 26. v0.0.4変更概要
 
 > **同Revision内訂正:** Overworld単一World化レビュー後、単一Block Launchpadに残っていた`Structure／template_id`表現、恒久Loadout要件の適用範囲、およびMVIとMain Backend分離の責務表現を明確化した。Gameplay判断とRevision番号は変更していない。
-
 
 - Worlds BeyondをOverworld単一World構成へ変更した。
 - 採用Worldを`frontier_iris`だけに限定した。

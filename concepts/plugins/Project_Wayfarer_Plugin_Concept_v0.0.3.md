@@ -56,12 +56,12 @@ concepts/plugins/
 
 役割:
 
-| Concept | 役割 |
-|---|---|
-| Plugin全体 | Runtime Plugin構成、共通責務、Repository／Data境界 |
-| Growth Tool | Main向けGrowth PickaxeのGameplay Concept |
-| Worlds Beyond Plugin | Traversal Loadout、Launchpad、Waystone、Frontier WM Shop |
-| Ruined Frontier Integration Decision | EliteMobs InstanceとMVIの連携方式を選ぶDecision Gate |
+| Concept                              | 役割                                                     |
+| ------------------------------------ | -------------------------------------------------------- |
+| Plugin全体                           | Runtime Plugin構成、共通責務、Repository／Data境界       |
+| Growth Tool                          | Main向けGrowth PickaxeのGameplay Concept                 |
+| Worlds Beyond Plugin                 | Traversal Loadout、Launchpad、Waystone、Frontier WM Shop |
+| Ruined Frontier Integration Decision | EliteMobs InstanceとMVIの連携方式を選ぶDecision Gate     |
 
 各系列の置換済み文書は、同じ系列の`old/`へ保存する。
 
@@ -140,12 +140,12 @@ Project Wayfarer全体のTheme ConceptをPlugin Repositoryへ複製しない。P
 
 V0.1.0向け初期構成:
 
-| Runtime Plugin | 配置先 | 初期責務 |
-|---|---|---|
-| `Wayfarer_Core` | Main／Frontier | Network共通InfrastructureとService Contract |
-| `Wayfarer_Main` | Main | Growth Pickaxe |
-| `Wayfarer_Frontier` | Frontier | Worlds Beyond MVPとFrontier固有連携 |
-| `Wayfarer_Frontier_EliteMobsMVI` | Frontier | Decision Gateで必要性が証明された場合だけ |
+| Runtime Plugin                   | 配置先         | 初期責務                                    |
+| -------------------------------- | -------------- | ------------------------------------------- |
+| `Wayfarer_Core`                  | Main／Frontier | Network共通InfrastructureとService Contract |
+| `Wayfarer_Main`                  | Main           | Growth Pickaxe                              |
+| `Wayfarer_Frontier`              | Frontier       | Worlds Beyond MVPとFrontier固有連携         |
+| `Wayfarer_Frontier_EliteMobsMVI` | Frontier       | Decision Gateで必要性が証明された場合だけ   |
 
 Lobby向け独自Pluginは、V0.1.0で具体的な必須機能が発生するまで作成しない。
 
@@ -245,7 +245,8 @@ Coreが担当しないもの:
 
 Growth PickaxeをProject Wayfarer V0.1.0 Release Scopeへ正式に含める。
 
-Project本流のRoadmap、Acceptance Test、Backup／RestoreおよびRelease Blocker一覧は、本Conceptの採用に合わせて別チャットで同期更新する。
+Project本流のRoadmap、Acceptance Test、Backup／Restoreおよび
+Release Blocker一覧へ同期済みである。
 
 V0.1.0向け初期責務はGrowth Pickaxeとする。
 
