@@ -1,8 +1,8 @@
-# Project Wayfarer Ruined Frontier Integration Decision Concept v0.0.1
+# Project Wayfarer Ruined Frontier Integration Decision Concept v0.0.2
 
 > **状態:** Under Review  
 > **保存先:** Project Wayfarer Repository `concepts/plugins/frontier/`  
-> **関連Concept:** `../Project_Wayfarer_Plugin_Concept_v0.0.2.md`  
+> **関連Concept:** `../Project_Wayfarer_Plugin_Concept_v0.0.3.md`  
 > **関連Theme Concept:** `concepts/frontier/Ruined_Frontier_Specification_V0.0.4.md`  
 > **対象:** EliteMobs Instance WorldとMultiverse-Inventories Guild Groupの連携方式  
 > **実装状態:** 調査・判断前
@@ -265,7 +265,7 @@ Instance Request
 
 ## 11. Restart／Failure
 
-必須試験:
+### 11.1 全Option共通
 
 - InstanceなしでRestart
 - Active Instance中にRestart
@@ -274,13 +274,33 @@ Instance Request
 - Player滞在中にBackend停止
 - World Unload失敗
 - World Delete失敗
-- MVI API失敗
-- EliteMobs Event欠落
-- Adapter Disable／Enable
 - 同時複数Instance
 - 同一Blueprint複数Instance
 - World名衝突
 - 不正World名
+- Frontier Lobby／Worlds Beyond／MainとのProfile分離
+- World削除後のMembership残留
+
+### 11.2 `STRICT_REGEX`採用時
+
+- 承認済みBlueprint名だけが一致
+- 未承認Blueprintが不一致
+- 連番／UUID境界
+- Case／Separator境界
+- 同時Instance命名
+- Restart後のPattern適用
+- 将来の未知Worldを自動採用しない
+
+### 11.3 `ADAPTER_REQUIRED`採用時
+
+- MVI API失敗
+- EliteMobs API／Event失敗
+- Event重複
+- Event欠落
+- Adapter Disable／Enable
+- Unsupported Version
+- Restart時Reconcile
+- 残留登録の検出・解除
 
 不確実なMembershipでPlayerをInstanceへ入場させない。
 
@@ -396,20 +416,33 @@ Adapter採用時追加:
 
 ## 16. 次の状態への移行条件
 
+本Conceptにおける`Approved for Task Design`は、**Decision Investigation TaskとDecision Report作成の設計を開始してよい状態**を意味する。Adapter実装承認ではない。
+
 本Conceptを`Approved for Task Design`へ移す条件:
 
 - Decision Procedureの内容をProject Ownerが確認
 - 調査対象が不足していない
 - Adapterを先行実装しない方針に合意
 
-実際のAdapter実装作業設計は、Decision Reportが`ADAPTER_REQUIRED`となった後にだけ開始する。
+Adapter Implementation TaskとPlugin Repository内Adapter実装作業指示書の作成は、Decision Reportが`ADAPTER_REQUIRED`となった後にだけ開始する。`STATIC_REGISTRATION`または`STRICT_REGEX`の場合はAdapter Moduleを作成しない。
 
 ---
 
-## 17. v0.0.1結論
+## 17. v0.0.2結論
 
 Ruined FrontierのEliteMobs InstanceとMVIの連携は、静的登録、厳密Regex、Adapterの順に評価する。
 
 Adapterは既定解ではない。
 
+`Approved for Task Design`で最初に許可されるのはDecision Investigation Taskであり、Adapter実装ではない。
+
 通常Inventory管理、Instance LifecycleおよびEliteMobs Gameplayは既製Pluginへ委譲し、独自Adapterは必要性が証明された場合にだけ、MVI Group Membershipの追加・解除へ責務を限定する。
+
+---
+
+## 18. Revision History
+
+| Version | 概要 |
+|---|---|
+| v0.0.1 | 静的登録→厳密Regex→AdapterのDecision Procedureを定義 |
+| v0.0.2 | Restart／Failure試験をOption別に分離し、Task DesignとAdapter実装承認を明確に区別 |
