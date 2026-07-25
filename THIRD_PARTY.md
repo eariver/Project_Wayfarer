@@ -20,7 +20,9 @@ RedisEconomyの採用Runtimeは、上流4.5.12を基にユーザーが用意し�
 
 EconomyShopGUI 7.1.1 Freeは公式配布ページからユーザーが取得したArtifactをMainで使用します。確認したJARには個別のLicense文書が同梱されていないため、公式配布元と公式Wikiに掲示された利用条件を適用します。本リポジトリはJARやVendor標準Shop定義を再配布せず、Project Wayfarerが採用したConfigと価格定義だけを管理します。
 
-BetterStructures 2.6.3はLGPL-3.0-onlyの公式配布ArtifactをMainで使用します。無料の`103 Default Structures` PackはNightbreak公式配布元からユーザーが取得したものをRuntimeへ手動Importし、本リポジトリはJAR、ZIPまたは展開済みSchematicを再配布しません。Version、Source、Hashおよび採用World ScopeだけをManifestへ記録します。
+BetterStructures 2.6.3はLGPL-3.0-onlyの公式配布ArtifactをMainで使用します。Mainの選定ContentはNightbreak公式配布の`103 Default Structures`、`Exploration Pack`、`Caves and Lost Civilizations Free`、`Adventure Pack`および`Echoes of the Past`です。無料・有償を問わず、ユーザーが正規の配布経路から取得したものだけをRuntime Working Copyへ手動Importします。本リポジトリはJAR、ZIP、展開済み／変換済みSchematicまたはVendor Contentを再配布せず、Version、Source、Hash、選定規則および採用World Scopeだけを記録します。
+
+FreeMinecraftModels 2.10.2はGPL-3.0-only、ResourcePackManager 2.3.0はLGPL-3.0-onlyの公式配布Artifactです。BetterStructures Prop Packを含むModel／Texture、FMM変換結果、統合Resource Packおよび一時Hosting URLはGitへ含めません。Project WayfarerのMIT Licenseはこれらの第三者Artifactまたは生成物を再許諾しません。ContentのServer利用、Runtime Working Copy作成およびClient配信にはNightbreak／各作者のVendor条件が適用されます。
 
 ## Content PackとResource Pack
 

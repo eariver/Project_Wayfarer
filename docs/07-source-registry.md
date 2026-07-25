@@ -1,4 +1,4 @@
-# Source Registry (checked 2026-07-20)
+# Source Registry (checked 2026-07-25)
 
 - Paper getting started / Java requirements: https://docs.papermc.io/paper/getting-started/
 - Velocity getting started: https://docs.papermc.io/velocity/getting-started/
@@ -30,6 +30,10 @@
 - EconomyShopGUI permissions and commands: https://wiki.gpplugins.com/economyshopgui/basics/permission and https://wiki.gpplugins.com/economyshopgui/basics/commands
 - BetterStructures: https://modrinth.com/plugin/betterstructures
 - BetterStructures official content: https://nightbreak.io/plugin/betterstructures/
+- FreeMinecraftModels 2.10.2: https://modrinth.com/plugin/free-minecraft-models/version/sQDrL88L
+- FreeMinecraftModels Content packages: https://wiki.nightbreak.io/FreeMinecraftModels/content_packages/
+- FreeMinecraftModels Resource Pack output: https://wiki.nightbreak.io/FreeMinecraftModels/resource_pack_output/
+- ResourcePackManager 2.3.0: https://modrinth.com/plugin/resourcepackmanager/version/sm5yLBux
 - EliteMobs: https://modrinth.com/plugin/elitemobs
 - WorldEdit: https://enginehub.org/worldedit
 - WorldEdit source and GPLv3 license: https://github.com/EngineHub/WorldEdit

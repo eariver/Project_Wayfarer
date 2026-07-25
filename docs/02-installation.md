@@ -83,12 +83,12 @@ Multiverse-Core 5.7.2 is installed on all Paper backends, while Multiverse-Nethe
 
 The Waymark base is installed: RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 run only on Main and Frontier. `Render-LocalConfigs.ps1` renders their ignored Redis credential Configs from tracked sanitized templates. EconomyShopGUI 7.1.1 Free is installed only on Main and uses RedisEconomy through Vault. Its tracked `config.yml`, Japanese language file, five section files, and five shop files define the fixed-price Alpha baseline; the JAR and generated runtime data remain ignored.
 
-BetterStructures 2.6.3 and the manually imported free `103 Default Structures` pack are currently installed only on Main. Tracked `config.yml` and `ValidWorlds.yml` keep automatic Plugin download off, unknown worlds off, Persistent Main enabled by actual Bukkit name, and every Resource dimension disabled. JAR, import ZIP, extracted Schematic, generated content assets, and cache remain ignored. The V0.1.0 Ruined Frontier scope requires a separate Frontier installation and verification task.
+BetterStructures 2.6.3, the 278-Structure Main five-Pack working set, BetterStructures Prop Pack, FreeMinecraftModels 2.10.2, and ResourcePackManager 2.3.0 are installed only on Main. Tracked `config.yml` and `ValidWorlds.yml` keep automatic Plugin download off, unknown worlds off, Persistent Main enabled by actual Bukkit name, and every Resource dimension disabled. JAR, import ZIP, extracted／normalized Schematic, Model, generated Resource Pack, Hosting URL, and Cache remain ignored. The V0.1.0 Ruined Frontier scope requires a separate Frontier installation and verification task.
 
 Phase 3 finalized the current persistent dimensions and approved safe spawn coordinates. Ver.0.0.6 retains that baseline until a separately approved replacement generation finishes. Remaining Main expansion uses separate tasks in this order:
 
-1. Verify the five approved Structure packs, BetterStructures Prop Pack, FreeMinecraftModels, ResourcePackManager, licenses, hashes, dependencies, World scope, Model IDs, and Main Pack delivery.
-2. Import the complete approved working set and confirm every Plugin／Content dependency loads before World generation.
+1. Completed 2026-07-25: verify the five approved Structure packs, BetterStructures Prop Pack, FreeMinecraftModels, ResourcePackManager, licenses, hashes, dependencies, World scope, Model IDs, and Main Pack delivery.
+2. Completed 2026-07-25: import the complete approved working set and confirm every Plugin／Content dependency loads before World generation.
 3. Under an independently approved destructive task, regenerate only `main`, `main_nether`, and `main_the_end`; preserve the complete Resource family.
 4. Verify natural generation, Portals, safe Spawns, Main Resource Pack, Resource exclusion, approved tuning, identities, and backup before replacing the current baseline.
 5. Install CoreProtect after the new baseline and before substantial Hub／Gate construction.

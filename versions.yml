@@ -319,16 +319,100 @@ runtime_selection:
         - resource_end
       new_world_default: false
     spawn_protection_radius: 100
-    content:
-      name: 103 Default Structures
-      edition: free
-      version: 5
+    content_set:
+      id: main-betterstructures-v006
+      status: installed-and-load-verified
       source: https://nightbreak.io/plugin/betterstructures/
-      archive_filename: bs-default-builds-default-structures.zip
-      sha256: 118D873FDF87BF94EA6CA3036897B10790F5D73E62F8387E75C1AB6A4A360FE0
+      source_structures: 430
+      selected_structures: 278
+      disabled_structures: 152
+      selection_manifest_sha256: CD087809181C3B5AC0D0721F23596790DE6394A8A1CE2D9095E8D9BDACDEC774
+      prop_mapping_sha256: 9880FFF02B28E1BBEDA523EDEFABBB35BB00BD098C1657AC6F410F3581386347
+      packs:
+        default:
+          name: 103 Default Structures
+          edition: free
+          internal_version: 5
+          structures: 103
+          sha256: 118D873FDF87BF94EA6CA3036897B10790F5D73E62F8387E75C1AB6A4A360FE0
+        exploration:
+          name: Exploration Pack
+          edition: free
+          internal_version: 6
+          structures: 49
+          sha256: 963CABA2D8BA31E8DA2E0E73D098A57B66E80D6ECF55BBC92CBD7D04F7F4BA4B
+        caves:
+          name: Caves and Lost Civilizations Free
+          edition: free
+          internal_version: 2
+          structures: 49
+          sha256: 27527F2713858EE47029C2AE9DE72D74C164FC52297672DBEEAA81BA62C25677
+        adventure:
+          name: Adventure Pack
+          edition: premium
+          internal_version: 1
+          structures: 107
+          sha256: 96061E1166767BEC12087D55C0A7353AE42B970EFE617ACF4B1AF550BDE6AB4C
+        echoes:
+          name: Echoes of the Past
+          edition: premium
+          internal_version: 3
+          structures: 122
+          sha256: B2F971EB0B27FA9BBDA6BD6503875718621146CEC7E671F0D05366E918CCB51F
       acquisition: user-manual-import
       redistribution: not-committed
-    verified: 2026-07-20
+      client_preflight: passed
+    verified: 2026-07-25
+  free_minecraft_models:
+    version: "2.10.2"
+    channel: release
+    platform: bukkit-paper
+    minecraft: "26.2"
+    runtime_java: 25
+    placement:
+      - main
+    excluded_placement:
+      - velocity
+      - lobby
+      - frontier
+    acquisition: user-manual
+    source: https://modrinth.com/plugin/free-minecraft-models/version/sQDrL88L
+    license: GPL-3.0-only
+    sha1: B019DCEAECB262CB2722750E0C271874728D39DB
+    sha256: 3369C5EFE385B86460C2A596AB6284FF387874FB846669939B52486659327274
+    model_pack: BetterStructures Prop Pack
+    model_count: 55
+    model_pack_sha256: F39E9C7B5CACA49462A6CC2634F6C2D49DD0F7498744D7DE7960887CC694C04D
+    player_shop: disabled
+    auto_plugin_download: false
+    verified: 2026-07-25
+  resource_pack_manager:
+    version: "2.3.0"
+    channel: release
+    platform: bukkit-paper
+    minecraft: "26.2"
+    runtime_java: 25
+    placement:
+      - main
+    excluded_placement:
+      - velocity
+      - lobby
+      - frontier
+    acquisition: user-manual
+    source: https://modrinth.com/plugin/resourcepackmanager/version/sm5yLBux
+    license: LGPL-3.0-only
+    sha1: 5FAFBCDA1371E2360DF00D5B2DAA26B1B9575E86
+    sha256: 240809E885F37866EEB756854958B549C947CC7AEE078269DB0CDB18D97F1F64
+    hosting_preflight: nightbreak-temporary-remote
+    required: false
+    self_host: false
+    public_port_change: none
+    generated_java_pack:
+      size: 838975
+      sha1: 029689B8355600DAAFD96D2F057AC04A65E1091D
+      sha256: 741986F729C68F3876BA577969AD7AD85B3120526A9E309F13880C6F606C11CE
+    client_preflight: passed
+    verified: 2026-07-25
   paper_26_2:
     build: 62
     commit: 75c0b48

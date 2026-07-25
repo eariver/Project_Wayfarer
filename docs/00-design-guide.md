@@ -145,9 +145,9 @@ EconomyShopGUI 7.1.1 FreeはMainだけに配置し、Vault経由でRedisEconomy�
 
 ### Main Structure生成
 
-現在のRuntimeはBetterStructures 2.6.3と公式無料Pack `103 Default Structures` version 5だけを使用します。Bukkit実World名`main`、`main_nether`、`main_the_end`だけが有効で、`resource`、`resource_nether`、`resource_end`および未知の新規Worldは無効です。
+現在のRuntimeはBetterStructures 2.6.3と、Load検証済みのMain five-Pack Working Setを使用します。430件中278件を有効化し、`103 Default Structures` version 5、`Exploration Pack` version 6、`Caves and Lost Civilizations Free` version 2、`Adventure Pack` internal version 1、`Echoes of the Past` version 3を選定しています。Bukkit実World名`main`、`main_nether`、`main_the_end`だけが有効で、`resource`、`resource_nether`、`resource_end`および未知の新規Worldは無効です。
 
-Ver.0.0.6の正式な次Scopeは、`103 Default Structures` version 5、`Exploration Pack` version 6、`Caves and Lost Civilizations Free` version 2、`Adventure Pack` internal version 1、`Echoes of the Past` version 3、BetterStructures Prop Pack、FreeMinecraftModelsおよびResourcePackManagerです。これは実装予定Scopeであり、Version、License、Source、Artifact Hashおよび互換性は実物を検証する導入タスクでLockします。未導入Artifactを`versions.yml`または`plugin-manifest.yml`へ導入済みとして記録しません。
+BetterStructures Prop Pack、FreeMinecraftModels 2.10.2およびResourcePackManager 2.3.0もMainだけに導入し、55 ModelsとMain Java Resource PackのLoad／生成Preflightを完了しています。Artifact Lock、選定、Mapping、生成Packおよび一時Hostingの詳細は[調査報告](investigations/2026-07-25-main-betterstructures-content-preflight.md)を参照します。
 
 全Content、Plugin、World Allowlist、Structure選別Config、Prop／Model IDおよびMain Resource PackをWorking Copyで検証し、正常Loadを確認した後に限り、別途承認された破壊的タスクで`main`、`main_nether`、`main_the_end`を再生成します。Content Importより先にWorldを生成しません。Resource Familyは再生成とBetterStructures生成の両方から除外します。
 
@@ -159,7 +159,7 @@ Phase 3 Main最終生成は2026-07-21に完了しています。3つのPersisten
 
 V0.1.0 Frontierの正式Scopeは[Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md)を正本とします。Ruined FrontierはBetterStructures＋EliteMobsによるGuild／戦闘Theme、Worlds BeyondはIris三次元とTraversal／Waystoneを中心とする探索Themeです。両方がV0.1.0 Blockerであり、MVIの`neutral`、`worlds_beyond`、`guild` Groupで通常Player Stateを分離します。
 
-ResourcePackManagerはMainとFrontierの配信基盤として導入予定です。MainとFrontierは別Packとし、Version、生成、Hosting URL、Hash形式、必須Policy、拒否／失敗時挙動、Backend切替時Reload、Model／Shader／Font競合、容量、CacheおよびRollbackを実装前にLockします。生成Pack、ModelおよびContent ArtifactはGitへ追加しません。
+ResourcePackManager 2.3.0はMainの配信Preflight基盤として導入済みです。Mainは任意PromptとNightbreak一時Hostingを使用し、公開Port、Firewall、Router、Credentialまたは外部Accountを追加していません。Frontierは未導入であり、Mainとは別Packとします。正式Hosting、Backend切替時Reload、Model／Shader／Font競合、容量、CacheおよびRollbackはFrontier統合時にNetwork全体としてLockします。生成Pack、ModelおよびContent ArtifactはGitへ追加しません。
 
 ## 6. Data Boundary
 
@@ -175,7 +175,7 @@ ResourcePackManagerはMainとFrontierの配信基盤として導入予定です�
 |EvenMoreFish|導入しない|`main`／`resource`限定|導入しない|
 |WorldGuard|Entry World全体保護|Pluginのみ。Spawn保護は設計済み・未実装|Entry World全体保護|
 
-Waymark共有残高、MainのVanilla固定価格ショップ、EvenMoreFish魚売却、mcMMO共有進行および現在のMain限定BetterStructures基盤は導入済みです。MVI、ResourcePackManager、Wayfarer_Core、Wayfarer_Frontier、Iris、EliteMobs、Frontier／QuestのWaymark報酬およびCross-server Chatは未導入であり、計画上の機能を導入済みとして扱いません。
+Waymark共有残高、MainのVanilla固定価格ショップ、EvenMoreFish魚売却、mcMMO共有進行、Main five-Pack BetterStructures／FMM基盤およびMain ResourcePackManager Preflightは導入済みです。MVI、Frontier ResourcePackManager／Pack、正式Hosting、Wayfarer_Core、Wayfarer_Frontier、Iris、EliteMobs、Frontier／QuestのWaymark報酬およびCross-server Chatは未導入であり、計画上の機能を導入済みとして扱いません。
 
 MainとFrontierはVanilla Itemを含む全Item、Inventory、Armor、Offhand、Ender Chest、Vanilla XP、HealthおよびFoodを共有・移送しません。Network共有成果はWaymark、mcMMO、および将来別途承認されるItem非依存実績／報酬だけです。Wayfarer_Frontierは通常InventoryをMariaDBへ保存せず、MVIのProfile保存・復元を再実装しません。
 

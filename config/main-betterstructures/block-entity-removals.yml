@@ -1,0 +1,15 @@
+schema: 1
+policy_id: main-betterstructures-block-entity-removals-v006
+removals:
+  - list_name: BlockEntities
+    block_entity_id: minecraft:bed
+    expected_matches: 144
+    expected_files: 24
+    reason: >-
+      Modern beds are blocks, not block entities. The vendor schematics retain
+      stale minecraft:bed BlockEntities entries which BetterStructures reports
+      as unsupported keys on Paper 26.2.
+    approval:
+      approved_by: user
+      approved_on: "2026-07-25"
+      scope: normalized working copy only

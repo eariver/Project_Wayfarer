@@ -1,0 +1,9 @@
+isEnabled: false
+name: '&2Basic Furniture Pack'
+description:
+- '&fA collection of basic furniture models with interactive scripts.'
+version: 0
+folderName: Basic Furniture Pack
+nightbreakSlug: basic-furniture-pack
+contentFilePrefixes: []
+scriptFilePrefixes: []

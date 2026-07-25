@@ -9,6 +9,8 @@
 local/paths.psd1
 local/*.local.*
 local/runtime/
+local/work/main-betterstructures-v006/
+scripts/__pycache__/
 **/forwarding.secret
 **/forwarding.secret.txt
 **/*secret*.local.*
@@ -43,6 +45,20 @@ servers/**/plugins/bStats/
 servers/**/plugins/update/
 servers/**/plugins/PluginMetrics/
 servers/**/plugins/faststats/
+
+# Main BetterStructures model/resource-pack Runtime data
+servers/main/plugins/FreeMinecraftModels/**
+!servers/main/plugins/FreeMinecraftModels/config.yml
+!servers/main/plugins/FreeMinecraftModels/shop_config.yml
+!servers/main/plugins/FreeMinecraftModels/content_packages/
+servers/main/plugins/FreeMinecraftModels/content_packages/**
+!servers/main/plugins/FreeMinecraftModels/content_packages/basic_furniture_pack.yml
+!servers/main/plugins/FreeMinecraftModels/content_packages/betterstructures_prop_pack.yml
+!servers/main/plugins/FreeMinecraftModels/content_packages/craftenmine_tools_item_pack.yml
+!servers/main/plugins/FreeMinecraftModels/content_packages/craftenmines_weapons_item_pack.yml
+!servers/main/plugins/FreeMinecraftModels/content_packages/elitemobs_prop_pack.yml
+servers/main/plugins/ResourcePackManager/**
+!servers/main/plugins/ResourcePackManager/config.yml
 servers/**/usercache.json
 servers/**/whitelist.json
 servers/**/banned-*.json

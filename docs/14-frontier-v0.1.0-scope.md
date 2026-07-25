@@ -195,11 +195,11 @@ No Adapter is developed merely because it appears in a Concept.
 
 ## 11. Resource Pack distribution
 
-ResourcePackManager is the planned distribution foundation for both Main and Frontier. Main and Frontier use separate Packs.
+ResourcePackManager 2.3.0 is the load-verified Main preflight foundation. Frontier still requires a separate installation and Pack. Main and Frontier use separate Packs.
 
-Before implementation, lock:
+Before Frontier implementation and final Network acceptance, lock:
 
-- ResourcePackManager version;
+- Frontier ResourcePackManager version and compatibility with the Main 2.3.0 lock;
 - Main and Frontier Pack composition;
 - generation and Hosting methods;
 - Hosting URL and Pack hash;

@@ -34,7 +34,7 @@ Regression testing is limited to a foundation directly modified by the change. E
 - [x] mcMMO shared Main/Frontier progression and RedisEconomy shared Waymark balances have verified persistence tests.
 - [x] EconomyShopGUI 7.1.1 Free provides the verified Main-only fixed-price shop.
 
-These items describe current baselines only. They do not mark the replacement Main generation, Phase 1B, Hubs, Gates, either Frontier Theme, MVI, ResourcePackManager, custom Plugins, integrated operations, or V0.1.0 Backup as implemented.
+These items describe current baselines only. They do not mark the replacement Main generation, Phase 1B, Hubs, Gates, either Frontier Theme, MVI, the future Frontier ResourcePackManager／Pack, custom Plugins, integrated operations, or V0.1.0 Backup as implemented.
 
 ## 3. V0.1.0 Release Blockers
 
@@ -60,7 +60,7 @@ Phase 1B incomplete:
 - [x] BetterStructures 2.6.3 and `103 Default Structures` version 5 are enabled only in Bukkit worlds `main`, `main_nether`, and `main_the_end`; every Resource world and unknown new world is disabled.
 - [x] The 2026-07-21 current persistent Main baseline completed under an approved destructive task with exact paths, verified backup and manifest, recorded seed, preserved Resource family, and safe Overworld/Nether/End spawns.
 - [x] EvenMoreFish enables with its adopted Config and one representative function; configuration has no explicit mcMMO Fishing conflict.
-- [ ] Before replacement generation, all five adopted Structure packs, BetterStructures Prop Pack, FreeMinecraftModels, and ResourcePackManager are verified, imported, and loaded with the approved Main World allowlist and Pack preflight.
+- [x] Before replacement generation, all five adopted Structure packs, BetterStructures Prop Pack, FreeMinecraftModels 2.10.2, and ResourcePackManager 2.3.0 are verified, imported, and loaded with the approved Main World allowlist and Pack preflight.
 - [ ] The current Main baseline and rollback backup remain verified and recoverable immediately before replacement generation.
 - [ ] A separately and explicitly assigned one-time Ver.0.0.6 destructive task regenerates only `main`, `main_nether`, and `main_the_end` after Content load, with exact resolved paths, normal shutdown, explicit user approval, and verified backup／rollback evidence; the Resource family remains excluded.
 - [ ] Representative adopted Structures generate across Main Overworld／Nether／End; BetterStructures does not generate in any Resource dimension.
@@ -225,6 +225,19 @@ The following records preserve work already performed under earlier tasks. Their
 - [x] The approved Savanna Overworld spawn and bedless respawn were safe; the selected Nether and default-platform End administrative spawns passed focused safety and travel tests.
 - [x] A clean full-network restart reloaded all worlds, Multiverse links, and BetterStructures scope. Velocity-to-Main arrival reached the approved spawn, and the network then stopped normally.
 - [x] Rollback remains possible from the verified ignored local backup. World, player, backup, Region, log, cache, and JAR data remain outside Git.
+
+### Main BetterStructures five-Pack preflight (2026-07-25)
+
+- [x] The user-supplied five Content archives, 55-Model Prop Pack, FreeMinecraftModels 2.10.2, and ResourcePackManager 2.3.0 matched their locked versions and hashes; Codex downloaded no executable or Content artifact.
+- [x] A reproducible ignored working copy selected exactly 278 of 430 Structure configurations and disabled 152; two complete builds produced identical import ZIP digests.
+- [x] Exact Prop normalization replaced 240 occurrences with zero unresolved Model IDs. The approved `shelf4` and `ladder` mappings resolve to `bs_prop_pack_shelf2` and `bs_prop_pack_ladder_short`.
+- [x] The Schematic audit found 627 Prop Armor Stands, 17 Zombies, 27 Skeletons, 29 Bats, 68 other ordinary Entities, and no remaining saved Item or Projectile. All ten exact legacy representatives parsed.
+- [x] The user approved removal of one saved egg Item and 144 stale `minecraft:bed` Block Entity records from the generated working copy only. Original archives remain unchanged.
+- [x] BetterStructures loaded all five packages with 278 enabled／152 disabled; FMM loaded 55 Models; ResourcePackManager produced the 838,975-byte Main Java pack. The final clean boot had no failed Schematic, unresolved Model, duplicate ID, startup-blocking error, or bed DataFixer message.
+- [x] Only `main`, `main_nether`, and `main_the_end` remain enabled. All Resource worlds and unknown new worlds remain disabled; radius 100 and disabled EliteMobs integration are unchanged.
+- [x] Client preflight confirmed optional prompt, download/application, representative Prop rendering, refusal behavior, reconnect cache behavior, Main／Lobby switching, and no critical Client error.
+- [x] Runtime-only load verification kept every persistent Region SHA-256 unchanged. The approved Client smoke test then placed and removed representative FMM Props in already-generated Overworld Chunks; Region counts remained `11 / 4 / 4`, no new Region appeared, and Nether／End hashes remained unchanged. Four existing Overworld Region-container hashes changed during normal Player-session saves, so byte-for-byte post-Client invariance is not claimed. No Structure was pasted and no ungenerated Chunk was intentionally loaded.
+- [x] JARs, archives, Schematics, Models, generated packs, Runtime data, Logs, Worlds, and the ignored rollback snapshot remain outside Git.
 
 ### EvenMoreFish 2.4.3 (2026-07-21)
 

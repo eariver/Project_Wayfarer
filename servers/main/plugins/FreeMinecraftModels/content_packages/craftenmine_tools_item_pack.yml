@@ -1,0 +1,9 @@
+isEnabled: false
+name: '&2Craftenmine Tools Item Pack'
+description:
+- '&fA collection of tool item models by Craftenmine.'
+version: 0
+folderName: fmm_craftenmine_tools_items_pack
+nightbreakSlug: craftenmine-tools-item-pack
+contentFilePrefixes: []
+scriptFilePrefixes: []

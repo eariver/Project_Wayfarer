@@ -1,0 +1,17 @@
+schema: 1
+policy_id: main-betterstructures-entity-removals-v006
+removals:
+  - pack: default
+    structure_id: betterstructures_mine_nether
+    entity_type: minecraft:item
+    item_id: minecraft:egg
+    item_count: 2
+    expected_matches: 1
+    reason: >-
+      Remove an incidental saved egg drop beside the four intentionally saved
+      chickens. Persistent item/projectile entities are a blocking risk for the
+      Main generation baseline.
+    approval:
+      approved_by: user
+      approved_on: "2026-07-25"
+      scope: normalized working copy only

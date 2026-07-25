@@ -136,12 +136,12 @@ Ver.0.0.6は設計・導入・運用文書の改訂番号であり、稼働Serve
 - Planned `resource_end` has no Ender Dragon and uses a verified outer-island arrival/return gate.
 - Manual Plugin collection is tracked in [Plugin Collection](docs/08-plugin-collection.md), `plugin-collection.csv`, and the separate XLSX artifact.
 - 権限Phase 1Aとして、`default`、2つのEligibility Group、`wayfarer_builder`／`wayfarer_admin`の5つの恒久Group定義と、PlayerからRole Groupへの自己限定Temporary Parent所属を実装済み。既存`default`／`wayfarer_builder`は再利用し、AdminはOPではなく一時Roleで全権限を得る。Builderの最終AllowlistはPhase 1Bとして未実装。
-- Mainの次BetterStructures Scopeは5 Pack、Prop Pack、FreeMinecraftModelsおよびResourcePackManagerとする。全Contentの正常Load後、別途承認された破壊的タスクでPersistent Main Familyだけを再生成し、Resource Familyは除外する。現在のMain Baselineは新Baseline確定まで有効。
+- MainのBetterStructures 5 Pack、Prop Pack、FreeMinecraftModels 2.10.2およびResourcePackManager 2.3.0はLoad／Pack Preflight済み。次は別途承認された破壊的タスクでPersistent Main Familyだけを再生成し、Resource Familyは除外する。現在のMain Baselineは新Baseline確定まで有効。
 - V0.1.0ではRuined Frontier alphaとWorlds Beyond MVPの両方を実装・統合・受入試験する。Ruined Frontierの初期BetterStructures ScopeはMain五Packとは異なり、103 Default Structures全体を原則無効として、Exploration／Caves／Echoes／Adventure、Prop Pack、Free Elite Shrines、Dungeoneering Modules Freeを採用する。
 - Frontierの通常Player StateはMultiverse-Inventoriesの`neutral`、`worlds_beyond`、`guild` Groupを正本とし、Wayfarer_FrontierでInventory保存を再実装しない。
 - Main／Frontier間ではVanilla Itemを含む全Item、Inventory、Armor、Offhand、Ender ChestおよびVanilla Player Stateを移送しない。共有成果はWaymark、mcMMOおよび別途承認されるItem非依存実績／報酬だけとする。
 - Wayfarer_CoreとWayfarer_FrontierはV0.1.0 Blockerとして別Repositoryで開発し、本RepositoryにはIntegration Contract、Config、Version／Hashおよび運用・受入文書だけを置く。
-- ResourcePackManagerをMain／Frontier別Packの配信基盤として計画し、Version、Hosting、Hash、切替、競合およびRollbackを実装前にLockする。
+- ResourcePackManager 2.3.0はMain Preflight済み。Frontierは別Packとして未導入であり、正式Hosting、Backend切替、競合およびRollbackはFrontier統合時にNetwork全体でLockする。
 - Lobby／Main／FrontierのHub外観とGate構造はユーザーが手作業で確定し、Codexは確定座標に基づく接続・設定・保護を後続タスクで行う。
 - Main Spawn保護は設計済み・未実装とし、ユーザーが初期Hubを概ね整備した後にWorldGuard RegionのExact範囲を別タスクで承認する。それまではVanilla `spawn-protection=16`を維持する。
 - CoreProtectは新しいMain Baseline確定後、Hub／Gateの本格建築前に導入する。Block履歴と部分Rollbackを担当するが、Cold Backupの代替にはしない。

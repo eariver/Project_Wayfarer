@@ -1,0 +1,9 @@
+isEnabled: true
+name: '&2BetterStructures Prop Pack'
+description:
+- '&fShared decorative model assets for BetterStructures content.'
+version: 0
+folderName: bs prop pack
+nightbreakSlug: betterstructures-prop-pack
+contentFilePrefixes: []
+scriptFilePrefixes: []

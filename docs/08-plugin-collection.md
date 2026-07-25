@@ -25,14 +25,14 @@
 |Economy|Main + Frontier|RedisEconomy 4.5.12-wayfarer.1|導入・検証済み|両plugins|https://www.spigotmc.org/resources/105965/|ユーザー提供互換Build、共有Redis Waymark、Lobby／Velocity対象外|
 |Economy|Main + Frontier|VaultUnlocked 2.20.2|導入・検証済み|両plugins|https://hangar.papermc.io/TNE/VaultUnlocked|RedisEconomy Vault Bridge、Lobby／Velocity対象外|
 |Economy|Main|EconomyShopGUI 7.1.1 Free|導入・検証済み|servers/main/plugins|https://www.spigotmc.org/resources/economyshopgui.69927/|100倍名目固定価格、5カテゴリ・62商品、Vault経由RedisEconomy、Lobby／Frontier／Velocity対象外|
-|Structure|Main|BetterStructures 2.6.3|導入・検証済み|servers/main/plugins|https://modrinth.com/plugin/betterstructures|現在は103 Default Structuresのみ、Persistent Main Family限定、Resource全世界と未知Worldは無効|
-|Structure|Main Persistent Family|Main 5-Pack Content Expansion|正式Scope・未導入|別タスクで確定||103 Default v5、Exploration v6、Caves and Lost Civilizations Free v2、Adventure internal v1、Echoes v3。Artifact実物でLock後、全Load確認してから再生成|
-|Model / Pack|Main|BetterStructures Prop Pack + FreeMinecraftModels + ResourcePackManager|正式Scope・未導入|別タスクで確定||Main専用Pack、Version／License／Hash／Hosting／Model ID／RollbackをPreflightでLock|
+|Structure|Main|BetterStructures 2.6.3 + Main 5-Pack|導入・Load検証済み|servers/main/plugins|https://nightbreak.io/plugin/betterstructures/|430件中278件有効、Persistent Main Family限定、Resource全世界と未知Worldは無効、再生成未実施|
+|Model|Main|FreeMinecraftModels 2.10.2 + BetterStructures Prop Pack|導入・Load検証済み|servers/main/plugins|https://modrinth.com/plugin/free-minecraft-models/version/sQDrL88L|55 Models、一般Player Menu／Shop無効、Artifact／生成PackはGit対象外|
+|Model / Pack|Main|ResourcePackManager 2.3.0|導入・配信Preflight済み|servers/main/plugins|https://modrinth.com/plugin/resourcepackmanager/version/sm5yLBux|Main統合Pack生成、任意Prompt、拒否継続、再接続Cacheを確認済み。Nightbreak一時Hosting、正式Hosting／Frontier Packは未確定|
 |Adventure|Frontier|EliteMobs|計画・未導入|servers/frontier/plugins|https://modrinth.com/plugin/elitemobs|Content Packは別途|
 |Structure|Frontier Ruined|BetterStructures|正式Scope・未導入|servers/frontier/plugins|https://modrinth.com/plugin/betterstructures|Ruined Frontier三次元、EliteMobs連携、Artifact／Contentは別タスクでLock|
 |World / State|Frontier|Multiverse-Inventories|正式Scope・未導入|servers/frontier/plugins||`neutral`／`worlds_beyond`／`guild`、通常Player State正本|
 |World Generator|Frontier Worlds Beyond|Iris Engine／Pack|正式Scope・未導入|別タスクで確定||三次元、PEACEFUL、Seed／Border／World ID／License／HashをLock|
-|Model / Pack|Main + Frontier|ResourcePackManager|正式Scope・未導入|各Backendで別Pack||Version／Hosting／Hash／切替／失敗時挙動／RollbackをLock|
+|Model / Pack|Frontier|ResourcePackManager|正式Scope・未導入|servers/frontier/plugins||Mainとは別Pack、Version／Hosting／Hash／切替／失敗時挙動／Rollbackを別途Lock|
 |External Custom|Network|Wayfarer_Core|正式Scope・未開発|別Repository||V0.1.0 Blocker、本RepositoryへSourceを置かない|
 |External Custom|Frontier|Wayfarer_Frontier|正式Scope・未開発|別Repository||V0.1.0 Blocker、MVI通常Inventoryを再実装しない|
 |Administration|Main + Frontier|CoreProtect|計画・未導入|別タスクで確定||新Main Baseline後・Hub／Gate本格建築前、RollbackはAdmin-only、Cold Backup代替不可|

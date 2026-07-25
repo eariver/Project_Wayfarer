@@ -1,0 +1,26 @@
+schema: 1
+mapping_id: main-betterstructures-props-v006
+prop_pack:
+  archive: betterstructures-prop-pack-betterstructures-prop-pack.zip
+  sha256: F39E9C7B5CACA49462A6CC2634F6C2D49DD0F7498744D7DE7960887CC694C04D
+  model_count: 55
+
+prefix_rule:
+  source: prefixless exact model ID
+  target_prefix: bs_prop_pack_
+  require_target_model: true
+
+exceptions:
+  alchamytable: bs_prop_pack_alchemy_table
+  shelf4: bs_prop_pack_shelf2
+  ladder: bs_prop_pack_ladder_short
+
+decisions:
+  shelf4: >-
+    The source marker occurs in Adventure flagship_barren. The
+    bs_prop_pack_shelf2.bbmodel internal project name is shelf4, so the
+    mapping is exact even though that Structure is disabled for Main.
+  ladder: >-
+    User approved bs_prop_pack_ladder_short on 2026-07-25. The selected
+    Echoes house_grassland marker starts at Y=2 and reaches the adjacent
+    three-block-height landing; the 48-unit short model fits that space.

@@ -1,0 +1,9 @@
+isEnabled: false
+name: '&2EliteMobs Prop Pack'
+description:
+- '&fShared decorative model assets for EliteMobs-powered content.'
+version: 0
+folderName: em_dungeon_prop_pack
+nightbreakSlug: elitemobs-prop-pack
+contentFilePrefixes: []
+scriptFilePrefixes: []

@@ -1,0 +1,169 @@
+schema: 1
+selection_id: main-betterstructures-v006
+source_structure_count: 430
+selected_structure_count: 278
+design_dimension_counts:
+  overworld: 191
+  nether: 44
+  end: 43
+runtime_generator_dimension_counts:
+  overworld: 188
+  nether: 47
+  end: 43
+runtime_count_note: >-
+  The four Default-pack sky-island variants for crimson_forest,
+  nether_wastes, soul_sand, and warped_forest all use Nether generators.
+  The approved design table classified three of those by their ID naming.
+  Preserve all 103 Default structures and report both classifications.
+
+artifacts:
+  default:
+    archive: bs-default-builds-default-structures.zip
+    sha256: 118D873FDF87BF94EA6CA3036897B10790F5D73E62F8387E75C1AB6A4A360FE0
+    internal_version: "5"
+    structure_count: 103
+    content_directory: 103_default_structures
+  exploration:
+    archive: bs-exploration-exploration-pack.zip
+    sha256: 963CABA2D8BA31E8DA2E0E73D098A57B66E80D6ECF55BBC92CBD7D04F7F4BA4B
+    internal_version: "6"
+    structure_count: 49
+    content_directory: exploration
+  caves:
+    archive: bs-caves-and-lost-civilizations-free-caves-and-lost-civilizations-free.zip
+    sha256: 27527F2713858EE47029C2AE9DE72D74C164FC52297672DBEEAA81BA62C25677
+    internal_version: "2"
+    structure_count: 49
+    content_directory: caves_and_lost_civilizations_free
+  adventure:
+    archive: bs-adventure-adventure-pack.zip
+    sha256: 96061E1166767BEC12087D55C0A7353AE42B970EFE617ACF4B1AF550BDE6AB4C
+    internal_version: "1"
+    structure_count: 107
+    content_directory: adventure
+  echoes:
+    archive: bs-echoes-of-the-past-echoes-of-the-past.zip
+    sha256: B2F971EB0B27FA9BBDA6BD6503875718621146CEC7E671F0D05366E918CCB51F
+    internal_version: "3"
+    structure_count: 122
+    content_directory: echoes
+
+selection:
+  default:
+    include_all: true
+    weight: 1.0
+    design_counts:
+      overworld: 67
+      nether: 18
+      end: 18
+
+  exploration:
+    groups:
+      - {dimension: overworld, prefix: betterstructures_exploration_bridgecave_, variants: [deep, dripstone, lush, shallow], weight: 1.0}
+      - {dimension: overworld, prefix: betterstructures_exploration_waterhouse_, variants: [barren, desert, grassland, tundra], weight: 1.0}
+      - {dimension: overworld, prefix: betterstructures_exploration_tower_, variants: [barren, desert, grassland, tundra], weight: 0.4}
+      - {dimension: overworld, prefix: betterstructures_exploration_temple_, variants: [barren, desert, grassland, tundra], weight: 0.3}
+      - {dimension: overworld, prefix: betterstructures_exploration_floatingfortress_, variants: [barren, desert, grassland, tundra], weight: 0.15}
+      - dimension: nether
+        ids:
+          betterstructures_exploration_bridgecave_nether: 1.0
+          betterstructures_exploration_waterhouse_nether: 1.0
+          betterstructures_exploration_floatingfortress_nether: 0.45
+          betterstructures_exploration_tower_nether: 0.3
+      - dimension: end
+        ids:
+          betterstructures_exploration_bridgecave_end: 0.3
+          betterstructures_exploration_tower_end: 0.45
+          betterstructures_exploration_waterhouse_end: 0.6
+          betterstructures_exploration_watertemplesmall_end: 0.6
+          betterstructures_exploration_well_end: 0.7
+
+  caves:
+    groups:
+      - {dimension: overworld, prefix: bs_lostcivilizations_free_crystalcave_, variants: [deep, dripstone, lush, normal], weight: 1.0}
+      - {dimension: overworld, prefix: bs_lostcivilizations_free_lostlake_, variants: [deep, dripstone, lush, normal], weight: 0.8}
+      - {dimension: overworld, prefix: bs_lostcivilizations_free_circledungeon_, variants: [deep, dripstone, lush, normal], weight: 0.6}
+      - {dimension: overworld, prefix: bs_lostcivilizations_free_prison_, variants: [deep, dripstone, lush, normal], weight: 0.5}
+      - {dimension: overworld, prefix: bs_lostcivilizations_free_verticalcave_, variants: [deep, dripstone, lush, normal], weight: 0.35}
+      - {dimension: overworld, prefix: bs_lostcivilizations_free_ruins_, variants: [deep, dripstone, lush, normal], weight: 0.2}
+      - dimension: nether
+        ids:
+          bs_lostcivilizations_free_crystalcave_nether: 1.0
+          bs_lostcivilizations_free_circledungeon_nether: 0.6
+          bs_lostcivilizations_free_lostlake_nether: 0.5
+          bs_lostcivilizations_free_prison_nether: 0.4
+          bs_lostcivilizations_free_ruins_nether: 0.2
+      - dimension: end
+        ids:
+          bs_lostcivilizations_free_crystalcave_end: 0.8
+          bs_lostcivilizations_free_lostlake_end: 0.45
+          bs_lostcivilizations_free_mines_end: 0.3
+          bs_lostcivilizations_free_verticalcave_end: 0.3
+
+  echoes:
+    groups:
+      - {dimension: overworld, prefix: betterstructures_echoes_barn_, variants: [barren, desert, grassland, tundra], weight: 1.0}
+      - {dimension: overworld, prefix: betterstructures_echoes_camp_, variants: [barren, desert, grassland, tundra], weight: 1.0}
+      - {dimension: overworld, prefix: betterstructures_echoes_farmland_, variants: [barren, desert, grassland, tundra], weight: 1.0}
+      - {dimension: overworld, prefix: betterstructures_echoes_house_, variants: [barren, desert, grassland, tundra], weight: 1.0}
+      - {dimension: overworld, prefix: betterstructures_echoes_islandbig_, variants: [barren, desert, grassland, tundra], weight: 1.0}
+      - {dimension: overworld, prefix: betterstructures_echoes_islandsmall_, variants: [barren, desert, grassland, tundra], weight: 1.0}
+      - {dimension: overworld, prefix: betterstructures_echoes_seatemple_, variants: [acacia, desert, grassland, tundra], weight: 1.0}
+      - {dimension: overworld, prefix: betterstructures_echoes_statue_, variants: [barren, desert, grassland, tundra], weight: 1.0}
+      - {dimension: overworld, prefix: betterstructures_echoes_tower_, variants: [barren, desert, grassland, tundra], weight: 1.0}
+      - {dimension: overworld, prefix: betterstructures_echoes_wall_, variants: [barren, desert, grassland, tundra], weight: 1.0}
+      - {dimension: overworld, prefix: betterstructures_echoes_undergroundmines2_, variants: [deep, shallow], weight: 1.0}
+      - {dimension: overworld, prefix: betterstructures_echoes_crypt_, variants: [barren, desert, grassland, tundra], weight: 0.6}
+      - {dimension: overworld, prefix: betterstructures_echoes_dungeontower_, variants: [barren, desert, grassland, tundra], weight: 0.5}
+      - {dimension: overworld, prefix: betterstructures_echoes_shrine_, variants: [barren, desert, grassland, tundra], weight: 0.7}
+      - {dimension: overworld, prefix: betterstructures_echoes_surfacemine_, variants: [barren, desert, grassland, tundra], weight: 0.6}
+      - {dimension: overworld, prefix: betterstructures_echoes_temple_, variants: [barren, desert, grassland, tundra], weight: 0.7}
+      - {dimension: overworld, prefix: betterstructures_echoes_undergroundmines_, variants: [deep, shallow], weight: 0.5}
+      - dimension: nether
+        ids:
+          betterstructures_echoes_camp_nether: 1.0
+          betterstructures_echoes_islandbig_nether: 1.0
+          betterstructures_echoes_islandsmall_nether: 1.0
+          betterstructures_echoes_seatemple_nether: 1.0
+          betterstructures_echoes_tower_nether: 1.0
+          betterstructures_echoes_wall_nether: 1.0
+          betterstructures_echoes_undergroundmines2_nether: 1.0
+          betterstructures_echoes_crypt_nether: 0.6
+          betterstructures_echoes_dungeontower_nether: 0.45
+          betterstructures_echoes_shrine_nether: 0.7
+          betterstructures_echoes_statue_netherland: 0.6
+          betterstructures_echoes_temple_netherland: 0.7
+          betterstructures_echoes_undergroundmines_nether: 0.5
+          betterstructures_echoes_surfacemine_nether: 0.4
+      - dimension: end
+        ids:
+          betterstructures_echoes_islandbig_end: 0.45
+          betterstructures_echoes_islandsmall_end: 0.55
+          betterstructures_echoes_mines_end: 0.2
+          betterstructures_echoes_undergroundmines2_end: 0.25
+          betterstructures_echoes_crypt_end: 0.45
+          betterstructures_echoes_shrine_end: 0.6
+          betterstructures_echoes_statue_end: 0.75
+          betterstructures_echoes_surfacemine_end: 0.45
+          betterstructures_echoes_tower_end: 0.6
+          betterstructures_echoes_undergroundmines_end: 0.5
+          betterstructures_echoes_temple_end: 0.5
+          betterstructures_echoes_wall_end: 0.7
+
+  adventure:
+    groups:
+      - {dimension: overworld, prefix: betterstructures_adventure_ship_, variants: [barren, desert, grassland, tundra], weight: 0.6}
+      - {dimension: overworld, prefix: betterstructures_adventure_church_, variants: [barren, desert, grassland, tundra], weight: 0.35}
+      - {dimension: overworld, prefix: betterstructures_adventure_portalroom_, variants: [deep, dripstone, lush, shallow], weight: 0.3}
+      - {dimension: overworld, prefix: betterstructures_adventure_cloudisland_, variants: [barren, desert, grassland, tundra], weight: 0.15}
+      - dimension: nether
+        ids:
+          betterstructures_adventure_ship_nether: 0.55
+          betterstructures_adventure_cloudisland_nether: 0.3
+          betterstructures_adventure_largewatertemple_nether: 0.25
+      - dimension: end
+        ids:
+          betterstructures_adventure_ship_end: 0.35
+          betterstructures_adventure_cloudisland_end: 0.25
+          betterstructures_adventure_portalroom_end: 0.2
+          betterstructures_adventure_shrinechamber_end: 0.3

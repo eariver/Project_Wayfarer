@@ -1,0 +1,9 @@
+isEnabled: false
+name: '&2Craftenmine''s Weapons Item Pack'
+description:
+- '&fA collection of weapon item models by Craftenmine.'
+version: 0
+folderName: fmm_craftenmine_weapons_items_pack
+nightbreakSlug: craftenmines-weapons-item-pack
+contentFilePrefixes: []
+scriptFilePrefixes: []

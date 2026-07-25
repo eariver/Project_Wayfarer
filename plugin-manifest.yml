@@ -28,26 +28,6 @@ planned_unplaced:
     administration: admin-only-no-builder-rollback
     cold-backup-replacement: false
     jar: manual-acquisition-after-version-selection
-  - name: Persistent Nether/End Structure Expansion
-    phase: 2B
-    status: planned-not-selected-or-installed
-    purpose: Complement the existing 103 Default Structures Nether/End baseline with approved dimension-focused content
-    order: after-coreprotect-before-playable-frontier-theme
-    preferred-integration: BetterStructures-compatible-content-pack
-    allowed-worlds:
-      - main_nether
-      - main_the_end
-    excluded-worlds:
-      - resource
-      - resource_nether
-      - resource_end
-      - unknown
-      - lobby
-      - frontier_gate
-      - frontier-theme-worlds
-    acquisition: separate-comparison-user-approval-and-manual-acquisition
-    persistent-world-regeneration: forbidden
-
 velocity:
   required:
     - name: LuckPerms
@@ -524,16 +504,22 @@ main:
         unknown-new-worlds: disabled
       spawn-protection-radius: 100
       content:
-        name: 103 Default Structures
-        edition: Free
-        version: 5
+        id: main-betterstructures-v006
+        status: installed-and-load-verified
         source: https://nightbreak.io/plugin/betterstructures/
-        archive-filename: bs-default-builds-default-structures.zip
-        sha256: 118D873FDF87BF94EA6CA3036897B10790F5D73E62F8387E75C1AB6A4A360FE0
-        runtime-import: manual-zip-import
+        source-structures: 430
+        enabled-structures: 278
+        disabled-structures: 152
+        packs:
+          - "103 Default Structures v5"
+          - "Exploration Pack v6"
+          - "Caves and Lost Civilizations Free v2"
+          - "Adventure Pack internal v1"
+          - "Echoes of the Past v3"
+        runtime-import: reproducible-normalized-working-copy
         redistribution: not-committed
         enabled-world-family: persistent-main-only
-      verification: version-command-natural-well-resource-exclusion-and-clean-restart
+      verification: five-pack-load-fmm-model-resolution-resource-family-exclusion-and-clean-restart
       phase-3-generation-baseline:
         status: complete
         date: 2026-07-21
@@ -553,6 +539,69 @@ main:
           end: "100.5 49 0.5"
         resource-preservation: uuid-seed-and-region-sha256-verified
         backup-manifest-sha256: 50B0F6244223DA68B752407BBE89127E0CE49645F7673A5FF929EE9C5B8A3C9D
+    - name: FreeMinecraftModels
+      version: "2.10.2"
+      channel: Release
+      platform: Bukkit/Paper
+      minecraft-compatibility:
+        - "26.2"
+      java-runtime: 25
+      status: installed-and-load-verified
+      purpose: Render the BetterStructures Prop Pack and generate its Main Java resource pack
+      source: https://modrinth.com/plugin/free-minecraft-models/version/sQDrL88L
+      license: GPL-3.0-only
+      jar: manual-acquisition
+      sha1: B019DCEAECB262CB2722750E0C271874728D39DB
+      sha256: 3369C5EFE385B86460C2A596AB6284FF387874FB846669939B52486659327274
+      placement:
+        - main
+      excluded-placement:
+        - velocity
+        - lobby
+        - frontier
+      content:
+        name: BetterStructures Prop Pack
+        models: 55
+        sha256: F39E9C7B5CACA49462A6CC2634F6C2D49DD0F7498744D7DE7960887CC694C04D
+        redistribution: not-committed
+      furniture-shop: disabled
+      player-menu: denied-in-main-context
+      auto-plugin-download: disabled
+      generated-pack: ignored
+    - name: ResourcePackManager
+      version: "2.3.0"
+      channel: Release
+      platform: Bukkit/Paper
+      minecraft-compatibility:
+        - "26.2"
+      java-runtime: 25
+      status: installed-and-load-verified
+      purpose: Merge and preflight-deliver the Main BetterStructures/FMM Java resource pack
+      source: https://modrinth.com/plugin/resourcepackmanager/version/sm5yLBux
+      license: LGPL-3.0-only
+      jar: manual-acquisition
+      sha1: 5FAFBCDA1371E2360DF00D5B2DAA26B1B9575E86
+      sha256: 240809E885F37866EEB756854958B549C947CC7AEE078269DB0CDB18D97F1F64
+      placement:
+        - main
+      excluded-placement:
+        - velocity
+        - lobby
+        - frontier
+      priority:
+        - ResourcePackManager
+        - FreeMinecraftModels
+        - BetterStructures
+      hosting-preflight: nightbreak-temporary-remote
+      force-resource-pack: false
+      self-host: false
+      public-port-change: none
+      generated-pack:
+        size: 838975
+        sha1: 029689B8355600DAAFD96D2F057AC04A65E1091D
+        sha256: 741986F729C68F3876BA577969AD7AD85B3120526A9E309F13880C6F606C11CE
+        git: ignored
+      client-preflight: passed
 frontier:
   required:
     - name: VoidGen

@@ -17,6 +17,7 @@ Ver.0.0.6 is a design revision, not a Server Release. The first target Release i
 - BetterStructures 2.6.3 and `103 Default Structures` version 5 restricted to current Persistent Main dimensions
 - 2026-07-21 Main persistent generation baseline with approved safe spawns and preserved Resource family
 - EvenMoreFish 2.4.3 Main-only Custom Fishing and Vault Fish Shop
+- Main BetterStructures five-Pack working set, FreeMinecraftModels 2.10.2, BetterStructures Prop Pack, and ResourcePackManager 2.3.0 load preflight
 
 These historical baselines remain verified. Ver.0.0.6 authorizes a future Main Content expansion and destructive regeneration plan, but it does not supersede the current Main baseline until the new generation, acceptance, and backup tasks finish.
 
@@ -25,8 +26,8 @@ These historical baselines remain verified. Ver.0.0.6 authorizes a future Main C
 | Order | Work | Dependency and outcome |
 | ---: | --- | --- |
 | 1 | Ver.0.0.6 formal documentation | Adopt the approved Main／Frontier scope without changing Runtime |
-| 2 | Main BetterStructures Artifact／Content／Resource Pack Preflight | Verify exact versions, licenses, sources, hashes, dependencies, model IDs, Pack delivery, and World scope |
-| 3 | Main full Content Import and load confirmation | Install the five approved packs plus Prop／FreeMinecraftModels／ResourcePackManager working set and confirm every dependency before World generation |
+| 2 | Main BetterStructures Artifact／Content／Resource Pack Preflight — complete 2026-07-25 | Exact versions, licenses, sources, hashes, dependencies, Model IDs, Pack generation, and World scope are locked; Client delivery evidence is recorded in the integration report |
+| 3 | Main full Content Import and load confirmation — complete 2026-07-25 | The five approved packs plus Prop／FreeMinecraftModels／ResourcePackManager working set loaded normally before World generation |
 | 4 | Main Persistent Family regeneration | Under a separately approved destructive task, regenerate only `main`, `main_nether`, and `main_the_end` after Content load succeeds |
 | 5 | Main generation acceptance | Verify representative structures, Resource-family exclusion, Portal family, safe spawns, and Main Resource Pack delivery |
 | 6 | Main Weight／Content tuning and new baseline | Apply approved tuning, finalize identities and backup, then update the Main baseline source of truth |
@@ -79,7 +80,7 @@ Phase 1B remains a Release Blocker and starts only at dependency order 17.
 
 ### Phase 2 - Current Main BetterStructures baseline
 
-The 2026-07-20 integration of BetterStructures 2.6.3 with `103 Default Structures` version 5 remains historical verified evidence. It is not the final Ver.0.0.6 Main Content scope.
+The 2026-07-20 integration of BetterStructures 2.6.3 with `103 Default Structures` version 5 remains historical verified evidence. The 2026-07-25 non-destructive preflight supersedes its Content load scope, but not its generated World baseline.
 
 ### Phase 2B - Main Persistent Family Content expansion and regeneration
 
@@ -91,7 +92,7 @@ main_nether
 main_the_end
 ```
 
-The approved planned Content set is:
+The adopted and load-verified Content set is:
 
 - `103 Default Structures` version 5;
 - `Exploration Pack` version 6;
@@ -102,18 +103,18 @@ The approved planned Content set is:
 - FreeMinecraftModels;
 - ResourcePackManager.
 
-Artifact versions above are design targets. The implementation task must verify actual versions, sources, licenses, hashes, compatibility, dependency order, Structure selection, Weight, Model／Prop IDs, and generated Pack before recording Runtime versions.
+The exact Artifact locks, selection, normalization, and generated Pack digests are recorded in [the preflight report](investigations/2026-07-25-main-betterstructures-content-preflight.md), `versions.yml`, and `plugin-manifest.yml`. The working set contains 430 source configurations with 278 enabled and 152 disabled. FreeMinecraftModels is locked at 2.10.2 and ResourcePackManager at 2.3.0.
 
 Required order:
 
 ```text
-Artifact verification
-→ Runtime working copy
-→ Structure-selection Config
-→ Prop／Model ID normalization
-→ all approved Plugin／Content import
-→ World allowlist, Content load, and Resource Pack preflight
-→ healthy load confirmation
+Artifact verification [complete]
+→ Runtime working copy [complete]
+→ Structure-selection Config [complete]
+→ Prop／Model ID normalization [complete]
+→ all approved Plugin／Content import [complete]
+→ World allowlist, Content load, and Resource Pack preflight [complete]
+→ healthy load confirmation [complete]
 → separately approved Main Persistent Family regeneration
 → generation／Portal／Spawn／Pack／Resource-exclusion acceptance
 → approved tuning

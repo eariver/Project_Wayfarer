@@ -38,9 +38,9 @@ MariaDB currently stores LuckPerms, mcMMO, and EvenMoreFish data. Redis currentl
 - mcMMO 2.3.000 runs on Main and Frontier with shared MariaDB progression.
 - RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocked 2.20.2 run on Main and Frontier with shared Waymark.
 - EconomyShopGUI and EvenMoreFish run only on Main.
-- BetterStructures currently runs only on Main with `103 Default Structures` version 5.
+- BetterStructures currently runs only on Main with the load-verified five-Pack 278-Structure working set. FreeMinecraftModels 2.10.2 and ResourcePackManager 2.3.0 also run only on Main for the Prop／Java Pack preflight.
 
-MVI, Frontier Multiverse-NetherPortals, CoreProtect, ResourcePackManager, Iris, EliteMobs, the expanded Main Content set, Wayfarer_Core, and Wayfarer_Frontier are planned and not installed by Ver.0.0.6.
+MVI, Frontier Multiverse-NetherPortals, CoreProtect, Frontier ResourcePackManager／Pack, formal Network pack hosting, Iris, EliteMobs, Wayfarer_Core, and Wayfarer_Frontier are planned and not installed by Ver.0.0.6.
 
 ## Permission boundary
 
@@ -85,7 +85,7 @@ Disposable Resource family:
 
 The current persistent family was generated on 2026-07-21 with seed `164225356311935743`; its exact identity and backup remain authoritative in [Main World Baseline](13-main-world-baseline.md).
 
-Ver.0.0.6 approves a future five-Pack BetterStructures expansion, Prop／FreeMinecraftModels integration, Main ResourcePackManager, and a new destructive persistent-family generation after every Content dependency loads. The Resource family remains excluded. Documentation does not replace the current baseline or authorize World operations.
+The five-Pack BetterStructures working set, Prop／FreeMinecraftModels integration, and Main ResourcePackManager preflight are load-verified. Ver.0.0.6 next requires a separately approved destructive persistent-family generation. The Resource family remains excluded. The preflight does not replace the current baseline or authorize World operations.
 
 ## Frontier target architecture
 
@@ -123,12 +123,12 @@ Their Source and Build projects belong in separate Repositories. This Repository
 
 ## Resource Pack architecture
 
-ResourcePackManager is the planned distribution foundation. Main and Frontier use separate Packs.
+ResourcePackManager 2.3.0 is installed for Main preflight; Frontier remains unimplemented. Main and Frontier use separate Packs.
 
 - Main Pack: Main BetterStructures Prop and FreeMinecraftModels output only.
 - Frontier Pack: Ruined Frontier and Worlds Beyond assets, including verified EliteMobs, BetterHealthBar, BetterStructures Prop, and adopted LeafGrapple outputs.
 
-Version, build, Hosting URL, hash format, required-policy behavior, failure handling, backend-switch reload, model／shader／font conflicts, size, cache, and rollback are locked before implementation. Generated Pack and Model artifacts remain Git-ignored.
+Main's Version, build, optional policy, generated hash, and temporary preflight delivery are recorded. Formal Hosting, failure handling, backend-switch reload, cross-Pack model／shader／font conflicts, cache, and rollback are locked with the Frontier integration. Generated Pack and Model artifacts remain Git-ignored.
 
 ## Gate topology
 

@@ -61,13 +61,31 @@ The backup is local, ignored, and is not available from GitHub. Do not delete it
 
 Rollback requires stopping player access and every Minecraft component, moving the new persistent family to a quarantine location, restoring the old Main container and selected Config from this backup, verifying file counts and SHA-256, and then checking the old seed, spawn, Resource family, and Multiverse links. Never delete persistent worlds or retry with another seed as an improvised recovery.
 
-## Known warning and remaining work
+## Content preflight and remaining work
 
-The official BetterStructures pack still emits non-blocking DataFixer ERROR-level messages for legacy `minecraft:bed` block-entity keys. BetterStructures completes initialization and structure generation remains functional; see [BetterStructures legacy bed investigation](investigations/2026-07-20-betterstructures-legacy-bed-datafixer-message.md).
+The 2026-07-25 non-destructive Content preflight loaded the five-Pack
+`main-betterstructures-v006` working set, FreeMinecraftModels 2.10.2,
+BetterStructures Prop Pack, and ResourcePackManager 2.3.0. It selected 278 of
+430 Structure configurations, resolved every adopted Prop ID, and generated the
+Main Java Resource Pack. The normalization pipeline removes only the 144 stale
+`minecraft:bed` Block Entity records previously investigated in
+[the legacy-bed report](investigations/2026-07-20-betterstructures-legacy-bed-datafixer-message.md);
+the bed blocks remain in the Palette. The final clean load had no DataFixer
+message or failed Schematic.
+
+This preflight did not paste a Structure or intentionally load an ungenerated
+Chunk. The Runtime-only load comparison kept all persistent Region SHA-256
+values unchanged. During the approved Client smoke test, representative FMM
+Props were placed and removed in already-generated Overworld Chunks. Region
+counts remained `11 / 4 / 4`, no new Region appeared, and Nether／End hashes
+remained unchanged; four existing Overworld Region-container hashes changed
+during normal Player-session saves, so byte-for-byte post-Client invariance is
+not claimed. Seed, World registration, and Spawn settings remain unchanged. See
+[the Content preflight report](investigations/2026-07-25-main-betterstructures-content-preflight.md).
 
 Phase 3 created the persistent terrain baseline and safe spawn coordinates only. The Main spawn Hub, Lobby and Frontier gates, three Resource gates, Resource return structures, and Resource End outer-island safety structure are not built or connected. Builder Phase 1B also remains incomplete and must precede Builder-led Hub/Gate/Theme connection work.
 
-Ver.0.0.6 approves a planned Main BetterStructures expansion across `main`, `main_nether`, and `main_the_end`: five selected Structure packs, BetterStructures Prop Pack, FreeMinecraftModels, ResourcePackManager, and a replacement persistent-family generation after every adopted Content dependency loads successfully. Actual Artifact versions, licenses, sources, hashes, compatibility, Structure selection, Weight, Prop／Model IDs, and Pack delivery remain implementation locks.
+Ver.0.0.6 now has a load-verified Main BetterStructures expansion working set across `main`, `main_nether`, and `main_the_end`: five selected Structure packs, BetterStructures Prop Pack, FreeMinecraftModels 2.10.2, and ResourcePackManager 2.3.0. Artifact versions, sources, hashes, Structure selection, Weight, Prop／Model IDs, and preflight Pack output are locked. The generated Worlds still contain only the former 103 Default Structures baseline.
 
 That approval does not supersede this baseline or authorize immediate World changes. Do not delete, trim, regenerate, rename, paste into, or alter the Seed／UUID of the current persistent family outside the dedicated destructive task. The complete Resource family remains outside the replacement-generation scope and must retain BetterStructures exclusion.
 
@@ -75,4 +93,4 @@ After Content preflight and healthy load confirmation, the destructive task must
 
 Main Spawn WorldGuard protection is designed but not applied. The user first completes the initial Hub footprint; a later approved task then defines the exact Region and focused equipment child regions. Vanilla `spawn-protection=16` remains until that WorldGuard boundary and Builder-member behavior are verified.
 
-Phase 4 EvenMoreFish and the 100x Waymark nominal price revision are complete. The next implementation stage is Main BetterStructures Artifact／Content／Resource Pack Preflight. CoreProtect follows the verified replacement Main baseline and precedes substantial Hub／Gate construction.
+Phase 4 EvenMoreFish, the 100x Waymark nominal price revision, and Main BetterStructures Roadmap Order 2／3 preflight are complete. The next implementation stage is the separately approved destructive replacement generation of only the persistent Main family. CoreProtect follows the verified replacement Main baseline and precedes substantial Hub／Gate construction.
