@@ -31,19 +31,19 @@ worlds:
     fixed_name_verification: pending-content-artifact
   - purpose: ruined-frontier-overworld
     bukkit_world_id: frontier_bs
-    lifecycle: lifecycle-managed
+    lifecycle: persistent-lifecycle-managed
     generator: vanilla-with-betterstructures
     mvi_group: guild
     existing: false
   - purpose: ruined-frontier-nether
     bukkit_world_id: frontier_bs_nether
-    lifecycle: lifecycle-managed
+    lifecycle: persistent-lifecycle-managed
     generator: vanilla-with-betterstructures
     mvi_group: guild
     existing: false
   - purpose: ruined-frontier-end
     bukkit_world_id: frontier_bs_the_end
-    lifecycle: lifecycle-managed
+    lifecycle: persistent-lifecycle-managed
     generator: vanilla-with-betterstructures
     mvi_group: guild
     existing: false

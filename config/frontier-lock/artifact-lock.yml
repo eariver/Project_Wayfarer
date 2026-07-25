@@ -184,7 +184,7 @@ artifacts:
     license: Artistic-2.0
     sha256: 66CD362089BB8430E5A018EE77E9B433BF0DC9E65590D5F1A043A78D60415696
     present: true
-    placement: servers/frontier/plugins/
+    placement: not-selected-not-placed
     dependencies: []
     scope: none-until-separate-history-product-selection
     known_limitation: Paper 1.21.11 is officially listed, but Frontier history and rollback product remains unselected and no Runtime or MariaDB validation has occurred
