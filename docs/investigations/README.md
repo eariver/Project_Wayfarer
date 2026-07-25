@@ -32,3 +32,4 @@ Report名は原則として`YYYY-MM-DD-<subject>.md`とします。Reportには�
 | 2026-07-19 | RedisEconomy 4.5.12のPaper 26.2 Command応答消失 | Wayfarer互換Buildで解決・再検証済み | [Detailed report](2026-07-19-rediseconomy-paper-26-2-message-compatibility.md) |
 | 2026-07-20 | BetterStructures公式Packのlegacy bed DataFixer message | 非阻害・上流Artifact更新時に再確認 | [Detailed report](2026-07-20-betterstructures-legacy-bed-datafixer-message.md) |
 | 2026-07-26 | CoreProtect CE 24.0のPaper 26.2 Runtime拒否 | Active Runtime rollback済み・Order 7延期方針へ反映 | [Detailed report](2026-07-26-main-coreprotect-v24-paper-26-2-compatibility.md) |
+| 2026-07-26 | Frontier Order 8 Artifact／World／Runtime Lock候補 | Phase A完了・Artifact／承認待ち | [Detailed report](2026-07-26-frontier-order8-lock-preflight.md) |

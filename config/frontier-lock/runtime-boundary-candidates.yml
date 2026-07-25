@@ -1,0 +1,147 @@
+schema: wayfarer.frontier-lock.runtime-boundary-candidates.v1
+proposal_id: FRONTIER-LOCK-20260726-001
+status: candidate
+
+world_classes:
+  gate:
+    - frontier_gate
+  worlds_beyond:
+    - frontier_iris
+    - frontier_iris_nether
+    - frontier_iris_the_end
+  guild:
+    - adventurers_guild
+  ruined_frontier:
+    - frontier_bs
+    - frontier_bs_nether
+    - frontier_bs_the_end
+  primis:
+    - primis
+  elite_instances:
+    - deferred-to-order-12
+
+plugins:
+  multiverse-inventories:
+    gate: neutral
+    worlds_beyond: worlds_beyond
+    guild: guild
+    ruined_frontier: guild
+    primis: guild
+    elite_instances: deferred-to-order-12
+    unknown: isolated-fail-closed
+  multiverse-netherportals:
+    gate: disabled
+    worlds_beyond: family-local
+    guild: disabled
+    ruined_frontier: family-local
+    primis: package-defined-pending
+    elite_instances: package-defined-pending
+    unknown: disabled
+  iris:
+    gate: disabled
+    worlds_beyond: enabled
+    guild: disabled
+    ruined_frontier: disabled
+    primis: disabled
+    elite_instances: disabled
+    unknown: disabled
+  betterstructures:
+    gate: disabled
+    worlds_beyond: disabled
+    guild: disabled
+    ruined_frontier: enabled
+    primis: disabled
+    elite_instances: disabled
+    unknown: disabled
+  elitemobs:
+    gate: disabled
+    worlds_beyond: disabled
+    guild: enabled
+    ruined_frontier: enabled
+    primis: enabled
+    elite_instances: approved-only
+    unknown: disabled
+  leafgrapple:
+    gate: disabled
+    worlds_beyond: enabled
+    guild: disabled
+    ruined_frontier: disabled
+    primis: disabled
+    elite_instances: disabled
+    unknown: disabled
+  coreprotect:
+    gate: candidate
+    worlds_beyond: candidate
+    guild: candidate
+    ruined_frontier: candidate
+    primis: candidate
+    elite_instances: disabled
+    unknown: disabled
+  free-minecraft-models:
+    all_known: backend-asset-service
+    unknown: no-gameplay-authority
+  resource-pack-manager:
+    all_known: backend-pack-service
+    unknown: no-world-authority
+  wayfarer-frontier:
+    gate: neutral-subset
+    worlds_beyond: theme-features
+    guild: approved-adapters
+    ruined_frontier: approved-adapters
+    primis: approved-adapters
+    elite_instances: approved-adapter-only
+    unknown: fail-closed
+
+portal_families:
+  worlds_beyond:
+    overworld: frontier_iris
+    nether: frontier_iris_nether
+    end: frontier_iris_the_end
+  ruined_frontier:
+    overworld: frontier_bs
+    nether: frontier_bs_nether
+    end: frontier_bs_the_end
+  forbidden:
+    - cross-theme-family-links
+    - frontier-gate-vanilla-nether-or-end
+    - main-family-links
+    - general-player-multiverse-admin-teleport
+    - theme-bypass
+
+gate:
+  candidate: Advanced-Portals-2.8.0
+  backend_switch_tag: proxy
+  bungee_message_channel: not-required
+  exact_destinations: deferred-to-order-16
+  safe_arrivals: deferred-to-order-16
+  builder_permissions: deferred-to-order-16
+
+authority:
+  normal_player_state: Multiverse-Inventories
+  world_blocks_entities: world-files
+  waymark: RedisEconomy-and-Redis-AOF
+  mcmmo: MariaDB-wayfarer_mcmmo
+  elite_data: EliteMobs-plugin-storage-pending-artifact
+  iris_definition: locked-artifact-plus-world-files
+  resource_pack: ResourcePackManager-output-plus-locked-inputs
+  waystone_discovery: future-Wayfarer_Frontier-MariaDB
+  audit_transaction: future-Wayfarer_Core-MariaDB
+  history: CoreProtect-24-candidate-pending-runtime-validation
+
+permissions:
+  temporary_admin_only:
+    - world-lifecycle
+    - mvi-administration
+    - portal-create-edit-delete
+    - elitemobs-administration
+    - betterstructures-administration
+    - resource-pack-build-publish-rollback
+    - iris-administration
+    - database-and-history-administration
+  general_player:
+    - approved-gate-traversal
+    - theme-gameplay
+    - approved-gui
+  builder:
+    status: no-permissions-granted-by-order-8
+    final_allowlist: deferred-to-order-16-and-17

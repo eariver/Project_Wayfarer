@@ -1,0 +1,145 @@
+schema: wayfarer.frontier-lock.world-id-candidates.v1
+proposal_id: FRONTIER-LOCK-20260726-001
+status: candidate
+
+worlds:
+  - purpose: frontier-lobby
+    bukkit_world_id: frontier_gate
+    lifecycle: persistent
+    generator: VoidGen
+    mvi_group: neutral
+    existing: true
+  - purpose: worlds-beyond-overworld
+    bukkit_world_id: frontier_iris
+    lifecycle: persistent
+    generator: Iris
+    mvi_group: worlds_beyond
+    existing: false
+  - purpose: worlds-beyond-nether
+    bukkit_world_id: frontier_iris_nether
+    lifecycle: persistent
+    generator: Iris
+    mvi_group: worlds_beyond
+    existing: false
+  - purpose: worlds-beyond-end
+    bukkit_world_id: frontier_iris_the_end
+    lifecycle: persistent
+    generator: Iris
+    mvi_group: worlds_beyond
+    existing: false
+  - purpose: adventurers-guild
+    bukkit_world_id: adventurers_guild
+    lifecycle: persistent-package-owned
+    generator: EliteMobs-package
+    mvi_group: guild
+    existing: false
+    fixed_name_verification: pending-content-artifact
+  - purpose: ruined-frontier-overworld
+    bukkit_world_id: frontier_bs
+    lifecycle: lifecycle-managed
+    generator: vanilla-with-betterstructures
+    mvi_group: guild
+    existing: false
+  - purpose: ruined-frontier-nether
+    bukkit_world_id: frontier_bs_nether
+    lifecycle: lifecycle-managed
+    generator: vanilla-with-betterstructures
+    mvi_group: guild
+    existing: false
+  - purpose: ruined-frontier-end
+    bukkit_world_id: frontier_bs_the_end
+    lifecycle: lifecycle-managed
+    generator: vanilla-with-betterstructures
+    mvi_group: guild
+    existing: false
+  - purpose: primis
+    bukkit_world_id: primis
+    lifecycle: persistent-package-owned
+    generator: EliteMobs-package
+    mvi_group: guild
+    existing: false
+    fixed_name_verification: pending-content-artifact
+
+groups:
+  neutral:
+    worlds:
+      - frontier_gate
+    shares:
+      - inventory_contents
+      - off_hand
+      - armor_contents
+      - ender_chest
+      - hit_points
+      - max_hit_points
+      - food_level
+      - saturation
+      - exhaustion
+      - xp
+      - lvl
+      - total_xp
+  worlds_beyond:
+    worlds:
+      - frontier_iris
+      - frontier_iris_nether
+      - frontier_iris_the_end
+    shares:
+      - inventory_contents
+      - off_hand
+      - armor_contents
+      - ender_chest
+      - hit_points
+      - max_hit_points
+      - food_level
+      - saturation
+      - exhaustion
+      - xp
+      - lvl
+      - total_xp
+  guild:
+    worlds:
+      - adventurers_guild
+      - frontier_bs
+      - frontier_bs_nether
+      - frontier_bs_the_end
+      - primis
+    dynamic_worlds: deferred-to-order-12
+    shares:
+      - inventory_contents
+      - off_hand
+      - armor_contents
+      - ender_chest
+      - hit_points
+      - max_hit_points
+      - food_level
+      - saturation
+      - exhaustion
+      - xp
+      - lvl
+      - total_xp
+
+not_shared:
+  - potion_effects
+  - bed_spawn
+  - remaining_air
+  - maximum_air
+  - fall_distance
+  - fire_ticks
+  - economy
+  - last_location
+  - recipes
+  - advancements
+  - game_statistics
+  - gamemode
+
+collision_check:
+  exact_candidate_world_ids: clear
+  multiverse_registered_worlds:
+    - frontier_gate
+  excluded_unregistered_legacy_directories:
+    - frontier_gate_nether
+    - frontier_gate_the_end
+    - world
+    - world_nether
+    - world_the_end
+  case_policy: exact-lowercase
+  elite_fixed_names: pending-content-artifact

@@ -27,7 +27,10 @@ scripts/__pycache__/
 *.rar
 *.tar
 *.tar.gz
-manual-downloads/
+manual-downloads/*
+!manual-downloads/frontier/
+manual-downloads/frontier/*
+!manual-downloads/frontier/README.md
 licensed-content/
 paid-content/
 

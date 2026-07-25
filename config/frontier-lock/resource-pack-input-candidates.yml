@@ -1,0 +1,83 @@
+schema: wayfarer.frontier-lock.resource-pack-input-candidates.v1
+proposal_id: FRONTIER-LOCK-20260726-001
+status: candidate
+
+separation:
+  main_pack: independent
+  frontier_pack: independent
+  java_delivery: per-backend-on-switch
+  final_url: deferred-to-order-11
+  final_sha1: deferred-to-order-11
+  final_sha256: deferred-to-order-11
+
+merge_priority_high_to_low:
+  - Wayfarer_Frontier
+  - Wayfarer_Core
+  - LeafGrapple
+  - BetterHealthBar3-if-later-approved
+  - EliteMobs
+  - FreeMinecraftModels
+  - BetterStructures
+  - ResourcePackManager
+
+inputs:
+  - id: resource-pack-manager-base
+    state: selected-existing
+    owner: ResourcePackManager
+  - id: free-minecraft-models-output
+    state: selected-existing
+    owner: FreeMinecraftModels
+  - id: betterstructures-prop-pack
+    state: selected-existing-license-confirmation-required
+    owner: FreeMinecraftModels-and-BetterStructures
+  - id: elitemobs-assets
+    state: pending-artifact
+    owner: EliteMobs
+  - id: elite-shrines-assets
+    state: pending-artifact
+    owner: EliteMobs-content
+  - id: dungeoneering-modules-assets
+    state: pending-artifact
+    owner: EliteMobs-content
+  - id: primis-assets
+    state: pending-artifact
+    owner: EliteMobs-content
+  - id: adventurers-guild-assets
+    state: pending-artifact
+    owner: EliteMobs-content
+  - id: leafgrapple-assets
+    state: pending-artifact
+    owner: LeafGrapple
+  - id: betterhealthbar3-assets
+    state: rejected-until-compatible-release
+    owner: BetterHealthBar3
+  - id: wayfarer-core-assets
+    state: future-if-present
+    owner: Wayfarer_Core
+  - id: wayfarer-frontier-assets
+    state: future
+    owner: Wayfarer_Frontier
+
+collision_preflight:
+  custom_model_data: pending-missing-inputs
+  item_model_component: pending-missing-inputs
+  model_paths: pending-missing-inputs
+  texture_paths: pending-missing-inputs
+  fonts: pending-missing-inputs
+  shaders: pending-missing-inputs
+  language_keys: pending-missing-inputs
+  sounds: pending-missing-inputs
+  particles: pending-missing-inputs
+  namespaces:
+    existing_betterstructures_prop_pack: isolated-by-backend-but-client-switch-must-be-tested
+  pack_mcmeta: generated-by-order-11
+
+hosting:
+  build_owner: ResourcePackManager-on-Frontier
+  preferred_phase: Order-11
+  self_host: disabled-until-explicit-network-design
+  remote_host: temporary-candidate-only
+  force_resource_pack: false
+  refusal_behavior: stay-connected-with-degraded-visuals-during-preflight
+  cache_and_backend_switch: runtime-validation-required
+  rollback: restore-previous-verified-pack-and-config
