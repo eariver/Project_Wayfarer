@@ -1,6 +1,11 @@
 schema: wayfarer.frontier-lock.world-id-candidates.v1
-proposal_id: FRONTIER-LOCK-20260726-002
+proposal_id: FRONTIER-LOCK-20260726-003
+previous_proposal: FRONTIER-LOCK-20260726-002
+previous_status: superseded-before-approval
+phase_b: not-authorized
+approval_token_received: false
 status: candidate
+runtime_validation: deferred
 
 worlds:
   - purpose: frontier-lobby
@@ -97,7 +102,7 @@ groups:
       - frontier_bs_the_end
       - em_primis
       - em_primis_wormhole
-    dynamic_worlds: deferred-to-order-12
+    dynamic_worlds: deferred-to-order-13
     shares:
       - inventory_contents
       - off_hand

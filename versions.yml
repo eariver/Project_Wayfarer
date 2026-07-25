@@ -5,6 +5,56 @@ document:
   target_server_release: V0.1.0 Alpha
   target_release_status: incomplete
 
+custom_plugin_plan:
+  status: planned-not-installed
+  repository:
+    model: one-external-gradle-multi-module-repository
+    exact_name: pending-order-9
+    created: false
+  required_v0_1_0:
+    wayfarer_core:
+      placement:
+        - main
+        - frontier
+      version: unselected
+    wayfarer_main:
+      placement:
+        - main
+      version: unselected
+      initial_scope: growth-pickaxe
+    wayfarer_frontier:
+      placement:
+        - frontier
+      version: unselected
+  conditional:
+    wayfarer_frontier_elitemobsmvi:
+      placement:
+        - frontier
+      version: unselected
+      condition: ADAPTER_REQUIRED
+      artifact_boundary: independent-runtime-plugin
+
+frontier_lock_candidate:
+  proposal_id: FRONTIER-LOCK-20260726-003
+  previous_proposal: FRONTIER-LOCK-20260726-002
+  previous_status: superseded-before-approval
+  phase_b: not-authorized
+  approval_token_received: false
+  status: candidate
+  runtime_validation: deferred
+  worlds_beyond:
+    worlds:
+      - frontier_iris
+    generator: iris-overworld-only
+    nether_end: absent
+    mnp: disabled
+  ruined_frontier:
+    worlds:
+      - frontier_bs
+      - frontier_bs_nether
+      - frontier_bs_the_end
+    mnp: planned-family-local
+
 minecraft:
   client: "26.2"
 

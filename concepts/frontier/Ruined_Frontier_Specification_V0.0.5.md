@@ -216,7 +216,8 @@ EliteMobs InstanceのInventory共有方式は、次の優先順で決定する�
 
 1. 固定WorldならMVI Guild Groupへ静的登録する。
 2. 動的Worldなら、承認済みBlueprint名＋連番に限定した厳密Regexを試験する。
-3. 静的登録またはRegexで安全に運用できない場合だけEliteMobs–MVI Adapterを実装する。
+3. 静的登録またはRegexで安全に運用できない場合だけ、独立Runtime
+   Plugin／Artifact `Wayfarer_Frontier_EliteMobsMVI`を実装する。
 
 Instanceの生成、有効化、Gameplay、Package固有Respawn、Player退出、終了およびWorld削除はEliteMobsのContent Package Lifecycleを正とする。Adapter採用時も、MVI Groupへの追加・解除だけを仲介し、EliteMobsの内部Config、DatabaseまたはContent Package Fileを直接変更しない。
 
@@ -238,7 +239,7 @@ Frontier Backend
 ├─ FreeMinecraftModels
 ├─ ResourcePackManager
 ├─ BetterHealthBar3
-├─ CoreProtect
+├─ Block History／Rollback（Order 8以降に選定、CoreProtectは未採用候補）
 ├─ Wayfarer_Core
 └─ Wayfarer_Frontier
 ```
@@ -706,18 +707,18 @@ BetterHealthBar Asset
 
 ---
 
-## 19. CoreProtect
+## 19. Block History／Rollback
 
-Frontier Backendへ導入する。
+採用製品はOrder 8以降の専用判断で選定する。CoreProtectは候補だが未採用であり、
+導入済みまたは採用確定として扱わない。
 
-方針：
+将来の選定条件：
 
-- Adventurer's Guild、Gate、Persistent Ruined Frontier Worldの調査と部分Rollbackに使用する。
-- Instance WorldのLog量を評価する。
-- 自動生成Structureの大量Logが運用を圧迫しないか確認する。
-- CoreProtectをCold Backupの代替にしない。
-- RollbackはAdmin限定。
-- Content Pluginが行うBlock変更との整合性を確認する。
+- Adventurer's Guild、Gate、Persistent Ruined Frontier Worldの調査と部分Rollback
+- Instance Worldと永続Worldの対象分離
+- 自動生成StructureおよびContent Plugin変更のLog量と整合性
+- Admin限定のLookup／Rollback
+- Cold Backupを代替しない
 
 ---
 
@@ -729,7 +730,7 @@ Ruined Frontier alphaでは、`Wayfarer_Frontier`を必須のInventory管理Plug
 
 - 将来のBoss／Quest WM Reward Adapter
 - Wayfarer共通Auditとの接続が必要な独自取引
-- 必要性が確認された場合だけEliteMobs–MVI Adapter
+- `ADAPTER_REQUIRED`時だけ独立Artifact `Wayfarer_Frontier_EliteMobsMVI`
 
 EliteMobs–MVI Adapterの採用判断：
 
@@ -740,12 +741,19 @@ EliteMobs–MVI Adapterの採用判断：
 5. 同時Instance、終了、Restart、再接続および削除時のInventory共有を確認する。
 6. 静的登録またはRegexで不足する場合だけAdapterを実装する。
 
+Adapterは`Wayfarer_Frontier`内部Moduleとして既定化しない。
+`ADAPTER_REQUIRED`時だけ独立Runtime Plugin／Artifactとして追加する。
+
 Adapter採用時の限定責務：
 
 - EliteMobsの生成Eventから承認済みPackage／BlueprintとInstance World名を取得する。
 - MVI Guild GroupへWorldを追加する。採用Versionが非永続の一時登録を提供する場合は、Instance名をConfigへ恒久蓄積しない方式を優先する。
 - EliteMobsの削除Event後にMVI GroupからWorldを解除する。
 - Restart後に一時登録の残留を確認する。
+- 追加／解除結果をAuditし、残留MembershipをReconcileする。
+
+Adapterは通常Inventory保存、EliteMobs Instance Lifecycle、Gameplay、退出、
+RespawnまたはWorld削除を担当しない。
 
 直接Teleportおよび権限境界：
 
@@ -838,7 +846,7 @@ WorldGuard
 FreeMinecraftModels
 ResourcePackManager
 BetterHealthBar3（採用試験）
-CoreProtect
+Block History／Rollback（製品未選定）
 BetterStructures Prop Pack（取得済み。実導入時はLicense／Version／Artifactを再確認）
 Exploration Pack
 Caves and Lost Civilizations Free
@@ -1010,7 +1018,7 @@ Oasis／個別Dungeon
 12. Resource Pack Hosting
 13. BetterHealthBar3採用
 14. EliteMobs Prop Pack購入
-15. CoreProtect Instance方針
+15. Block History／Rollback製品とInstance対象方針
 16. Boss／Quest WM Reward
 17. Multiverse-Inventories正式Version
 18. Guild Groupの固定World一覧と共有対象
@@ -1031,7 +1039,7 @@ Oasis／個別Dungeon
 33. Adapter採用時のInstance削除Event
 34. Adapter採用時のMVI Group追加／解除方法、Applicable World再計算Timingおよび一時登録の永続化方針
 35. EliteMobs内部Config／Database／Content Packageを変更しないこと
-36. InstanceのCoreProtect／Backup対象範囲
+36. InstanceのBlock History／Rollback／Backup対象範囲
 37. `elitemobs.user`の正式な子Permission構成
 38. 明示拒否するTeleport Permission Node
 39. Guild NPC／Portalによる正規移動導線

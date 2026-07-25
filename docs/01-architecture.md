@@ -14,9 +14,7 @@ Velocity :25565
 └─ Frontier :25568 / Paper 1.21.11 / Java 25
    ├─ frontier_gate / neutral MVI Group
    ├─ Worlds Beyond / worlds_beyond MVI Group
-   │  ├─ Overworld
-   │  ├─ Nether
-   │  └─ End
+   │  └─ frontier_iris / Iris Overworld only
    └─ Ruined Frontier / guild MVI Group
       ├─ Adventurer's Guild
       ├─ Primis
@@ -28,7 +26,7 @@ Velocity :25565
 
 The Main／Frontier child topology is the approved V0.1.0 target, not the current installed Runtime. All backends bind to `127.0.0.2`; Velocity is the only player-facing endpoint and uses Modern Forwarding. Lobby remains the initial and failover server.
 
-MariaDB currently stores LuckPerms, mcMMO, and EvenMoreFish data. Redis currently stores shared Waymark balances with AOF persistence. Planned Wayfarer_Core／Wayfarer_Frontier schemas and Frontier data owners do not exist until their separate Repository, development, release, migration, and integration tasks complete.
+MariaDB currently stores LuckPerms, mcMMO, and EvenMoreFish data. Redis currently stores shared Waymark balances with AOF persistence. Planned Wayfarer_Core／Main／Frontier schemas and data owners do not exist until the one external Gradle Multi-module Repository, development, release, migration, and integration tasks complete.
 
 ## Current installed foundation
 
@@ -40,7 +38,7 @@ MariaDB currently stores LuckPerms, mcMMO, and EvenMoreFish data. Redis currentl
 - EconomyShopGUI and EvenMoreFish run only on Main.
 - BetterStructures currently runs only on Main with the load-verified five-Pack 278-Structure working set. FreeMinecraftModels 2.10.2 and ResourcePackManager 2.3.0 also run only on Main for the Prop／Java Pack preflight.
 
-MVI, Frontier Multiverse-NetherPortals, CoreProtect, Frontier ResourcePackManager／Pack, formal Network pack hosting, Iris, EliteMobs, Wayfarer_Core, and Wayfarer_Frontier are not installed by Ver.0.0.6. Main／Lobby CoreProtect is deferred and non-blocking while waiting for an upstream Minecraft 26.2-compatible Stable release; Frontier adoption remains undecided for Order 8 or later.
+MVI, Frontier Multiverse-NetherPortals, any Frontier history／rollback product, Frontier ResourcePackManager／Pack, formal Network pack hosting, Iris, EliteMobs, Wayfarer_Core, Wayfarer_Main, and Wayfarer_Frontier are not installed by Ver.0.0.6. Main／Lobby CoreProtect is deferred and non-blocking while waiting for an upstream Minecraft 26.2-compatible Stable release; Frontier product selection remains undecided.
 
 ## Permission boundary
 
@@ -94,7 +92,7 @@ The five-Pack BetterStructures working set, Prop／FreeMinecraftModels integrati
 Multiverse-Inventories is the authoritative owner of normal Frontier world-group Player State:
 
 - `neutral`: `frontier_gate`;
-- `worlds_beyond`: the three Worlds Beyond dimensions;
+- `worlds_beyond`: `frontier_iris` only;
 - `guild`: Adventurer's Guild, Primis, the three Ruined Frontier dimensions, approved fixed Dungeons, and verified EliteMobs Instances.
 
 Wayfarer_Frontier does not persist normal Inventory or reimplement MVI switching.
@@ -105,21 +103,23 @@ The alpha target uses BetterStructures and EliteMobs in its Overworld, Nether, a
 
 ### Worlds Beyond
 
-The MVP target uses persistent Iris Overworld／Nether／End Worlds at PEACEFUL, a dedicated MVI group, Elytra, LeafGrapple, Traversal Loadout, Launchpads, Waystones, Discovery／Teleport GUIs, and a Frontier WM Shop. Exact Engine／Pack／Seed／Border／World IDs remain implementation locks.
+The MVP target uses the single persistent Iris Overworld `frontier_iris` at PEACEFUL, a dedicated MVI group, Elytra, LeafGrapple, Traversal Loadout, Launchpads, Waystones, Discovery／Teleport GUIs, and a Frontier WM Shop. Worlds Beyond has no Nether／End World or MNP link; portal activation or travel must fail closed without fallback. Exact Engine／Pack／Seed／Border remains an implementation lock.
 
 ### EliteMobs Instances
 
-Inventory integration selects the least complex safe method: static MVI registration, then strict approved-Blueprint Regex, then an Adapter only if necessary. Instance naming, creation／deletion lifecycle, concurrency, restart, reconnect, and relevant APIs／Events must be verified first.
+Inventory integration selects the least complex safe method: static MVI registration, then strict approved-Blueprint Regex, then an Adapter only if necessary. A required Adapter is the independent Frontier Runtime Artifact `Wayfarer_Frontier_EliteMobsMVI`, limited to approved Instance detection, MVI Guild Group registration／removal, restart residue checks, audit, and reconcile. Instance naming, creation／deletion lifecycle, concurrency, restart, reconnect, and relevant APIs／Events must be verified first.
 
 ## Custom Plugin responsibility
 
-Wayfarer_Core and Wayfarer_Frontier are V0.1.0 Release Blockers but are not implemented.
+Wayfarer_Core, Wayfarer_Main, and Wayfarer_Frontier are V0.1.0 Release Blockers but are not implemented.
 
 Wayfarer_Core owns shared database, migration, Waymark adapter, transaction／idempotency, audit, identity, Redis coordination, message, and Permission-contract foundations.
 
-Wayfarer_Frontier owns Worlds Beyond Loadout and item identity, Launchpads, Waystones and GUIs, Frontier WM Shop, inspection／reconciliation, and only a proven-necessary EliteMobs–MVI Adapter. It does not recreate MVI, Gate, EliteMobs, BetterStructures, or Iris functionality.
+Wayfarer_Main owns the Main-only Growth Pickaxe, including logical identity, owner bind, Resource-family progress, evolution, broken／repair state, pending delivery, audit, and reconcile.
 
-Their Source and Build projects belong in separate Repositories. This Repository stores only integration contracts, Version constraints, Config, procedures, Permission／API／Database contracts, acceptance tests, and release hashes.
+Wayfarer_Frontier owns Worlds Beyond Loadout and item identity, Launchpads, Waystones and GUIs, Frontier WM Shop, inspection, and reconciliation. It does not embed the conditional Adapter or recreate MVI, Gate, EliteMobs, BetterStructures, or Iris functionality.
+
+Their Source and Build projects belong in one external Gradle Multi-module Repository. This Repository stores only integration contracts, Version constraints, Config, procedures, Permission／API／Database contracts, acceptance tests, and release hashes.
 
 ## Resource Pack architecture
 
@@ -151,11 +151,11 @@ Frontier gate hub
 └─ Guild Gate  <-> Ruined Frontier safe return
 ```
 
-Each Theme keeps family-local Nether／End Portal links. Gate routes must preserve MVI switching, reject unintended family crossing, and use user-approved structures, coordinates, orientation, and safe arrivals.
+Only Ruined Frontier keeps family-local Nether／End Portal links. Worlds Beyond routes only to `frontier_iris`; its Nether／End portals are denied with no fallback. Gate routes must preserve MVI switching, reject unintended family crossing, and use user-approved structures, coordinates, orientation, and safe arrivals.
 
 ## Persistence and recovery
 
-Cold backup must include every authoritative Main／Frontier World, MVI profile, MariaDB database, stopped Redis AOF, custom-Plugin data, Config, Content input, and Resource Pack input required for recovery. Generated artifacts are rebuilt or captured according to the locked procedure. An isolated restore is a V0.1.0 blocker.
+Cold backup must include every authoritative Main／Frontier World, MVI profile, MariaDB database, stopped Redis AOF, custom-Plugin release artifact／Version／hash／Source Commit, migration history, custom-Plugin data, Growth Tool logical records and pending delivery／epoch／transaction state, Config, Content input, Resource Pack input／output, and Plugin／Project test reports required for recovery. Generated artifacts are rebuilt or captured according to the locked procedure. Restore verifies migrations before MVI, Worlds, custom data, Plugins, backends, and proxy, then runs reconcile before Player join. An isolated restore is a V0.1.0 blocker.
 
 CoreProtect CE 24.0 rejected Minecraft 26.2 at Runtime. Main／Lobby installation is therefore deferred and temporarily excluded from the V0.1.0 blockers under Owner-only operation. Hub／Gate construction may proceed with the Final Main Baseline backup retained, focused before／after backup or ignored Schematic evidence, controlled edit units, and WorldGuard protection after construction. WorldGuard prevents unauthorized changes but provides neither history lookup nor point-in-time rollback; CoreProtect also never substitutes for cold backup. Re-evaluate CoreProtect before multi-player, multi-Builder, public, or large collaborative WorldEdit operation. Frontier placement and data boundaries are decided only in Order 8 or later.
 

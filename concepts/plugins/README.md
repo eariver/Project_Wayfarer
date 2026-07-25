@@ -19,12 +19,12 @@ Concept確認完了後に作成するCodex向け**実装作業指示書兼設計
 |---|---:|---|
 | Plugin全体 | v0.0.3 | Under Review |
 | Growth Tool | v0.0.5 | Under Review |
-| Worlds Beyond Plugin | v0.0.3 | Under Review |
+| Worlds Beyond Plugin | v0.0.4 | Under Review |
 | Ruined Frontier Integration Decision | v0.0.2 | Under Review |
 
-Growth Tool／`Wayfarer_Main`はProject Wayfarer V0.1.0 Release Scopeへ正式追加する。Project本流のRoadmap／Acceptance同期は別チャットで実施する。
+Growth Tool／`Wayfarer_Main`はProject Wayfarer V0.1.0 Release Scopeへ正式追加し、Project本流のRoadmap／Acceptanceへ同期済み。
 
-Worlds Beyond Theme Conceptは、LaunchpadとNavigation GUIの新判断を反映したv0.0.5へ別チャットで同期改訂する。
+Worlds Beyond Theme Conceptは、Overworld単一World、LaunchpadおよびNavigation GUIの判断を反映したv0.0.6へ同期済み。
 
 ## Archive
 

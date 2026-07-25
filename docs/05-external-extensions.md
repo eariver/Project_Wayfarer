@@ -53,11 +53,13 @@ Version範囲を推測せず、実際に確認した組み合わせを記録し�
 
 ## 8. V0.1.0外部拡張Scope
 
-Wayfarer_CoreとWayfarer_FrontierはV0.1.0 Blockerですが、まだ開発・導入されていません。両Pluginは専用の正式設計、別Repository作成、実装、Releaseおよび本RepositoryへのIntegration Taskを必要とします。
+Wayfarer_Core、Wayfarer_MainおよびWayfarer_FrontierはV0.1.0 Blockerですが、まだ開発・導入されていません。SourceはProject Wayfarer外の一つのGradle Multi-module Repositoryで管理し、正式設計、Repository作成、実装、Releaseおよび本RepositoryへのIntegration Taskを必要とします。
 
 Wayfarer_CoreはDatabase／Migration、Waymark Adapter、Transaction／Idempotency、Audit、Player／Item Identity、Redis Coordination、Cross-server MessageおよびPermission Contract基盤を担当します。
 
-Wayfarer_FrontierはWorlds Beyond Traversal Loadout、Theme固有Item Identity、Launchpad、Waystone／GUI、Frontier WM Shop、Inspect／Reconcile、および必要性が確認された場合だけEliteMobs–MVI Adapterを担当します。通常Inventory保存、MVI Profile切替、物理Gate、EliteMobsまたはBetterStructures本体機能を再実装しません。
+Wayfarer_MainはMain限定のGrowth Pickaxe、非同期初回配布、進行・進化、Broken／Waymark Full Repair、Audit／Reconcileおよび`wf_main_*` MariaDB Dataを担当します。
+
+Wayfarer_FrontierはWorlds Beyond Traversal Loadout、Theme固有Item Identity、Launchpad、Waystone／GUI、Frontier WM ShopおよびInspect／Reconcileを担当します。通常Inventory保存、MVI Profile切替、物理Gate、EliteMobsまたはBetterStructures本体機能を再実装しません。EliteMobs–MVI連携にAdapterが必要と判定された場合だけ、独立Runtime Plugin `Wayfarer_Frontier_EliteMobsMVI`を追加します。
 
 MainとFrontierの間ではVanilla Itemを含む全Item移送を禁止します。旧来の越境保管庫、遠征装備およびItem型実績報酬案は現行Scopeではありません。Network共有候補はWaymark、mcMMOおよび別途承認されるItem非依存の実績／報酬だけです。
 

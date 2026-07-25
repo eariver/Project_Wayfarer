@@ -110,8 +110,8 @@ V0.0.5作成時点のProject基準：
 | Shared Currency | Waymark（WM） |
 | Shared Progression | mcMMO |
 | World Administration | Multiverse-Core、Multiverse-Inventories、Multiverse-NetherPortals、WorldEdit、WorldGuard |
-| Block Audit | CoreProtect導入対象 |
-| Custom Plugin | Wayfarer_Core、Wayfarer_Frontier |
+| Block Audit | Order 8以降に選定。CoreProtectは候補だが未採用 |
+| Custom Plugin | Wayfarer_Core、Wayfarer_Frontier。`ADAPTER_REQUIRED`時だけ独立Artifact `Wayfarer_Frontier_EliteMobsMVI` |
 
 PluginおよびContentの正式Versionは、導入タスクで固定し、配布元、License、Version、SHA-256、依存関係および受入試験結果を記録する。
 
@@ -287,7 +287,8 @@ EliteMobsのInstanced Dungeonが動的Worldを生成する場合、次の順でM
 3. 固定WorldならMVIのGuild Groupへ静的登録する。
 4. 動的Worldなら、承認済みBlueprint名と連番だけに限定した厳密Regexで登録できるか確認する。
 5. 同時Instance、終了時削除、Restart、再接続およびInventory共有を最小検証Serverで試験する。
-6. 静的登録または厳密Regexで安全に成立しない場合に限り、**EliteMobs–MVI Adapter**を実装する。
+6. 静的登録または厳密Regexで安全に成立しない場合に限り、独立Runtime
+   Plugin／Artifact **`Wayfarer_Frontier_EliteMobsMVI`**を実装する。
 
 Adapterを実装する場合の限定責務：
 
@@ -295,6 +296,7 @@ Adapterを実装する場合の限定責務：
 - MVIのGuild Groupへ対象Worldを追加する。採用Versionが非永続の一時登録を提供する場合は、Instance名をConfigへ恒久蓄積しない方式を優先する。
 - EliteMobsのInstance削除Event後に、MVI Groupから対象Worldを解除する。
 - Restart後に一時登録だけが残っていないか検査する。
+- 追加／解除結果をAuditし、残留MembershipをReconcileする。
 
 Adapterは以下を担当しない。
 
@@ -404,8 +406,7 @@ Wayfarer_Frontier
 │  └─ Wayfarer固有Item Identity
 ├─ Administration
 ├─ Audit Adapter
-├─ 将来のRuined Frontier WM Reward Adapter
-└─ EliteMobs–MVI Adapter（必要性確認後のみ）
+└─ 将来のRuined Frontier WM Reward Adapter
 ```
 
 担当しない項目：
@@ -418,7 +419,9 @@ Wayfarer_Frontier
 - BetterStructures／EliteMobs本体機能
 - EliteMobs Instance Lifecycle
 
-EliteMobs–MVI Adapterは、静的MVI登録または承認済みBlueprint名に限定した厳密Regexで安全に運用できないと確認された場合に限り追加する。
+EliteMobs–MVI Adapterは`Wayfarer_Frontier`内部Moduleとして既定化しない。
+Decision Resultが`ADAPTER_REQUIRED`の場合だけ、独立Runtime Plugin／Artifact
+`Wayfarer_Frontier_EliteMobsMVI`として追加する。
 
 ---
 
@@ -437,8 +440,9 @@ EliteMobs–MVI Adapterは、静的MVI登録または承認済みBlueprint名に
 | Multiverse-Inventories | Frontier Backend内のWorld Group別Player State保存・復元 |
 | Multiverse-NetherPortals | Ruined Frontier FamilyのOverworld／Nether／End双方向Link、End Exit Respawn管理。Worlds Beyondでは使用しない |
 | WorldGuard | Hub、Gate、Theme境界、Boss Region保護 |
-| CoreProtect | 永続WorldおよびHubのBlock Audit |
-| Wayfarer_Frontier | Worlds Beyond固有Gameplay、WM取引、Wayfarer固有Item、必要時のみEliteMobs–MVI連携 |
+| Block History／Rollback | Order 8以降に選定。CoreProtectは候補だが未採用 |
+| Wayfarer_Frontier | Worlds Beyond固有Gameplay、WM取引、Wayfarer固有Item |
+| Wayfarer_Frontier_EliteMobsMVI | `ADAPTER_REQUIRED`時だけ。承認済みInstance検出、MVI Guild Group追加／解除、Restart残留検査、Audit／Reconcile |
 
 Portal共通要件：
 
@@ -494,7 +498,7 @@ Frontier Resource Pack
 - 通常探索地域に不要な全域建築禁止を適用しない。
 - BuilderへPlugin管理、Economy、Database、Region管理、Theme Lifecycle権限を付与しない。
 - 管理操作はCommand／GUI経由とする。例外として、Worlds Beyond Launchpadは仕様に沿ったPlayer手動Breakで削除できるが、ItemをDropせずDBとAuditを同期する。
-- CoreProtectはCold Backupの代替にしない。
+- 将来採用するBlock History／Rollback製品はCold Backupの代替にしない。
 
 ---
 
@@ -529,17 +533,17 @@ ResurrectionChest等の死亡補助は後続Phaseとし、V0.0.5では前提に�
 
 ### 13.3 Instance World
 
-Primis付属DungeonおよびEliteMobs Instanceの生成、有効化、Dungeon Gameplay、Package固有Respawn、終了、Player退出およびWorld削除は、EliteMobsのContent Package Lifecycleを正とする。CoreProtectおよびBackupの対象範囲は永続Worldと分離する。
+Primis付属DungeonおよびEliteMobs Instanceの生成、有効化、Dungeon Gameplay、Package固有Respawn、終了、Player退出およびWorld削除は、EliteMobsのContent Package Lifecycleを正とする。将来採用するBlock History／Rollback製品およびBackupの対象範囲は永続Worldと分離する。
 
 Inventory共有方式は次の優先順で決定する。
 
 1. 固定Dungeon WorldをMVI Guild Groupへ静的登録する。
 2. 動的Worldが承認済みBlueprint名＋連番で生成される場合、MVIの厳密RegexでGuild Groupへ所属させる。
-3. 静的登録またはRegexで、同時Instance、削除、Restartおよび再接続を安全に扱えない場合だけEliteMobs–MVI Adapterを実装する。
+3. 静的登録またはRegexで、同時Instance、削除、Restartおよび再接続を安全に扱えない場合だけ独立Artifact `Wayfarer_Frontier_EliteMobsMVI`を実装する。
 
 現時点ではAdapterの実装を確定しない。**「EMアダプタの必要性判断」**をRuined Frontier alphaの実装前Roadmap項目とする。
 
-Adapter採用時も、MVIがInventory保存・復元の正本であり、EliteMobsがInstance Lifecycleの正本である。Adapterは生成Eventと削除Eventを用いてMVI Groupへの追加・解除だけを仲介し、EliteMobs内部Config、DatabaseまたはContent Package Fileを変更しない。
+Adapter採用時も、MVIがInventory保存・復元の正本であり、EliteMobsがInstance Lifecycleの正本である。Adapterは承認済みInstance World検出、MVI Groupへの追加／解除、Restart残留検査、Audit／Reconcileだけを担い、通常Inventory保存、Gameplay、退出、Respawn、World削除、EliteMobs内部Config、DatabaseまたはContent Package Fileの変更を担当しない。
 
 ---
 

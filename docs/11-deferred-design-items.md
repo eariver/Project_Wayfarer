@@ -28,7 +28,7 @@ Phase 1A implemented all five persistent LuckPerms Group definitions. The tempor
 | 課題 | 現在の妥協策 | V0.1.0への影響 | 将来の解決候補 | 独自Pluginが必要か | 再検討時期 |
 |---|---|---|---|---|---|
 | MVI正式Versionと共有Player Stateが未Lock | Concept上の`neutral`／`worlds_beyond`／`guild`境界だけを正本化し、Runtime Configを作らない | **Blocker**。通常Player Stateの正本と移動経路試験が必要 | 採用MVI VersionのGroup／Share Config | 原則不要 | Frontier共通基盤Task |
-| EM InstanceのMVI方式が未確定 | 静的登録、厳密Regex、必要時Adapterの順で評価 | **Blocker**。Adapter必要性判断が必要 | MVI Config、必要性が立証された場合だけWayfarer_Frontier Adapter | 条件付き | EliteMobs Artifact／Instance命名確認後 |
+| EM InstanceのMVI方式が未確定 | 静的登録、厳密Regex、必要時Adapterの順で評価 | **Blocker**。Adapter必要性判断が必要 | MVI Config、必要性が立証された場合だけ独立Artifact `Wayfarer_Frontier_EliteMobsMVI` | 条件付き | EliteMobs Artifact／Instance命名確認後 |
 | Worlds Beyond Traversal詳細が未Lock | Elytra、LeafGrapple、Loadout、Launchpadを正式Scopeとし、Artifact／Item契約は未実装 | **Blocker** | Wayfarer_Frontier＋採用LeafGrapple Adapter | 必要 | Worlds Beyond実装Task |
 | Ruined Frontier WM報酬Balanceが未Lock | 初期alphaはBoss／Quest報酬を自動導入しない | 非Blocker。Theme本体はBlocker | Vault／Waymark Adapter経由の冪等Reward | 必要 | 実プレイBalance評価後 |
 | Theme装備のWM売却変換がない | Theme ItemをWMへ変換せず、Item境界を維持 | 非Blocker | 独立したAllowlist／価格／監査設計 | 必要性を再評価 | Frontier Economy再設計時 |
@@ -50,7 +50,7 @@ Custom Fishingの現行World Scopeは`main`／`resource`だけです。Nether、
 
 ## V0.1.0 pre-release reset scope
 
-All Waymark balances, Main inventory, armor/offhand, Vanilla XP, and advancements remain the minimum separately approved reset scope immediately before the final baseline backup. Frontier／MVI Profiles, Theme Loadout state, custom-Plugin records, Ender Chest, health/hunger, position, bed spawn, statistics, recipe book, mcMMO, EvenMoreFish Journal, LuckPerms history, transaction history, and Resource-world positions require an exact owner-aware decision before reset. None is reset by this documentation revision.
+All Waymark balances, Main inventory, armor/offhand, Vanilla XP, and advancements remain the minimum separately approved reset scope immediately before the final baseline backup. Growth Tool logical records are explicitly undecided between Reset and Preserve and require separate Owner approval. Frontier／MVI Profiles, Theme Loadout state, other custom-Plugin records, Ender Chest, health/hunger, position, bed spawn, statistics, recipe book, mcMMO, EvenMoreFish Journal, LuckPerms history, transaction history, and Resource-world positions require an exact owner-aware decision before reset. None is reset by this documentation revision.
 
 ## Main
 
@@ -73,7 +73,7 @@ The outer Region must not use a `build` flag or broad `interact allow`／`chest-
 
 ## Historical V0.2.x custom-Plugin concept
 
-The growth-tool and other proposals in `codex/Project_Wayfarer_V0.2x_Custom_Plugin_Concept.md` remain a reference draft unless explicitly promoted into current formal documentation. Ver.0.0.6 separately promotes Wayfarer_Core and Wayfarer_Frontier responsibilities as V0.1.0 Blockers, but the historical Concept itself does not authorize their Repository creation, development, migration, or artifact work. Every such action still requires a dedicated approved design and task.
+The historical proposals in `codex/Project_Wayfarer_V0.2x_Custom_Plugin_Concept.md` remain a reference draft unless explicitly promoted into current formal documentation. Ver.0.0.6 separately promotes Wayfarer_Core, Wayfarer_Main／Growth Pickaxe, and Wayfarer_Frontier responsibilities as V0.1.0 Blockers, but the historical Concept itself does not authorize external Multi-module Repository creation, development, migration, or artifact work. Every such action still requires a dedicated approved design and task.
 
 ## Review rule
 

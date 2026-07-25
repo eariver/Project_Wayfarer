@@ -50,7 +50,7 @@ concepts/plugins/
 ├─ main/
 │  └─ Project_Wayfarer_Growth_Tool_Concept_v0.0.5.md
 └─ frontier/
-   ├─ Project_Wayfarer_Worlds_Beyond_Plugin_Concept_v0.0.3.md
+   ├─ Project_Wayfarer_Worlds_Beyond_Plugin_Concept_v0.0.4.md
    └─ Project_Wayfarer_Ruined_Frontier_Integration_Decision_Concept_v0.0.2.md
 ```
 
@@ -282,7 +282,7 @@ V0.1.0向け初期責務はGrowth Pickaxeとする。
 
 対象Concept:
 
-- `frontier/Project_Wayfarer_Worlds_Beyond_Plugin_Concept_v0.0.3.md`
+- `frontier/Project_Wayfarer_Worlds_Beyond_Plugin_Concept_v0.0.4.md`
 - `frontier/Project_Wayfarer_Ruined_Frontier_Integration_Decision_Concept_v0.0.2.md`
 
 V0.1.0向け初期責務:
@@ -532,6 +532,6 @@ Worlds Beyond Launchpadの初期Player体験は、単一の金の感圧板を踏
 - Growth Tool／`Wayfarer_Main`をProject Wayfarer V0.1.0 Release Scopeへ正式追加した。
 - Project本流のRoadmap、Acceptance、Backup／RestoreおよびRelease Blockerを別途同期更新する前提を明記した。
 - Authorityの「現在Session」依存表現を、Repositoryへ反映されたOwner Decisionへ変更した。
-- Growth Tool v0.0.5、Worlds Beyond Plugin v0.0.3、Ruined Frontier Integration Decision v0.0.2を現行下位Conceptとして更新した。
+- Growth Tool v0.0.5、Worlds Beyond Plugin v0.0.4、Ruined Frontier Integration Decision v0.0.2を現行下位Conceptとして更新した。
 - EliteMobs–MVI Adapter関連Moduleは`ADAPTER_REQUIRED`の場合だけ作成することを明記した。
 - Launchpadの初期操作Baselineを単一の金の感圧板、踏み込み起動、Sneak回避として反映した。

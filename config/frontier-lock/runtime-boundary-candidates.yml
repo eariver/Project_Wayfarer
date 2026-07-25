@@ -1,6 +1,11 @@
 schema: wayfarer.frontier-lock.runtime-boundary-candidates.v1
-proposal_id: FRONTIER-LOCK-20260726-002
+proposal_id: FRONTIER-LOCK-20260726-003
+previous_proposal: FRONTIER-LOCK-20260726-002
+previous_status: superseded-before-approval
+phase_b: not-authorized
+approval_token_received: false
 status: candidate
+runtime_validation: deferred
 
 world_classes:
   gate:
@@ -17,7 +22,7 @@ world_classes:
     - em_primis
     - em_primis_wormhole
   elite_instances:
-    - deferred-to-order-12
+    - deferred-to-order-13
 
 plugins:
   multiverse-inventories:
@@ -26,7 +31,7 @@ plugins:
     guild: guild
     ruined_frontier: guild
     primis: guild
-    elite_instances: deferred-to-order-12
+    elite_instances: deferred-to-order-13
     unknown: isolated-fail-closed
   multiverse-netherportals:
     gate: disabled
@@ -69,11 +74,12 @@ plugins:
     elite_instances: disabled
     unknown: disabled
   coreprotect:
-    gate: candidate
-    worlds_beyond: candidate
-    guild: candidate
-    ruined_frontier: candidate
-    primis: candidate
+    selection: product-unselected
+    gate: disabled-until-separate-selection
+    worlds_beyond: disabled-until-separate-selection
+    guild: disabled-until-separate-selection
+    ruined_frontier: disabled-until-separate-selection
+    primis: disabled-until-separate-selection
     elite_instances: disabled
     unknown: disabled
   free-minecraft-models:
@@ -98,6 +104,17 @@ plugins:
     primis: approved-adapters
     elite_instances: approved-adapter-only
     unknown: fail-closed
+  wayfarer-frontier-elitemobsmvi:
+    artifact_boundary: independent-runtime-plugin
+    condition: ADAPTER_REQUIRED
+    approved_instance_detection: conditional
+    mvi_guild_registration_removal: conditional
+    restart_residue_audit_reconcile: conditional
+    normal_inventory_storage: forbidden
+    elitemobs_lifecycle_gameplay_exit_respawn_world_delete: forbidden
+  wayfarer-main:
+    placement: main-only-sibling-module
+    frontier: forbidden
 
 portal_families:
   ruined_frontier:
@@ -116,9 +133,9 @@ gate:
   candidate: Advanced-Portals-2.8.0
   backend_switch_tag: proxy
   bungee_message_channel: not-required
-  exact_destinations: deferred-to-order-16
-  safe_arrivals: deferred-to-order-16
-  builder_permissions: deferred-to-order-16
+  exact_destinations: deferred-to-order-17
+  safe_arrivals: deferred-to-order-17
+  builder_permissions: deferred-to-order-17
 
 authority:
   normal_player_state: Multiverse-Inventories
@@ -130,7 +147,8 @@ authority:
   resource_pack: ResourcePackManager-output-plus-locked-inputs
   waystone_discovery: future-Wayfarer_Frontier-MariaDB
   audit_transaction: future-Wayfarer_Core-MariaDB
-  history: CoreProtect-24-candidate-pending-runtime-validation
+  growth_pickaxe: future-Wayfarer_Main-MariaDB-main-only
+  history: product-unselected-CoreProtect-24-artifact-candidate-only
 
 permissions:
   temporary_admin_only:
@@ -148,4 +166,4 @@ permissions:
     - approved-gui
   builder:
     status: no-permissions-granted-by-order-8
-    final_allowlist: deferred-to-order-16-and-17
+    final_allowlist: deferred-to-order-17-and-18

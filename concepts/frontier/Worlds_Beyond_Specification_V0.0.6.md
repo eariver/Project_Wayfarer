@@ -255,7 +255,7 @@ hooks:
 ### 8.1 Elytra
 
 - 初期支給する。
-- Unbreakableまたは耐久を自動維持する。
+- Unbreakableとする。
 - Theme外へ持ち出せない。
 - 紛失時は有効Instanceが存在しないことを確認し、旧Instanceを失効させたうえで無料復旧する。
 - HookおよびLaunchpadと組み合わせる。

@@ -1,14 +1,19 @@
 schema: wayfarer.frontier-lock.resource-pack-input-candidates.v1
-proposal_id: FRONTIER-LOCK-20260726-002
+proposal_id: FRONTIER-LOCK-20260726-003
+previous_proposal: FRONTIER-LOCK-20260726-002
+previous_status: superseded-before-approval
+phase_b: not-authorized
+approval_token_received: false
 status: candidate
+runtime_validation: deferred
 
 separation:
   main_pack: independent
   frontier_pack: independent
   java_delivery: per-backend-on-switch
-  final_url: deferred-to-order-11
-  final_sha1: deferred-to-order-11
-  final_sha256: deferred-to-order-11
+  final_url: deferred-to-order-12
+  final_sha1: deferred-to-order-12
+  final_sha256: deferred-to-order-12
 
 merge_priority_high_to_low:
   - Wayfarer_Frontier
@@ -75,11 +80,11 @@ collision_preflight:
   particles: pending-missing-inputs
   namespaces:
     existing_betterstructures_prop_pack: isolated-by-backend-but-client-switch-must-be-tested
-  pack_mcmeta: generated-by-order-11
+  pack_mcmeta: generated-by-order-12
 
 hosting:
   build_owner: ResourcePackManager-on-Frontier
-  preferred_phase: Order-11
+  preferred_phase: Order-12
   self_host: disabled-until-explicit-network-design
   remote_host: temporary-candidate-only
   force_resource_pack: false

@@ -4,7 +4,10 @@
 
 `README.md`だけをGit管理し、JAR、ZIP、Pack、Model、Contentおよび展開物はCommitしません。CodexはこれらをDownloadしません。
 
-## Revision 002の確認状態
+## Revision 003の確認状態
+
+Proposal `FRONTIER-LOCK-20260726-003`が現在の候補です。Proposal 002は
+承認前に置き換えられたため、Phase Bの承認には使用できません。
 
 次の手動配置Artifactは静的確認済みです。元Filenameを変更せず、現在の配置を維持してください。
 
@@ -34,7 +37,7 @@ Runtimeへ配置しません。
 
 Adventurer's Guildの正規Download Linkは、EliteMobsの公式`/em setup` Flowで
 提示されます。Order 8 Phase AではServerを起動しないため、Artifactの取得、
-Version、Filename、License、SHA-256確認をOrder 11／12へ明示的に繰り越します。
+Version、Filename、License、SHA-256確認をOrder 12／13へ明示的に繰り越します。
 公式Flowで取得後、元Filenameのまま`elitemobs/content/`へ配置してください。
 
 ## 既存Artifactの再利用候補

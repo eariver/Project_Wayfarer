@@ -45,10 +45,14 @@ Back up at minimum:
 - MariaDB dump
 - RedisEconomy Config templates and the stopped Redis AOF volume
 - resource-pack sources
+- Wayfarer_Core／Main／Frontier release Artifacts, exact Versions, SHA-256, and Source Commits
+- tracked and sanitized custom-Plugin Config, rendered Config without Secrets, and Migration history
+- custom-Plugin MariaDB schemas／data, including `wf_main_*`, Growth Tool identity／owner／epoch／progress／ACTIVE／BROKEN state, Pending Delivery, repair transaction, audit, and reconcile records
+- MVI Profiles, Frontier Worlds, Frontier Pack inputs／outputs／hashes, and Plugin-side／Project-side Test Reports
 
 Resource worlds are disposable and may be excluded from long-term backups.
 
-Waymark balances are persistent Redis data. Do not copy `infrastructure/data/redis` while Redis is running and do not introduce a hot/warm backup Plugin. A cold backup continues after shutdown step 7: create the MariaDB dump; stop Redis normally; confirm its process has stopped; copy the stopped Redis AOF volume; copy persistent Worlds, Frontier content, Config, and other approved data; then create the Manifest/SHA-256 record and finalize the `.incomplete` generation only after validation. Decide whether to stop or restart remaining Infrastructure after capture. Start Redis again only after the copy has completed. The V0.1.0 Baseline is incomplete without MariaDB dumps, the Redis AOF volume, persistent Worlds/Config, a manifest with SHA-256 values, and an isolated restore test.
+Waymark balances are persistent Redis data. Do not copy `infrastructure/data/redis` while Redis is running and do not introduce a hot/warm backup Plugin. A cold backup continues after shutdown step 7: create the MariaDB dump; stop Redis normally; confirm its process has stopped; copy the stopped Redis AOF volume; copy persistent Worlds, Frontier content, Config, and other approved data; then create the Manifest/SHA-256 record and finalize the `.incomplete` generation only after validation. Decide whether to stop or restart remaining Infrastructure after capture. Start Redis again only after the copy has completed. Restore order is MariaDB／Redis foundation, Migration verification, MVI data, World data, custom-Plugin data, Plugin Artifact／Config, backend, proxy, then Reconcile／Health before Player join. The V0.1.0 Baseline is incomplete without MariaDB dumps, the Redis AOF volume, persistent Worlds/Config, a manifest with SHA-256 values, and an isolated restore test.
 
 ## Resource reset
 
@@ -198,7 +202,7 @@ The initial shop disables update checking, transaction logging, spawner integrat
 
 ## V0.1.0 pre-release reset
 
-Do not reset balances or Player state during ordinary integration. After all Gameplay／Portal／Hub／Permission／Backup tests, a separate destructive task must reject connections, stop the network, take a pre-reset backup, reset all Waymark through a supported RedisEconomy mechanism, and reset the explicitly approved Main Vanilla state before the final baseline backup. The minimum planned Vanilla scope is inventory, armor/offhand, XP level/total/progress, and advancements; every additional state remains undecided until that task. Direct Redis key editing is forbidden.
+Do not reset balances or Player state during ordinary integration. After all Gameplay／Portal／Hub／Permission／Backup tests, a separate destructive task must reject connections, stop the network, take a pre-reset backup, reset all Waymark through a supported RedisEconomy mechanism, and reset the explicitly approved Main Vanilla state before the final baseline backup. The minimum planned Vanilla scope is inventory, armor/offhand, XP level/total/progress, and advancements; every additional state remains undecided until that task. Growth Tool Data is explicitly undecided: Reset or Preserve requires separate Owner approval. Direct Redis key editing is forbidden.
 
 ## Planned integrated operations
 

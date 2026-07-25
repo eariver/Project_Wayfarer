@@ -1,5 +1,9 @@
 schema: wayfarer.frontier-lock.artifact-candidates.v1
-proposal_id: FRONTIER-LOCK-20260726-002
+proposal_id: FRONTIER-LOCK-20260726-003
+previous_proposal: FRONTIER-LOCK-20260726-002
+previous_status: superseded-before-approval
+phase_b: not-authorized
+approval_token_received: false
 generated_on: 2026-07-26
 status: candidate
 runtime_validation: deferred
@@ -8,6 +12,22 @@ compatibility_target:
   paper: "1.21.11 build 132"
   java: 25
   velocity: "4.1.0 selected build"
+
+custom_plugin_contract:
+  repository: one-external-gradle-multi-module-repository
+  required_sibling_modules:
+    - Wayfarer_Core
+    - Wayfarer_Main
+    - Wayfarer_Frontier
+  frontier_placement:
+    - Wayfarer_Core
+    - Wayfarer_Frontier
+  main_only:
+    - Wayfarer_Main
+  conditional_independent_frontier_artifact:
+    name: Wayfarer_Frontier_EliteMobsMVI
+    condition: ADAPTER_REQUIRED
+  versions_and_hashes: deferred-to-orders-9-through-11
 
 artifacts:
   - id: multiverse-inventories
@@ -24,7 +44,7 @@ artifacts:
     dependencies:
       - "Multiverse-Core 5.7.2"
     scope: all-frontier-worlds
-    deferred_to: Order 11
+    deferred_to: Order 12
 
   - id: multiverse-netherportals
     decision: selected-existing-main-version-parity
@@ -41,7 +61,7 @@ artifacts:
     dependencies:
       - "Multiverse-Core 5.7.2"
     scope: ruined-frontier-family-only
-    deferred_to: Order 11
+    deferred_to: Order 12
 
   - id: advanced-portals
     decision: selected-existing
@@ -62,7 +82,7 @@ artifacts:
     scope: backend-switch-gates
     static_evidence: one JAR contains both plugin.yml and velocity-plugin.json with version 2.8.0
     known_limitation: one-JAR multi-platform enablement and cross-backend destinations remain runtime-unverified
-    deferred_to: Order 11
+    deferred_to: Order 12
 
   - id: iris
     decision: selected-existing-engine
@@ -77,7 +97,7 @@ artifacts:
     dependencies: []
     scope: worlds-beyond-overworld-only
     known_limitation: Worlds Beyond is one Overworld only; no Nether or End worlds belong to the Theme
-    deferred_to: Order 14
+    deferred_to: Order 15
 
   - id: leafgrapple
     decision: selected-existing
@@ -93,8 +113,8 @@ artifacts:
     dependencies: []
     scope: worlds-beyond-only
     static_evidence: config exposes item-model and entity-hook controls
-    known_limitation: defaults enable mob hooking, damage and durability; Order 14 must disable them and enforce world/item boundaries
-    deferred_to: Order 14
+    known_limitation: defaults enable mob hooking, damage and durability; Order 15 must disable them and enforce world/item boundaries
+    deferred_to: Order 15
 
   - id: elitemobs
     decision: selected-existing
@@ -112,7 +132,7 @@ artifacts:
       - WorldGuard
     scope: ruined-frontier-guild-primis-and-approved-instances
     known_limitation: Adventurer's Guild Artifact is available only after the official /em setup flow and remains unverified
-    deferred_to: Order 12
+    deferred_to: Order 13
 
   - id: betterstructures
     decision: selected-existing
@@ -126,7 +146,7 @@ artifacts:
     dependencies:
       - "WorldEdit 7.4.4"
     scope: frontier_bs-family-only
-    deferred_to: Order 13
+    deferred_to: Order 14
 
   - id: free-minecraft-models
     decision: selected-existing
@@ -139,7 +159,7 @@ artifacts:
     placement: servers/frontier/plugins/
     dependencies: []
     scope: frontier-backend-asset-service
-    deferred_to: Order 11
+    deferred_to: Order 12
 
   - id: resource-pack-manager
     decision: selected-existing
@@ -152,10 +172,10 @@ artifacts:
     placement: servers/frontier/plugins/
     dependencies: []
     scope: frontier-backend-pack-service
-    deferred_to: Order 11
+    deferred_to: Order 12
 
   - id: coreprotect
-    decision: selected-for-later-validation
+    decision: artifact-candidate-for-later-validation-product-unselected
     version: "24.0"
     filename: CoreProtect-CE-24.0.jar
     source: https://modrinth.com/plugin/coreprotect/version/24.0
@@ -164,8 +184,8 @@ artifacts:
     present: true
     placement: servers/frontier/plugins/
     dependencies: []
-    scope: persistent-frontier-worlds-excluding-dynamic-instances
-    known_limitation: Paper 1.21.11 is officially listed, but Frontier runtime and MariaDB behavior remain unverified
+    scope: none-until-separate-history-product-selection
+    known_limitation: Paper 1.21.11 is officially listed, but Frontier history and rollback product remains unselected and no Runtime or MariaDB validation has occurred
     deferred_to: separate-history-validation-task
 
   - id: betterhealthbar3
@@ -185,8 +205,8 @@ artifacts:
       - MythicMobs
     scope: ruined-frontier-guild-primis-and-approved-instances
     static_evidence: plugin metadata is version 4.1.0 and includes NMS adapters through v1_21_R7 plus v26_R1 and v26_R2
-    known_limitation: self-host defaults true and generated font/shader Pack must be merged by Order 11 without opening port 8163
-    deferred_to: Order 11-and-Ruined-Frontier-smoke-test
+    known_limitation: self-host defaults true and generated font/shader Pack must be merged by Order 12 without opening port 8163
+    deferred_to: Order 12-and-Order-14-smoke-test
 
 content:
   - id: bs-prop-pack

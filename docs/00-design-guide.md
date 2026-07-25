@@ -22,7 +22,7 @@ Project Wayfarerは、ユーザー本人と関係者による小規模運用を�
 - FrontierはRuined FrontierとWorlds Beyondの二つの独立Themeを扱い、MVI GroupでPlayer Stateを分離するAdventure／Exploration環境とする。
 - LABは将来の検証用Componentとし、承認された導入タスクまで起動対象にしない。
 
-このリポジトリはConfig、設計、導入・運用Script、Version制約および外部PluginとのIntegration情報の正本です。独自PluginのSource、Build ProjectおよびRelease成果物は含めず、必要なPluginごとに別Repositoryで開発・Releaseします。
+このリポジトリはConfig、設計、導入・運用Script、Version制約および外部PluginとのIntegration情報の正本です。独自PluginのSource、Build ProjectおよびRelease成果物は含めず、一つの外部Gradle Multi-module Repositoryで開発・Releaseします。
 
 ## 3. 現在のNetwork構成
 
@@ -157,7 +157,7 @@ Order 6では具体的なBlocking defectや調整根拠がないため、278有�
 
 ### FrontierとResource Pack
 
-V0.1.0 Frontierの正式Scopeは[Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md)を正本とします。Ruined FrontierはBetterStructures＋EliteMobsによるGuild／戦闘Theme、Worlds BeyondはIris三次元とTraversal／Waystoneを中心とする探索Themeです。両方がV0.1.0 Blockerであり、MVIの`neutral`、`worlds_beyond`、`guild` Groupで通常Player Stateを分離します。
+V0.1.0 Frontierの正式Scopeは[Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md)を正本とします。Ruined FrontierはBetterStructures＋EliteMobsによるOverworld／Nether／End三次元のGuild／戦闘Theme、Worlds BeyondはIris Overworld `frontier_iris`単独とTraversal／Waystoneを中心とする探索Themeです。Worlds Beyond用Nether／EndやMNP Linkは作成せず、PortalはFail-closedとします。両方がV0.1.0 Blockerであり、MVIの`neutral`、`worlds_beyond`、`guild` Groupで通常Player Stateを分離します。
 
 ResourcePackManager 2.3.0はMainの配信Preflight基盤として導入済みです。Mainは任意PromptとNightbreak一時Hostingを使用し、公開Port、Firewall、Router、Credentialまたは外部Accountを追加していません。Frontierは未導入であり、Mainとは別Packとします。正式Hosting、Backend切替時Reload、Model／Shader／Font競合、容量、CacheおよびRollbackはFrontier統合時にNetwork全体としてLockします。生成Pack、ModelおよびContent ArtifactはGitへ追加しません。
 
@@ -175,7 +175,7 @@ ResourcePackManager 2.3.0はMainの配信Preflight基盤として導入済みで
 |EvenMoreFish|導入しない|`main`／`resource`限定|導入しない|
 |WorldGuard|Entry World全体保護|Pluginのみ。Spawn保護は設計済み・未実装|Entry World全体保護|
 
-Waymark共有残高、MainのVanilla固定価格ショップ、EvenMoreFish魚売却、mcMMO共有進行、Main five-Pack BetterStructures／FMM基盤およびMain ResourcePackManager Preflightは導入済みです。MVI、Frontier ResourcePackManager／Pack、正式Hosting、Wayfarer_Core、Wayfarer_Frontier、Iris、EliteMobs、Frontier／QuestのWaymark報酬およびCross-server Chatは未導入であり、計画上の機能を導入済みとして扱いません。
+Waymark共有残高、MainのVanilla固定価格ショップ、EvenMoreFish魚売却、mcMMO共有進行、Main five-Pack BetterStructures／FMM基盤およびMain ResourcePackManager Preflightは導入済みです。MVI、Frontier ResourcePackManager／Pack、正式Hosting、Wayfarer_Core、Wayfarer_Main、Wayfarer_Frontier、Growth Pickaxe、Iris、EliteMobs、Frontier／QuestのWaymark報酬およびCross-server Chatは未導入であり、計画上の機能を導入済みとして扱いません。
 
 MainとFrontierはVanilla Itemを含む全Item、Inventory、Armor、Offhand、Ender Chest、Vanilla XP、HealthおよびFoodを共有・移送しません。Network共有成果はWaymark、mcMMO、および将来別途承認されるItem非依存実績／報酬だけです。Wayfarer_Frontierは通常InventoryをMariaDBへ保存せず、MVIのProfile保存・復元を再実装しません。
 
@@ -249,7 +249,7 @@ Builder作業終了時は、保存状態を確認し、Survivalへ戻し、必�
 
 ## 11. V0.1.0 Alpha完成方針
 
-V0.1.0ではMainのバニラに近いSurvivalを、mcMMO、Waymark、固定価格Shop、5 Pack構成のBetterStructures、EvenMoreFish等で拡張します。FrontierにはRuined Frontier alphaとWorlds Beyond MVPの両方を導入し、MVI Group分離、Wayfarer_Core／Wayfarer_Frontier、Main／Frontier別Resource Pack、必須Gate、権限切替、統合運用Script、Cold Backup／RestoreおよびBaseline Backupを成立させます。
+V0.1.0ではMainのバニラに近いSurvivalを、mcMMO、Waymark、固定価格Shop、5 Pack構成のBetterStructures、EvenMoreFishおよびWayfarer_MainのGrowth Pickaxeで拡張します。FrontierにはRuined Frontier alphaとWorlds Beyond MVPの両方を導入し、MVI Group分離、Wayfarer_Core／Wayfarer_Frontier、Main／Frontier別Resource Pack、必須Gate、権限切替、統合運用Script、Cold Backup／RestoreおよびBaseline Backupを成立させます。
 
 Ruined FrontierとWorlds Beyondは承認済みScopeですが未実装です。Paper 1.21.11／Java 25互換性、正確なArtifact、License、Hash、World ID、Gate、Resource PackおよびPersistenceは専用タスクでLockします。World Generator、Content ImportまたはPlugin EnableだけをPlayable完了とは扱いません。
 
@@ -275,8 +275,8 @@ PlugManXはAdministration／Development用途のplanned Componentです。Versio
 
 独自Pluginは最初にTest用PluginでPoCし、Listener、Scheduler、Command／Brigadier、Bukkit Service、Database Connection、File Handle、Thread、Static ReferenceおよびCacheを`onDisable()`で確実に解放できることを確認したPluginだけをReload許可対象にします。Ver.0.0.6ではPlugManXを導入せず、V0.1.0 Release Blockerにも含めません。
 
-Wayfarer_CoreとWayfarer_FrontierはV0.1.0 Release Blockerです。Source、Java／Kotlin、Gradle／MavenおよびBuild ProjectはPluginごとの別Repositoryで管理します。本RepositoryにはIntegration Contract、Version Constraint、Manifest、Config、Installation／Operational Procedure、Permission／Database／API Contract、Acceptance TestおよびRelease Artifact Hashだけを保存します。既存V0.2.x Conceptの他案は非正本の将来候補であり、この二Pluginの実装承認を代替しません。
+Wayfarer_Core、Wayfarer_MainおよびWayfarer_FrontierはV0.1.0 Release Blockerです。Source、Java／Kotlin、GradleおよびBuild Projectは一つの外部Multi-module Repositoryで管理します。Wayfarer_MainはMain限定Growth Pickaxeを担当し、`Wayfarer_Frontier_EliteMobsMVI`はDecision Resultが`ADAPTER_REQUIRED`の場合だけ独立Runtime Artifactとして追加します。本RepositoryにはIntegration Contract、Version Constraint、Manifest、Config、Installation／Operational Procedure、Permission／Database／API Contract、Acceptance TestおよびRelease Artifact Hashだけを保存します。既存V0.2.x Conceptの他案は非正本の将来候補であり、これらPluginの実装承認を代替しません。
 
 ## 14. Roadmapと関連文書
 
-V0.1.0までの実施順とBlockerは[Roadmap](09-roadmap.md)で管理します。Main BetterStructures Preflight、Content Load、再生成、Order 5受入およびOrder 6 Final Main Baselineは完了しました。Order 7 CoreProtectはMain／LobbyのMinecraft 26.2対応Stable版待ちとして延期・Non-blockingであり、Owner単独運用中はV0.1.0 Blockerから一時除外します。次はOrder 8 Frontier Lock、Wayfarer_Core／Wayfarer_Frontier、Frontier共通基盤、両Theme、Gate／Permission、ユーザー建築、Routing、Resource Bootstrap、統合運用、Cold Backup／隔離Restoreへ進みます。最後に別途承認された破壊的Player State Resetを実施してからV0.1.0 Release Baseline Backupを作成します。導入済みVersionとHashは`versions.yml`、配置・取得・依存方針は`plugin-manifest.yml`、運用手順は[Operations](03-operations.md)、検証済み事実と未達Blockerは[Acceptance Tests](06-acceptance-tests.md)、Frontier Scopeは[Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md)、将来課題は[Deferred Design Items](11-deferred-design-items.md)を参照してください。
+V0.1.0までの実施順とBlockerは[Roadmap](09-roadmap.md)で管理します。Main BetterStructures Preflight、Content Load、再生成、Order 5受入およびOrder 6 Final Main Baselineは完了しました。Order 7 CoreProtectはMain／LobbyのMinecraft 26.2対応Stable版待ちとして延期・Non-blockingであり、Owner単独運用中はV0.1.0 Blockerから一時除外します。Order 8 Frontier LockはPhase A Revision 003の承認待ちです。その後は外部Multi-module RepositoryとWayfarer_Core、Wayfarer_Main／Growth Pickaxe、Wayfarer_Frontier、Frontier共通基盤、両Theme、Gate／Permission、ユーザー建築、Routing、Resource Bootstrap、統合運用、Cold Backup／隔離Restoreへ進みます。最後に別途承認された破壊的Player State Resetを実施してからV0.1.0 Release Baseline Backupを作成します。Growth Tool DataをResetするか保持するかは未決で、別のOwner承認を必要とします。導入済みVersionとHashは`versions.yml`、配置・取得・依存方針は`plugin-manifest.yml`、運用手順は[Operations](03-operations.md)、検証済み事実と未達Blockerは[Acceptance Tests](06-acceptance-tests.md)、Frontier Scopeは[Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md)、将来課題は[Deferred Design Items](11-deferred-design-items.md)を参照してください。

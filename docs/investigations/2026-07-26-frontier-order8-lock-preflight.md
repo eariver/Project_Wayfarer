@@ -5,17 +5,40 @@
 | Item | Result |
 | --- | --- |
 | Date | 2026-07-26 |
-| Proposal ID | `FRONTIER-LOCK-20260726-002` |
+| Proposal ID | `FRONTIER-LOCK-20260726-003` |
 | Pre-execution HEAD | `354052c9dd80d77b8b83c49f783e4d4b7b8755fd` |
 | Branch／Remote | `main`／`origin` |
 | Phase | A — static research and candidate lock only |
 | Runtime change | None |
 | World／DB／Permission change | None |
-| Decision Gate | Revision 002 prepared; Adventurer's Guild exact Artifact is explicitly deferred |
+| Decision Gate | Revision 003 awaiting exact approval; Phase B is not authorized |
 
 本Reportは、Order 8の正式Lock前に行ったRepository-local Inventory、Artifact静的確認、公式情報調査および境界候補を記録する。Runtime導入、Server起動、World生成、Database操作、Permission変更、Pack生成は行っていない。
 
-## Revision 002
+## Revision 003
+
+Proposal 003は、未承認のProposal 002を、Owner Commit
+`9abc12ae5f472325933d38c5eacc6050aaf3e6c7`後の現行Conceptと正式Scopeへ
+再基底化した現在候補である。
+
+- `previous_proposal: FRONTIER-LOCK-20260726-002`
+- `previous_status: superseded-before-approval`
+- `phase_b: not-authorized`
+- `approval_token_received: false`
+- `status: candidate`
+- `runtime_validation: deferred`
+- 独自Pluginは一つの外部Gradle Multi-module Repositoryに置き、
+  `Wayfarer_Core`、`Wayfarer_Main`、`Wayfarer_Frontier`をV0.1.0必須Moduleとする。
+- `Wayfarer_Main`はMain限定でGrowth Pickaxeを所有し、Frontierへ配置しない。
+- `Wayfarer_Frontier_EliteMobsMVI`は`ADAPTER_REQUIRED`時だけ追加する独立Artifactである。
+- Worlds Beyondは`frontier_iris`単一Overworldのまま、Ruined Frontierは三次元を維持する。
+- FrontierのBlock History／Rollback製品は未選定で、CoreProtect 24.0は静的候補に留める。
+- Proposal 001／002のArtifact判断とHashは維持し、Runtime検証を追加していない。
+
+Proposal 002のTokenは一度も実行されず、Proposal 003へ流用できない。Phase B用正式Lock
+File、Runtime Plugin、World、MVI Group、Pack、DatabaseおよびPermissionは作成・変更していない。
+
+## Revision 002（未承認の履歴）
 
 Revision 002はProposal 001を全面的に置き換え、旧Approval Tokenを無効化する。
 UserによるArtifact配置と設計判断を反映した主な変更は次のとおり。
@@ -113,7 +136,7 @@ worldguard-bukkit-7.0.17.jar
 | BetterStructures | 2.6.3 | [Modrinth release](https://modrinth.com/plugin/betterstructures/version/2.6.3) | Paper／1.21.11 listed | LGPL-3.0-only | existing Artifact selected |
 | FreeMinecraftModels | 2.10.2 | [Modrinth release](https://modrinth.com/plugin/free-minecraft-models/version/sQDrL88L) | Paper／1.21.11 listed | GPL-3.0-only | existing Artifact selected |
 | ResourcePackManager | 2.3.0 | [Modrinth project](https://modrinth.com/plugin/resourcepackmanager) | Paper／1.21.11 listed | LGPL-3.0-only | existing Artifact selected |
-| CoreProtect CE | 24.0 | [Modrinth release](https://modrinth.com/plugin/coreprotect/version/24.0) | Paper／1.21.11 listed | Artistic-2.0 | selected-for-later-validation |
+| CoreProtect CE | 24.0 | [Modrinth release](https://modrinth.com/plugin/coreprotect/version/24.0) | Paper／1.21.11 listed | Artistic-2.0 | Artifact candidate for later validation; product unselected |
 | BetterHealthBar3 | 4.1.0 | [Spigot resource](https://www.spigotmc.org/resources/116619/) | User-owned release; JAR includes adapters through 1.21 R7 and 26 R2 | premium account-bound terms | selected, runtime validation required |
 
 MNP 5.0.5は現行MainとVersionを揃えるUser判断により選定した。Worlds Beyondは
@@ -140,7 +163,7 @@ lvl
 total_xp
 ```
 
-GameModeはMVI share keyとして確認できず、Theme間の自動共有対象にしない。Potion、Bed Spawn、Location、Advancement、Recipe、Statistics、Economyも初期共有しない。World切替、Death／Respawn、Reconnect、Shutdown、EliteMobs InstanceのWildcard／API登録はOrder 11／12の詳細試験へ送る。
+GameModeはMVI share keyとして確認できず、Theme間の自動共有対象にしない。Potion、Bed Spawn、Location、Advancement、Recipe、Statistics、Economyも初期共有しない。World切替、Death／Respawn、Reconnect、Shutdown、EliteMobs InstanceのWildcard／API登録はOrder 12／13の詳細試験へ送る。
 
 通常Player Stateの唯一のRuntime正本はMVIであり、Wayfarer_FrontierがInventoryをMariaDBへ再実装しない。
 
@@ -199,7 +222,7 @@ EliteMobs Engine 10.7.3と次の三Content Artifactを静的確認した。
 | Free Elite Shrines | `free-elite-shrines-free-elite-shrines.zip` | version 9 |
 | Dungeoneering Modules Free | `dungeoneering-modules-free-dungeoneering-modules-free.zip` | version 2 |
 
-[Official EliteMobs documentation](https://wiki.nightbreak.io/EliteMobs/dungeon_packager/) states current dungeon packages are world-based. Consequently、MVI static membership、Regex/API handling、fixed/cloned/temporary lifecycle、disconnect/reconnect behavior and backup ownership cannot be inferred from Concept names alone. These are Order 12 acceptance items.
+[Official EliteMobs documentation](https://wiki.nightbreak.io/EliteMobs/dungeon_packager/) states current dungeon packages are world-based. Consequently、MVI static membership、Regex/API handling、fixed/cloned/temporary lifecycle、disconnect/reconnect behavior and backup ownership cannot be inferred from Concept names alone. These are Order 13 acceptance items.
 
 Phase AではServerを起動できないため`/em setup`も実行しない。Adventurer's Guild
 だけは、後続OrderでUserが公式Linkから取得してからExact Artifact Lockする。
@@ -213,7 +236,7 @@ Existing JARs and five Content inputs are hash-verified and may be reused as can
 - unknown world default false
 - `frontier_gate`、Worlds Beyond、Guild、Primis、EM Instanceではoff
 - full `103 Default Structures` pack is rejected for initial Frontier
-- exact Structure ID、enablement、weight、separationはOrder 13
+- exact Structure ID、enablement、weight、separationはOrder 14
 - Main normalization output／Runtime ConfigはCopyしない
 - premium／account-bound Packの別Backend利用権はUser confirmation required
 
@@ -223,23 +246,24 @@ Existing Main priority is `ResourcePackManager > FreeMinecraftModels > BetterStr
 
 | Namespace／ID | Source A | Source B | Static result | Resolution owner |
 | --- | --- | --- | --- | --- |
-| BetterStructures Prop model IDs | existing FMM input | Frontier reuse | Backend-separated; Client switch test required | Order 11 |
-| CustomModelData／Item Model Component | missing EliteMobs | missing LeafGrapple | unresolved | Order 11 |
-| Font／Shader | BetterHealthBar 4.1.0 | future combined pack | generated input selected; collision inspection pending | Order 11 |
-| Model／Texture path | FMM／BS | missing Elite content | unresolved | Order 11 |
-| `pack.mcmeta` | all inputs | RPM generated output | generation deferred | RPM／Order 11 |
+| BetterStructures Prop model IDs | existing FMM input | Frontier reuse | Backend-separated; Client switch test required | Order 12 |
+| CustomModelData／Item Model Component | missing EliteMobs | missing LeafGrapple | unresolved | Order 12 |
+| Font／Shader | BetterHealthBar 4.1.0 | future combined pack | generated input selected; collision inspection pending | Order 12 |
+| Model／Texture path | FMM／BS | missing Elite content | unresolved | Order 12 |
+| `pack.mcmeta` | all inputs | RPM generated output | generation deferred | RPM／Order 12 |
 
 [ResourcePackManager official description](https://modrinth.com/plugin/resourcepackmanager) states that duplicate model IDs and GUI font conflicts are resolved by priority rather than semantically merged, and Java players receive backend packs on server switch. Therefore missing inputs must be inspected and a Lobby→Frontier→Main switch test is mandatory.
 
-Order 8では最終ZIP、URL、SHA-1、SHA-256、Sizeを生成しない。Self-host Portを開かず、temporary remote hostingもOrder 11の明示的受入時だけ使用する。
+Order 8では最終ZIP、URL、SHA-1、SHA-256、Sizeを生成しない。Self-host Portを開かず、temporary remote hostingもOrder 12の明示的受入時だけ使用する。
 
 BetterHealthBar 4.1.0のDefault ConfigはSelf-hostを有効にしPort 8163を使うため、
-Order 11ではSelf-hostを無効化し、生成されるFont／ShaderをFrontierのRPM Packへ
+Order 12ではSelf-hostを無効化し、生成されるFont／ShaderをFrontierのRPM Packへ
 統合する。Order 8ではConfig生成、Port開放、Pack Buildを行わない。
 
 ## History／rollback decision
 
-CoreProtect CE 24.0を`selected-for-later-validation`とする。
+FrontierのBlock History／Rollback製品は未選定とする。CoreProtect CE 24.0は
+`artifact-candidate-for-later-validation`であり、製品採用を意味しない。
 
 - Official metadata includes Paper 1.21.11.
 - Existing JAR and SHA-256 are known.
@@ -265,7 +289,7 @@ Dynamic／temporary EliteMobs Instanceは、LifecycleとCleanupが確定する�
 | Resource Pack inputs | Artifact／Config | ignored inputs + tracked Lock | Pack backup | before publish | Backend-specific |
 | Waystone／Discovery | future Wayfarer_Frontier | future MariaDB | custom backup | migration first | Worlds Beyond only |
 | Audit／Transaction | future Wayfarer_Core | future MariaDB | custom backup | migration first | approved scope |
-| History | CoreProtect candidate | storage pending | separate owner | after world／DB restore | Frontier only |
+| History | product unselected; CoreProtect 24.0 is an Artifact candidate | storage pending | separate owner | after world／DB restore | Frontier only |
 
 RedisをInventory、Theme StateまたはEliteMobs Itemの正本にしない。
 
@@ -275,20 +299,23 @@ Order 8はPermissionを変更しない。
 
 - Temporary Admin only: MVI／MNP／Gate／Iris／EliteMobs／BetterStructures／FMM／RPM／History／DB／World lifecycle administration
 - General Player: approved Gate traversal、Theme gameplay、approved GUI only
-- Builder: no new node; exact minimum allowlist is deferred to Order 16／17
+- Builder: no new node; exact minimum allowlist is deferred to Order 17／18
 - Custom Plugins: `wayfarer.core.*`／`wayfarer.frontier.*` namespaces are future design; no wildcard
 
 ## Custom Plugin contract handoff
 
 Order 8でLockする候補境界：
 
-- Wayfarer_Core／Wayfarer_Frontierは別Repository、別Release
+- 独自Plugin Sourceは一つの外部Gradle Multi-module Repositoryで管理する
+- `Wayfarer_Core`、`Wayfarer_Main`、`Wayfarer_Frontier`はV0.1.0必須Sibling Module
+- `Wayfarer_Main`はMain限定でGrowth Pickaxeを所有し、Frontierへ配置しない
+- `Wayfarer_Frontier_EliteMobsMVI`は`ADAPTER_REQUIRED`時だけ追加する独立Runtime Artifact
 - Paper 1.21.11／Java 25 target for Frontier-side integration
 - MVI、Gate、EliteMobs、RPMの機能を再実装しない
 - normal Inventory／ItemはMariaDBへ複製しない
 - Wayfarer_Frontier owns Worlds Beyond discovery／waystone domain
 - Wayfarer_Core owns approved network audit／transaction domain
-- EliteMobs Adapter necessity and API/Event contract are deferred to Order 12
+- EliteMobs Adapter necessity and API/Event contract are deferred to Order 13
 - released JAR is later manually staged, hash-locked and installed by Project Wayfarer
 
 ## License and acquisition matrix
@@ -304,9 +331,9 @@ Order 8でLockする候補境界：
 | LeafGrapple | B | Yes | MIT | verified |
 | BS／FMM／RPM JARs | D | Yes | LGPL／GPL | hash re-audited |
 | BS Content | D | Yes | package terms vary | confirm same-owner Frontier use |
-| CoreProtect | D | Yes | Artistic-2.0 | later runtime validation |
+| CoreProtect | D | Yes | Artistic-2.0 | Artifact candidate only; product unselected |
 | BetterHealthBar3 | C | Yes | premium account-bound terms | User-owned 4.1.0 selected |
-| Wayfarer_Core／Frontier | E | future | future project license | Order 9／10 |
+| Wayfarer_Core／Main／Frontier | E | future | future project license | One external multi-module Repository; Order 9～11 |
 
 ## Missing Artifact and manual action
 
@@ -326,7 +353,7 @@ User confirmation required:
 
 ## Recommended Lock Proposal
 
-Proposal: `FRONTIER-LOCK-20260726-002`
+Proposal: `FRONTIER-LOCK-20260726-003`
 
 ### Component decision table
 
@@ -334,64 +361,78 @@ Proposal: `FRONTIER-LOCK-20260726-002`
 
 | Component | Selected／Unselected | Exact Version | Official Source | License | Artifact Filename | SHA-256 | Compatibility | Placement | Dependencies | World scope | Persistence owner | Permission owner | Pack input | Manual acquisition | Deferred validation | Rollback boundary | Known limitation／Timing |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| MVI | Selected | 5.3.5 | Modrinth／GitHub | BSD-3-Clause | `multiverse-inventories-5.3.5.jar` | `27568B35AEA1042BAEA1FBC0D5256C17B51C596B8F2D166BE35BA1F77E6847A9` | Paper 1.21.11／Java 25 runtime-unverified | Frontier | MV-Core 5.7.2 | all Frontier via 3 groups | MVI | Admin | No | No | Order 11 | restore MVI before join | Static metadata verified |
-| MNP | Selected | 5.0.5 | Modrinth／GitHub | BSD-3-Clause | `multiverse-netherportals-5.0.5.jar` | `7D6364A2B474C2D3C4F8F8C5DCD469D9DE5A5F6F64C43DA39B648C3877AD077D` | Paper 1.21.11／Java 25 runtime-unverified | Frontier | MV-Core 5.7.2 | Ruined Frontier family only | MNP Config + worlds | Admin | No | No | Order 11 | restore Config with worlds | Main version parity |
-| Advanced Portals | Selected | 2.8.0-spigot | Modrinth／Codeberg | LGPL-3.0-only | `advanced-portals-2.8.0-spigot.jar` | `ABD3E4BE48C1F34BC60530AAA344AB8BFFD4146281B8AD33FC83628C93E7287D` | Paper 1.21.11／26.2 and Velocity listed | Proxy + 3 Paper | none declared | backend Gate only | Plugin Config | Admin; traversal General | No | No | Order 11／16 | previous Config + disable Gates | Runtime enablement pending |
-| Iris Engine | Selected | 3.9.2 | GitHub／Volmit | GPL-3.0 | `Iris-3.9.2-1.20.1-1.21.11.jar` | `46E3CD36B08EE6B24B6EC0ECC38379BEF82DADB861DDEBC10E0E338FDB7A7757` | 1.20.1–1.21.11／Java 21+ | Frontier | none declared | `frontier_iris` only | Iris Artifact + world | Admin | Pack input | No | Order 14 | restore locked Engine／Pack／world | Runtime generation pending |
-| Iris Overworld Pack | Selected | version 4000 snapshot | IrisDimensions GitHub | Unlicense | `overworld-master.zip` | `0FA29D96D07B19EDBA3EFCA8E10DCEAAE24E94C7651C1ED888E54FA358144056` | static verified; runtime unverified | Frontier Iris pack | Iris 3.9.2 | `frontier_iris` only | locked Pack + world | Admin | Yes | No | Order 14 | restore exact Pack before world load | No Worlds Beyond Nether／End |
-| LeafGrapple | Selected | 1.0.2 | Modrinth／GitHub | MIT | `LeafGrapple.jar` | `FFE4B3305BB48737E1B6C373698FEFE7121B879FD5B9399F930F5023B5F78833` | Paper 1.21.11 listed／Java runtime-unverified | Frontier | none declared | Worlds Beyond only | Plugin Config／Item PDC | Custom Plugin + Admin | Yes | No | Order 14 | disable Plugin and reject Theme item | Defaults require boundary tuning |
-| EliteMobs | Selected | 10.7.3 | Modrinth／GitHub | GPL-3.0-only | `EliteMobs.jar` | `688E93033A36F4168B2F69B8A65921FBB36AFFC047AA9534027724A2E5DA674E` | Paper 1.21.11 listed／Java runtime-unverified | Frontier | WE／WG | Guild／RF／Primis／approved Instance | Plugin storage + Content worlds | Admin／adopted player nodes | Yes | No | Order 12／13 | restore Content and Plugin data together | Guild Artifact deferred |
-| Elite Content | Selected with Guild deferral | exact recorded versions except Guild | Nightbreak／MagmaGuy | per-package terms | three exact filenames + Guild pending | three hashes recorded; Guild pending | Engine/content runtime-unverified | Frontier imports | EliteMobs／FMM as applicable | Guild／Primis／RF／Instance | Package + worlds + Plugin data | Admin | Yes | Guild only | Order 11／12／13 | package-specific restore | `/em setup` required for Guild Link |
-| BetterStructures | Selected | 2.6.3 | Modrinth／GitHub | LGPL-3.0-only | `BetterStructures.jar` | `AA63FEF786CD55663BFF832BBD60C01C55C6E3A18603201C6D48FBA025782038` | Paper 1.21.11 listed／Java runtime-unverified | Frontier | WE 7.4.4 | `frontier_bs*` only | Plugin data + worlds | Admin | Yes | No | Order 13 | remove from allowlist; no retrofit | Locked after Proposal approval |
-| BS Content set | Selected pending terms | v6／v2／v1／v3 + Prop | Nightbreak／existing user-owned | per-package terms | exact existing names | recorded in inventory | Engine runtime-unverified | Frontier BS imports | BS／FMM | `frontier_bs*` only | ignored originals + generated working copy | Admin | Yes | license confirmation | Order 13 | exact original archives | Premium same-owner use confirmation |
-| FMM | Selected | 2.10.2 | Modrinth／GitHub | GPL-3.0-only | `FreeMinecraftModels.jar` | `3369C5EFE385B86460C2A596AB6284FF387874FB846669939B52486659327274` | Paper 1.21.11 listed／Java runtime-unverified | Frontier | none | backend asset service | FMM Content/output | Admin | Yes | No | Order 11 | restore Content and output | Independent Frontier output |
-| RPM | Selected | 2.3.0 | Modrinth／GitHub | LGPL-3.0-only | `ResourcePackManager.jar` | `240809E885F37866EEB756854958B549C947CC7AEE078269DB0CDB18D97F1F64` | Paper 1.21.11 listed／Java runtime-unverified | Frontier | pack inputs | backend pack service | RPM Config/output | Admin | Yes | No | Order 11 | previous verified ZIP／Config | URL/hash generated later |
-| CoreProtect | Selected for validation | 24.0 | Modrinth／GitHub | Artistic-2.0 | `CoreProtect-CE-24.0.jar` | `66CD362089BB8430E5A018EE77E9B433BF0DC9E65590D5F1A043A78D60415696` | Paper 1.21.11 listed／Java runtime-unverified | Frontier | optional MariaDB | persistent known worlds; no dynamic Instance | CoreProtect DB | Admin | No | No | separate history task | disable Plugin; DB remains separate | Not a backup replacement |
-| BetterHealthBar3 | Selected user-owned | 4.1.0 | Spigot | premium account-bound terms | `BetterHealthBar-4.1.0.jar` | `BA78BDC0A293A8516155D6334437881C4E92D3C4F1D786AB38064EA5B032D5F6` | static adapters through 1.21 R7; runtime-unverified | Frontier | soft PAPI／ModelEngine／MythicMobs | Guild／RF／Primis／approved Instance | Plugin Config／RPM Pack | Admin | Yes | No | Order 11 + RF smoke | disable self-host; restore Pack／Config | No Port 8163 |
-| Wayfarer_Core | Future | Order 9 release | future separate repository | future | future | future | target contracts only | later manual integration | approved APIs only | network approved scope | future MariaDB | `wayfarer.core.*` | optional own assets | future | Order 9 | release-specific | Deferred to Order 9 |
-| Wayfarer_Frontier | Future | Order 10 release | future separate repository | future | future | future | Paper 1.21.11／Java 25 target | Frontier | MVI/AP/EM/RPM APIs | fail-closed allowlist | future MariaDB; never normal inventory | `wayfarer.frontier.*` | own assets | future | Order 10／12 | release-specific | Deferred to Order 10 |
+| MVI | Selected | 5.3.5 | Modrinth／GitHub | BSD-3-Clause | `multiverse-inventories-5.3.5.jar` | `27568B35AEA1042BAEA1FBC0D5256C17B51C596B8F2D166BE35BA1F77E6847A9` | Paper 1.21.11／Java 25 runtime-unverified | Frontier | MV-Core 5.7.2 | all Frontier via 3 groups | MVI | Admin | No | No | Order 12 | restore MVI before join | Static metadata verified |
+| MNP | Selected | 5.0.5 | Modrinth／GitHub | BSD-3-Clause | `multiverse-netherportals-5.0.5.jar` | `7D6364A2B474C2D3C4F8F8C5DCD469D9DE5A5F6F64C43DA39B648C3877AD077D` | Paper 1.21.11／Java 25 runtime-unverified | Frontier | MV-Core 5.7.2 | Ruined Frontier family only | MNP Config + worlds | Admin | No | No | Order 12 | restore Config with worlds | Main version parity |
+| Advanced Portals | Selected | 2.8.0-spigot | Modrinth／Codeberg | LGPL-3.0-only | `advanced-portals-2.8.0-spigot.jar` | `ABD3E4BE48C1F34BC60530AAA344AB8BFFD4146281B8AD33FC83628C93E7287D` | Paper 1.21.11／26.2 and Velocity listed | Proxy + 3 Paper | none declared | backend Gate only | Plugin Config | Admin; traversal General | No | No | Order 12／17 | previous Config + disable Gates | Runtime enablement pending |
+| Iris Engine | Selected | 3.9.2 | GitHub／Volmit | GPL-3.0 | `Iris-3.9.2-1.20.1-1.21.11.jar` | `46E3CD36B08EE6B24B6EC0ECC38379BEF82DADB861DDEBC10E0E338FDB7A7757` | 1.20.1–1.21.11／Java 21+ | Frontier | none declared | `frontier_iris` only | Iris Artifact + world | Admin | Pack input | No | Order 15 | restore locked Engine／Pack／world | Runtime generation pending |
+| Iris Overworld Pack | Selected | version 4000 snapshot | IrisDimensions GitHub | Unlicense | `overworld-master.zip` | `0FA29D96D07B19EDBA3EFCA8E10DCEAAE24E94C7651C1ED888E54FA358144056` | static verified; runtime unverified | Frontier Iris pack | Iris 3.9.2 | `frontier_iris` only | locked Pack + world | Admin | Yes | No | Order 15 | restore exact Pack before world load | No Worlds Beyond Nether／End |
+| LeafGrapple | Selected | 1.0.2 | Modrinth／GitHub | MIT | `LeafGrapple.jar` | `FFE4B3305BB48737E1B6C373698FEFE7121B879FD5B9399F930F5023B5F78833` | Paper 1.21.11 listed／Java runtime-unverified | Frontier | none declared | Worlds Beyond only | Plugin Config／Item PDC | Custom Plugin + Admin | Yes | No | Order 15 | disable Plugin and reject Theme item | Defaults require boundary tuning |
+| EliteMobs | Selected | 10.7.3 | Modrinth／GitHub | GPL-3.0-only | `EliteMobs.jar` | `688E93033A36F4168B2F69B8A65921FBB36AFFC047AA9534027724A2E5DA674E` | Paper 1.21.11 listed／Java runtime-unverified | Frontier | WE／WG | Guild／RF／Primis／approved Instance | Plugin storage + Content worlds | Admin／adopted player nodes | Yes | No | Order 13／14 | restore Content and Plugin data together | Guild Artifact deferred |
+| Elite Content | Selected with Guild deferral | exact recorded versions except Guild | Nightbreak／MagmaGuy | per-package terms | three exact filenames + Guild pending | three hashes recorded; Guild pending | Engine/content runtime-unverified | Frontier imports | EliteMobs／FMM as applicable | Guild／Primis／RF／Instance | Package + worlds + Plugin data | Admin | Yes | Guild only | Order 12／13／14 | package-specific restore | `/em setup` required for Guild Link |
+| BetterStructures | Selected | 2.6.3 | Modrinth／GitHub | LGPL-3.0-only | `BetterStructures.jar` | `AA63FEF786CD55663BFF832BBD60C01C55C6E3A18603201C6D48FBA025782038` | Paper 1.21.11 listed／Java runtime-unverified | Frontier | WE 7.4.4 | `frontier_bs*` only | Plugin data + worlds | Admin | Yes | No | Order 14 | remove from allowlist; no retrofit | Locked after Proposal approval |
+| BS Content set | Selected pending terms | v6／v2／v1／v3 + Prop | Nightbreak／existing user-owned | per-package terms | exact existing names | recorded in inventory | Engine runtime-unverified | Frontier BS imports | BS／FMM | `frontier_bs*` only | ignored originals + generated working copy | Admin | Yes | license confirmation | Order 14 | exact original archives | Premium same-owner use confirmation |
+| FMM | Selected | 2.10.2 | Modrinth／GitHub | GPL-3.0-only | `FreeMinecraftModels.jar` | `3369C5EFE385B86460C2A596AB6284FF387874FB846669939B52486659327274` | Paper 1.21.11 listed／Java runtime-unverified | Frontier | none | backend asset service | FMM Content/output | Admin | Yes | No | Order 12 | restore Content and output | Independent Frontier output |
+| RPM | Selected | 2.3.0 | Modrinth／GitHub | LGPL-3.0-only | `ResourcePackManager.jar` | `240809E885F37866EEB756854958B549C947CC7AEE078269DB0CDB18D97F1F64` | Paper 1.21.11 listed／Java runtime-unverified | Frontier | pack inputs | backend pack service | RPM Config/output | Admin | Yes | No | Order 12 | previous verified ZIP／Config | URL/hash generated later |
+| CoreProtect | Artifact candidate; product unselected | 24.0 | Modrinth／GitHub | Artistic-2.0 | `CoreProtect-CE-24.0.jar` | `66CD362089BB8430E5A018EE77E9B433BF0DC9E65590D5F1A043A78D60415696` | Paper 1.21.11 listed／Java runtime-unverified | Not placed | optional MariaDB | none until separate selection | none | Admin if adopted | No | No | separate history task | no Runtime change | Not adopted; not a backup replacement |
+| BetterHealthBar3 | Selected user-owned | 4.1.0 | Spigot | premium account-bound terms | `BetterHealthBar-4.1.0.jar` | `BA78BDC0A293A8516155D6334437881C4E92D3C4F1D786AB38064EA5B032D5F6` | static adapters through 1.21 R7; runtime-unverified | Frontier | soft PAPI／ModelEngine／MythicMobs | Guild／RF／Primis／approved Instance | Plugin Config／RPM Pack | Admin | Yes | No | Order 12 + Order 14 smoke | disable self-host; restore Pack／Config | No Port 8163 |
+| Wayfarer_Core | Future | Order 9 release | one future external multi-module repository | future | future | future | target contracts only | Main + Frontier | approved APIs only | network approved scope | future MariaDB | `wayfarer.core.*` | optional own assets | future | Order 9 | release-specific | Deferred to Order 9 |
+| Wayfarer_Main | Future | Order 10 release | same future external multi-module repository | future | future | future | Paper 26.2／Java 25 target | Main only | Core／economy contracts | Main Growth Pickaxe only | `wf_main_*` MariaDB | `wayfarer.main.*` | optional own assets | future | Order 10 | release-specific | Never placed on Frontier |
+| Wayfarer_Frontier | Future | Order 11 release | same future external multi-module repository | future | future | future | Paper 1.21.11／Java 25 target | Frontier | MVI/AP/EM/RPM APIs | fail-closed allowlist | future MariaDB; never normal inventory | `wayfarer.frontier.*` | own assets | future | Order 11／13 | release-specific | Deferred to Order 11 |
+| Wayfarer_Frontier_EliteMobsMVI | Conditional future | only if `ADAPTER_REQUIRED` | same future external multi-module repository | future | future | future | Frontier target | Frontier only if required | MVI／EliteMobs contract | approved Instance registration only | audit／reconcile only | dedicated namespace | No | future | Order 13 | remove Artifact and registrations | Independent Runtime Plugin, not an internal Frontier module |
 
 | Area | Recommendation | Lock timing |
 | --- | --- | --- |
 | Baseline | Paper 1.21.11 build 132／Java 25／frontier_gate | Locked now |
-| MVI | 5.3.5, groups `neutral`／`worlds_beyond`／`guild`, explicit shares | static locked; runtime Order 11 |
-| MNP | 5.0.5, Ruined Frontier portal family only | static locked; runtime Order 11 |
-| Gate | Advanced Portals 2.8.0 using `proxy:` | static locked; runtime Order 11／16 |
-| Iris | Engine 3.9.2 + Overworld Pack; `frontier_iris` only | static locked; runtime Order 14 |
-| LeafGrapple | 1.0.2, Worlds Beyond only | static locked; runtime Order 14 |
-| EliteMobs | 10.7.3 + specified Content set | Guild Artifact deferred to Order 11／12 |
+| MVI | 5.3.5, groups `neutral`／`worlds_beyond`／`guild`, explicit shares | static locked; runtime Order 12 |
+| MNP | 5.0.5, Ruined Frontier portal family only | static locked; runtime Order 12 |
+| Gate | Advanced Portals 2.8.0 using `proxy:` | static locked; runtime Order 12／17 |
+| Iris | Engine 3.9.2 + Overworld Pack; `frontier_iris` only | static locked; runtime Order 15 |
+| LeafGrapple | 1.0.2, Worlds Beyond only | static locked; runtime Order 15 |
+| EliteMobs | 10.7.3 + specified Content set | Guild Artifact deferred to Order 12／13 |
 | BetterStructures | 2.6.3 + four Structure packs + Prop pack; no full 103 | after license confirmation |
 | FMM／RPM | 2.10.2／2.3.0, independent Frontier output | selected existing |
-| BetterHealthBar3 | User-owned 4.1.0; disable self-host and merge Pack | runtime Order 11 |
-| History | CoreProtect 24.0 | selected-for-later-validation |
-| Custom Plugins | external repositories and authority boundaries | Order 9／10 |
-| Gate coordinates／Builder nodes | no exact values | Order 16／17 |
+| BetterHealthBar3 | User-owned 4.1.0; disable self-host and merge Pack | runtime Order 12 |
+| History | Product unselected; CoreProtect 24.0 Artifact candidate | separate selection and validation |
+| Custom Plugins | one external multi-module Repository; Core／Main／Frontier required | Order 9～11 |
+| Conditional Adapter | independent Artifact only if `ADAPTER_REQUIRED` | Order 13 |
+| Gate coordinates／Builder nodes | no exact values | Order 17／18 |
 
-Revision 002の正式Approvalは、Adventurer's GuildのExact Artifact Lockを
-Order 11／12へ繰り越す既知の例外を含む。後続の公式`/em setup` Flowで得た
+Revision 003の正式Approvalは、Adventurer's GuildのExact Artifact Lockを
+Order 12／13へ繰り越す既知の例外を含む。後続の公式`/em setup` Flowで得た
 Artifactが要件に合わない場合は、Guild部分を新ProposalへRevisionし、Runtime
 導入を停止する。既存user-owned premium Contentの同一Owner利用条件も維持する。
 
 Reserved approval token:
 
 ```text
-APPROVE-WAYFARER-FRONTIER-LOCK:FRONTIER-LOCK-20260726-002
+APPROVE-WAYFARER-FRONTIER-LOCK:FRONTIER-LOCK-20260726-003
 ```
 
-このTokenはRevision 002全体と、Adventurer's Guild Artifactだけを後続Orderへ
-繰り越す例外へのExact Approvalを表す。Proposal 001のTokenは無効である。
+このTokenはRevision 003全体と、Adventurer's Guild Artifactだけを後続Orderへ
+繰り越す例外へのExact Approvalを表す。Proposal 001／002のTokenは無効であり、
+Proposal 002のTokenは実行されていない。
 
 ## Deferred validation and implementation order
 
 ```text
-Order 9  Wayfarer_Core formal design / repository / release
-Order 10 Wayfarer_Frontier formal design / repository / release
-Order 11 MVI, MNP, RPM, FMM, Pack and Gate foundation
-Order 12 EliteMobs–MVI Adapter necessity decision
-Order 13 Ruined Frontier alpha
-Order 14 Worlds Beyond MVP
-Order 15 two-Theme integration
-Order 16 final Gate and Permission lock
+Order 9  Plugin Repository foundation + Wayfarer_Core
+Order 10 Wayfarer_Main / Growth Pickaxe
+Order 11 Wayfarer_Frontier
+Order 12 Frontier shared foundation
+Order 13 EliteMobs–MVI Adapter necessity decision
+Order 14 Ruined Frontier alpha
+Order 15 Worlds Beyond MVP (`frontier_iris` only)
+Order 16 Frontier two-Theme integration
+Order 17 final Gate and Permission lock
+Order 18 Builder Phase 1B
+Order 19 User Hub / Gate construction
+Order 20 Main Spawn protection
+Order 21 Portal Routing completion
+Order 22 Resource Reset Bootstrap
+Order 23 Integrated operations
+Order 24 Cold Backup / Isolated Restore
+Order 25 V0.1.0 Pre-release Player State Reset
+Order 26 V0.1.0 Baseline
 ```
 
 ## Runtime non-change evidence

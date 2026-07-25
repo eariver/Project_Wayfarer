@@ -12,15 +12,11 @@ Frontier Backend向け独自Plugin FeatureとIntegration Decisionの現行最新
   - EliteMobs InstanceとMVI Guild Groupの連携方式を、静的登録、厳密Regex、Adapterの順に評価するDecision Gate。
   - Status: Under Review
 
-## Related concepts not included
+## Related concepts
 
-このPackageはFrontier向けPlugin Conceptだけを収録する。
+- [Plugin Concept v0.0.3](../Project_Wayfarer_Plugin_Concept_v0.0.3.md)
+- [Worlds Beyond Specification v0.0.6](../../frontier/Worlds_Beyond_Specification_V0.0.6.md)
+- [Ruined Frontier Specification v0.0.5](../../frontier/Ruined_Frontier_Specification_V0.0.5.md)
+- [Frontier Server Specification v0.0.5](../../frontier/Frontier_Server_Specification_V0.0.5.md)
 
-次はProject Wayfarer Repository側の関連文書だが、本ZIPには含めない。
-
-- `concepts/plugins/Project_Wayfarer_Plugin_Concept_v0.0.3.md`
-- `concepts/frontier/Worlds_Beyond_Specification_V0.0.6.md`
-- `concepts/frontier/Ruined_Frontier_Specification_V0.0.4.md`
-- `concepts/frontier/Frontier_Server_Specification_V0.0.4.md`
-
-Theme Concept、Runtime Config、実装作業指示書兼設計仕様書、Plugin Sourceは別管理とする。
+Theme Concept、Runtime Config、実装作業指示書兼設計仕様書およびPlugin Sourceは、それぞれのAuthority境界で管理する。

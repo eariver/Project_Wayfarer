@@ -31,11 +31,14 @@
 |Adventure|Frontier|EliteMobs|計画・未導入|servers/frontier/plugins|https://modrinth.com/plugin/elitemobs|Content Packは別途|
 |Structure|Frontier Ruined|BetterStructures|正式Scope・未導入|servers/frontier/plugins|https://modrinth.com/plugin/betterstructures|Ruined Frontier三次元、EliteMobs連携、Artifact／Contentは別タスクでLock|
 |World / State|Frontier|Multiverse-Inventories|正式Scope・未導入|servers/frontier/plugins||`neutral`／`worlds_beyond`／`guild`、通常Player State正本|
-|World Generator|Frontier Worlds Beyond|Iris Engine／Pack|正式Scope・未導入|別タスクで確定||三次元、PEACEFUL、Seed／Border／World ID／License／HashをLock|
+|World / Portal|Frontier Ruined|Multiverse-NetherPortals 5.0.5|Phase A候補・未導入|servers/frontier/plugins|https://modrinth.com/plugin/multiverse-netherportals|Ruined Frontier三次元だけ。Worlds Beyondでは使用しない|
+|World Generator|Frontier Worlds Beyond|Iris Engine／Overworld Pack|Phase A候補・未導入|別タスクで確定||`frontier_iris`単一Overworld、PEACEFUL、Seed／Border／License／HashをLock。Nether／Endなし|
 |Model / Pack|Frontier|ResourcePackManager|正式Scope・未導入|servers/frontier/plugins||Mainとは別Pack、Version／Hosting／Hash／切替／失敗時挙動／Rollbackを別途Lock|
-|External Custom|Network|Wayfarer_Core|正式Scope・未開発|別Repository||V0.1.0 Blocker、本RepositoryへSourceを置かない|
-|External Custom|Frontier|Wayfarer_Frontier|正式Scope・未開発|別Repository||V0.1.0 Blocker、MVI通常Inventoryを再実装しない|
-|Administration|Main／Lobby; Frontier undecided|CoreProtect|延期・未導入|別タスクで再評価||Main／LobbyはMinecraft 26.2対応Stable版待ちでNon-blocking。Frontier採否はOrder 8以降、将来RollbackはAdmin-only、Cold Backup代替不可|
+|External Custom|Network|Wayfarer_Core|正式Scope・未開発|外部Multi-module Repository||V0.1.0 Blocker、本RepositoryへSourceを置かない|
+|External Custom|Main|Wayfarer_Main|正式Scope・未開発|外部Multi-module Repository||V0.1.0 Blocker、Main限定Growth Pickaxe|
+|External Custom|Frontier|Wayfarer_Frontier|正式Scope・未開発|外部Multi-module Repository||V0.1.0 Blocker、MVI通常Inventoryを再実装しない|
+|External Custom|Frontier|Wayfarer_Frontier_EliteMobsMVI|条件付き・未開発|外部Multi-module Repository||`ADAPTER_REQUIRED`時だけ独立Artifact|
+|Administration|Main／Lobby; Frontier undecided|CoreProtect|延期／候補・未導入|別タスクで再評価||Main／LobbyはMinecraft 26.2対応Stable版待ちでNon-blocking。Frontierは24.0静的候補だが製品未採用、将来RollbackはAdmin-only、Cold Backup代替不可|
 |Administration / Development|All Paper|PlugManX|計画・未導入|各Paper plugins|https://modrinth.com/plugin/plugmanx|Version未選定、手動取得、Admin-only、Velocity対象外|
 |Deferred|Velocity|Cross-server chat|選定中|未配置||PoC後に選定|
 |Forbidden|Velocity|ViaBackwards|禁止|配置しない|https://modrinth.com/plugin/viabackwards|意図的に不採用|

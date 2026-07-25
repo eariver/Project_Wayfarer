@@ -28,6 +28,60 @@ planned_unplaced:
     administration: admin-only-no-builder-rollback
     cold-backup-replacement: false
     jar: manual-acquisition-after-version-selection
+
+custom_plugin_plan:
+  repository:
+    model: one-external-gradle-multi-module-repository
+    status: planned-not-created
+    exact-name: unselected
+  required:
+    - name: Wayfarer_Core
+      status: planned-not-installed
+      placement:
+        - main
+        - frontier
+      version: unselected
+    - name: Wayfarer_Main
+      status: planned-not-installed
+      placement:
+        - main
+      excluded-placement:
+        - velocity
+        - lobby
+        - frontier
+      purpose: Main-only Growth Pickaxe
+      version: unselected
+    - name: Wayfarer_Frontier
+      status: planned-not-installed
+      placement:
+        - frontier
+      version: unselected
+  conditional:
+    - name: Wayfarer_Frontier_EliteMobsMVI
+      status: conditional-not-developed
+      condition: ADAPTER_REQUIRED
+      placement:
+        - frontier
+      artifact-boundary: independent-runtime-plugin
+      version: unselected
+
+frontier_lock_candidate:
+  proposal-id: FRONTIER-LOCK-20260726-003
+  previous-proposal: FRONTIER-LOCK-20260726-002
+  previous-status: superseded-before-approval
+  phase-b: not-authorized
+  approval-token-received: false
+  status: candidate
+  runtime-validation: deferred
+  worlds-beyond:
+    world: frontier_iris
+    generator: Iris Overworld only
+    nether-end: absent
+    mnp: disabled
+  ruined-frontier:
+    dimensions: overworld-nether-end
+    mnp: planned-5.0.5-family-local
+
 velocity:
   required:
     - name: LuckPerms

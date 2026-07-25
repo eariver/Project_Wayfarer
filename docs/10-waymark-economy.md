@@ -175,7 +175,7 @@ Change prices only through a reviewed Config change followed by YAML and Paper M
 
 Prices are intentionally conservative and may be adjusted after observing normal resource production, purchase demand, inflation, and progression pace. A future adjustment must continue to check direct buy/sell spreads and obvious crafting, smelting, and stonecutting arbitrage.
 
-For V0.1.0, the Main Vanilla-material Shop and EvenMoreFish fish sales remain the implemented Waymark sources/uses. Worlds Beyond adds an initial Frontier WM Shop as a planned V0.1.0 use. Its exact catalog, prices, transaction idempotency, and acceptance are locked during Wayfarer_Frontier implementation.
+For V0.1.0, the Main Vanilla-material Shop and EvenMoreFish fish sales remain the implemented Waymark sources/uses. Wayfarer_Main adds Growth Pickaxe Full Repair as a planned Main-only WM use through the supported Waymark Adapter. Its exact price and Config remain an implementation lock; every repair requires a Transaction ID, idempotency, double-charge prevention, and Refund／Reconcile handling without direct RedisEconomy key access. Worlds Beyond adds an initial Frontier WM Shop as a planned V0.1.0 use. Its exact catalog, prices, transaction idempotency, and acceptance are locked during Wayfarer_Frontier implementation.
 
 Ruined Frontier Boss／Quest WM rewards remain a later balance lock and are not enabled by this document. Theme equipment is not converted to WM and no initial WM sale path may be used to move Theme items across a backend or MVI boundary.
 

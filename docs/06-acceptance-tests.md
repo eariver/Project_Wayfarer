@@ -51,7 +51,7 @@ Phase 1A complete:
 
 Phase 1B incomplete:
 
-- [ ] Builder WorldEdit, gamemode, teleport, and Multiverse-Core access is scoped to the approved Lobby／Main／Frontier commands; Multiverse-NetherPortals is Main-only.
+- [ ] Builder WorldEdit, gamemode, teleport, and Multiverse-Core access is scoped to the approved Lobby／Main／Frontier commands; Multiverse-NetherPortals access is limited to explicitly approved Main and Ruined Frontier work.
 - [ ] Builder Phase 1B keeps WorldGuard Region and Velocity administration, LuckPerms/economy/player-punishment/server-stop authority, unrestricted wildcards, destructive World lifecycle operations, and reload/debug/internal administration excluded.
 - [ ] Builder Survival cleanup is repeated after the Phase 1B gamemode allowlist exists.
 
@@ -70,6 +70,42 @@ Phase 1B incomplete:
 - [ ] After the user substantially completes the initial Hub, an approved exact Main Spawn WorldGuard Region denies general building, permits only intended public use, preserves Builder member building without Region administration, and persists after restart.
 - [ ] Vanilla `spawn-protection` remains 16 until the Main Spawn Region passes acceptance; a separately approved change to 0 then avoids double protection without weakening the Region boundary.
 
+### Wayfarer_Main／Growth Pickaxe
+
+Artifact／Repository:
+
+- [ ] One external Gradle Multi-module Repository records Wayfarer_Main release provenance, exact Version, SHA-256, Source Commit, Migration Version, and Config Version.
+- [ ] Wayfarer_Main is placed only on Main; Lobby／Frontier do not contain it, and its JAR, Secrets, and Runtime Data remain untracked.
+
+Async Join／Delivery and identity:
+
+- [ ] Join handling performs no Main-thread DB I/O, loads the Player record asynchronously, and grants exactly one initial Tool through a race-safe unique constraint.
+- [ ] Inventory-full delivery never drops the Tool; the Player is notified, Console records WARN, and Pending Delivery can be inspected／retried by Admin.
+- [ ] Logout prevents late delivery, and a delivered logical record is not automatically reissued.
+- [ ] Tool ID, Owner UUID, Item Type, Instance Epoch, and Schema Version survive restart; non-owner use／progress, Drop, Pickup, Container, Anvil, Grindstone, Smithing, Craft repair, Mending, external repair, Item Frame, Armor Stand, and Death Drop are rejected.
+- [ ] Reissue increments the Epoch and makes every older Item instance invalid.
+
+Progress and evolution:
+
+- [ ] Progress increments only for the Main Resource Worlds `resource`, `resource_nether`, and `resource_end`, only for valid `minecraft:mineable/pickaxe` blocks broken by the Main-hand canonical Tool.
+- [ ] `main`, `main_nether`, `main_the_end`, unknown Worlds, Creative／Spectator, cancelled breaks, Explosion, Piston, WorldEdit, Command, Plugin deletion, Player-placed blocks, generators, and Silk Touch re-placement／re-mining do not grant duplicate progress.
+- [ ] Survival and an actually successful Adventure break are handled according to the locked event contract.
+- [ ] Cumulative progress derives Wood → Stone → Iron → Diamond and the approved Efficiency／Unbreaking／Fortune progression through Efficiency X, Unbreaking X, and Fortune V.
+- [ ] Admin Fortune／Silk Touch switching works; Player-facing WM switching and Netherite Upgrade, Ranking, Evolution Rewards, Abilities, Cosmetics, Axe, and Shovel remain outside initial acceptance.
+
+Config, broken state, and repair:
+
+- [ ] Config recalculation preserves cumulative progress, fully re-derives Material／Enchants, permits downgrade, synchronizes Item display, does not repair by itself, and leaves an ACTIVE converted Tool with at least one durability.
+- [ ] Only actual progress-driven evolution fully repairs; unsafe hot reload is rejected.
+- [ ] A broken Tool becomes `GRAY_DYE`, cannot mine, opens the integrated GUI from a Main-hand air right-click, and preserves BROKEN／damage state across restart.
+- [ ] Waymark Full Repair reissues the canonical Tool through a Transaction ID with idempotency, double-charge prevention, Refund／Reconcile on failure, and no silent completion of UNKNOWN transactions.
+
+Persistence／boundary:
+
+- [ ] MariaDB migrations own `wf_main_*`; Session Cache, periodic Checkpoint, immediate critical-state save, Quit Flush, timeout-bounded shutdown Flush, and post-disable callback rejection avoid Main-thread DB I/O and stale writes.
+- [ ] Audit, optimistic concurrency, and Reconcile handle Pending Delivery, repair, reissue, and conflict cases.
+- [ ] Growth Pickaxe is Main-only, never transfers to Frontier, uses the Waymark Adapter rather than RedisEconomy keys, and never updates MVI, mcMMO, or EliteMobs databases directly.
+
 ### Frontier shared foundation
 
 - [ ] Exact Frontier Plugin／Content versions, licenses, hashes, World IDs, Gate method, Pack composition, persistence, and dependency order are locked.
@@ -77,8 +113,8 @@ Phase 1B incomplete:
 - [ ] Main, Frontier Lobby, Worlds Beyond, and Ruined Frontier exchange no Inventory, Armor, Offhand, Ender Chest, Vanilla or custom Item, XP, Health, or Food.
 - [ ] Waymark and mcMMO retain only their approved shared behavior without becoming an item-transfer path.
 - [ ] ResourcePackManager delivers separate Main and Frontier Packs and switches correctly across Main／Frontier backend movement and reconnect.
-- [ ] Wayfarer_Core and Wayfarer_Frontier load from separately released artifacts and satisfy their Database／API／Permission／audit contracts without storing normal Inventory.
-- [ ] Beyond and Guild Gates arrive safely, each Theme has a family-local Portal boundary, and both return safely to Frontier Lobby.
+- [ ] Wayfarer_Core, Wayfarer_Main, and Wayfarer_Frontier load from one external Gradle Multi-module Repository's separately released Runtime Artifacts and satisfy their Database／API／Permission／audit contracts without storing normal Inventory.
+- [ ] Beyond and Guild Gates arrive safely; only Ruined Frontier has a family-local Nether／End Portal boundary; Worlds Beyond portals are denied without fallback; both Themes return safely to Frontier Lobby.
 - [ ] Lobby minimum Hub, Main spawn Hub, and Frontier Gate minimum Hub are manually built and approved by the user.
 
 ### Ruined Frontier alpha
@@ -95,8 +131,10 @@ Phase 1B incomplete:
 
 ### Worlds Beyond MVP
 
-- [ ] The locked Iris Overworld, Nether, and End load as persistent Worlds at PEACEFUL with the approved Seed and World Border.
-- [ ] All three Worlds use the `worlds_beyond` MVI group and family-local Portal links.
+- [ ] The locked Iris Overworld `frontier_iris` loads as the only persistent Worlds Beyond World at PEACEFUL with the approved Seed and World Border.
+- [ ] Only `frontier_iris` belongs to MVI `worlds_beyond`; `frontier_iris_nether` and `frontier_iris_the_end` are not created, registered, or added.
+- [ ] Worlds Beyond has no MNP link; Nether／End Portal activation and travel are denied without Default／Ruined／Main／unknown-World fallback.
+- [ ] Worlds Beyond functions fail closed in every Nether, End, and unknown World.
 - [ ] Traversal Loadout, Elytra, the adopted LeafGrapple integration, and Launchpad work without duplication or use outside the approved Theme.
 - [ ] Frontier WM Shop transactions use the formal Waymark adapter and preserve idempotency／audit without accepting Theme items as cross-boundary value.
 - [ ] Waystone placement／lifecycle, Discovery GUI, and Teleport GUI operate within safe destinations and Permission limits.
@@ -109,7 +147,7 @@ Phase 1B incomplete:
 - [ ] Each Resource world -> Main spawn Hub.
 - [ ] Frontier Gate -> Worlds Beyond and Worlds Beyond -> safe Frontier Gate return.
 - [ ] Frontier Gate -> Ruined Frontier and Ruined Frontier -> safe Frontier Gate return.
-- [ ] Worlds Beyond and Ruined Frontier each retain family-local Nether／End routes without unintended crossing.
+- [ ] Ruined Frontier retains its family-local Nether／End routes; Worlds Beyond has none and cannot cross or fall back to another family.
 - [ ] Changed routes use approved exact coordinates, safe arrivals, and only their intended source/destination worlds.
 
 ### Resource reset bootstrap
@@ -122,9 +160,11 @@ Phase 1B incomplete:
 ### Operations and recoverability
 
 - [ ] `Wayfarer.ps1` implements Start, Stop, Restart, Status, and Backup; planned shutdown rejects new connections, disconnects users, stops Velocity, settles in-flight work, flushes/stops Main／Frontier／Lobby, and confirms Java process exit.
-- [ ] Cold Backup includes MariaDB dumps, stopped Redis AOF, persistent Main／Frontier Worlds, MVI Profiles, custom-Plugin data, approved Content／Pack inputs, Config, Manifest/SHA-256, and incomplete-generation safety.
+- [ ] Cold Backup includes MariaDB dumps, stopped Redis AOF, persistent Main／Frontier Worlds, MVI Profiles, custom-Plugin release Artifacts／Versions／SHA-256／Source Commits, migrations, `wf_main_*`, Growth Tool identity／epoch／progress／ACTIVE／BROKEN／Pending Delivery／repair transaction data, audit／reconcile records, approved Content／Pack inputs and outputs／hashes, Config, Test Reports, Manifest/SHA-256, and incomplete-generation safety.
+- [ ] Isolated restore verifies foundation and migrations before MVI, Worlds, custom data, Artifacts／Config, backends, and proxy, then verifies Growth Tool owner／epoch／derived state／pending delivery／repair transaction and no duplicate issuance before Player join.
 - [ ] The Backup restores successfully to an isolated target.
 - [ ] A verified V0.1.0 Baseline Backup and exact Release commit are selected; known limitations and the Tag/Release decision are recorded.
+- [ ] A separate destructive pre-release task records an explicit Owner decision to Reset or Preserve Growth Tool logical data; this documentation does not choose either option.
 
 ## 4. Future feature acceptance (not V0.1.0 Blockers)
 
@@ -137,9 +177,9 @@ Phase 1B incomplete:
 - [ ] Main teleporters validate safe destinations and any cost/Unlock/Cooldown policy.
 - [ ] Special or over-enchanted items retain meaningful normal Survival progression.
 - [ ] Any Theme beyond Ruined Frontier and Worlds Beyond has explicit routing and data boundaries.
-- [ ] PlugManX, any custom Plugin Repository beyond the required Wayfarer_Core／Wayfarer_Frontier Repositories, or LAB is introduced only under its own approved task.
+- [ ] PlugManX, any custom Plugin Repository beyond the one required Gradle Multi-module Repository, or LAB is introduced only under its own approved task.
 
-The V0.2.x custom-Plugin document under `codex/` remains non-authoritative for proposals not explicitly promoted into Ver.0.0.6. It does not satisfy Wayfarer_Core／Wayfarer_Frontier implementation checkboxes or authorize Repository／Artifact creation.
+The V0.2.x custom-Plugin document under `codex/` remains non-authoritative for proposals not explicitly promoted into Ver.0.0.6. It does not satisfy Wayfarer_Core／Main／Frontier implementation checkboxes or authorize Repository／Artifact creation.
 
 ## 5. Detailed risk-focused test expectations
 

@@ -66,7 +66,7 @@ Stop each component cleanly with `stop` before editing generated Config.
 7. Preserve the reused `default` and `wayfarer_builder`. Do not delete/recreate `wayfarer_builder`, make it a Primary Group, or break its Lobby／Frontier WorldGuard Region Member references.
 8. Keep the current Builder Role container limited to `group.default`. The former WorldEdit／WorldGuard administration wildcards are removed; membership-based protected-entry building remains.
 9. Assign Eligibility only to an explicitly approved Player. Player membership in `wayfarer_builder` or `wayfarer_admin` must be temporary; do not use permanent Role Parents or OP.
-10. Phase 1B will add the final command-focused Builder allowlist only after Ruined Frontier, Worlds Beyond, Multiverse-Inventories, ResourcePackManager, EliteMobs, Wayfarer_Core, Wayfarer_Frontier, the adopted Gate／Portal permission model, and the exact Builder-owned Hub／Gate／Theme connection work are known. Until then, do not pre-grant WorldEdit, gamemode, teleport, Multiverse, WorldGuard administration, Velocity, LuckPerms, economy, player punishment, server stop, wildcard, reload/debug/internal, or destructive World lifecycle authority.
+10. Phase 1B will add the final command-focused Builder allowlist only after Ruined Frontier, Worlds Beyond, Multiverse-Inventories, ResourcePackManager, EliteMobs, Wayfarer_Core, Wayfarer_Main, Wayfarer_Frontier, any conditional Adapter, the adopted Gate／Portal permission model, and the exact Builder-owned Hub／Gate／Theme connection work are known. Until then, do not pre-grant WorldEdit, gamemode, teleport, Multiverse, WorldGuard administration, Velocity, LuckPerms, economy, player punishment, server stop, wildcard, reload/debug/internal, or destructive World lifecycle authority.
 
 ## Phase 6 - Lobby
 
@@ -103,10 +103,10 @@ mcMMO 2.3.000 is installed only on Main and Frontier from the same local Maven b
 The following Frontier work is approved for V0.1.0 but not installed:
 
 1. Lock exact Plugin／Content versions, licenses, hashes, World IDs, Gate method, Pack, persistence, and dependencies.
-2. Design, create separate Repositories for, develop, release, and integrate Wayfarer_Core and Wayfarer_Frontier under dedicated tasks.
-3. Install the shared foundation, including MVI `neutral`／`worlds_beyond`／`guild`, Frontier ResourcePackManager, and the Beyond／Guild Gate boundary.
-4. Determine whether EliteMobs Instances can use MVI static registration or strict Regex before authorizing an Adapter.
-5. Implement and verify both Ruined Frontier alpha and Worlds Beyond MVP.
+2. Design one external Gradle Multi-module Repository, then develop, release, and integrate Wayfarer_Core, Main, and Frontier under dedicated tasks. Wayfarer_Main and its Growth Pickaxe are Main-only.
+3. Install the shared Frontier foundation, including MVI `neutral`／`worlds_beyond`／`guild`, Ruined-only MNP 5.0.5, Frontier ResourcePackManager, and the Beyond／Guild Gate boundary.
+4. Determine whether EliteMobs Instances can use MVI static registration or strict Regex before authorizing the independent `Wayfarer_Frontier_EliteMobsMVI` Artifact.
+5. Implement and verify both Ruined Frontier alpha and the single-World `frontier_iris` Worlds Beyond MVP. Do not create Worlds Beyond Nether／End Worlds or MNP links.
 6. Keep all Main／Frontier and cross-MVI-group Items and normal Player State isolated; share only Waymark, mcMMO, and separately approved item-independent outcomes.
 7. The user builds the Frontier Gate Hub and both Theme Gate／return structures; Codex configures routing only after exact arrivals are approved.
 

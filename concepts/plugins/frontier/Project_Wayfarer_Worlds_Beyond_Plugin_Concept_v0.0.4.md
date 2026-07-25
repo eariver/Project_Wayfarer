@@ -730,9 +730,11 @@ Concept上の中核方針:
 
 ---
 
-## 25. Theme Concept同期Delta
+## 25. Theme Concept同期結果
 
-Frontier検討チャットで、`concepts/frontier/Worlds_Beyond_Specification_V0.0.6.md`へ次を同期する。
+Status: Synchronized
+
+次の内容は`concepts/frontier/Worlds_Beyond_Specification_V0.0.6.md`へ反映済みである。
 
 ### Overworld単一World化
 
@@ -759,7 +761,7 @@ Frontier検討チャットで、`concepts/frontier/Worlds_Beyond_Specification_V
 - Navigation ItemからTeleport GUIへ進入できる
 - Teleportは発見済みWaystoneとWaystone Domainの安全判定を経由する
 
-本ConceptはTheme Concept本文、Frontier共通仕様、Runtime ConfigまたはWorld Dataを変更しない。
+本ConceptとTheme Conceptの同期は完了している。Runtime ConfigまたはWorld Dataの変更は、別の明示的な実装Taskを必要とする。
 
 ---
 

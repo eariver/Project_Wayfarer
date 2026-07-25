@@ -3,7 +3,7 @@
 > **状態:** Under Review  
 > **保存先:** Project Wayfarer Repository `concepts/plugins/frontier/`  
 > **関連Concept:** `../Project_Wayfarer_Plugin_Concept_v0.0.3.md`  
-> **関連Theme Concept:** `concepts/frontier/Ruined_Frontier_Specification_V0.0.4.md`  
+> **関連Theme Concept:** `concepts/frontier/Ruined_Frontier_Specification_V0.0.5.md`
 > **対象:** EliteMobs Instance WorldとMultiverse-Inventories Guild Groupの連携方式  
 > **実装状態:** 調査・判断前
 
@@ -278,7 +278,8 @@ Instance Request
 - 同一Blueprint複数Instance
 - World名衝突
 - 不正World名
-- Frontier Lobby／Worlds Beyond／MainとのProfile分離
+- Frontier Lobby／Worlds BeyondとのMVI Profile分離
+- Main BackendとのBackend／Network境界によるItemおよびPlayer State非共有
 - World削除後のMembership残留
 
 ### 11.2 `STRICT_REGEX`採用時

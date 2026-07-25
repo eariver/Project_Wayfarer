@@ -32,26 +32,27 @@ The 2026-07-21 family remains the Legacy Rollback Baseline. The 2026-07-25 repla
 | 5 | Main generation acceptance — complete 2026-07-25 | Spawns, Resource exclusion, Portal family, Pack, restart, three dimensions, Props, and four distinct Packs passed; Exploration Pack supplied the fourth natural-generation observation |
 | 6 | Main Weight／Content tuning and new baseline — complete 2026-07-25 | Decision A retained current Config; identities, Resource hashes, stopped-state backup, and Final Main Baseline source of truth were verified |
 | 7 | CoreProtect — deferred／non-blocking | Main／Lobby wait for an upstream Minecraft 26.2-compatible Stable release; not complete, accepted, or a cold-backup replacement |
-| 8 | Frontier lock | Lock Plugin versions, artifacts, World IDs, Gate method, Resource Packs, persistence, licenses, and exact Runtime boundaries |
-| 9 | Wayfarer_Core | Approve formal design, create a separate Repository, develop／release, and integrate the V0.1.0 shared foundation |
-| 10 | Wayfarer_Frontier | Approve formal design, create a separate Repository, develop／release, and integrate the V0.1.0 Frontier functions |
-| 11 | Frontier shared foundation | Integrate MVI, Multiverse-NetherPortals, WorldEdit／WorldGuard, ResourcePackManager, Frontier Pack, Beyond Gate, and Guild Gate; adopt CoreProtect only if Order 8 or a later approved task selects it |
-| 12 | EM Adapter necessity decision | Prove whether static MVI registration or strict Regex is sufficient before authorizing an Adapter |
-| 13 | Ruined Frontier alpha | Implement and verify the approved Guild／Primis／three-dimension BetterStructures＋EliteMobs scope |
-| 14 | Worlds Beyond MVP | Implement and verify the approved Iris／Traversal／Waystone／WM Shop scope |
-| 15 | Frontier two-Theme integration | Verify MVI separation, full item isolation, Pack switching, routes, restart, reconnect, and persistence across both Themes |
-| 16 | Final Gate and Permission lock | Select Advanced Portals or the approved Gate method and lock exact Player／Builder／Admin permissions |
-| 17 | Builder Phase 1B | Build the explicit allowlist from the final Plugin, Theme, Gate, and construction operations |
-| 18 | User Hub／Gate construction | User fixes appearance, footprint, equipment, coordinates, orientation, and safe arrivals |
-| 19 | Main Spawn protection | Apply and verify the exact WorldGuard Region after substantial Hub completion |
-| 20 | Portal Routing completion | Configure and verify every approved Lobby／Main／Frontier／Theme／Resource route |
-| 21 | Resource Reset Bootstrap | Restore Resource arrivals, Return Gates, protection, and Resource End outer-island safety reproducibly |
-| 22 | Integrated operations | Implement `Wayfarer.ps1` Start／Stop／Restart／Status／Backup |
-| 23 | Cold Backup／Isolated Restore | Validate the complete Main, Frontier, MariaDB, Redis, World, Content, Config, and custom-Plugin data recovery path |
-| 24 | V0.1.0 Pre-release Player State Reset | Separately approve and reset Waymark and the exact Player State scope after functional testing |
-| 25 | V0.1.0 Baseline | Create the post-reset baseline backup and confirm every Blocker before any Release declaration |
+| 8 | Frontier lock | Phase A Revision 003; Proposal `FRONTIER-LOCK-20260726-003` awaiting exact approval, Phase B not executed |
+| 9 | Plugin Repository foundation＋Wayfarer_Core | Formally design one external Gradle Multi-module Repository, common contracts, Core implementation／tests／release candidate, and Project integration |
+| 10 | Wayfarer_Main／Growth Pickaxe | Produce the implementation specification, module, unit／integration tests, release candidate, Main integration, migration, Config, detailed acceptance, and backup／restore decision |
+| 11 | Wayfarer_Frontier | Design, implement, test, release, and integrate the Frontier module without reimplementing MVI |
+| 12 | Frontier shared foundation | Integrate MVI, Ruined-only MNP, WorldEdit／WorldGuard verification, FMM, ResourcePackManager, Frontier Pack, Beyond Gate, and Guild Gate foundation |
+| 13 | EM Adapter necessity decision | Decide static registration, strict Regex, or conditional independent Adapter in that order |
+| 14 | Ruined Frontier alpha | Implement Guild, Primis, Ruined Frontier three dimensions, BetterStructures, and EliteMobs |
+| 15 | Worlds Beyond MVP | Implement single-World `frontier_iris`, Traversal, Launchpad, Waystone, and WM Shop |
+| 16 | Frontier two-Theme integration | Verify MVI separation, full item isolation, Pack switching, routing, restart, reconnect, and persistence |
+| 17 | Final Gate and Permission lock | Lock exact Gate method, routes, and Player／Builder／Admin nodes |
+| 18 | Builder Phase 1B | Build the explicit allowlist from final Plugin, Theme, Gate, and construction operations |
+| 19 | User Hub／Gate construction | User fixes appearance, footprint, equipment, coordinates, orientation, and safe arrivals |
+| 20 | Main Spawn protection | Apply and verify the exact WorldGuard Region after substantial Hub completion |
+| 21 | Portal Routing completion | Configure and verify every approved Lobby／Main／Frontier／Theme／Resource route |
+| 22 | Resource Reset Bootstrap | Restore Resource arrivals, Return Gates, protection, and Resource End outer-island safety reproducibly |
+| 23 | Integrated operations | Implement `Wayfarer.ps1` Start／Stop／Restart／Status／Backup |
+| 24 | Cold Backup／Isolated Restore | Validate all authoritative Main／Frontier／custom-Plugin data recovery |
+| 25 | V0.1.0 Pre-release Player State Reset | Separately approve Waymark, Player State, and Growth Tool Reset／Preserve scope |
+| 26 | V0.1.0 Baseline | Create the post-reset baseline backup and confirm every Blocker before Release declaration |
 
-The table controls practical priority. Main Content loaded before regeneration and the Final Main Baseline is complete. Order 7 remains numbered but is deferred／non-blocking; Order 8 is the next active task. Both Frontier Themes and the Gate boundary precede Builder Phase 1B.
+The table controls practical priority. Main Content loaded before regeneration and the Final Main Baseline is complete. Order 7 remains numbered but is deferred／non-blocking. Order 8 is awaiting Proposal 003 approval. Order 9 Core contracts precede Orders 10 and 11; Orders 10 and 11 may proceed in parallel only without breaking the Core contract. Both Frontier Themes and the Gate boundary precede Builder Phase 1B.
 
 ## Phase details
 
@@ -70,7 +71,7 @@ Phase 1A completed on 2026-07-20. Five persistent Group definitions, self-only T
 ### Phase 1B - Final Builder allowlist
 
 - [ ] Lock the adopted Gate／Portal Plugin version and exact permissions
-- [ ] Lock Ruined Frontier, Worlds Beyond, MVI, ResourcePackManager, EliteMobs, Wayfarer_Core, and Wayfarer_Frontier administration boundaries
+- [ ] Lock Ruined Frontier, Worlds Beyond, MVI, ResourcePackManager, EliteMobs, Wayfarer_Core, Wayfarer_Main, Wayfarer_Frontier, and any conditional Adapter administration boundaries
 - [ ] Confirm exact Builder-owned Hub／Gate work
 - [ ] Allowlist only required WorldEdit, gamemode, teleport, Multiverse, and Gate operations
 - [ ] Exclude MVI group management, Resource Pack publishing／rollback, EliteMobs internals, Database, economy, custom-Plugin administration, WorldGuard Region administration, Velocity, LuckPerms, player punishment, server stop, destructive World lifecycle, reload／debug internals, and wildcards
@@ -131,6 +132,15 @@ The 2026-07-25 family in [Main World Baseline](13-main-world-baseline.md) is the
 
 EvenMoreFish, the Main fixed-price shop, and the 100x nominal Waymark scale remain verified. This revision changes neither the current prices nor Runtime Config.
 
+### Orders 9–11 - Custom Plugin Repository and required modules
+
+- [ ] Design one external Gradle Multi-module Repository and lock shared API／common／testkit boundaries
+- [ ] Implement, test, release, and integrate Wayfarer_Core
+- [ ] Implement, test, release, and integrate Main-only Wayfarer_Main／Growth Pickaxe
+- [ ] Implement, test, release, and integrate Wayfarer_Frontier
+- [ ] Keep `Wayfarer_Frontier_EliteMobsMVI` absent unless Order 13 returns `ADAPTER_REQUIRED`
+- [ ] Record exact Versions, SHA-256, Source Commits, migrations, Config versions, and Plugin／Project test reports
+
 ### Phase 5 - Frontier V0.1.0
 
 The formal scope is [Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md). Both Ruined Frontier alpha and Worlds Beyond MVP are required.
@@ -139,9 +149,9 @@ The formal scope is [Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md). Both R
 
 - [ ] Lock every Plugin／Content Artifact, license, hash, World ID, Gate method, Resource Pack, and persistence boundary
 - [ ] Integrate Multiverse-Inventories with `neutral`, `worlds_beyond`, and `guild`
-- [ ] Integrate Frontier Multiverse-NetherPortals, WorldEdit, WorldGuard, and ResourcePackManager; decide the Frontier history／rollback solution separately
+- [ ] Integrate Multiverse-NetherPortals 5.0.5 only for Ruined Frontier, verify WorldEdit／WorldGuard, and integrate FMM／ResourcePackManager; decide the Frontier history／rollback solution separately
 - [ ] Produce and deliver a Frontier-only integrated Pack
-- [ ] Integrate separately released Wayfarer_Core and Wayfarer_Frontier
+- [ ] Integrate separately released Wayfarer_Core and Wayfarer_Frontier modules from the one external Repository
 - [ ] Build and verify Beyond and Guild Gate routes
 
 #### EM Adapter necessity decision
@@ -149,7 +159,7 @@ The formal scope is [Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md). Both R
 - [ ] Lock EliteMobs version, Content packages, Blueprint names, Instance naming, lifecycle, concurrency, restart, and reconnect behavior
 - [ ] Test static MVI registration first
 - [ ] Test a strict approved-Blueprint Regex second
-- [ ] Authorize an Adapter only if both approaches are insufficient
+- [ ] Authorize the independent `Wayfarer_Frontier_EliteMobsMVI` Artifact only if both approaches are insufficient
 
 #### Ruined Frontier alpha
 
@@ -163,9 +173,11 @@ The formal scope is [Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md). Both R
 
 #### Worlds Beyond MVP
 
-- [ ] Iris Overworld, Nether, and End after exact Engine／Pack／Seed／World ID lock
+- [ ] Iris Overworld `frontier_iris` only after exact Engine／Pack／Seed lock
 - [ ] PEACEFUL and persistent-World operation
-- [ ] MVI `worlds_beyond` group and family-local Portal links
+- [ ] MVI `worlds_beyond` contains only `frontier_iris`
+- [ ] Do not create or register `frontier_iris_nether` or `frontier_iris_the_end`
+- [ ] No Worlds Beyond MNP link; deny Nether／End Portal activation and travel without fallback
 - [ ] Traversal Loadout, Elytra, LeafGrapple, Launchpad
 - [ ] Frontier WM Shop, Waystone, Discovery GUI, and Teleport GUI
 - [ ] Pack, persistence, MVI, routing, and safe-return acceptance
@@ -188,7 +200,7 @@ Codex does not infer appearance, coordinates, orientation, or destinations.
 
 - [ ] Lock Advanced Portals or another approved Gate method and its exact permission model
 - [ ] Configure only user-approved routes and safe arrivals
-- [ ] Preserve MVI switching and family-local dimension routing
+- [ ] Preserve MVI switching, Ruined-only family-local dimension routing, and Worlds Beyond Portal denial
 - [ ] Apply the exact `main_spawn_hub` WorldGuard membership boundary after substantial initial construction
 - [ ] Keep Vanilla `spawn-protection=16` until the Region and Builder behavior pass
 
@@ -215,15 +227,17 @@ Order 7 is deferred and non-blocking, not complete. Main／Lobby CoreProtect is 
 - [ ] Implement `Wayfarer.ps1` Start, Stop, Restart, Status, and Backup
 - [ ] Preserve the approved shutdown／flush／process-exit order
 - [ ] Add all Frontier Worlds, Content, Packs, and custom-Plugin data owners
+- [ ] Include Growth Tool records, Pending Delivery, instance epochs, ACTIVE／BROKEN state, transactions, audit, and reconcile
 - [ ] Keep OS, Docker, MariaDB, Redis, backup, restore, and forced recovery outside Minecraft permissions
 
 ### Phase 11 - Cold backup and isolated restore
 
 - [ ] Dump MariaDB after normal Minecraft shutdown
 - [ ] Stop Redis and copy its AOF
-- [ ] Copy persistent Main／Frontier Worlds, Config, Content, Pack inputs, and approved custom-Plugin data
+- [ ] Copy persistent Main／Frontier Worlds, MVI Profiles, Config, Content, Pack inputs／outputs／hashes, custom-Plugin release artifacts／metadata, migrations, `wf_main_*`, Growth Tool records, and approved custom-Plugin data
 - [ ] Record a manifest and SHA-256 with incomplete-generation safety
 - [ ] Restore to an isolated target and verify every authoritative data owner
+- [ ] Verify Growth Tool owner／epoch／progress／derived state／Pending Delivery／repair transaction and no duplicate issuance
 
 ### V0.1.0 Pre-release Player State Reset
 
@@ -231,6 +245,7 @@ Order 7 is deferred and non-blocking, not complete. Main／Lobby CoreProtect is 
 - [ ] Back up exact Redis, World, and Player State scope before reset
 - [ ] Reset Waymark through a supported RedisEconomy mechanism, never direct Redis key editing
 - [ ] Reset the approved Main and Frontier／MVI Player State without violating authoritative ownership
+- [ ] Obtain separate Owner approval to Reset or Preserve Growth Tool logical data
 - [ ] Verify zero／initial representative state and create the final post-reset baseline backup
 
 This reset has not been executed and must not be brought forward.
@@ -251,12 +266,13 @@ This reset has not been executed and must not be brought forward.
 - Frontier shared foundation
 - Multiverse-Inventories and all three groups
 - ResourcePackManager, separate Main／Frontier Packs, and backend-switch delivery
-- Wayfarer_Core and Wayfarer_Frontier from separate Repositories
+- one external Gradle Multi-module Repository and required Wayfarer_Core／Main／Frontier Artifacts
+- Main-only Growth Pickaxe detailed acceptance and backup／restore
 - EM Adapter necessity decision
 - Ruined Frontier alpha
 - Worlds Beyond MVP
 - both Themes' MVI separation and complete Main／Frontier item isolation
-- both Theme Portal families and safe returns to Frontier Lobby
+- Ruined Frontier Portal family, Worlds Beyond Portal denial, and both safe returns to Frontier Lobby
 - Lobby, Main, and Frontier Hubs／Gates
 - Phase 1B final Builder allowlist
 - Main Spawn WorldGuard protection
