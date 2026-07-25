@@ -1,5 +1,5 @@
 schema: wayfarer.frontier-lock.runtime-boundary-candidates.v1
-proposal_id: FRONTIER-LOCK-20260726-001
+proposal_id: FRONTIER-LOCK-20260726-002
 status: candidate
 
 world_classes:
@@ -7,8 +7,6 @@ world_classes:
     - frontier_gate
   worlds_beyond:
     - frontier_iris
-    - frontier_iris_nether
-    - frontier_iris_the_end
   guild:
     - adventurers_guild
   ruined_frontier:
@@ -16,7 +14,8 @@ world_classes:
     - frontier_bs_nether
     - frontier_bs_the_end
   primis:
-    - primis
+    - em_primis
+    - em_primis_wormhole
   elite_instances:
     - deferred-to-order-12
 
@@ -31,7 +30,7 @@ plugins:
     unknown: isolated-fail-closed
   multiverse-netherportals:
     gate: disabled
-    worlds_beyond: family-local
+    worlds_beyond: disabled
     guild: disabled
     ruined_frontier: family-local
     primis: package-defined-pending
@@ -39,7 +38,7 @@ plugins:
     unknown: disabled
   iris:
     gate: disabled
-    worlds_beyond: enabled
+    worlds_beyond: enabled-single-overworld
     guild: disabled
     ruined_frontier: disabled
     primis: disabled
@@ -83,6 +82,14 @@ plugins:
   resource-pack-manager:
     all_known: backend-pack-service
     unknown: no-world-authority
+  betterhealthbar3:
+    gate: disabled
+    worlds_beyond: disabled
+    guild: candidate
+    ruined_frontier: candidate
+    primis: candidate
+    elite_instances: approved-only-candidate
+    unknown: disabled
   wayfarer-frontier:
     gate: neutral-subset
     worlds_beyond: theme-features
@@ -93,16 +100,13 @@ plugins:
     unknown: fail-closed
 
 portal_families:
-  worlds_beyond:
-    overworld: frontier_iris
-    nether: frontier_iris_nether
-    end: frontier_iris_the_end
   ruined_frontier:
     overworld: frontier_bs
     nether: frontier_bs_nether
     end: frontier_bs_the_end
   forbidden:
     - cross-theme-family-links
+    - worlds-beyond-nether-or-end
     - frontier-gate-vanilla-nether-or-end
     - main-family-links
     - general-player-multiverse-admin-teleport

@@ -1,5 +1,5 @@
 schema: wayfarer.frontier-lock.artifact-candidates.v1
-proposal_id: FRONTIER-LOCK-20260726-001
+proposal_id: FRONTIER-LOCK-20260726-002
 generated_on: 2026-07-26
 status: candidate
 runtime_validation: deferred
@@ -11,14 +11,15 @@ compatibility_target:
 
 artifacts:
   - id: multiverse-inventories
-    decision: selected-pending-artifact
+    decision: selected-existing
     version: "5.3.5"
     filename: multiverse-inventories-5.3.5.jar
     source: https://modrinth.com/plugin/multiverse-inventories/version/5.3.5
     license: BSD-3-Clause
-    sha256: null
+    sha256: 27568B35AEA1042BAEA1FBC0D5256C17B51C596B8F2D166BE35BA1F77E6847A9
     vendor_sha1: 77D001D3161E823D6B44C6DA6E1CC09EAFFF0C84
-    present: false
+    present: true
+    staging_path: manual-downloads/frontier/multiverse/multiverse-inventories-5.3.5.jar
     placement: servers/frontier/plugins/
     dependencies:
       - "Multiverse-Core 5.7.2"
@@ -26,30 +27,32 @@ artifacts:
     deferred_to: Order 11
 
   - id: multiverse-netherportals
-    decision: selected-pending-artifact
-    version: "5.1.0"
-    filename: multiverse-netherportals-5.1.0.jar
-    source: https://modrinth.com/plugin/multiverse-netherportals/version/5.1.0
+    decision: selected-existing-main-version-parity
+    version: "5.0.5"
+    filename: multiverse-netherportals-5.0.5.jar
+    source: https://modrinth.com/plugin/multiverse-netherportals/version/5.0.5
     license: BSD-3-Clause
-    sha256: null
-    vendor_sha1: B5E99316053C128F965627558396A4B444C41EA8
-    present: false
-    supersedes_present_candidate: "5.0.5"
+    sha256: 7D6364A2B474C2D3C4F8F8C5DCD469D9DE5A5F6F64C43DA39B648C3877AD077D
+    vendor_sha1: 6801ABD1017DAA649EAC27DFB4F15360CB86DBD9
+    present: true
+    staging_path: manual-downloads/worlds/multiverse-netherportals-5.0.5.jar
+    selection_reason: keep Main and Frontier Multiverse-NetherPortals versions aligned by explicit user decision
     placement: servers/frontier/plugins/
     dependencies:
       - "Multiverse-Core 5.7.2"
-    scope: worlds-beyond-and-ruined-frontier-families
+    scope: ruined-frontier-family-only
     deferred_to: Order 11
 
   - id: advanced-portals
-    decision: selected-pending-package-inspection
+    decision: selected-existing
     version: "2.8.0-spigot"
     filename: advanced-portals-2.8.0-spigot.jar
     source: https://modrinth.com/plugin/advanced-portals/version/OiYxu4ab
     license: LGPL-3.0-only
-    sha256: null
+    sha256: ABD3E4BE48C1F34BC60530AAA344AB8BFFD4146281B8AD33FC83628C93E7287D
     vendor_sha1: FEE9A8926ABA6068797FDF81549DDFE9E524DA7A
-    present: false
+    present: true
+    staging_path: manual-downloads/frontier/gate/advanced-portals-2.8.0-spigot.jar
     placement:
       - velocity/plugins/
       - servers/lobby/plugins/
@@ -57,53 +60,58 @@ artifacts:
       - servers/frontier/plugins/
     dependencies: []
     scope: backend-switch-gates
-    known_limitation: distribution metadata spans Paper and Velocity, but the supplied package must be inspected before component placement is locked
+    static_evidence: one JAR contains both plugin.yml and velocity-plugin.json with version 2.8.0
+    known_limitation: one-JAR multi-platform enablement and cross-backend destinations remain runtime-unverified
     deferred_to: Order 11
 
   - id: iris
-    decision: selected-engine-pending-artifact
+    decision: selected-existing-engine
     version: "3.9.2-1.20.1-1.21.11"
-    filename: null
+    filename: Iris-3.9.2-1.20.1-1.21.11.jar
     source: https://github.com/VolmitSoftware/Iris/releases/tag/3.9.2-1.20.1-1.21.11
     license: GPL-3.0
-    sha256: null
-    present: false
+    sha256: 46E3CD36B08EE6B24B6EC0ECC38379BEF82DADB861DDEBC10E0E338FDB7A7757
+    present: true
+    staging_path: manual-downloads/frontier/iris/Iris-3.9.2-1.20.1-1.21.11.jar
     placement: servers/frontier/plugins/
     dependencies: []
-    scope: worlds-beyond-only
-    known_limitation: exact official binary filename and three pack artifacts remain unverified
+    scope: worlds-beyond-overworld-only
+    known_limitation: Worlds Beyond is one Overworld only; no Nether or End worlds belong to the Theme
     deferred_to: Order 14
 
   - id: leafgrapple
-    decision: selected-pending-artifact
+    decision: selected-existing
     version: "1.0.2"
     filename: LeafGrapple.jar
     source: https://modrinth.com/plugin/leafgrapple/version/Do80frax
     license: MIT
-    sha256: null
+    sha256: FFE4B3305BB48737E1B6C373698FEFE7121B879FD5B9399F930F5023B5F78833
     vendor_sha1: 2CB58C588F9D5BFD5D6CA4D3B7E6D0D287F802A2
-    present: false
+    present: true
+    staging_path: manual-downloads/frontier/worlds-beyond/LeafGrapple.jar
     placement: servers/frontier/plugins/
     dependencies: []
     scope: worlds-beyond-only
-    known_limitation: item identity, offhand, PDC and world allowlist require static and runtime validation
+    static_evidence: config exposes item-model and entity-hook controls
+    known_limitation: defaults enable mob hooking, damage and durability; Order 14 must disable them and enforce world/item boundaries
     deferred_to: Order 14
 
   - id: elitemobs
-    decision: selected-pending-artifact
+    decision: selected-existing
     version: "10.7.3"
     filename: EliteMobs.jar
     source: https://modrinth.com/plugin/elitemobs/version/D1rNCpLn
     license: GPL-3.0-only
-    sha256: null
+    sha256: 688E93033A36F4168B2F69B8A65921FBB36AFFC047AA9534027724A2E5DA674E
     vendor_sha1: 1C1DF77626E00A9617109CBB57F15F51FF092714
-    present: false
+    present: true
+    staging_path: manual-downloads/frontier/elitemobs/EliteMobs.jar
     placement: servers/frontier/plugins/
     dependencies:
       - WorldEdit
       - WorldGuard
     scope: ruined-frontier-guild-primis-and-approved-instances
-    known_limitation: content filenames, blueprint names and instance naming require supplied packages
+    known_limitation: Adventurer's Guild Artifact is available only after the official /em setup flow and remains unverified
     deferred_to: Order 12
 
   - id: betterstructures
@@ -161,17 +169,24 @@ artifacts:
     deferred_to: separate-history-validation-task
 
   - id: betterhealthbar3
-    decision: rejected
-    version: "3.10.0"
-    filename: null
-    source: https://github.com/toxicity188/BetterHealthBar3/releases/tag/3.10.0
-    license: premium-use-terms-in-project-readme
-    sha256: null
-    present: false
-    placement: none
+    decision: selected-existing-user-owned
+    version: "4.1.0"
+    filename: BetterHealthBar-4.1.0.jar
+    source: https://www.spigotmc.org/resources/116619/
+    license: premium-account-bound-use-terms
+    sha256: BA78BDC0A293A8516155D6334437881C4E92D3C4F1D786AB38064EA5B032D5F6
+    present: true
+    staging_path: manual-downloads/frontier/gui/BetterHealthBar-4.1.0.jar
+    placement: servers/frontier/plugins/
     dependencies: []
-    scope: none
-    rejection_reason: official README states support only through Minecraft 1.21.4 and provides no 1.21.11 runtime artifact evidence
+    soft_dependencies:
+      - PlaceholderAPI
+      - ModelEngine
+      - MythicMobs
+    scope: ruined-frontier-guild-primis-and-approved-instances
+    static_evidence: plugin metadata is version 4.1.0 and includes NMS adapters through v1_21_R7 plus v26_R1 and v26_R2
+    known_limitation: self-host defaults true and generated font/shader Pack must be merged by Order 11 without opening port 8163
+    deferred_to: Order 11-and-Ruined-Frontier-smoke-test
 
 content:
   - id: bs-prop-pack
@@ -222,19 +237,84 @@ content:
     license: not-applicable
     sha256: null
     present: false
-  - id: iris-three-pack
-    decision: pending-user-supplied-artifacts
-    version: exact-commit-pending
+  - id: iris-overworld
+    decision: selected-existing
+    version: "master snapshot 2026-07-26"
+    filename: overworld-master.zip
+    source: https://github.com/IrisDimensions/overworld
+    license: Unlicense
+    sha256: 0FA29D96D07B19EDBA3EFCA8E10DCEAAE24E94C7651C1ED888E54FA358144056
+    present: true
+    staging_path: manual-downloads/frontier/iris/packs/overworld-master.zip
+    internal_dimension: overworld
+    internal_environment: NORMAL
+  - id: iris-nether
+    decision: rejected
+    version: "main snapshot 2021-07-04"
     filename: null
-    source: https://github.com/IrisDimensions
-    license: Unlicense-and-GPL-3.0
+    source: https://github.com/IrisDimensions/nether
+    license: GPL-3.0
     sha256: null
     present: false
-  - id: elitemobs-content-set
-    decision: pending-user-supplied-artifacts
-    version: exact-internal-versions-pending
+    rejection_reason: official README says the dimension is unfinished and cannot be used; Worlds Beyond has no Nether world
+  - id: iris-end
+    decision: rejected
+    version: "main snapshot 2025-06-24"
+    filename: end-main.zip
+    source: https://github.com/IrisDimensions/end
+    license: GPL-3.0
+    sha256: AFB63C9FB8520926207DE1D380743149CC1F79A2A451ECDB996DA8EC3DE9A430
+    present: true
+    staging_path: manual-downloads/frontier/iris/packs/end-main.zip
+    internal_dimension: end
+    internal_environment: NORMAL
+    rejection_reason: internal environment is NORMAL and repository README describes an Overworld pack; Worlds Beyond has no End world
+  - id: iris-theend-alternative
+    decision: rejected
+    version: "main snapshot 2022-02-04"
     filename: null
-    source: https://magmaguy.itch.io/em-free-content
+    source: https://github.com/IrisDimensions/theend
+    license: GPL-3.0
+    sha256: null
+    present: false
+    rejection_reason: Worlds Beyond has no End world; the old pack is outside the selected scope
+  - id: elitemobs-dungeoneering-modules-free
+    decision: selected-existing
+    version: "2"
+    filename: dungeoneering-modules-free-dungeoneering-modules-free.zip
+    source: user-owned-official-content-staging
+    license: package-terms
+    sha256: 5E946E4A1F1C000F4DD4258E35A5E147D71E32D88C772AEB5E61DCA7D2D709E3
+    present: true
+    internal_owner: BetterStructures
+  - id: elitemobs-free-elite-shrines
+    decision: selected-existing
+    version: "9"
+    filename: free-elite-shrines-free-elite-shrines.zip
+    source: user-owned-official-content-staging
+    license: package-terms
+    sha256: 5ABBC796272901199B3F368946FD49B20BDFCFF362104722FDEDA2AB2D7120E5
+    present: true
+    internal_owner: BetterStructures-with-EliteMobs-content
+  - id: elitemobs-primis
+    decision: selected-existing
+    version: "meta 39; adventure 20; blood temple 3; gladius 2"
+    filename: primis-primis-adventure.zip
+    source: user-owned-official-content-staging
+    license: package-terms
+    sha256: 46FDE1DD3A7FF2819FD6DFD0411764FC7B4E3EB997F332ABCADDDA09904E41AD
+    present: true
+    fixed_worlds:
+      - em_primis
+      - em_primis_wormhole
+    blueprint_worlds:
+      - em_id_bloodtemple
+      - em_id_primis_gladius
+  - id: elitemobs-adventurers-guild
+    decision: selected-pending-official-setup-link
+    version: exact-version-pending
+    filename: null
+    source: official-EliteMobs-/em-setup-flow
     license: package-terms-pending-inspection
     sha256: null
     present: false

@@ -4,27 +4,38 @@
 
 `README.md`だけをGit管理し、JAR、ZIP、Pack、Model、Contentおよび展開物はCommitしません。CodexはこれらをDownloadしません。
 
-## Phase Aで不足しているArtifact
+## Revision 002の確認状態
 
-元の配布Filenameを変更せず、次のSubdirectoryへ配置してください。
+次の手動配置Artifactは静的確認済みです。元Filenameを変更せず、現在の配置を維持してください。
 
-| Subdirectory | Candidate | Expected official filename |
+| Subdirectory | Artifact | Result |
 | --- | --- | --- |
-| `multiverse/` | Multiverse-Inventories 5.3.5 | `multiverse-inventories-5.3.5.jar` |
-| `multiverse/` | Multiverse-NetherPortals 5.1.0 | `multiverse-netherportals-5.1.0.jar` |
-| `gate/` | Advanced Portals 2.8.0 | `advanced-portals-2.8.0-spigot.jar` |
-| `iris/` | Iris 3.9.2 for 1.20.1–1.21.11 | 公式配布時の元Filename |
-| `iris/packs/` | IrisDimensions Overworld | 公式Repositoryから取得した元Archive名 |
-| `iris/packs/` | IrisDimensions Nether | 公式Repositoryから取得した元Archive名 |
-| `iris/packs/` | IrisDimensions End | 公式Repositoryから取得した元Archive名 |
-| `elitemobs/` | EliteMobs 10.7.3 | `EliteMobs.jar` |
-| `elitemobs/content/` | Adventurer's Guild v8 | `em_adventurers_guild_v8.zip` |
-| `elitemobs/content/` | Primis | 公式配布時の元Filename |
-| `elitemobs/content/` | Free Elite Shrines | 公式配布時の元Filename |
-| `elitemobs/content/` | Dungeoneering Modules Free | 公式配布時の元Filename |
-| `worlds-beyond/` | LeafGrapple 1.0.2 | `LeafGrapple.jar` |
+| `multiverse/` | Multiverse-Inventories 5.3.5 | 確認済み |
+| `gate/` | Advanced Portals 2.8.0 | 確認済み |
+| `iris/` | Iris 3.9.2 for 1.20.1–1.21.11 | 確認済み |
+| `iris/packs/` | IrisDimensions Overworld | 確認済み、Worlds Beyond唯一のWorldに使用 |
+| `elitemobs/` | EliteMobs 10.7.3 | 確認済み |
+| `elitemobs/content/` | Primis | 確認済み |
+| `elitemobs/content/` | Free Elite Shrines | 確認済み |
+| `elitemobs/content/` | Dungeoneering Modules Free | 確認済み |
+| `worlds-beyond/` | LeafGrapple 1.0.2 | 確認済み |
+| `gui/` | BetterHealthBar 4.1.0 | 確認済み、User-owned premium Artifact |
 
-BetterHealthBar3は、公式READMEの対応範囲がPaper 1.21.11を明示していないため、今回の取得対象に含めません。
+Multiverse-NetherPortalsは、MainとVersionを揃えるUser決定により、既存の
+`manual-downloads/worlds/multiverse-netherportals-5.0.5.jar`を再利用します。
+このDirectoryへ複製する必要はありません。
+
+Worlds BeyondはIris Overworld `frontier_iris`だけで構成します。Nether／End
+Worldおよび対応Iris Packは導入対象ではありません。配置済みの
+`iris/packs/end-main.zip`は内部Environmentも要件に合わず、不採用のまま
+Runtimeへ配置しません。
+
+## 残る手動取得
+
+Adventurer's Guildの正規Download Linkは、EliteMobsの公式`/em setup` Flowで
+提示されます。Order 8 Phase AではServerを起動しないため、Artifactの取得、
+Version、Filename、License、SHA-256確認をOrder 11／12へ明示的に繰り越します。
+公式Flowで取得後、元Filenameのまま`elitemobs/content/`へ配置してください。
 
 ## 既存Artifactの再利用候補
 
@@ -40,11 +51,12 @@ BetterHealthBar3は、公式READMEの対応範囲がPaper 1.21.11を明示して
 - Echoes of the Past v3
 - CoreProtect CE 24.0
 
-Premiumまたはaccount-bound Contentは、Project Wayfarerの同一OwnerがFrontier Backendでも利用できるLicense／利用条件をUserが確認したものだけを配置してください。
+Premiumまたはaccount-bound Contentは、Project Wayfarerの同一OwnerがFrontier
+Backendでも利用できるLicense／利用条件をUserが確認したものだけを使用してください。
 
 ## 禁止
 
 - Runtimeの`servers/frontier/plugins/`へ直接配置しない。
 - Archiveを展開してGit管理しない。
-- 自動UpdaterやPlugin内Download Commandを使わない。
+- 自動UpdaterやPlugin内Download Commandを、取得許可なしに使わない。
 - Filenameを正規化、短縮またはVersion除去しない。

@@ -1,5 +1,5 @@
 schema: wayfarer.frontier-lock.resource-pack-input-candidates.v1
-proposal_id: FRONTIER-LOCK-20260726-001
+proposal_id: FRONTIER-LOCK-20260726-002
 status: candidate
 
 separation:
@@ -14,7 +14,7 @@ merge_priority_high_to_low:
   - Wayfarer_Frontier
   - Wayfarer_Core
   - LeafGrapple
-  - BetterHealthBar3-if-later-approved
+  - BetterHealthBar3
   - EliteMobs
   - FreeMinecraftModels
   - BetterStructures
@@ -31,26 +31,31 @@ inputs:
     state: selected-existing-license-confirmation-required
     owner: FreeMinecraftModels-and-BetterStructures
   - id: elitemobs-assets
-    state: pending-artifact
+    state: selected-existing-runtime-extraction-pending
     owner: EliteMobs
   - id: elite-shrines-assets
-    state: pending-artifact
+    state: selected-existing-runtime-import-pending
     owner: EliteMobs-content
   - id: dungeoneering-modules-assets
-    state: pending-artifact
+    state: selected-existing-runtime-import-pending
     owner: EliteMobs-content
   - id: primis-assets
-    state: pending-artifact
+    state: selected-existing-runtime-import-pending
     owner: EliteMobs-content
   - id: adventurers-guild-assets
     state: pending-artifact
     owner: EliteMobs-content
   - id: leafgrapple-assets
-    state: pending-artifact
+    state: selected-existing-config-generation-pending
     owner: LeafGrapple
   - id: betterhealthbar3-assets
-    state: rejected-until-compatible-release
+    state: selected-existing-user-owned
     owner: BetterHealthBar3
+    source_artifact: BetterHealthBar-4.1.0.jar
+    sha256: BA78BDC0A293A8516155D6334437881C4E92D3C4F1D786AB38064EA5B032D5F6
+    namespace: betterhealthbar
+    generated_output: BetterHealthBar/build
+    self_host: must-disable
   - id: wayfarer-core-assets
     state: future-if-present
     owner: Wayfarer_Core
