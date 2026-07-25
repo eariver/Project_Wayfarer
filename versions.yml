@@ -34,14 +34,18 @@ custom_plugin_plan:
       condition: ADAPTER_REQUIRED
       artifact_boundary: independent-runtime-plugin
 
-frontier_lock_candidate:
+frontier_lock:
   proposal_id: FRONTIER-LOCK-20260726-003
   previous_proposal: FRONTIER-LOCK-20260726-002
   previous_status: superseded-before-approval
-  phase_b: not-authorized
-  approval_token_received: false
-  status: candidate
+  approved_on: 2026-07-26
+  phase_b: complete
+  approval_token_received: true
+  status: locked
   runtime_validation: deferred
+  runtime_applied: false
+  document: docs/15-frontier-runtime-lock.md
+  lock_files: config/frontier-lock/*-lock.yml
   worlds_beyond:
     worlds:
       - frontier_iris

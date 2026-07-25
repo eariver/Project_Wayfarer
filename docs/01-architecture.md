@@ -40,6 +40,10 @@ MariaDB currently stores LuckPerms, mcMMO, and EvenMoreFish data. Redis currentl
 
 MVI, Frontier Multiverse-NetherPortals, any Frontier history／rollback product, Frontier ResourcePackManager／Pack, formal Network pack hosting, Iris, EliteMobs, Wayfarer_Core, Wayfarer_Main, and Wayfarer_Frontier are not installed by Ver.0.0.6. Main／Lobby CoreProtect is deferred and non-blocking while waiting for an upstream Minecraft 26.2-compatible Stable release; Frontier product selection remains undecided.
 
+The approved [Frontier Runtime Lock](15-frontier-runtime-lock.md) statically fixes the
+future Frontier Artifact, World ID, MVI, Gate, Pack-input and authority contracts. It
+does not change the installed topology above.
+
 ## Permission boundary
 
 Phase 1A implements five persistent LuckPerms Group definitions. Only Player membership in `wayfarer_builder` or `wayfarer_admin` is temporary. Admin is global and OP-independent while the Temporary Parent is active.
@@ -99,7 +103,7 @@ Wayfarer_Frontier does not persist normal Inventory or reimplement MVI switching
 
 ### Ruined Frontier
 
-The alpha target uses BetterStructures and EliteMobs in its Overworld, Nether, and End, plus Adventurer's Guild, Primis, selected free Structure／Shrine／Dungeon Content, Resource Pack assets, and a BetterHealthBar3 adoption test. Exact artifacts and IDs remain implementation locks.
+The alpha target uses BetterStructures and EliteMobs in its Overworld, Nether, and End, plus Adventurer's Guild, Primis, selected free Structure／Shrine／Dungeon Content, Resource Pack assets, and a BetterHealthBar3 adoption test. Order 8 statically locks the selected artifacts and World IDs; exact Structure selection, the deferred Guild Artifact, generated Config, Runtime compatibility and adoption tests remain implementation work.
 
 ### Worlds Beyond
 
@@ -157,6 +161,6 @@ Only Ruined Frontier keeps family-local Nether／End Portal links. Worlds Beyond
 
 Cold backup must include every authoritative Main／Frontier World, MVI profile, MariaDB database, stopped Redis AOF, custom-Plugin release artifact／Version／hash／Source Commit, migration history, custom-Plugin data, Growth Tool logical records and pending delivery／epoch／transaction state, Config, Content input, Resource Pack input／output, and Plugin／Project test reports required for recovery. Generated artifacts are rebuilt or captured according to the locked procedure. Restore verifies migrations before MVI, Worlds, custom data, Plugins, backends, and proxy, then runs reconcile before Player join. An isolated restore is a V0.1.0 blocker.
 
-CoreProtect CE 24.0 rejected Minecraft 26.2 at Runtime. Main／Lobby installation is therefore deferred and temporarily excluded from the V0.1.0 blockers under Owner-only operation. Hub／Gate construction may proceed with the Final Main Baseline backup retained, focused before／after backup or ignored Schematic evidence, controlled edit units, and WorldGuard protection after construction. WorldGuard prevents unauthorized changes but provides neither history lookup nor point-in-time rollback; CoreProtect also never substitutes for cold backup. Re-evaluate CoreProtect before multi-player, multi-Builder, public, or large collaborative WorldEdit operation. Frontier placement and data boundaries are decided only in Order 8 or later.
+CoreProtect CE 24.0 rejected Minecraft 26.2 at Runtime. Main／Lobby installation is therefore deferred and temporarily excluded from the V0.1.0 blockers under Owner-only operation. Hub／Gate construction may proceed with the Final Main Baseline backup retained, focused before／after backup or ignored Schematic evidence, controlled edit units, and WorldGuard protection after construction. WorldGuard prevents unauthorized changes but provides neither history lookup nor point-in-time rollback; CoreProtect also never substitutes for cold backup. Re-evaluate CoreProtect before multi-player, multi-Builder, public, or large collaborative WorldEdit operation. The approved Order 8 Lock leaves the Frontier history／rollback product unselected; CoreProtect 24.0 remains only an Artifact candidate.
 
 Detailed Frontier authority is in [Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md), and implementation order is in the [Roadmap](09-roadmap.md).

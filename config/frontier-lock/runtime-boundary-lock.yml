@@ -1,10 +1,12 @@
-schema: wayfarer.frontier-lock.runtime-boundary-candidates.v1
+schema: wayfarer.frontier-lock.runtime-boundary-lock.v1
 proposal_id: FRONTIER-LOCK-20260726-003
 previous_proposal: FRONTIER-LOCK-20260726-002
 previous_status: superseded-before-approval
-phase_b: not-authorized
-approval_token_received: false
-status: candidate
+approved_on: 2026-07-26
+approval_token: APPROVE-WAYFARER-FRONTIER-LOCK:FRONTIER-LOCK-20260726-003
+phase_b: complete
+approval_token_received: true
+status: locked
 runtime_validation: deferred
 
 world_classes:

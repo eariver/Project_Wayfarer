@@ -15,6 +15,10 @@ The following Concept documents are detailed design inputs, not current Runtime 
 
 Every Plugin acquisition, custom-Plugin development, World operation, Permission change, Database Migration, Gate integration, and Runtime change requires a separately assigned Codex task. Nothing in this document marks those operations as implemented.
 
+Order 8 Artifact／World／Runtime boundaries are formally locked by
+[Frontier Runtime Lock](15-frontier-runtime-lock.md) under Proposal
+`FRONTIER-LOCK-20260726-003`. The Lock is static approval, not Runtime installation or acceptance.
+
 ## 2. V0.1.0 completion condition
 
 `V0.1.0 Alpha` requires both of the following playable Frontier Themes:
@@ -36,13 +40,13 @@ The planned Frontier foundation consists of:
 - Multiverse-NetherPortals for the Ruined Frontier family only;
 - WorldEdit;
 - WorldGuard;
-- a history／rollback solution selected in Order 8 or later; CoreProtect is not preselected by the Main／Lobby deferral;
+- a history／rollback product selected by a later dedicated task; Order 8 keeps it unselected and retains CoreProtect 24.0 only as an Artifact candidate;
 - ResourcePackManager and one Frontier integrated Resource Pack;
 - approved Beyond and Guild Gate routes;
 - Wayfarer_Core, Wayfarer_Main, and Wayfarer_Frontier integration contracts from one external Gradle Multi-module Repository;
 - the conditional independent `Wayfarer_Frontier_EliteMobsMVI` Artifact only if the formal decision is `ADAPTER_REQUIRED`.
 
-The exact versions, JARs, licenses, hashes, placement, dependencies, World IDs, Gate implementation, history／rollback solution, and Runtime Config are locked only by dedicated implementation tasks. Current installed state is recorded separately in `versions.yml`, `plugin-manifest.yml`, and the Runtime. The Main／Lobby CoreProtect deferral neither installs CoreProtect on Frontier nor removes a future Frontier option.
+Order 8 locks selected versions, artifacts, licenses, hashes, placement, dependencies, World IDs, Gate method, Pack inputs and authority boundaries. Exact generated Config, Runtime acceptance, final Gate coordinates, Pack output and any history／rollback product still require their assigned implementation tasks. Current installed state is recorded separately in `versions.yml`, `plugin-manifest.yml`, and the Runtime.
 
 ## 4. Player State and inventory boundary
 

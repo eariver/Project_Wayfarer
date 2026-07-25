@@ -1,0 +1,101 @@
+schema: wayfarer.frontier-lock.persistence-authority-lock.v1
+proposal_id: FRONTIER-LOCK-20260726-003
+previous_proposal: FRONTIER-LOCK-20260726-002
+previous_status: superseded-before-approval
+approved_on: 2026-07-26
+approval_token: APPROVE-WAYFARER-FRONTIER-LOCK:FRONTIER-LOCK-20260726-003
+phase_b: complete
+approval_token_received: true
+status: locked
+runtime_validation: deferred
+
+authorities:
+  frontier_neutral_player_state:
+    authority: Multiverse-Inventories
+    profile_group: neutral
+    runtime_location: frontier-plugin-storage
+    backup_owner: frontier-cold-backup
+    restore_order: before-player-join
+    cross_server: false
+  worlds_beyond_player_state:
+    authority: Multiverse-Inventories
+    profile_group: worlds_beyond
+    runtime_location: frontier-plugin-storage
+    backup_owner: frontier-cold-backup
+    restore_order: before-player-join
+    cross_server: false
+  guild_player_state:
+    authority: Multiverse-Inventories
+    profile_group: guild
+    runtime_location: frontier-plugin-storage
+    backup_owner: frontier-cold-backup
+    restore_order: before-player-join
+    cross_server: false
+  world_blocks_entities:
+    authority: world-files
+    runtime_location: frontier-world-directories
+    backup_owner: frontier-cold-backup
+    restore_order: before-backend-start
+    cross_server: false
+  waymark:
+    authority: RedisEconomy-and-Redis-AOF
+    runtime_location: Redis
+    backup_owner: network-cold-backup
+    restore_order: before-backends
+    cross_server: true
+  mcmmo:
+    authority: MariaDB
+    runtime_location: wayfarer_mcmmo
+    backup_owner: network-database-dump
+    restore_order: before-backends
+    cross_server: true
+  elite_data:
+    authority: EliteMobs
+    runtime_location: exact-path-deferred-to-order-14
+    backup_owner: frontier-cold-backup
+    restore_order: plugin-specific-before-player-join
+    cross_server: false
+  iris_definition_and_world:
+    authority: locked-engine-pack-and-world-files
+    runtime_location: frontier
+    backup_owner: frontier-cold-backup
+    restore_order: before-world-load
+    cross_server: false
+  resource_pack:
+    authority: ResourcePackManager-output-and-locked-inputs
+    runtime_location: frontier-backend-pack-storage
+    backup_owner: frontier-pack-backup
+    restore_order: before-publish
+    cross_server: backend-specific
+  waystone_discovery:
+    authority: Wayfarer_Frontier
+    runtime_location: future-mariadb
+    backup_owner: custom-plugin-backup
+    restore_order: migration-first
+    cross_server: false
+  audit_transaction:
+    authority: Wayfarer_Core
+    runtime_location: future-mariadb
+    backup_owner: custom-plugin-backup
+    restore_order: migration-first
+    cross_server: approved-scope-only
+  growth_pickaxe:
+    authority: Wayfarer_Main
+    runtime_location: future-wf_main-mariadb
+    backup_owner: custom-plugin-backup
+    restore_order: migration-first
+    cross_server: false
+  history_rollback:
+    authority: product-unselected
+    artifact_candidate: CoreProtect-CE-24.0
+    runtime_location: none
+    backup_owner: separate-selection-required
+    restore_order: after-world-and-database-restore-if-adopted
+    cross_server: false
+
+prohibitions:
+  - Redis-is-not-inventory-authority
+  - Redis-is-not-growth-pickaxe-authority
+  - Wayfarer_Frontier-does-not-store-normal-inventory
+  - Main-and-Frontier-items-never-transfer
+  - history-product-does-not-replace-cold-backup

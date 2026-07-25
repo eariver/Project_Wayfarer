@@ -153,7 +153,7 @@ BetterStructures Prop Pack、FreeMinecraftModels 2.10.2およびResourcePackMana
 
 Final Main BaselineはSeed `164225356311935743`、Overworld Spawn `(320, 70, 128)`、Nether管理Spawn `(20.5, 60, -19.5)`、End管理Spawn `(100.5, 49, 0.5)`を維持し、Resource FamilyのUUID、Seedおよび全Region Hashを保持しました。正確なWorld UUID、Storage Path、Backupおよび受入結果は[Main World Baseline](13-main-world-baseline.md)を正本とします。Hub／Gate構造は未実装です。
 
-Order 6では具体的なBlocking defectや調整根拠がないため、278有効／152無効、Weight、Distance、Altitude、World AllowlistおよびSpawn Protectionを変更せず採用しました。停止状態の完全Backupを検証し、現在のWorldをFinal Main Baselineへ昇格しています。これはV0.1.0 Release Baselineではありません。追加の削除、Trim、再生成、RenameまたはSeed／UUID変更は別の破壊的Taskなしに行いません。Order 7 CoreProtectはCE 24.0がMinecraft 26.2をRuntime拒否したため延期・Non-blockingとし、次のActive TaskはOrder 8 Frontier lockです。
+Order 6では具体的なBlocking defectや調整根拠がないため、278有効／152無効、Weight、Distance、Altitude、World AllowlistおよびSpawn Protectionを変更せず採用しました。停止状態の完全Backupを検証し、現在のWorldをFinal Main Baselineへ昇格しています。これはV0.1.0 Release Baselineではありません。追加の削除、Trim、再生成、RenameまたはSeed／UUID変更は別の破壊的Taskなしに行いません。Order 7 CoreProtectはCE 24.0がMinecraft 26.2をRuntime拒否したため延期・Non-blockingです。Order 8 Frontier LockはProposal 003で完了し、次のRoadmap作業はOrder 9です。
 
 ### FrontierとResource Pack
 
@@ -251,7 +251,7 @@ Builder作業終了時は、保存状態を確認し、Survivalへ戻し、必�
 
 V0.1.0ではMainのバニラに近いSurvivalを、mcMMO、Waymark、固定価格Shop、5 Pack構成のBetterStructures、EvenMoreFishおよびWayfarer_MainのGrowth Pickaxeで拡張します。FrontierにはRuined Frontier alphaとWorlds Beyond MVPの両方を導入し、MVI Group分離、Wayfarer_Core／Wayfarer_Frontier、Main／Frontier別Resource Pack、必須Gate、権限切替、統合運用Script、Cold Backup／RestoreおよびBaseline Backupを成立させます。
 
-Ruined FrontierとWorlds Beyondは承認済みScopeですが未実装です。Paper 1.21.11／Java 25互換性、正確なArtifact、License、Hash、World ID、Gate、Resource PackおよびPersistenceは専用タスクでLockします。World Generator、Content ImportまたはPlugin EnableだけをPlayable完了とは扱いません。
+Ruined FrontierとWorlds Beyondは承認済みScopeですが未実装です。Paper 1.21.11／Java 25向けArtifact、License、Hash、World ID、Gate方式、Resource Pack入力およびPersistence境界はOrder 8で静的Lock済みです。実Config、Runtime互換性、World生成、最終Pack、Gate座標およびContent受入は後続Taskで検証します。World Generator、Content ImportまたはPlugin EnableだけをPlayable完了とは扱いません。
 
 ## 12. World／Gate完成条件
 
@@ -279,4 +279,4 @@ Wayfarer_Core、Wayfarer_MainおよびWayfarer_FrontierはV0.1.0 Release Blocker
 
 ## 14. Roadmapと関連文書
 
-V0.1.0までの実施順とBlockerは[Roadmap](09-roadmap.md)で管理します。Main BetterStructures Preflight、Content Load、再生成、Order 5受入およびOrder 6 Final Main Baselineは完了しました。Order 7 CoreProtectはMain／LobbyのMinecraft 26.2対応Stable版待ちとして延期・Non-blockingであり、Owner単独運用中はV0.1.0 Blockerから一時除外します。Order 8 Frontier LockはPhase A Revision 003の承認待ちです。その後は外部Multi-module RepositoryとWayfarer_Core、Wayfarer_Main／Growth Pickaxe、Wayfarer_Frontier、Frontier共通基盤、両Theme、Gate／Permission、ユーザー建築、Routing、Resource Bootstrap、統合運用、Cold Backup／隔離Restoreへ進みます。最後に別途承認された破壊的Player State Resetを実施してからV0.1.0 Release Baseline Backupを作成します。Growth Tool DataをResetするか保持するかは未決で、別のOwner承認を必要とします。導入済みVersionとHashは`versions.yml`、配置・取得・依存方針は`plugin-manifest.yml`、運用手順は[Operations](03-operations.md)、検証済み事実と未達Blockerは[Acceptance Tests](06-acceptance-tests.md)、Frontier Scopeは[Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md)、将来課題は[Deferred Design Items](11-deferred-design-items.md)を参照してください。
+V0.1.0までの実施順とBlockerは[Roadmap](09-roadmap.md)で管理します。Main BetterStructures Preflight、Content Load、再生成、Order 5受入、Order 6 Final Main BaselineおよびOrder 8 Frontier Lockは完了しました。Order 7 CoreProtectはMain／LobbyのMinecraft 26.2対応Stable版待ちとして延期・Non-blockingであり、Owner単独運用中はV0.1.0 Blockerから一時除外します。Order 8の静的契約は[Frontier Runtime Lock](15-frontier-runtime-lock.md)を正本とし、Runtime導入済みとは扱いません。次は外部Multi-module RepositoryとWayfarer_Core、Wayfarer_Main／Growth Pickaxe、Wayfarer_Frontier、Frontier共通基盤、両Theme、Gate／Permission、ユーザー建築、Routing、Resource Bootstrap、統合運用、Cold Backup／隔離Restoreへ進みます。最後に別途承認された破壊的Player State Resetを実施してからV0.1.0 Release Baseline Backupを作成します。Growth Tool DataをResetするか保持するかは未決で、別のOwner承認を必要とします。導入済みVersionとHashは`versions.yml`、配置・取得・依存方針は`plugin-manifest.yml`、運用手順は[Operations](03-operations.md)、検証済み事実と未達Blockerは[Acceptance Tests](06-acceptance-tests.md)、Frontier Scopeは[Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md)、将来課題は[Deferred Design Items](11-deferred-design-items.md)を参照してください。

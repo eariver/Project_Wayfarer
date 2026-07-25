@@ -27,7 +27,7 @@ Minecraftの恒久生活拠点 **Main** と、既製Adventureコンテンツを�
 - Main恒久World: 2026-07-25に同一Seedで5 Pack構成へ置換生成し、Resource Familyと安全Spawnを保持したFinal Main BaselineとしてOrder 6まで完了
 - Main／Frontier: 通常Inventoryは分離し、Waymark残高とmcMMO進行だけを共有
 - Lobby: TAB・権限以外のゲーム進行をMain／Frontierと共有しない
-- V0.1.0計画: Main Order 6は完了。Order 7 CoreProtectはMinecraft 26.2対応Stable版待ちとして延期・Non-blocking。Order 8 Frontier LockはPhase A Revision 003の承認待ち。Ruined Frontier三次元、単一Overworld `frontier_iris`のWorlds Beyond、MVI、Wayfarer_Core／Main／Frontier、Growth Pickaxe、Main／Frontier別Resource Packは未完了
+- V0.1.0計画: Main Order 6は完了。Order 7 CoreProtectはMinecraft 26.2対応Stable版待ちとして延期・Non-blocking。Order 8 Frontier LockはProposal `FRONTIER-LOCK-20260726-003`で完了。Ruined Frontier三次元、単一Overworld `frontier_iris`のWorlds Beyond、MVI Runtime、Wayfarer_Core／Main／Frontier、Growth Pickaxe、Main／Frontier別Resource Packの実装は未完了
 
 ## 最初に読む文書
 
@@ -43,9 +43,10 @@ Minecraftの恒久生活拠点 **Main** と、既製Adventureコンテンツを�
 10. [Permission Model](docs/12-permission-model.md)
 11. [Main World Baseline](docs/13-main-world-baseline.md)
 12. [Frontier V0.1.0 Scope](docs/14-frontier-v0.1.0-scope.md)
-13. [Codex Task Instruction Archive](codex/README.md)
-14. [Investigation Reports](docs/investigations/README.md)
-15. [Concepts and design candidates](concepts/README.md)
+13. [Frontier V0.1.0 Runtime Lock](docs/15-frontier-runtime-lock.md)
+14. [Codex Task Instruction Archive](codex/README.md)
+15. [Investigation Reports](docs/investigations/README.md)
+16. [Concepts and design candidates](concepts/README.md)
 
 今後はRepository内の正式ガイドを設計基準とし、Runtime Versionは`versions.yml`と`plugin-manifest.yml`で管理します。
 
@@ -145,5 +146,5 @@ Ver.0.0.6は設計・導入・運用文書の改訂番号であり、稼働Serve
 - ResourcePackManager 2.3.0はMain Preflight済み。Frontierは別Packとして未導入であり、正式Hosting、Backend切替、競合およびRollbackはFrontier統合時にNetwork全体でLockする。
 - Lobby／Main／FrontierのHub外観とGate構造はユーザーが手作業で確定し、Codexは確定座標に基づく接続・設定・保護を後続タスクで行う。
 - Main Spawn保護は設計済み・未実装とし、ユーザーが初期Hubを概ね整備した後にWorldGuard RegionのExact範囲を別タスクで承認する。それまではVanilla `spawn-protection=16`を維持する。
-- CoreProtectはMain／Lobbyとも現時点では未導入です。CE 24.0がMinecraft 26.2をRuntime拒否したため、対応Stable版待ちとしてOrder 7を延期・Non-blockingとし、Owner単独運用中はV0.1.0 Blockerから一時除外します。Hub／Gate構築はFinal Main Baseline Backup、必要なSchematic／構築後Backup、Focusedな作業単位および完成後のWorldGuard保護を条件に進めてよいものとします。WorldGuardは予防保護であり、履歴監査・検索・時点Rollbackを提供せず、CoreProtectもCold Backupを代替しません。Owner以外の参加、複数Builder、Public運用または大規模共同WorldEditの前に再評価します。Frontier方針はOrder 8以降で決定します。
+- CoreProtectはMain／Lobbyとも現時点では未導入です。CE 24.0がMinecraft 26.2をRuntime拒否したため、対応Stable版待ちとしてOrder 7を延期・Non-blockingとし、Owner単独運用中はV0.1.0 Blockerから一時除外します。Hub／Gate構築はFinal Main Baseline Backup、必要なSchematic／構築後Backup、Focusedな作業単位および完成後のWorldGuard保護を条件に進めてよいものとします。WorldGuardは予防保護であり、履歴監査・検索・時点Rollbackを提供せず、CoreProtectもCold Backupを代替しません。Owner以外の参加、複数Builder、Public運用または大規模共同WorldEditの前に再評価します。Frontierの履歴／Rollback製品はOrder 8 Lockでも未選定であり、別Taskで選定します。
 - V0.2.x以降の独自Plugin構想は、一般Concept運用を導入する以前の歴史的例外として[Codex Task Instruction Archive](codex/README.md)内に参考草案を保存する。Fileは現位置を維持し、Ver.0.0.6へ明示的に昇格したWayfarer_Core／Wayfarer_Main／Wayfarer_Frontier Scope以外について、V0.1.0の実装対象・Release Blocker・開発開始承認にはしない。

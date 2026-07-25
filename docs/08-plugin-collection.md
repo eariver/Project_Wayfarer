@@ -11,7 +11,7 @@
 |Proxy|Velocity|ViaVersion 5.11.0|導入・検証済み|velocity/plugins|https://modrinth.com/plugin/viaversion|ViaBackwards禁止|
 |Proxy|Velocity|TAB 6.1.0|導入・検証済み|velocity/plugins|https://github.com/NEZNAMY/TAB/releases|Proxy Installation、Paper配置禁止|
 |Proxy|Velocity|VelocityScoreboardAPI 2.1.0|導入・検証済み|velocity/plugins|https://github.com/WiIIiam278/VelocityScoreboardAPI|Paper配置禁止、Sidebar等は未使用|
-|Portal|Velocity + All Paper|Advanced Portals|計画・未導入|各plugins|https://modrinth.com/plugin/advanced-portals|Proxy／Backend Componentを一括検証|
+|Portal|Velocity + All Paper|Advanced Portals 2.8.0|Order 8 Lock済み・未導入|各plugins|https://modrinth.com/plugin/advanced-portals|`proxy:`方式。Proxy／Backend ComponentをOrder 12で一括検証|
 |Common|All Paper|LuckPerms 5.5.60|導入・検証済み|各plugins|https://luckperms.net/download|共有MariaDB|
 |Common|All Paper|PlaceholderAPI 2.12.3|導入・検証済み|各plugins|https://www.spigotmc.org/resources/placeholderapi.6245/|Velocity配置禁止、Expansion未導入・手動取得|
 |Common|All Paper|TAB-Bridge 6.2.2|導入・検証済み|各plugins|https://github.com/NEZNAMY/TAB-Bridge/releases|Velocity配置禁止|
@@ -28,12 +28,15 @@
 |Structure|Main|BetterStructures 2.6.3 + Main 5-Pack|導入・Load検証済み|servers/main/plugins|https://nightbreak.io/plugin/betterstructures/|430件中278件有効、Persistent Main Family限定、Resource全世界と未知Worldは無効、再生成未実施|
 |Model|Main|FreeMinecraftModels 2.10.2 + BetterStructures Prop Pack|導入・Load検証済み|servers/main/plugins|https://modrinth.com/plugin/free-minecraft-models/version/sQDrL88L|55 Models、一般Player Menu／Shop無効、Artifact／生成PackはGit対象外|
 |Model / Pack|Main|ResourcePackManager 2.3.0|導入・配信Preflight済み|servers/main/plugins|https://modrinth.com/plugin/resourcepackmanager/version/sm5yLBux|Main統合Pack生成、任意Prompt、拒否継続、再接続Cacheを確認済み。Nightbreak一時Hosting、正式Hosting／Frontier Packは未確定|
-|Adventure|Frontier|EliteMobs|計画・未導入|servers/frontier/plugins|https://modrinth.com/plugin/elitemobs|Content Packは別途|
-|Structure|Frontier Ruined|BetterStructures|正式Scope・未導入|servers/frontier/plugins|https://modrinth.com/plugin/betterstructures|Ruined Frontier三次元、EliteMobs連携、Artifact／Contentは別タスクでLock|
-|World / State|Frontier|Multiverse-Inventories|正式Scope・未導入|servers/frontier/plugins||`neutral`／`worlds_beyond`／`guild`、通常Player State正本|
-|World / Portal|Frontier Ruined|Multiverse-NetherPortals 5.0.5|Phase A候補・未導入|servers/frontier/plugins|https://modrinth.com/plugin/multiverse-netherportals|Ruined Frontier三次元だけ。Worlds Beyondでは使用しない|
-|World Generator|Frontier Worlds Beyond|Iris Engine／Overworld Pack|Phase A候補・未導入|別タスクで確定||`frontier_iris`単一Overworld、PEACEFUL、Seed／Border／License／HashをLock。Nether／Endなし|
-|Model / Pack|Frontier|ResourcePackManager|正式Scope・未導入|servers/frontier/plugins||Mainとは別Pack、Version／Hosting／Hash／切替／失敗時挙動／Rollbackを別途Lock|
+|Adventure|Frontier|EliteMobs 10.7.3|Order 8 Lock済み・未導入|servers/frontier/plugins|https://modrinth.com/plugin/elitemobs|Guild Artifactだけ承認済み繰越。Runtime／Content受入はOrders 13／14|
+|Structure|Frontier Ruined|BetterStructures 2.6.3|Order 8 Lock済み・未導入|servers/frontier/plugins|https://modrinth.com/plugin/betterstructures|Ruined Frontier三次元だけ。Content選定とRuntime受入はOrder 14|
+|World / State|Frontier|Multiverse-Inventories 5.3.5|Order 8 Lock済み・未導入|servers/frontier/plugins|https://modrinth.com/plugin/multiverse-inventories|`neutral`／`worlds_beyond`／`guild`、通常Player State正本|
+|World / Portal|Frontier Ruined|Multiverse-NetherPortals 5.0.5|Order 8 Lock済み・未導入|servers/frontier/plugins|https://modrinth.com/plugin/multiverse-netherportals|Ruined Frontier三次元だけ。Worlds Beyondでは使用しない|
+|World Generator|Frontier Worlds Beyond|Iris 3.9.2／Overworld Pack|Order 8 Lock済み・未導入|servers/frontier/plugins|https://github.com/VolmitSoftware/Iris|`frontier_iris`単一Overworld。Nether／Endなし、Runtime生成はOrder 15|
+|Gameplay|Frontier Worlds Beyond|LeafGrapple 1.0.2|Order 8 Lock済み・未導入|servers/frontier/plugins|https://modrinth.com/plugin/leafgrapple|`frontier_iris`限定、既定Damage／Durability／Entity HookをOrder 15で制限|
+|Model|Frontier|FreeMinecraftModels 2.10.2|Order 8 Lock済み・未導入|servers/frontier/plugins|https://modrinth.com/plugin/free-minecraft-models|Frontier独立Output、Player Shop／Menu無効|
+|Model / Pack|Frontier|ResourcePackManager 2.3.0|Order 8 Lock済み・未導入|servers/frontier/plugins|https://modrinth.com/plugin/resourcepackmanager|Mainとは別Pack。最終Output／Hosting／Hash／切替はOrder 12|
+|GUI|Frontier Ruined|BetterHealthBar3 4.1.0|Order 8 Adoption候補・未導入|servers/frontier/plugins|https://www.spigotmc.org/resources/116619/|User-owned。有効化可否はOrders 12／14 Smoke Test、Self-host禁止|
 |External Custom|Network|Wayfarer_Core|正式Scope・未開発|外部Multi-module Repository||V0.1.0 Blocker、本RepositoryへSourceを置かない|
 |External Custom|Main|Wayfarer_Main|正式Scope・未開発|外部Multi-module Repository||V0.1.0 Blocker、Main限定Growth Pickaxe|
 |External Custom|Frontier|Wayfarer_Frontier|正式Scope・未開発|外部Multi-module Repository||V0.1.0 Blocker、MVI通常Inventoryを再実装しない|

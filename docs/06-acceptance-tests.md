@@ -108,7 +108,8 @@ Persistence／boundary:
 
 ### Frontier shared foundation
 
-- [ ] Exact Frontier Plugin／Content versions, licenses, hashes, World IDs, Gate method, Pack composition, persistence, and dependency order are locked.
+- [x] Order 8 Proposal `FRONTIER-LOCK-20260726-003` statically locks Artifacts, World IDs, MVI groups, Gate method, Pack inputs, persistence and Permission boundaries without claiming Runtime acceptance.
+- [ ] Runtime-enable only the locked Frontier components and verify their dependency order, generated Config and final Pack composition without changing the approved versions, hashes, World IDs, Gate method, Pack inputs or persistence owners.
 - [ ] MVI implements `neutral`, `worlds_beyond`, and `guild`, switches the approved Player State without loss／duplication／stale overwrite, and survives restart, disconnect, and reconnect.
 - [ ] Main, Frontier Lobby, Worlds Beyond, and Ruined Frontier exchange no Inventory, Armor, Offhand, Ender Chest, Vanilla or custom Item, XP, Health, or Food.
 - [ ] Waymark and mcMMO retain only their approved shared behavior without becoming an item-transfer path.
@@ -127,7 +128,7 @@ Persistence／boundary:
 - [ ] Guild and verified Instance Worlds use the correct MVI profile; restart／reconnect and Instance lifecycle do not lose or duplicate Player State.
 - [ ] The independent EM Adapter review records whether static registration, strict Regex, or an Adapter is required; an Adapter is not assumed.
 - [ ] The Frontier Resource Pack renders required BetterStructures／EliteMobs／FreeMinecraftModels assets; BetterHealthBar3 passes or is explicitly rejected by its adoption test.
-- [ ] Order 8 or later explicitly decides the Frontier history／rollback solution, placement, storage, World, MVI, and Permission boundaries; this document does not preselect CoreProtect.
+- [x] Order 8 locked the Frontier history／rollback product as unselected and retained CoreProtect 24.0 only as an Artifact candidate; any adoption requires a separate selection／Runtime validation task.
 
 ### Worlds Beyond MVP
 

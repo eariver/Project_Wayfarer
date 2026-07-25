@@ -32,7 +32,7 @@ The 2026-07-21 family remains the Legacy Rollback Baseline. The 2026-07-25 repla
 | 5 | Main generation acceptance — complete 2026-07-25 | Spawns, Resource exclusion, Portal family, Pack, restart, three dimensions, Props, and four distinct Packs passed; Exploration Pack supplied the fourth natural-generation observation |
 | 6 | Main Weight／Content tuning and new baseline — complete 2026-07-25 | Decision A retained current Config; identities, Resource hashes, stopped-state backup, and Final Main Baseline source of truth were verified |
 | 7 | CoreProtect — deferred／non-blocking | Main／Lobby wait for an upstream Minecraft 26.2-compatible Stable release; not complete, accepted, or a cold-backup replacement |
-| 8 | Frontier lock | Phase A Revision 003; Proposal `FRONTIER-LOCK-20260726-003` awaiting exact approval, Phase B not executed |
+| 8 | Frontier lock — complete 2026-07-26 | Proposal `FRONTIER-LOCK-20260726-003` approved; Artifact／World／MVI／Gate／Pack／persistence／permission boundaries are statically locked, Runtime validation deferred |
 | 9 | Plugin Repository foundation＋Wayfarer_Core | Formally design one external Gradle Multi-module Repository, common contracts, Core implementation／tests／release candidate, and Project integration |
 | 10 | Wayfarer_Main／Growth Pickaxe | Produce the implementation specification, module, unit／integration tests, release candidate, Main integration, migration, Config, detailed acceptance, and backup／restore decision |
 | 11 | Wayfarer_Frontier | Design, implement, test, release, and integrate the Frontier module without reimplementing MVI |
@@ -52,7 +52,7 @@ The 2026-07-21 family remains the Legacy Rollback Baseline. The 2026-07-25 repla
 | 25 | V0.1.0 Pre-release Player State Reset | Separately approve Waymark, Player State, and Growth Tool Reset／Preserve scope |
 | 26 | V0.1.0 Baseline | Create the post-reset baseline backup and confirm every Blocker before Release declaration |
 
-The table controls practical priority. Main Content loaded before regeneration and the Final Main Baseline is complete. Order 7 remains numbered but is deferred／non-blocking. Order 8 is awaiting Proposal 003 approval. Order 9 Core contracts precede Orders 10 and 11; Orders 10 and 11 may proceed in parallel only without breaking the Core contract. Both Frontier Themes and the Gate boundary precede Builder Phase 1B.
+The table controls practical priority. Main Content loaded before regeneration and the Final Main Baseline is complete. Order 7 remains numbered but is deferred／non-blocking. Order 8 is complete under Proposal 003; this does not install or Runtime-verify its locked components. Order 9 Core contracts precede Orders 10 and 11; Orders 10 and 11 may proceed in parallel only without breaking the Core contract. Both Frontier Themes and the Gate boundary precede Builder Phase 1B.
 
 ## Phase details
 
@@ -147,7 +147,7 @@ The formal scope is [Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md). Both R
 
 #### Frontier shared foundation
 
-- [ ] Lock every Plugin／Content Artifact, license, hash, World ID, Gate method, Resource Pack, and persistence boundary
+- [x] Order 8 locks every selected Plugin／Content Artifact, license, hash, World ID, Gate method, Resource Pack input, and persistence boundary under Proposal 003
 - [ ] Integrate Multiverse-Inventories with `neutral`, `worlds_beyond`, and `guild`
 - [ ] Integrate Multiverse-NetherPortals 5.0.5 only for Ruined Frontier, verify WorldEdit／WorldGuard, and integrate FMM／ResourcePackManager; decide the Frontier history／rollback solution separately
 - [ ] Produce and deliver a Frontier-only integrated Pack
@@ -220,7 +220,7 @@ Codex does not infer appearance, coordinates, orientation, or destinations.
 - [ ] Keep any future lookup／rollback administration Admin-only
 - [ ] Re-evaluate before non-Owner participation, multiple Builders, public operation, large collaborative WorldEdit work, or materially expanded persistent construction
 
-Order 7 is deferred and non-blocking, not complete. Main／Lobby CoreProtect is temporarily outside the V0.1.0 blockers under Owner-only operation. Frontier adoption remains undecided until Order 8 or later. CoreProtect records only changes after installation and never replaces cold backup; WorldGuard is preventive protection and does not replace it.
+Order 7 is deferred and non-blocking, not complete. Main／Lobby CoreProtect is temporarily outside the V0.1.0 blockers under Owner-only operation. The Order 8 Frontier Lock leaves its history／rollback product unselected and CoreProtect 24.0 as an Artifact candidate only. CoreProtect records only changes after installation and never replaces cold backup; WorldGuard is preventive protection and does not replace it.
 
 ### Phase 10 - Integrated operations
 

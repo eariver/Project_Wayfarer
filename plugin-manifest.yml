@@ -65,14 +65,18 @@ custom_plugin_plan:
       artifact-boundary: independent-runtime-plugin
       version: unselected
 
-frontier_lock_candidate:
+frontier_lock:
   proposal-id: FRONTIER-LOCK-20260726-003
   previous-proposal: FRONTIER-LOCK-20260726-002
   previous-status: superseded-before-approval
-  phase-b: not-authorized
-  approval-token-received: false
-  status: candidate
+  approved-on: 2026-07-26
+  phase-b: complete
+  approval-token-received: true
+  status: locked
   runtime-validation: deferred
+  runtime-applied: false
+  document: docs/15-frontier-runtime-lock.md
+  lock-files: config/frontier-lock/*-lock.yml
   worlds-beyond:
     world: frontier_iris
     generator: Iris Overworld only

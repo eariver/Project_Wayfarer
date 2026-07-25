@@ -105,7 +105,12 @@ Use normal WorldGuard membership protection: general Players cannot place or bre
 
 CoreProtect is not installed on Main or Lobby. CE 24.0 rejected Minecraft 26.2 at Runtime, so Order 7 is deferred and non-blocking while an upstream compatible Stable release is unavailable. Owner-only Hub／Gate construction may proceed without it. Before construction, confirm the Final Main Baseline Backup, record the affected coordinates, preserve a focused WorldEdit Schematic when useful, and verify tracked Config cleanliness. During construction, split large work into small units and verify every destructive WorldEdit selection and command. After construction, preserve an ignored completion Schematic or focused backup as appropriate, document coordinates／orientation／arrival／equipment, apply the separately approved WorldGuard protection, run General Player／Builder／Admin focused tests, and verify restart persistence.
 
-WorldGuard is preventive access protection and does not provide change-history search or point-in-time rollback. CoreProtect also cannot replace cold backup. Re-evaluate before any non-Owner Player, multiple Builders, public operation, large collaborative WorldEdit work, or materially expanded persistent construction. Frontier CoreProtect operation remains undecided until Order 8 or later.
+WorldGuard is preventive access protection and does not provide change-history search or point-in-time rollback. CoreProtect also cannot replace cold backup. Re-evaluate before any non-Owner Player, multiple Builders, public operation, large collaborative WorldEdit work, or materially expanded persistent construction. The Order 8 Frontier Lock leaves the history／rollback product unselected; any adoption requires a separate task and does not replace cold backup.
+
+Frontier implementation and backup work must use
+[`docs/15-frontier-runtime-lock.md`](15-frontier-runtime-lock.md) and the five
+`config/frontier-lock/*-lock.yml` files. Do not silently replace a locked Artifact,
+World ID, Gate method, Pack input or authority; create a new Lock Revision first.
 
 ## Lobby and Frontier void worlds
 

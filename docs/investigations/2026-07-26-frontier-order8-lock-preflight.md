@@ -11,9 +11,13 @@
 | Phase | A — static research and candidate lock only |
 | Runtime change | None |
 | World／DB／Permission change | None |
-| Decision Gate | Revision 003 awaiting exact approval; Phase B is not authorized |
+| Decision Gate | Revision 003 was approved after this Phase A report; see the Formal Lock report |
 
 本Reportは、Order 8の正式Lock前に行ったRepository-local Inventory、Artifact静的確認、公式情報調査および境界候補を記録する。Runtime導入、Server起動、World生成、Database操作、Permission変更、Pack生成は行っていない。
+
+Phase Bは後続のExact Tokenで完了した。Current Lockは
+[Frontier Runtime Lock](../15-frontier-runtime-lock.md)と
+[Formal Lock Report](2026-07-26-frontier-order8-lock.md)を参照する。
 
 ## Revision 003
 

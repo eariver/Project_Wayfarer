@@ -27,7 +27,7 @@ Phase 1A implemented all five persistent LuckPerms Group definitions. The tempor
 
 | 課題 | 現在の妥協策 | V0.1.0への影響 | 将来の解決候補 | 独自Pluginが必要か | 再検討時期 |
 |---|---|---|---|---|---|
-| MVI正式Versionと共有Player Stateが未Lock | Concept上の`neutral`／`worlds_beyond`／`guild`境界だけを正本化し、Runtime Configを作らない | **Blocker**。通常Player Stateの正本と移動経路試験が必要 | 採用MVI VersionのGroup／Share Config | 原則不要 | Frontier共通基盤Task |
+| MVI 5.3.5と共有Player StateはOrder 8 Lock済みだがRuntime未検証 | `neutral`／`worlds_beyond`／`guild`とShare keyを正式Lockとし、Runtime Configはまだ作らない | **Blocker**。実Config、通常Player Stateと移動経路試験が必要 | Lock済みVersionのGroup／Share Config | 原則不要 | Order 12 Frontier共通基盤Task |
 | EM InstanceのMVI方式が未確定 | 静的登録、厳密Regex、必要時Adapterの順で評価 | **Blocker**。Adapter必要性判断が必要 | MVI Config、必要性が立証された場合だけ独立Artifact `Wayfarer_Frontier_EliteMobsMVI` | 条件付き | EliteMobs Artifact／Instance命名確認後 |
 | Worlds Beyond Traversal詳細が未Lock | Elytra、LeafGrapple、Loadout、Launchpadを正式Scopeとし、Artifact／Item契約は未実装 | **Blocker** | Wayfarer_Frontier＋採用LeafGrapple Adapter | 必要 | Worlds Beyond実装Task |
 | Ruined Frontier WM報酬Balanceが未Lock | 初期alphaはBoss／Quest報酬を自動導入しない | 非Blocker。Theme本体はBlocker | Vault／Waymark Adapter経由の冪等Reward | 必要 | 実プレイBalance評価後 |

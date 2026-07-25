@@ -24,6 +24,11 @@ Phase 1B is not implemented:
 
 Phase 1B starts before Builder-led Hub／Gate／Theme connection work, only after Ruined Frontier, Worlds Beyond, Multiverse-Inventories, ResourcePackManager, EliteMobs, Wayfarer_Core, Wayfarer_Main, Wayfarer_Frontier, any conditional Adapter, the adopted Gate／Portal permissions, and exact Builder-owned Hub／Gate／Theme connection work are known. It must use a command-focused allowlist and must not restore broad wildcards.
 
+Order 8 statically locked Advanced Portals 2.8.0 as the Gate method and the Frontier
+Admin／General Player／Builder responsibility boundary. It granted no Runtime Permission.
+Phase 1B still requires the verified Runtime commands and exact construction work before
+creating any Builder node.
+
 ## 2. Persistent Groups and temporary membership
 
 | Group | Definition | Player membership | Current authority |

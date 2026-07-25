@@ -92,7 +92,7 @@ Ver.0.0.6 replaced the persistent dimensions while retaining the approved safe s
 3. Completed 2026-07-25: replacement-generate only `main`, `main_nether`, and `main_the_end`; preserve and hash-verify the complete Resource family.
 4. Completed 2026-07-25: Portals, safe Spawns, Main Resource Pack, four-Pack／three-dimension natural generation, Prop, identities, restart, no-tuning decision, and verified stopped-state Final Main Baseline backup passed.
 5. Keep Order 7 CoreProtect deferred／non-blocking while Main／Lobby wait for a Minecraft 26.2-compatible Stable release; do not record an uninstalled Version in the manifests.
-6. Continue with Order 8 Frontier lock, Builder Phase 1B, Owner-led construction, protection, and Gate routing in the [Roadmap](09-roadmap.md) order. Owner-only Hub／Gate work uses the retained Final Main Baseline Backup, focused Schematic／backup evidence, controlled edit units, and post-construction WorldGuard protection.
+6. Order 8 Frontier Lock is complete as a static contract. Continue with Order 9 and later work in the [Roadmap](09-roadmap.md) order, using the [Frontier Runtime Lock](15-frontier-runtime-lock.md). Owner-only Hub／Gate work uses the retained Final Main Baseline Backup, focused Schematic／backup evidence, controlled edit units, and post-construction WorldGuard protection.
 
 ## Phase 8 - Shared mcMMO and planned Frontier expansion
 
@@ -102,7 +102,7 @@ mcMMO 2.3.000 is installed only on Main and Frontier from the same local Maven b
 
 The following Frontier work is approved for V0.1.0 but not installed:
 
-1. Lock exact Plugin／Content versions, licenses, hashes, World IDs, Gate method, Pack, persistence, and dependencies.
+1. Use the completed Order 8 [Frontier Runtime Lock](15-frontier-runtime-lock.md) for exact Plugin／Content versions, licenses, hashes, World IDs, Gate method, Pack inputs, persistence, and dependencies. Any change requires a new Lock Revision.
 2. Design one external Gradle Multi-module Repository, then develop, release, and integrate Wayfarer_Core, Main, and Frontier under dedicated tasks. Wayfarer_Main and its Growth Pickaxe are Main-only.
 3. Install the shared Frontier foundation, including MVI `neutral`／`worlds_beyond`／`guild`, Ruined-only MNP 5.0.5, Frontier ResourcePackManager, and the Beyond／Guild Gate boundary.
 4. Determine whether EliteMobs Instances can use MVI static registration or strict Regex before authorizing the independent `Wayfarer_Frontier_EliteMobsMVI` Artifact.
