@@ -9,6 +9,9 @@
 local/paths.psd1
 local/*.local.*
 local/runtime/
+local/main-v006-*.log
+local/runtime-control/
+local/runtime-tools/
 local/work/main-betterstructures-v006/
 scripts/__pycache__/
 **/forwarding.secret

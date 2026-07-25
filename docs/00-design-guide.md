@@ -149,11 +149,11 @@ EconomyShopGUI 7.1.1 FreeはMainだけに配置し、Vault経由でRedisEconomy�
 
 BetterStructures Prop Pack、FreeMinecraftModels 2.10.2およびResourcePackManager 2.3.0もMainだけに導入し、55 ModelsとMain Java Resource PackのLoad／生成Preflightを完了しています。Artifact Lock、選定、Mapping、生成Packおよび一時Hostingの詳細は[調査報告](investigations/2026-07-25-main-betterstructures-content-preflight.md)を参照します。
 
-全Content、Plugin、World Allowlist、Structure選別Config、Prop／Model IDおよびMain Resource PackをWorking Copyで検証し、正常Loadを確認した後に限り、別途承認された破壊的タスクで`main`、`main_nether`、`main_the_end`を再生成します。Content Importより先にWorldを生成しません。Resource Familyは再生成とBetterStructures生成の両方から除外します。
+全Content、Plugin、World Allowlist、Structure選別Config、Prop／Model IDおよびMain Resource PackをWorking Copyで検証した後、2026-07-25の承認済み破壊Taskで`main`、`main_nether`、`main_the_end`を置換生成しました。Resource Familyは再生成とBetterStructures生成の両方から除外されています。
 
-Phase 3 Main最終生成は2026-07-21に完了しています。3つのPersistent DimensionはSeed `164225356311935743`で生成し、Overworld Spawn `(320, 70, 128)`、Nether管理Spawn `(20.5, 60, -19.5)`、End管理Spawn `(100.5, 49, 0.5)`を安全確認済みです。Resource FamilyはUUID、SeedおよびRegion Dataを保持しました。正確なWorld名、Storage Path、World UUID、BackupおよびRollback条件は[Main World Baseline](13-main-world-baseline.md)を正本とします。Hub／Gate構造は未実装です。
+Current Runtime CandidateはSeed `164225356311935743`、Overworld Spawn `(320, 70, 128)`、Nether管理Spawn `(20.5, 60, -19.5)`、End管理Spawn `(100.5, 49, 0.5)`を維持し、Resource FamilyのUUID、Seedおよび全Region Hashを保持しました。正確なWorld UUID、Storage Path、Backupおよび限定受入結果は[Main World Baseline](13-main-world-baseline.md)を正本とします。Hub／Gate構造は未実装です。
 
-この現行Baselineは新しい生成・受入試験・調整・Backupが完了するまで現行Runtime正本です。Ver.0.0.6文書だけでSupersededにはならず、既存Worldの削除、Trim、再生成、RenameまたはSeed／UUID変更を承認しません。CoreProtectは新Baseline確定後、Hub／Gateの本格建築前に導入します。
+現在のWorldはRuntime Candidateとして運用しますが、4 Pack目の自然生成確認とOrder 6 Weight／Content調整・最終Backupが残るため、V0.1.0最終Baselineとは呼びません。追加の削除、Trim、再生成、RenameまたはSeed／UUID変更は別の破壊的Taskなしに行いません。CoreProtectは新Baseline確定後、Hub／Gateの本格建築前に導入します。
 
 ### FrontierとResource Pack
 

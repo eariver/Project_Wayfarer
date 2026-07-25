@@ -34,7 +34,7 @@ Regression testing is limited to a foundation directly modified by the change. E
 - [x] mcMMO shared Main/Frontier progression and RedisEconomy shared Waymark balances have verified persistence tests.
 - [x] EconomyShopGUI 7.1.1 Free provides the verified Main-only fixed-price shop.
 
-These items describe current baselines only. They do not mark the replacement Main generation, Phase 1B, Hubs, Gates, either Frontier Theme, MVI, the future Frontier ResourcePackManager／Pack, custom Plugins, integrated operations, or V0.1.0 Backup as implemented.
+These items describe current baselines only. The replacement Main generation is complete with limited acceptance, but its fourth-Pack evidence and Order 6 remain incomplete. They do not mark Phase 1B, Hubs, Gates, either Frontier Theme, MVI, the future Frontier ResourcePackManager／Pack, custom Plugins, integrated operations, or the final V0.1.0 Backup as implemented.
 
 ## 3. V0.1.0 Release Blockers
 
@@ -58,13 +58,13 @@ Phase 1B incomplete:
 ### Main and gameplay
 
 - [x] BetterStructures 2.6.3 and `103 Default Structures` version 5 are enabled only in Bukkit worlds `main`, `main_nether`, and `main_the_end`; every Resource world and unknown new world is disabled.
-- [x] The 2026-07-21 current persistent Main baseline completed under an approved destructive task with exact paths, verified backup and manifest, recorded seed, preserved Resource family, and safe Overworld/Nether/End spawns.
+- [x] The 2026-07-21 finalized rollback baseline completed under an approved destructive task with exact paths, verified backup and manifest, recorded seed, preserved Resource family, and safe Overworld/Nether/End spawns.
 - [x] EvenMoreFish enables with its adopted Config and one representative function; configuration has no explicit mcMMO Fishing conflict.
 - [x] Before replacement generation, all five adopted Structure packs, BetterStructures Prop Pack, FreeMinecraftModels 2.10.2, and ResourcePackManager 2.3.0 are verified, imported, and loaded with the approved Main World allowlist and Pack preflight.
-- [ ] The current Main baseline and rollback backup remain verified and recoverable immediately before replacement generation.
-- [ ] A separately and explicitly assigned one-time Ver.0.0.6 destructive task regenerates only `main`, `main_nether`, and `main_the_end` after Content load, with exact resolved paths, normal shutdown, explicit user approval, and verified backup／rollback evidence; the Resource family remains excluded.
-- [ ] Representative adopted Structures generate across Main Overworld／Nether／End; BetterStructures does not generate in any Resource dimension.
-- [ ] Persistent and Resource Portal families remain separate and functional, all three Main spawns are safe, and the Main Resource Pack is delivered.
+- [x] The prior Main baseline and rollback backup remained verified and recoverable immediately before replacement generation.
+- [x] The separately assigned one-time Ver.0.0.6 destructive task regenerated only `main`, `main_nether`, and `main_the_end` with exact paths, normal shutdown, exact approval, complete Vanilla player reset, and verified backup／rollback evidence; the Resource family remained excluded.
+- [ ] Representative adopted Structures generate across Main Overworld／Nether／End and at least four distinct Packs. Three Packs (`Default`, `Caves`, `Echoes`) and all three dimensions passed; a fourth distinct Pack remains unconfirmed within the amended exploration bounds.
+- [x] Persistent and Resource Portal families remain separate, the changed Main Nether route passed an actual round-trip, all three Main spawns are safe, bedless respawn works, and the Main Resource Pack is delivered.
 - [ ] Approved Weight／Content tuning, World identities, backup, and the replacement Main baseline are finalized.
 - [ ] CoreProtect enables after the replacement Main baseline and provides representative lookup/rollback administration before substantial Hub／Gate construction.
 - [ ] After the user substantially completes the initial Hub, an approved exact Main Spawn WorldGuard Region denies general building, permits only intended public use, preserves Builder member building without Region administration, and persists after restart.
@@ -238,6 +238,20 @@ The following records preserve work already performed under earlier tasks. Their
 - [x] Client preflight confirmed optional prompt, download/application, representative Prop rendering, refusal behavior, reconnect cache behavior, Main／Lobby switching, and no critical Client error.
 - [x] Runtime-only load verification kept every persistent Region SHA-256 unchanged. The approved Client smoke test then placed and removed representative FMM Props in already-generated Overworld Chunks; Region counts remained `11 / 4 / 4`, no new Region appeared, and Nether／End hashes remained unchanged. Four existing Overworld Region-container hashes changed during normal Player-session saves, so byte-for-byte post-Client invariance is not claimed. No Structure was pasted and no ungenerated Chunk was intentionally loaded.
 - [x] JARs, archives, Schematics, Models, generated packs, Runtime data, Logs, Worlds, and the ignored rollback snapshot remain outside Git.
+
+### Main Ver.0.0.6 replacement Runtime Candidate (2026-07-25)
+
+- [x] Pre-execution HEAD `c6a5d27c5410666c1cde436d1b6986ebbd334cf8`, exact approval `APPROVE-WAYFARER-MAIN-V006-REPLACEMENT-GENERATION`, and Complete Reset policy were recorded before moving the Main container.
+- [x] `backups/main-v006-replacement-generation-20260725-154934/` contains 181 verified payload entries. Manifest SHA-256 is `C79C2FC3ECBA998D875200E1D29B1B82B9BE97808B965E28D74B60108F62B118`; all hashes passed before generation and after acceptance.
+- [x] The candidate retained seed `164225356311935743` and created UUIDs `d868e7ff-6663-492d-a963-f95f00ce6c30`, `1225688f-7770-43ed-b1dd-71bd112de3b5`, and `436843c4-2229-4c67-907c-b3a7d1530d71` for Overworld, Nether, and End.
+- [x] Main／Nether／End spawns remained `(320,70,128)`, `(20.5,60,-19.5)`, and `(100.5,49,0.5)`. Overworld bedless respawn, Nether safety, and the default End platform passed.
+- [x] Every one of the 16 preserved Resource Region hashes matched the replacement backup after generation and after restart. Resource UUIDs, seeds, Multiverse registration, family-local links, and BetterStructures exclusion remained intact.
+- [x] Natural generation passed for Default `mine_storage_deep`, Caves `circledungeon_dripstone`, Echoes `wall_nether`, and Echoes `shrine_end`; the End shrine's `bs_prop_pack_vase` rendered normally after a clean restart.
+- [x] The user-authorized amended exploration bounds ended at new Region counts `7 / 7 / 14` (total 28) for Overworld／Nether／End, within the final limits. No pregeneration, manual paste, Chunk Pregenerator, or World Border change was used.
+- [x] A temporary high-altitude Main／Nether Portal pair completed a round-trip, was removed from both worlds, and left no Nether Portal Palette or forced Chunk. Config inspection confirmed that persistent and Resource links do not cross.
+- [x] A full normal network restart reloaded Paper, Velocity, all five Content packs, 278 selected Structures, FMM 55 Models, ResourcePackManager, unchanged UUID／Seed／Spawn settings, and the Resource family without a startup-blocking error.
+- [x] Main Resource Pack reconnect succeeded without protocol error. FMM Prop markers existed before restart; the Client-visible Vase appeared after restart, establishing restart recovery rather than a missing Model.
+- [ ] Natural generation from a fourth distinct Pack remains an exact Order 5 remainder. Weight／Content tuning, final candidate selection, final cold backup, and V0.1.0 baseline declaration remain Order 6.
 
 ### EvenMoreFish 2.4.3 (2026-07-21)
 

@@ -505,7 +505,7 @@ main:
       spawn-protection-radius: 100
       content:
         id: main-betterstructures-v006
-        status: installed-and-load-verified
+        status: installed-and-current-runtime-candidate
         source: https://nightbreak.io/plugin/betterstructures/
         source-structures: 430
         enabled-structures: 278
@@ -519,10 +519,10 @@ main:
         runtime-import: reproducible-normalized-working-copy
         redistribution: not-committed
         enabled-world-family: persistent-main-only
-      verification: five-pack-load-fmm-model-resolution-resource-family-exclusion-and-clean-restart
-      phase-3-generation-baseline:
-        status: complete
-        date: 2026-07-21
+      verification: five-pack-load-fmm-model-resolution-resource-family-exclusion-clean-restart-and-limited-natural-generation-acceptance
+      current-runtime-candidate:
+        status: limited-acceptance
+        date: 2026-07-25
         seed: "164225356311935743"
         player-data-policy: complete-vanilla-reset-external-databases-preserved
         persistent-bukkit-worlds:
@@ -537,8 +537,40 @@ main:
           overworld: "320 70 128"
           nether: "20.5 60 -19.5"
           end: "100.5 49 0.5"
+        uuid:
+          overworld: d868e7ff-6663-492d-a963-f95f00ce6c30
+          nether: 1225688f-7770-43ed-b1dd-71bd112de3b5
+          end: 436843c4-2229-4c67-907c-b3a7d1530d71
+        region-files:
+          overworld:
+            total: 11
+            new-during-acceptance: 7
+          nether:
+            total: 11
+            new-during-acceptance: 7
+          end:
+            total: 18
+            new-during-acceptance: 14
         resource-preservation: uuid-seed-and-region-sha256-verified
-        backup-manifest-sha256: 50B0F6244223DA68B752407BBE89127E0CE49645F7673A5FF929EE9C5B8A3C9D
+        backup:
+          path: backups/main-v006-replacement-generation-20260725-154934
+          entries: 181
+          bytes: 99480548
+          manifest-sha256: C79C2FC3ECBA998D875200E1D29B1B82B9BE97808B965E28D74B60108F62B118
+          sha256-list-sha256: 037DA91AC7451957DFF57D0F8B3B7592233E5A7A2CC699A4CC709AAB1739B969
+        natural-generation-evidence:
+          observed-packs:
+            - 103-default-structures
+            - caves-and-lost-civilizations-free
+            - echoes-of-the-past
+          remaining:
+            - one-natural-structure-from-exploration-or-adventure
+        final-v0.1.0-baseline: pending-order-5-remainder-and-order-6
+      last-finalized-rollback-baseline:
+        status: phase-3-final-generation-complete
+        date: 2026-07-21
+        path: backups/main-final-generation-20260721-001501
+        manifest-sha256: 50B0F6244223DA68B752407BBE89127E0CE49645F7673A5FF929EE9C5B8A3C9D
     - name: FreeMinecraftModels
       version: "2.10.2"
       channel: Release
@@ -597,9 +629,10 @@ main:
       self-host: false
       public-port-change: none
       generated-pack:
-        size: 838975
-        sha1: 029689B8355600DAAFD96D2F057AC04A65E1091D
-        sha256: 741986F729C68F3876BA577969AD7AD85B3120526A9E309F13880C6F606C11CE
+        scope: current-runtime-candidate-stopped-state
+        size: 839097
+        sha1: 07BD5FA29729344F9B9A1DBA3774ACDDC6966655
+        sha256: A2E4999A6A00A0458570A379487BB78E3FEEA926829627C6BB3A9660FA7565C3
         git: ignored
       client-preflight: passed
 frontier:

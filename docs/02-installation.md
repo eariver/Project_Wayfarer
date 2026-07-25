@@ -2,7 +2,7 @@
 
 This is an execution summary. Follow the repository's [formal Ver.0.0.6 design guide](00-design-guide.md) for the authoritative design and acceptance policy. Ver.0.0.6 defines the future V0.1.0 Alpha completion conditions; it does not itself authorize Runtime changes.
 
-The destructive Phase 3 generation has already completed. Do not repeat the bare-generation procedure or replace Main world data from this installation summary; use [Main World Baseline](13-main-world-baseline.md) for the current persistent seed, storage paths, spawn coordinates, and local rollback evidence.
+The destructive Ver.0.0.6 replacement generation has completed. Do not repeat either generation procedure or replace Main world data from this installation summary; use [Main World Baseline](13-main-world-baseline.md) for the Runtime Candidate identity, storage paths, spawn coordinates, acceptance remainder, and local rollback evidence.
 
 ## Phase 0 - Prerequisites
 
@@ -85,12 +85,12 @@ The Waymark base is installed: RedisEconomy `4.5.12-wayfarer.1` and VaultUnlocke
 
 BetterStructures 2.6.3, the 278-Structure Main five-Pack working set, BetterStructures Prop Pack, FreeMinecraftModels 2.10.2, and ResourcePackManager 2.3.0 are installed only on Main. Tracked `config.yml` and `ValidWorlds.yml` keep automatic Plugin download off, unknown worlds off, Persistent Main enabled by actual Bukkit name, and every Resource dimension disabled. JAR, import ZIP, extracted／normalized Schematic, Model, generated Resource Pack, Hosting URL, and Cache remain ignored. The V0.1.0 Ruined Frontier scope requires a separate Frontier installation and verification task.
 
-Phase 3 finalized the current persistent dimensions and approved safe spawn coordinates. Ver.0.0.6 retains that baseline until a separately approved replacement generation finishes. Remaining Main expansion uses separate tasks in this order:
+Ver.0.0.6 replaced the persistent dimensions while retaining the approved safe spawn coordinates. Remaining Main work uses separate tasks in this order:
 
 1. Completed 2026-07-25: verify the five approved Structure packs, BetterStructures Prop Pack, FreeMinecraftModels, ResourcePackManager, licenses, hashes, dependencies, World scope, Model IDs, and Main Pack delivery.
 2. Completed 2026-07-25: import the complete approved working set and confirm every Plugin／Content dependency loads before World generation.
-3. Under an independently approved destructive task, regenerate only `main`, `main_nether`, and `main_the_end`; preserve the complete Resource family.
-4. Verify natural generation, Portals, safe Spawns, Main Resource Pack, Resource exclusion, approved tuning, identities, and backup before replacing the current baseline.
+3. Completed 2026-07-25: replacement-generate only `main`, `main_nether`, and `main_the_end`; preserve and hash-verify the complete Resource family.
+4. Partially complete 2026-07-25: Portals, safe Spawns, Main Resource Pack, three-Pack／three-dimension natural generation, Prop, identities, and restart passed. Confirm a fourth distinct Pack, then complete approved tuning and final backup before declaring the V0.1.0 baseline.
 5. Install CoreProtect after the new baseline and before substantial Hub／Gate construction.
 6. Continue with Frontier, Builder Phase 1B, user construction, protection, and Gate routing in the [Roadmap](09-roadmap.md) order.
 

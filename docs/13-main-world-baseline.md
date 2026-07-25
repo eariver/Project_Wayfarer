@@ -1,20 +1,21 @@
 # Main World Baseline
 
-Project Wayfarer Ver.0.0.4 Roadmap Phase 3 was completed on 2026-07-21, and Ver.0.0.6 continues to use this measured baseline as the current Runtime source of truth. This document remains the production generation baseline for Main's persistent dimension family until a separately approved replacement generation, acceptance, tuning, backup, and baseline-update task completes. It is not a server release or permission to regenerate the worlds.
+Project Wayfarer replacement-generated the Main persistent family on 2026-07-25. That family is the **Current Runtime Candidate**. The 2026-07-21 family remains the **Last Finalized Rollback Baseline**. The **Final V0.1.0 Main Baseline** is not yet declared because natural-generation evidence from a fourth distinct Pack and Order 6 Weight／Content tuning plus the final backup remain incomplete. This document is not a server release or permission to regenerate either family.
 
 ## Runtime and generation policy
 
 | Item | Baseline |
 | --- | --- |
-| Pre-execution Git HEAD | `04adff14fdf3e31a730c2471a0c6a809ed82de57` |
+| Pre-execution Git HEAD | `c6a5d27c5410666c1cde436d1b6986ebbd334cf8` |
 | Main runtime | Paper 26.2 build 62 (`75c0b48`) |
 | Java | Oracle Java 25.0.3 LTS, 64-bit Server VM |
-| Generation date | 2026-07-21 |
-| Final seed | `164225356311935743` |
+| Generation date | 2026-07-25 |
+| Candidate seed | `164225356311935743` |
 | Seed policy | Reuse the previously selected Main seed and record it explicitly in `server.properties` |
 | Vanilla player-data policy | Complete reset for the regenerated persistent family; external LuckPerms, mcMMO, and Waymark data were outside the reset scope |
-| BetterStructures | 2.6.3 with `103 Default Structures` version 5 |
+| BetterStructures | 2.6.3 with the five-Pack `main-betterstructures-v006` working set; 278 enabled／152 disabled |
 | Spawn protection radius | 100 blocks, retained with user approval |
+| Acceptance status | Limited acceptance; fourth distinct Pack natural-generation evidence remains |
 
 BetterStructures was enabled only for `main`, `main_nether`, and `main_the_end` during generation. It remained disabled for the complete Resource family and for unknown new worlds.
 
@@ -22,11 +23,11 @@ BetterStructures was enabled only for `main`, `main_nether`, and `main_the_end` 
 
 | Dimension | Bukkit world | Runtime / Multiverse key | Storage below repository root | World UUID |
 | --- | --- | --- | --- | --- |
-| Overworld | `main` | `minecraft:overworld` | `servers/main/main/dimensions/minecraft/overworld/` | `1994ef0e-887d-45d2-8860-7c1bb8e0a085` |
-| Nether | `main_nether` | `minecraft:the_nether` | `servers/main/main/dimensions/minecraft/the_nether/` | `78d1c82f-f67e-47d7-9af4-06aadc7684a6` |
-| End | `main_the_end` | `minecraft:the_end` (Multiverse alias `main_end`) | `servers/main/main/dimensions/minecraft/the_end/` | `e97d228f-11c4-46e6-b7b8-28f458c7a778` |
+| Overworld | `main` | `minecraft:overworld` | `servers/main/main/dimensions/minecraft/overworld/` | `d868e7ff-6663-492d-a963-f95f00ce6c30` |
+| Nether | `main_nether` | `minecraft:the_nether` | `servers/main/main/dimensions/minecraft/the_nether/` | `1225688f-7770-43ed-b1dd-71bd112de3b5` |
+| End | `main_the_end` | `minecraft:the_end` (Multiverse alias `main_end`) | `servers/main/main/dimensions/minecraft/the_end/` | `436843c4-2229-4c67-907c-b3a7d1530d71` |
 
-All three persistent dimensions report the final seed above. These are world UUIDs, not player identities.
+All three persistent dimensions report the candidate seed above. These are world UUIDs, not player identities.
 
 ## Approved spawn baseline
 
@@ -50,47 +51,76 @@ Before generation, their UUIDs, seeds, file counts, byte totals, tree digests, a
 
 ## Backup and rollback
 
-The ignored local rollback backup is `backups/main-final-generation-20260721-001501/`. It contains the complete pre-generation Main container, selected Config, a preflight record, a JSON manifest, and a SHA-256 list.
+The ignored candidate rollback backup is `backups/main-v006-replacement-generation-20260725-154934/`. It contains the complete replaced Main container, selected Config, a preflight record, rollback instructions, a JSON manifest, and a SHA-256 list.
 
-- Payload: 177 files, 97,364,677 bytes
-- Manifest SHA-256: `50B0F6244223DA68B752407BBE89127E0CE49645F7673A5FF929EE9C5B8A3C9D`
-- SHA-256 list digest: `BDE2005F42915AF8272721A177CF26F8F6C04D50E19020E99341998CD6F4B748`
-- Every payload hash was reverified before generation.
+- Payload: 181 entries, 99,480,548 bytes
+- Manifest SHA-256: `C79C2FC3ECBA998D875200E1D29B1B82B9BE97808B965E28D74B60108F62B118`
+- SHA-256 list digest: `037DA91AC7451957DFF57D0F8B3B7592233E5A7A2CC699A4CC709AAB1739B969`
+- Every payload hash was reverified before generation and after acceptance.
 
-The backup is local, ignored, and is not available from GitHub. Do not delete it while Phase 3 rollback remains operationally relevant.
+The last finalized baseline also remains at `backups/main-final-generation-20260721-001501/`, with manifest SHA-256 `50B0F6244223DA68B752407BBE89127E0CE49645F7673A5FF929EE9C5B8A3C9D`. Both backups are local, ignored, unavailable from GitHub, and must not be assumed present in another clone.
 
 Rollback requires stopping player access and every Minecraft component, moving the new persistent family to a quarantine location, restoring the old Main container and selected Config from this backup, verifying file counts and SHA-256, and then checking the old seed, spawn, Resource family, and Multiverse links. Never delete persistent worlds or retry with another seed as an improvised recovery.
 
-## Content preflight and remaining work
+## Replacement generation and limited acceptance
 
-The 2026-07-25 non-destructive Content preflight loaded the five-Pack
-`main-betterstructures-v006` working set, FreeMinecraftModels 2.10.2,
-BetterStructures Prop Pack, and ResourcePackManager 2.3.0. It selected 278 of
-430 Structure configurations, resolved every adopted Prop ID, and generated the
-Main Java Resource Pack. The normalization pipeline removes only the 144 stale
-`minecraft:bed` Block Entity records previously investigated in
-[the legacy-bed report](investigations/2026-07-20-betterstructures-legacy-bed-datafixer-message.md);
-the bed blocks remain in the Palette. The final clean load had no DataFixer
-message or failed Schematic.
+The assigned destructive task recorded the exact paths, Player Data Policy A
+(Complete Reset), verified rollback evidence, and approval token before moving
+the Main container. It restored only the Resource family, verified all Resource
+Region hashes, and generated the three persistent dimensions with the already
+loaded five-Pack working set. BetterStructures initialization was completed
+with the user-selected “Use Current Content” path, resulting in tracked
+`setupDone: true`; no Content or executable artifact was downloaded.
 
-This preflight did not paste a Structure or intentionally load an ungenerated
-Chunk. The Runtime-only load comparison kept all persistent Region SHA-256
-values unchanged. During the approved Client smoke test, representative FMM
-Props were placed and removed in already-generated Overworld Chunks. Region
-counts remained `11 / 4 / 4`, no new Region appeared, and Nether／End hashes
-remained unchanged; four existing Overworld Region-container hashes changed
-during normal Player-session saves, so byte-for-byte post-Client invariance is
-not claimed. Seed, World registration, and Spawn settings remain unchanged. See
-[the Content preflight report](investigations/2026-07-25-main-betterstructures-content-preflight.md).
+The final persistent Region totals after bounded acceptance were `11 / 11 / 18`
+for Overworld／Nether／End. Relative to the initial `4 / 4 / 4`, the task
+generated `7 / 7 / 14` new Region containers, total 28. This is within the
+user-amended limits of 16 new End Regions and 32 total; Overworld and Nether
+were not expanded after the amendment. No pregeneration, manual paste, Chunk
+Pregenerator, or World Border change was used.
 
-Phase 3 created the persistent terrain baseline and safe spawn coordinates only. The Main spawn Hub, Lobby and Frontier gates, three Resource gates, Resource return structures, and Resource End outer-island safety structure are not built or connected. Builder Phase 1B also remains incomplete and must precede Builder-led Hub/Gate/Theme connection work.
+Natural generation confirmed:
 
-Ver.0.0.6 now has a load-verified Main BetterStructures expansion working set across `main`, `main_nether`, and `main_the_end`: five selected Structure packs, BetterStructures Prop Pack, FreeMinecraftModels 2.10.2, and ResourcePackManager 2.3.0. Artifact versions, sources, hashes, Structure selection, Weight, Prop／Model IDs, and preflight Pack output are locked. The generated Worlds still contain only the former 103 Default Structures baseline.
+- Default `betterstructures_mine_storage_deep`;
+- Caves and Lost Civilizations Free `bs_lostcivilizations_free_circledungeon_dripstone`;
+- Echoes of the Past `betterstructures_echoes_wall_nether`;
+- Echoes of the Past `betterstructures_echoes_shrine_end`.
 
-That approval does not supersede this baseline or authorize immediate World changes. Do not delete, trim, regenerate, rename, paste into, or alter the Seed／UUID of the current persistent family outside the dedicated destructive task. The complete Resource family remains outside the replacement-generation scope and must retain BetterStructures exclusion.
+The End Shrine supplied FMM Prop markers. The Vase was not client-visible
+immediately after natural generation, but rendered normally after the required
+clean restart, proving restart recovery and a valid Model／Pack rather than a
+missing texture. Exploration Pack and Adventure Pack remain load-verified, but
+neither supplied the fourth distinct naturally observed Pack within the bounded
+test. That exact evidence remains Order 5 work.
 
-After Content preflight and healthy load confirmation, the destructive task must preserve exact rollback evidence, regenerate only the persistent family, verify representative natural generation, Portal links, safe Spawn, Main Resource Pack delivery, and Resource-family exclusion, then apply approved tuning. Only after the new identities and verified backup are recorded may this document be replaced with the new baseline.
+A temporary high-altitude Main／Nether Portal pair passed a round-trip and was
+removed from both worlds. Region inspection found no automatically generated
+second Portal, no Portal Palette after cleanup, and no remaining forced Chunk.
+Multiverse-NetherPortals keeps persistent and Resource families separate.
+The normal full-network restart preserved all UUIDs, seeds, spawns, Content
+selection, Resource links, and every Resource Region hash. Main Resource Pack
+delivery and reconnect passed without protocol failure.
+
+Final stopped-state Main Java Pack SHA-256 was
+`A2E4999A6A00A0458570A379487BB78E3FEEA926829627C6BB3A9660FA7565C3`;
+the FMM component Pack SHA-256 was
+`7930BAB098A7A26DFFBCD23200D6C06CB339C115412C50DAC6D3C2060E875B6E`.
+Generated Packs remain ignored and are not redistributed. See
+[the replacement-generation report](investigations/2026-07-25-main-v006-replacement-generation.md).
+
+## Remaining work
+
+Order 4 is complete. Order 5 remains incomplete only for natural-generation
+evidence from a fourth distinct Pack. Order 6 must then decide Weight／Content
+tuning, accept or replace the candidate, and create the final baseline backup.
+Order 7 CoreProtect remains unimplemented.
+
+The Main spawn Hub, Lobby and Frontier gates, three Resource gates, Resource
+return structures, and Resource End outer-island safety structure are not built
+or connected. Builder Phase 1B also remains incomplete. Do not delete, trim,
+regenerate, rename, paste into, or alter the Seed／UUID of the Runtime Candidate
+outside a new assigned destructive task.
 
 Main Spawn WorldGuard protection is designed but not applied. The user first completes the initial Hub footprint; a later approved task then defines the exact Region and focused equipment child regions. Vanilla `spawn-protection=16` remains until that WorldGuard boundary and Builder-member behavior are verified.
 
-Phase 4 EvenMoreFish, the 100x Waymark nominal price revision, and Main BetterStructures Roadmap Order 2／3 preflight are complete. The next implementation stage is the separately approved destructive replacement generation of only the persistent Main family. CoreProtect follows the verified replacement Main baseline and precedes substantial Hub／Gate construction.
+Phase 4 EvenMoreFish, the 100x Waymark nominal price revision, BetterStructures Orders 2／3, and replacement generation Order 4 are complete. Finish the exact Order 5 evidence and Order 6 tuning／backup before CoreProtect and substantial Hub／Gate construction.

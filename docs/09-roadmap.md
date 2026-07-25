@@ -14,12 +14,12 @@ Ver.0.0.6 is a design revision, not a Server Release. The first target Release i
 - mcMMO 2.3.000 shared Main／Frontier progression
 - RedisEconomy `4.5.12-wayfarer.1`／VaultUnlocked 2.20.2 shared Waymark balance
 - EconomyShopGUI 7.1.1 Free Main-only fixed-price shop
-- BetterStructures 2.6.3 and `103 Default Structures` version 5 restricted to current Persistent Main dimensions
-- 2026-07-21 Main persistent generation baseline with approved safe spawns and preserved Resource family
+- BetterStructures 2.6.3 five-Pack／278-Structure Current Runtime Candidate restricted to Persistent Main dimensions
+- 2026-07-25 replacement generation candidate with approved safe spawns, preserved Resource family, and verified rollback evidence
 - EvenMoreFish 2.4.3 Main-only Custom Fishing and Vault Fish Shop
 - Main BetterStructures five-Pack working set, FreeMinecraftModels 2.10.2, BetterStructures Prop Pack, and ResourcePackManager 2.3.0 load preflight
 
-These historical baselines remain verified. Ver.0.0.6 authorizes a future Main Content expansion and destructive regeneration plan, but it does not supersede the current Main baseline until the new generation, acceptance, and backup tasks finish.
+The 2026-07-21 baseline remains the Last Finalized Rollback Baseline. The 2026-07-25 replacement is the Current Runtime Candidate, not the Final V0.1.0 Main Baseline. Order 5 retains one exact natural-generation evidence item and Order 6 still owns tuning and final backup.
 
 ## Dependency-based execution order
 
@@ -28,8 +28,8 @@ These historical baselines remain verified. Ver.0.0.6 authorizes a future Main C
 | 1 | Ver.0.0.6 formal documentation | Adopt the approved Main／Frontier scope without changing Runtime |
 | 2 | Main BetterStructures Artifact／Content／Resource Pack Preflight — complete 2026-07-25 | Exact versions, licenses, sources, hashes, dependencies, Model IDs, Pack generation, and World scope are locked; Client delivery evidence is recorded in the integration report |
 | 3 | Main full Content Import and load confirmation — complete 2026-07-25 | The five approved packs plus Prop／FreeMinecraftModels／ResourcePackManager working set loaded normally before World generation |
-| 4 | Main Persistent Family regeneration | Under a separately approved destructive task, regenerate only `main`, `main_nether`, and `main_the_end` after Content load succeeds |
-| 5 | Main generation acceptance | Verify representative structures, Resource-family exclusion, Portal family, safe spawns, and Main Resource Pack delivery |
+| 4 | Main Persistent Family regeneration — complete 2026-07-25 | Only `main`, `main_nether`, and `main_the_end` were replacement-generated; the Resource family was restored and hash-verified |
+| 5 | Main generation acceptance — incomplete, limited acceptance 2026-07-25 | Spawns, Resource exclusion, Portal family, Pack, restart, three dimensions, Props, and three distinct Packs passed; natural generation from a fourth distinct Pack remains |
 | 6 | Main Weight／Content tuning and new baseline | Apply approved tuning, finalize identities and backup, then update the Main baseline source of truth |
 | 7 | CoreProtect | Introduce after the new Main baseline and before substantial Hub／Gate construction; not a cold-backup replacement |
 | 8 | Frontier lock | Lock Plugin versions, artifacts, World IDs, Gate method, Resource Packs, persistence, licenses, and exact Runtime boundaries |
@@ -115,17 +115,17 @@ Artifact verification [complete]
 → all approved Plugin／Content import [complete]
 → World allowlist, Content load, and Resource Pack preflight [complete]
 → healthy load confirmation [complete]
-→ separately approved Main Persistent Family regeneration
-→ generation／Portal／Spawn／Pack／Resource-exclusion acceptance
+→ separately approved Main Persistent Family regeneration [complete]
+→ generation／Portal／Spawn／Pack／Resource-exclusion acceptance [limited; fourth Pack evidence remains]
 → approved tuning
 → new baseline and backup
 ```
 
-Do not generate the Worlds before Content load. Keep `resource`, `resource_nether`, `resource_end`, and unknown Worlds disabled. Regeneration must not include the Resource family and requires exact paths, rollback evidence, explicit user confirmation, normal shutdown, and focused destructive verification.
+The one-time generation has completed and must not be rerun. Keep `resource`, `resource_nether`, `resource_end`, and unknown Worlds disabled. Any later lifecycle change requires a new assigned task, exact paths, rollback evidence, explicit user confirmation, normal shutdown, and focused destructive verification.
 
 ### Phase 3 - Current and future Main baselines
 
-The 2026-07-21 baseline in [Main World Baseline](13-main-world-baseline.md) remains the current Runtime source of truth. It is replaced only after Phase 2B generation, acceptance, tuning, identity capture, and backup complete. The current Worlds, Seed, UUIDs, spawns, and rollback backup must not be altered by documentation work.
+The 2026-07-25 family in [Main World Baseline](13-main-world-baseline.md) is the Current Runtime Candidate. The 2026-07-21 family is the Last Finalized Rollback Baseline. The candidate becomes the Final V0.1.0 Main Baseline only after the remaining Order 5 evidence and Order 6 tuning／final backup complete. Neither family may be altered by documentation-only work.
 
 ### Phase 4 - Main lightweight gameplay
 
