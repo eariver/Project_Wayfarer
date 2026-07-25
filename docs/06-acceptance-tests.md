@@ -88,7 +88,9 @@ Async Join／Delivery and identity:
 Progress and evolution:
 
 - [ ] Progress increments only for the Main Resource Worlds `resource`, `resource_nether`, and `resource_end`, only for valid `minecraft:mineable/pickaxe` blocks broken by the Main-hand canonical Tool.
-- [ ] `main`, `main_nether`, `main_the_end`, unknown Worlds, Creative／Spectator, cancelled breaks, Explosion, Piston, WorldEdit, Command, Plugin deletion, Player-placed blocks, generator-produced blocks, and Silk Touch re-placed ores are valid Progress sources. Each successful, non-cancelled BlockBreakEvent grants Progress exactly once. Explosion, Piston, WorldEdit, Command, Plugin deletion, and other non-player block removal grant no Progress.
+- [ ] `main`, `main_nether`, `main_the_end`, unknown Worlds, Creative／Spectator, and cancelled breaks grant no Progress.
+- [ ] Player-placed blocks, generator-produced blocks, and Silk Touch re-placed ores are valid Progress sources. Each successful, non-cancelled `BlockBreakEvent` grants Progress exactly once.
+- [ ] Explosion, Piston, WorldEdit, Command, Plugin deletion, and other non-player block removal grant no Progress.
 - [ ] Survival and an actually successful Adventure break are handled according to the locked event contract.
 - [ ] Cumulative progress derives Wood → Stone → Iron → Diamond and the approved Efficiency／Unbreaking／Fortune progression through Efficiency X, Unbreaking X, and Fortune V.
 - [ ] Admin Fortune／Silk Touch switching works; Player-facing WM switching and Netherite Upgrade, Ranking, Evolution Rewards, Abilities, Cosmetics, Axe, and Shovel remain outside initial acceptance.

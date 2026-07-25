@@ -7,6 +7,8 @@
 | Date | 2026-07-26 |
 | Pre-execution HEAD | `98fb482cb1a3b5103a85b02684dcb77ddb7b27e5` |
 | Implementation Commit | `201681ea026936909558839bc4445d9ccb7be567` |
+| Archive Commit | `ebb100afce96cd467e4e4de93b039c3e8ecaf77a` |
+| Post-lock clarification | `fe16ca6c6200732ee4b1960126ecb8f5dcb96795` |
 | Proposal | `FRONTIER-LOCK-20260726-003` |
 | Approval | Exact Token received |
 | Phase B | Completed as documentation／Lock data only |
@@ -75,6 +77,34 @@ Proposal and Artifact evidence remain in the
 
 Artifact versions, official sources, licenses and the 25 existing SHA-256 entries were
 carried forward unchanged from Proposal 003.
+
+## Commit provenance
+
+The formal Lock implementation is:
+
+```text
+201681ea026936909558839bc4445d9ccb7be567
+docs: Frontier V0.1.0 Runtime Lockを確定
+```
+
+The Codex Archive record is:
+
+```text
+ebb100afce96cd467e4e4de93b039c3e8ecaf77a
+docs: Frontier Lock Commitを記録
+```
+
+The post-lock clarification is:
+
+```text
+fe16ca6c6200732ee4b1960126ecb8f5dcb96795
+docs: Frontier Lockの配置とLifecycle境界を明確化
+```
+
+The clarification records that CoreProtect remains unselected and unplaced, and that
+`frontier_bs`, `frontier_bs_nether`, and `frontier_bs_the_end` are persistent,
+lifecycle-managed Worlds. It did not change any Artifact version, SHA-256, World ID,
+Gate method, Pack input, MVI authority, or approved scope.
 
 ## Approved exception
 

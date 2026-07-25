@@ -43,7 +43,8 @@ The planned Frontier foundation consists of:
 - a history／rollback product selected by a later dedicated task; Order 8 keeps it unselected and retains CoreProtect 24.0 only as an Artifact candidate;
 - ResourcePackManager and one Frontier integrated Resource Pack;
 - approved Beyond and Guild Gate routes;
-- Wayfarer_Core, Wayfarer_Main, and Wayfarer_Frontier integration contracts from one external Gradle Multi-module Repository;
+- Wayfarer_Core and Wayfarer_Frontier integration contracts from one external Gradle Multi-module Repository;
+- Wayfarer_Main is a Main-only sibling module in the same Repository. It is not installed on Frontier and is referenced here only to preserve the cross-backend item／state boundary and the Project-wide V0.1.0 dependency;
 - the conditional independent `Wayfarer_Frontier_EliteMobsMVI` Artifact only if the formal decision is `ADAPTER_REQUIRED`.
 
 Order 8 locks selected versions, artifacts, licenses, hashes, placement, dependencies, World IDs, Gate method, Pack inputs and authority boundaries. Exact generated Config, Runtime acceptance, final Gate coordinates, Pack output and any history／rollback product still require their assigned implementation tasks. Current installed state is recorded separately in `versions.yml`, `plugin-manifest.yml`, and the Runtime.
@@ -114,25 +115,26 @@ Wayfarer_Core is a required V0.1.0 external custom Plugin. Its minimum responsib
 
 Redis must not be the sole source of truth for Inventory or Gameplay persistence. Custom Plugin source, build files, and releases belong in one external Gradle Multi-module Repository. This Repository may store only its integration contracts, Version constraints, Config, installation and operational procedures, API／Database／Permission contracts, acceptance tests, and release-artifact hash.
 
-## 7. Wayfarer_Main responsibilities
+## 7. Wayfarer_Main project dependency and cross-backend boundary
 
-Wayfarer_Main is a required V0.1.0 external custom Plugin installed only on Main.
-Its initial Release scope is the Growth Pickaxe:
+Wayfarer_Main is a required Project Wayfarer V0.1.0 sibling Plugin and remains
+a Project-wide Release Blocker. It is Main-only and is not a Frontier Runtime
+component.
 
-- one logical Tool per Player with Owner bind;
-- Main Resource-family progress only in `resource`, `resource_nether`, and `resource_end`;
-- no progress in `main`, `main_nether`, `main_the_end`, or unknown Worlds;
-- Wood → Stone → Iron → Diamond material evolution;
-- Efficiency, Unbreaking, Fortune, and Admin Fortune／Silk Touch control;
-- cumulative-progress-based complete Config recalculation;
-- ACTIVE／BROKEN state and Waymark Full Repair;
-- initial async delivery, Pending Delivery, Admin reissue, audit, and reconcile;
-- MariaDB authoritative logical identity, epoch, progress, state, and transaction data.
+Its detailed Growth Pickaxe scope, persistence, delivery, evolution, repair,
+acceptance, backup／restore and pre-release reset policy are authoritative in
+the network／Main source-of-truth documents, including the Roadmap and
+Acceptance Tests.
 
-It does not prohibit ordinary Vanilla tools and must not transfer Growth Tool items to
-Frontier. Axe, Shovel, Player-facing WM Fortune／Silk Touch switching, Player Netherite
-Upgrade, Ranking, Evolution Rewards, Abilities, Cosmetics, and cross-server transfer are
-outside the initial V0.1.0 scope.
+Frontier requirements are limited to:
+
+- do not install Wayfarer_Main on Frontier;
+- do not transfer Growth Pickaxe or any Main Item into Frontier;
+- do not treat MVI as a Main／Frontier cross-backend profile mechanism;
+- keep Wayfarer_Main data out of Frontier normal Player State;
+- preserve the one external multi-module Repository boundary;
+- preserve Wayfarer_Main／Growth Pickaxe as a Project-wide V0.1.0 dependency
+  without duplicating its detailed Main specification here.
 
 ## 8. Wayfarer_Frontier responsibilities
 
@@ -295,7 +297,9 @@ Frontier V0.1.0 blockers are:
 - MVI and the `neutral`, `worlds_beyond`, and `guild` groups;
 - ResourcePackManager and the Frontier integrated Pack;
 - one external Gradle Multi-module Repository and Wayfarer_Core／Main／Frontier;
-- Main-only Growth Pickaxe and its detailed acceptance／backup boundary;
+- Project-wide completion of Main-only Wayfarer_Main／Growth Pickaxe under the
+  network／Main Roadmap, Acceptance and backup／restore authorities; Frontier
+  requires only non-placement and cross-backend isolation;
 - the EliteMobs–MVI Adapter necessity decision;
 - Ruined Frontier alpha;
 - Worlds Beyond MVP;
