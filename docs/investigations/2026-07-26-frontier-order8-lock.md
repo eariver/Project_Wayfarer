@@ -6,6 +6,7 @@
 | --- | --- |
 | Date | 2026-07-26 |
 | Pre-execution HEAD | `98fb482cb1a3b5103a85b02684dcb77ddb7b27e5` |
+| Implementation Commit | `201681ea026936909558839bc4445d9ccb7be567` |
 | Proposal | `FRONTIER-LOCK-20260726-003` |
 | Approval | Exact Token received |
 | Phase B | Completed as documentation／Lock data only |
