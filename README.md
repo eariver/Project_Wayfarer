@@ -22,12 +22,12 @@ Minecraftの恒久生活拠点 **Main** と、既製Adventureコンテンツを�
 - mcMMO 2.3.000: Main／Frontierへ同一Local Maven Buildを配置し、MariaDBで進行を共有
 - RedisEconomy 4.5.12-wayfarer.1／VaultUnlocked 2.20.2: Main／FrontierでRedis 8上のWaymark残高を共有
 - EconomyShopGUI 7.1.1 Free: Main限定の固定価格Waymarkショップ（5カテゴリ・62商品、100倍名目価格Baseline）
-- BetterStructures 2.6.3: Mainだけに導入し、5 Pack／278 Structure構成をCurrent Runtime Candidateの新規Chunkへ生成
+- BetterStructures 2.6.3: Mainだけに導入し、5 Pack／278 Structure構成をFinal Main Baselineの新規Chunkへ生成
 - EvenMoreFish 2.4.3: Main限定のCustom Fishing。`main`／`resource`で魚売却Shopを提供し、専用MariaDBへJournal／統計を保存
-- Main恒久World: 2026-07-25に同一Seedで5 Pack構成へ置換生成。Resource Familyと安全Spawnを保持したCurrent Runtime Candidateで、V0.1.0最終BaselineはOrder 6後に確定
+- Main恒久World: 2026-07-25に同一Seedで5 Pack構成へ置換生成し、Resource Familyと安全Spawnを保持したFinal Main BaselineとしてOrder 6まで完了
 - Main／Frontier: 通常Inventoryは分離し、Waymark残高とmcMMO進行だけを共有
 - Lobby: TAB・権限以外のゲーム進行をMain／Frontierと共有しない
-- V0.1.0計画: Main候補WorldのOrder 6調整／最終Backup、Ruined Frontier／Worlds Beyond、MVI、Wayfarer_Core／Wayfarer_Frontier、Main／Frontier別Resource Pack（未完了）
+- V0.1.0計画: Main Order 6は完了。次はCoreProtect、Ruined Frontier／Worlds Beyond、MVI、Wayfarer_Core／Wayfarer_Frontier、Main／Frontier別Resource Pack（未完了）
 
 ## 最初に読む文書
 
@@ -136,7 +136,7 @@ Ver.0.0.6は設計・導入・運用文書の改訂番号であり、稼働Serve
 - Planned `resource_end` has no Ender Dragon and uses a verified outer-island arrival/return gate.
 - Manual Plugin collection is tracked in [Plugin Collection](docs/08-plugin-collection.md), `plugin-collection.csv`, and the separate XLSX artifact.
 - 権限Phase 1Aとして、`default`、2つのEligibility Group、`wayfarer_builder`／`wayfarer_admin`の5つの恒久Group定義と、PlayerからRole Groupへの自己限定Temporary Parent所属を実装済み。既存`default`／`wayfarer_builder`は再利用し、AdminはOPではなく一時Roleで全権限を得る。Builderの最終AllowlistはPhase 1Bとして未実装。
-- Main Persistent Familyは5 Pack構成で置換生成済みで、Resource Family除外、3 Spawn、Portal往復、Pack配信、自然生成Propおよび再起動を確認済み。Exploration Packを含む4 Pack目の自然生成確認によりOrder 5も完了した。Order 6調整／最終Backupが残るため、現在はRuntime CandidateでありV0.1.0最終Baselineではない。
+- Main Persistent Familyは5 Pack構成で置換生成済みで、Resource Family除外、3 Spawn、Portal往復、Pack配信、自然生成Propおよび再起動を確認済み。Order 6は現行Configを無調整で採用し、停止状態の完全Backupを検証してFinal Main Baselineを確定した。これはV0.1.0 Release Baselineではない。
 - V0.1.0ではRuined Frontier alphaとWorlds Beyond MVPの両方を実装・統合・受入試験する。Ruined Frontierの初期BetterStructures ScopeはMain五Packとは異なり、103 Default Structures全体を原則無効として、Exploration／Caves／Echoes／Adventure、Prop Pack、Free Elite Shrines、Dungeoneering Modules Freeを採用する。
 - Frontierの通常Player StateはMultiverse-Inventoriesの`neutral`、`worlds_beyond`、`guild` Groupを正本とし、Wayfarer_FrontierでInventory保存を再実装しない。
 - Main／Frontier間ではVanilla Itemを含む全Item、Inventory、Armor、Offhand、Ender ChestおよびVanilla Player Stateを移送しない。共有成果はWaymark、mcMMOおよび別途承認されるItem非依存実績／報酬だけとする。

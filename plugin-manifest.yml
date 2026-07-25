@@ -505,7 +505,7 @@ main:
       spawn-protection-radius: 100
       content:
         id: main-betterstructures-v006
-        status: installed-and-current-runtime-candidate
+        status: installed-and-final-main-baseline
         source: https://nightbreak.io/plugin/betterstructures/
         source-structures: 430
         enabled-structures: 278
@@ -520,8 +520,8 @@ main:
         redistribution: not-committed
         enabled-world-family: persistent-main-only
       verification: five-pack-load-fmm-model-resolution-resource-family-exclusion-clean-restart-and-four-pack-natural-generation-acceptance
-      current-runtime-candidate:
-        status: order-5-complete
+      final-main-baseline:
+        status: order-6-complete
         date: 2026-07-25
         seed: "164225356311935743"
         player-data-policy: complete-vanilla-reset-external-databases-preserved
@@ -555,12 +555,22 @@ main:
             new-during-replacement-acceptance: 14
             new-during-fourth-pack-acceptance: 0
         resource-preservation: uuid-seed-and-region-sha256-verified
-        backup:
+        replacement-rollback-source:
           path: backups/main-v006-replacement-generation-20260725-154934
           entries: 181
           bytes: 99480548
           manifest-sha256: C79C2FC3ECBA998D875200E1D29B1B82B9BE97808B965E28D74B60108F62B118
           sha256-list-sha256: 037DA91AC7451957DFF57D0F8B3B7592233E5A7A2CC699A4CC709AAB1739B969
+        stopped-state-backup:
+          path: backups/main-v006-final-baseline-20260725-220745
+          source-files: 207
+          source-bytes: 148994081
+          sha256-entries: 227
+          manifest-sha256: A85A7CCAA2FE2DECCC69CE3E9F862F1281408B4D02E20EFC1E3E31B74D0814A1
+          sha256-list-sha256: 81593864B49E41FB03F02514C1935DFAF380A1ABFE6FB148897932E328A50C39
+          source-payload-hashes: all-match
+          config-snapshot-hashes: all-match
+          resource-region-hashes: 16-of-16-match
         natural-generation-evidence:
           observed-packs:
             - 103-default-structures
@@ -576,7 +586,13 @@ main:
             region: r.-1.1.mca
             restart-persistence: passed
             resource-region-hashes: 16-of-16-unchanged
-        final-v0.1.0-baseline: pending-order-6
+        order-6:
+          decision: accept-current-config-as-is
+          approval-token: APPROVE-WAYFARER-MAIN-ORDER6-ACCEPT-AS-IS
+          final-backup-token: APPROVE-WAYFARER-MAIN-V006-FINAL-BASELINE
+          config-diff: none
+        final-main-baseline: established
+        v0.1.0-release-baseline: pending-remaining-release-blockers
       last-finalized-rollback-baseline:
         status: phase-3-final-generation-complete
         date: 2026-07-21
@@ -610,7 +626,12 @@ main:
       furniture-shop: disabled
       player-menu: denied-in-main-context
       auto-plugin-download: disabled
-      generated-pack: ignored
+      generated-pack:
+        scope: final-main-baseline-stopped-state
+        size: 799622
+        sha1: 2B1C7468D9274235D64F1ECB0888EFAB1E62EA75
+        sha256: 055FCD07115F254486435550A6439A73B4361CC01E3B523B245FF39681CA1C2C
+        git: ignored
     - name: ResourcePackManager
       version: "2.3.0"
       channel: Release
@@ -640,10 +661,10 @@ main:
       self-host: false
       public-port-change: none
       generated-pack:
-        scope: current-runtime-candidate-stopped-state
-        size: 839097
-        sha1: 07BD5FA29729344F9B9A1DBA3774ACDDC6966655
-        sha256: A2E4999A6A00A0458570A379487BB78E3FEEA926829627C6BB3A9660FA7565C3
+        scope: final-main-baseline-stopped-state
+        size: 838975
+        sha1: 029689B8355600DAAFD96D2F057AC04A65E1091D
+        sha256: 741986F729C68F3876BA577969AD7AD85B3120526A9E309F13880C6F606C11CE
         git: ignored
       client-preflight: passed
 frontier:

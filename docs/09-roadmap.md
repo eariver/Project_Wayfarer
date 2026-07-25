@@ -14,12 +14,12 @@ Ver.0.0.6 is a design revision, not a Server Release. The first target Release i
 - mcMMO 2.3.000 shared Main／Frontier progression
 - RedisEconomy `4.5.12-wayfarer.1`／VaultUnlocked 2.20.2 shared Waymark balance
 - EconomyShopGUI 7.1.1 Free Main-only fixed-price shop
-- BetterStructures 2.6.3 five-Pack／278-Structure Current Runtime Candidate restricted to Persistent Main dimensions
-- 2026-07-25 replacement generation candidate with approved safe spawns, preserved Resource family, and verified rollback evidence
+- BetterStructures 2.6.3 five-Pack／278-Structure Final Main Baseline restricted to Persistent Main dimensions
+- 2026-07-25 replacement generation with approved safe spawns, preserved Resource family, Order 5 acceptance, and verified Order 6 stopped-state backup
 - EvenMoreFish 2.4.3 Main-only Custom Fishing and Vault Fish Shop
 - Main BetterStructures five-Pack working set, FreeMinecraftModels 2.10.2, BetterStructures Prop Pack, and ResourcePackManager 2.3.0 load preflight
 
-The 2026-07-21 baseline remains the Last Finalized Rollback Baseline. The 2026-07-25 replacement is the Current Runtime Candidate, not the Final V0.1.0 Main Baseline. Order 5 is complete; Order 6 still owns tuning, candidate finalization, and the final backup.
+The 2026-07-21 family remains the Legacy Rollback Baseline. The 2026-07-25 replacement is the Final Main Baseline after Order 6 accepted the current Config without tuning and verified its stopped-state backup. It is not the V0.1.0 Release Baseline.
 
 ## Dependency-based execution order
 
@@ -30,7 +30,7 @@ The 2026-07-21 baseline remains the Last Finalized Rollback Baseline. The 2026-0
 | 3 | Main full Content Import and load confirmation — complete 2026-07-25 | The five approved packs plus Prop／FreeMinecraftModels／ResourcePackManager working set loaded normally before World generation |
 | 4 | Main Persistent Family regeneration — complete 2026-07-25 | Only `main`, `main_nether`, and `main_the_end` were replacement-generated; the Resource family was restored and hash-verified |
 | 5 | Main generation acceptance — complete 2026-07-25 | Spawns, Resource exclusion, Portal family, Pack, restart, three dimensions, Props, and four distinct Packs passed; Exploration Pack supplied the fourth natural-generation observation |
-| 6 | Main Weight／Content tuning and new baseline | Apply approved tuning, finalize identities and backup, then update the Main baseline source of truth |
+| 6 | Main Weight／Content tuning and new baseline — complete 2026-07-25 | Decision A retained current Config; identities, Resource hashes, stopped-state backup, and Final Main Baseline source of truth were verified |
 | 7 | CoreProtect | Introduce after the new Main baseline and before substantial Hub／Gate construction; not a cold-backup replacement |
 | 8 | Frontier lock | Lock Plugin versions, artifacts, World IDs, Gate method, Resource Packs, persistence, licenses, and exact Runtime boundaries |
 | 9 | Wayfarer_Core | Approve formal design, create a separate Repository, develop／release, and integrate the V0.1.0 shared foundation |
@@ -117,15 +117,15 @@ Artifact verification [complete]
 → healthy load confirmation [complete]
 → separately approved Main Persistent Family regeneration [complete]
 → generation／Portal／Spawn／Pack／Resource-exclusion acceptance [complete]
-→ approved tuning
-→ new baseline and backup
+→ approved no-tuning decision [complete]
+→ Final Main Baseline and stopped-state backup [complete]
 ```
 
 The one-time generation has completed and must not be rerun. Keep `resource`, `resource_nether`, `resource_end`, and unknown Worlds disabled. Any later lifecycle change requires a new assigned task, exact paths, rollback evidence, explicit user confirmation, normal shutdown, and focused destructive verification.
 
 ### Phase 3 - Current and future Main baselines
 
-The 2026-07-25 family in [Main World Baseline](13-main-world-baseline.md) is the Current Runtime Candidate. The 2026-07-21 family is the Last Finalized Rollback Baseline. Order 5 is complete. The candidate becomes the Final V0.1.0 Main Baseline only after Order 6 tuning／candidate selection／final backup completes. Neither family may be altered by documentation-only work.
+The 2026-07-25 family in [Main World Baseline](13-main-world-baseline.md) is the Final Main Baseline. Order 6 accepted the current Config without tuning and verified `backups/main-v006-final-baseline-20260725-220745/`. The 2026-07-21 family is the Legacy Rollback Baseline, while the pre-replacement copy remains the Replacement Rollback Source. None may be altered by documentation-only work. The future V0.1.0 Release Baseline still requires the remaining network, Frontier, operations, cold-backup／restore, and pre-release reset Blockers.
 
 ### Phase 4 - Main lightweight gameplay
 

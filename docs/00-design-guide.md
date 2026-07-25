@@ -151,9 +151,9 @@ BetterStructures Prop Pack、FreeMinecraftModels 2.10.2およびResourcePackMana
 
 全Content、Plugin、World Allowlist、Structure選別Config、Prop／Model IDおよびMain Resource PackをWorking Copyで検証した後、2026-07-25の承認済み破壊Taskで`main`、`main_nether`、`main_the_end`を置換生成しました。Resource Familyは再生成とBetterStructures生成の両方から除外されています。
 
-Current Runtime CandidateはSeed `164225356311935743`、Overworld Spawn `(320, 70, 128)`、Nether管理Spawn `(20.5, 60, -19.5)`、End管理Spawn `(100.5, 49, 0.5)`を維持し、Resource FamilyのUUID、Seedおよび全Region Hashを保持しました。正確なWorld UUID、Storage Path、Backupおよび限定受入結果は[Main World Baseline](13-main-world-baseline.md)を正本とします。Hub／Gate構造は未実装です。
+Final Main BaselineはSeed `164225356311935743`、Overworld Spawn `(320, 70, 128)`、Nether管理Spawn `(20.5, 60, -19.5)`、End管理Spawn `(100.5, 49, 0.5)`を維持し、Resource FamilyのUUID、Seedおよび全Region Hashを保持しました。正確なWorld UUID、Storage Path、Backupおよび受入結果は[Main World Baseline](13-main-world-baseline.md)を正本とします。Hub／Gate構造は未実装です。
 
-現在のWorldはRuntime Candidateとして運用します。Exploration Packを含む4つの異なるPackの自然生成確認によりOrder 5は完了しましたが、Order 6 Weight／Content調整・候補確定・最終Backupが残るため、V0.1.0最終Baselineとは呼びません。追加の削除、Trim、再生成、RenameまたはSeed／UUID変更は別の破壊的Taskなしに行いません。CoreProtectは新Baseline確定後、Hub／Gateの本格建築前に導入します。
+Order 6では具体的なBlocking defectや調整根拠がないため、278有効／152無効、Weight、Distance、Altitude、World AllowlistおよびSpawn Protectionを変更せず採用しました。停止状態の完全Backupを検証し、現在のWorldをFinal Main Baselineへ昇格しています。これはV0.1.0 Release Baselineではありません。追加の削除、Trim、再生成、RenameまたはSeed／UUID変更は別の破壊的Taskなしに行いません。次はCoreProtectをHub／Gateの本格建築前に導入します。
 
 ### FrontierとResource Pack
 
@@ -279,4 +279,4 @@ Wayfarer_CoreとWayfarer_FrontierはV0.1.0 Release Blockerです。Source、Java
 
 ## 14. Roadmapと関連文書
 
-V0.1.0までの実施順とBlockerは[Roadmap](09-roadmap.md)で管理します。次の実装段階はMain BetterStructures Artifact／Content／Resource Pack Preflightであり、全Content Load後のMain再生成、新Baseline確定、CoreProtect、Frontier Lock、Wayfarer_Core／Wayfarer_Frontier、Frontier共通基盤、両Theme、Gate／Permission、ユーザー建築、Routing、Resource Bootstrap、統合運用、Cold Backup／隔離Restoreへ進みます。最後に別途承認された破壊的Player State Resetを実施してからV0.1.0 Baseline Backupを作成します。導入済みVersionとHashは`versions.yml`、配置・取得・依存方針は`plugin-manifest.yml`、運用手順は[Operations](03-operations.md)、検証済み事実と未達Blockerは[Acceptance Tests](06-acceptance-tests.md)、Frontier Scopeは[Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md)、将来課題は[Deferred Design Items](11-deferred-design-items.md)を参照してください。
+V0.1.0までの実施順とBlockerは[Roadmap](09-roadmap.md)で管理します。Main BetterStructures Preflight、Content Load、再生成、Order 5受入およびOrder 6 Final Main Baselineは完了しました。次はCoreProtect、Frontier Lock、Wayfarer_Core／Wayfarer_Frontier、Frontier共通基盤、両Theme、Gate／Permission、ユーザー建築、Routing、Resource Bootstrap、統合運用、Cold Backup／隔離Restoreへ進みます。最後に別途承認された破壊的Player State Resetを実施してからV0.1.0 Release Baseline Backupを作成します。導入済みVersionとHashは`versions.yml`、配置・取得・依存方針は`plugin-manifest.yml`、運用手順は[Operations](03-operations.md)、検証済み事実と未達Blockerは[Acceptance Tests](06-acceptance-tests.md)、Frontier Scopeは[Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md)、将来課題は[Deferred Design Items](11-deferred-design-items.md)を参照してください。

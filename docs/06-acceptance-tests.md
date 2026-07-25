@@ -34,7 +34,7 @@ Regression testing is limited to a foundation directly modified by the change. E
 - [x] mcMMO shared Main/Frontier progression and RedisEconomy shared Waymark balances have verified persistence tests.
 - [x] EconomyShopGUI 7.1.1 Free provides the verified Main-only fixed-price shop.
 
-These items describe current baselines only. The replacement Main generation and Order 5 acceptance are complete, but Order 6 tuning／final backup remains incomplete. They do not mark Phase 1B, Hubs, Gates, either Frontier Theme, MVI, the future Frontier ResourcePackManager／Pack, custom Plugins, integrated operations, or the final V0.1.0 Backup as implemented.
+These items describe current baselines only. The replacement Main generation, Order 5 acceptance, and Order 6 Final Main Baseline are complete. They do not mark Phase 1B, Hubs, Gates, either Frontier Theme, MVI, the future Frontier ResourcePackManager／Pack, custom Plugins, integrated operations, or the final V0.1.0 Release Backup as implemented.
 
 ## 3. V0.1.0 Release Blockers
 
@@ -65,7 +65,7 @@ Phase 1B incomplete:
 - [x] The separately assigned one-time Ver.0.0.6 destructive task regenerated only `main`, `main_nether`, and `main_the_end` with exact paths, normal shutdown, exact approval, complete Vanilla player reset, and verified backup／rollback evidence; the Resource family remained excluded.
 - [x] Representative adopted Structures generate across Main Overworld／Nether／End and four distinct Packs. `Default`, `Caves`, `Echoes`, and Exploration Pack `betterstructures_exploration_bridgecave_shallow` passed bounded natural-generation acceptance.
 - [x] Persistent and Resource Portal families remain separate, the changed Main Nether route passed an actual round-trip, all three Main spawns are safe, bedless respawn works, and the Main Resource Pack is delivered.
-- [ ] Approved Weight／Content tuning, World identities, backup, and the replacement Main baseline are finalized.
+- [x] Order 6 accepted the current Weight／Content Config without changes, reverified World identities and Resource hashes, and finalized the replacement family with a verified stopped-state Main backup.
 - [ ] CoreProtect enables after the replacement Main baseline and provides representative lookup/rollback administration before substantial Hub／Gate construction.
 - [ ] After the user substantially completes the initial Hub, an approved exact Main Spawn WorldGuard Region denies general building, permits only intended public use, preserves Builder member building without Region administration, and persists after restart.
 - [ ] Vanilla `spawn-protection` remains 16 until the Main Spawn Region passes acceptance; a separately approved change to 0 then avoids double protection without weakening the Region boundary.
@@ -239,7 +239,7 @@ The following records preserve work already performed under earlier tasks. Their
 - [x] Runtime-only load verification kept every persistent Region SHA-256 unchanged. The approved Client smoke test then placed and removed representative FMM Props in already-generated Overworld Chunks; Region counts remained `11 / 4 / 4`, no new Region appeared, and Nether／End hashes remained unchanged. Four existing Overworld Region-container hashes changed during normal Player-session saves, so byte-for-byte post-Client invariance is not claimed. No Structure was pasted and no ungenerated Chunk was intentionally loaded.
 - [x] JARs, archives, Schematics, Models, generated packs, Runtime data, Logs, Worlds, and the ignored rollback snapshot remain outside Git.
 
-### Main Ver.0.0.6 replacement Runtime Candidate (2026-07-25)
+### Main Ver.0.0.6 replacement generation and Order 5 acceptance (2026-07-25)
 
 - [x] Pre-execution HEAD `c6a5d27c5410666c1cde436d1b6986ebbd334cf8`, exact approval `APPROVE-WAYFARER-MAIN-V006-REPLACEMENT-GENERATION`, and Complete Reset policy were recorded before moving the Main container.
 - [x] `backups/main-v006-replacement-generation-20260725-154934/` contains 181 verified payload entries. Manifest SHA-256 is `C79C2FC3ECBA998D875200E1D29B1B82B9BE97808B965E28D74B60108F62B118`; all hashes passed before generation and after acceptance.
@@ -252,7 +252,16 @@ The following records preserve work already performed under earlier tasks. Their
 - [x] A full normal network restart reloaded Paper, Velocity, all five Content packs, 278 selected Structures, FMM 55 Models, ResourcePackManager, unchanged UUID／Seed／Spawn settings, and the Resource family without a startup-blocking error.
 - [x] Main Resource Pack reconnect succeeded without protocol error. FMM Prop markers existed before restart; the Client-visible Vase appeared after restart, establishing restart recovery rather than a missing Model.
 - [x] Exploration Pack `betterstructures_exploration_bridgecave_shallow` completed the fourth distinct Pack requirement in `main`; the exact notification anchor, Chunk／Region, Chest, restart persistence, six-Region bound, and Resource hash preservation were verified.
-- [ ] Weight／Content tuning, final candidate selection, final cold backup, and V0.1.0 baseline declaration remain Order 6.
+- [x] Order 6 selected Decision A, retained all 278／152 Content and Weight settings, and promoted this candidate to the Final Main Baseline. This does not complete the network cold backup or V0.1.0 Release Baseline.
+
+### Main Order 6 Final Main Baseline (2026-07-25)
+
+- [x] Exact approvals `APPROVE-WAYFARER-MAIN-ORDER6-ACCEPT-AS-IS` and `APPROVE-WAYFARER-MAIN-V006-FINAL-BASELINE` were recorded. No Structure, Weight, Distance, Altitude, World allowlist, Region, Seed, UUID, Spawn, Portal, Content, Model, or executable artifact changed.
+- [x] Clean Runtime validation loaded Paper 26.2 build 62, BetterStructures 2.6.3, WorldEdit 7.4.4, all five Content packs, 278 selected Structures, FMM 55 Models, ResourcePackManager 2.3.0, and existing Gameplay Plugins without a startup-blocking error, failed Schematic, unresolved Model, or duplicate ID.
+- [x] Client delivery, Lobby → Main, existing Exploration Bridge Cave／Chest, existing End Shrine／Vase Prop, restart persistence, and Player cleanup passed without generating another Region.
+- [x] Final Region counts remained `17 / 11 / 18`; Resource counts remained `8 / 4 / 4`, and all 16 Resource Region SHA-256 values matched the replacement rollback evidence.
+- [x] `backups/main-v006-final-baseline-20260725-220745/` contains a stopped-state copy of all 207 Main-container files totaling 148,994,081 bytes plus Config／evidence snapshots. Every Source–Payload SHA-256 matched.
+- [x] Final Backup manifest SHA-256 is `A85A7CCAA2FE2DECCC69CE3E9F862F1281408B4D02E20EFC1E3E31B74D0814A1`; SHA-list digest is `81593864B49E41FB03F02514C1935DFAF380A1ABFE6FB148897932E328A50C39`.
 
 ### EvenMoreFish 2.4.3 (2026-07-21)
 

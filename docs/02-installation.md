@@ -2,7 +2,7 @@
 
 This is an execution summary. Follow the repository's [formal Ver.0.0.6 design guide](00-design-guide.md) for the authoritative design and acceptance policy. Ver.0.0.6 defines the future V0.1.0 Alpha completion conditions; it does not itself authorize Runtime changes.
 
-The destructive Ver.0.0.6 replacement generation has completed. Do not repeat either generation procedure or replace Main world data from this installation summary; use [Main World Baseline](13-main-world-baseline.md) for the Runtime Candidate identity, storage paths, spawn coordinates, acceptance remainder, and local rollback evidence.
+The destructive Ver.0.0.6 replacement generation and Order 6 Final Main Baseline task have completed. Do not repeat either procedure or replace Main world data from this installation summary; use [Main World Baseline](13-main-world-baseline.md) for the authoritative identity, storage paths, spawn coordinates, acceptance record, and local rollback evidence.
 
 ## Phase 0 - Prerequisites
 
@@ -90,8 +90,8 @@ Ver.0.0.6 replaced the persistent dimensions while retaining the approved safe s
 1. Completed 2026-07-25: verify the five approved Structure packs, BetterStructures Prop Pack, FreeMinecraftModels, ResourcePackManager, licenses, hashes, dependencies, World scope, Model IDs, and Main Pack delivery.
 2. Completed 2026-07-25: import the complete approved working set and confirm every Plugin／Content dependency loads before World generation.
 3. Completed 2026-07-25: replacement-generate only `main`, `main_nether`, and `main_the_end`; preserve and hash-verify the complete Resource family.
-4. Partially complete 2026-07-25: Portals, safe Spawns, Main Resource Pack, three-Pack／three-dimension natural generation, Prop, identities, and restart passed. Confirm a fourth distinct Pack, then complete approved tuning and final backup before declaring the V0.1.0 baseline.
-5. Install CoreProtect after the new baseline and before substantial Hub／Gate construction.
+4. Completed 2026-07-25: Portals, safe Spawns, Main Resource Pack, four-Pack／three-dimension natural generation, Prop, identities, restart, no-tuning decision, and verified stopped-state Final Main Baseline backup passed.
+5. Install CoreProtect after the Final Main Baseline and before substantial Hub／Gate construction.
 6. Continue with Frontier, Builder Phase 1B, user construction, protection, and Gate routing in the [Roadmap](09-roadmap.md) order.
 
 ## Phase 8 - Shared mcMMO and planned Frontier expansion
