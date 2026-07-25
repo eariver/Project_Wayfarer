@@ -7,6 +7,7 @@
 | Date | 2026-07-26 |
 | Recommended Sol | `high` |
 | Pre-execution HEAD | `9abc12ae5f472325933d38c5eacc6050aaf3e6c7` |
+| Implementation Commit | `e23906c427749d49d415961e9b6c798a0640e98e` |
 | Branch／Remote | `main`／`origin` |
 | Current Proposal | `FRONTIER-LOCK-20260726-003` |
 | Proposal status | Candidate、exact approval待ち |
