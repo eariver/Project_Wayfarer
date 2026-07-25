@@ -1,6 +1,6 @@
 # Main World Baseline
 
-Project Wayfarer replacement-generated the Main persistent family on 2026-07-25. That family is the **Current Runtime Candidate**. The 2026-07-21 family remains the **Last Finalized Rollback Baseline**. The **Final V0.1.0 Main Baseline** is not yet declared because natural-generation evidence from a fourth distinct Pack and Order 6 Weight／Content tuning plus the final backup remain incomplete. This document is not a server release or permission to regenerate either family.
+Project Wayfarer replacement-generated the Main persistent family on 2026-07-25. That family is the **Current Runtime Candidate**. The 2026-07-21 family remains the **Last Finalized Rollback Baseline**. Order 5 generation acceptance is complete, but the **Final V0.1.0 Main Baseline** is not yet declared because Order 6 Weight／Content tuning, candidate finalization, and the final backup remain incomplete. This document is not a server release or permission to regenerate either family.
 
 ## Runtime and generation policy
 
@@ -15,7 +15,7 @@ Project Wayfarer replacement-generated the Main persistent family on 2026-07-25.
 | Vanilla player-data policy | Complete reset for the regenerated persistent family; external LuckPerms, mcMMO, and Waymark data were outside the reset scope |
 | BetterStructures | 2.6.3 with the five-Pack `main-betterstructures-v006` working set; 278 enabled／152 disabled |
 | Spawn protection radius | 100 blocks, retained with user approval |
-| Acceptance status | Limited acceptance; fourth distinct Pack natural-generation evidence remains |
+| Acceptance status | Order 5 complete; Order 6 remains |
 
 BetterStructures was enabled only for `main`, `main_nether`, and `main_the_end` during generation. It remained disabled for the complete Resource family and for unknown new worlds.
 
@@ -62,7 +62,7 @@ The last finalized baseline also remains at `backups/main-final-generation-20260
 
 Rollback requires stopping player access and every Minecraft component, moving the new persistent family to a quarantine location, restoring the old Main container and selected Config from this backup, verifying file counts and SHA-256, and then checking the old seed, spawn, Resource family, and Multiverse links. Never delete persistent worlds or retry with another seed as an improvised recovery.
 
-## Replacement generation and limited acceptance
+## Replacement generation and Order 5 acceptance
 
 The assigned destructive task recorded the exact paths, Player Data Policy A
 (Complete Reset), verified rollback evidence, and approval token before moving
@@ -89,9 +89,34 @@ Natural generation confirmed:
 The End Shrine supplied FMM Prop markers. The Vase was not client-visible
 immediately after natural generation, but rendered normally after the required
 clean restart, proving restart recovery and a valid Model／Pack rather than a
-missing texture. Exploration Pack and Adventure Pack remain load-verified, but
-neither supplied the fourth distinct naturally observed Pack within the bounded
-test. That exact evidence remains Order 5 work.
+missing texture. The replacement-generation task therefore ended with three
+distinct naturally observed Packs and deferred the fourth Pack to a bounded
+follow-up.
+
+The follow-up began from `11 / 11 / 18` Region files and loaded only Main
+Overworld. Its first destination generated six Region files after delayed view
+loading: `r.-2.0.mca`, `r.-2.1.mca`, `r.-2.2.mca`, `r.-1.1.mca`,
+`r.-1.2.mca`, and `r.0.2.mca`. Current persistent counts are therefore
+`17 / 11 / 18`; the follow-up added `6 / 0 / 0`, within Stage A's eight-Region
+limit.
+
+Three natural-generation notifications appeared in the first destination.
+Exploration Pack `betterstructures_exploration_bridgecave_shallow` was
+identified from the Underground Shallow notification, exact teleport anchor
+`(-328, 10, 792)`, Chunk `(-21, 49)`, Region `r.-1.1.mca`, bridge-cave
+appearance, enabled selection entry, and the exact Schematic Palette. A Chest
+was inspected near `(-330, 4, 801)`, and stopped-state Region inspection
+confirmed Chest and Spawner Block Entities in the Structure area. No Portal,
+missing texture, unresolved Model, abnormal Entity density, Schematic error, or
+duplicate error was found.
+
+After a clean full-network restart, the Client revisited the exact anchor and
+confirmed the Structure and Chest remained normally rendered. Every one of the
+16 Resource Region hashes remained unchanged, Resource counts stayed
+`8 / 4 / 4`, and Nether／End gained no Region. This completes natural-generation
+acceptance from Default, Caves and Lost Civilizations Free, Echoes of the Past,
+and Exploration Pack. See
+[the fourth-Pack report](investigations/2026-07-25-main-fourth-pack-natural-generation.md).
 
 A temporary high-altitude Main／Nether Portal pair passed a round-trip and was
 removed from both worlds. Region inspection found no automatically generated
@@ -110,10 +135,9 @@ Generated Packs remain ignored and are not redistributed. See
 
 ## Remaining work
 
-Order 4 is complete. Order 5 remains incomplete only for natural-generation
-evidence from a fourth distinct Pack. Order 6 must then decide Weight／Content
-tuning, accept or replace the candidate, and create the final baseline backup.
-Order 7 CoreProtect remains unimplemented.
+Orders 4 and 5 are complete. Order 6 must decide Weight／Content tuning, accept
+or replace the candidate, and create the final baseline backup. Order 7
+CoreProtect remains unimplemented.
 
 The Main spawn Hub, Lobby and Frontier gates, three Resource gates, Resource
 return structures, and Resource End outer-island safety structure are not built
@@ -123,4 +147,4 @@ outside a new assigned destructive task.
 
 Main Spawn WorldGuard protection is designed but not applied. The user first completes the initial Hub footprint; a later approved task then defines the exact Region and focused equipment child regions. Vanilla `spawn-protection=16` remains until that WorldGuard boundary and Builder-member behavior are verified.
 
-Phase 4 EvenMoreFish, the 100x Waymark nominal price revision, BetterStructures Orders 2／3, and replacement generation Order 4 are complete. Finish the exact Order 5 evidence and Order 6 tuning／backup before CoreProtect and substantial Hub／Gate construction.
+Phase 4 EvenMoreFish, the 100x Waymark nominal price revision, and BetterStructures Orders 2 through 5 are complete. Finish Order 6 tuning／candidate selection／final backup before CoreProtect and substantial Hub／Gate construction.

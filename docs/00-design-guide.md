@@ -153,7 +153,7 @@ BetterStructures Prop Pack、FreeMinecraftModels 2.10.2およびResourcePackMana
 
 Current Runtime CandidateはSeed `164225356311935743`、Overworld Spawn `(320, 70, 128)`、Nether管理Spawn `(20.5, 60, -19.5)`、End管理Spawn `(100.5, 49, 0.5)`を維持し、Resource FamilyのUUID、Seedおよび全Region Hashを保持しました。正確なWorld UUID、Storage Path、Backupおよび限定受入結果は[Main World Baseline](13-main-world-baseline.md)を正本とします。Hub／Gate構造は未実装です。
 
-現在のWorldはRuntime Candidateとして運用しますが、4 Pack目の自然生成確認とOrder 6 Weight／Content調整・最終Backupが残るため、V0.1.0最終Baselineとは呼びません。追加の削除、Trim、再生成、RenameまたはSeed／UUID変更は別の破壊的Taskなしに行いません。CoreProtectは新Baseline確定後、Hub／Gateの本格建築前に導入します。
+現在のWorldはRuntime Candidateとして運用します。Exploration Packを含む4つの異なるPackの自然生成確認によりOrder 5は完了しましたが、Order 6 Weight／Content調整・候補確定・最終Backupが残るため、V0.1.0最終Baselineとは呼びません。追加の削除、Trim、再生成、RenameまたはSeed／UUID変更は別の破壊的Taskなしに行いません。CoreProtectは新Baseline確定後、Hub／Gateの本格建築前に導入します。
 
 ### FrontierとResource Pack
 

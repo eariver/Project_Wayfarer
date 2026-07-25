@@ -34,7 +34,7 @@ Regression testing is limited to a foundation directly modified by the change. E
 - [x] mcMMO shared Main/Frontier progression and RedisEconomy shared Waymark balances have verified persistence tests.
 - [x] EconomyShopGUI 7.1.1 Free provides the verified Main-only fixed-price shop.
 
-These items describe current baselines only. The replacement Main generation is complete with limited acceptance, but its fourth-Pack evidence and Order 6 remain incomplete. They do not mark Phase 1B, Hubs, Gates, either Frontier Theme, MVI, the future Frontier ResourcePackManager／Pack, custom Plugins, integrated operations, or the final V0.1.0 Backup as implemented.
+These items describe current baselines only. The replacement Main generation and Order 5 acceptance are complete, but Order 6 tuning／final backup remains incomplete. They do not mark Phase 1B, Hubs, Gates, either Frontier Theme, MVI, the future Frontier ResourcePackManager／Pack, custom Plugins, integrated operations, or the final V0.1.0 Backup as implemented.
 
 ## 3. V0.1.0 Release Blockers
 
@@ -63,7 +63,7 @@ Phase 1B incomplete:
 - [x] Before replacement generation, all five adopted Structure packs, BetterStructures Prop Pack, FreeMinecraftModels 2.10.2, and ResourcePackManager 2.3.0 are verified, imported, and loaded with the approved Main World allowlist and Pack preflight.
 - [x] The prior Main baseline and rollback backup remained verified and recoverable immediately before replacement generation.
 - [x] The separately assigned one-time Ver.0.0.6 destructive task regenerated only `main`, `main_nether`, and `main_the_end` with exact paths, normal shutdown, exact approval, complete Vanilla player reset, and verified backup／rollback evidence; the Resource family remained excluded.
-- [ ] Representative adopted Structures generate across Main Overworld／Nether／End and at least four distinct Packs. Three Packs (`Default`, `Caves`, `Echoes`) and all three dimensions passed; a fourth distinct Pack remains unconfirmed within the amended exploration bounds.
+- [x] Representative adopted Structures generate across Main Overworld／Nether／End and four distinct Packs. `Default`, `Caves`, `Echoes`, and Exploration Pack `betterstructures_exploration_bridgecave_shallow` passed bounded natural-generation acceptance.
 - [x] Persistent and Resource Portal families remain separate, the changed Main Nether route passed an actual round-trip, all three Main spawns are safe, bedless respawn works, and the Main Resource Pack is delivered.
 - [ ] Approved Weight／Content tuning, World identities, backup, and the replacement Main baseline are finalized.
 - [ ] CoreProtect enables after the replacement Main baseline and provides representative lookup/rollback administration before substantial Hub／Gate construction.
@@ -251,7 +251,8 @@ The following records preserve work already performed under earlier tasks. Their
 - [x] A temporary high-altitude Main／Nether Portal pair completed a round-trip, was removed from both worlds, and left no Nether Portal Palette or forced Chunk. Config inspection confirmed that persistent and Resource links do not cross.
 - [x] A full normal network restart reloaded Paper, Velocity, all five Content packs, 278 selected Structures, FMM 55 Models, ResourcePackManager, unchanged UUID／Seed／Spawn settings, and the Resource family without a startup-blocking error.
 - [x] Main Resource Pack reconnect succeeded without protocol error. FMM Prop markers existed before restart; the Client-visible Vase appeared after restart, establishing restart recovery rather than a missing Model.
-- [ ] Natural generation from a fourth distinct Pack remains an exact Order 5 remainder. Weight／Content tuning, final candidate selection, final cold backup, and V0.1.0 baseline declaration remain Order 6.
+- [x] Exploration Pack `betterstructures_exploration_bridgecave_shallow` completed the fourth distinct Pack requirement in `main`; the exact notification anchor, Chunk／Region, Chest, restart persistence, six-Region bound, and Resource hash preservation were verified.
+- [ ] Weight／Content tuning, final candidate selection, final cold backup, and V0.1.0 baseline declaration remain Order 6.
 
 ### EvenMoreFish 2.4.3 (2026-07-21)
 

@@ -519,9 +519,9 @@ main:
         runtime-import: reproducible-normalized-working-copy
         redistribution: not-committed
         enabled-world-family: persistent-main-only
-      verification: five-pack-load-fmm-model-resolution-resource-family-exclusion-clean-restart-and-limited-natural-generation-acceptance
+      verification: five-pack-load-fmm-model-resolution-resource-family-exclusion-clean-restart-and-four-pack-natural-generation-acceptance
       current-runtime-candidate:
-        status: limited-acceptance
+        status: order-5-complete
         date: 2026-07-25
         seed: "164225356311935743"
         player-data-policy: complete-vanilla-reset-external-databases-preserved
@@ -543,14 +543,17 @@ main:
           end: 436843c4-2229-4c67-907c-b3a7d1530d71
         region-files:
           overworld:
-            total: 11
-            new-during-acceptance: 7
+            total: 17
+            new-during-replacement-acceptance: 7
+            new-during-fourth-pack-acceptance: 6
           nether:
             total: 11
-            new-during-acceptance: 7
+            new-during-replacement-acceptance: 7
+            new-during-fourth-pack-acceptance: 0
           end:
             total: 18
-            new-during-acceptance: 14
+            new-during-replacement-acceptance: 14
+            new-during-fourth-pack-acceptance: 0
         resource-preservation: uuid-seed-and-region-sha256-verified
         backup:
           path: backups/main-v006-replacement-generation-20260725-154934
@@ -563,9 +566,17 @@ main:
             - 103-default-structures
             - caves-and-lost-civilizations-free
             - echoes-of-the-past
-          remaining:
-            - one-natural-structure-from-exploration-or-adventure
-        final-v0.1.0-baseline: pending-order-5-remainder-and-order-6
+            - exploration-pack
+          order-5: complete
+          fourth-pack:
+            id: betterstructures_exploration_bridgecave_shallow
+            world: main
+            xyz: "-328 10 792"
+            chunk: "-21 49"
+            region: r.-1.1.mca
+            restart-persistence: passed
+            resource-region-hashes: 16-of-16-unchanged
+        final-v0.1.0-baseline: pending-order-6
       last-finalized-rollback-baseline:
         status: phase-3-final-generation-complete
         date: 2026-07-21

@@ -150,6 +150,8 @@ Phase 1A is implemented. All five Group definitions are persistent, while Player
 
 The current Builder Role container has no WorldEdit, Creative／Survival／Spectator, teleport, or Multiverse command permission. Phase 1B will derive an explicit allowlist from the adopted versions after the actual Hub／Gate／Theme work is known. WorldGuard Region administration, unapproved Advanced Portals administration, Velocity, LuckPerms, economy, player punishment, server stop, wildcards, destructive World lifecycle operations, Plugin/Config reload, and debug/internal administration remain excluded.
 
+During Temporary Admin acceptance or maintenance work in Main, keep the participating Player in Creative or Spectator while Codex is inspecting Logs, Regions, or Config. Do not leave the Player waiting in Survival, where hostile mobs can damage the Player or terrain. Return to Survival only immediately before an actual disconnect or completed handoff.
+
 At the end of Builder work: confirm saved state, return to Survival, move to a safe location if needed, self-remove the Temporary Builder Parent, and verify loss of Builder permissions. Natural expiry is only a safety net and does not reset Creative/Spectator state. Remove one Role's Temporary Parent before joining the other. Admin full access ends when the Temporary Admin Parent is removed or expires; Windows, Docker, database, cold-backup, restore, and stopped-server startup remain outside Minecraft permissions.
 
 Exact Eligibility nodes, assignment, bootstrap, recovery, rollback, Specific Deny policy, and acceptance evidence are in [Permission Model](12-permission-model.md). Server Console is reserved for bootstrap, permission-lockout recovery, and incident diagnosis.

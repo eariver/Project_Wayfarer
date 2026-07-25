@@ -83,9 +83,9 @@ Disposable Resource family:
 - `resource_nether`;
 - `resource_end`.
 
-The Current Runtime Candidate was replacement-generated on 2026-07-25 with seed `164225356311935743`; its exact identity, rollback source, and limited acceptance state are authoritative in [Main World Baseline](13-main-world-baseline.md).
+The Current Runtime Candidate was replacement-generated on 2026-07-25 with seed `164225356311935743`; its exact identity, rollback source, and Order 5 acceptance state are authoritative in [Main World Baseline](13-main-world-baseline.md).
 
-The five-Pack BetterStructures working set, Prop／FreeMinecraftModels integration, and Main ResourcePackManager are active in that candidate. The Resource family remains excluded and hash-preserved. Natural generation from three distinct Packs, all three dimensions, Portal routing, safe spawns, Pack delivery, Prop recovery after restart, and clean restart passed; a fourth distinct Pack and Order 6 tuning／final backup remain outstanding.
+The five-Pack BetterStructures working set, Prop／FreeMinecraftModels integration, and Main ResourcePackManager are active in that candidate. The Resource family remains excluded and hash-preserved. Natural generation from four distinct Packs, all three dimensions, Portal routing, safe spawns, Pack delivery, Prop recovery after restart, and clean restart passed. Order 5 is complete; Order 6 tuning／candidate selection／final backup remains outstanding.
 
 ## Frontier target architecture
 

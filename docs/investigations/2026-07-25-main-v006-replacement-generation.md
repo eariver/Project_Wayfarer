@@ -13,10 +13,13 @@ had loaded. The complete Resource family was copied from a verified rollback
 source before first boot and remained excluded from BetterStructures.
 
 The generated family is the **Current Runtime Candidate**. It is not the Final
-V0.1.0 Main Baseline. Natural generation was observed from Default, Caves and
-Lost Civilizations Free, and Echoes of the Past, but not from a fourth distinct
-Pack within the final bounded-exploration limits. That evidence remains Order 5
-work. Order 6 Weight／Content tuning and the final baseline backup also remain.
+V0.1.0 Main Baseline. This replacement-generation run observed natural
+generation from Default, Caves and Lost Civilizations Free, and Echoes of the
+Past, but not from a fourth distinct Pack within its final bounded-exploration
+limits. A later bounded follow-up accepted Exploration Pack
+`betterstructures_exploration_bridgecave_shallow` and completed Order 5; see
+[the fourth-Pack report](2026-07-25-main-fourth-pack-natural-generation.md).
+Order 6 Weight／Content tuning and the final baseline backup remain.
 
 ## Authorization and destructive boundary
 
@@ -181,9 +184,10 @@ Final Region counts were:
 | Total | 12 | 40 | 28 |
 
 The End search stopped immediately after the Echoes Shrine. Vanilla outer
-islands and an End Ship also generated normally without abnormal density. The
-fourth distinct Pack requirement remains unconfirmed; Exploration and Adventure
-are load-verified but not counted as naturally observed.
+islands and an End Ship also generated normally without abnormal density. At
+the end of this run, the fourth distinct Pack remained unconfirmed; the later
+fourth-Pack follow-up completed that evidence without changing this run's
+historical bounds.
 
 ## Spawn, respawn, and Portal acceptance
 
@@ -251,8 +255,8 @@ temporary Admin parent was removed, and the Client disconnected at Main spawn.
 ## Repository and roadmap result
 
 - Order 4 Main regeneration: complete.
-- Order 5 Main generation acceptance: incomplete by one exact item — natural
-  generation from a fourth distinct Pack.
+- Order 5 Main generation acceptance: incomplete by one exact item at this
+  run's close, then completed by the separately assigned fourth-Pack follow-up.
 - Order 6 tuning and final baseline backup: incomplete.
 - Order 7 CoreProtect: incomplete.
 

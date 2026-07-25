@@ -27,7 +27,7 @@ Minecraftの恒久生活拠点 **Main** と、既製Adventureコンテンツを�
 - Main恒久World: 2026-07-25に同一Seedで5 Pack構成へ置換生成。Resource Familyと安全Spawnを保持したCurrent Runtime Candidateで、V0.1.0最終BaselineはOrder 6後に確定
 - Main／Frontier: 通常Inventoryは分離し、Waymark残高とmcMMO進行だけを共有
 - Lobby: TAB・権限以外のゲーム進行をMain／Frontierと共有しない
-- V0.1.0計画: Main候補Worldの残る受入／調整、Ruined Frontier／Worlds Beyond、MVI、Wayfarer_Core／Wayfarer_Frontier、Main／Frontier別Resource Pack（未完了）
+- V0.1.0計画: Main候補WorldのOrder 6調整／最終Backup、Ruined Frontier／Worlds Beyond、MVI、Wayfarer_Core／Wayfarer_Frontier、Main／Frontier別Resource Pack（未完了）
 
 ## 最初に読む文書
 
@@ -136,7 +136,7 @@ Ver.0.0.6は設計・導入・運用文書の改訂番号であり、稼働Serve
 - Planned `resource_end` has no Ender Dragon and uses a verified outer-island arrival/return gate.
 - Manual Plugin collection is tracked in [Plugin Collection](docs/08-plugin-collection.md), `plugin-collection.csv`, and the separate XLSX artifact.
 - 権限Phase 1Aとして、`default`、2つのEligibility Group、`wayfarer_builder`／`wayfarer_admin`の5つの恒久Group定義と、PlayerからRole Groupへの自己限定Temporary Parent所属を実装済み。既存`default`／`wayfarer_builder`は再利用し、AdminはOPではなく一時Roleで全権限を得る。Builderの最終AllowlistはPhase 1Bとして未実装。
-- Main Persistent Familyは5 Pack構成で置換生成済みで、Resource Family除外、3 Spawn、Portal往復、Pack配信、自然生成Propおよび再起動を確認済み。4 Pack目の自然生成確認とOrder 6調整／最終Backupが残るため、現在はRuntime CandidateでありV0.1.0最終Baselineではない。
+- Main Persistent Familyは5 Pack構成で置換生成済みで、Resource Family除外、3 Spawn、Portal往復、Pack配信、自然生成Propおよび再起動を確認済み。Exploration Packを含む4 Pack目の自然生成確認によりOrder 5も完了した。Order 6調整／最終Backupが残るため、現在はRuntime CandidateでありV0.1.0最終Baselineではない。
 - V0.1.0ではRuined Frontier alphaとWorlds Beyond MVPの両方を実装・統合・受入試験する。Ruined Frontierの初期BetterStructures ScopeはMain五Packとは異なり、103 Default Structures全体を原則無効として、Exploration／Caves／Echoes／Adventure、Prop Pack、Free Elite Shrines、Dungeoneering Modules Freeを採用する。
 - Frontierの通常Player StateはMultiverse-Inventoriesの`neutral`、`worlds_beyond`、`guild` Groupを正本とし、Wayfarer_FrontierでInventory保存を再実装しない。
 - Main／Frontier間ではVanilla Itemを含む全Item、Inventory、Armor、Offhand、Ender ChestおよびVanilla Player Stateを移送しない。共有成果はWaymark、mcMMOおよび別途承認されるItem非依存実績／報酬だけとする。

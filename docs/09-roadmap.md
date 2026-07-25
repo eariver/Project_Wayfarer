@@ -19,7 +19,7 @@ Ver.0.0.6 is a design revision, not a Server Release. The first target Release i
 - EvenMoreFish 2.4.3 Main-only Custom Fishing and Vault Fish Shop
 - Main BetterStructures five-Pack working set, FreeMinecraftModels 2.10.2, BetterStructures Prop Pack, and ResourcePackManager 2.3.0 load preflight
 
-The 2026-07-21 baseline remains the Last Finalized Rollback Baseline. The 2026-07-25 replacement is the Current Runtime Candidate, not the Final V0.1.0 Main Baseline. Order 5 retains one exact natural-generation evidence item and Order 6 still owns tuning and final backup.
+The 2026-07-21 baseline remains the Last Finalized Rollback Baseline. The 2026-07-25 replacement is the Current Runtime Candidate, not the Final V0.1.0 Main Baseline. Order 5 is complete; Order 6 still owns tuning, candidate finalization, and the final backup.
 
 ## Dependency-based execution order
 
@@ -29,7 +29,7 @@ The 2026-07-21 baseline remains the Last Finalized Rollback Baseline. The 2026-0
 | 2 | Main BetterStructures Artifact／Content／Resource Pack Preflight — complete 2026-07-25 | Exact versions, licenses, sources, hashes, dependencies, Model IDs, Pack generation, and World scope are locked; Client delivery evidence is recorded in the integration report |
 | 3 | Main full Content Import and load confirmation — complete 2026-07-25 | The five approved packs plus Prop／FreeMinecraftModels／ResourcePackManager working set loaded normally before World generation |
 | 4 | Main Persistent Family regeneration — complete 2026-07-25 | Only `main`, `main_nether`, and `main_the_end` were replacement-generated; the Resource family was restored and hash-verified |
-| 5 | Main generation acceptance — incomplete, limited acceptance 2026-07-25 | Spawns, Resource exclusion, Portal family, Pack, restart, three dimensions, Props, and three distinct Packs passed; natural generation from a fourth distinct Pack remains |
+| 5 | Main generation acceptance — complete 2026-07-25 | Spawns, Resource exclusion, Portal family, Pack, restart, three dimensions, Props, and four distinct Packs passed; Exploration Pack supplied the fourth natural-generation observation |
 | 6 | Main Weight／Content tuning and new baseline | Apply approved tuning, finalize identities and backup, then update the Main baseline source of truth |
 | 7 | CoreProtect | Introduce after the new Main baseline and before substantial Hub／Gate construction; not a cold-backup replacement |
 | 8 | Frontier lock | Lock Plugin versions, artifacts, World IDs, Gate method, Resource Packs, persistence, licenses, and exact Runtime boundaries |
@@ -116,7 +116,7 @@ Artifact verification [complete]
 → World allowlist, Content load, and Resource Pack preflight [complete]
 → healthy load confirmation [complete]
 → separately approved Main Persistent Family regeneration [complete]
-→ generation／Portal／Spawn／Pack／Resource-exclusion acceptance [limited; fourth Pack evidence remains]
+→ generation／Portal／Spawn／Pack／Resource-exclusion acceptance [complete]
 → approved tuning
 → new baseline and backup
 ```
@@ -125,7 +125,7 @@ The one-time generation has completed and must not be rerun. Keep `resource`, `r
 
 ### Phase 3 - Current and future Main baselines
 
-The 2026-07-25 family in [Main World Baseline](13-main-world-baseline.md) is the Current Runtime Candidate. The 2026-07-21 family is the Last Finalized Rollback Baseline. The candidate becomes the Final V0.1.0 Main Baseline only after the remaining Order 5 evidence and Order 6 tuning／final backup complete. Neither family may be altered by documentation-only work.
+The 2026-07-25 family in [Main World Baseline](13-main-world-baseline.md) is the Current Runtime Candidate. The 2026-07-21 family is the Last Finalized Rollback Baseline. Order 5 is complete. The candidate becomes the Final V0.1.0 Main Baseline only after Order 6 tuning／candidate selection／final backup completes. Neither family may be altered by documentation-only work.
 
 ### Phase 4 - Main lightweight gameplay
 
