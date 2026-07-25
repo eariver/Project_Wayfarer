@@ -31,11 +31,11 @@ The 2026-07-21 family remains the Legacy Rollback Baseline. The 2026-07-25 repla
 | 4 | Main Persistent Family regeneration — complete 2026-07-25 | Only `main`, `main_nether`, and `main_the_end` were replacement-generated; the Resource family was restored and hash-verified |
 | 5 | Main generation acceptance — complete 2026-07-25 | Spawns, Resource exclusion, Portal family, Pack, restart, three dimensions, Props, and four distinct Packs passed; Exploration Pack supplied the fourth natural-generation observation |
 | 6 | Main Weight／Content tuning and new baseline — complete 2026-07-25 | Decision A retained current Config; identities, Resource hashes, stopped-state backup, and Final Main Baseline source of truth were verified |
-| 7 | CoreProtect | Introduce after the new Main baseline and before substantial Hub／Gate construction; not a cold-backup replacement |
+| 7 | CoreProtect — deferred／non-blocking | Main／Lobby wait for an upstream Minecraft 26.2-compatible Stable release; not complete, accepted, or a cold-backup replacement |
 | 8 | Frontier lock | Lock Plugin versions, artifacts, World IDs, Gate method, Resource Packs, persistence, licenses, and exact Runtime boundaries |
 | 9 | Wayfarer_Core | Approve formal design, create a separate Repository, develop／release, and integrate the V0.1.0 shared foundation |
 | 10 | Wayfarer_Frontier | Approve formal design, create a separate Repository, develop／release, and integrate the V0.1.0 Frontier functions |
-| 11 | Frontier shared foundation | Integrate MVI, Multiverse-NetherPortals, WorldEdit／WorldGuard／CoreProtect, ResourcePackManager, Frontier Pack, Beyond Gate, and Guild Gate |
+| 11 | Frontier shared foundation | Integrate MVI, Multiverse-NetherPortals, WorldEdit／WorldGuard, ResourcePackManager, Frontier Pack, Beyond Gate, and Guild Gate; adopt CoreProtect only if Order 8 or a later approved task selects it |
 | 12 | EM Adapter necessity decision | Prove whether static MVI registration or strict Regex is sufficient before authorizing an Adapter |
 | 13 | Ruined Frontier alpha | Implement and verify the approved Guild／Primis／three-dimension BetterStructures＋EliteMobs scope |
 | 14 | Worlds Beyond MVP | Implement and verify the approved Iris／Traversal／Waystone／WM Shop scope |
@@ -51,7 +51,7 @@ The 2026-07-21 family remains the Legacy Rollback Baseline. The 2026-07-25 repla
 | 24 | V0.1.0 Pre-release Player State Reset | Separately approve and reset Waymark and the exact Player State scope after functional testing |
 | 25 | V0.1.0 Baseline | Create the post-reset baseline backup and confirm every Blocker before any Release declaration |
 
-The table controls practical priority. In particular, Main Content must load before regeneration; CoreProtect follows the new Main baseline; both Frontier Themes and the Gate boundary precede Builder Phase 1B.
+The table controls practical priority. Main Content loaded before regeneration and the Final Main Baseline is complete. Order 7 remains numbered but is deferred／non-blocking; Order 8 is the next active task. Both Frontier Themes and the Gate boundary precede Builder Phase 1B.
 
 ## Phase details
 
@@ -139,7 +139,7 @@ The formal scope is [Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md). Both R
 
 - [ ] Lock every Plugin／Content Artifact, license, hash, World ID, Gate method, Resource Pack, and persistence boundary
 - [ ] Integrate Multiverse-Inventories with `neutral`, `worlds_beyond`, and `guild`
-- [ ] Integrate Frontier Multiverse-NetherPortals, WorldEdit, WorldGuard, CoreProtect, and ResourcePackManager
+- [ ] Integrate Frontier Multiverse-NetherPortals, WorldEdit, WorldGuard, and ResourcePackManager; decide the Frontier history／rollback solution separately
 - [ ] Produce and deliver a Frontier-only integrated Pack
 - [ ] Integrate separately released Wayfarer_Core and Wayfarer_Frontier
 - [ ] Build and verify Beyond and Guild Gate routes
@@ -172,7 +172,7 @@ The formal scope is [Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md). Both R
 
 ### Phase 6 - User-built Hubs and Gates
 
-CoreProtect must be installed after the new Main baseline and before substantial construction. Builder-led work additionally requires Phase 1B.
+Main／Lobby CoreProtect is deferred while Owner-only operation continues and is not a prerequisite for Owner-led Hub／Gate construction. Retain the Final Main Baseline Backup, preserve focused before／after backup or ignored Schematic evidence as appropriate, divide destructive work into controlled units, and apply a separately accepted WorldGuard boundary after construction. WorldGuard does not provide history lookup or point-in-time rollback. Builder-led work additionally requires Phase 1B.
 
 The user manually builds and approves:
 
@@ -203,12 +203,12 @@ Codex does not infer appearance, coordinates, orientation, or destinations.
 
 ### Phase 9 - CoreProtect
 
-- [ ] Install after the new Main baseline and before substantial Hub／Gate construction
-- [ ] Lock exact placement and database policy
-- [ ] Keep lookup／rollback administration Admin-only
-- [ ] Include Main and Frontier persistence and backup ownership in the operational design
+- [ ] Wait for an upstream Stable Community Edition that explicitly supports Minecraft／Paper 26.2 and Java 25
+- [ ] Re-audit Version, Artifact, license, placement, database, per-world logging, permissions, and Main／Lobby／Frontier boundaries before any new attempt
+- [ ] Keep any future lookup／rollback administration Admin-only
+- [ ] Re-evaluate before non-Owner participation, multiple Builders, public operation, large collaborative WorldEdit work, or materially expanded persistent construction
 
-CoreProtect records only changes after installation and never replaces cold backup.
+Order 7 is deferred and non-blocking, not complete. Main／Lobby CoreProtect is temporarily outside the V0.1.0 blockers under Owner-only operation. Frontier adoption remains undecided until Order 8 or later. CoreProtect records only changes after installation and never replaces cold backup; WorldGuard is preventive protection and does not replace it.
 
 ### Phase 10 - Integrated operations
 
@@ -248,7 +248,6 @@ This reset has not been executed and must not be brought forward.
 - Main five-Pack／Prop／FreeMinecraftModels／ResourcePackManager preflight and import
 - destructive Main Persistent Family regeneration after Content load
 - Main generation acceptance, tuning, new baseline, and backup
-- CoreProtect after the new Main baseline
 - Frontier shared foundation
 - Multiverse-Inventories and all three groups
 - ResourcePackManager, separate Main／Frontier Packs, and backend-switch delivery
@@ -270,6 +269,7 @@ This reset has not been executed and must not be brought forward.
 
 ## Not V0.1.0 Release Blockers
 
+- Main／Lobby CoreProtect while Owner-only operation continues and no Minecraft 26.2-compatible Stable Community Edition is available
 - cross-server Chat
 - Dynamic Pricing, Player Shop, Global Stock, or automatic price adjustment
 - item-based achievement rewards

@@ -190,6 +190,8 @@ Phase 1B remains incomplete and blocks V0.1.0. It must:
 
 The current BetterStructures baseline is complete without changing Builder permissions. Phase 1B remains scheduled before Builder-led Hub／Gate／Theme connection work and does not authorize the separately approved destructive Main regeneration plan.
 
+Main／Lobby CoreProtect is deferred and non-blocking while Minecraft 26.2 lacks a compatible Stable Community Edition. This does not grant Builder or General Player any inspection, lookup, rollback, restore, purge, reload, consumer, networking, or database authority. If CoreProtect is reconsidered, exact nodes must be re-audited from the adopted Runtime version; rollback and Region administration remain Temporary Admin-only. Owner-led Hub／Gate construction may proceed using focused backup／Schematic evidence and post-construction WorldGuard membership protection, but WorldGuard does not replace history audit or rollback.
+
 ## 11. Planned Frontier permission boundary
 
 This section defines future responsibility only; no Runtime Permission has been added by Ver.0.0.6.

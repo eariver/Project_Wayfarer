@@ -66,7 +66,7 @@ Phase 1B incomplete:
 - [x] Representative adopted Structures generate across Main Overworld／Nether／End and four distinct Packs. `Default`, `Caves`, `Echoes`, and Exploration Pack `betterstructures_exploration_bridgecave_shallow` passed bounded natural-generation acceptance.
 - [x] Persistent and Resource Portal families remain separate, the changed Main Nether route passed an actual round-trip, all three Main spawns are safe, bedless respawn works, and the Main Resource Pack is delivered.
 - [x] Order 6 accepted the current Weight／Content Config without changes, reverified World identities and Resource hashes, and finalized the replacement family with a verified stopped-state Main backup.
-- [ ] CoreProtect enables after the replacement Main baseline and provides representative lookup/rollback administration before substantial Hub／Gate construction.
+- Order 7 CoreProtect is deferred and non-blocking because CE 24.0 rejects Minecraft 26.2. Main／Lobby CoreProtect is temporarily excluded from the V0.1.0 blockers under Owner-only operation; it is not complete or accepted.
 - [ ] After the user substantially completes the initial Hub, an approved exact Main Spawn WorldGuard Region denies general building, permits only intended public use, preserves Builder member building without Region administration, and persists after restart.
 - [ ] Vanilla `spawn-protection` remains 16 until the Main Spawn Region passes acceptance; a separately approved change to 0 then avoids double protection without weakening the Region boundary.
 
@@ -91,7 +91,7 @@ Phase 1B incomplete:
 - [ ] Guild and verified Instance Worlds use the correct MVI profile; restart／reconnect and Instance lifecycle do not lose or duplicate Player State.
 - [ ] The independent EM Adapter review records whether static registration, strict Regex, or an Adapter is required; an Adapter is not assumed.
 - [ ] The Frontier Resource Pack renders required BetterStructures／EliteMobs／FreeMinecraftModels assets; BetterHealthBar3 passes or is explicitly rejected by its adoption test.
-- [ ] CoreProtect records representative Ruined Frontier block changes under the approved administration boundary.
+- [ ] Order 8 or later explicitly decides the Frontier history／rollback solution, placement, storage, World, MVI, and Permission boundaries; this document does not preselect CoreProtect.
 
 ### Worlds Beyond MVP
 
@@ -128,6 +128,7 @@ Phase 1B incomplete:
 
 ## 4. Future feature acceptance (not V0.1.0 Blockers)
 
+- [ ] Re-evaluate Main／Lobby CoreProtect when a Minecraft 26.2-compatible Stable release appears, another Player or multiple Builders join, public operation begins, or large collaborative WorldEdit work is planned.
 - [ ] Cross-server Chat displays an approved origin format.
 - [ ] Cross-server Shop, Dynamic Pricing, Player Shop, Global Stock, or automatic price adjustment has a separately approved economy design.
 - [ ] Optional Ruined Frontier WM rewards avoid duplicate/replay rewards and use the formal adapter.

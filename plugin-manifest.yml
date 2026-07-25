@@ -21,9 +21,9 @@ core_binaries:
 planned_unplaced:
   - name: CoreProtect
     version: unselected
-    status: planned-not-installed
-    purpose: Record block history for investigation and Admin-only partial rollback before substantial Hub/Gate construction
-    placement: separate-approved-task
+    status: deferred-non-blocking-not-installed
+    purpose: Re-evaluate block-history investigation and Admin-only partial rollback after an upstream Minecraft 26.2-compatible Stable release or an operational trigger
+    placement: Main and Lobby only after a separate approved re-audit; Frontier remains undecided
     database-policy: separate-approved-task
     administration: admin-only-no-builder-rollback
     cold-backup-replacement: false

@@ -35,7 +35,7 @@
 |Model / Pack|Frontier|ResourcePackManager|正式Scope・未導入|servers/frontier/plugins||Mainとは別Pack、Version／Hosting／Hash／切替／失敗時挙動／Rollbackを別途Lock|
 |External Custom|Network|Wayfarer_Core|正式Scope・未開発|別Repository||V0.1.0 Blocker、本RepositoryへSourceを置かない|
 |External Custom|Frontier|Wayfarer_Frontier|正式Scope・未開発|別Repository||V0.1.0 Blocker、MVI通常Inventoryを再実装しない|
-|Administration|Main + Frontier|CoreProtect|計画・未導入|別タスクで確定||新Main Baseline後・Hub／Gate本格建築前、RollbackはAdmin-only、Cold Backup代替不可|
+|Administration|Main／Lobby; Frontier undecided|CoreProtect|延期・未導入|別タスクで再評価||Main／LobbyはMinecraft 26.2対応Stable版待ちでNon-blocking。Frontier採否はOrder 8以降、将来RollbackはAdmin-only、Cold Backup代替不可|
 |Administration / Development|All Paper|PlugManX|計画・未導入|各Paper plugins|https://modrinth.com/plugin/plugmanx|Version未選定、手動取得、Admin-only、Velocity対象外|
 |Deferred|Velocity|Cross-server chat|選定中|未配置||PoC後に選定|
 |Forbidden|Velocity|ViaBackwards|禁止|配置しない|https://modrinth.com/plugin/viabackwards|意図的に不採用|

@@ -33,12 +33,12 @@ The planned Frontier foundation consists of:
 - Multiverse-NetherPortals;
 - WorldEdit;
 - WorldGuard;
-- CoreProtect;
+- a history／rollback solution selected in Order 8 or later; CoreProtect is not preselected by the Main／Lobby deferral;
 - ResourcePackManager and one Frontier integrated Resource Pack;
 - approved Beyond and Guild Gate routes;
 - Wayfarer_Core and Wayfarer_Frontier integration contracts.
 
-The exact versions, JARs, licenses, hashes, placement, dependencies, World IDs, Gate implementation, and Runtime Config are locked only by dedicated implementation tasks. Current installed state is recorded separately in `versions.yml`, `plugin-manifest.yml`, and the Runtime.
+The exact versions, JARs, licenses, hashes, placement, dependencies, World IDs, Gate implementation, history／rollback solution, and Runtime Config are locked only by dedicated implementation tasks. Current installed state is recorded separately in `versions.yml`, `plugin-manifest.yml`, and the Runtime. The Main／Lobby CoreProtect deferral neither installs CoreProtect on Frontier nor removes a future Frontier option.
 
 ## 4. Player State and inventory boundary
 

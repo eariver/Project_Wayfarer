@@ -40,7 +40,7 @@ MariaDB currently stores LuckPerms, mcMMO, and EvenMoreFish data. Redis currentl
 - EconomyShopGUI and EvenMoreFish run only on Main.
 - BetterStructures currently runs only on Main with the load-verified five-Pack 278-Structure working set. FreeMinecraftModels 2.10.2 and ResourcePackManager 2.3.0 also run only on Main for the Prop／Java Pack preflight.
 
-MVI, Frontier Multiverse-NetherPortals, CoreProtect, Frontier ResourcePackManager／Pack, formal Network pack hosting, Iris, EliteMobs, Wayfarer_Core, and Wayfarer_Frontier are planned and not installed by Ver.0.0.6.
+MVI, Frontier Multiverse-NetherPortals, CoreProtect, Frontier ResourcePackManager／Pack, formal Network pack hosting, Iris, EliteMobs, Wayfarer_Core, and Wayfarer_Frontier are not installed by Ver.0.0.6. Main／Lobby CoreProtect is deferred and non-blocking while waiting for an upstream Minecraft 26.2-compatible Stable release; Frontier adoption remains undecided for Order 8 or later.
 
 ## Permission boundary
 
@@ -157,6 +157,6 @@ Each Theme keeps family-local Nether／End Portal links. Gate routes must preser
 
 Cold backup must include every authoritative Main／Frontier World, MVI profile, MariaDB database, stopped Redis AOF, custom-Plugin data, Config, Content input, and Resource Pack input required for recovery. Generated artifacts are rebuilt or captured according to the locked procedure. An isolated restore is a V0.1.0 blocker.
 
-CoreProtect is introduced after the new Main baseline and before substantial Hub／Gate construction. It records investigation history and partial rollback only; it is not a cold-backup substitute.
+CoreProtect CE 24.0 rejected Minecraft 26.2 at Runtime. Main／Lobby installation is therefore deferred and temporarily excluded from the V0.1.0 blockers under Owner-only operation. Hub／Gate construction may proceed with the Final Main Baseline backup retained, focused before／after backup or ignored Schematic evidence, controlled edit units, and WorldGuard protection after construction. WorldGuard prevents unauthorized changes but provides neither history lookup nor point-in-time rollback; CoreProtect also never substitutes for cold backup. Re-evaluate CoreProtect before multi-player, multi-Builder, public, or large collaborative WorldEdit operation. Frontier placement and data boundaries are decided only in Order 8 or later.
 
 Detailed Frontier authority is in [Frontier V0.1.0 Scope](14-frontier-v0.1.0-scope.md), and implementation order is in the [Roadmap](09-roadmap.md).

@@ -58,7 +58,7 @@ Later revisions plan to add:
 
 ## 7. Building responsibility for V0.1.0
 
-The user manually builds and approves the Lobby minimum Hub, Main spawn Hub, Frontier Gate Hub, Beyond／Guild Gate structures, Resource Return structure, and Resource End outer-island structure. CoreProtect follows the verified replacement Main baseline and precedes substantial Hub/Gate building. Codex configures exact routes, Spawn/Arrival settings, and protection only after the user supplies confirmed Worlds, coordinates, orientation, and safe destinations. Main Spawn WorldGuard protection follows substantial initial Hub completion under its own approved task. No structure is generated or replaced from this specification alone.
+The user manually builds and approves the Lobby minimum Hub, Main spawn Hub, Frontier Gate Hub, Beyond／Guild Gate structures, Resource Return structure, and Resource End outer-island structure. Main／Lobby CoreProtect is deferred while waiting for a Minecraft 26.2-compatible Stable release and does not block Owner-only Hub／Gate work. Retain the Final Main Baseline Backup, preserve focused Schematic／backup evidence when appropriate, and split destructive edits into controlled units. Codex configures exact routes, Spawn/Arrival settings, and protection only after the user supplies confirmed Worlds, coordinates, orientation, and safe destinations. Main Spawn WorldGuard protection follows substantial initial Hub completion under its own approved task; WorldGuard prevents unauthorized changes but does not provide history lookup or point-in-time rollback. No structure is generated or replaced from this specification alone.
 
 ## 8. Temporary Role membership
 

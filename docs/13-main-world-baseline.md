@@ -16,7 +16,7 @@ Project Wayfarer replacement-generated the Main persistent family on 2026-07-25 
 | Vanilla player-data policy | Complete reset for the regenerated persistent family; external LuckPerms, mcMMO, and Waymark data were outside the reset scope |
 | BetterStructures | 2.6.3 with the five-Pack `main-betterstructures-v006` working set; 278 enabled／152 disabled |
 | Spawn protection radius | 100 blocks, retained with user approval |
-| Acceptance status | Orders 4–6 complete; Order 7 CoreProtect remains |
+| Acceptance status | Orders 4–6 complete; Order 7 CoreProtect deferred／non-blocking; Order 8 next active |
 
 BetterStructures was enabled only for `main`, `main_nether`, and `main_the_end` during generation. It remained disabled for the complete Resource family and for unknown new worlds.
 
@@ -160,8 +160,10 @@ section above. Generated Packs remain ignored and are not redistributed. See
 
 ## Remaining work
 
-Orders 4, 5, and 6 are complete. Order 7 CoreProtect is the next ordered task
-and remains unimplemented.
+Orders 4, 5, and 6 are complete. Order 7 CoreProtect remains unimplemented,
+but is deferred and non-blocking while Main／Lobby wait for an upstream
+Minecraft 26.2-compatible Stable release. Order 8 Frontier lock is the next
+active task.
 
 The Main spawn Hub, Lobby and Frontier gates, three Resource gates, Resource
 return structures, and Resource End outer-island safety structure are not built
@@ -171,4 +173,4 @@ outside a new assigned destructive task.
 
 Main Spawn WorldGuard protection is designed but not applied. The user first completes the initial Hub footprint; a later approved task then defines the exact Region and focused equipment child regions. Vanilla `spawn-protection=16` remains until that WorldGuard boundary and Builder-member behavior are verified.
 
-Phase 4 EvenMoreFish, the 100x Waymark nominal price revision, and BetterStructures Orders 2 through 6 are complete. Install and verify CoreProtect before substantial Hub／Gate construction.
+Phase 4 EvenMoreFish, the 100x Waymark nominal price revision, and BetterStructures Orders 2 through 6 are complete. Owner-only Hub／Gate construction may proceed before CoreProtect when the Final Main Baseline Backup is retained, focused Schematic／backup evidence is preserved as appropriate, work is divided into controlled units, and a separately accepted WorldGuard boundary is applied after construction. WorldGuard is not a history or point-in-time rollback substitute.

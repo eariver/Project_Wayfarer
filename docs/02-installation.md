@@ -91,8 +91,8 @@ Ver.0.0.6 replaced the persistent dimensions while retaining the approved safe s
 2. Completed 2026-07-25: import the complete approved working set and confirm every Plugin／Content dependency loads before World generation.
 3. Completed 2026-07-25: replacement-generate only `main`, `main_nether`, and `main_the_end`; preserve and hash-verify the complete Resource family.
 4. Completed 2026-07-25: Portals, safe Spawns, Main Resource Pack, four-Pack／three-dimension natural generation, Prop, identities, restart, no-tuning decision, and verified stopped-state Final Main Baseline backup passed.
-5. Install CoreProtect after the Final Main Baseline and before substantial Hub／Gate construction.
-6. Continue with Frontier, Builder Phase 1B, user construction, protection, and Gate routing in the [Roadmap](09-roadmap.md) order.
+5. Keep Order 7 CoreProtect deferred／non-blocking while Main／Lobby wait for a Minecraft 26.2-compatible Stable release; do not record an uninstalled Version in the manifests.
+6. Continue with Order 8 Frontier lock, Builder Phase 1B, Owner-led construction, protection, and Gate routing in the [Roadmap](09-roadmap.md) order. Owner-only Hub／Gate work uses the retained Final Main Baseline Backup, focused Schematic／backup evidence, controlled edit units, and post-construction WorldGuard protection.
 
 ## Phase 8 - Shared mcMMO and planned Frontier expansion
 
@@ -116,4 +116,4 @@ Each Resource world also needs a post-reset Bootstrap design before V0.1.0: safe
 
 ## Phase 9 - Acceptance and V0.1.0 completion
 
-Follow the ordered [Roadmap](09-roadmap.md), then run the release-blocker checklist in `docs/06-acceptance-tests.md`. CoreProtect, Main Spawn protection, integrated Start／Stop／Restart／Status／Backup operations, a complete MariaDB／Redis／World／Config cold backup, and an isolated restore must succeed before the V0.1.0 Baseline is declared. Git Tag／GitHub Release adoption is decided only at that final milestone.
+Follow the ordered [Roadmap](09-roadmap.md), then run the release-blocker checklist in `docs/06-acceptance-tests.md`. Main Spawn protection, integrated Start／Stop／Restart／Status／Backup operations, a complete MariaDB／Redis／World／Config cold backup, and an isolated restore must succeed before the V0.1.0 Baseline is declared. Main／Lobby CoreProtect is temporarily excluded under Owner-only operation but must be re-evaluated before multi-player, multiple Builders, public operation, or large collaborative WorldEdit work. Git Tag／GitHub Release adoption is decided only at that final milestone.
