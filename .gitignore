@@ -135,6 +135,7 @@ servers/frontier/plugins/WorldEdit/.archive-unpack/
 servers/frontier/plugins/WorldEdit/sessions/
 servers/**/plugins/RedisEconomy/config.yml
 servers/**/plugins/RedisEconomy/*.yml
+servers/**/plugins/Wayfarer_Core/config.yml
 servers/main/plugins/EconomyShopGUI/cache/
 servers/main/plugins/EconomyShopGUI/transactions/
 servers/main/plugins/EconomyShopGUI/backups/

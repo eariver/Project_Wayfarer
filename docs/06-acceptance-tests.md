@@ -184,6 +184,14 @@ Persistence／boundary:
 
 The V0.2.x custom-Plugin document under `codex/` remains non-authoritative for proposals not explicitly promoted into Ver.0.0.6. It does not satisfy Wayfarer_Core／Main／Frontier implementation checkboxes or authorize Repository／Artifact creation.
 
+### Order 9 Phase 1.5 current evidence
+
+- [x] Exact Wayfarer_Core V0.0.1 release identity, SHA-256, source/handoff commits, Config version, and migration ceiling are recorded in the current manifests.
+- [x] An isolated Paper 26.2 build 62／Java 25 probe passed first boot, V001–V003 migration, restart Validate／No-op, Vault／RedisEconomy provider health, clean disable, and task-only cleanup.
+- [ ] Install the approved JAR into Main／Frontier, perform the backup-gated Main-first migration, validate Frontier, and complete production acceptance.
+
+The Phase 1.5 probe is evidence for compatibility and configuration foundation only. It does not authorize or claim production Runtime, permission, MariaDB, Redis, world, or player-state changes.
+
 ## 5. Detailed risk-focused test expectations
 
 - Permission implementation: verify persistent Group reuse, self-only temporary Parent restrictions, denial cases, Context scope, expiry/removal, and absence of unintended authority.

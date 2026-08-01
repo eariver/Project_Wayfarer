@@ -33,7 +33,7 @@ The 2026-07-21 family remains the Legacy Rollback Baseline. The 2026-07-25 repla
 | 6 | Main Weight／Content tuning and new baseline — complete 2026-07-25 | Decision A retained current Config; identities, Resource hashes, stopped-state backup, and Final Main Baseline source of truth were verified |
 | 7 | CoreProtect — deferred／non-blocking | Main／Lobby wait for an upstream Minecraft 26.2-compatible Stable release; not complete, accepted, or a cold-backup replacement |
 | 8 | Frontier lock — complete 2026-07-26 | Proposal `FRONTIER-LOCK-20260726-003` approved; Artifact／World／MVI／Gate／Pack／persistence／permission boundaries are statically locked, Runtime validation deferred |
-| 9 | Plugin Repository foundation＋Wayfarer_Core | Formally design one external Gradle Multi-module Repository, common contracts, Core implementation／tests／release candidate, and Project integration |
+| 9 | Plugin Repository foundation＋Wayfarer_Core | Phase 1.5 compatibility/config foundation is complete in an isolated probe; production installation, migration, and acceptance remain open |
 | 10 | Wayfarer_Main／Growth Pickaxe | Produce the implementation specification, module, unit／integration tests, release candidate, Main integration, migration, Config, detailed acceptance, and backup／restore decision |
 | 11 | Wayfarer_Frontier | Design, implement, test, release, and integrate the Frontier module without reimplementing MVI |
 | 12 | Frontier shared foundation | Integrate MVI, Ruined-only MNP, WorldEdit／WorldGuard verification, FMM, ResourcePackManager, Frontier Pack, Beyond Gate, and Guild Gate foundation |
@@ -53,6 +53,12 @@ The 2026-07-21 family remains the Legacy Rollback Baseline. The 2026-07-25 repla
 | 26 | V0.1.0 Baseline | Create the post-reset baseline backup and confirm every Blocker before Release declaration |
 
 The table controls practical priority. Main Content loaded before regeneration and the Final Main Baseline is complete. Order 7 remains numbered but is deferred／non-blocking. Order 8 is complete under Proposal 003; this does not install or Runtime-verify its locked components. Order 9 Core contracts precede Orders 10 and 11; Orders 10 and 11 may proceed in parallel only without breaking the Core contract. Both Frontier Themes and the Gate boundary precede Builder Phase 1B.
+
+### Order 9 Phase 1.5 - Wayfarer_Core V0.0.1 compatibility and config foundation
+
+As of 2026-08-01, the external `Project-Wayfarer-Plugins` repository and stable `Wayfarer_Core` V0.0.1 release are recorded as approved project inputs. The exact JAR hash, source/handoff commits, config version, and highest migration are recorded in `versions.yml` and `plugin-manifest.yml`. The isolated Paper 26.2 build 62／Java 25 probe passed fresh V001–V003 migration, restart Validate／No-op, Vault／RedisEconomy provider health, and clean disable.
+
+This does not complete Order 9 and does not mean that the Core JAR, runtime Config, permissions, MariaDB schema, Redis keys, or production server state were changed. Main／Frontier production installation and migration remain gated by the Phase 2 backup, sequential Main-first migration, Frontier validation, and full acceptance task. The release package's stale historical test snapshot remains a known non-blocking limitation and was not repaired in this phase.
 
 ## Phase details
 
@@ -134,8 +140,8 @@ EvenMoreFish, the Main fixed-price shop, and the 100x nominal Waymark scale rema
 
 ### Orders 9–11 - Custom Plugin Repository and required modules
 
-- [ ] Design one external Gradle Multi-module Repository and lock shared API／common／testkit boundaries
-- [ ] Implement, test, release, and integrate Wayfarer_Core
+- [x] Record the external Repository and exact stable Wayfarer_Core V0.0.1 release input; keep Runtime installation and production migration pending
+- [ ] Complete production installation, backup-gated Main-first migration, Frontier validation, and full acceptance for Wayfarer_Core
 - [ ] Implement, test, release, and integrate Main-only Wayfarer_Main／Growth Pickaxe
 - [ ] Implement, test, release, and integrate Wayfarer_Frontier
 - [ ] Keep `Wayfarer_Frontier_EliteMobsMVI` absent unless Order 13 returns `ADAPTER_REQUIRED`
