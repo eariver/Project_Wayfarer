@@ -32,15 +32,26 @@ planned_unplaced:
 custom_plugin_plan:
   repository:
     model: one-external-gradle-multi-module-repository
-    status: planned-not-created
-    exact-name: unselected
+    status: created-external-repository
+    exact-name: Project-Wayfarer-Plugins
+    source: https://github.com/eariver/Project-Wayfarer-Plugins
+    runtime-artifacts-installed: false
   required:
     - name: Wayfarer_Core
-      status: planned-not-installed
+      status: approved-not-installed
       placement:
         - main
         - frontier
-      version: unselected
+      version: V0.0.1
+      release-url: https://github.com/eariver/Project-Wayfarer-Plugins/releases/tag/V0.0.1
+      jar: Wayfarer_Core-V0.0.1.jar
+      sha256: B045581D3984DDDBA10ED7B2ADA435926B8538BA9B29A1151550CE59588395A2
+      source-commit: 49e00e21716c1c13a2dbb170fdad1b19c4275612
+      handoff-commit: efe9d81029a10ce9ca0ce01f9c6770a4991784bc
+      config-version: 1
+      highest-migration: V003
+      compatibility-probe: isolated-paper-26.2-build-62-pass
+      production-migration: not-run
     - name: Wayfarer_Main
       status: planned-not-installed
       placement:

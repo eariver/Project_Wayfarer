@@ -1,0 +1,47 @@
+# Wayfarer_Core V0.0.1 - Project Wayfarer Frontier
+# Sanitized template. Runtime secrets are supplied through process-local environment variables.
+config-version: 1
+server-id: frontier
+
+shutdown-timeout:
+  seconds: 15
+
+executor:
+  threads: 2
+  queue-capacity: 256
+  thread-name-prefix: Wayfarer-Core
+
+audit:
+  enabled: true
+
+health:
+  player-details: false
+
+mariadb:
+  enabled: true
+  jdbc-url-env: WAYFARER_DB_URL
+  username-env: WAYFARER_DB_USERNAME
+  password-env: WAYFARER_DB_PASSWORD
+  maximum-pool-size: 8
+  minimum-idle: 1
+  connection-timeout-ms: 5000
+
+redis:
+  enabled: true
+  uri-env: WAYFARER_REDIS_URI
+  connect-timeout-ms: 3000
+  operation-timeout-ms: 3000
+  cache-maximum-ttl-seconds: 3600
+  lock-maximum-lease-seconds: 30
+  key-prefix: wayfarer
+
+migration:
+  enabled: true
+  locations:
+    - db/migration/core
+
+waymark:
+  enabled: true
+  provider-mode: vault
+  expected-provider: RedisEconomy
+  operation-timeout-ms: 5000

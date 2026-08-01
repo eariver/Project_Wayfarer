@@ -26,6 +26,11 @@ $jarPath = Join-Path $workDir $c.Jar
 if (-not (Test-Path $c.Java)) { throw "Java executable not found: $($c.Java)" }
 if (-not (Test-Path $jarPath)) { throw "Server JAR not found: $jarPath" }
 
+if ($Name -in @('main', 'frontier')) {
+    . (Join-Path $PSScriptRoot 'Wayfarer-CoreEnvironment.ps1')
+    Set-WayfarerCoreEnvironment -DotEnvPath (Join-Path $Root '.env') -DatabaseName 'wayfarer_network' -DatabaseHost '127.0.0.2' -RedisHost '127.0.0.2'
+}
+
 Push-Location $workDir
 try {
     $launchArgs = @($c.Memory) + @('-jar', $c.Jar)
