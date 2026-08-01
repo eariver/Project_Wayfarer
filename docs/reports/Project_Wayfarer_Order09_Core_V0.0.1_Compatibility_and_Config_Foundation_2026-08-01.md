@@ -72,5 +72,5 @@ No condition met the task's maximum-escalation threshold. The appropriate next s
 
 - Sanitized evidence root: `.ai-work/order09-core-v001-acceptance/phase-015-compatibility-foundation/evidence/`
 - Review bundle: `.ai-work/order09-core-v001-acceptance/phase-015-compatibility-foundation/phase-015-compatibility-foundation-review-bundle.zip`
-- Review bundle SHA-256: `9AE5CDD8DE74E1AE199D4C812BDA2BA00364749A9D6C17B98E5E1663D6C875D0`
+- Review bundle SHA-256: `6AA6FF63AB476B394B60DA85EC64DE16459DF0BAA6F27B96839986E1D4B82826`
 - Detailed handoff: `.ai-work/order09-core-v001-acceptance/phase-015-compatibility-foundation/HANDOFF_TO_NEXT_SESSION.md`
