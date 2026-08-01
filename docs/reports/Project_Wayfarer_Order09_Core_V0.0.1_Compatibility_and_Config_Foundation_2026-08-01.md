@@ -14,10 +14,11 @@ The compatibility/configuration foundation is reviewable. Production installatio
 
 - Branch: `feature/order09-core-v001-foundation`
 - Starting HEAD: `344eedc738d75954daa43facfeef302944f2963a`
-- Ending commit: to be filled after the implementation commits are created
+- Implementation commit: `16a2d03fc2aa0750886d7bc8216a6a60852d168d`
+- Ending commit: recorded in the follow-up metadata commit on this branch
 - Instruction: `.ai-work/instructions/Project_Wayfarer_Order09_Phase015_Core_V0.0.1_Paper26.2_Compatibility_and_Config_Foundation_Luna_XHigh_Instructions_REGENERATED.md`
 - Instruction SHA-256: `42E2D656A105A29F50D596157F0878A4A608499F741C1551643DD713368DA0E8`
-- Draft PR: to be filled after push; merge and ready-for-review actions are prohibited by the task
+- Draft PR: https://github.com/eariver/Project-Wayfarer/pull/2; merge and ready-for-review actions are prohibited by the task
 
 ## Exact release and compatibility result
 
@@ -70,6 +71,6 @@ No condition met the task's maximum-escalation threshold. The appropriate next s
 ## Evidence and handoff
 
 - Sanitized evidence root: `.ai-work/order09-core-v001-acceptance/phase-015-compatibility-foundation/evidence/`
-- Review bundle: to be filled after bundle creation
-- Review bundle SHA-256: to be filled after bundle creation
+- Review bundle: `.ai-work/order09-core-v001-acceptance/phase-015-compatibility-foundation/phase-015-compatibility-foundation-review-bundle.zip`
+- Review bundle SHA-256: `9AE5CDD8DE74E1AE199D4C812BDA2BA00364749A9D6C17B98E5E1663D6C875D0`
 - Detailed handoff: `.ai-work/order09-core-v001-acceptance/phase-015-compatibility-foundation/HANDOFF_TO_NEXT_SESSION.md`
