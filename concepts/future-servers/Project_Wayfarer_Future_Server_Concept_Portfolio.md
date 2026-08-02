@@ -32,7 +32,7 @@ Project WayfarerのV0.1.0では、恒久生活拠点のMain、PEACEFUL探索のW
 | --- | --- |
 | Solo | 1人または極少人数でも中心Loopが成立する |
 | Minecraft fit | Block、地形、建築、採掘、Mob等を使う必然性が強い |
-| Distinctiveness | 国内公開ServerおよびWayfarer既存3系統との差が明確 |
+| Distinctiveness | 国内公開ServerおよびWayfarer計画済み3系統との差が明確 |
 | Initial feasibility | 初期版を小さく実装しやすい |
 | Sustainable operation | 継続的な手作りContent供給や高密度人口への依存が小さい |
 | Portfolio complement | Main、Worlds Beyond、Ruined Frontierが満たさない役割を補う |
@@ -259,7 +259,7 @@ MainまたはFrontierの地域内Contentに向き、初期はPlayer市場では�
 
 洪水、火災、落盤、崩壊、吹雪等の現場で、Block設置、破壊、流体制御、経路構築により救助します。MVPは1 Map、1災害、救助対象、制限時間、資材上限、Scoreです。
 
-Minecraftの基本操作を戦闘以外のMissionへ転換し、既存3 Themeをよく補完します。Scenario制作、Reset、Fluid/Fire負荷、正解固定が課題です。**A評価**です。
+Minecraftの基本操作を戦闘以外のMissionへ転換し、計画済み3 Themeをよく補完します。Scenario制作、Reset、Fluid/Fire負荷、正解固定が課題です。**A評価**です。
 
 ### FUT-28 Redstone / Logic Challenges
 
@@ -298,7 +298,7 @@ Minecraft Worldを立体盤面として使い、Turn制でUnit、資源、拠点
 - Ecosystem Restoration
 - Finite-resource Survival
 
-### Strong additions to existing themes
+### Strong additions to planned themes
 
 - Jobs / Contracts
 - Cookie Clicker-like Factory
