@@ -13,9 +13,10 @@
 
 - [Main concepts](main/README.md)：Main Server、恒久生活World、Main向けContent等のConcept
 - [Frontier concepts](frontier/README.md)：Frontier全体、World群、Adventure／Exploration Content等のConcept
+- [Future server and theme concepts](future-servers/README.md)：将来の独立Backend、Frontier Theme、Main内Content、Minestom案および市場調査
 - 各Directoryの`old/`：改訂によって置き換えられたSuperseded／Historical Concept
 
-現在案はVersion番号や更新日時から推測せず、各Directoryの`README.md`にあるIndexを確認します。
+現在案はFile名のVersion番号や更新日時から推測せず、各Directoryの`README.md`にあるIndexを確認します。Gitで履歴を管理する現行Concept文書は、原則としてFile名へ版番号を付けません。
 
 ## Lifecycle
 
