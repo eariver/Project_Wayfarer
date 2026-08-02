@@ -14,11 +14,11 @@
 
 Project WayfarerのV0.1.0では、恒久生活拠点のMain、PEACEFUL探索のWorlds Beyond、高難度攻略のRuined Frontierを用意する計画です。本Portfolioは、その後に検討しうる新規Server、Frontier Theme、Main内Content、Minestom Backendを、具体化前の段階から一か所へ集約します。
 
-本段階では各新規案を単独のGame Loopとして評価します。新規案同士の統合は、各案の中心Loop、Minimum Viable Experience、配置、技術難所が個別に明確になるまで扱いません。ただし、既存のMain、Worlds Beyond、Ruined Frontierに新規案を追加する配置候補は評価できます。
+本段階では各新規案を単独のGame Loopとして評価します。新規案同士の統合は、各案の中心Loop、Minimum Viable Experience、配置、技術難所が個別に明確になるまで扱いません。ただし、計画済みのMain、Worlds Beyond、Ruined Frontierに新規案を追加する配置候補は評価できます。
 
-## 2. Existing V0.1.0 baseline
+## 2. Planned V0.1.0 baseline
 
-| Existing theme | Primary role | Core loop | Portfolio role |
+| Planned theme | Primary role | Core loop | Portfolio role |
 | --- | --- | --- | --- |
 | Main | 恒久生活、建築、保管、経済、帰還地点 | 採集、建築、交流、蓄積 | 新規案との重複とMain内追加適合性を判断する基準 |
 | Worlds Beyond | PEACEFULな未知地形探索 | 移動、地形読解、到達、発見 | 非戦闘探索案との重複・拡張性を判断する基準 |
@@ -57,10 +57,10 @@ Project WayfarerのV0.1.0では、恒久生活拠点のMain、PEACEFUL探索のW
 
 | ID | Concept | Natural placement | Solo | MC fit | Distinct | Initial | Sustain | Complement | Class |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| BASE-01 | Main | Existing Backend | 5 | 5 | 2 | 4 | 5 | 5 | Baseline |
-| BASE-02 | Worlds Beyond | Existing Frontier Theme | 5 | 5 | 4 | 3 | 4 | 5 | Baseline |
-| BASE-03 | Ruined Frontier | Existing Frontier Theme | 4 | 4 | 3 | 2 | 3 | 5 | Baseline |
-| FUT-01 | True Latest | Independent Paper/Purpur Backend | 5 | 5 | 4 | 4 | 3 | 5 | S |
+| BASE-01 | Main | Planned Backend | 5 | 5 | 2 | 4 | 5 | 5 | Baseline |
+| BASE-02 | Worlds Beyond | Planned Frontier Theme | 5 | 5 | 4 | 3 | 4 | 5 | Baseline |
+| BASE-03 | Ruined Frontier | Planned Frontier Theme | 4 | 4 | 3 | 2 | 3 | 5 | Baseline |
+| FUT-01 | True Latest | Independent minimal Backend; server software TBD | 5 | 5 | 4 | 4 | 3 | 5 | S |
 | FUT-02 | Parkour | Main or Frontier Content | 5 | 4 | 2 | 4 | 3 | 4 | B |
 | FUT-03 | ANNI-like | Independent Event Backend | 1 | 4 | 3 | 2 | 3 | 4 | C |
 | FUT-04 | FPS | Independent Event Backend | 1 | 2 | 2 | 2 | 3 | 2 | D |
@@ -95,9 +95,13 @@ Project WayfarerのV0.1.0では、恒久生活拠点のMain、PEACEFUL探索のW
 
 ### FUT-01 True Latest
 
-Mainの互換性・資産保護とは分離し、Minecraft公式の最新Releaseへ可能な限り早く追従する最小Plugin Serverです。新しいVanilla要素を未蓄積状態から発見・攻略し、Season目標やAchievementを達成します。
+Mainの互換性・資産保護とは分離し、Minecraft公式の最新Releaseへ可能な限り早く追従する独立最小Backendです。新しいVanilla要素を未蓄積状態から発見・攻略し、Season目標やAchievementを達成します。
 
 MVPは最新安定Release、最低限の権限・監査・Backup、独立Inventory、短期またはSeason World、Networkへ返す限定Pointです。MainがPlugin都合でVersion固定されても最新要素を提供でき、古いClient互換を切って新Item・Blockを完全利用できます。
+
+Server softwareはPaper、Purpur、その他Vanilla-compatible実装を候補としますが、Release追従速度、Velocity接続、必要な管理機能、Backupおよび運用安定性を比較して決定し、現段階では固定しません。
+
+Game Ruleの未決定候補として、通常Survival、Vanilla Hardcore、死亡後に一定期間参加できない準Hardcore、死亡時の個人Season進行Reset、Server全体の共有残機を保持します。採用案は、Solo成立性、途中参加、Season期間、死亡後の継続参加手段を比較して決定します。
 
 主な課題はRelease直後のServer Software安定性、World更新、Season終了、死亡・Reset、成果移送です。**S評価**とし、最も現実的な独立Backend候補とします。
 
