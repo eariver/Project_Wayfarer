@@ -11,7 +11,7 @@
 
 - [Future Server Concept Portfolio](Project_Wayfarer_Future_Server_Concept_Portfolio.md)
   - V0.1.0予定のMain、Worlds Beyond、Ruined Frontierを基準に、これまでに検討した新規案を同一評価軸で整理します。
-  - 新規案同士の統合案は扱いません。既存のMain／Worlds Beyond／Ruined Frontierへの配置適合性だけを比較します。
+  - 新規案同士の統合案は扱いません。V0.1.0で計画済みのMain／Worlds Beyond／Ruined Frontierへの配置適合性だけを比較します。
   - 各評価は初期仮説であり、採用順位または実装順を確定しません。
 
 ## Investigations
@@ -30,8 +30,8 @@
 
 1. 一つの新規案は、初期段階では単独のGame Loopとして評価します。
 2. 「新規案Aと新規案Bを組み合わせる」は、各案の単独評価が進むまで保留します。
-3. 「既存のMain／Worlds Beyond／Ruined Frontierへ新規案を追加する」は配置候補として評価できます。
-4. 独立Backend候補は、Velocity配下のPaper／Purpur BackendまたはMinestom Backendとして比較します。
+3. 「V0.1.0で計画済みのMain／Worlds Beyond／Ruined Frontierへ新規案を追加する」は配置候補として評価できます。
+4. 独立Backend候補はVelocity配下への追加を前提に比較しますが、Paper、Purpurその他のServer softwareは各案の追従速度、機能、互換性および運用要件を確認するまで固定しません。Minestomを前提とする案は別に明示します。
 5. 少人数で開始するProjectであるため、1人時の成立性と同時参加者依存を分けて記録します。
 6. Conceptの独自性だけでなく、初期実装、継続制作、運用、Version追従、Player Data境界を評価します。
 7. 市場に類似例が少ないことを需要の証明とは扱いません。
@@ -43,8 +43,8 @@ Portfolio内の案を個別Conceptへ分離する目安は次のとおりです�
 - 一文で中心Game Loopを説明できる。
 - 1人時と複数人時の成立条件を説明できる。
 - Minimum Viable Experienceを定義できる。
-- Main内Content、Frontier Theme、独立Paper Backend、Minestom Backendのいずれが自然か比較できる。
-- 既存3系統との差異と重複を説明できる。
+- Main内Content、Frontier Theme、独立Backend、Minestom Backendのいずれが自然か比較できる。
+- 計画済み3系統との差異と重複を説明できる。
 - 初期実装と継続運用の主な難所を列挙できる。
 - 採用しない場合にも判断履歴として残す価値がある。
 
