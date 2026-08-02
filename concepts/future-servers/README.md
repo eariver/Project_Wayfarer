@@ -16,14 +16,35 @@
 
 ## Investigations
 
-- [minecraft.jp継続調査](investigations/minecraft-jp/README.md)
-  - 夏休み参考観測、平時Peak Calibration、月次・四半期調査、新着6か月追跡の方針を管理します。
-  - Luna MaxによるRaw収集、GitHub Actionsによる機械集計、人間による市場解釈を分離します。
-  - Public Raw Data RepositoryとImmutable Raw Dataを前提とし、Collector実装は別Taskとして扱います。
+- [2026年8月2日 minecraft.jp Ranking Trial分析](investigations/minecraft-jp/minecraft_jp_ranking_trial_analysis_2026-08-02.md)
+  - Score上位30件、Player上位20件、Recent上位20件を再現可能なRaw／Derived Dataから分析します。
+  - 70 Ranking Record、55 Listingについて、Tag比率、Player集中、Ranking間の重複、ScoreとPlayer数の差を確認します。
+  - Portfolio Classは変更せず、Mainの役割、Solo成立性、段階的Network拡張等の既存判断を補強します。
+- [minecraft.jp調査Index](investigations/minecraft-jp/README.md)
+  - Completed Trial、探索的Baseline、Dormant ProtocolおよびPublic Research Data Repositoryを索引します。
+  - Data収集RepositoryはOn holdで、Scheduled CollectionおよびActive Manual Collection Workflowはありません。
+  - 今後は必要時だけ、不定期の一回限り調査として再利用します。
 - [minecraft.jpランキングから見る日本Minecraftサーバーのテーマ動向](investigations/minecraft_jp_server_theme_trends_2026-07-31.md)
-  - minecraft.jpのScore順上位60件、Player数順上位20件、新着順上位20件と主要個別Siteを調査した初回市場Snapshotです。
+  - minecraft.jpのScore順上位60件、Player数順上位20件、Recent順上位20件と主要個別Siteを調査した初回市場Snapshotです。
   - RankingのScoreを同時接続人数と同一視せず、生活、経済、Network型の傾向と市場空白を分析します。
   - 継続調査Protocol適用前の探索的Baselineとして保持します。
+- [minecraft.jp継続調査Protocol](investigations/minecraft-jp/research_protocol.md)
+  - 夏休み参考観測、平時Peak Calibration、月次・四半期調査、新着6か月追跡を設計したReferenceです。
+  - Luna MaxによるRaw収集、GitHub Actionsによる機械集計、人間による市場解釈を分離します。
+  - 現在はDormantであり、定期調査の実施を承認しません。
+
+## External research data
+
+Public Repository [eariver/Project_Wayfarer_Research_Data](https://github.com/eariver/Project_Wayfarer_Research_Data)に、TrialのImmutable Raw Data、Manifest、Schema、Collector、TestおよびDerived Dataを保存します。
+
+Completed Trial:
+
+```text
+Run ID: 45ec07fb-f779-46e0-aea4-123dbca9243a
+Raw Commit: aef22a80dfaafc723c8f07b6c00e07a0a0ce82b1
+Derived Commit: 774d4cf5c47311089abd746d73293f0194fe3341
+Status: completed / repository on hold
+```
 
 ## File naming
 
