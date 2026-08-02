@@ -16,9 +16,14 @@
 
 ## Investigations
 
+- [minecraft.jp継続調査](investigations/minecraft-jp/README.md)
+  - 夏休み参考観測、平時Peak Calibration、月次・四半期調査、新着6か月追跡の方針を管理します。
+  - Luna MaxによるRaw収集、GitHub Actionsによる機械集計、人間による市場解釈を分離します。
+  - Public Raw Data RepositoryとImmutable Raw Dataを前提とし、Collector実装は別Taskとして扱います。
 - [minecraft.jpランキングから見る日本Minecraftサーバーのテーマ動向](investigations/minecraft_jp_server_theme_trends_2026-07-31.md)
-  - minecraft.jpのScore順上位60件、Player数順上位20件、新着順上位20件と主要個別Siteを調査した市場Snapshotです。
+  - minecraft.jpのScore順上位60件、Player数順上位20件、新着順上位20件と主要個別Siteを調査した初回市場Snapshotです。
   - RankingのScoreを同時接続人数と同一視せず、生活、経済、Network型の傾向と市場空白を分析します。
+  - 継続調査Protocol適用前の探索的Baselineとして保持します。
 
 ## File naming
 
