@@ -24,7 +24,7 @@
 
 純粋なRPG、Parkour、銃PvP、Zombie Escape、Extraction FPS、Hardcore等の専門Serverも存在しますが、数は少なく、Score上位では生活系より下に位置しやすい傾向があります。品質だけでなく、少人数時の成立性、投票習慣、恒久資産、Community定着の差が影響していると考えられます。
 
-上位Serverでは、次が事実上の標準装備になっています。
+今回確認した上位Serverでは、次の要素が頻繁に観測されました。ただし、これらは個別の採用率を集計していないため、「標準装備」とまでは断定しません。
 
 - Java EditionとBedrock EditionのCross-play
 - 広いClient Version互換
@@ -53,6 +53,8 @@ minecraft.jpのTagは自己申告であり、「Mini-game」「RPG」「Survival
 
 1. **Tag集計:** Survival、Economy、PvP、Mini-game等の出現数を集計。
 2. **主題の再分類:** 個別説明を読み、Playerが最初に認識する中心Loopを生活、建築、Network複合、銃PvP等へ手作業で分類。
+
+本調査で「生活系派生」とした範囲には、生活、生活・経済、生活・建築、建築生活、Vanilla生活、RPG風生活、PvP生活、Season生活、および生活Backendを主軸とするNetwork複合を含めます。境界事例を含む手作業分類であるため、Executive summaryでは厳密値ではなく「約3分の2」として扱います。
 
 ### 2.3 Limitations
 
@@ -121,7 +123,7 @@ minecraft.jpのTagは自己申告であり、「Mini-game」「RPG」「Survival
 
 ### 4.1 Life server is the default product
 
-現在の生活Serverは単なるVanilla Survivalではありません。代表的な構成は、恒久建築World、定期Reset Resource World、保護、Economy、Player Shop、Home、Warp、Web Map、mcMMO、Jobs、独自Progression、投票Reward、Event、Discord、Cross-playです。
+現在の生活Serverは単なるVanilla Survivalではありません。今回確認した上位生活Serverでは、恒久建築World、定期Reset Resource World、保護、Economy、Player Shop、Home、Warp、Web Map、mcMMO、Jobs、独自Progression、投票Reward、Event、Discord、Cross-play等が頻繁に観測されました。
 
 まんまみーやはVanilla感を残しながら保護、週次Reset Resource World、mcMMO、爆速Minecart、Elevator、独自進捗、観光Stamp Rally、氷上Boat Raceを備えます。できたてServerはEconomy Balance、保護、Upgradeを前面に出します。
 
@@ -235,7 +237,7 @@ minecraft.jpのScore順位とPlayer数順位は一致しません。Player数順
 
 ### 7.1 Main
 
-Mainに必要な保護、Economy、Resource World、mcMMO、建築、投票Rewardは市場標準に近くあります。Mainの役割は市場にないGameではなく、Wayfarer全体の恒久拠点、保管、交流、共通Progressionとして定義すべきです。
+Mainに必要な保護、Economy、Resource World、mcMMO、建築、投票Rewardは、今回確認した上位生活Serverで頻繁に観測される要素です。Mainの役割は市場にないGameではなく、Wayfarer全体の恒久拠点、保管、交流、共通Progressionとして定義すべきです。
 
 ### 7.2 Worlds Beyond
 
@@ -249,38 +251,38 @@ RPG、Dungeon、独自Mob、Bossは既存市場にも存在するため、単に
 
 ## 8. Position of proposed concepts
 
-| Concept | Nearest observed pattern | Market density | Differentiation | Note |
-| --- | --- | ---: | ---: | --- |
-| True Latest | Latest life、Vanilla-like life | Medium | High | Plugin都合で遅れないことを制度化できる |
-| Parkour | Chelcy等 | Medium | Medium | Course品質と更新頻度が勝負 |
-| ANNI-like | 下位に類似例 | Low | Medium | 市場空白より人口要件が問題 |
-| FPS | Gun PvP、LeonGunWar、Kamikaze | Medium | Low-Medium | 専門競合と同時接続依存 |
-| Gambling | Man10、MOFUCRAFT | High | Low | Main内Currency Sinkに自然 |
-| OneBlock | 上位60で明確な専門例なし | Low | High | 少人数成立性が強い |
-| Roguelike Expedition | Extraction FPSが部分近似 | Low | High | PvE中心なら独自性が高い |
-| Base Defense / Horde | 明確な上位例なし | Low | High | Minecraft基本操作との相性がよい |
-| Rotating Challenge | Season生活が部分近似 | Low | High | 継続的なRule供給が必要 |
-| Archaeology | 遺跡探索の一要素 | Low | High | 主役化すれば差別化可能 |
-| Instanced Dungeon | RPG、Dungeon Server | Medium | Medium | Ruined Frontierと重複しやすい |
-| Nomadic Survival | 明確な例なし | Low | High | 定住型生活の反転 |
-| Jobs / Contracts | 生活Serverの標準追加要素 | High | Low | 独立Themeより共通基盤向き |
-| Factory / Logistics | 明確な専門例なし | Low | Very high | 大型実装だが市場空白 |
-| Cookie Clicker Factory | 整地型Progressionが近い | Low | High | 日本市場の作業Progressionと相性がよい |
-| Asymmetric Cooperation | 明確な例なし | Low | High | 固定人数要件が弱点 |
-| Puzzle / Escape | 配布Map、Event | Low | Medium-High | 消費型Contentで制作負荷が高い |
-| Minestom Limited Minecraft | 明確な例なし | Very low | Very high | 最も独自だが継続開発が運営になる |
-| Village / Colony | 村長、都市計画が部分近似 | Low | High | NPC AIと状態管理が重い |
-| Ecosystem Restoration | 明確な例なし | Very low | Very high | 国内市場でほぼ未開拓 |
-| Cartography / Surveying | 観光、地図、鉄道が部分近似 | Low | High | Worlds Beyondに自然 |
-| Construction Contracts | 建築Eventが部分近似 | Medium | High | 自動判定できれば独自 |
-| Monster Research / Hunting | RPG Bossが近い | Medium | High | 痕跡と調査を主役にする必要 |
-| Time-loop World | 明確な例なし | Very low | Very high | 強いがScenario消費型 |
-| Finite-resource Survival | Hardcore、Anarchyが部分近似 | Low | High | 小さな実装で体験を変えやすい |
-| Merchant / Caravan | Economy、Railwayが部分近似 | Medium | Medium-High | Warp制約とNPC需要が必要 |
-| Disaster Response | 明確な例なし | Very low | Very high | 短編Missionとして独自 |
-| Redstone Challenges | 建築、技術Community | Low | Medium | 対象層は狭い |
-| Warehouse Logistics | 明確な例なし | Very low | High | 小規模でも成立 |
-| Minecraft Board Game | Mini-game | Medium | Low-Medium | Minecraftで行う必然性は弱い |
+| ID | Concept | Nearest observed pattern | Market density | Differentiation | Note |
+| --- | --- | --- | ---: | ---: | --- |
+| FUT-01 | True Latest | Latest life、Vanilla-like life | Medium | High | Plugin都合で遅れないことを制度化できる |
+| FUT-02 | Parkour | Chelcy等 | Medium | Medium | Course品質と更新頻度が勝負 |
+| FUT-03 | ANNI-like | 下位に類似例 | Low | Medium | 市場空白より人口要件が問題 |
+| FUT-04 | FPS | Gun PvP、LeonGunWar、Kamikaze | Medium | Low-Medium | 専門競合と同時接続依存 |
+| FUT-05 | Gambling | Man10、MOFUCRAFT | High | Low | Main内Currency Sinkに自然 |
+| FUT-06 | OneBlock | 上位60で明確な専門例なし | Low | High | 少人数成立性が強い |
+| FUT-07 | Roguelike Expedition | Extraction FPSが部分近似 | Low | High | PvE中心なら独自性が高い |
+| FUT-08 | Base Defense / Horde | 明確な上位例なし | Low | High | Minecraft基本操作との相性がよい |
+| FUT-09 | Rotating Challenge World | Season生活が部分近似 | Low | High | 継続的なRule供給が必要 |
+| FUT-10 | Archaeology / Excavation | 遺跡探索の一要素 | Low | High | 主役化すれば差別化可能 |
+| FUT-11 | Instanced Dungeon | RPG、Dungeon Server | Medium | Medium | Ruined Frontierと重複しやすい |
+| FUT-12 | Nomadic Survival | 明確な例なし | Low | High | 定住型生活の反転 |
+| FUT-13 | Jobs / Contracts | 生活Serverの標準追加要素 | High | Low | 独立Themeより共通基盤向き |
+| FUT-14 | Factory and Logistics Simulation | 明確な専門例なし | Low | Very high | 大型実装だが市場空白 |
+| FUT-15 | Asymmetric Cooperation | 明確な例なし | Low | High | 固定人数要件が弱点 |
+| FUT-16 | Puzzle / Escape | 配布Map、Event | Low | Medium-High | 消費型Contentで制作負荷が高い |
+| FUT-17 | Cookie Clicker-like Factory | 整地型Progressionが近い | Low | High | 日本市場の作業Progressionと相性がよい |
+| FUT-18 | Minestom Limited Minecraft | 明確な例なし | Very low | Very high | 最も独自だが継続開発が運営になる |
+| FUT-19 | Village / Colony Management | 村長、都市計画が部分近似 | Low | High | NPC AIと状態管理が重い |
+| FUT-20 | Ecosystem Restoration | 明確な例なし | Very low | Very high | 国内市場でほぼ未開拓 |
+| FUT-21 | Cartography / Surveying | 観光、地図、鉄道が部分近似 | Low | High | Worlds Beyondに自然 |
+| FUT-22 | Construction Contracts | 建築Eventが部分近似 | Medium | High | 自動判定できれば独自 |
+| FUT-23 | Monster Research / Hunting | RPG Bossが近い | Medium | High | 痕跡と調査を主役にする必要 |
+| FUT-24 | Time-loop World | 明確な例なし | Very low | Very high | 強いがScenario消費型 |
+| FUT-25 | Finite-resource Survival | Hardcore、Anarchyが部分近似 | Low | High | 小さな実装で体験を変えやすい |
+| FUT-26 | Merchant / Caravan | Economy、Railwayが部分近似 | Medium | Medium-High | Warp制約とNPC需要が必要 |
+| FUT-27 | Disaster Response / Rescue | 明確な例なし | Very low | Very high | 短編Missionとして独自 |
+| FUT-28 | Redstone / Logic Challenges | 建築、技術Community | Low | Medium | 対象層は狭い |
+| FUT-29 | Warehouse Sorting / Logistics Work | 明確な例なし | Very low | High | 小規模でも成立 |
+| FUT-30 | Minecraft Board Game | Mini-game | Medium | Low-Medium | Minecraftで行う必然性は弱い |
 
 ## 9. Apparent market gaps
 
@@ -328,7 +330,7 @@ Mainは恒久拠点、建築・保管、安全なEconomy、他Themeから帰る�
 
 ### 10.5 Work progression should not be underestimated
 
-整地鯖の長期上位実績は、単純作業でもProgression、演出、比較、恒久成果を与えれば成立することを示します。Cookie Clicker Factory、Warehouse、Agriculture、Mining、Logisticsは日本市場と相性がよい可能性があります。
+整地鯖の長期上位実績は、単純作業でもProgression、演出、比較、恒久成果を与えれば成立することを示します。Cookie Clicker-like Factory、Warehouse Sorting / Logistics Work、Agriculture、Mining、Logisticsは日本市場と相性がよい可能性があります。
 
 ### 10.6 Population-dependent concepts should remain deferred
 
@@ -341,17 +343,17 @@ minecraft.jpから見た日本Minecraft Server市場は、生活、Economyを基
 Project Wayfarerが単に便利な生活Server、独自要素の多いServerを名乗っても差別化は難しくあります。一方、現在の構想には市場空白と重なるものが複数あります。
 
 - Worlds Beyondの非戦闘探索
-- True Latest
-- Minestom Limited Minecraft
-- Factory / Logistics
-- Ecosystem Restoration
-- Finite-resource Survival
-- Nomadic Survival
-- Disaster Response
-- Solo Roguelike
-- OneBlock Instance
+- FUT-01 True Latest
+- FUT-18 Minestom Limited Minecraft
+- FUT-14 Factory and Logistics Simulation
+- FUT-20 Ecosystem Restoration
+- FUT-25 Finite-resource Survival
+- FUT-12 Nomadic Survival
+- FUT-27 Disaster Response / Rescue
+- FUT-07 Roguelike Expedition
+- FUT-06 OneBlock
 
-V0.1.0ではMainを安定した帰還地点として完成させ、Worlds BeyondとRuined Frontierで生活以外の理由を提示します。その後、True Latestのような低Cost・高説明力のBackendを追加し、MinestomやFactory / Logisticsのような大型独自案を長期開発する戦略が有力です。
+V0.1.0ではMainを安定した帰還地点として完成させ、Worlds BeyondとRuined Frontierで生活以外の理由を提示します。その後、True Latestのような低Cost・高説明力のBackendを追加し、Minestom Limited MinecraftやFactory and Logistics Simulationのような大型独自案を長期開発する戦略が有力です。
 
 ## Appendix A. Score top 60 theme classification
 
