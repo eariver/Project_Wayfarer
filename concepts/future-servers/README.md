@@ -9,7 +9,7 @@
 
 ## Current portfolio
 
-- [Future Server Concept Portfolio V0.0.1](Project_Wayfarer_Future_Server_Concept_Portfolio_V0.0.1.md)
+- [Future Server Concept Portfolio](Project_Wayfarer_Future_Server_Concept_Portfolio.md)
   - V0.1.0予定のMain、Worlds Beyond、Ruined Frontierを基準に、これまでに検討した新規案を同一評価軸で整理します。
   - 新規案同士の統合案は扱いません。既存のMain／Worlds Beyond／Ruined Frontierへの配置適合性だけを比較します。
   - 各評価は初期仮説であり、採用順位または実装順を確定しません。
@@ -17,12 +17,18 @@
 ## Investigations
 
 - [minecraft.jpランキングから見る日本Minecraftサーバーのテーマ動向](investigations/minecraft_jp_server_theme_trends_2026-07-31.md)
-  - minecraft.jpのスコア順上位60件、プレイヤー数順上位20件、新着順上位20件と主要個別サイトを調査した市場スナップショットです。
-  - ランキングのスコアを同時接続人数と同一視せず、生活・経済・ネットワーク型の傾向と市場空白を分析します。
+  - minecraft.jpのScore順上位60件、Player数順上位20件、新着順上位20件と主要個別Siteを調査した市場Snapshotです。
+  - RankingのScoreを同時接続人数と同一視せず、生活、経済、Network型の傾向と市場空白を分析します。
+
+## File naming
+
+- Gitで履歴を管理するため、索引対象のConcept文書名には版番号を付けません。
+- 特定時点の外部調査は、調査対象時点を明示するため日付をFile名に含める場合があります。
+- 旧版を別Fileとして残す必要がある場合だけ、`old/`へ移動し、現行Indexから分離します。
 
 ## Working rules
 
-1. 一つの新規案は、初期段階では単独のゲームループとして評価します。
+1. 一つの新規案は、初期段階では単独のGame Loopとして評価します。
 2. 「新規案Aと新規案Bを組み合わせる」は、各案の単独評価が進むまで保留します。
 3. 「既存のMain／Worlds Beyond／Ruined Frontierへ新規案を追加する」は配置候補として評価できます。
 4. 独立Backend候補は、Velocity配下のPaper／Purpur BackendまたはMinestom Backendとして比較します。
@@ -34,7 +40,7 @@
 
 Portfolio内の案を個別Conceptへ分離する目安は次のとおりです。
 
-- 一文で中心ゲームループを説明できる。
+- 一文で中心Game Loopを説明できる。
 - 1人時と複数人時の成立条件を説明できる。
 - Minimum Viable Experienceを定義できる。
 - Main内Content、Frontier Theme、独立Paper Backend、Minestom Backendのいずれが自然か比較できる。
