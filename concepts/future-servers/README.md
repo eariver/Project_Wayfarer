@@ -14,6 +14,14 @@
   - 新規案同士の統合案は扱いません。V0.1.0で計画済みのMain／Worlds Beyond／Ruined Frontierへの配置適合性だけを比較します。
   - 各評価は初期仮説であり、採用順位または実装順を確定しません。
 
+## Individual draft concepts
+
+- [FUT-31 Micro Frontier / Giant World](micro-frontier.md)
+  - Playerを小型化し、通常Block、地形、構造物、Mobを相対的に巨大な世界として再解釈する案です。
+  - 中心LoopはScale変更そのものではなく、移動困難な巨大世界へ交通路と前哨基地を構築し、Landmarkを接続して活動圏を拡大するInfrastructure Explorationです。
+  - Player Scale方式を第一候補とし、Macroblock GeneratorおよびHybrid方式は代替・将来候補として保持します。
+  - 暫定A候補ですが、操作性と長期Game Play成立性を小規模PoCで確認するまで正式なPortfolio Classへ反映しません。
+
 ## Investigations
 
 - [2026年8月2日 minecraft.jp Ranking Trial分析](investigations/minecraft-jp/minecraft_jp_ranking_trial_analysis_2026-08-02.md)
